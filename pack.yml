@@ -1,0 +1,25 @@
+id: OVERWORLD
+version: 0.1.0
+author: "Astrash, Sancires"
+
+generator: NOISE_3D
+
+addons:
+  - biome-provider-pipeline
+  - chunk-generator-noise-3d
+  - config-biome
+  - config-flora
+  - config-noise-function
+  - config-ore
+  - config-palette
+  - config-distributors
+  - config-locators
+  - config-feature
+  - structure-terrascript-loader
+  - language-yaml
+  - generation-stage-flora
+  - generation-stage-feature
+
+stages:
+  - FEATURE
+  - FLORA
