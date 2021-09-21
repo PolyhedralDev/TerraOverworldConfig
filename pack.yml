@@ -23,3 +23,11 @@ addons:
 stages:
   - FEATURE
   - FLORA
+
+noise:
+  simplex:
+    type: FBM
+    octaves: 4
+    function:
+      type: OPENSIMPLEX2
+      frequency: 0.0075
