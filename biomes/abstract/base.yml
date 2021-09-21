@@ -1,0 +1,7 @@
+id: BASE
+type: BIOME
+abstract: true
+
+ocean:
+  palette: BLOCK:minecraft:water
+  level: 62
