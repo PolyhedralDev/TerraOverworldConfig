@@ -1,0 +1,18 @@
+id: PLAINS
+type: BIOME
+extends: BASE # In the future, this will extend BASE, LAND_CARVING, and EQ_GRASSLAND (Or some variation of that)
+color: 0x91bd59
+
+tags:
+  - LAND
+  - ERODABLE
+
+colors:
+  grass: 0x91bd59
+  foliage: 0x77ab2f
+  water: 0x44aff5
+  water-fog: 0x44aff5
+
+#features:
+
+#flora:
