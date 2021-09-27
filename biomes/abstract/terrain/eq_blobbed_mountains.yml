@@ -1,0 +1,26 @@
+id: EQ_BLOBBED_MOUNTAINS
+type: BIOME
+abstract: true
+
+vars: &variables
+  base: 75
+  height: 60
+  blobStrength: 30
+
+noise:
+  dimensions: 3
+  type: EXPRESSION
+  expression: -y + base + (noise(x, z)+1)/2 * height + (noise3(x, y*2, z)+1)/2 * blobStrength
+  variables: *variables
+  functions:
+    noise:
+      dimensions: 2
+      type: FBM
+      octaves: 5
+      function:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.005
+    noise3:
+      dimensions: 3
+      type: OPEN_SIMPLEX_2
+      frequency: 0.018

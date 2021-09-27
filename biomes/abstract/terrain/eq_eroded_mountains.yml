@@ -2,10 +2,21 @@ id: EQ_ERODED_MOUNTAINS
 type: BIOME
 abstract: true
 
+vars: &variables
+  erosion: 30 # Strength of erosion
+  erosionYMax: 130 # The height that erosion is capped by
+  erosionYMid: 105 # The height that erosion is strongest
+  erosionYMin: 100 # The height that erosion starts
+
 noise:
   dimensions: 3
   type: EXPRESSION
-  expression: noise(x, y, z) - |erosion(x,y/3,z)|*50*min(min(max(-(y-130)/40,0),1),min(max((y-100)/10,0),1))
+  expression: |
+    noise(x, y, z)
+    -|erosion(x,y/3,z)|
+    * erosion
+    * max(0, min((y-erosionYMin)/(erosionYMid-erosionYMin),(y-erosionYMax)/(erosionYMid-erosionYMax)))
+  variables: *variables
   functions:
     erosion:
       dimensions: 3
