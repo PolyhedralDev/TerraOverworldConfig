@@ -1,0 +1,19 @@
+id: SPRUCE_TREES
+type: FEATURE
+
+distributor:
+  type: NOISE
+  distribution:
+    type: WHITE_NOISE
+  threshold: 0.99
+
+locator:
+  type: SURFACE
+  range:
+    min: 90
+    max: 255
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: SPRUCE_TREE_PROCEDURAL

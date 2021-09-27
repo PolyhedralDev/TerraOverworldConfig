@@ -1,0 +1,25 @@
+id: EQ_MOUNTAINS
+type: BIOME
+abstract: true
+
+vars: &variables
+  base: 75
+  height: 150
+
+noise:
+  dimensions: 3
+  type: EXPRESSION
+  variables: *variables
+  expression: -y + base + (noise(x, z)+1)/2 * height
+  functions:
+    noise:
+      dimensions: 2
+      type: FBM
+      octaves: 5
+      function:
+        type: LINEAR
+        min: -1
+        max: 0.2
+        function:
+          type: CELLULAR
+          frequency: 0.008

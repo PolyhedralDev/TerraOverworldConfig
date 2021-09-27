@@ -1,0 +1,29 @@
+id: EQ_ERODED_MOUNTAINS
+type: BIOME
+abstract: true
+
+vars: &variables
+  base: 75
+  height: 150
+
+noise:
+  dimensions: 3
+  type: EXPRESSION
+  variables: *variables
+  expression: -y + base + (noise(x, z)+1)/2 * height - |erosion(x,y/3,z)|*50*min(min(max(-(y-130)/40,0),1),min(max((y-100)/10,0),1))
+  functions:
+    erosion:
+      dimensions: 3
+      type: OPEN_SIMPLEX_2
+      frequency: 0.03
+    noise:
+      dimensions: 2
+      type: FBM
+      octaves: 5
+      function:
+        type: LINEAR
+        min: -1
+        max: 0.2
+        function:
+          type: CELLULAR
+          frequency: 0.008

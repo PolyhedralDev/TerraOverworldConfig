@@ -44,5 +44,5 @@ biomes:
       noise:
         dimensions: 2
         type: CONSTANT
-      biomes: FOREST
+      biomes: MOUNTAINS
     stages: []
