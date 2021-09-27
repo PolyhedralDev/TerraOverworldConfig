@@ -1,0 +1,24 @@
+id: FOREST
+type: BIOME
+extends: [ EQ_HILLS, BASE ]
+vanilla: minecraft:forest
+color: 0x91bd59
+
+tags:
+  - LAND
+  - ERODABLE
+
+colors:
+  grass: 0x91bd59
+  foliage: 0x77ab2f
+  water: 0x44aff5
+  water-fog: 0x44aff5
+
+palette:
+  - GRASS: 255
+  - "BLOCK:minecraft:bedrock": 0
+
+features:
+  - TEMPERATE_TREES
+  - FLOWER_PATCHES
+  - GRASS
