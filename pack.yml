@@ -1,6 +1,6 @@
 id: OVERWORLD
 version: 0.1.0
-author: [Astrash, Sancires]
+author: "Astrash, Sancires"
 
 generator: NOISE_3D
 
@@ -17,17 +17,32 @@ addons:
   - config-feature
   - structure-terrascript-loader
   - language-yaml
-  - generation-stage-flora
   - generation-stage-feature
 
 stages:
   - FEATURE
-  - FLORA
 
 noise:
   simplex:
+    dimensions: 2
     type: FBM
     octaves: 4
     function:
-      type: OPENSIMPLEX2
+      type: OPEN_SIMPLEX_2
       frequency: 0.0075
+
+biomes:
+  type: PIPELINE # SINGLE type not working so just using bare pipeline
+  resolution: 1
+  blend:
+    amplitude: 0
+    noise:
+      type: CONSTANT
+  pipeline:
+    source:
+      type: NOISE
+      noise:
+        dimensions: 2
+        type: CONSTANT
+      biomes: PLAINS
+    stages: []
