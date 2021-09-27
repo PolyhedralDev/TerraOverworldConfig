@@ -22,3 +22,7 @@ noise:
 palette:
   - GRASS: 255
   - "BLOCK:minecraft:bedrock": 0
+
+features:
+  - SPARSE_TEMPERATE_TREES
+  - GRASS
