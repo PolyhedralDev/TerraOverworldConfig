@@ -2,13 +2,7 @@ id "SPRUCE_TREE_PROCEDURAL";
 
 if (check(0,0,0) == "LAND") fail;
 if (!structure(0, 0, 0, "PLANTABLE", "NONE")) fail;
-
-//Ensure direct sunlight
-//Samples every Nth block upwards from origin
-//num sampleDist = 4;
-//for (num i = 0; i < 250; i = i + sampleDist) {
-//    if (check(0, i, 0) != "AIR") fail;
-//}
+if (!structure(0, 0, 0, "HAS_SUNLIGHT", "NONE")) fail;
 
 // Free to modify variables
 num leafRadius = 3 + randomInt(4);

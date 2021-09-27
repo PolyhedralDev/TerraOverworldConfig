@@ -1,0 +1,8 @@
+id "HAS_SUNLIGHT";
+
+num worldHeight = 255;
+num sampleDist = 4;
+
+for (num y = 0; y < worldHeight - originY(); y = y + sampleDist) {
+    if (check(0, y, 0) != "AIR") fail;
+}
