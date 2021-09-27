@@ -1,0 +1,17 @@
+id: EQ_RIVER
+type: BIOME
+abstract: true
+
+vars: &variables
+  base: 50
+  height: 4
+  density: 2
+
+noise:
+  dimensions: 3
+  type: EXPRESSION
+  expression: |
+    (
+      -y + base + (simplex(x, z)+1)/2 * height
+    ) * density
+  variables: *variables

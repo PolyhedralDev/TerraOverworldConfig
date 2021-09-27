@@ -11,7 +11,7 @@ noise:
   type: EXPRESSION
   variables: *variables
   expression: -y + base + (noise(x, z)+1)/2 * height
-  functions:
+  samplers:
     noise:
       dimensions: 2
       type: FBM

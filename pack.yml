@@ -33,16 +33,21 @@ noise:
 
 biomes:
   type: PIPELINE # SINGLE type not working so just using bare pipeline
-  resolution: 1
+  resolution: 2
   blend:
-    amplitude: 0
+    amplitude: 1
     noise:
-      type: CONSTANT
+      type: GAUSSIAN
   pipeline:
     source:
       type: NOISE
       noise:
         dimensions: 2
-        type: CONSTANT
-      biomes: MOUNTAINS
-    stages: []
+        type: CELLULAR
+        frequency: 0.08
+      biomes:
+        #- PLAINS: 1
+        #- FOREST: 1
+        - MOUNTAINS: 1
+    stages:
+      - << pipeline/stages/add_rivers.yml:stages

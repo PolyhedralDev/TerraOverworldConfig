@@ -1,0 +1,8 @@
+id: RIVER
+type: BIOME
+extends: [ EQ_RIVER, BASE ]
+vanilla: minecraft:river
+
+palette:
+  - "BLOCK:minecraft:sand": 255
+  - "BLOCK:minecraft:bedrock": 0

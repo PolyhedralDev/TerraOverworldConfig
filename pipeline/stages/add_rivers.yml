@@ -1,0 +1,41 @@
+variables: &variables
+  riverWidth: 2
+  riverFrequency: 0.5
+
+stages:
+  - type: REPLACE_LIST
+    default-from: USE_RIVER
+    default-to:
+      - SELF: 1
+      - RIVER: 1
+    to:
+      MOUNTAINS:
+        - SELF: 1
+        - MOUNTAINS_RIVER: 1
+    noise:
+      type: EXPRESSION
+      expression: if(noise(x/riverWidth, z/riverWidth)!=0,1,-1)
+      variables: *variables
+      samplers:
+        noise:
+          dimensions: 2
+          type: KERNEL # Edge detection
+          kernel: [
+            [ 0,  1, 0 ],
+            [ 1, -4, 1 ],
+            [ 0,  1, 0 ]
+          ]
+          function:
+            type: EXPRESSION
+            expression: noise(x*riverWidth*riverFrequency, z*riverWidth*riverFrequency)>0
+            variables: *variables
+            samplers:
+              noise:
+                dimensions: 2
+                type: DOMAIN_WARP
+                amplitude: 2
+                function:
+                  type: OPEN_SIMPLEX_2
+                warp:
+                  type: OPEN_SIMPLEX_2
+                  frequency: 0.14

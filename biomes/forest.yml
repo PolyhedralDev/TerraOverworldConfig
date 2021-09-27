@@ -6,7 +6,7 @@ color: 0x91bd59
 
 tags:
   - LAND
-  - ERODABLE
+  - USE_RIVER
 
 colors:
   grass: 0x91bd59

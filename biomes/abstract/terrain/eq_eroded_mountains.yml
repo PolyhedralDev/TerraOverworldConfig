@@ -17,7 +17,7 @@ noise:
     * erosion
     * max(0, min((y-erosionYMin)/(erosionYMid-erosionYMin),(y-erosionYMax)/(erosionYMid-erosionYMax)))
   variables: *variables
-  functions:
+  samplers:
     erosion:
       dimensions: 3
       type: OPEN_SIMPLEX_2
