@@ -1,0 +1,4 @@
+id "grass";
+
+if (!structure(0, 0, 0, "plantable", "NONE")) fail;
+block(0, 0, 0, "minecraft:grass", false);

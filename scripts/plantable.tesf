@@ -1,0 +1,10 @@
+id "plantable";
+
+str blockBelow = getBlock(0, -1, 0);
+if (blockBelow != "minecraft:grass_block" &&
+    blockBelow != "minecraft:podzol"      &&
+    blockBelow != "minecraft:dirt"        &&
+    blockBelow != "minecraft:coarse_dirt" &&
+    blockBelow != "minecraft:rooted_dirt") {
+    fail;
+}
