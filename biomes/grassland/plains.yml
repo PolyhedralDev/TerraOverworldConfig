@@ -25,4 +25,5 @@ palette:
 
 features:
   - SPARSE_TEMPERATE_TREES
+  - FLOWER_PATCHES
   - GRASS
