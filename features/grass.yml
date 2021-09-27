@@ -17,5 +17,5 @@ structures:
   distribution:
     type: WHITE_NOISE
   structures:
-    - grass: 3
-    - tall_grass: 1
+    - GRASS: 6
+    - TALL_GRASS: 1

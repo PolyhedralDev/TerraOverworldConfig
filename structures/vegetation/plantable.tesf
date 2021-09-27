@@ -1,4 +1,4 @@
-id "plantable";
+id "PLANTABLE";
 
 str blockBelow = getBlock(0, -1, 0);
 if (blockBelow != "minecraft:grass_block" &&

@@ -1,6 +1,6 @@
 id: PLAINS
 type: BIOME
-extends: BASE # In the future, this will extend BASE, LAND_CARVING, and EQ_GRASSLAND (Or some variation of that)
+extends: [ EQ_PLAIN, BASE ] # In the future, this will extend BASE, LAND_CARVING, and EQ_GRASSLAND (Or some variation of that)
 vanilla: minecraft:plains
 color: 0x91bd59
 
@@ -13,11 +13,6 @@ colors:
   foliage: 0x77ab2f
   water: 0x44aff5
   water-fog: 0x44aff5
-
-noise:
-  dimensions: 3
-  type: EXPRESSION
-  expression: -y + 64 + (simplex(x, z)+1)/2 * 20
 
 palette:
   - GRASS: 255

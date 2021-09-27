@@ -1,0 +1,8 @@
+id: EQ_PLAIN
+type: BIOME
+abstract: true
+
+noise:
+  dimensions: 3
+  type: EXPRESSION
+  expression: -y + 64 + (simplex(x, z)+1)/2 * 10

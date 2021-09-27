@@ -17,5 +17,5 @@ structures:
   distribution:
     type: WHITE_NOISE
   structures:
-    - poppy_patch: 1
-    - dandelion_patch: 1
+    - POPPY_PATCH: 1
+    - DANDELION_PATCH: 1

@@ -16,4 +16,4 @@ locator:
 structures:
   distribution:
     type: CONSTANT
-  structures: oak_tree_procedural
+  structures: OAK_TREE_PROCEDURAL

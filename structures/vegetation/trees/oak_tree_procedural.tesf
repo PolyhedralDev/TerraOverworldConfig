@@ -1,11 +1,11 @@
-id "oak_tree_procedural";
+id "OAK_TREE_PROCEDURAL";
 
 // If inside land, don't place
 if (check(0,0,0) == "LAND") {
     fail;
 }
 
-if (!structure(0, 0, 0, "plantable", "NONE")) fail;
+if (!structure(0, 0, 0, "PLANTABLE", "NONE")) fail;
 
 //Ensure direct sunlight
 //Samples every Nth block upwards from origin
