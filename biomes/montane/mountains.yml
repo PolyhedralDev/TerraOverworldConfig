@@ -2,17 +2,17 @@ id: MOUNTAINS
 type: BIOME
 extends: [ EQ_ERODED_MOUNTAINS, BASE ]
 vanilla: minecraft:mountains
-color: 0x91bd59
+color: 0x8ab689
 
 tags:
   - LAND
   - ERODABLE
 
 colors:
-  grass: 0x91bd59
-  foliage: 0x77ab2f
-  water: 0x44aff5
-  water-fog: 0x44aff5
+  grass: 0x8ab689
+  foliage: 0x6da36b
+  water: 0x007bf7
+  water-fog: 0x007bf7
 
 palette:
   - GRASS: 255
