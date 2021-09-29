@@ -16,5 +16,6 @@ for (num p = 0; p < count; p = p + 1) {
     y = y - 1;
     if (y < -4) fail;
   }
-  block(x, y, z, "minecraft:sunflower");
+  block(x, y+1, z, "minecraft:sunflower[half=upper]");
+  block(x, y, z, "minecraft:sunflower[half=lower]");
 }
