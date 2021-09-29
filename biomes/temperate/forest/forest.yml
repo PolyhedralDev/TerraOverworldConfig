@@ -2,17 +2,17 @@ id: FOREST
 type: BIOME
 extends: [ EQ_HILLS, BASE ]
 vanilla: minecraft:forest
-color: 0x91bd59
+color: 0x79c05a
 
 tags:
   - LAND
   - USE_RIVER
 
 colors:
-  grass: 0x91bd59
-  foliage: 0x77ab2f
-  water: 0x44aff5
-  water-fog: 0x44aff5
+  grass: 0x79c05a
+  foliage: 0x59ae30
+  water: 0x1e97f2
+  water-fog: 0x1e97f2
 
 palette:
   - GRASS: 255
