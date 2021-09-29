@@ -1,6 +1,6 @@
 id: PLAINS
 type: BIOME
-extends: [ EQ_PLAIN, BASE ] # In the future, this will extend BASE, LAND_CARVING, and EQ_GRASSLAND (Or some variation of that)
+extends: [ EQ_PLAIN, BASE ]
 vanilla: minecraft:plains
 color: 0x91bd59
 
