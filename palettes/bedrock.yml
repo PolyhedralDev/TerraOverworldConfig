@@ -1,0 +1,28 @@
+type: PALETTE
+id: BEDROCK
+
+layers:
+  - materials:
+      - "minecraft:deepslate": 1
+      - "minecraft:bedrock": 1
+    layers: 1
+    noise:
+      dimensions: 3
+      type: EXPRESSION
+      expression: |
+        if(y > max, -1,
+        if(y < min,  1,
+        -y + min + (offset(x,y,z)+1)/2*(max+1-min)
+        ))
+      variables:
+        min: 1
+        max: 4
+      samplers:
+        offset:
+          dimensions: 3
+          type: EXPRESSION
+          expression: noise(x, z) # Converting 2D to 3D to prevent pockets of air under bedrock
+          samplers:
+            noise:
+              dimensions: 2
+              type: WHITE_NOISE

@@ -47,7 +47,7 @@ biomes:
         frequency: 0.08
       biomes:
         #- PLAINS: 1
-        #- FOREST: 1
-        - MOUNTAINS: 1
+        - FOREST: 1
+        #- MOUNTAINS: 1
     stages:
       - << pipeline/stages/add_rivers.yml:stages

@@ -16,7 +16,9 @@ colors:
 
 palette:
   - GRASS: 255
-  - "BLOCK:minecraft:bedrock": 0
+  - DEEPSLATE: 30
+  - BEDROCK: 4
+  - BLOCK:minecraft:bedrock: 0
 
 features:
   - TEMPERATE_TREES

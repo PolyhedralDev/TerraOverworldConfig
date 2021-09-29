@@ -5,4 +5,6 @@ vanilla: minecraft:river
 
 palette:
   - "BLOCK:minecraft:sand": 255
-  - "BLOCK:minecraft:bedrock": 0
+  - DEEPSLATE: 30
+  - BEDROCK: 4
+  - BLOCK:minecraft:bedrock: 0
