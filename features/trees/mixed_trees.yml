@@ -1,0 +1,24 @@
+id: MIXED_TREES
+type: FEATURE
+
+distributor:
+  type: NOISE
+  distribution:
+    type: WHITE_NOISE
+  threshold: 0.97
+
+locator:
+  type: SURFACE
+  range:
+    min: 60
+    max: 255
+
+structures:
+  distribution:
+    type: CELLULAR
+    return: CellValue
+    frequency: 0.03
+  structures:
+    - OAK_TREE_PROCEDURAL: 8
+    - BIRCH_TREE_PROCEDURAL: 2
+    - SPRUCE_TREE_PROCEDURAL: 1
