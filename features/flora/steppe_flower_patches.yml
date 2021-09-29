@@ -1,0 +1,23 @@
+id: STEPPE_FLOWER_PATCHES
+type: FEATURE
+
+distributor:
+  type: NOISE
+  distribution:
+    type: WHITE_NOISE
+  threshold: 0.999
+
+locator:
+  type: SURFACE
+  range:
+    min: 60
+    max: 255
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures:
+    - POPPY_PATCH: 6
+    - OXEYE_DAISY_PATCH: 2
+    - CORNFLOWER_PATCH: 2
+    - ALLIUM_PATCH: 2

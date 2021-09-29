@@ -21,7 +21,5 @@ palette:
   - BLOCK:minecraft:bedrock: 0
 
 features:
-  # Steppe exclusive flowers. Allium, Oxeye daisies.
-  # Shrubs (Spruce & Acacia?)
-  - FLOWER_PATCHES
+  - STEPPE_FLOWER_PATCHES
   - GRASS
