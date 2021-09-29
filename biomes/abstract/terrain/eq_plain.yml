@@ -2,7 +2,12 @@ id: EQ_PLAIN
 type: BIOME
 abstract: true
 
+vars: &variables
+  base: 64
+  height: 10
+
 noise:
-  dimensions: 3
   type: EXPRESSION
-  expression: -y + 64 + (simplex(x, z)+1)/2 * 10
+  dimensions: 3
+  variables: *variables
+  expression: -y + base + (simplex(x, z)+1)/2 * height
