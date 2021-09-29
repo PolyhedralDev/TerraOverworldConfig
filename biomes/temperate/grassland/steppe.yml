@@ -1,0 +1,27 @@
+id: STEPPE
+type: BIOME
+extends: [ EQ_PLAIN, BASE ]
+vanilla: minecraft:plains
+color: 0x9db55b
+
+tags:
+  - LAND
+  - USE_RIVER
+
+colors:
+  grass: 0x9db55b
+  foliage: 0xa1ab2f
+  water: 0x44aff5
+  water-fog: 0x44aff5
+
+palette:
+  - GRASS: 255
+  - DEEPSLATE: 30
+  - BEDROCK: 4
+  - BLOCK:minecraft:bedrock: 0
+
+features:
+  # Steppe exclusive flowers. Allium, Oxeye daisies.
+  # Shrubs (Spruce & Acacia?)
+  - FLOWER_PATCHES
+  - GRASS
