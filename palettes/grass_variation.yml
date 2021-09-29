@@ -1,0 +1,14 @@
+id: GRASS_VARIATION
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:grass_block: 24
+      - minecraft:coarse_dirt: 6
+    layers: 1
+  - materials:
+      - minecraft:dirt: 2
+    layers: 1
+  - materials:
+      - minecraft:stone: 1
+    layers: 1
