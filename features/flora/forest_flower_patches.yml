@@ -1,0 +1,25 @@
+id: FLOWER_PATCHES
+type: FEATURE
+
+distributor:
+  type: NOISE
+  distribution:
+    type: WHITE_NOISE
+  threshold: 0.999
+
+locator:
+  type: SURFACE
+  range:
+    min: 60
+    max: 255
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures:
+    - POPPY_PATCH: 6
+    - DANDELION_PATCH: 6
+    - ROSE_BUSH: 3
+    - PEONY: 2
+    - LILAC: 1
+    - LILY_OF_THE_VALLEY: 1

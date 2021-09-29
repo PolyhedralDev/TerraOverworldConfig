@@ -1,0 +1,5 @@
+id "ROSE_BUSH";
+
+if (!structure(0, 0, 0, "PLANTABLE", "NONE")) fail;
+block(0, 1, 0, "minecraft:rose_bush[half=upper]", false);
+block(0, 0, 0, "minecraft:rose_bush[half=lower]", false);
