@@ -1,4 +1,0 @@
-id: MOUNTAINS_RIVER
-type: BIOME
-extends: [ EQ_ERODED_MOUNTAINS_RIVER, MOUNTAINS ]
-vanilla: minecraft:mountains

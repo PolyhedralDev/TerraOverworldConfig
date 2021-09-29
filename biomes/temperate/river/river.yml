@@ -8,3 +8,9 @@ palette:
   - DEEPSLATE: 30
   - BEDROCK: 4
   - BLOCK:minecraft:bedrock: 0
+
+colors:
+  grass: 0x8eb971
+  foliage: 0x71a74d
+  water: 0x0084ff
+  water-fog: 0x0084ff
