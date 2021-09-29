@@ -1,4 +1,4 @@
-id: TEMPERATE_TREES
+id: BIRCH_TREES
 type: FEATURE
 
 distributor:
@@ -19,6 +19,4 @@ structures:
     return: CellValue
     frequency: 0.03
   structures:
-    - OAK_TREE_PROCEDURAL: 8
-    - BIRCH_TREE_PROCEDURAL: 2
-    - SPRUCE_TREE_PROCEDURAL: 1
+    - BIRCH_TREE_PROCEDURAL: 1
