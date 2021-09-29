@@ -1,0 +1,26 @@
+id: BIRCH_FOREST
+type: BIOME
+extends: [ EQ_HILLS, BASE ]
+vanilla: minecraft:birch_forest
+color: 0x88bb67
+
+tags:
+  - LAND
+  - USE_RIVER
+
+colors:
+  grass: 0x88bb67
+  foliage: 0x6ba941
+  water: 0x0677ce
+  water-fog: 0x0677ce
+
+palette:
+  - GRASS: 255
+  - DEEPSLATE: 30
+  - BEDROCK: 4
+  - BLOCK:minecraft:bedrock: 0
+
+features:
+  - BIRCH_TREES
+  - FLOWER_PATCHES
+  - GRASS
