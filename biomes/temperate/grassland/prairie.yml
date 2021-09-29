@@ -1,0 +1,25 @@
+id: PRAIRIE
+type: BIOME
+extends: [ EQ_PLAIN, BASE ]
+vanilla: minecraft:plains
+color: 0xc9f75d
+
+tags:
+  - LAND
+  - USE_RIVER
+
+colors:
+  grass: 0xc9f75d
+  foliage: 0xa9db69
+  water: 0x44aff5
+  water-fog: 0x44aff5
+
+palette:
+  - GRASS: 255
+  - DEEPSLATE: 30
+  - BEDROCK: 4
+  - BLOCK:minecraft:bedrock: 0
+
+features:
+  - PRAIRIE_FLOWER_PATCHES
+  - TALL_GRASS
