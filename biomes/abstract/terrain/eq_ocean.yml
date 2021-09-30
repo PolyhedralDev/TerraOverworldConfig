@@ -1,0 +1,13 @@
+id: EQ_OCEAN
+type: BIOME
+abstract: true
+
+vars: &variables
+  base: 40
+  height: 20
+
+noise:
+  dimensions: 3
+  type: EXPRESSION
+  variables: *variables
+  equation: -y + base + |simplex(x/2, z/2)| * height
