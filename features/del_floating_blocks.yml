@@ -1,0 +1,25 @@
+id: DEL_FLOATING_BLOCKS
+type: FEATURE
+
+distributor:
+  type: "YES"
+
+locator:
+  type: PATTERN
+  range:
+    min: 64
+    max: 150
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH_AIR
+        offset: 1
+      - type: MATCH_SOLID
+        offset: 0
+      - type: MATCH_AIR
+        offset: -1
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: DEL_FLOATING_BLOCKS

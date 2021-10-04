@@ -1,0 +1,10 @@
+id "DEL_FLOATING_BLOCKS";
+
+if (
+    check(1, 0, 1) == "AIR" &&
+    check(-1, 0, 1) == "AIR" &&
+    check(1, 0, -1) == "AIR" &&
+    check(-1, 0, -1) == "AIR"
+    ) {
+    block(0, 0, 0, "minecraft:air");
+}
