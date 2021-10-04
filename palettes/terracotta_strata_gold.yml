@@ -1,0 +1,22 @@
+id: TERRACOTTA_STRATA_GOLD
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:yellow_terracotta: 6
+      - minecraft:yellow_concrete: 1
+      - minecraft:smooth_sandstone: 1
+      - minecraft:yellow_terracotta: 1
+      - minecraft:yellow_concrete: 1
+      - minecraft:smooth_sandstone: 6
+    layers: 1
+
+noise:
+  dimensions: 3
+  type: EXPRESSION
+  expression: noise(x/10, y, z/10)
+  samplers:
+    noise:
+      dimensions: 3
+      type: OPEN_SIMPLEX_2
+      frequency: 0.1

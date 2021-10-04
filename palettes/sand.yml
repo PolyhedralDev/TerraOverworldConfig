@@ -1,0 +1,13 @@
+id: SAND
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:sand: 1
+    layers: 2
+  - materials:
+      - minecraft:sandstone: 1
+    layers: 4
+  - materials:
+      - minecraft:stone: 1
+    layers: 1
