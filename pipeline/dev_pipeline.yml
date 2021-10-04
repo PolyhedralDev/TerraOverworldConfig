@@ -1,0 +1,23 @@
+# Playground biome distribution for developing & testing
+
+test-biome: &testBiome DESERT_SPIKES
+
+biomes:
+  type: PIPELINE # Using bare pipeline for now because SINGLE hasn't been implemented
+  resolution: 1
+  initial-size: 256
+  blend:
+    amplitude: 0
+    noise:
+      type: CONSTANT
+  pipeline:
+    source:
+      type: NOISE
+      noise:
+        dimensions: 2
+        type: CELLULAR
+        return: CellValue
+        frequency: 0.01
+      biomes:
+        - *testBiome: 1
+    stages: []

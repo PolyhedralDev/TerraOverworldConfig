@@ -19,6 +19,8 @@ addons:
   - language-yaml
   - generation-stage-feature
 
+biomes: $pipeline/dev_pipeline.yml:biomes
+
 stages:
   - FEATURE
 
@@ -46,25 +48,3 @@ noise:
     function:
       type: OPEN_SIMPLEX_2
       frequency: 0.0075
-
-biomes:
-  type: PIPELINE # SINGLE type not working so just using bare pipeline
-  resolution: 2
-  initial-size: 50
-  blend:
-    amplitude: 1
-    noise:
-      type: GAUSSIAN
-  pipeline:
-    source:
-      type: NOISE
-      noise:
-        dimensions: 2
-        type: CELLULAR
-        frequency: 0.08
-      biomes:
-        #- PLAINS: 1
-        - FOREST: 1
-        #- MOUNTAINS: 1
-    stages:
-      - << pipeline/stages/add_rivers.yml:stages

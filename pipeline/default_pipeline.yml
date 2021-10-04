@@ -1,0 +1,25 @@
+biomes:
+  type: PIPELINE
+  resolution: 2
+  initial-size: 50
+  blend:
+    amplitude: 1
+    noise:
+      type: GAUSSIAN
+  pipeline:
+    source:
+      type: NOISE
+      noise:
+        dimensions: 2
+        type: CELLULAR
+        return: CellValue
+        frequency: 0.01
+      biomes:
+        - PLAINS: 1
+        - PRAIRIE: 1
+        - STEPPE: 1
+        - BIRCH_FOREST: 1
+        - FOREST: 1
+        - ARID_SPIKES: 1
+    stages:
+      - << pipeline/stages/add_rivers.yml:stages
