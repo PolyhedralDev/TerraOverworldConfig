@@ -1,0 +1,13 @@
+id: DESERT
+type: BIOME
+extends: [ EQ_DUNES, BASE ]
+vanilla: minecraft:desert
+
+colors:
+  fog: 0xfff17c
+
+palette:
+  - SAND: 255
+  - DEEPSLATE: 30
+  - BEDROCK: 4
+  - BLOCK:minecraft:bedrock: 0
