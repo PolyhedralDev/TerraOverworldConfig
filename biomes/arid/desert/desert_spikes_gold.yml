@@ -1,0 +1,30 @@
+id: DESERT_SPIKES_GOLD
+type: BIOME
+extends: DESERT_SPIKES
+vanilla: minecraft:desert
+
+slant:
+  - threshold: 3
+    palette:
+      - BLOCK:minecraft:smooth_sandstone: 255
+      - DEEPSLATE: 30
+      - BEDROCK: 4
+      - BLOCK:minecraft:bedrock: 0
+  - threshold: 4
+    palette:
+      - BLOCK:minecraft:white_terracotta: 255
+      - DEEPSLATE: 30
+      - BEDROCK: 4
+      - BLOCK:minecraft:bedrock: 0
+  - threshold: 5
+    palette:
+      - BLOCK:minecraft:light_gray_terracotta: 255
+      - DEEPSLATE: 30
+      - BEDROCK: 4
+      - BLOCK:minecraft:bedrock: 0
+  - threshold: 6
+    palette:
+      - TERRACOTTA_STRATA_GOLD: 255
+      - DEEPSLATE: 30
+      - BEDROCK: 4
+      - BLOCK:minecraft:bedrock: 0
