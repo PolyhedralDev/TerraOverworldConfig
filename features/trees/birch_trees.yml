@@ -18,5 +18,5 @@ structures:
     type: CELLULAR
     return: CellValue
     frequency: 0.03
-  structures:
-    - BIRCH_TREE_PROCEDURAL: 1
+  structures: BIRCH_TREE_PROCEDURAL
+  

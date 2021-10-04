@@ -50,6 +50,7 @@ noise:
 biomes:
   type: PIPELINE # SINGLE type not working so just using bare pipeline
   resolution: 2
+  initial-size: 50
   blend:
     amplitude: 1
     noise:

@@ -21,6 +21,6 @@ palette:
   - BLOCK:minecraft:bedrock: 0
 
 features:
-  - SPARSE_TEMPERATE_TREES
+  - SPARSE_OAK_TREES
   - FLOWER_PATCHES
   - GRASS
