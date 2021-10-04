@@ -22,6 +22,22 @@ addons:
 stages:
   - FEATURE
 
+functions:
+  maskSmooth: # Ramp function from 0 to value, typically used to mask a noise function by another
+    arguments:
+      - v  # Value
+      - lb # When mask <= lb, returns 0
+      - ub # When mask >= ub, returns v
+           # Otherwise, output is interpolated between 0 and v using a hermite curve
+      - m  # Mask, typically a noise function
+    expression: |
+      if(lb<ub,
+        if(m<lb,0,if(m>ub,v,v*(3*((m-lb)/(ub-lb))^2-2*((m-lb)/(ub-lb))^3))),
+        if(m<ub,v,if(m>lb,0,v*(3*((m-lb)/(ub-lb))^2-2*((m-lb)/(ub-lb))^3)))
+      )
+  square:
+    arguments: [x]
+    expression: x*x
 noise:
   simplex:
     dimensions: 2
