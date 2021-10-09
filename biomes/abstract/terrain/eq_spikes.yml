@@ -41,8 +41,8 @@ noise:
         groundHeight * (ground(x, z)+1)/2
         // Spikes
         + spikes(
-          x+y*spikeSlantStrength*direction(x, z),
-          z+y*spikeSlantStrength*direction(x, z+1000)
+          x+y*spikeSlantStrength*spikeDirection(x, z),
+          z+y*spikeSlantStrength*spikeDirection(x, z+1000)
         ),
         babySpikeHeight * (babySpikes(x, z)+1)/2
       )
@@ -68,7 +68,7 @@ noise:
         type: CELLULAR
         frequency: 0.09
         salt: 1
-    direction: # Determines the direction large spikes slant towards
+    spikeDirection: # Determines the direction large spikes slant towards
       dimensions: 2
       type: OPEN_SIMPLEX_2
       frequency: 0.0005

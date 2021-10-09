@@ -19,7 +19,7 @@ addons:
   - language-yaml
   - generation-stage-feature
 
-biomes: $pipeline/dev_pipeline.yml:biomes
+biomes: $pipeline/default_pipeline.yml:biomes
 
 stages:
   - FEATURE
@@ -34,8 +34,8 @@ functions:
       - m  # Mask, typically a noise function
     expression: |
       if(lb<ub,
-        if(m<lb,0,if(m>ub,v,v*(3*((m-lb)/(ub-lb))^2-2*((m-lb)/(ub-lb))^3))),
-        if(m<ub,v,if(m>lb,0,v*(3*((m-lb)/(ub-lb))^2-2*((m-lb)/(ub-lb))^3)))
+        if(m<=lb,0,if(m>=ub,v,v*(3*((m-lb)/(ub-lb))^2-2*((m-lb)/(ub-lb))^3))),
+        if(m>=lb,0,if(m<=ub,v,v*(3*((m-lb)/(ub-lb))^2-2*((m-lb)/(ub-lb))^3)))
       )
   square:
     arguments: [x]

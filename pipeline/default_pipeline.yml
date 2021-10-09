@@ -11,9 +11,13 @@ biomes:
       type: NOISE
       noise:
         dimensions: 2
-        type: CELLULAR
-        return: CellValue
-        frequency: 0.01
+        type: LINEAR
+        min: -0.8
+        max: 0.8
+        function:
+          type: CELLULAR
+          return: CellValue
+          frequency: 0.03
       biomes:
         - PLAINS: 1
         - PRAIRIE: 1
@@ -21,5 +25,8 @@ biomes:
         - BIRCH_FOREST: 1
         - FOREST: 1
         - ARID_SPIKES: 1
+        - DESERT: 1
+        - DESERT_SPIKES: 1
+        - DESERT_SPIKES_GOLD: 1
     stages:
       - << pipeline/stages/add_rivers.yml:stages

@@ -1,6 +1,6 @@
 variables: &variables
-  riverWidth: 2
-  riverFrequency: 0.5
+  riverWidth: 3
+  riverFrequency: 0.1
 
 stages:
   - type: REPLACE_LIST

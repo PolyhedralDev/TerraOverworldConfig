@@ -4,8 +4,8 @@ test-biome: &testBiome DESERT_SPIKES
 
 biomes:
   type: PIPELINE # Using bare pipeline for now because SINGLE hasn't been implemented
-  resolution: 1
-  initial-size: 256
+  resolution: 20
+  initial-size: 150
   blend:
     amplitude: 0
     noise:
@@ -15,9 +15,7 @@ biomes:
       type: NOISE
       noise:
         dimensions: 2
-        type: CELLULAR
-        return: CellValue
-        frequency: 0.01
+        type: CONSTANT
       biomes:
         - *testBiome: 1
     stages: []
