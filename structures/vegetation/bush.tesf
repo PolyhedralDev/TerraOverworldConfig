@@ -1,23 +1,23 @@
-id "BUSH";
-if (check(0,0,0) != "AIR") fail;
-if (check(0,-1,0) != "LAND") fail;
+id "OAK_BUSH";
+
 if (!structure(0, 0, 0, "PLANTABLE", "NONE")) fail;
+
 num randPrecision = 100;
 num radius = randomInt(randPrecision)/randPrecision*3 + 1;
-for(num x = -radius; x <= radius; x = x + 1) {
-    for(num y = -radius; y <= radius; y = y + 1) {
-        for(num z = -radius; z <= radius; z = z + 1) {
+num radiusCeil = ceil(radius);
+num radiusSquared = pow(radius, 2);
+
+block(0, 0, 0, "minecraft:oak_log");
+
+for(num x = -radiusCeil; x <= radiusCeil; x = x + 1) {
+    for(num y = 0; y <= radiusCeil; y = y + 1) {
+        for(num z = -radiusCeil; z <= radiusCeil; z = z + 1) {
             num dist = (pow(x,2) + pow(y*3,2) + pow(z,2));
-            if (dist < pow(radius,2)) {
-                block(x, y, z, "minecraft:oak_leaves[persistent=true]", false);
+            if (dist < radiusSquared && (dist < 1.5 || randomInt(2) == 0)) {
+                block(x, y, z, "minecraft:oak_leaves[distance=1,persistent=false]", false);
             }
         }
     }
 }
-block( 0,  0,  0, "minecraft:oak_log");
-// Cap top of bush with leaves
-block( 0,  1,  0, "minecraft:oak_leaves[persistent=true]", false);
-block( 1,  1,  0, "minecraft:oak_leaves[persistent=true]", false);
-block(-1,  1,  0, "minecraft:oak_leaves[persistent=true]", false);
-block( 0,  1,  1, "minecraft:oak_leaves[persistent=true]", false);
-block( 0,  1, -1, "minecraft:oak_leaves[persistent=true]", false);
+
+block(0, 1, 0, "minecraft:oak_leaves[distance=1,persistent=false]", false);
