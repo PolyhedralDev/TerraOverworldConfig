@@ -9,6 +9,8 @@ vars: &variables
   duneHeight: 15 # Block height of dunes
   duneSpacing: 10 # Higher number = more spacing between dunes
   duneFrequency: 0.5 # Overall dune frequency
+  duneRotationRange: pi/3 # How much dune cells are randomly rotated, 0 = anisotrophic, pi = isotrophic
+  
   
 noise:
   dimensions: 3
@@ -51,8 +53,8 @@ elevation:
             variables: *variables
             expression: |
               -mask(x, z) * (-|sin((
-                 x*sin(rotation(x,z)*pi)
-                +z*cos(rotation(x,z)*pi))/duneSpacing)|+1)
+                 x*sin(rotation(x,z)*duneRotationRange)
+                +z*cos(rotation(x,z)*duneRotationRange))/duneSpacing)|+1)
             samplers:
               height: &cell
                 dimensions: 2
