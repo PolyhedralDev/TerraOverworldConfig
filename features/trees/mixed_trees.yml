@@ -5,7 +5,7 @@ distributor:
   type: NOISE
   distribution:
     type: WHITE_NOISE
-  threshold: 0.97
+  threshold: 0.98
 
 locator:
   type: SURFACE
@@ -17,8 +17,9 @@ structures:
   distribution:
     type: CELLULAR
     return: CellValue
-    frequency: 0.03
+    frequency: 0.02
   structures:
+    - BLANK: 15
     - OAK_TREE_PROCEDURAL: 8
     - BIRCH_TREE_PROCEDURAL: 2
     - SPRUCE_TREE_PROCEDURAL: 1
