@@ -11,3 +11,6 @@ palette:
   - DEEPSLATE: 30
   - BEDROCK: 4
   - BLOCK:minecraft:bedrock: 0
+
+#features:
+#  - SAND_SLABS

@@ -1,0 +1,6 @@
+id: RED_SAND_SLABS
+type: FEATURE
+extends: SLABS
+
+structures:
+  structures: RED_SAND_SLABS

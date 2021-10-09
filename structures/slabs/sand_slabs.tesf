@@ -1,0 +1,75 @@
+id "SAND_SLABS";
+
+str blockBelow = getBlock(0, -1, 0);
+if (blockBelow != "minecraft:sand" &&
+    blockBelow != "minecraft:sandstone") {
+    fail;
+}
+
+if (check(0, -0.5, 0) == "LAND") {
+
+    bool NW = false;
+    if (check(-0.25, -0.05, -0.25) == "LAND") NW = true;
+    bool NE = false;
+    if (check(0.25, -0.05, -0.25) == "LAND") NE = true;
+    bool SE = false;
+    if (check(0.25, -0.05, 0.25) == "LAND") SE = true;
+    bool SW = false;
+    if (check(-0.25, -0.05, 0.25) == "LAND") SW = true;
+
+    if (SE && SW && NE && NW) block(0, 0, 0, "minecraft:redstone_block");
+
+    if (NW && !NE && !SW && !SE) {
+        block(0, 0, 0, "minecraft:sandstone_stairs[half=bottom,shape=outer_left,facing=north]");
+        // #.
+        // ..
+    } else if (!NW && NE && !SW && !SE) {
+        block(0, 0, 0, "minecraft:sandstone_stairs[half=bottom,shape=outer_left,facing=east]");
+        // .#
+        // ..
+    } else if (!NW && !NE && !SW && SE) {
+        block(0, 0, 0, "minecraft:sandstone_stairs[half=bottom,shape=outer_left,facing=south]");
+        // ..
+        // .#
+    } else if (!NW && !NE && SW && !SE) {
+        block(0, 0, 0, "minecraft:sandstone_stairs[half=bottom,shape=outer_left,facing=west]");
+        // ..
+        // #.
+    } else if (NW && NE && !SW && !SE) {
+        block(0, 0, 0, "minecraft:sandstone_stairs[half=bottom,shape=straight,facing=north]");
+        // ##
+        // ..
+    } else if (!NW && NE && !SW && SE) {
+        block(0, 0, 0, "minecraft:sandstone_stairs[half=bottom,shape=straight,facing=east]");
+        // .#
+        // .#
+    } else if (!NW && !NE && SW && SE) {
+        block(0, 0, 0, "minecraft:sandstone_stairs[half=bottom,shape=straight,facing=south]");
+        // ..
+        // ##
+    } else if (NW && !NE && SW && !SE) {
+        block(0, 0, 0, "minecraft:sandstone_stairs[half=bottom,shape=straight,facing=west]");
+        // #.
+        // #.
+    } else if (NW && NE && SW && !SE) {
+        block(0, 0, 0, "minecraft:sandstone_stairs[half=bottom,shape=inner_left,facing=north]");
+        // ##
+        // #.
+    } else if (NW && NE && !SW && SE) {
+        block(0, 0, 0, "minecraft:sandstone_stairs[half=bottom,shape=inner_left,facing=east]");
+        // ##
+        // .#
+    } else if (!NW && NE && SW && SE) {
+        block(0, 0, 0, "minecraft:sandstone_stairs[half=bottom,shape=inner_left,facing=south]");
+        // .#
+        // ##
+    } else if (NW && !NE && SW && SE) {
+        block(0, 0, 0, "minecraft:sandstone_stairs[half=bottom,shape=inner_left,facing=west]");
+        // #.
+        // ##
+    } else {
+        block(0, 0, 0, "minecraft:sandstone_slab");
+        // ..
+        // ..
+    }
+}
