@@ -1,0 +1,54 @@
+id: LARGE_LEAF_VINES
+type: FEATURE
+
+# Adds 'webs' of leaf blocks to surface blocks
+
+distributor:
+  type: "YES"
+
+locator:
+  type: AND
+  locators: # Could be significantly optimized with an adjacency locator
+    - type: PATTERN
+      range:
+        min: 90
+        max: 180
+      pattern:
+        type: MATCH_AIR
+        offset: 0
+    - type: NOISE_3D
+      sampler:
+        dimensions: 3
+        type: EXPRESSION
+        expression: if(|mask(x, y, z)| > maskThreshold, if(noise(x, y, z) > noiseThreshold, 1, -1), -1)
+        variables:
+          maskThreshold: 0.5
+          noiseThreshold: 0.5
+        samplers:
+          noise:
+            dimensions: 3
+            type: DOMAIN_WARP
+            amplitude: 10
+            warp:
+              type: FBM
+              octaves: 2
+              function:
+                type: OPEN_SIMPLEX_2
+            function:
+              type: LINEAR
+              min: -1
+              max: 0
+              function:
+                type: CELLULAR
+                return: Distance2Div
+                frequency: 0.06
+          mask:
+            dimensions: 3
+            type: OPEN_SIMPLEX_2
+            frequency: 0.01
+            seed: 1
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: LARGE_LEAF_VINES

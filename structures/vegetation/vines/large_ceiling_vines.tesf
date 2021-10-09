@@ -1,0 +1,36 @@
+id "LARGE_CEILING_VINES";
+
+// Generate a column of leaves down from ceiling block
+num leafDepth = 2 + randomInt(2); // Length of center column of leaves
+for (num i = 0; i < leafDepth; i = i + 1) block(0, -i, 0, "minecraft:oak_leaves[persistent=true]", false);
+
+// Add shorter columns of leaves directly adjacent if adjacent ceiling blocks are present
+if (check(0, 0, -1) == "LAND") {
+    num leafDepthNorth = randomInt(floor(leafDepth));
+    for (num i = 0; i < leafDepthNorth; i = i + 1) block(0, -i, -1, "minecraft:oak_leaves[persistent=true]", false);
+}
+if (check(0, 0, 1) == "LAND") {
+    num leafDepthSouth = randomInt(floor(leafDepth));
+    for (num i = 0; i < leafDepthSouth; i = i + 1) block(0, -i, 1, "minecraft:oak_leaves[persistent=true]", false);
+}
+if (check(1, 0, 0) == "LAND") {
+    num leafDepthEast = randomInt(floor(leafDepth));
+    for (num i = 0; i < leafDepthEast; i = i + 1) block(1, -i, 0, "minecraft:oak_leaves[persistent=true]", false);
+}
+if (check(-1, 0, 0) == "LAND") {
+    num leafDepthWest = randomInt(floor(leafDepth));
+    for (num i = 0; i < leafDepthWest; i = i + 1) block(-1, -i, 0, "minecraft:oak_leaves[persistent=true]", false);
+}
+
+// Finally add vines of random lengths coming from center column
+num vineDepthNorth = randomInt(10);
+for (num i = leafDepth; i < leafDepth + vineDepthNorth; i = i + 1) block(0, -i, -1, "minecraft:vine[south=true]", false);
+num vineDepthSouth = randomInt(10);
+for (num i = leafDepth; i < leafDepth + vineDepthSouth; i = i + 1) block(0, -i, 1, "minecraft:vine[north=true]", false);
+num vineDepthEast = randomInt(10);
+for (num i = leafDepth; i < leafDepth + vineDepthEast; i = i + 1) block(1, -i, 0, "minecraft:vine[west=true]", false);
+num vineDepthWest = randomInt(10);
+for (num i = leafDepth; i < leafDepth + vineDepthWest; i = i + 1) block(-1, -i, 0, "minecraft:vine[east=true]", false);
+
+
+

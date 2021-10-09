@@ -1,0 +1,28 @@
+id: LARGE_CEILING_VINES
+type: FEATURE
+
+# Adds leaf + vine segments that generate down from ceilings
+
+distributor:
+  type: NOISE
+  distribution:
+    type: WHITE_NOISE
+  threshold: 0.95
+
+locator:
+  type: PATTERN
+  range:
+    min: 90
+    max: 180
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH_AIR
+        offset: 0
+      - type: MATCH_SOLID
+        offset: 1
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: LARGE_CEILING_VINES

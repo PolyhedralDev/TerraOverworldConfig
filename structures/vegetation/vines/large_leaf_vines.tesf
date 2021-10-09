@@ -1,0 +1,12 @@
+id "LARGE_LEAF_VINES";
+
+// Place leaf block if there is an adjacent solid block
+if (check(0, 0, 0) == "AIR" && (
+    check(1, 0, 0) == "LAND" ||
+    check(-1, 0, 0) == "LAND" ||
+    check(0, 0, 1) == "LAND" ||
+    check(0, 0, -1) == "LAND" ||
+    check(0, 1, 0) == "LAND" ||
+    check(0, -1, 0) == "LAND")
+) block(0, 0, 0, "minecraft:jungle_leaves[persistent=true]");
+else fail;
