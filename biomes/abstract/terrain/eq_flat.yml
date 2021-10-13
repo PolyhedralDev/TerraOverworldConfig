@@ -1,0 +1,12 @@
+id: EQ_FLAT
+type: BIOME
+abstract: true
+
+vars: &variables
+  base: 64
+
+noise:
+  type: EXPRESSION
+  dimensions: 3
+  variables: *variables
+  expression: -y + base
