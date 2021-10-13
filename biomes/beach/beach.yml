@@ -1,0 +1,21 @@
+id: BEACH
+type: BIOME
+extends: [ EQ_FLAT, BASE, CARVING_LAND ]
+vanilla: minecraft:beach
+color: 0xe6e7a8
+
+tags:
+  - BEACH
+  - USE_RIVER
+
+colors:
+  grass: 0x91bd59
+  foliage: 0x77ab2f
+  water: 0x44aff5
+  water-fog: 0x44aff5
+
+palette:
+  - SANDY_BEACH: 255
+  - DEEPSLATE: 30
+  - BEDROCK: 4
+  - BLOCK:minecraft:bedrock: 0
