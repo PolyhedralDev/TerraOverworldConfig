@@ -1,6 +1,6 @@
 id: MOUNTAINS
 type: BIOME
-extends: [ EQ_ERODED_MOUNTAINS, BASE ]
+extends: [ EQ_ERODED_MOUNTAINS, BASE, CARVING_LAND ]
 vanilla: minecraft:mountains
 color: 0x8ab689
 

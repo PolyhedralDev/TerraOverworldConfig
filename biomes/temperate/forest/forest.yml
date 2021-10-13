@@ -1,6 +1,6 @@
 id: FOREST
 type: BIOME
-extends: [ EQ_HILLS, BASE ]
+extends: [ EQ_HILLS, BASE, CARVING_LAND ]
 vanilla: minecraft:forest
 color: 0x79c05a
 

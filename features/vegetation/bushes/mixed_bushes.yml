@@ -1,0 +1,22 @@
+id: MIXED_BUSHES
+type: FEATURE
+
+distributor:
+  type: NOISE
+  distribution:
+    type: WHITE_NOISE
+  threshold: 0.98
+
+locator:
+  type: SURFACE
+  range:
+    min: 60
+    max: 255
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures:
+    - BLANK: 10
+    - OAK_BUSH: 8
+    - SPRUCE_BUSH: 5

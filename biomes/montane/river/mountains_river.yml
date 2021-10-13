@@ -1,6 +1,6 @@
 id: MOUNTAINS_RIVER
 type: BIOME
-extends: [ EQ_ERODED_MOUNTAINS_RIVER, MOUNTAINS ]
+extends: [ EQ_ERODED_MOUNTAINS_RIVER, MOUNTAINS, CARVING_LAND ]
 vanilla: minecraft:mountains
 
 colors:
