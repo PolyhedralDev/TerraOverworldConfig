@@ -1,0 +1,23 @@
+id: PALM_BEACH
+type: BIOME
+extends: [ EQ_FLAT, BASE, CARVING_LAND ]
+vanilla: minecraft:beach
+color: 0x73c441
+
+tags:
+  - BEACH
+  - USE_RIVER
+
+colors:
+  grass: 0x88bd59
+  foliage: 0x73c441
+  water: 0x44aff5
+  water-fog: 0x44aff5
+
+palette:
+  - SANDY_BEACH: 255
+  - DEEPSLATE: 30
+  - BEDROCK: 4
+  - BLOCK:minecraft:bedrock: 0
+
+# TODO: ADD PALM TREES
