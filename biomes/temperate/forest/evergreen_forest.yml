@@ -1,0 +1,26 @@
+id: EVERGREEN_FOREST
+type: BIOME
+extends: [ EQ_HILLS, BASE, CARVING_LAND ]
+vanilla: minecraft:taiga # This is only so foxes will spawn
+color: 0x80c465
+
+tags:
+  - LAND
+  - USE_RIVER
+
+colors:
+  grass: 0x80c465
+  foliage: 0x59a940
+  water: 0x0677ce
+  water-fog: 0x0677ce
+
+palette:
+  - MOSSY_GRASS: 255
+  - DEEPSLATE: 30
+  - BEDROCK: 4
+  - BLOCK:minecraft:bedrock: 0
+
+features:
+  - EVERGREEN_TREES
+  - FOREST_FLOWER_PATCHES
+  - GRASS

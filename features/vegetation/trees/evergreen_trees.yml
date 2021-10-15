@@ -1,0 +1,24 @@
+id: EVERGREEN_TREES
+type: FEATURE
+
+distributor:
+  type: NOISE
+  distribution:
+    type: WHITE_NOISE
+  threshold: 0.98
+
+locator:
+  type: SURFACE
+  range:
+    min: 60
+    max: 255
+
+structures:
+  distribution:
+    type: CELLULAR
+    return: CellValue
+    frequency: 0.02
+  structures:
+    - BLANK: 15
+    - OAK_TREE_PROCEDURAL: 7
+    - SPRUCE_TREE_PROCEDURAL: 12
