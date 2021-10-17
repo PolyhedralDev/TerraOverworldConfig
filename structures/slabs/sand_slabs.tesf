@@ -1,5 +1,3 @@
-id "SAND_SLABS";
-
 str blockBelow = getBlock(0, -1, 0);
 if (blockBelow != "minecraft:sand" &&
     blockBelow != "minecraft:sandstone") {

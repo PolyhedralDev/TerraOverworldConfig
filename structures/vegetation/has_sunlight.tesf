@@ -1,5 +1,3 @@
-id "HAS_SUNLIGHT";
-
 num worldHeight = 255;
 num sampleDist = 4;
 

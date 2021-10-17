@@ -17,6 +17,6 @@ structures:
   distribution:
     type: WHITE_NOISE
   structures:
-    - BLANK: 10
-    - OAK_BUSH: 8
-    - SPRUCE_BUSH: 5
+    - blank: 10
+    - oak_bush: 8
+    - spruce_bush: 5

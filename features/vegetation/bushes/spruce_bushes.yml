@@ -16,4 +16,4 @@ locator:
 structures:
   distribution:
     type: WHITE_NOISE
-  structures: SPRUCE_BUSH
+  structures: spruce_bush

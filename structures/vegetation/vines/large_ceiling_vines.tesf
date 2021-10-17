@@ -1,5 +1,3 @@
-id "LARGE_CEILING_VINES";
-
 // Generate a column of leaves down from ceiling block
 num leafDepth = 2 + randomInt(2); // Length of center column of leaves
 for (num i = 0; i < leafDepth; i = i + 1) block(0, -i, 0, "minecraft:oak_leaves[persistent=true]", false);

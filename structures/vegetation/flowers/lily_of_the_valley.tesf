@@ -1,4 +1,2 @@
-id "LILY_OF_THE_VALLEY";
-
-if (!structure(0, 0, 0, "PLANTABLE", "NONE")) fail;
+if (!structure(0, 0, 0, "plantable", "NONE")) fail;
 block(0, 0, 0, "minecraft:lily_of_the_valley", false);

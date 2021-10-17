@@ -22,4 +22,4 @@ locator:
 structures:
   distribution:
     type: CONSTANT
-  structures: DEL_FLOATING_BLOCKS
+  structures: del_floating_blocks

@@ -1,5 +1,3 @@
-id "LARGE_LEAF_VINES";
-
 // Place leaf block if there is an adjacent solid block
 if (check(0, 0, 0) == "AIR" && (
     check(1, 0, 0) == "LAND" ||

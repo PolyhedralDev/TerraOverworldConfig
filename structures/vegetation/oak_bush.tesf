@@ -1,6 +1,4 @@
-id "OAK_BUSH";
-
-if (!structure(0, 0, 0, "PLANTABLE", "NONE")) fail;
+if (!structure(0, 0, 0, "plantable", "NONE")) fail;
 
 num randPrecision = 100;
 num radius = randomInt(randPrecision)/randPrecision*3 + 1;

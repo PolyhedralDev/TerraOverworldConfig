@@ -1,8 +1,6 @@
-id "BIRCH_TREE_PROCEDURAL";
-
 if (check(0,0,0) == "LAND") fail;
-if (!structure(0, 0, 0, "PLANTABLE", "NONE")) fail;
-if (!structure(0, 0, 0, "HAS_SUNLIGHT", "NONE")) fail;
+if (!structure(0, 0, 0, "plantable", "NONE")) fail;
+if (!structure(0, 0, 0, "has_sunlight", "NONE")) fail;
 
 // Free to modify variables
 num leafRadius = 2.5 + randomInt(4);

@@ -3,4 +3,4 @@ type: FEATURE
 extends: SLABS
 
 structures:
-  structures: SAND_SLABS
+  structures: sand_slabs

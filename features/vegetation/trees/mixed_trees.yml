@@ -19,7 +19,7 @@ structures:
     return: CellValue
     frequency: 0.02
   structures:
-    - BLANK: 15
-    - OAK_TREE_PROCEDURAL: 8
-    - BIRCH_TREE_PROCEDURAL: 2
-    - SPRUCE_TREE_PROCEDURAL: 1
+    - blank: 15
+    - oak_tree_procedural: 8
+    - birch_tree_procedural: 2
+    - spruce_tree_procedural: 1

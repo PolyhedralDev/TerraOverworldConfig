@@ -1,5 +1,3 @@
-id "LILAC";
-
-if (!structure(0, 0, 0, "PLANTABLE", "NONE")) fail;
+if (!structure(0, 0, 0, "plantable", "NONE")) fail;
 block(0, 1, 0, "minecraft:lilac[half=upper]", false);
 block(0, 0, 0, "minecraft:lilac[half=lower]", false);

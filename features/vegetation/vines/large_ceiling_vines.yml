@@ -25,4 +25,4 @@ locator:
 structures:
   distribution:
     type: CONSTANT
-  structures: LARGE_CEILING_VINES
+  structures: large_ceiling_vines

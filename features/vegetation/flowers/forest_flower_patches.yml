@@ -17,9 +17,9 @@ structures:
   distribution:
     type: WHITE_NOISE
   structures:
-    - POPPY_PATCH: 6
-    - DANDELION_PATCH: 6
-    - ROSE_BUSH: 3
-    - PEONY: 2
-    - LILAC: 1
-    - LILY_OF_THE_VALLEY: 1
+    - poppy_patch: 6
+    - dandelion_patch: 6
+    - rose_bush: 3
+    - peony: 2
+    - lilac: 1
+    - lily_of_the_valley: 1

@@ -51,4 +51,4 @@ locator:
 structures:
   distribution:
     type: CONSTANT
-  structures: LARGE_LEAF_VINES
+  structures: large_leaf_vines

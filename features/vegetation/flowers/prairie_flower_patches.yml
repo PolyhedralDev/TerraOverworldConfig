@@ -17,8 +17,8 @@ structures:
   distribution:
     type: WHITE_NOISE
   structures:
-    - POPPY_PATCH: 5
-    - DANDELION_PATCH: 5
-    - OXEYE_DAISY_PATCH: 2
-    - CORNFLOWER_PATCH: 2
-    - SUNFLOWER_PATCH: 1
+    - poppy_patch: 5
+    - dandelion_patch: 5
+    - oxeye_daisy_patch: 2
+    - cornflower_patch: 2
+    - sunflower_patch: 1

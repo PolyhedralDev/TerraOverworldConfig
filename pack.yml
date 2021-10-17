@@ -16,6 +16,7 @@ addons:
   - config-locators
   - config-feature
   - structure-terrascript-loader
+  - structure-sponge-loader
   - language-yaml
   - generation-stage-feature
 

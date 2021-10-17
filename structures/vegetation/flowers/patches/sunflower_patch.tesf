@@ -1,5 +1,3 @@
-id "SUNFLOWER_PATCH";
-
 num count = randomInt(9) + 4; // 4-12
 
 for (num p = 0; p < count; p = p + 1) {
@@ -12,7 +10,7 @@ for (num p = 0; p < count; p = p + 1) {
 
   // Check from top downwards for valid spawn
   num y = 4;
-  while (!structure(x, y, z, "PLANTABLE", "NONE")) {
+  while (!structure(x, y, z, "plantable", "NONE")) {
     y = y - 1;
     if (y < -4) fail;
   }
