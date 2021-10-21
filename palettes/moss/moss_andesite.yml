@@ -1,0 +1,19 @@
+id: MOSS_ANDESITE
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:moss_block: 1
+    layers: 1
+  - materials:
+      - minecraft:mossy_cobblestone: 1
+    layers: 1
+  - materials:
+      - minecraft:tuff: 1
+    layers: 1
+  - materials:
+      - minecraft:stone: 1
+    layers: 1
+  - materials:
+      - minecraft:andesite: 1
+    layers: 1

@@ -1,0 +1,10 @@
+id: MOSS_TUFF
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:moss_block: 1
+    layers: 1
+  - materials:
+      - minecraft:tuff: 1
+    layers: 1

@@ -1,0 +1,13 @@
+id: MOSS_DEEPSLATE
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:moss_block: 1
+    layers: 1
+  - materials:
+      - minecraft:tuff: 1
+    layers: 1
+  - materials:
+      - minecraft:deepslate: 1
+    layers: 1
