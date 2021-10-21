@@ -1,0 +1,128 @@
+id: TEMPERATE_PILLARS # Could use a better name
+type: BIOME
+extends: [ EQ_ERODED_PILLARS, BASE ]
+vanilla: minecraft:forest
+color: 0x79c05a
+tags:
+  - LAND
+  - USE_RIVER
+
+colors:
+  grass: 0x79c05a
+  foliage: 0x59ae30
+  water: 0x1e97f2
+  water-fog: 0x1e97f2
+
+palette:
+  - GRASS: 255
+  - DEEPSLATE: 30
+  - BEDROCK: 4
+  - BLOCK:minecraft:bedrock: 0
+
+slant:
+  - threshold: 2.5
+    palette:
+      - MOSS_STONE: 255
+      - DEEPSLATE: 30
+      - BEDROCK: 4
+      - BLOCK:minecraft:bedrock: 0
+  - threshold: 3
+    palette:
+      - BLOCK:minecraft:mossy_cobblestone: 255
+      - DEEPSLATE: 30
+      - BEDROCK: 4
+      - BLOCK:minecraft:bedrock: 0
+  - threshold: 3.5
+    palette:
+      - BLOCK:minecraft:tuff: 255
+      - DEEPSLATE: 30
+      - BEDROCK: 4
+      - BLOCK:minecraft:bedrock: 0
+  - threshold: 4
+    palette:
+      - BLOCK:minecraft:stone: 255
+      - DEEPSLATE: 30
+      - BEDROCK: 4
+      - BLOCK:minecraft:bedrock: 0
+  - threshold: 5
+    palette:
+      - BLOCK:minecraft:andesite: 255
+      - DEEPSLATE: 30
+      - BEDROCK: 4
+      - BLOCK:minecraft:bedrock: 0
+  - threshold: 6
+    palette:
+      - MOSS_TUFF: 255
+      - BLOCK:minecraft:tuff: 120
+      - DEEPSLATE: 30
+      - BEDROCK: 4
+      - BLOCK:minecraft:bedrock: 0
+  - threshold: 8
+    palette:
+      - MOSS_DEEPSLATE: 255
+      - BLOCK:minecraft:deepslate: 120
+      - DEEPSLATE: 30
+      - BEDROCK: 4
+      - BLOCK:minecraft:bedrock: 0
+  - threshold: 10
+    palette:
+      - MOSS_TUFF: 255
+      - BLOCK:minecraft:tuff: 120
+      - DEEPSLATE: 30
+      - BEDROCK: 4
+      - BLOCK:minecraft:bedrock: 0
+  - threshold: 13
+    palette:
+      - MOSS_STONE: 255
+      - BLOCK:minecraft:stone: 120
+      - DEEPSLATE: 30
+      - BEDROCK: 4
+      - BLOCK:minecraft:bedrock: 0
+  - threshold: 17
+    palette:
+      - MOSS_ANDESITE: 255
+      - BLOCK:minecraft:andesite: 120
+      - DEEPSLATE: 30
+      - BEDROCK: 4
+      - BLOCK:minecraft:bedrock: 0
+  - threshold: 20
+    palette:
+      - MOSS_TUFF: 255
+      - DEEPSLATE: 30
+      - BEDROCK: 4
+      - BLOCK:minecraft:bedrock: 0
+  - threshold: 25
+    palette:
+      - MOSS_DEEPSLATE: 255
+      - DEEPSLATE: 30
+      - BEDROCK: 4
+      - BLOCK:minecraft:bedrock: 0
+  - threshold: 28
+    palette:
+      - MOSS_TUFF: 255
+      - DEEPSLATE: 30
+      - BEDROCK: 4
+      - BLOCK:minecraft:bedrock: 0
+  - threshold: 32
+    palette:
+      - MOSS_STONE: 255
+      - DEEPSLATE: 30
+      - BEDROCK: 4
+      - BLOCK:minecraft:bedrock: 0
+  - threshold: 38
+    palette:
+      - MOSS_ANDESITE: 255
+      - DEEPSLATE: 30
+      - BEDROCK: 4
+      - BLOCK:minecraft:bedrock: 0
+
+features:
+  - CROSSING_VINES
+  - LARGE_LEAF_VINES
+  - LARGE_CEILING_VINES
+
+  - MIXED_TREES
+  - OAK_BUSHES
+
+  - FOREST_FLOWER_PATCHES
+  - GRASS
