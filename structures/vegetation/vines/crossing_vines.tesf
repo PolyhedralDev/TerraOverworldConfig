@@ -1,0 +1,84 @@
+// Look for solid blocks within a circle from the origin
+
+num twopi = 6.28318530718;
+num checkRadius = 20; // Radius of circle
+
+bool foundPos = false;
+num x = 0;
+num y = 0;
+num z = 0;
+
+num cx = 0;
+num cz = 0;
+
+for (num i = 0; i < twopi; i = i + twopi/10) {
+    cx = sin(i) * checkRadius;
+    cz = cos(i) * checkRadius;
+    if (check(cx, y, cz) == "LAND") {
+        foundPos = true;
+        x = cx;
+        z = cz;
+        break;
+    }
+}
+if (!foundPos) fail;
+
+// Draw diagonal line using Bresenham's algorithm -
+// where the Y coordinate is determined by a parabola
+
+// Start point
+num x1 = 0;
+num z1 = 0;
+
+// End point
+num x2 = round(x);
+num z2 = round(z);
+
+// Deltas
+num dx = abs(x2 - x1);
+num dz = abs(z2 - z1);
+
+// Iteration sign
+num xs = 1;
+if (x2 < x1) xs = xs * -1;
+num zs = 1;
+if (z2 < z1) zs = zs * -1;
+
+// Parabola variables
+num t = 0;
+num yDepth = 0;
+num droopiness = 10;
+
+structure(x1, yDepth, z1, "crossing_vines_segment", "NONE");
+
+if (dx >= dz) {
+    // Driving axis is X
+    num p = 2 * dz - dx;
+    while (round(x1) != round(x2)) {
+        x1 = x1 + xs;
+        if (p >= 0) {
+            z1 = z1 + zs;
+            p = p - (2 * dx);
+        }
+        p = p + (2 * dz);
+        t = abs(x2 - x1) / dx;
+        yDepth = (4 * pow(t - 0.5, 2) - 1) * droopiness;
+        if (check(x1, yDepth, z1) == "LAND") return;
+        structure(x1, yDepth, z1, "crossing_vines_segment", "NONE");
+    }
+} else {
+    // Driving axis is Z
+    num p = 2 * dx - dz;
+    while (round(z1) != round(z2)) {
+        z1 = z1 + zs;
+        if (p >= 0) {
+            x1 = x1 + xs;
+            p = p - (2 * dz);
+        }
+        p = p + (2 * dx);
+        t = abs(z2 - z1) / dz;
+        yDepth = (4 * pow(t - 0.5, 2) - 1) * droopiness;
+        if (check(x1, yDepth, z1) == "LAND") return;
+        structure(x1, yDepth, z1, "crossing_vines_segment", "NONE");
+    }
+}

@@ -1,0 +1,28 @@
+id: CROSSING_VINES
+type: FEATURE
+
+# Adds leaf + vine segments that generate down from ceilings
+
+distributor:
+  type: NOISE
+  distribution:
+    type: WHITE_NOISE
+  threshold: 0.9
+
+locator:
+  type: PATTERN
+  range:
+    min: 90
+    max: 135
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH_AIR
+        offset: 0
+      - type: MATCH_SOLID
+        offset: 1
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: crossing_vines
