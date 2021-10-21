@@ -1,0 +1,46 @@
+template: &template
+  # Arguments all terrace functions will use
+  arguments:
+    - i  # Input
+    - sc # Scale
+    - o  # Offset
+    - g  # Gap
+  expression: sc * profile(clamp(floorMod(i/sc-o, 1+g))) + i
+
+childFunctions: &childFunctions
+  # Ancillary functions
+  clamp:
+    arguments: [x]
+    function: if(0 <= x && x < 1, x, 0)
+  floorMod:
+    arguments: [x, i]
+    function: x - floor(x/i) * i
+
+functions:
+  terraceLinear:
+    <<: *template
+    functions:
+      <<: *childFunctions
+      profile:
+        arguments: [x]
+        function: "|x - 0.5| - 0.5"
+
+  terraceParabolic:
+    <<: *template
+    functions:
+      <<: *childFunctions
+      profile:
+        arguments: [x]
+        function: (x - 0.5)^2 - 0.25
+
+  terraceParalinear:
+    <<: *template
+    functions:
+      <<: *childFunctions
+      profile:
+        arguments: [x]
+        function: |
+          if(0.25 < x && x < 0.75,
+            2*(x-0.5)^2-0.375,
+            |x - 0.5| - 0.5
+          )

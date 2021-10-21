@@ -1,0 +1,15 @@
+functions:
+  lerp:
+    # Linear interpolation between two values
+    arguments:
+      - t
+      - at # Value of t where output = a
+      - a
+      - bt # Value of t where output = b
+      - b
+      # Values of t between at and bt will be interpolated
+    expression: |
+      if(at<bt,
+        if(t<=at,a,if(t>=bt,b,a*(t-bt)/(at-bt)+b*(t-at)/(bt-at))),
+        if(t>=at,a,if(t<=bt,b,a*(t-bt)/(at-bt)+b*(t-at)/(bt-at)))
+      )

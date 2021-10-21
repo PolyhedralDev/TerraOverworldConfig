@@ -78,11 +78,11 @@ noise:
       expression: |
         max(
           maskSmooth(
-            bigSpikeHeight * min(spikeCap,square(-spike(x, z))),
+            bigSpikeHeight * min(spikeCap,(-spike(x, z))^2),
             bigSpikeMaskNone, bigSpikeMaskFull, mask(x, z)
           )
           + maskSmooth(
-            littleSpikeHeight * min(spikeCap,square(-spike(x*2, z*2))),
+            littleSpikeHeight * min(spikeCap,(-spike(x*2, z*2))^2),
             littleSpikeMaskNone, littleSpikeMaskFull, mask(x, z)
           ),
           maskSmooth(
