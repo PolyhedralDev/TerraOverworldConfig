@@ -15,7 +15,7 @@ colors:
   water-fog: 0x0677ce
 
 palette:
-  - MOSSY_GRASS: 255
+  - GRASS_MOSSY: 255
   - DEEPSLATE: 30
   - BEDROCK: 4
   - BLOCK:minecraft:bedrock: 0
