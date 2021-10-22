@@ -1,0 +1,34 @@
+id: TAIGA
+type: BIOME
+extends: [ EQ_HILLS, BASE, CARVING_LAND ]
+vanilla: minecraft:taiga
+color: 0x86b783
+
+tags:
+  - LAND
+  - USE_RIVER
+
+colors:
+  grass: 0x86b783
+  foliage: 0x68a464
+  water: 0x287082
+  water-fog: 0x287082
+
+palette:
+  - GRASS: 255
+  - DEEPSLATE: 30
+  - BEDROCK: 4
+  - BLOCK:minecraft:bedrock: 0
+
+slant:
+  - threshold: 3
+    palette:
+      - BLOCK:minecraft:stone: 255
+      - DEEPSLATE: 30
+      - BEDROCK: 4
+      - BLOCK:minecraft:bedrock: 0
+
+features:
+  - SPRUCE_TREES
+  - FOREST_FLOWER_PATCHES
+  - GRASS
