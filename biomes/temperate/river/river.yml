@@ -2,6 +2,7 @@ id: RIVER
 type: BIOME
 extends: [ EQ_RIVER, BASE ]
 vanilla: minecraft:river
+color: 0x0084ff
 
 palette:
   - "BLOCK:minecraft:sand": 255

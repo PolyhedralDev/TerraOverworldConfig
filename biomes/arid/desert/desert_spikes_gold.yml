@@ -2,6 +2,14 @@ id: DESERT_SPIKES_GOLD
 type: BIOME
 extends: DESERT_SPIKES
 vanilla: minecraft:desert
+color: 0xe7b256
+
+colors:
+  fog: 0xfff17c
+  grass: 0x8ab689
+  foliage: 0x6da36b
+  water: 0x007bf7
+  water-fog: 0x007bf7
 
 slant:
   - threshold: 3

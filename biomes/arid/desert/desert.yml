@@ -2,6 +2,7 @@ id: DESERT
 type: BIOME
 extends: [ EQ_DUNES, BASE, CARVING_LAND ]
 vanilla: minecraft:desert
+color: 0xe8cf68
 
 colors:
   fog: 0xfff17c

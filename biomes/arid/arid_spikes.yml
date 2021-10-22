@@ -2,6 +2,7 @@ id: ARID_SPIKES
 type: BIOME
 extends: [ EQ_SPIKES, BASE, CARVING_LAND ]
 vanilla: minecraft:badlands
+color: 0xfab53c
 
 colors:
   fog: 0xfff17c
