@@ -1,7 +1,7 @@
-id: TEMPERATE_PILLARS # Could use a better name
+id: OVERGROWN_CLIFFS
 type: BIOME
 extends: [ EQ_ERODED_PILLARS, BASE ]
-vanilla: minecraft:forest
+vanilla: minecraft:jungle_edge
 color: 0x79c05a
 tags:
   - LAND
