@@ -1,0 +1,24 @@
+id: PARADISE_TROPICAL_BEACH_UPPER
+type: PALETTE
+layers:
+  - materials:
+      - "minecraft:sandstone": 10
+      - "minecraft:sandstone": 10
+      - "minecraft:shroomlight": 2
+      - "minecraft:sandstone": 10
+      - "minecraft:sandstone": 10
+    layers: 5
+  - materials:
+      - "minecraft:sandstone": 10
+      - "minecraft:sandstone": 10
+      - "minecraft:sandstone": 10
+      - "minecraft:sandstone": 10
+    layers: 4
+  - materials:
+      - "minecraft:sandstone": 10
+    layers: 2
+
+noise:
+  type: OPEN_SIMPLEX_2
+  frequency: 0.0175
+  salt: 5

@@ -1,0 +1,23 @@
+id: SEA_PICKLE
+type: FEATURE
+
+distributor:
+  type: NOISE
+  distribution:
+    type: WHITE_NOISE
+  threshold: 0.75
+
+locator:
+  type: RANDOM
+  height:
+    min: 30
+    max: 62
+  amount:
+    min: 10
+    max: 50
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures: 
+    - sea_pickle: 1

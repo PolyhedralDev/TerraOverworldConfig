@@ -1,0 +1,25 @@
+id: PARADISE_TROPICAL_ISLANDS
+type: BIOME
+extends: [ EQ_TROPICAL_ROCKY_ISLANDS, BASE, CARVING_LAND ]
+vanilla: minecraft:warm_ocean
+color: 0x56E6EB
+
+tags:
+  - LAND
+
+palette:
+  - PARADISE_TROPICAL_CLIFF: 255
+  - PARADISE_TROPICAL_BEACH_UPPER: 64
+  - PARADISE_TROPICAL_BEACH_LOWER: 62
+  - DEEPSLATE: 30
+  - BEDROCK: 4
+  - BLOCK:minecraft:bedrock: 0
+
+features:
+  - CORAL
+  - SEA_PICKLE
+  - WATER_FLORA 
+  - LILY_PAD
+  - SMALL_ROCK
+  - DEAD_BUSH
+  - PALM_TREES

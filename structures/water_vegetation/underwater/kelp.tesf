@@ -1,0 +1,13 @@
+if (!structure(0, 0, 0, "marine_plantable", "NONE")) fail;
+
+num height = randomInt(6) + 3;
+
+for (num y = 0; y <= height; y = y + 1) {
+	if (getBlock(0, y, 0) != "minecraft:water") fail;
+}
+
+for (num y = 0; y <= height-1; y = y + 1) {
+	block(0, y, 0, "minecraft:kelp_plant", true);
+}
+
+block(0, height, 0, "minecraft:kelp", true);

@@ -1,0 +1,2 @@
+if (!structure(0, 0, 0, "floatable", "NONE")) fail;
+block(0, 0, 0, "minecraft:lily_pad", false);

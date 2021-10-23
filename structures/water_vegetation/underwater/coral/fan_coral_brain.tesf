@@ -1,0 +1,15 @@
+if(recursions() > 3) return;
+if (!structure(0, 0, 0, "marine_plantable", "NONE")) fail;
+
+
+num height = randomInt(3) + 2;
+for(num i = 0; i < height; i = i + 1) {
+    if(i == (height-1)) {
+        num attempts = randomInt(3);
+
+        for(num j = 0; j < attempts; j = j + 1) structure(randomInt(3)-1, i, randomInt(3)-1, "fan_coral_brain", "NONE", "CW_90", "CCW_90", "CW_180");
+    }
+    // if((check(0,i,0) != "OCEAN")) return;
+
+    block(0, i, 0, "minecraft:brain_coral_block");
+}

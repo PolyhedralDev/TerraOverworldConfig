@@ -1,0 +1,17 @@
+if (!structure(0, 0, 0, "marine_plantable", "NONE")) fail;
+
+num pickles = randomInt(2) + 2; // No pickle deserves be alone :(
+
+// Doing if statments because concatenation with int return numbers like "3.0" instead of "3", so I can't do "pickles="+pickles+"]" :(
+if(pickles == 1) {
+	block(0, 0, 0, "minecraft:sea_pickle[waterlogged=true, pickles=1]", true);
+}
+else if(pickles == 2) {
+	block(0, 0, 0, "minecraft:sea_pickle[waterlogged=true, pickles=2]", true);
+}
+else if(pickles == 3) {
+	block(0, 0, 0, "minecraft:sea_pickle[waterlogged=true, pickles=3]", true);
+}
+else if(pickles == 4) {
+	block(0, 0, 0, "minecraft:sea_pickle[waterlogged=true, pickles=4]", true);
+}

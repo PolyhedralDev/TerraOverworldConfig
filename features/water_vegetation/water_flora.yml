@@ -1,0 +1,28 @@
+id: WATER_FLORA
+type: FEATURE
+
+distributor:
+  type: NOISE
+  distribution:
+    type: WHITE_NOISE
+  threshold: 0.50
+
+locator:
+  type: RANDOM
+  height:
+    min: 40
+    max: 62
+  amount:
+    min: 100
+    max: 500
+
+structures:
+  distribution:
+    type: CELLULAR
+    return: CellValue
+    frequency: 0.05
+  structures:
+    - blank: 5
+    - short_kelp: 5
+    - seagrass: 8
+    - tall_seagrass: 1
