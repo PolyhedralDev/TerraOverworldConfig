@@ -1,0 +1,9 @@
+if (getBlock(0, 0, 0) != "minecraft:water") fail;
+
+str blockBelow = getBlock(0, -1, 0);
+if (blockBelow != "minecraft:sand" &&
+    blockBelow != "minecraft:red_sand" &&
+    blockBelow != "minecraft:dirt" &&
+    blockBelow != "minecraft:gravel") {
+    fail;
+}

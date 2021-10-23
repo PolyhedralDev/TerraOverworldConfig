@@ -1,0 +1,27 @@
+id: PARADISE_TROPICAL_CLIFF
+type: PALETTE
+
+layers:
+  - materials:
+      - "minecraft:light_gray_terracotta": 10
+      - "minecraft:gray_terracotta": 8
+      - "minecraft:magma_block": 2
+      - "minecraft:shroomlight": 2
+      - "minecraft:magma_block": 2
+      - "minecraft:blue_terracotta": 8
+      - "minecraft:light_blue_terracotta": 10
+    layers: 5
+  - materials:
+      - "minecraft:light_gray_terracotta": 10
+      - "minecraft:gray_terracotta": 10
+      - "minecraft:blue_terracotta": 10
+      - "minecraft:light_blue_terracotta": 10
+    layers: 4
+  - materials:
+      - "minecraft:purple_terracotta": 1
+    layers: 2
+
+noise:
+  type: OPEN_SIMPLEX_2
+  frequency: 0.0175
+  salt: 5

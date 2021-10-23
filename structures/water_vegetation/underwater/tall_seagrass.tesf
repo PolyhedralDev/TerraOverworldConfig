@@ -1,0 +1,5 @@
+if (!structure(0, 0, 0, "marine_plantable", "NONE")) fail;
+if (getBlock(0, 1, 0) != "minecraft:water") fail;
+
+block(0, 1, 0, "tall_seagrass[half=upper]", true);
+block(0, 0, 0, "tall_seagrass[half=lower]", true);

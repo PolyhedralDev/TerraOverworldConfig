@@ -1,0 +1,25 @@
+id: PARADISE_TROPICAL_BEACH_LOWER
+type: PALETTE
+
+layers:
+  - materials:
+      - "minecraft:sand": 10
+      - "minecraft:sand": 10
+      - "minecraft:shroomlight": 2
+      - "minecraft:sand": 10
+      - "minecraft:sand": 10
+    layers: 5
+  - materials:
+      - "minecraft:sand": 10
+      - "minecraft:sand": 10
+      - "minecraft:sand": 10
+      - "minecraft:sand": 10
+    layers: 4
+  - materials:
+      - "minecraft:sandstone": 10
+    layers: 2
+
+noise:
+  type: OPEN_SIMPLEX_2
+  frequency: 0.0175
+  salt: 5

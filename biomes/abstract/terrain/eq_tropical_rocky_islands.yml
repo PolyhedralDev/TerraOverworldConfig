@@ -1,0 +1,29 @@
+id: EQ_TROPICAL_ROCKY_ISLANDS # Valantis based equation 
+type: BIOME
+abstract: true
+
+noise:
+  dimensions: 3
+  type: EXPRESSION
+  expression: |
+    if(
+    max(y-51, 0),
+    if(
+      max(y-64, 0),
+      if(
+        max(y-84, 0),
+        if(
+          max(y-256, 0),
+          0,
+          -((y / 33)^2) + 4/6 + noise(x, z)*11),
+        -((y / 33)^2) + 4/6 + noise(x, z)*12),
+      -((y / 63)^3) + 1 + noise(x, z)/3),
+    1)
+  samplers:
+    noise:
+      type: FBM
+      dimensions: 2
+      octaves: 4
+      function:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.0075

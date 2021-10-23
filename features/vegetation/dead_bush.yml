@@ -1,0 +1,19 @@
+id: DEAD_BUSH
+type: FEATURE
+
+distributor:
+  type: NOISE
+  distribution:
+    type: WHITE_NOISE
+  threshold: 0.97
+
+locator:
+  type: SURFACE
+  range:
+    min: 60
+    max: 255
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: dead_bush

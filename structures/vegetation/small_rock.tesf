@@ -1,0 +1,10 @@
+if (!structure(0, 0, 0, "universal_plantable", "NONE")) fail;
+
+num dir = randomInt(2);
+
+if(dir == 1) {
+	block(0, 0, 0, "minecraft:stone_button[facing=east,face=floor]", false);
+}
+else {
+	block(0, 0, 0, "minecraft:stone_button[facing=south,face=floor]", false);
+}

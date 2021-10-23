@@ -1,0 +1,28 @@
+id: CORAL
+type: FEATURE
+
+distributor:
+  type: NOISE
+  distribution:
+    type: WHITE_NOISE
+  threshold: 0.95
+
+locator:
+  type: RANDOM
+  height:
+    min: 30
+    max: 61
+  amount:
+    min: 1
+    max: 500
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures: 
+    - ball_coral: 10
+    - fan_coral_brain: 10
+    - fan_coral_bubble: 10
+    - fan_coral_fire: 10
+    - fan_coral_tube: 10
+    - fan_coral_horn: 10

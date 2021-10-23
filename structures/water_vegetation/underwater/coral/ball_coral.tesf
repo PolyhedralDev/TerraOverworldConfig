@@ -1,0 +1,21 @@
+if (!structure(0, 0, 0, "marine_plantable", "NONE")) fail;
+
+num coral = randomInt(4);
+
+for(num x = -3; x <= 3; x = x + 1) {
+    for(num z = -3; z <= 3; z = z + 1) {
+
+        for(num y = 0; y <= 5; y = y + 1) {
+            num r = floor(pow(x, 2) + pow(z, 2) + pow(y-3, 2));
+            if(r < 3 || (r > 7) ) continue;
+
+            if(randomInt(3) > 0) {
+                if(coral == 0) block(x, y-2, z, "minecraft:brain_coral_block");
+                if(coral == 1) block(x, y-2, z, "minecraft:tube_coral_block");
+                if(coral == 2) block(x, y-2, z, "minecraft:fire_coral_block");
+                if(coral == 3) block(x, y-2, z, "minecraft:bubble_coral_block");
+                if(coral == 3) block(x, y-2, z, "minecraft:horn_coral_block");
+            }
+        }
+    }
+}

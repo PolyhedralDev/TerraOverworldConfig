@@ -1,0 +1,31 @@
+id: PALM_TREES
+type: FEATURE
+
+distributor:
+  type: NOISE
+  distribution:
+    type: WHITE_NOISE
+  threshold: 0.965
+
+locator:
+  type: SURFACE
+  range:
+    min: 60
+    max: 255
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures:
+    # - blank: 15
+    - palm_tree1: 1
+    - palm_tree2: 1
+    - palm_tree3: 1
+    - palm_tree4: 1
+    - palm_tree5: 1
+    - palm_tree6: 1
+    - palm_tree7: 1
+    - palm_tree8: 1
+    - palm_tree9: 1
+    - palm_tree10: 1
+    - palm_tree11: 1

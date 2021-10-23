@@ -1,0 +1,19 @@
+id: SMALL_ROCK
+type: FEATURE
+
+distributor:
+  type: NOISE
+  distribution:
+    type: WHITE_NOISE
+  threshold: 0.98
+
+locator:
+  type: SURFACE
+  range:
+    min: 60
+    max: 255
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: small_rock
