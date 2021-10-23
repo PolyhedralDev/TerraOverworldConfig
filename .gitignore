@@ -2,3 +2,5 @@
 *.iml
 *.ipr
 *.jar
+*.sublime-project
+*.sublime-workspace
