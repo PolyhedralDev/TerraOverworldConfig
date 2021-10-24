@@ -1,7 +1,7 @@
 id: SEASONAL_FOREST
 type: BIOME
 extends: [ EQ_HILLS, BASE, CARVING_LAND ]
-vanilla: minecraft:forest
+vanilla: minecraft:birch_forest
 color: 0xffa500
 
 tags:
@@ -19,6 +19,14 @@ palette:
   - DEEPSLATE: 30
   - BEDROCK: 4
   - BLOCK:minecraft:bedrock: 0
+
+slant:
+  - threshold: 3
+    palette:
+      - BLOCK:minecraft:stone: 255
+      - DEEPSLATE: 30
+      - BEDROCK: 4
+      - BLOCK:minecraft:bedrock: 0
 
 features:
   - SEASONAL_TREES
