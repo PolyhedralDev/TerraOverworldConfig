@@ -1,0 +1,19 @@
+id: BLACK_OAK_TREES
+type: FEATURE
+
+distributor:
+  type: NOISE
+  distribution:
+    type: WHITE_NOISE
+  threshold: 0.9999
+
+locator:
+  type: SURFACE
+  range:
+    min: 60
+    max: 255
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: black_oak_tree_procedural

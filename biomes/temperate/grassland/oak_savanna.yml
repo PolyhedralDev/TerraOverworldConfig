@@ -1,0 +1,26 @@
+id: OAK_SAVANNA
+type: BIOME
+extends: [ EQ_PLAIN, BASE, CARVING_LAND ]
+vanilla: minecraft:plains
+color: 0xd8f75d
+
+tags:
+  - LAND
+  - USE_RIVER
+
+colors:
+  grass: 0xd8f75d
+  foliage: 0xb5db69
+  water: 0x44aff5
+  water-fog: 0x44aff5
+
+palette:
+  - GRASS: 255
+  - DEEPSLATE: 30
+  - BEDROCK: 4
+  - BLOCK:minecraft:bedrock: 0
+
+features:
+  - FLOWER_PATCHES
+  - GRASS
+  - OAK_SAVANNA
