@@ -22,5 +22,6 @@ palette:
 
 features:
   - SEASONAL_TREES
+  - PUMPKIN_PATCHES
   - FOREST_FLOWER_PATCHES
   - GRASS

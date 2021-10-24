@@ -1,0 +1,19 @@
+num pumpkins = randomInt(9) + 4;
+
+for(num p = 0; p < pumpkins; p = p + 1) {
+  num y = 4;
+
+  num theta = randomInt(360) * 3.14159/180;
+  num r = 5-randomInt(randomInt(6)+1);
+  num x = cos(theta)*r;
+  num z = sin(theta)*r;
+  while((getBlock(x,y - 1,z) != "minecraft:grass_block")) {
+    y = y - 1;
+    if(y < -10) {
+        fail;
+    }
+  }
+  if(check(x,0,z) != "AIR") fail;
+  block(x,y+1,z,"minecraft:pumpkin_stem[age=7]");
+  block(x,y,z,"minecraft:pumpkin");
+}
