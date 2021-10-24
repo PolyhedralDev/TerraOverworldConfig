@@ -1,0 +1,24 @@
+id: SEASONAL_TREES
+type: FEATURE
+
+distributor:
+  type: NOISE
+  distribution:
+    type: WHITE_NOISE
+  threshold: 0.98
+
+locator:
+  type: SURFACE
+  range:
+    min: 60
+    max: 255
+
+structures:
+  distribution:
+    type: CELLULAR
+    return: CellValue
+    frequency: 0.02
+  structures:
+    - blank: 4
+    - autumnal_birch_tree_procedural: 3
+    - spruce_tree_procedural: 2

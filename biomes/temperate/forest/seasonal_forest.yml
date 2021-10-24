@@ -2,15 +2,15 @@ id: SEASONAL_FOREST
 type: BIOME
 extends: [ EQ_HILLS, BASE, CARVING_LAND ]
 vanilla: minecraft:forest
-color: 0x80bc6f
+color: 0xffa500
 
 tags:
   - LAND
   - USE_RIVER
 
 colors:
-  grass: 0x80bc6f
-  foliage: 0x61aa48
+  grass: 0xb5b065
+  foliage: 0xffa500
   water: 0x1e97f2
   water-fog: 0x1e97f2
 
@@ -21,6 +21,6 @@ palette:
   - BLOCK:minecraft:bedrock: 0
 
 features:
-  - MIXED_TREES
+  - SEASONAL_TREES
   - FOREST_FLOWER_PATCHES
   - GRASS
