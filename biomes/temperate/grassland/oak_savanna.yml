@@ -15,7 +15,7 @@ colors:
   water-fog: 0x44aff5
 
 palette:
-  - GRASS: 255
+  - GRASS_VARIATION: 255
   - DEEPSLATE: 30
   - BEDROCK: 4
   - BLOCK:minecraft:bedrock: 0
