@@ -20,6 +20,6 @@ features:
   - SEA_PICKLE
   - WATER_FLORA 
   - LILY_PAD
-  - SMALL_ROCK
   - DEAD_BUSH
   - PALM_TREES
+  # - SMALL_ROCK
