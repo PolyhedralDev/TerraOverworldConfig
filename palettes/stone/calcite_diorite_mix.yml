@@ -1,0 +1,11 @@
+id: CALCITE_DIORITE_MIX
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:calcite: 3
+      - minecraft:diorite: 1
+    layers: 2
+  - materials:
+      - minecraft:stone: 1
+    layers: 1
