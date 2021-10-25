@@ -134,7 +134,7 @@ block(0, y + 3, 8, "minecraft:jungle_wood[axis=y]");
 block(0, y + 3, 9, "minecraft:jungle_wood[axis=y]");
 block(0, y + 3, 10, "minecraft:jungle_wood[axis=y]");
 block(0, y + 3, 12, "minecraft:jungle_wood[axis=y]");
-block(0, y + 4, 0, "minecraft:oak_fence[east=false,north=false,south=true,waterlogged=false,west=false]");
+
 block(0, y + 4, 1, "minecraft:jungle_wood[axis=y]");
 block(0, y + 4, 2, "minecraft:jungle_wood[axis=y]");
 block(0, y + 4, 3, "minecraft:jungle_wood[axis=y]");
@@ -181,7 +181,7 @@ block(1, y + 1, -1, "minecraft:jungle_wood[axis=y]");
 block(1, y + 1, 11, "minecraft:jungle_wood[axis=y]");
 block(1, y + 1, 12, "minecraft:jungle_wood[axis=y]");
 block(1, y + 1, 13, "minecraft:jungle_wood[axis=y]");
-block(1, y + 2, -1, "minecraft:oak_fence[east=false,north=false,south=true,waterlogged=false,west=true]");
+
 block(1, y + 2, 0, "minecraft:jungle_wood[axis=y]");
 block(1, y + 2, 10, "minecraft:jungle_wood[axis=y]");
 block(1, y + 2, 11, "minecraft:jungle_wood[axis=y]");
@@ -191,8 +191,8 @@ block(1, y + 2, 14, "minecraft:jungle_wood[axis=y]");
 block(1, y + 3, 1, "minecraft:jungle_wood[axis=y]");
 block(1, y + 3, 7, "minecraft:jungle_wood[axis=y]");
 block(1, y + 3, 8, "minecraft:jungle_wood[axis=y]");
-block(1, y + 3, 9, "minecraft:oak_fence[east=false,north=true,south=true,waterlogged=false,west=true]");
-block(1, y + 3, 10, "minecraft:oak_fence[east=false,north=true,south=false,waterlogged=false,west=true]");
+
+
 block(1, y + 3, 12, "minecraft:jungle_wood[axis=y]");
 block(1, y + 3, 13, "minecraft:jungle_wood[axis=y]");
 block(1, y + 3, 14, "minecraft:jungle_wood[axis=y]");
@@ -202,7 +202,7 @@ block(1, y + 4, 3, "minecraft:jungle_wood[axis=y]");
 block(1, y + 4, 7, "minecraft:jungle_wood[axis=y]");
 block(1, y + 4, 14, "minecraft:jungle_wood[axis=y]");
 block(1, y + 4, 15, "minecraft:jungle_wood[axis=y]");
-block(1, y + 5, 2, "minecraft:oak_fence[east=false,north=false,south=false,waterlogged=false,west=true]");
+
 block(1, y + 5, 4, "minecraft:jungle_wood[axis=y]");
 block(1, y + 5, 5, "minecraft:jungle_wood[axis=y]");
 block(1, y + 5, 6, "minecraft:jungle_wood[axis=y]");
@@ -230,12 +230,12 @@ block(2, y + -1, -1, "minecraft:jungle_wood[axis=y]");
 block(2, y + -1, 0, "minecraft:jungle_wood[axis=y]");
 block(2, y + 0, -1, "minecraft:jungle_wood[axis=y]");
 block(2, y + 2, 13, "minecraft:jungle_wood[axis=y]");
-block(2, y + 3, 13, "minecraft:oak_fence[east=false,north=false,south=true,waterlogged=false,west=true]");
+
 block(2, y + 3, 14, "minecraft:jungle_wood[axis=y]");
 block(2, y + 3, 15, "minecraft:jungle_wood[axis=y]");
 block(2, y + 4, 15, "minecraft:jungle_wood[axis=y]");
 block(2, y + 4, 16, "minecraft:jungle_wood[axis=y]");
-block(2, y + 5, 4, "minecraft:oak_fence[east=false,north=false,south=false,waterlogged=false,west=true]");
+
 block(2, y + 5, 15, "minecraft:jungle_wood[axis=y]");
 block(2, y + 5, 16, "minecraft:jungle_wood[axis=y]");
 block(2, y + 5, 17, "minecraft:jungle_wood[axis=y]");
@@ -269,7 +269,7 @@ block(3, y + -3, 0, "minecraft:jungle_wood[axis=y]");
 block(3, y + -2, -1, "minecraft:jungle_wood[axis=y]");
 block(3, y + -2, 0, "minecraft:jungle_wood[axis=y]");
 block(3, y + -1, -1, "minecraft:jungle_wood[axis=y]");
-block(3, y + 4, 16, "minecraft:oak_fence[east=false,north=false,south=false,waterlogged=false,west=true]");
+
 block(3, y + 5, 17, "minecraft:jungle_wood[axis=y]");
 block(3, y + 6, 17, "minecraft:jungle_wood[axis=y]");
 block(3, y + 6, 18, "minecraft:jungle_wood[axis=y]");
@@ -280,7 +280,7 @@ block(3, y + 8, 19, "minecraft:jungle_wood[axis=y]");
 block(3, y + 9, 18, "minecraft:jungle_wood[axis=y]");
 block(3, y + 9, 19, "minecraft:jungle_wood[axis=y]");
 block(3, y + 10, 19, "minecraft:jungle_wood[axis=y]");
-block(3, y + 11, 19, "minecraft:oak_fence[east=true,north=false,south=false,waterlogged=false,west=false]");
+
 block(3, y + 11, 20, "minecraft:cocoa[age=2,facing=east]");
 block(3, y + 12, 19, "minecraft:cocoa[age=2,facing=east]");
 block(3, y + 16, 20, "minecraft:cocoa[age=2,facing=east]");
@@ -312,9 +312,9 @@ block(4, y + -5, 1, "minecraft:jungle_wood[axis=y]");
 block(4, y + -4, 0, "minecraft:jungle_wood[axis=y]");
 block(4, y + -4, 1, "minecraft:jungle_wood[axis=y]");
 block(4, y + -3, 0, "minecraft:jungle_wood[axis=y]");
-block(4, y + 6, 17, "minecraft:oak_fence[east=false,north=false,south=false,waterlogged=false,west=true]");
+
 block(4, y + 9, 19, "minecraft:jungle_wood[axis=y]");
-block(4, y + 10, 18, "minecraft:oak_fence[east=false,north=false,south=true,waterlogged=false,west=false]");
+
 block(4, y + 10, 19, "minecraft:jungle_wood[axis=y]");
 block(4, y + 10, 20, "minecraft:jungle_wood[axis=y]");
 block(4, y + 11, 19, "minecraft:jungle_wood[axis=y]");
@@ -325,34 +325,34 @@ block(4, y + 13, 19, "minecraft:jungle_wood[axis=y]");
 block(4, y + 13, 20, "minecraft:jungle_wood[axis=y]");
 block(4, y + 14, 19, "minecraft:jungle_wood[axis=y]");
 block(4, y + 14, 20, "minecraft:jungle_wood[axis=y]");
-block(4, y + 14, 21, "minecraft:oak_fence[east=false,north=true,south=false,waterlogged=false,west=false]");
+
 block(4, y + 15, 19, "minecraft:cocoa[age=2,facing=south]");
 block(4, y + 15, 20, "minecraft:jungle_wood[axis=y]");
 block(4, y + 16, 19, "minecraft:cocoa[age=2,facing=south]");
 block(4, y + 16, 20, "minecraft:jungle_wood[axis=y]");
 block(4, y + 17, 20, "minecraft:jungle_wood[axis=y]");
 block(4, y + 17, 21, "minecraft:cocoa[age=2,facing=north]");
-block(4, y + 18, 20, "minecraft:oak_fence[east=true,north=false,south=false,waterlogged=false,west=false]");
-block(4, y + 19, 20, "minecraft:oak_fence[east=true,north=false,south=false,waterlogged=false,west=false]");
+
+
 block(4, y + 19, 21, "minecraft:jungle_leaves[distance=2,persistent=true]");
-block(4, y + 20, 20, "minecraft:oak_fence[east=true,north=false,south=false,waterlogged=false,west=false]");
+
 block(4, y + 20, 21, "minecraft:jungle_leaves[distance=1,persistent=true]");
 block(4, y + 20, 26, "minecraft:jungle_leaves[distance=7,persistent=true]");
 block(4, y + 20, 27, "minecraft:jungle_leaves[distance=7,persistent=true]");
 block(4, y + 21, 18, "minecraft:jungle_leaves[distance=3,persistent=true]");
 block(4, y + 21, 19, "minecraft:jungle_leaves[distance=2,persistent=true]");
 block(4, y + 21, 20, "minecraft:jungle_leaves[distance=1,persistent=true]");
-block(4, y + 21, 21, "minecraft:oak_fence[east=true,north=false,south=false,waterlogged=false,west=false]");
+
 block(4, y + 21, 25, "minecraft:jungle_leaves[distance=5,persistent=true]");
 block(4, y + 21, 26, "minecraft:jungle_leaves[distance=6,persistent=true]");
-block(4, y + 22, 20, "minecraft:oak_fence[east=true,north=false,south=true,waterlogged=false,west=false]");
+
 block(4, y + 22, 21, "minecraft:jungle_wood[axis=y]");
 block(4, y + 22, 22, "minecraft:jungle_leaves[distance=1,persistent=true]");
 block(4, y + 23, 19, "minecraft:jungle_leaves[distance=3,persistent=true]");
 block(4, y + 23, 20, "minecraft:jungle_leaves[distance=2,persistent=true]");
 block(4, y + 23, 21, "minecraft:jungle_leaves[distance=1,persistent=true]");
 block(4, y + 24, 19, "minecraft:jungle_leaves[distance=2,persistent=true]");
-block(4, y + 24, 21, "minecraft:oak_fence[east=true,north=false,south=false,waterlogged=false,west=false]");
+
 block(4, y + 24, 22, "minecraft:jungle_leaves[distance=1,persistent=true]");
 block(4, y + 24, 23, "minecraft:jungle_leaves[distance=2,persistent=true]");
 block(4, y + 24, 24, "minecraft:jungle_leaves[distance=3,persistent=true]");
@@ -360,7 +360,7 @@ block(4, y + 25, 20, "minecraft:jungle_leaves[distance=1,persistent=true]");
 block(4, y + 25, 21, "minecraft:jungle_wood[axis=y]");
 block(4, y + 25, 22, "minecraft:jungle_leaves[distance=1,persistent=true]");
 block(4, y + 26, 21, "minecraft:jungle_leaves[distance=1,persistent=true]");
-block(5, y + 11, 20, "minecraft:oak_fence[east=false,north=false,south=false,waterlogged=false,west=true]");
+
 block(5, y + 14, 20, "minecraft:jungle_wood[axis=y]");
 block(5, y + 15, 20, "minecraft:jungle_wood[axis=y]");
 block(5, y + 16, 20, "minecraft:jungle_wood[axis=y]");
@@ -370,7 +370,7 @@ block(5, y + 18, 19, "minecraft:cocoa[age=2,facing=south]");
 block(5, y + 18, 20, "minecraft:jungle_wood[axis=y]");
 block(5, y + 18, 21, "minecraft:cocoa[age=2,facing=north]");
 block(5, y + 19, 18, "minecraft:jungle_leaves[distance=3,persistent=true]");
-block(5, y + 19, 19, "minecraft:oak_fence[east=false,north=false,south=true,waterlogged=false,west=false]");
+
 block(5, y + 19, 20, "minecraft:jungle_wood[axis=y]");
 block(5, y + 20, 18, "minecraft:jungle_leaves[distance=2,persistent=true]");
 block(5, y + 20, 19, "minecraft:jungle_leaves[distance=1,persistent=true]");
@@ -386,22 +386,22 @@ block(5, y + 21, 24, "minecraft:jungle_leaves[distance=3,persistent=true]");
 block(5, y + 21, 25, "minecraft:jungle_leaves[distance=4,persistent=true]");
 block(5, y + 21, 26, "minecraft:jungle_leaves[distance=5,persistent=true]");
 block(5, y + 22, 19, "minecraft:jungle_leaves[distance=2,persistent=true]");
-block(5, y + 22, 20, "minecraft:oak_fence[east=true,north=false,south=true,waterlogged=false,west=true]");
+
 block(5, y + 22, 21, "minecraft:jungle_wood[axis=y]");
-block(5, y + 22, 22, "minecraft:oak_fence[east=false,north=true,south=false,waterlogged=false,west=false]");
+
 block(5, y + 23, 20, "minecraft:jungle_leaves[distance=1,persistent=true]");
 block(5, y + 23, 21, "minecraft:jungle_wood[axis=y]");
 block(5, y + 23, 22, "minecraft:jungle_leaves[distance=1,persistent=true]");
 block(5, y + 24, 16, "minecraft:jungle_leaves[distance=7,persistent=true]");
 block(5, y + 24, 17, "minecraft:jungle_leaves[distance=7,persistent=true]");
 block(5, y + 24, 18, "minecraft:jungle_leaves[distance=7,persistent=true]");
-block(5, y + 24, 19, "minecraft:oak_fence[east=false,north=false,south=true,waterlogged=false,west=false]");
-block(5, y + 24, 20, "minecraft:oak_fence[east=false,north=true,south=true,waterlogged=false,west=false]");
+
+
 block(5, y + 24, 21, "minecraft:jungle_wood[axis=y]");
 block(5, y + 24, 22, "minecraft:jungle_wood[axis=y]");
 block(5, y + 24, 23, "minecraft:jungle_leaves[distance=1,persistent=true]");
 block(5, y + 25, 19, "minecraft:jungle_leaves[distance=7,persistent=true]");
-block(5, y + 25, 20, "minecraft:oak_fence[east=false,north=false,south=false,waterlogged=false,west=false]");
+
 block(5, y + 25, 21, "minecraft:jungle_leaves[distance=1,persistent=true]");
 block(5, y + 25, 22, "minecraft:jungle_leaves[distance=1,persistent=true]");
 block(5, y + 25, 23, "minecraft:jungle_leaves[distance=2,persistent=true]");
@@ -418,24 +418,24 @@ block(6, y + 20, 20, "minecraft:jungle_leaves[distance=1,persistent=true]");
 block(6, y + 20, 21, "minecraft:jungle_leaves[distance=1,persistent=true]");
 block(6, y + 20, 22, "minecraft:jungle_leaves[distance=2,persistent=true]");
 block(6, y + 21, 19, "minecraft:jungle_leaves[distance=2,persistent=true]");
-block(6, y + 21, 20, "minecraft:oak_fence[east=false,north=false,south=false,waterlogged=false,west=true]");
+
 block(6, y + 21, 21, "minecraft:jungle_leaves[distance=1,persistent=true]");
 block(6, y + 22, 15, "minecraft:jungle_leaves[distance=7,persistent=true]");
 block(6, y + 22, 18, "minecraft:jungle_leaves[distance=2,persistent=true]");
-block(6, y + 22, 20, "minecraft:oak_fence[east=false,north=false,south=true,waterlogged=false,west=true]");
+
 block(6, y + 22, 21, "minecraft:jungle_wood[axis=y]");
 block(6, y + 22, 22, "minecraft:jungle_leaves[distance=1,persistent=true]");
 block(6, y + 23, 15, "minecraft:jungle_leaves[distance=7,persistent=true]");
 block(6, y + 23, 16, "minecraft:jungle_leaves[distance=7,persistent=true]");
 block(6, y + 23, 19, "minecraft:jungle_leaves[distance=1,persistent=true]");
 block(6, y + 23, 20, "minecraft:jungle_wood[axis=y]");
-block(6, y + 23, 21, "minecraft:oak_fence[east=true,north=true,south=true,waterlogged=false,west=true]");
-block(6, y + 23, 22, "minecraft:oak_fence[east=true,north=true,south=false,waterlogged=false,west=false]");
+
+
 block(6, y + 23, 23, "minecraft:jungle_leaves[distance=2,persistent=true]");
 block(6, y + 24, 16, "minecraft:jungle_leaves[distance=7,persistent=true]");
 block(6, y + 24, 19, "minecraft:jungle_leaves[distance=2,persistent=true]");
 block(6, y + 24, 20, "minecraft:jungle_leaves[distance=1,persistent=true]");
-block(6, y + 24, 21, "minecraft:oak_fence[east=false,north=false,south=false,waterlogged=false,west=true]");
+
 block(6, y + 24, 22, "minecraft:jungle_leaves[distance=1,persistent=true]");
 block(6, y + 25, 21, "minecraft:jungle_leaves[distance=2,persistent=true]");
 block(6, y + 25, 23, "minecraft:jungle_leaves[distance=3,persistent=true]");
@@ -466,7 +466,7 @@ block(7, y + 22, 21, "minecraft:jungle_leaves[distance=1,persistent=true]");
 block(7, y + 22, 30, "minecraft:jungle_leaves[distance=7,persistent=true]");
 block(7, y + 23, 19, "minecraft:jungle_leaves[distance=1,persistent=true]");
 block(7, y + 23, 20, "minecraft:jungle_leaves[distance=1,persistent=true]");
-block(7, y + 23, 21, "minecraft:oak_fence[east=false,north=false,south=true,waterlogged=false,west=true]");
+
 block(7, y + 23, 22, "minecraft:jungle_wood[axis=y]");
 block(7, y + 23, 23, "minecraft:jungle_leaves[distance=1,persistent=true]");
 block(7, y + 23, 24, "minecraft:jungle_leaves[distance=2,persistent=true]");
