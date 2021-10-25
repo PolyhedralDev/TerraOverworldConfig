@@ -23,7 +23,7 @@ palette:
 slant:
   - threshold: 3
     palette:
-      - BLOCK:minecraft:stone: 255
+      - GRANITE_STONE_MIX: 255
       - DEEPSLATE: 30
       - BEDROCK: 4
       - BLOCK:minecraft:bedrock: 0
