@@ -10,10 +10,7 @@ layers:
       - "minecraft:sand": 10
     layers: 5
   - materials:
-      - "minecraft:sand": 10
-      - "minecraft:sand": 10
-      - "minecraft:sand": 10
-      - "minecraft:sand": 10
+      - "minecraft:sand": 1
     layers: 4
   - materials:
       - "minecraft:sandstone": 10

@@ -20,9 +20,9 @@ structures:
   distribution:
     type: WHITE_NOISE
   structures: 
-    - ball_coral: 10
-    - fan_coral_brain: 10
-    - fan_coral_bubble: 10
-    - fan_coral_fire: 10
-    - fan_coral_tube: 10
-    - fan_coral_horn: 10
+    - ball_coral: 1
+    - fan_coral_brain: 1
+    - fan_coral_bubble: 1
+    - fan_coral_fire: 1
+    - fan_coral_tube: 1
+    - fan_coral_horn: 1

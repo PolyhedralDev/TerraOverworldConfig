@@ -18,6 +18,5 @@ locator:
 
 structures:
   distribution:
-    type: WHITE_NOISE
-  structures: 
-    - sea_pickle: 1
+    type: CONSTANT
+  structures: sea_pickle
