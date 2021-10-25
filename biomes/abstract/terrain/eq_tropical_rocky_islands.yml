@@ -15,9 +15,9 @@ noise:
         if(
           y < 256,
           0,
-          -((y / 33)^2) + 4/6 + noise(x, z)*11),
-        -((y / 33)^2) + 4/6 + noise(x, z)*12),
-      -((y / 63)^3) + 1 + noise(x, z)/3),
+          - y + 33 + noise(x, z)^2 * 11),
+        - y + 33 + noise(x, z)^2 * 12),
+      - y + 63 + (noise(x, z)^3)/3),
     1)
   samplers:
     noise:
