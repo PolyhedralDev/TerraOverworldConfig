@@ -7,13 +7,13 @@ noise:
   type: EXPRESSION
   expression: |
     if(
-    max(y-51, 0),
+    y < 51,
     if(
-      max(y-64, 0),
+      y < 64,
       if(
-        max(y-84, 0),
+        y < 84,
         if(
-          max(y-256, 0),
+          y < 256,
           0,
           -((y / 33)^2) + 4/6 + noise(x, z)*11),
         -((y / 33)^2) + 4/6 + noise(x, z)*12),
