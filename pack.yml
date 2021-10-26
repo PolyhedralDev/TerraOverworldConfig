@@ -6,6 +6,7 @@ generator: NOISE_3D
 
 addons:
   - biome-provider-pipeline
+  - biome-provider-single
   - chunk-generator-noise-3d
   - config-biome
   - config-flora
@@ -21,6 +22,7 @@ addons:
   - generation-stage-feature
 
 biomes: $pipeline/default_pipeline.yml:biomes
+#biomes: $pipeline/single.yml:biomes
 
 stages:
   - FEATURE
