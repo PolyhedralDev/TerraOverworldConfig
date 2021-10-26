@@ -21,8 +21,8 @@ addons:
   - language-yaml
   - generation-stage-feature
 
-biomes: $pipeline/default_pipeline.yml:biomes
-#biomes: $pipeline/single.yml:biomes
+biomes: $biome-providers/default_pipeline.yml:biomes
+#biomes: $biome-providers/single.yml:biomes
 
 stages:
   - FEATURE
