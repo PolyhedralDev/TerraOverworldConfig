@@ -1,3 +1,3 @@
 biomes:
   type: SINGLE
-  biome: PLAINS
+  biome: PLAIN # The singular biome that will be used.

@@ -21,8 +21,31 @@ addons:
   - language-yaml
   - generation-stage-feature
 
+# ---
+# Biome distribution
+# ---
+# Several preset biome providers are available to choose from below.
+# Chosing which one is in use is as simple as commenting the enabled one
+# (by adding a # at the start) and uncommenting the one you wish to use.
+# You can further configure the behaviour of each one in their respective files.
+
+# Default biome distribution
 biomes: $biome-providers/default_pipeline.yml:biomes
+
+# Single biome - to change the single biome to use, check the configuration file.
 #biomes: $biome-providers/single.yml:biomes
+
+# TODO: Continental - Generates large continents
+#biomes: $biome-providers/continental.yml:biomes
+
+# TODO: Water world - Ocean biomes only
+#biomes: $biome-providers/water-world.yml:biomes
+
+# TODO: Desert world - Hot biomes only
+#biomes: $biome-providers/desert-world.yml:biomes
+
+# TODO: Frozen World - Frozen biomes only
+#biomes: $biome-providers/frozen-world.yml:biomes
 
 stages:
   - FEATURE
