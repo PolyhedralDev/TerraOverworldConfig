@@ -30,7 +30,7 @@ addons:
 # You can further configure the behaviour of each one in their respective files.
 
 # Default biome distribution
-biomes: $biome-providers/default_pipeline.yml:biomes
+biomes: $biome-providers/default.yml:biomes
 
 # Single biome - to change the single biome to use, check the configuration file.
 #biomes: $biome-providers/single.yml:biomes
