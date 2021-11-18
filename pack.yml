@@ -5,21 +5,21 @@ author: "Astrash, Sancires"
 generator: NOISE_3D
 
 addons:
-  - biome-provider-pipeline
-  - biome-provider-single
-  - chunk-generator-noise-3d
-  - config-biome
-  - config-flora
-  - config-noise-function
-  - config-ore
-  - config-palette
-  - config-distributors
-  - config-locators
-  - config-feature
-  - structure-terrascript-loader
-  - structure-sponge-loader
-  - language-yaml
-  - generation-stage-feature
+  biome-provider-pipeline: "0.1.+"
+  biome-provider-single: "0.1.+"
+  chunk-generator-noise-3d: "0.1.+"
+  config-biome: "0.1.+"
+  config-flora: "0.1.+"
+  config-noise-function: "0.1.+"
+  config-ore: "0.1.+"
+  config-palette: "0.1.+"
+  config-distributors: "0.1.+"
+  config-locators: "0.1.+"
+  config-feature: "0.1.+"
+  structure-terrascript-loader: "0.1.+"
+  structure-sponge-loader: "0.1.+"
+  language-yaml: "0.1.+"
+  generation-stage-feature: "0.1.+"
 
 # ---
 # Biome distribution
