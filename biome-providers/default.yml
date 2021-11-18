@@ -29,4 +29,4 @@ biomes:
         - DESERT_SPIKES: 1
         - DESERT_SPIKES_GOLD: 1
     stages:
-      - << pipeline/stages/add_rivers.yml:stages
+      - << biome-providers/stages/add_rivers.yml:stages
