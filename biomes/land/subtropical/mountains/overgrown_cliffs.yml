@@ -1,7 +1,7 @@
 id: OVERGROWN_CLIFFS
 type: BIOME
 extends: [ EQ_ERODED_PILLARS, BASE ]
-vanilla: minecraft:jungle_edge
+vanilla: minecraft:jungle
 color: 0x599510
 
 tags:

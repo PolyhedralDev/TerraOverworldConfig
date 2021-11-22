@@ -1,7 +1,7 @@
 id: MOUNTAINS_RIVER
 type: BIOME
 extends: [ EQ_ERODED_MOUNTAINS_RIVER, MOUNTAINS, CARVING_LAND ]
-vanilla: minecraft:mountains
+vanilla: minecraft:stony_peaks
 color: 0x85a7a5
 
 colors:
