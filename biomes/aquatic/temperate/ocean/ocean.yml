@@ -1,0 +1,16 @@
+id: OCEAN
+type: BIOME
+extends: [ EQ_OCEAN, BASE ]
+vanilla: minecraft:ocean
+
+palette:
+  - SANDY_BEACH: 255
+  - DEEPSLATE: 30
+  - BEDROCK: 4
+  - BLOCK:minecraft:bedrock: 0
+
+colors:
+  grass: 0x8eb971
+  foliage: 0x71a74d
+  water: 0x1787d4
+  water-fog: 0x1165b0
