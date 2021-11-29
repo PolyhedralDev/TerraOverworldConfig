@@ -1,0 +1,18 @@
+id: TUNDRA
+type: BIOME
+extends: [ EQ_PLAIN, BASE, CARVING_LAND ]
+vanilla: minecraft:tundra
+color: 0xf0f2f1
+
+colors:
+  fog: 0xfff17c
+  grass: 0x9bc2a8
+  foliage: 0x60a17b
+  water: 0x14559b
+  water-fog: 0x14559b
+
+palette:
+  - TUNDRA: 255
+  - DEEPSLATE: 30
+  - BEDROCK: 4
+  - BLOCK:minecraft:bedrock: 0
