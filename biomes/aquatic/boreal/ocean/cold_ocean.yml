@@ -1,11 +1,12 @@
-id: OCEAN
+id: COLD_OCEAN
 type: BIOME
 extends: [ EQ_OCEAN, BASE ]
-vanilla: minecraft:ocean
-color: 0x1787d4
+vanilla: minecraft:cold_ocean
+color: 0x2080c9
+
 
 palette:
-  - SANDY_BEACH: 255
+  - SHALE_BEACH: 255
   - DEEPSLATE: 30
   - BEDROCK: 4
   - BLOCK:minecraft:bedrock: 0
@@ -13,5 +14,5 @@ palette:
 colors:
   grass: 0x8eb971
   foliage: 0x71a74d
-  water: 0x1787d4
-  water-fog: 0x1165b0
+  water: 0x2080c9
+  water-fog: 0x14559b
