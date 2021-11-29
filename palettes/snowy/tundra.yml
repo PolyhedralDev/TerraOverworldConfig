@@ -9,6 +9,7 @@ layers:
   - materials:
       - minecraft:coarse_dirt: 1
       - minecraft:dirt: 2
+    layers: 1
   - materials: minecraft:stone
     layers: 4
   - materials: minecraft:stone
