@@ -1,0 +1,74 @@
+id: EQ_TERRACED_MOUNTAINS
+type: BIOME
+abstract: true
+
+# Large jittered hills with inter-connected terraced steps.
+
+vars: &variables
+  base: 64
+  height: 170
+
+noise:
+  dimensions: 3
+  type: EXPRESSION
+  variables: *variables
+  expression: -y + base
+  
+elevation:
+  equation:
+    dimensions: 2
+    type: EXPRESSION
+    variables: *variables
+    expression: |
+      terraceParabolic(
+        terraceParabolic(
+          terraceParabolic(
+            (noise(x, z)+1)/2 * height + (-bubbles(x, z)+1)/2 * 10,
+            10, terraceVariation(x, z)*1, 0
+          ),
+          20, terraceVariation(x, z+1000)*1.5, 0
+        ),
+        30, terraceVariation(x, z+2000)*2, 0
+      )
+    samplers:
+      bubbles:
+        dimensions: 2
+        type: LINEAR
+        min: -1
+        max: 0.2
+        function:
+          type: CELLULAR
+          frequency: 0.09
+      noise:
+        dimensions: 2
+        type: DOMAIN_WARP
+        amplitude: 0.25
+        warp:
+          type: GAUSSIAN
+        function:
+          type: DOMAIN_WARP
+          amplitude: 5
+          warp:
+            type: FBM
+            octaves: 2
+            function:
+              type: OPEN_SIMPLEX_2
+              salt: 1
+          function:
+            type: FBM
+            octaves: 4
+            function:
+              type: LINEAR
+              min: -1
+              max: 0.2
+              function:
+                type: CELLULAR
+                frequency: 0.005
+      terraceVariation:
+        dimensions: 2
+        type: FBM
+        octaves: 3
+        lacunarity: 2.5
+        function:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.0015

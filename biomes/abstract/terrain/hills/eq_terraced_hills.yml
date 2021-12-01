@@ -1,0 +1,48 @@
+id: EQ_TERRACED_HILLS
+type: BIOME
+abstract: true
+
+# Terraced low elevation hills.
+
+vars: &variables
+  base: 64
+  height: 50
+
+noise:
+  dimensions: 3
+  type: EXPRESSION
+  variables: *variables
+  expression: -y + base
+
+elevation:
+  equation:
+    dimensions: 2
+    type: EXPRESSION
+    variables: *variables
+    expression: |
+      terrace(
+        (noise(x, z)+1)/2 * height,
+        18, terraceVariation(x, z)*1, 0
+      )
+    samplers:
+      noise:
+        dimensions: 2
+        type: FBM
+        octaves: 4
+        function:
+          type: LINEAR
+          min: -1
+          max: 0
+          function:
+            type: CELLULAR
+            frequency: 0.005
+      terraceVariation:
+        dimensions: 2
+        type: DOMAIN_WARP
+        amplitude: 10
+        warp:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.03
+        function:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.002
