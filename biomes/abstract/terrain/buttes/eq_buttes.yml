@@ -1,0 +1,80 @@
+id: EQ_BUTTES
+type: BIOME
+abstract: true
+
+# Flat plains spotted with large butte spires, reminiscent of Monument Valley.
+
+vars: &variables
+  base: 64
+  groundHeight: 10
+
+  terraceHeight: 30 # Block height of terrace levels
+  terraceHeightVariation: 8
+
+  butteHeight: 100
+  butteBase: 30 # How many blocks above base buttes begin
+
+noise:
+  dimensions: 3
+  type: EXPRESSION
+  variables: *variables
+  expression: |
+    // If above butteBase, terrace the base function, otherwise just use linear base
+    if(y<base+butteBase,
+      -y,
+      terrace(-y,
+        terraceHeight, terraceVariation(x, z) * terraceHeightVariation, 0
+      )
+    ) + base
+  samplers:
+    terraceVariation:
+      dimensions: 2
+      type: OPEN_SIMPLEX_2
+      frequency: 0.001
+
+elevation:
+  equation:
+    dimensions: 2
+    type: EXPRESSION
+    variables: *variables
+    expression: |
+      // Ground
+      (simplex(x/2, z/2)+1)/2 * groundHeight
+      
+      // Deposits
+      + maskSmooth(
+        butteBase,
+        0.2, 1,
+        |mask(x, z)|
+      )
+      
+      // Buttes
+      + maskSmooth(
+        10 + ((buttes(x, z)+1)/2)^2 * butteHeight,
+        0.6, 0.8,
+        |mask(x, z)|
+      )
+    samplers:
+      mask:
+        dimensions: 2
+        type: DOMAIN_WARP
+        amplitude: 4
+        warp:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.03
+          salt: 6
+        function:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.005
+          salt: 5
+      buttes:
+        dimensions: 2
+        type: FBM
+        octaves: 3
+        function:
+          type: LINEAR
+          min: -1
+          max: -0.2
+          function:
+            type: CELLULAR
+            frequency: 0.02

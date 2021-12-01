@@ -1,0 +1,97 @@
+id: EQ_ERODED_BUTTES
+type: BIOME
+abstract: true
+
+# Same as EQ_BUTTES, with the addition of erosion,
+# creating pockets and overhangs within the buttes.
+
+vars: &variables
+  base: 64
+  groundHeight: 10
+
+  terraceHeight: 30 # Block height of terrace levels
+  terraceHeightVariation: 8
+
+  butteHeight: 100
+  butteBase: 30 # How many blocks above base buttes begin
+
+  erosionStrength: 1.5
+  erosionTop: 120
+  erosionBottom: 80
+
+noise:
+  dimensions: 3
+  type: EXPRESSION
+  variables: *variables
+  expression: |
+    // If above butteBase, terrace the base function, otherwise just use linear base
+    if(y<base+butteBase,
+      -y,
+      terrace(-y,
+        terraceHeight, terraceVariation(x, z) * terraceHeightVariation, 0
+      )
+    ) + base
+    
+    - if(y<erosionBottom,0,
+      lerp(y,
+        erosionTop, 0,
+        erosionBottom, erosionStrength * lerp(|erosion(x,y*2,z)|,0,1,0.2,0) * (-y+erosionTop)
+      )
+    )
+  samplers:
+    terraceVariation:
+      dimensions: 2
+      type: OPEN_SIMPLEX_2
+      frequency: 0.001
+    erosion: # Subtracts from buttes to emulate erosion
+      dimensions: 3
+      type: OPEN_SIMPLEX_2
+      frequency: 0.015
+      salt: 2
+
+elevation:
+  equation:
+    dimensions: 2
+    type: EXPRESSION
+    variables: *variables
+    expression: |
+      // Ground
+      (simplex(x/2, z/2)+1)/2 * groundHeight
+      
+      // Deposits
+      + maskSmooth(
+        butteBase,
+        0.2, 1,
+        |mask(x, z)|
+      )
+      
+      // Buttes
+      + maskSmooth(
+        10 + ((buttes(x, z)+1)/2)^2 * butteHeight,
+        0.6, 0.8,
+        |mask(x, z)|
+      )
+    samplers:
+      mask:
+        dimensions: 2
+        type: DOMAIN_WARP
+        amplitude: 4
+        warp:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.03
+          salt: 6
+        function:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.005
+          salt: 5
+      buttes:
+        dimensions: 2
+        type: FBM
+        octaves: 3
+        function:
+          type: LINEAR
+          min: -1
+          max: -0.2
+          function:
+            type: CELLULAR
+            frequency: 0.02
