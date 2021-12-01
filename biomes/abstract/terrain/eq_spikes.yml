@@ -2,6 +2,8 @@ id: EQ_SPIKES
 type: BIOME
 abstract: true
 
+# Relatively flat terrain with small lakes, populated by large protruding spikes.
+
 vars: &variables
   # Terms:
   # - Ground        - The basic terrain sans spikes

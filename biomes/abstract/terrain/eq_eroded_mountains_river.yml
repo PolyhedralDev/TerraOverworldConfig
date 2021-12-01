@@ -2,6 +2,9 @@ type: BIOME
 id: EQ_ERODED_MOUNTAINS_RIVER
 abstract: true
 
+# River version of EQ_ERODED_MOUNTAINS.
+# Produces cave rivers when the biome using this is distributed as a river.
+
 original-noise: &originalNoise $biomes/abstract/terrain/eq_eroded_mountains.yml:noise # Original noise to be turned into river
 
 vars: &variables

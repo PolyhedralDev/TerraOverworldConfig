@@ -2,6 +2,8 @@ id: EQ_HILLS
 type: BIOME
 abstract: true
 
+# Basic hilly terrain.
+
 vars: &variables
   base: 64
   height: 10

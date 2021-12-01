@@ -2,6 +2,8 @@ id: EQ_DUNES
 type: BIOME
 abstract: true
 
+# Relatively flat low elevation sand dunes.
+
 vars: &variables
   base: 60 # Base terrain y level
   groundHeight: 10 # Block height of base noise

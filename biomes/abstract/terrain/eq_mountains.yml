@@ -2,6 +2,8 @@ id: EQ_MOUNTAINS
 type: BIOME
 abstract: true
 
+# Basic peaked mountains.
+
 vars: &variables
   base: 75
   height: 150

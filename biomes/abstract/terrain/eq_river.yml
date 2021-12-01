@@ -2,6 +2,8 @@ id: EQ_RIVER
 type: BIOME
 abstract: true
 
+# Generic river terrain.
+
 vars: &variables
   base: 50
   height: 4

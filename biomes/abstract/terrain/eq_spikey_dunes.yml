@@ -2,6 +2,8 @@ id: EQ_SPIKEY_DUNES
 type: BIOME
 abstract: true
 
+# A combination of EQ_SPIKES and EQ_DUNES.
+
 vars: &variables
   # Terms:
   # - Ground        - The basic terrain sans spikes & dunes

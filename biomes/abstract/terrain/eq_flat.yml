@@ -2,6 +2,8 @@ id: EQ_FLAT
 type: BIOME
 abstract: true
 
+# Perfectly flat terrain.
+
 vars: &variables
   base: 64
 

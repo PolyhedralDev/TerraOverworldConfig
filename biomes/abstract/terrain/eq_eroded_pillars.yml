@@ -2,6 +2,8 @@ id: EQ_ERODED_PILLARS
 type: BIOME
 abstract: true
 
+# Tall thin pillars with cracks in them, reminiscent of Zhangjiajie National Forest Park.
+
 vars: &variables
   base: 64
   height: 10
