@@ -5,7 +5,7 @@ abstract: true
 # River version of EQ_ERODED_MOUNTAINS.
 # Produces cave rivers when the biome using this is distributed as a river.
 
-original-noise: &originalNoise $biomes/abstract/terrain/eq_eroded_mountains.yml:noise # Original noise to be turned into river
+original-noise: &originalNoise $biomes/abstract/terrain/mountains/eq_eroded_mountains.yml:noise # Original noise to be turned into river
 
 vars: &variables
   ceilingHeight:    90  # Base Y level of the ceiling
