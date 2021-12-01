@@ -1,0 +1,62 @@
+id: EQ_CRACKED_PLATEAU
+type: BIOME
+abstract: true
+
+# Large flat plateau with a network of eroded crevices running through it.
+# The crevices include small adjacent caverns and speleothems.
+
+vars: &variables
+  base: 64 + 80
+
+  erosionStrength: 3
+  erosionTop: 64 + 80
+  erosionBottom: 80
+
+noise:
+  dimensions: 3
+  type: EXPRESSION
+  variables: *variables
+  expression: |
+    -y + base
+    - if(y<erosionBottom,0,
+      lerp(y,
+        erosionTop, 0,
+        //erosionBottom, erosionStrength * (lerp(|erosion(x,y,z)|,0,1,0.2,0)*0 + |erosion(x/2, y/2, z/2)|) * (-y+erosionTop)
+        erosionBottom,
+          (min(|erosion(x/2, y, z/2)|/2, lerp(pillars(x,z), -0.97, 0, -0.89, 1)))
+          * (-y+erosionTop)
+          * erosionStrength
+      )
+    )
+  samplers:
+    erosion:
+      dimensions: 3
+      type: OPEN_SIMPLEX_2
+      frequency: 0.015
+      salt: 2
+    pillars:
+      dimensions: 2
+      type: CELLULAR
+      frequency: 0.07
+
+elevation:
+  equation:
+    dimensions: 2
+    type: EXPRESSION
+    variables: *variables
+    expression: simplex(x/2, z/2) * 10 - maskSmooth(70, -0.35, -0.15, cracks(x, z))
+    samplers:
+      cracks:
+        dimensions: 2
+        type: DOMAIN_WARP
+        amplitude: 10
+        warp:
+          type: FBM
+          octaves: 2
+          function:
+            type: OPEN_SIMPLEX_2
+            frequency: 0.03
+        function:
+          type: CELLULAR
+          return: Distance2Div
+          frequency: 0.003
