@@ -2,7 +2,7 @@ id: TROPICAL_OCEAN
 type: BIOME
 extends: [ EQ_OCEAN, BASE ]
 vanilla: minecraft:warm_ocean
-color: 0x02b0e5
+color: $biomes/colors.yml:TROPICAL_OCEAN
 
 palette:
   - SANDY_BEACH: 255

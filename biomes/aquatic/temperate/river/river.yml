@@ -2,7 +2,7 @@ id: RIVER
 type: BIOME
 extends: [ EQ_RIVER, BASE ]
 vanilla: minecraft:river
-color: 0x0084ff
+color: $biomes/colors.yml:RIVER
 
 palette:
   - SANDY_BEACH: 255
