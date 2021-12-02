@@ -1,8 +1,8 @@
 id: TUNDRA
 type: BIOME
 extends: [ EQ_PLAIN, BASE, CARVING_LAND ]
-vanilla: minecraft:tundra
 color: 0xf0f2f1
+vanilla: minecraft:snowy_plains
 
 colors:
   fog: 0xfff17c
