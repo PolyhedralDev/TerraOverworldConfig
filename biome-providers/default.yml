@@ -1,3 +1,38 @@
+anchors:
+  
+  # Biomes to be used for distributing the climates
+  
+  arid: &arid                         DESERT
+  aridBiome: &aridBiome               BIOME:DESERT
+  
+  tropical: &tropical                 PALM_BEACH
+  tropicalBiome: &tropicalBiome       BIOME:PALM_BEACH
+  
+  subtropical: &subtropical           EVERGREEN_FOREST
+  subtropicalBiome: &subtropicalBiome BIOME:EVERGREEN_FOREST
+  
+  temperate: &temperate               PLAINS
+  temperateBiome: &temperateBiome     BIOME:PLAINS
+  
+  montane: &montane                   MOUNTAINS
+  montaneBiome: &montaneBiome         BIOME:MOUNTAINS
+  
+  boreal: &boreal                     TAIGA
+  borealBiome: &borealBiome           BIOME:TAIGA
+  
+  arctic: &arctic                     TUNDRA
+  arcticBiome: &arcticBiome           BIOME:TUNDRA
+
+  climateNoise: &climateNoise
+    dimensions: 2
+    type: LINEAR
+    min: -0.8
+    max: 0.8
+    function:
+      type: CELLULAR
+      return: CellValue
+      frequency: 0.1
+
 biomes:
   type: PIPELINE
   resolution: 2
@@ -11,22 +46,68 @@ biomes:
       type: NOISE
       noise:
         dimensions: 2
-        type: LINEAR
-        min: -0.8
-        max: 0.8
-        function:
-          type: CELLULAR
-          return: CellValue
-          frequency: 0.03
+        type: OPEN_SIMPLEX_2
+        frequency: 0.008
       biomes:
-        - PLAINS: 1
-        - PRAIRIE: 1
-        - STEPPE: 1
-        - BIRCH_FOREST: 1
-        - FOREST: 1
-        - ARID_SPIKES: 1
-        - DESERT: 1
-        - DESERT_SPIKES: 1
-        - DESERT_SPIKES_GOLD: 1
+        - *arid: 1
+        - *tropical: 1
+        - *subtropical: 1
+        - *temperate: 1
+        - *montane: 1
+        - *boreal: 1
+        - *arctic: 1
     stages:
+      - type: REPLACE
+        noise: *climateNoise
+        from: *aridBiome
+        to:
+          - DESERT: 1
+          - DESERT_SPIKES: 1
+          - DESERT_SPIKES_GOLD: 1
+          - ARID_SPIKES: 1
+
+      - type: REPLACE
+        noise: *climateNoise
+        from: *tropicalBiome
+        to:
+          - PALM_BEACH: 1
+
+      - type: REPLACE
+        noise: *climateNoise
+        from: *subtropicalBiome
+        to:
+          - EVERGREEN_FOREST: 1
+          - OVERGROWN_CLIFFS: 1
+
+      - type: REPLACE
+        noise: *climateNoise
+        from: *temperateBiome
+        to:
+          - BIRCH_FOREST: 1
+          - FOREST: 1
+          - SEASONAL_FOREST: 1
+          - OAK_SAVANNA: 1
+          - PLAINS: 1
+          - PRAIRIE: 1
+          - STEPPE: 1
+
+      - type: REPLACE
+        noise: *climateNoise
+        from: *montaneBiome
+        to:
+          - MOUNTAINS: 1
+
+      - type: REPLACE
+        noise: *climateNoise
+        from: *borealBiome
+        to:
+          - TAIGA: 1
+
+      - type: REPLACE
+        noise: *climateNoise
+        from: *arcticBiome
+        to:
+          - TUNDRA: 1
+
+      - << biome-providers/stages/expand.yml:stages
       - << biome-providers/stages/add_rivers.yml:stages
