@@ -1,0 +1,4 @@
+stages:
+  - type: FRACTAL_EXPAND
+    noise:
+      type: WHITE_NOISE
