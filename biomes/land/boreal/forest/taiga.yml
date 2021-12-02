@@ -2,7 +2,7 @@ id: TAIGA
 type: BIOME
 extends: [ EQ_HILLS, BASE, CARVING_LAND ]
 vanilla: minecraft:taiga
-color: 0x86b783
+color: $biomes/colors.yml:TAIGA
 
 tags:
   - LAND

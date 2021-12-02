@@ -2,7 +2,7 @@ id: SEASONAL_FOREST
 type: BIOME
 extends: [ EQ_HILLS, BASE, CARVING_LAND ]
 vanilla: minecraft:birch_forest
-color: 0xffa500
+color: $biomes/colors.yml:SEASONAL_FOREST
 
 tags:
   - LAND

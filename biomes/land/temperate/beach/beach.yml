@@ -2,7 +2,7 @@ id: BEACH
 type: BIOME
 extends: [ EQ_FLAT, BASE, CARVING_LAND ]
 vanilla: minecraft:beach
-color: 0xe6e7a8
+color: $biomes/colors.yml:BEACH
 
 tags:
   - BEACH

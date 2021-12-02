@@ -2,7 +2,7 @@ id: EVERGREEN_FOREST
 type: BIOME
 extends: [ EQ_HILLS, BASE, CARVING_LAND ]
 vanilla: minecraft:taiga # This is only so foxes will spawn
-color: 0x80c465
+color: $biomes/colors.yml:EVERGREEN_FOREST
 
 tags:
   - LAND

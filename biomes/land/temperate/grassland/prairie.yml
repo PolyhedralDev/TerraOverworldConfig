@@ -2,7 +2,7 @@ id: PRAIRIE
 type: BIOME
 extends: [ EQ_PLAIN, BASE, CARVING_LAND ]
 vanilla: minecraft:plains
-color: 0xc9f75d
+color: $biomes/colors.yml:PRAIRIE
 
 tags:
   - LAND

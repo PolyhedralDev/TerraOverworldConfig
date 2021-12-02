@@ -1,0 +1,32 @@
+# Arctic Biomes
+TUNDRA: 0xfab53c
+
+# Arid Biomes
+DESERT: 0xe8cf68
+DESERT_SPIKES: 0xdbc35e
+DESERT_SPIKES_GOLD: 0xe7b256
+ARID_SPIKES: 0xfab53c
+
+# Boreal Biomes
+TAIGA: 0x86b783
+
+# Montane Biomes
+MOUNTAINS: 0x6f6f6f
+
+# Subtropical Biomes
+EVERGREEN_FOREST: 0x80c465
+OVERGROWN_CLIFFS: 0x599510
+
+# Temperate Biomes
+BEACH: 0xe6e7a8
+SHALE_BEACH: 0xc3c9bc
+BIRCH_FOREST: 0x88bb67
+FOREST: 0x79c05a
+SEASONAL_FOREST: 0xffa500
+OAK_SAVANNA: 0xd8f75d
+PLAINS: 0x91bd59
+PRAIRIE: 0xc9f75d
+STEPPE: 0x9db55b
+
+# Tropical Biomes
+PALM_BEACH: 0x73c441

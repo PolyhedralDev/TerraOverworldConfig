@@ -2,7 +2,7 @@ id: PLAINS
 type: BIOME
 extends: [ EQ_PLAIN, BASE, CARVING_LAND ]
 vanilla: minecraft:plains
-color: 0x91bd59
+color: $biomes/colors.yml:PLAINS
 
 tags:
   - LAND

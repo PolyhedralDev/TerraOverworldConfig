@@ -2,7 +2,7 @@ id: OAK_SAVANNA
 type: BIOME
 extends: [ EQ_PLAIN, BASE, CARVING_LAND ]
 vanilla: minecraft:plains
-color: 0xd8f75d
+color: $biomes/colors.yml:OAK_SAVANNA
 
 tags:
   - LAND

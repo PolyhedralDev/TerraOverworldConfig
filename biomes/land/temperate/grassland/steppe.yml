@@ -2,7 +2,7 @@ id: STEPPE
 type: BIOME
 extends: [ EQ_PLAIN, BASE, CARVING_LAND ]
 vanilla: minecraft:plains
-color: 0x9db55b
+color: $biomes/colors.yml:STEPPE
 
 tags:
   - LAND
