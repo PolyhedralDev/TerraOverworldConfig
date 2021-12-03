@@ -20,6 +20,8 @@ addons:
   structure-sponge-loader: "0.1.+"
   language-yaml: "0.1.+"
   generation-stage-feature: "0.1.+"
+  structure-function-check-noise-3d: "0.1.+"
+
 
 # ---
 # Biome distribution
