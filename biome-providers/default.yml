@@ -42,20 +42,7 @@ biomes:
     noise:
       type: GAUSSIAN
   pipeline:
-    source:
-      type: NOISE
-      noise:
-        dimensions: 2
-        type: OPEN_SIMPLEX_2
-        frequency: 0.008
-      biomes:
-        - *arid: 1
-        - *tropical: 1
-        - *subtropical: 1
-        - *temperate: 1
-        - *montane: 1
-        - *boreal: 1
-        - *arctic: 1
+    source: $biome-providers/sources/basic_continents.yml:source
     stages:
       - type: REPLACE
         noise: *climateNoise
