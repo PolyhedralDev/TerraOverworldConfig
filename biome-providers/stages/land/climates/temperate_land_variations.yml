@@ -1,0 +1,12 @@
+stages:
+  - type: REPLACE
+    from: $biome-providers/aliases.yml:temperate-tag
+    to:
+      - BIRCH_FOREST: 1
+      - FOREST: 1
+      - SEASONAL_FOREST: 1
+      - OAK_SAVANNA: 1
+      - PLAINS: 1
+      - PRAIRIE: 1
+      - STEPPE: 1
+    noise: $biome-providers/default.yml:samplers.climate-variation

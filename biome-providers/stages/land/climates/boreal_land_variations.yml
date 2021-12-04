@@ -1,0 +1,6 @@
+stages:
+  - type: REPLACE
+    from: $biome-providers/aliases.yml:boreal-tag
+    to:
+      - TAIGA: 1
+    noise: $biome-providers/default.yml:samplers.climate-variation

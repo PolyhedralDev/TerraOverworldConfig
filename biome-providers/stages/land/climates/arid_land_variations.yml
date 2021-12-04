@@ -1,0 +1,9 @@
+stages:
+  - type: REPLACE
+    from: $biome-providers/aliases.yml:arid-tag
+    to:
+      - DESERT: 1
+      - DESERT_SPIKES: 1
+      - DESERT_SPIKES_GOLD: 1
+      - ARID_SPIKES: 1
+    noise: $biome-providers/default.yml:samplers.climate-variation
