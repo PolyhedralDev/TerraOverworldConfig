@@ -1,0 +1,60 @@
+# Aliases for use in biome pipelines.
+
+# These are used to better represent what the mutators are intending
+# to do by acting as labels inside the config, rather than using raw biome names.
+#   (Terra will still use the actual biomes specified in this file!)
+
+# Aliases suffixed with '-biome' are simply biome IDs, and are used in the
+# 'to:' key in mutators.
+
+# Aliases suffixed with '-tag' are used with the 'from:' key in mutators.
+#   (The 'from:' requires a *tag*, not a biome ID, so Terra automatically assigns every biome
+#   a 'BIOME:<BIOME_ID>' tag, such that you can reference singular biomes via tags.)
+
+# To reference an alias in a mutator, simply use the meta configuration syntax like so:
+# $biome-providers/aliases.yml:<ALIAS>. For example, a REPLACE mutator using aliases to
+# replace land with land + ocean would look something like this:
+
+stage-example:
+  type: REPLACE
+  from: $biome-providers/aliases.yml:land-tag
+  to:
+    - $biome-providers/aliases.yml:land-biome
+    - $biome-providers/aliases.yml:ocean-biome
+
+# Elevation aliases
+
+deep-ocean-biome:     DEEP_OCEAN
+deep-ocean-tag: BIOME:DEEP_OCEAN
+
+ocean-biome:     OCEAN
+ocean-tag: BIOME:OCEAN
+
+beach-biome:     BEACH
+beach-tag: BIOME:BEACH
+
+land-biome:     PLAINS
+land-tag: BIOME:PLAINS
+
+# Climate aliases
+
+arid-biome:     DESERT
+arid-tag: BIOME:DESERT
+
+tropical-biome:     PALM_BEACH
+tropical-tag: BIOME:PALM_BEACH
+
+subtropical-biome:     EVERGREEN_FOREST
+subtropical-tag: BIOME:EVERGREEN_FOREST
+
+temperate-biome:     FOREST
+temperate-tag: BIOME:FOREST
+
+montane-biome:     MOUNTAINS
+montane-tag: BIOME:MOUNTAINS
+
+boreal-biome:     TAIGA
+boreal-tag: BIOME:TAIGA
+
+arctic-biome:     TUNDRA
+arctic-tag: BIOME:TUNDRA
