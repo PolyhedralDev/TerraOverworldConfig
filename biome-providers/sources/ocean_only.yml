@@ -1,0 +1,10 @@
+source:
+  type: NOISE
+  biomes:
+    - $biome-providers/aliases.yml:ocean-biome: 2
+    - $biome-providers/aliases.yml:deep-ocean-biome: 1
+  noise:
+    dimensions: 2
+    type: FBM
+    function:
+      type: OPEN_SIMPLEX_2

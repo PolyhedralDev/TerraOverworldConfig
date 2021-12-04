@@ -1,0 +1,18 @@
+source:
+  type: NOISE
+  biomes:
+    - $biome-providers/aliases.yml:deep-ocean-biome: 25
+    - $biome-providers/aliases.yml:ocean-biome: 25
+    - $biome-providers/aliases.yml:land-biome: 30
+  noise:
+    dimensions: 2
+    type: LINEAR
+    min: -1
+    max: -0.65
+    function:
+      type: FBM
+      lacunarity: 3
+      gain: 0.4
+      function:
+        type: CELLULAR
+        frequency: 0.02
