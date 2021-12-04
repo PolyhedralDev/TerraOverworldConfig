@@ -50,6 +50,7 @@ SUBTROPICAL_OCEAN: 0x0d96db
 
 # Temperate Aquatic Biomes
 OCEAN: 0x1787d4
+DEEP_OCEAN: 0x3757ad
 RIVER: 0x0084ff
 
 # Tropical Aquatic Biomes
