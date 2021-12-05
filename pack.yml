@@ -53,75 +53,10 @@ stages:
   - FEATURE
 
 functions:
-#  "<<":
-#    - math/functions/lerp.yml:functions
-#    - math/functions/maskSmooth.yml:functions
-#    - math/functions/terrace.yml:functions
-  lerp:
-    # Linear interpolation between two values
-    arguments:
-      - t
-      - at # Value of t where output = a
-      - a
-      - bt # Value of t where output = b
-      - b
-      # Values of t between at and bt will be interpolated
-    expression: |
-      if(at<bt,
-        if(t<=at,a,if(t>=bt,b,a*(t-bt)/(at-bt)+b*(t-at)/(bt-at))),
-        if(t>=at,a,if(t<=bt,b,a*(t-bt)/(at-bt)+b*(t-at)/(bt-at)))
-      )
-  maskSmooth:
-    # Ramp function from 0 to value, typically used to mask a noise function by another
-    arguments:
-      - v  # Value
-      - lb # When mask <= lb, returns 0
-      - ub # When mask >= ub, returns v
-      # Otherwise, output is interpolated between 0 and v using a hermite curve
-      - m  # Mask, typically a noise function
-    expression: |
-      if(lb<ub,
-        if(m<=lb,0,if(m>=ub,v,v*(3*((m-lb)/(ub-lb))^2-2*((m-lb)/(ub-lb))^3))),
-        if(m>=lb,0,if(m<=ub,v,v*(3*((m-lb)/(ub-lb))^2-2*((m-lb)/(ub-lb))^3)))
-      )
-  # Temporary ugly expanded versions until nested functions are added
-  # Cleaned up versions can be found in the /math/functions/terrace.yml file
-  terrace:
-    arguments:
-      - i  # Input
-      - sc # Scale
-      - o  # Offset
-      - g  # Gap
-    expression: sc*(|(if(0<=(i/sc-o)-floor((i/sc-o)/(1+g))*(1+g)&&(i/sc-o)-floor((i/sc-o)/(1+g))*(1+g)<1,(i/sc-o)-floor((i/sc-o)/(1+g))*(1+g),0))-0.5|-0.5)+i
-  terraceParabolic:
-    arguments:
-      - i  # Input
-      - sc # Scale
-      - o  # Offset
-      - g  # Gap
-    expression: |
-      i+sc*(-0.25+(-0.5+if(0<=(i/sc-o)-floor((i/sc-o)/(1+g))*(1+g)&&
-                            1>(i/sc-o)-floor((i/sc-o)/(1+g))*(1+g),
-                              (i/sc-o)-floor((i/sc-o)/(1+g))*(1+g),0))^2)
-  terraceParalinear:
-    arguments:
-      - i  # Input
-      - sc # Scale
-      - o  # Offset
-      - g  # Gap
-    expression: |
-      i+sc*if(0.25<if(0<=(i/sc-o)-floor((i/sc-o)/(1+g))*(1+g)&&
-                       1>(i/sc-o)-floor((i/sc-o)/(1+g))*(1+g),
-                         (i/sc-o)-floor((i/sc-o)/(1+g))*(1+g),0)&&
-                   if(0<=(i/sc-o)-floor((i/sc-o)/(1+g))*(1+g)&&
-                       1>(i/sc-o)-floor((i/sc-o)/(1+g))*(1+g),
-                         (i/sc-o)-floor((i/sc-o)/(1+g))*(1+g),0)<0.75,
-                2*(if(0<=(i/sc-o)-floor((i/sc-o)/(1+g))*(1+g) &&
-                       1>(i/sc-o)-floor((i/sc-o)/(1+g))*(1+g),
-                         (i/sc-o)-floor((i/sc-o)/(1+g))*(1+g),0)-0.5)^2-0.375,
-                  |if(0<=(i/sc-o)-floor((i/sc-o)/(1+g))*(1+g)&&
-                       1>(i/sc-o)-floor((i/sc-o)/(1+g))*(1+g),
-                         (i/sc-o)-floor((i/sc-o)/(1+g))*(1+g),0)-0.5|-0.5)
+  "<<":
+    - math/functions/terrace.yml:functions
+    - math/functions/lerp.yml:functions
+    - math/functions/maskSmooth.yml:functions
 
 noise:
   simplex:

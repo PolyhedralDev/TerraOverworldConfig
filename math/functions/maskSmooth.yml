@@ -9,17 +9,10 @@ functions:
       - m  # Mask, typically a noise function
     expression: |
       if(lb<ub,
-        if(m<=lb,0,if(m>=ub,v,v*(3*((m-lb)/(ub-lb))^2-2*((m-lb)/(ub-lb))^3))),
-        if(m>=lb,0,if(m<=ub,v,v*(3*((m-lb)/(ub-lb))^2-2*((m-lb)/(ub-lb))^3)))
+        if(m<=lb,0,if(m>=ub,v,v*hermite((m-lb)/(ub-lb)))),
+        if(m>=lb,0,if(m<=ub,v,v*hermite((m-lb)/(ub-lb))))
       )
-  
-  # With nested functions once implemented
-  #    expression: |
-  #      if(lb<ub,
-  #        if(m<=lb,0,if(m>=ub,v,v*hermite((m-lb)/(ub-lb)))),
-  #        if(m>=lb,0,if(m<=ub,v,v*hermite((m-lb)/(ub-lb))))
-  #      )
-  #    functions:
-  #      hermite:
-  #        args: [x]
-  #        expression: 3*x^2-2*x^3
+    functions:
+      hermite:
+        arguments: [x]
+        expression: 3*x^2-2*x^3
