@@ -19,6 +19,14 @@ palette:
   - BEDROCK: 4
   - BLOCK:minecraft:bedrock: 0
 
+slant:
+  - threshold: 5
+    palette:
+    - BLOCK:minecraft:stone: 255
+    - DEEPSLATE: 30
+    - BEDROCK: 4
+    - BLOCK:minecraft:bedrock: 0
+
 features:
   - SPRUCE_TREES
   - FLOWER_PATCHES
