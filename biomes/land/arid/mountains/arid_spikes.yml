@@ -1,6 +1,6 @@
 id: ARID_SPIKES
 type: BIOME
-extends: [ EQ_SPIKES, BASE, CARVING_LAND ]
+extends: [ EQ_SPIKES, CARVING_LAND, BASE ]
 vanilla: minecraft:badlands
 color: $biomes/colors.yml:ARID_SPIKES
 

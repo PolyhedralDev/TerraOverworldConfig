@@ -1,6 +1,6 @@
 id: MOUNTAINS
 type: BIOME
-extends: [ EQ_ERODED_MOUNTAINS, BASE, CARVING_LAND ]
+extends: [ EQ_ERODED_MOUNTAINS, CARVING_LAND, BASE ]
 vanilla: minecraft:stony_peaks
 color: $biomes/colors.yml:MOUNTAINS
 

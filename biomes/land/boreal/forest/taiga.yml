@@ -1,6 +1,6 @@
 id: TAIGA
 type: BIOME
-extends: [ EQ_HILLS, BASE, CARVING_LAND ]
+extends: [ EQ_HILLS, CARVING_LAND, BASE ]
 vanilla: minecraft:taiga
 color: $biomes/colors.yml:TAIGA
 

@@ -1,6 +1,6 @@
 id: EVERGREEN_FOREST
 type: BIOME
-extends: [ EQ_HILLS, BASE, CARVING_LAND ]
+extends: [ EQ_HILLS, CARVING_LAND, BASE ]
 vanilla: minecraft:taiga # This is only so foxes will spawn
 color: $biomes/colors.yml:EVERGREEN_FOREST
 

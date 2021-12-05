@@ -1,6 +1,6 @@
 id: DESERT_SPIKES
 type: BIOME
-extends: [ EQ_SPIKEY_DUNES, BASE ]
+extends: [ EQ_SPIKEY_DUNES, CARVING_LAND, BASE ]
 vanilla: minecraft:desert
 color: $biomes/colors.yml:DESERT_SPIKES
 

@@ -1,6 +1,6 @@
 id: SEASONAL_FOREST
 type: BIOME
-extends: [ EQ_HILLS, BASE, CARVING_LAND ]
+extends: [ EQ_HILLS, CARVING_LAND, BASE ]
 vanilla: minecraft:birch_forest
 color: $biomes/colors.yml:SEASONAL_FOREST
 
