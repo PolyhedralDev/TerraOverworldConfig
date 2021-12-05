@@ -3,4 +3,4 @@ stages:
     from: $biome-providers/aliases.yml:montane-tag
     to:
       - MOUNTAINS: 1
-    noise: $biome-providers/default.yml:samplers.climate-variation
+    noise: $biome-providers/presets/default.yml:samplers.climate-variation

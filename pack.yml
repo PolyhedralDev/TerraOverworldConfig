@@ -32,22 +32,22 @@ addons:
 # You can further configure the behaviour of each one in their respective files.
 
 # Default biome distribution
-biomes: $biome-providers/default.yml:biomes
+biomes: $biome-providers/presets/default.yml:biomes
 
 # Single biome - to change the single biome to use, check the configuration file.
-#biomes: $biome-providers/single.yml:biomes
+#biomes: $biome-providers/presets/single.yml:biomes
 
 # TODO: Continental - Generates large continents
-#biomes: $biome-providers/continental.yml:biomes
+#biomes: $biome-providers/presets/continental.yml:biomes
 
 # TODO: Water world - Ocean biomes only
-#biomes: $biome-providers/water-world.yml:biomes
+#biomes: $biome-providers/presets/water_world.yml:biomes
 
 # TODO: Desert world - Hot biomes only
-#biomes: $biome-providers/desert-world.yml:biomes
+#biomes: $biome-providers/presets/desert_world.yml:biomes
 
 # TODO: Frozen World - Frozen biomes only
-#biomes: $biome-providers/frozen-world.yml:biomes
+#biomes: $biome-providers/presets/frozen_world.yml:biomes
 
 stages:
   - FEATURE

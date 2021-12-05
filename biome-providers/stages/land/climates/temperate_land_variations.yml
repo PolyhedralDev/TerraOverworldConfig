@@ -9,4 +9,4 @@ stages:
       - PLAINS: 1
       - PRAIRIE: 1
       - STEPPE: 1
-    noise: $biome-providers/default.yml:samplers.climate-variation
+    noise: $biome-providers/presets/default.yml:samplers.climate-variation

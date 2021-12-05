@@ -4,4 +4,4 @@ stages:
     to:
       - EVERGREEN_FOREST: 1
       - OVERGROWN_CLIFFS: 1
-    noise: $biome-providers/default.yml:samplers.climate-variation
+    noise: $biome-providers/presets/default.yml:samplers.climate-variation
