@@ -1,6 +1,7 @@
-type: BIOME
 id: EQ_ERODED_MOUNTAINS_RIVER
+type: BIOME
 abstract: true
+extends: EQ_ERODED_TERRACED_MOUNTAINS
 
 # River version of EQ_ERODED_MOUNTAINS.
 # Produces cave rivers when the biome using this is distributed as a river.
@@ -10,7 +11,7 @@ original-noise: &originalNoise $biomes/abstract/terrain/mountains/eq_eroded_moun
 vars: &variables
   ceilingHeight:    90  # Base Y level of the ceiling
   ceilingVariation: 0   # How many blocks upwards ceiling height can vary
-  originalStrength: 4   # How much the original noise contributes to ceiling shape
+  originalStrength: 1   # How much the original noise contributes to ceiling shape
   ceilingSpikeVar:  20  # How many blocks down ceiling spikes will go
   
   floorHeight:      45  # Base Y level of the floor
