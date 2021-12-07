@@ -1,6 +1,7 @@
 id: EQ_SPIKES
 type: BIOME
 abstract: true
+extends: NO_ELEVATION
 
 # Relatively flat terrain with small lakes, populated by large protruding spikes.
 

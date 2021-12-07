@@ -1,6 +1,7 @@
 id: EQ_RIVER
 type: BIOME
 abstract: true
+extends: NO_ELEVATION
 
 # Generic river terrain.
 

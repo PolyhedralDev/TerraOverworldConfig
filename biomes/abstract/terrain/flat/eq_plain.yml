@@ -1,6 +1,7 @@
 id: EQ_PLAIN
 type: BIOME
 abstract: true
+extends: NO_ELEVATION
 
 # Basic relatively flat terrain.
 

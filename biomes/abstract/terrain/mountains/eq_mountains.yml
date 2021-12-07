@@ -1,6 +1,7 @@
 id: EQ_MOUNTAINS
 type: BIOME
 abstract: true
+extends: NO_ELEVATION
 
 # Basic peaked mountains.
 

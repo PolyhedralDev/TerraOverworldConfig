@@ -1,6 +1,7 @@
 id: EQ_ALPHA_MOUNTAINS
 type: BIOME
 abstract: true
+extends: NO_ELEVATION
 
 # Large smooth stylized mountains with lots of overhangs.
 

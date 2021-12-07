@@ -1,0 +1,8 @@
+id: NO_ELEVATION
+type: BIOME
+abstract: true
+
+elevation:
+  equation:
+    dimensions: 2
+    type: CONSTANT

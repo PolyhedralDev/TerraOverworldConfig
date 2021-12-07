@@ -1,6 +1,7 @@
 id: EQ_HILLS
 type: BIOME
 abstract: true
+extends: NO_ELEVATION
 
 # Basic hilly terrain.
 

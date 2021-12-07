@@ -1,6 +1,7 @@
 id: EQ_ERODED_TERRACED_MOUNTAINS
 type: BIOME
 abstract: true
+extends: NO_ELEVATION
 
 # Large smooth terraced mountains with subtle overhangs
 

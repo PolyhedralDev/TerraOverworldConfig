@@ -1,6 +1,7 @@
 id: EQ_ERODED_MOUNTAINS
 type: BIOME
 abstract: true
+extends: NO_ELEVATION
 
 # EQ_MOUNTAINS, but with a range of Y levels eroded away,
 # creating flat areas and some small overhangs.

@@ -1,6 +1,7 @@
 id: EQ_SPIKEY_DUNES
 type: BIOME
 abstract: true
+extends: NO_ELEVATION
 
 # A combination of EQ_SPIKES and EQ_DUNES.
 

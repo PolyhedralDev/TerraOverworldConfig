@@ -1,6 +1,7 @@
 id: EQ_FLAT
 type: BIOME
 abstract: true
+extends: NO_ELEVATION
 
 # Perfectly flat terrain.
 
