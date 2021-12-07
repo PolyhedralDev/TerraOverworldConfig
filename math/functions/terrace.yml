@@ -17,7 +17,7 @@ childFunctions: &childFunctions
     expression: x - floor(x/i) * i
 
 functions:
-  terraceLinear:
+  terrace:
     <<: *template
     functions:
       <<: *childFunctions
