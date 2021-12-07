@@ -7,7 +7,7 @@ extends: NO_ELEVATION
 
 vars: &variables
   base: 64
-  height: 10
+  height: 30
 
 noise:
   type: EXPRESSION
