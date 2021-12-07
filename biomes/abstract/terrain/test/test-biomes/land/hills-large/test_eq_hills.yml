@@ -1,0 +1,3 @@
+id: TEST_EQ_HILLS
+type: BIOME
+extends: [ EQ_HILLS, TEST_EQ ]

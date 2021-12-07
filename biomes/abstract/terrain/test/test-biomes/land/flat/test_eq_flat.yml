@@ -1,0 +1,3 @@
+id: TEST_EQ_FLAT
+type: BIOME
+extends: [ EQ_FLAT, TEST_EQ ]

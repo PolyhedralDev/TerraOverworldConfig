@@ -1,0 +1,3 @@
+id: TEST_EQ_SPIKEY_DUNES
+type: BIOME
+extends: [ EQ_SPIKEY_DUNES, TEST_EQ ]

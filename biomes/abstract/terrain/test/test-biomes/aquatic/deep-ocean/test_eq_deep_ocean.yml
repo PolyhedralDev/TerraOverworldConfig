@@ -1,0 +1,4 @@
+id: TEST_EQ_DEEP_OCEAN
+type: BIOME
+extends: [ EQ_DEEP_OCEAN, TEST_EQ ]
+tags: []

@@ -26,4 +26,4 @@ noise:
       dimensions: 3
       type: OPEN_SIMPLEX_2
       frequency: 0.03
-    noise: $biomes/abstract/terrain/mountains/eq_mountains.yml:noise
+    noise: $biomes/abstract/terrain/land/mountains-small/eq_mountains.yml:noise

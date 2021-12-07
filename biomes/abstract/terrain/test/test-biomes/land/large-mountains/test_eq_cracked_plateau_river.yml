@@ -1,0 +1,4 @@
+id: TEST_EQ_CRACKED_PLATEAU_RIVER
+type: BIOME
+extends: [ EQ_CRACKED_PLATEAU_RIVER, TEST_EQ ]
+tags: []

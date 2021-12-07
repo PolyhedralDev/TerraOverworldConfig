@@ -1,0 +1,4 @@
+id: TEST_EQ_RIVER
+type: BIOME
+extends: [ EQ_RIVER, TEST_EQ ]
+tags: []

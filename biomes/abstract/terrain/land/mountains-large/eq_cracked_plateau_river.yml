@@ -1,12 +1,12 @@
-id: EQ_ERODED_TERRACED_MOUNTAINS_RIVER
+id: EQ_CRACKED_PLATEAU_RIVER
 type: BIOME
 abstract: true
 extends: NO_ELEVATION
 
-# River version of EQ_ERODED_TERRACED_MOUNTAINS.
+# River version of EQ_CRACKED_PLATEAU.
 # Produces cave rivers when the biome using this is distributed as a river.
 
-original-noise: &originalNoise $biomes/abstract/terrain/mountains/eq_eroded_terraced_mountains.yml:noise # Original noise to be turned into river
+original-noise: &originalNoise $biomes/abstract/terrain/land/mountains-large/eq_cracked_plateau.yml:noise # Original noise to be turned into river
 
 vars: &variables
   ceilingHeight:    90  # Base Y level of the ceiling

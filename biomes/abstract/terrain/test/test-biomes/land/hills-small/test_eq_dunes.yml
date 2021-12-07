@@ -1,0 +1,3 @@
+id: TEST_EQ_DUNES
+type: BIOME
+extends: [ EQ_DUNES, TEST_EQ ]
