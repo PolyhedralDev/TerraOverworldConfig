@@ -1,0 +1,16 @@
+id: EQ_DEEP_OCEAN
+type: BIOME
+abstract: true
+extends: NO_ELEVATION
+
+# Simple relatively flat terrain under ocean level.
+
+vars: &variables
+  base: 20
+  height: 30
+
+noise:
+  dimensions: 3
+  type: EXPRESSION
+  variables: *variables
+  expression: -y + base + |simplex(x/2, z/2)| * height
