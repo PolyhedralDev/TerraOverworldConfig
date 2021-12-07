@@ -13,11 +13,11 @@ vars: &variables
   # - Platform      - Slab of terrain surrounding the large & little spikes
   # - Baby spikes   - Tiny spikes as a part of the ground terrain
   
-  base: 55 # Base y level
+  base: 60 # Base y level
   groundHeight: 50 # Block height of ground terrain
   babySpikeHeight: 20 # Block height of small ground spikes
 
-  spikeSlantStrength: 1.1
+  spikeSlantStrength: 1
   spikeCap: 0.7 # Cuts off the tips of spikes to mitigate floating terrain, 1 = no cap
   
   bigSpikeHeight: 70
