@@ -13,7 +13,7 @@ noise:
   type: EXPRESSION
   variables: *variables
   expression: -y + base
-  
+
 elevation:
   equation:
     dimensions: 2
@@ -42,7 +42,7 @@ elevation:
       noise:
         dimensions: 2
         type: DOMAIN_WARP
-        amplitude: 0.25
+        amplitude: 0.15
         warp:
           type: GAUSSIAN
         function:
