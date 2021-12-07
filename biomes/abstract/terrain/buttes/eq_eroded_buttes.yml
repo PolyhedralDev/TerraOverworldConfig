@@ -15,7 +15,7 @@ vars: &variables
   butteHeight: 100
   butteBase: 30 # How many blocks above base buttes begin
 
-  erosionStrength: 1.5
+  erosionStrength: 1.2
   erosionTop: 120
   erosionBottom: 80
 
@@ -35,7 +35,7 @@ noise:
     - if(y<erosionBottom,0,
       lerp(y,
         erosionTop, 0,
-        erosionBottom, erosionStrength * lerp(|erosion(x,y*2,z)|,0,1,0.2,0) * (-y+erosionTop)
+        erosionBottom, erosionStrength * lerp(|erosion(x*2,y,z*2)|,0,1,0.2,0) * (-y+erosionTop)
       )
     )
   samplers:
