@@ -7,59 +7,56 @@ carving:
     dimensions: 3
     type: EXPRESSION
     variables:
-
+  
       carvingThreshold: 0.55 # Higher = less carving
       carvingMinHeight: -54
-      carvingMaxHeight: 100
-      carvingClampTaper: 30
-      carvingMax: 1 # Caps the amount of base carving
-      
+      carvingMinTaper: 10
+      carvingMaxHeight: 90
+      carvingMaxTaper: 40
+      carvingCap: 1 # Caps the amount of base carving
+
       cheeseStrength: 0.8
       cheeseHorizontalFrequency: 1.5
       cheeseVerticalFrequency: 3
-      
+
+      spaghettiStrength: 0.57
+
       pillarStrength: 0.5
+      pillarRadius: 0.02
     
     expression: |
       -carvingThreshold
-      + if(y<carvingMinHeight||y>carvingMaxHeight,0,maskSmooth(maskSmooth(
-        // Base carving - Assumes a range of [0, carvingMax]
-        min(carvingMax,
-          // Cheese caves - assumes a range of [0, cheeseStrength]
-          (simplex3(
-            x * cheeseHorizontalFrequency,
-            (y + simplex2(x, z) * 5) * cheeseVerticalFrequency,
-            z * cheeseHorizontalFrequency
-          )+1)/2 // Linear redistribute
-          * cheeseStrength
-        )
-        // --- Pillars - Subtracts from base carving to produce pillars
-        -(cavePillars(x, z)+1)/2 * pillarStrength
-        ,
-        // Clamp parameters
-        carvingMinHeight, carvingMinHeight + carvingClampTaper, y
+      + if(y<carvingMinHeight||y>carvingMaxHeight,0,maskSmooth(maskSmooth( // Skip unnecessary calculations
+        min(carvingCap,
+          max(
+            // Spaghetti Caves
+            spaghettiStrength * max(
+              ((-(|simplex3(x,y+0000,z)|+|simplex3(x,y+1000,z)|)/2)+1),
+              ((-(|simplex3(x,y+2000,z)|+|simplex3(x,y+3000,z)|)/2)+1)
+            ),
+
+            // Cheese caves
+            cheeseStrength * (simplex3(
+              x * cheeseHorizontalFrequency,
+              (y + simplex2(x, z) * 5) * cheeseVerticalFrequency,
+              z * cheeseHorizontalFrequency
+            )+1)/2
+        
+            // Pillars
+            -lerp(cavePillars(x, z),-1+pillarRadius,0,-1,1) * pillarStrength
+          )
         ),
-        carvingMaxHeight, carvingMaxHeight - carvingClampTaper, y
+        // Clamp parameters
+        carvingMinHeight, carvingMinHeight + carvingMinTaper, y
+        ),
+        carvingMaxHeight, carvingMaxHeight - carvingMaxTaper, y
       ))
-    
+
     samplers:
       cavePillars:
         dimensions: 2
-        type: LINEAR
-        min: 0.98
-        max: 1
-        function:
-          type: CLAMP
-          min: 0.98
-          max: 1
-          function:
-            type: EXPRESSION
-            expression: -cell(x, z)
-            samplers:
-              cell:
-                dimensions: 2
-                type: CELLULAR
-                frequency: 0.05
+        type: CELLULAR
+        frequency: 0.05
       
       # Basic 2D simplex noise
       simplex2:

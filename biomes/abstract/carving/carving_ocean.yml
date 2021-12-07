@@ -7,18 +7,22 @@ carving:
     dimensions: 3
     type: EXPRESSION
     variables:
-      
+  
       carvingThreshold: 0.55 # Higher = less carving
       carvingMinHeight: -54
-      carvingMaxHeight: 60
-      carvingClampTaper: 30
-      carvingMax: 1 # Caps the amount of base carving
-      
+      carvingMinTaper: 10
+      carvingMaxHeight: 120
+      carvingMaxTaper: 40
+      carvingCap: 1 # Caps the amount of base carving
+  
       cheeseStrength: 0.8
       cheeseHorizontalFrequency: 1.5
       cheeseVerticalFrequency: 3
-      
+  
+      spaghettiStrength: 0.57
+  
       pillarStrength: 0.5
-    
+      pillarRadius: 0.02
+      
     expression: $biomes/abstract/carving/carving_land.yml:carving.sampler.expression
     samplers: $biomes/abstract/carving/carving_land.yml:carving.sampler.samplers
