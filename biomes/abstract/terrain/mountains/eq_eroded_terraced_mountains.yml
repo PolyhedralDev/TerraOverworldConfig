@@ -6,7 +6,7 @@ extends: NO_ELEVATION
 # Large smooth terraced mountains with subtle overhangs
 
 vars: &variables
-  base: 64
+  base: 80
   height: 170
 
 noise:
