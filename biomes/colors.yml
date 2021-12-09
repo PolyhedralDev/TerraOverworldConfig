@@ -1,21 +1,9 @@
-# ---
-# Land Biomes
-# ---
-
-# Arctic Land Biomes
-TUNDRA: 0xfab53c
-
-# Arid Land Biomes
+# Tropical Land Biomes
 DESERT: 0xe8cf68
 DESERT_SPIKES: 0xdbc35e
 DESERT_SPIKES_GOLD: 0xe7b256
 ARID_SPIKES: 0xfab53c
-
-# Boreal Land Biomes
-TAIGA: 0x86b783
-
-# Montane Land Biomes
-MOUNTAINS: 0x6f6f6f
+PALM_BEACH: 0x73c441
 
 # Subtropical Land Biomes
 EVERGREEN_FOREST: 0x80c465
@@ -32,18 +20,16 @@ PLAINS: 0x91bd59
 PRAIRIE: 0xc9f75d
 STEPPE: 0x9db55b
 
-# Tropical Land Biomes
-PALM_BEACH: 0x73c441
-
-# ---
-# Aquatic Biomes
-# ---
-
-# Boreal Aquatic Biomes
-COLD_OCEAN: 0x2080c9
-
-# Montane Aquatic Biomes
+# Boreal Land Biomes
+TAIGA: 0x86b783
+MOUNTAINS: 0x6f6f6f
 MOUNTAINS_RIVER: 0x85a7a5
+
+# Polar Land Biomes
+TUNDRA: 0xfab53c
+
+# Tropical Aquatic Biomes
+TROPICAL_OCEAN: 0x02b0e5
 TROPICAL_DEEP_OCEAN: 0x2a7aac
 
 # Subtropical Aquatic Biomes
@@ -53,10 +39,14 @@ SUBTROPICAL_DEEP_OCEAN: 0x296fad
 # Temperate Aquatic Biomes
 OCEAN: 0x1787d4
 DEEP_OCEAN: 0x3757ad
-RIVER: 0x0084ff
 
-# Tropical Aquatic Biomes
-TROPICAL_OCEAN: 0x02b0e5
+# Boreal Aquatic Biomes
+COLD_OCEAN: 0x2080c9
 COLD_DEEP_OCEAN: 0x3c5893
+
+# Polar Aquatic Biomes
 FROZEN_OCEAN: 0x83c0f3
 FROZEN_DEEP_OCEAN: 0x5376bf
+
+# Other Aquatic Biomes
+RIVER: 0x0084ff
