@@ -9,6 +9,7 @@ biomes:
   pipeline:
     source: $biome-providers/sources/basic_continents.yml:source
     stages:
+      - << biome-providers/stages/distribute_elevation_zones.yml:stages
       - << biome-providers/stages/distribute_temperature_zones.yml:stages
       - << biome-providers/stages/distribute_humidity_zones.yml:stages
 
@@ -20,8 +21,8 @@ biomes:
           dimensions: 2
           type: CONSTANT
 
-#      # Expand
-#      - << biome-providers/stages/expand.yml:stages
-#
-#      # Rivers
-#      - << biome-providers/stages/add_rivers.yml:stages
+      # Expand
+      - << biome-providers/stages/expand.yml:stages
+
+      # Rivers
+      - << biome-providers/stages/add_rivers.yml:stages

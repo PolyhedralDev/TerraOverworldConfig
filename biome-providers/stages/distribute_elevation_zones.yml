@@ -1,0 +1,19 @@
+stages:
+  - type: REPLACE_LIST
+    noise:
+      dimensions: 2
+      type: OPEN_SIMPLEX_2
+      salt: 1
+      frequency: 0.01
+    default-from: land
+    default-to:
+      - flat: 1
+      - hills-small: 1
+      - hills-large: 1
+    to:
+      inland:
+        - flat: 1
+        - hills-small: 1
+        - hills-large: 1
+        - mountains-small: 1
+        - mountains-large: 1

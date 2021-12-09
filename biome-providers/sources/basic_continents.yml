@@ -2,12 +2,9 @@ source:
   type: NOISE
   biomes:
     - deep-ocean: 2
-    - ocean: 2
-    - flat: 1
-    - hills-small: 1
-    - hills-large: 1
-    - mountains-small: 1
-    - mountains-large: 1
+    - ocean: 4
+    - land: 1
+    - inland: 4
   noise:
     dimensions: 2
     type: LINEAR
@@ -19,4 +16,4 @@ source:
       gain: 0.4
       function:
         type: CELLULAR
-        frequency: 0.02
+        frequency: 0.01

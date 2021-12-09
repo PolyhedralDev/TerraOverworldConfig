@@ -3,7 +3,7 @@
 temperature-map: &temperature-map
   dimensions: 2
   type: OPEN_SIMPLEX_2
-  frequency: 0.01
+  frequency: 0.005
 
 stages:
   - type: REPLACE_LIST
