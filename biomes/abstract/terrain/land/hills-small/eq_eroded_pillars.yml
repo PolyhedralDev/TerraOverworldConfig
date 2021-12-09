@@ -12,7 +12,7 @@ vars: &variables
   pillarPlatformHeight: 20
   pillarHeightVariation: 20
   pillarWarpStrength: 10
-  pillarErosionStrength: 3
+  pillarErosionStrength: 2
   pillarErosionTop: 150
   pillarErosionBottom: 80
 
