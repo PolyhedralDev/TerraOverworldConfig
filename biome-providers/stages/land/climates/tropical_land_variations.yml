@@ -1,6 +1,0 @@
-stages:
-  - type: REPLACE
-    from: $biome-providers/aliases.yml:tropical-tag
-    to:
-       - PALM_BEACH: 1
-    noise: $biome-providers/presets/default.yml:samplers.climate-variation
