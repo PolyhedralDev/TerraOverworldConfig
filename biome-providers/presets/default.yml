@@ -1,14 +1,3 @@
-samplers:
-  climate-variation:
-    dimensions: 2
-    type: LINEAR
-    min: -0.8
-    max: 0.8
-    function:
-      type: CELLULAR
-      return: CellValue
-      frequency: 0.1
-
 biomes:
   type: PIPELINE
   resolution: 2
@@ -20,21 +9,19 @@ biomes:
   pipeline:
     source: $biome-providers/sources/basic_continents.yml:source
     stages:
-      # Climate distribution
-      - << biome-providers/stages/land/distribute_land_climates.yml:stages
+      - << biome-providers/stages/distribute_temperature_zones.yml:stages
+      - << biome-providers/stages/distribute_humidity_zones.yml:stages
 
-      # Land climate variations
-      - << biome-providers/stages/land/climates/arid_land_variations.yml:stages
-      - << biome-providers/stages/land/climates/tropical_land_variations.yml:stages
-      - << biome-providers/stages/land/climates/subtropical_land_variations.yml:stages
-      - << biome-providers/stages/land/climates/temperate_land_variations.yml:stages
-      - << biome-providers/stages/land/climates/temperate_land_variations.yml:stages
-      - << biome-providers/stages/land/climates/montane_land_variations.yml:stages
-      - << biome-providers/stages/land/climates/boreal_land_variations.yml:stages
-      - << biome-providers/stages/land/climates/arctic_land_variations.yml:stages
+      - type: REPLACE
+        from: tbd
+        to:
+          - PLAINS: 1
+        noise:
+          dimensions: 2
+          type: CONSTANT
 
-      # Expand
-      - << biome-providers/stages/expand.yml:stages
-      
-      # Rivers
-      - << biome-providers/stages/add_rivers.yml:stages
+#      # Expand
+#      - << biome-providers/stages/expand.yml:stages
+#
+#      # Rivers
+#      - << biome-providers/stages/add_rivers.yml:stages

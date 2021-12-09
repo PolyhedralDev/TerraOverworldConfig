@@ -1,0 +1,54 @@
+# Elevation Zones -> Temperature Zones
+
+temperature-map: &temperature-map
+  dimensions: 2
+  type: OPEN_SIMPLEX_2
+  frequency: 0.01
+
+stages:
+  - type: REPLACE_LIST
+    noise: *temperature-map
+    default-from: deep-ocean
+    default-to:
+      - deep-ocean-tropical: 1
+      - deep-ocean-subtropical: 1
+      - deep-ocean-temperate: 1
+      - deep-ocean-boreal: 1
+      - deep-ocean-polar: 1
+    to:
+      ocean:
+        - ocean-tropical: 1
+        - ocean-subtropical: 1
+        - ocean-temperate: 1
+        - ocean-boreal: 1
+        - ocean-polar: 1
+      flat:
+        - flat-tropical: 1
+        - flat-subtropical: 1
+        - flat-temperate: 1
+        - flat-boreal: 1
+        - flat-polar: 1
+      hills-small:
+        - hills-small-tropical: 1
+        - hills-small-subtropical: 1
+        - hills-small-temperate: 1
+        - hills-small-boreal: 1
+        - hills-small-polar: 1
+      hills-large:
+        - hills-large-tropical: 1
+        - hills-large-subtropical: 1
+        - hills-large-temperate: 1
+        - hills-large-boreal: 1
+        - hills-large-polar: 1
+      mountains-small:
+        - mountains-small-tropical: 1
+        - mountains-small-subtropical: 1
+        - mountains-small-temperate: 1
+        - mountains-small-boreal: 1
+        - mountains-small-polar: 1
+      mountains-large:
+        - mountains-large-tropical: 1
+        - mountains-large-subtropical: 1
+        - mountains-large-temperate: 1
+        - mountains-large-boreal: 1
+        - mountains-large-polar: 1

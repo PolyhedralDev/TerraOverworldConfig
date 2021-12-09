@@ -1,7 +1,7 @@
 source:
   type: NOISE
   biomes:
-    - $biome-providers/aliases.yml:land-biome: 1
+    - land: 1
   noise:
     dimensions: 2
     type: CONSTANT

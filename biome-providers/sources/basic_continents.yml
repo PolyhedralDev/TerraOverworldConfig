@@ -1,9 +1,13 @@
 source:
   type: NOISE
   biomes:
-    - $biome-providers/aliases.yml:deep-ocean-biome: 25
-    - $biome-providers/aliases.yml:ocean-biome: 25
-    - $biome-providers/aliases.yml:land-biome: 30
+    - deep-ocean: 2
+    - ocean: 2
+    - flat: 1
+    - hills-small: 1
+    - hills-large: 1
+    - mountains-small: 1
+    - mountains-large: 1
   noise:
     dimensions: 2
     type: LINEAR

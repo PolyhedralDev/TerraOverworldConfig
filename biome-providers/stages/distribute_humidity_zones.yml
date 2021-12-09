@@ -1,0 +1,99 @@
+# Replaces Temperature Zones with Humidity Zones,
+# or to just the raw biomes if there are no variants
+# inside humidity zone
+
+humidity-map: &humidity-map
+  dimensions: 2
+  type: OPEN_SIMPLEX_2
+  frequency: 0.02
+
+stages:
+  - type: REPLACE_LIST
+    noise: *humidity-map
+    # Deep Ocean Temperature Zones
+    default-from: deep-ocean-tropical
+    default-to:
+      - tbd: 1
+    to:
+      deep-ocean-subtropical:
+        - tbd: 1
+      deep-ocean-temperate:
+        - DEEP_OCEAN: 1
+      deep-ocean-boreal:
+        - tbd: 1
+      deep-ocean-polar:
+        - tbd: 1
+      # Ocean Temperature Zones
+      ocean-tropical:
+        - TROPICAL_OCEAN: 1
+      ocean-subtropical:
+        - SUBTROPICAL_OCEAN: 1
+      ocean-temperate:
+        - DEEP_OCEAN: 1
+      ocean-boreal:
+        - COLD_OCEAN: 1
+      ocean-polar:
+        - tbd: 1
+      # Flat Temperature Zones
+      flat-tropical:
+        - PALM_BEACH: 1
+      flat-subtropical:
+        - tbd: 1
+      flat-temperate:
+        # All in same humidity zone
+        - OAK_SAVANNA: 1
+        - PLAINS: 1
+        - PRAIRIE: 1
+        - STEPPE: 1
+      flat-boreal:
+        - tbd: 1
+      flat-polar:
+        - TUNDRA: 1
+      # Small Hills Temperature Zones
+      hills-small-tropical:
+        - DESERT: 1
+        - DESERT_SPIKES: 1
+        - DESERT_SPIKES_GOLD: 1
+      hills-small-subtropical:
+        - OVERGROWN_CLIFFS: 1
+      hills-small-temperate:
+        - tbd: 1
+      hills-small-boreal:
+        - tbd: 1
+      hills-small-polar:
+        - tbd: 1
+      # Large Hills Temperature Zones
+      hills-large-tropical:
+        - ARID_SPIKES: 1
+      hills-large-subtropical:
+        - EVERGREEN_FOREST: 1
+      hills-large-temperate:
+        - BIRCH_FOREST: 1
+        - FOREST: 1
+        - SEASONAL_FOREST: 1
+      hills-large-boreal:
+        - TAIGA: 1
+      hills-large-polar:
+        - tbd: 1
+      # Small Mountains Temperature Zones
+      mountains-small-subtropical:
+        - tbd: 1
+      mountains-small-tropical:
+        - tbd: 1
+      mountains-small-temperate:
+        - tbd: 1
+      mountains-small-boreal:
+        - MOUNTAINS: 1
+      mountains-small-polar:
+        - tbd: 1
+      # Large Mountains Temperature Zones
+      mountains-large-subtropical:
+        - tbd: 1
+      mountains-large-tropical:
+        - tbd: 1
+      mountains-large-temperate:
+        - tbd: 1
+      mountains-large-boreal:
+        - tbd: 1
+      mountains-large-polar:
+        - tbd: 1
