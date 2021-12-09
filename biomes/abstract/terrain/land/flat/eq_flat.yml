@@ -12,4 +12,4 @@ noise:
   type: EXPRESSION
   dimensions: 3
   variables: *variables
-  expression: -y + base
+  expression: -y + base + (simplex(x, z)+1)/6
