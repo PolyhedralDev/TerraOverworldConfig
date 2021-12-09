@@ -13,16 +13,16 @@ stages:
     # Deep Ocean Temperature Zones
     default-from: deep-ocean-tropical
     default-to:
-      - tbd: 1
+      - TROPICAL_DEEP_OCEAN: 1
     to:
       deep-ocean-subtropical:
-        - tbd: 1
+        - SUBTROPICAL_DEEP_OCEAN: 1
       deep-ocean-temperate:
         - DEEP_OCEAN: 1
       deep-ocean-boreal:
-        - tbd: 1
+        - COLD_DEEP_OCEAN: 1
       deep-ocean-polar:
-        - tbd: 1
+        - FROZEN_DEEP_OCEAN: 1
       # Ocean Temperature Zones
       ocean-tropical:
         - TROPICAL_OCEAN: 1
@@ -33,7 +33,7 @@ stages:
       ocean-boreal:
         - COLD_OCEAN: 1
       ocean-polar:
-        - tbd: 1
+        - FROZEN_OCEAN: 1
       # Flat Temperature Zones
       flat-tropical:
         - PALM_BEACH: 1
