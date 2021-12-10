@@ -1,43 +1,34 @@
 anchors:
-  - &deep-ocean-biome TEST_EQ_DEEP_OCEAN
-  - &deep-ocean-tag BIOME:TEST_EQ_DEEP_OCEAN
   - &deep-ocean-biomes
     - TEST_EQ_DEEP_OCEAN: 1
   - &deep-ocean-biome-count 1
 
-  - &ocean-biome TEST_EQ_OCEAN
-  - &ocean-tag BIOME:TEST_EQ_OCEAN
   - &ocean-biomes
     - TEST_EQ_OCEAN: 1
   - &ocean-biome-count 1
 
-  - &flat-biome TEST_EQ_PLAIN
-  - &flat-tag BIOME:TEST_EQ_PLAIN
   - &flat-biomes
     - TEST_EQ_FLAT: 1
     - TEST_EQ_PLAIN: 1
   - &flat-biome-count 2
 
-  - &hills-small-biome TEST_EQ_TERRACED_HILLS
-  - &hills-small-tag BIOME:TEST_EQ_TERRACED_HILLS
   - &hills-small-biomes
     - TEST_EQ_BUTTES: 1
+    - TEST_EQ_BUTTES_ARCHIPELAGO: 1
+    - TEST_EQ_BUTTES_SMALL: 1
+    - TEST_EQ_BUTTES_WETLANDS: 1
     - TEST_EQ_DUNES: 1
     - TEST_EQ_ERODED_BUTTES: 1
     - TEST_EQ_ERODED_PILLARS: 1
     - TEST_EQ_SPIKEY_DUNES: 1
     - TEST_EQ_TERRACED_HILLS: 1
-  - &hills-small-biome-count 6
+  - &hills-small-biome-count 9
 
-  - &large-hills-biome TEST_EQ_HILLS
-  - &large-hills-tag BIOME:TEST_EQ_HILLS
-  - &large-hills-biomes
+  - &hills-large-biomes
     - TEST_EQ_HILLS: 1
     - TEST_EQ_SPIKES: 1
-  - &large-hills-biome-count 2
+  - &hills-large-biome-count 2
 
-  - &mountains-small-biome TEST_EQ_ERODED_TERRACED_MOUNTAINS
-  - &mountains-small-tag BIOME:TEST_EQ_ERODED_TERRACED_MOUNTAINS
   - &mountains-small-biomes
     - TEST_EQ_ERODED_MOUNTAINS: 1
     - TEST_EQ_ERODED_TERRACED_MOUNTAINS: 1
@@ -45,8 +36,6 @@ anchors:
     - TEST_EQ_TERRACED_MOUNTAINS: 1
   - &mountains-small-biome-count 4
 
-  - &mountains-large-biome TEST_EQ_ALPHA_MOUNTAINS
-  - &mountains-large-tag BIOME:TEST_EQ_ALPHA_MOUNTAINS
   - &mountains-large-biomes
     - TEST_EQ_ALPHA_MOUNTAINS: 1
     - TEST_EQ_CRACKED_PLATEAU: 1
@@ -75,49 +64,26 @@ biomes:
     source:
       type: NOISE
       biomes:
-        - *deep-ocean-biome: *deep-ocean-biome-count
-        - *ocean-biome: *ocean-biome-count
-        - *flat-biome: *flat-biome-count
-        - *hills-small-biome: *hills-small-biome-count
-        - *large-hills-biome: *large-hills-biome-count
-        - *mountains-small-biome: *mountains-small-biome-count
-        - *mountains-large-biome: *mountains-large-biome-count
+        - deep-ocean: *deep-ocean-biome-count
+        - ocean: *ocean-biome-count
+        - flat: *flat-biome-count
+        - hills-small: *hills-small-biome-count
+        - hills-large: *hills-large-biome-count
+        - mountains-small: *mountains-small-biome-count
+        - mountains-large: *mountains-large-biome-count
       noise: *elevation-noise
     stages:
-      - type: REPLACE
+      - type: REPLACE_LIST
         noise: *variant-noise
-        from: *deep-ocean-tag
-        to: *deep-ocean-biomes
-
-      - type: REPLACE
-        noise: *variant-noise
-        from: *ocean-tag
-        to: *ocean-biomes
-
-      - type: REPLACE
-        noise: *variant-noise
-        from: *flat-tag
-        to: *flat-biomes
-
-      - type: REPLACE
-        noise: *variant-noise
-        from: *hills-small-tag
-        to: *hills-small-biomes
-
-      - type: REPLACE
-        noise: *variant-noise
-        from: *large-hills-tag
-        to: *large-hills-biomes
-
-      - type: REPLACE
-        noise: *variant-noise
-        from: *mountains-small-tag
-        to: *mountains-small-biomes
-
-      - type: REPLACE
-        noise: *variant-noise
-        from: *mountains-large-tag
-        to: *mountains-large-biomes
+        default-from: deep-ocean
+        default-to: *deep-ocean-biomes
+        to:
+          ocean: *ocean-biomes
+          flat: *flat-biomes
+          hills-small: *hills-small-biomes
+          hills-large: *hills-large-biomes
+          mountains-small: *mountains-small-biomes
+          mountains-large: *mountains-large-biomes
 
       - type: REPLACE_LIST
         variables: &riverVariables
