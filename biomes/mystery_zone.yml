@@ -1,0 +1,10 @@
+id: MYSTERY_ZONE
+type: BIOME
+extends: [ EQ_FLAT, BASE ]
+vanilla: minecraft:the_void
+color: 0x000000
+
+# Temporary biome used to visualize areas not assigned a biome in pipelines
+
+palette:
+  - BLOCK:minecraft:black_concrete: 319

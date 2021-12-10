@@ -16,7 +16,7 @@ biomes:
       - type: REPLACE
         from: tbd
         to:
-          - PLAINS: 1
+          - MYSTERY_ZONE: 1
         noise:
           dimensions: 2
           type: CONSTANT
