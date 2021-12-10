@@ -37,6 +37,7 @@ stages:
       # Flat Temperature Zones
       flat-tropical:
         - PALM_BEACH: 1
+        - SALT_FLATS: 1
       flat-subtropical:
         - tbd: 1
       flat-temperate:

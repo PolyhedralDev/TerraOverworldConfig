@@ -1,0 +1,13 @@
+id: SALT
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:white_concrete_powder: 1
+    layers: 1
+  - materials:
+      - minecraft:calcite: 1
+    layers: 2
+  - materials:
+      - minecraft:stone: 1
+    layers: 1
