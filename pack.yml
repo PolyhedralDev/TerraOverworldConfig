@@ -62,10 +62,5 @@ functions:
     - math/functions/maskSmooth.yml:functions
 
 noise:
-  simplex:
-    dimensions: 2
-    type: FBM
-    octaves: 4
-    function:
-      type: OPEN_SIMPLEX_2
-      frequency: 0.0075
+  "<<":
+    - math/samplers/simplex.yml:noise
