@@ -1,0 +1,33 @@
+id: EQ_CRACKED_FLATS
+type: BIOME
+abstract: true
+
+# Flat terrain with large cracks
+
+vars: &variables
+  base: 64
+  crackFrequency: 1
+  crackLowerThreshold: -0.2
+  crackUpperThreshold: -0.1
+  crackHeight: -2
+
+noise:
+  type: EXPRESSION
+  dimensions: 3
+  variables: *variables
+  expression: -y + base
+
+elevation:
+  equation:
+    dimensions: 2
+    type: EXPRESSION
+    variables: *variables
+    expression: |
+      (simplex(x, z)+1)/6
+      + lerp(cracks(x*crackFrequency, z*crackFrequency),crackLowerThreshold,0,crackUpperThreshold,1) * crackHeight
+    samplers:
+      cracks:
+        dimensions: 2
+        type: CELLULAR
+        return: Distance2Div
+        frequency: 0.04
