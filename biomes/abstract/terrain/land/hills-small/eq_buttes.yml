@@ -7,12 +7,19 @@ abstract: true
 vars: &variables
   base: 64
   groundHeight: 10
+  groundFrequency: 0.8
 
   terraceHeight: 30 # Block height of terrace levels
   terraceHeightVariation: 8
+  
+  depositMaskLowerBound: 0.3
+  depositMaskUpperBound: 1
 
   butteHeight: 100
-  butteBase: 30 # How many blocks above base buttes begin
+  butteBase: 25 # How many blocks above base buttes begin
+  butteMaskFrequency: 1
+  butteMaskLowerBound: 0.6
+  butteMaskUpperBound: 0.8
 
 noise:
   dimensions: 3
@@ -39,20 +46,20 @@ elevation:
     variables: *variables
     expression: |
       // Ground
-      (simplex(x/2, z/2)+1)/2 * groundHeight
+      (simplex(x*groundFrequency, z*groundFrequency)+1)/2 * groundHeight
       
       // Deposits
       + maskSmooth(
         butteBase,
-        0.2, 1,
-        |mask(x, z)|
+        depositMaskLowerBound, depositMaskUpperBound,
+        |mask(x*butteMaskFrequency, z*butteMaskFrequency)|
       )
       
       // Buttes
       + maskSmooth(
-        10 + ((buttes(x, z)+1)/2)^2 * butteHeight,
-        0.6, 0.8,
-        |mask(x, z)|
+        ((buttes(x, z)+1)/2)^2 * butteHeight,
+        butteMaskLowerBound, butteMaskUpperBound,
+        |mask(x*butteMaskFrequency, z*butteMaskFrequency)|
       )
     samplers:
       mask:

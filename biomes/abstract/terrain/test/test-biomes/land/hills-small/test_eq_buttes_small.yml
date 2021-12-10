@@ -1,0 +1,3 @@
+id: TEST_EQ_BUTTES_SMALL
+type: BIOME
+extends: [ EQ_BUTTES_SMALL, TEST_EQ ]

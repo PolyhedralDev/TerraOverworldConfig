@@ -1,0 +1,33 @@
+id: EQ_BUTTES_WETLANDS
+type: BIOME
+abstract: true
+
+# A mix of shallow bodies of water and areas of land + terraced buttes
+# Uses EQ_BUTTES as a template, with just the variables tweaked.
+
+vars: &variables
+  "<<": # Inject template variables
+    - biomes/abstract/terrain/land/hills-small/eq_buttes.yml:vars
+  base: 46
+  groundHeight: 30
+  groundFrequency: 0.9
+  terraceHeight: 15
+  terraceHeightVariation: 5
+  butteHeight: 23
+  butteBase: 20
+  butteMaskFrequency: 1.7
+
+# Grab samplers from template and inject variables
+noise:
+  dimensions: 3
+  type: EXPRESSION
+  variables: *variables
+  expression: $biomes/abstract/terrain/land/hills-small/eq_buttes.yml:noise.expression
+  samplers: $biomes/abstract/terrain/land/hills-small/eq_buttes.yml:noise.samplers
+elevation:
+  equation:
+    dimensions: 2
+    type: EXPRESSION
+    variables: *variables
+    expression: $biomes/abstract/terrain/land/hills-small/eq_buttes.yml:elevation.equation.expression
+    samplers: $biomes/abstract/terrain/land/hills-small/eq_buttes.yml:elevation.equation.samplers
