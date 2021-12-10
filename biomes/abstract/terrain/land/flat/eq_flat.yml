@@ -12,4 +12,11 @@ noise:
   type: EXPRESSION
   dimensions: 3
   variables: *variables
-  expression: -y + base + (simplex(x, z)+1)/6
+  expression: -y + base
+
+elevation:
+  equation:
+    dimensions: 2
+    type: EXPRESSION
+    variables: *variables
+    expression: (simplex(x, z)+1)/6

@@ -1,7 +1,6 @@
 id: EQ_PLAIN
 type: BIOME
 abstract: true
-extends: NO_ELEVATION
 
 # Basic relatively flat terrain.
 
@@ -13,4 +12,11 @@ noise:
   type: EXPRESSION
   dimensions: 3
   variables: *variables
-  expression: -y + base + (simplex(x, z)+1)/2 * height
+  expression: -y + base
+
+elevation:
+  equation:
+    dimensions: 2
+    type: EXPRESSION
+    variables: *variables
+    expression: (simplex(x, z)+1)/2 * height
