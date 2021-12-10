@@ -1,0 +1,12 @@
+strata: # Controls global Y level ranges of strata
+  deepslate:
+    top: 7
+    bottom: -7
+  bedrock:
+    top: -60
+    bottom: -64
+
+palette-bottom: # Added to the bottom of every palette
+  - DEEPSLATE: $meta.yml:strata.deepslate.top
+  - BEDROCK: $meta.yml:strata.bedrock.top
+  - BLOCK:minecraft:bedrock: $meta.yml:strata.bedrock.bottom

@@ -13,71 +13,49 @@ colors:
 
 palette:
   - ARID: 255
-  - DEEPSLATE: 30
-  - BEDROCK: 4
-  - BLOCK:minecraft:bedrock: 0
+  - << meta.yml:palette-bottom
 
 slant:
   - threshold: 3
     palette:
       - BLOCK:minecraft:smooth_red_sandstone: 255
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
   - threshold: 4
     palette:
       - BLOCK:minecraft:orange_terracotta: 255
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
   - threshold: 5
     palette:
       - BLOCK:minecraft:terracotta: 255
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
   - threshold: 7
     palette:
       - TERRACOTTA_STRATA: 255
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
   - threshold: 8
     palette:
       - BLOCK:minecraft:granite: 255
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
   - threshold: 9
     palette:
       - BLOCK:minecraft:stone: 255
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
   - threshold: 11
     palette:
       - TERRACOTTA_STRATA: 255
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
   - threshold: 13
     palette:
       - BLOCK:minecraft:granite: 255
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
   - threshold: 14
     palette:
       - BLOCK:minecraft:stone: 255
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
   - threshold: 15
     palette:
       - BLOCK:minecraft:andesite: 255
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
 
 features:
   - DEL_FLOATING_BLOCKS

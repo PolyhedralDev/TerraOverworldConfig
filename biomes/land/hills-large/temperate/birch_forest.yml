@@ -16,17 +16,13 @@ colors:
 
 palette:
   - GRASS: 255
-  - DEEPSLATE: 30
-  - BEDROCK: 4
-  - BLOCK:minecraft:bedrock: 0
+  - << meta.yml:palette-bottom
 
 slant:
   - threshold: 3
     palette:
       - CALCITE_DIORITE_MIX: 255
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
 
 features:
   - BIRCH_TREES

@@ -16,106 +16,74 @@ colors:
 
 palette:
   - GRASS: 255
-  - DEEPSLATE: 30
-  - BEDROCK: 4
-  - BLOCK:minecraft:bedrock: 0
+  - << meta.yml:palette-bottom
 
 slant:
   - threshold: 2.5
     palette:
       - MOSS_STONE: 255
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
   - threshold: 3
     palette:
       - BLOCK:minecraft:mossy_cobblestone: 255
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
   - threshold: 3.5
     palette:
       - BLOCK:minecraft:tuff: 255
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
   - threshold: 4
     palette:
       - BLOCK:minecraft:stone: 255
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
   - threshold: 5
     palette:
       - BLOCK:minecraft:andesite: 255
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
   - threshold: 6
     palette:
       - MOSS_TUFF: 255
       - BLOCK:minecraft:tuff: 120
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
   - threshold: 8
     palette:
       - MOSS_DEEPSLATE: 255
       - BLOCK:minecraft:deepslate: 120
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
   - threshold: 10
     palette:
       - MOSS_TUFF: 255
       - BLOCK:minecraft:tuff: 120
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
   - threshold: 13
     palette:
       - MOSS_STONE: 255
       - BLOCK:minecraft:stone: 120
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
   - threshold: 17
     palette:
       - MOSS_ANDESITE: 255
       - BLOCK:minecraft:andesite: 120
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
   - threshold: 20
     palette:
       - MOSS_TUFF: 255
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
   - threshold: 25
     palette:
       - MOSS_DEEPSLATE: 255
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
   - threshold: 28
     palette:
       - MOSS_TUFF: 255
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
   - threshold: 32
     palette:
       - MOSS_STONE: 255
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
   - threshold: 38
     palette:
       - MOSS_ANDESITE: 255
-      - DEEPSLATE: 30
-      - BEDROCK: 4
-      - BLOCK:minecraft:bedrock: 0
+      - << meta.yml:palette-bottom
 
 features:
   - CROSSING_VINES

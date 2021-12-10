@@ -16,6 +16,4 @@ colors:
 
 palette:
   - SANDY_BEACH: 255
-  - DEEPSLATE: 30
-  - BEDROCK: 4
-  - BLOCK:minecraft:bedrock: 0
+  - << meta.yml:palette-bottom
