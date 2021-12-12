@@ -8,13 +8,13 @@ abstract: true
 vars: &variables
   "<<": # Inject template variables
     - biomes/abstract/terrain/land/hills-small/eq_buttes.yml:vars
-  base: 46
-  groundHeight: 30
-  groundFrequency: 0.9
+  base: 52
+  groundHeight: 20
+  groundFrequency: 1.2
   terraceHeight: 15
-  terraceHeightVariation: 5
-  butteHeight: 20
-  butteBase: 15
+  terraceHeightVariation: 8
+  butteHeight: 15
+  butteBase: 10
   butteMaskFrequency: 1.7
 
 # Grab samplers from template and inject variables
