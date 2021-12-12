@@ -1,0 +1,4 @@
+id: ROCKY_WETLANDS
+type: BIOME
+extends: [ EQ_BUTTES_WETLANDS, ROCKY_ARCHIPELAGO ]
+color: $biomes/colors.yml:ROCKY_WETLANDS

@@ -1,0 +1,13 @@
+id: ROCKY_ARCHIPELAGO
+type: BIOME
+extends: [ EQ_BUTTES_ARCHIPELAGO, CARVING_OCEAN, BASE ]
+vanilla: minecraft:beach
+color: $biomes/colors.yml:ROCKY_ARCHIPELAGO
+
+tags:
+  - USE_RIVER
+
+palette:
+  - BLOCK:minecraft:stone: 255
+  - SANDY_BEACH: 64
+  - << meta.yml:palette-bottom
