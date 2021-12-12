@@ -2,8 +2,11 @@
 
 temperature-map: &temperature-map
   dimensions: 2
+  #type: FBM
+  #function:
   type: OPEN_SIMPLEX_2
-  frequency: 0.005
+  frequency: 0.001
+  salt: 53
 
 stages:
   - type: REPLACE_LIST
@@ -22,6 +25,19 @@ stages:
         - ocean-temperate: 1
         - ocean-boreal: 1
         - ocean-polar: 1
+      coast-flat:
+        - PALM_BEACH: 1
+        - BEACH: 4
+      coast-hills:
+        - SANDSTONE_WETLANDS: 1
+        - WETLANDS: 2
+        - ROCKY_WETLANDS: 1
+        - FROZEN_WETLANDS: 1
+      coast-mountains:
+        - SANDSTONE_ARCHIPELAGO: 1
+        - ARCHIPELAGO: 2
+        - ROCKY_ARCHIPELAGO: 1
+        - FROZEN_ARCHIPELAGO: 1
       flat:
         - flat-tropical: 1
         - flat-subtropical: 1

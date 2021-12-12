@@ -13,6 +13,12 @@ biomes:
       - << biome-providers/stages/distribute_temperature_zones.yml:stages
       - << biome-providers/stages/distribute_humidity_zones.yml:stages
 
+      - << biome-providers/stages/add_desert_variants.yml:stages
+
+      #- << biome-providers/stages/expand.yml:stages
+
+      - << biome-providers/stages/add_rivers.yml:stages
+
       - type: REPLACE
         from: tbd
         to:
@@ -20,9 +26,3 @@ biomes:
         noise:
           dimensions: 2
           type: CONSTANT
-
-      # Expand
-      - << biome-providers/stages/expand.yml:stages
-
-      # Rivers
-      - << biome-providers/stages/add_rivers.yml:stages

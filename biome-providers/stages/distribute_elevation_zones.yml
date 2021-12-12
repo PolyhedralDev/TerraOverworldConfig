@@ -2,16 +2,18 @@ stages:
   - type: REPLACE_LIST
     noise:
       dimensions: 2
+      #type: FBM
+      #function:
       type: OPEN_SIMPLEX_2
       salt: 1
-      frequency: 0.01
-    default-from: land
+      frequency: 0.003
+    default-from: coast
     default-to:
-      - flat: 1
-      - hills-small: 1
-      - hills-large: 1
+      - coast-flat: 1
+      - coast-hills: 2
+      - coast-mountains: 2
     to:
-      inland:
+      land:
         - flat: 1
         - hills-small: 1
         - hills-large: 1

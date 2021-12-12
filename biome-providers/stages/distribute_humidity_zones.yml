@@ -4,8 +4,10 @@
 
 humidity-map: &humidity-map
   dimensions: 2
+  #type: FBM
+  #function:
   type: OPEN_SIMPLEX_2
-  frequency: 0.02
+  frequency: 0.003
 
 stages:
   - type: REPLACE_LIST
@@ -36,15 +38,14 @@ stages:
         - FROZEN_OCEAN: 1
       # Flat Temperature Zones
       flat-tropical:
-        - PALM_BEACH: 1
+        - tbd: 3
         - SALT_FLATS: 1
       flat-subtropical:
         - tbd: 1
       flat-temperate:
-        # All in same humidity zone
         - OAK_SAVANNA: 1
-        - PLAINS: 1
         - PRAIRIE: 1
+        - PLAINS: 1
         - STEPPE: 1
       flat-boreal:
         - tbd: 1
@@ -53,8 +54,6 @@ stages:
       # Small Hills Temperature Zones
       hills-small-tropical:
         - DESERT: 1
-        - DESERT_SPIKES: 1
-        - DESERT_SPIKES_GOLD: 1
       hills-small-subtropical:
         - OVERGROWN_CLIFFS: 1
       hills-small-temperate:
@@ -77,24 +76,26 @@ stages:
       hills-large-polar:
         - tbd: 1
       # Small Mountains Temperature Zones
-      mountains-small-subtropical:
-        - tbd: 1
       mountains-small-tropical:
+        - BADLANDS_MOUNTAINS: 1
+      mountains-small-subtropical:
         - tbd: 1
       mountains-small-temperate:
         - tbd: 1
       mountains-small-boreal:
         - MOUNTAINS: 1
       mountains-small-polar:
-        - tbd: 1
+        - SNOWY_MOUNTAINS: 1
+        - SNOWY_ERODED_TERRACED_MOUNTAINS: 1
       # Large Mountains Temperature Zones
+      mountains-large-tropical:
+        - CRACKED_BADLANDS_PLATEAU: 1
       mountains-large-subtropical:
         - tbd: 1
-      mountains-large-tropical:
-        - tbd: 1
       mountains-large-temperate:
-        - tbd: 1
+        - TEMPERATE_ALPHA_MOUNTAINS: 1
+        - DRY_TEMPERATE_MOUNTAINS: 1
       mountains-large-boreal:
         - tbd: 1
       mountains-large-polar:
-        - tbd: 1
+        - SNOWY_TERRACED_MOUNTAINS: 1

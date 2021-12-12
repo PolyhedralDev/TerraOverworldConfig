@@ -1,0 +1,24 @@
+stages:
+  - type: REPLACE
+    from: BIOME:DESERT
+    to:
+      - SELF: 5
+      - ROCKY_DESERT: 3
+      - DESERT_SPIKES: 1
+    noise:
+      dimensions: 2
+      type: CELLULAR
+      return: CellValue
+      frequency: 0.03
+
+  - type: REPLACE
+    from: BIOME:DESERT_SPIKES
+    to:
+      - SELF: 6
+      - DESERT_SPIKES_GOLD: 1
+    noise:
+      dimensions: 2
+      type: CELLULAR
+      return: CellValue
+      frequency: 0.06
+      salt: 23
