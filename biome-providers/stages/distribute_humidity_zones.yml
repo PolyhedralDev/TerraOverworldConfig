@@ -29,7 +29,7 @@ stages:
       ocean-subtropical:
         - SUBTROPICAL_OCEAN: 1
       ocean-temperate:
-        - DEEP_OCEAN: 1
+        - OCEAN: 1
       ocean-boreal:
         - COLD_OCEAN: 1
       ocean-polar:
