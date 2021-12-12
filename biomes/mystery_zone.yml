@@ -6,5 +6,8 @@ color: 0x000000
 
 # Temporary biome used to visualize areas not assigned a biome in pipelines
 
+tags:
+  - USE_RIVER
+
 palette:
   - BLOCK:minecraft:black_concrete: 319
