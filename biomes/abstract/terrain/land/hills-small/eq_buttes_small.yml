@@ -8,11 +8,11 @@ abstract: true
 vars: &variables
   "<<": # Inject template variables
     - biomes/abstract/terrain/land/hills-small/eq_buttes.yml:vars
-  base: 60
+  base: 55
   groundHeight: 35
   terraceHeight: 10
   terraceHeightVariation: 5
-  butteHeight: 40
+  butteHeight: 35
   butteBase: 10
 
 # Grab samplers from template and inject variables

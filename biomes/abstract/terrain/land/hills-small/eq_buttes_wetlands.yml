@@ -13,8 +13,8 @@ vars: &variables
   groundFrequency: 0.9
   terraceHeight: 15
   terraceHeightVariation: 5
-  butteHeight: 23
-  butteBase: 20
+  butteHeight: 20
+  butteBase: 15
   butteMaskFrequency: 1.7
 
 # Grab samplers from template and inject variables
