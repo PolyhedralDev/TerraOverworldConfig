@@ -1,0 +1,18 @@
+id: DRY_TEMPERATE_MOUNTAINS
+type: BIOME
+extends: [ EQ_TERRACED_MOUNTAINS, CARVING_LAND, BASE ]
+vanilla: minecraft:forest
+color: $biomes/colors.yml:DRY_TEMPERATE_MOUNTAINS
+
+palette:
+  - GRASS: 319
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 4
+    palette:
+      - BLOCK:minecraft:stone: 319
+      - << meta.yml:palette-bottom
+
+features:
+  - GRASS
