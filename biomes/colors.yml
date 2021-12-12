@@ -28,6 +28,7 @@ MOUNTAINS_RIVER: 0x85a7a5
 
 # Polar Land Biomes
 TUNDRA: 0xfab53c
+SNOWY_MOUNTAINS: 0x99cbc8
 
 # Tropical Aquatic Biomes
 TROPICAL_OCEAN: 0x02b0e5
