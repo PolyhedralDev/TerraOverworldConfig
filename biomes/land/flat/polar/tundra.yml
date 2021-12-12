@@ -17,3 +17,6 @@ colors:
 palette:
   - TUNDRA: 255
   - << meta.yml:palette-bottom
+
+features:
+  - SNOW_LAYERS
