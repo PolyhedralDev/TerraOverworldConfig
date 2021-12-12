@@ -1,0 +1,6 @@
+id: SNOW_LAYERS
+type: FEATURE
+extends: SLABS
+
+structures:
+  structures: snow_layers

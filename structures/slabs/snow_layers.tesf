@@ -1,0 +1,37 @@
+str blockBelow = getBlock(0, -1, 0);
+if (blockBelow != "minecraft:grass_block[snowy=true]" &&
+    blockBelow != "minecraft:snow_block") {
+    fail;
+}
+
+// Binary search to check which layer is land
+num i = 1 / 8;
+if (check(0, -i*4, 0) != "LAND") {
+    if (check(0, -i*6, 0) != "LAND") {
+        if (check(0, -i*7, 0) == "LAND") {
+            block(0, 0, 0, "minecraft:snow[layers=1]");
+        }
+    } else {
+        if (check(0, -i*5, 0) != "LAND") {
+            block(0, 0, 0, "minecraft:snow[layers=2]");
+        } else {
+            block(0, 0, 0, "minecraft:snow[layers=3]");
+        }
+    }
+} else {
+    if (check(0, -i*2, 0) != "LAND") {
+        if (check(0, -i*3, 0) != "LAND") {
+            block(0, 0, 0, "minecraft:snow[layers=4]");
+        } else {
+            block(0, 0, 0, "minecraft:snow[layers=5]");
+        }
+    } else {
+        if (check(0, -i*1, 0) != "LAND") {
+            block(0, 0, 0, "minecraft:snow[layers=6]");
+        } else {
+            block(0, 0, 0, "minecraft:snow[layers=7]");
+        }
+    }
+}
+
+
