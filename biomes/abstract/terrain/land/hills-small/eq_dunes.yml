@@ -5,7 +5,7 @@ abstract: true
 # Relatively flat low elevation sand dunes.
 
 vars: &variables
-  base: 60 # Base terrain y level
+  base: 64 # Base terrain y level
   groundHeight: 10 # Block height of base noise
   
   duneHeight: 15 # Block height of dunes

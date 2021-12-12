@@ -6,8 +6,8 @@ extends: NO_ELEVATION
 # Basic hilly terrain.
 
 vars: &variables
-  base: 64
-  height: 30
+  base: 70
+  height: 35
 
 noise:
   type: EXPRESSION
