@@ -5,7 +5,6 @@ vanilla: minecraft:plains
 color: $biomes/colors.yml:OAK_SAVANNA
 
 tags:
-  - LAND
   - USE_RIVER
 
 colors:

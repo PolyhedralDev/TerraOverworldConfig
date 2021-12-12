@@ -4,10 +4,6 @@ extends: [ EQ_ERODED_PILLARS, CARVING_LAND, BASE ]
 vanilla: minecraft:jungle
 color: $biomes/colors.yml:OVERGROWN_CLIFFS
 
-tags:
-  - LAND
-  - USE_RIVER
-
 colors:
   grass: 0x79c05a
   foliage: 0x59ae30

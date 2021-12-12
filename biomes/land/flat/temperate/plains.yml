@@ -5,7 +5,6 @@ vanilla: minecraft:plains
 color: $biomes/colors.yml:PLAINS
 
 tags:
-  - LAND
   - USE_RIVER
 
 colors:

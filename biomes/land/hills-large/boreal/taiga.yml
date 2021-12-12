@@ -5,7 +5,6 @@ vanilla: minecraft:taiga
 color: $biomes/colors.yml:TAIGA
 
 tags:
-  - LAND
   - USE_RIVER
 
 colors:

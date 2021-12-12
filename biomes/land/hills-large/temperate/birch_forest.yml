@@ -5,7 +5,6 @@ vanilla: minecraft:birch_forest
 color: $biomes/colors.yml:BIRCH_FOREST
 
 tags:
-  - LAND
   - USE_RIVER
 
 colors:

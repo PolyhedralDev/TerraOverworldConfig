@@ -5,7 +5,6 @@ vanilla: minecraft:beach
 color: $biomes/colors.yml:BEACH
 
 tags:
-  - BEACH
   - USE_RIVER
 
 colors:
