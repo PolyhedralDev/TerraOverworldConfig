@@ -1,0 +1,18 @@
+id: TEMPERATE_ALPHA_MOUNTAINS
+type: BIOME
+extends: [ EQ_ALPHA_MOUNTAINS, CARVING_LAND, BASE ]
+vanilla: minecraft:forest
+color: $biomes/colors.yml:TEMPERATE_ALPHA_MOUNTAINS
+
+palette:
+  - GRASS: 319
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 4
+    palette:
+      - BLOCK:minecraft:stone: 319
+      - << meta.yml:palette-bottom
+
+features:
+  - GRASS
