@@ -1,0 +1,27 @@
+id: FROZEN_OCEAN
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:water: 1
+      - minecraft:ice: 6
+    layers: 1
+    noise:
+      dimensions: 2
+      type: EXPRESSION
+      expression: ((mask(x,z)+1)/2 * -noise(x,z) * -noise(x*4,z*4))*2-1
+      samplers:
+        noise:
+          dimensions: 2
+          type: CELLULAR
+          return: Distance2Div
+          frequency: 0.01
+        mask:
+          dimensions: 2
+          type: FBM
+          octaves: 2
+          function:
+            type: OPEN_SIMPLEX_2
+            frequency: 0.005
+  - materials: minecraft:water
+    layers: 1

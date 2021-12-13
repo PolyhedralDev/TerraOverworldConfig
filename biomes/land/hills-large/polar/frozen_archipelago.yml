@@ -7,6 +7,9 @@ color: $biomes/colors.yml:FROZEN_ARCHIPELAGO
 tags:
   - USE_RIVER
 
+ocean:
+  palette: FROZEN_OCEAN
+
 palette:
   - TUNDRA: 255
   - SANDY_BEACH: 64

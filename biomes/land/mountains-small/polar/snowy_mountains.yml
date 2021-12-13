@@ -4,6 +4,9 @@ extends: [ EQ_MOUNTAINS, CARVING_LAND, BASE ]
 vanilla: minecraft:snowy_slopes
 color: $biomes/colors.yml:SNOWY_MOUNTAINS
 
+ocean:
+  palette: FROZEN_OCEAN
+
 palette:
   - TUNDRA: 319
   - << meta.yml:palette-bottom

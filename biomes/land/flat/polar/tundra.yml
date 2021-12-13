@@ -14,6 +14,9 @@ colors:
   water: 0x14559b
   water-fog: 0x14559b
 
+ocean:
+  palette: FROZEN_OCEAN
+
 palette:
   - TUNDRA: 255
   - << meta.yml:palette-bottom
