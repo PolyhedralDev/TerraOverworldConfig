@@ -1,0 +1,14 @@
+id: ACTIVE_VOLCANO_PIT
+type: BIOME
+extends: [ EQ_VOLCANO_PIT, BASE ]
+vanilla: minecraft:badlands
+color: $biomes/colors.yml:ACTIVE_VOLCANO_PIT
+
+palette:
+  - LAVA_CRACKS: 319
+  - LAVA_CRACKS_FILLED: 120
+  - BLOCK:minecraft:smooth_basalt: 118
+
+ocean:
+  palette: BLOCK:minecraft:lava
+  level: 120

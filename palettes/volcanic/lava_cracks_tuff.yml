@@ -1,0 +1,47 @@
+id: LAVA_CRACKS_TUFF
+type: PALETTE
+extends: LAVA_CRACKS
+
+layers:
+  - materials:
+      - minecraft:air: 5
+      - minecraft:smooth_basalt: 1
+      - minecraft:tuff: 4
+    layers: 1
+  - materials:
+      - minecraft:air: 4
+      - minecraft:smooth_basalt: 1
+      - minecraft:tuff: 4
+    layers: 1
+  - materials:
+      - minecraft:air: 3
+      - minecraft:smooth_basalt: 1
+      - minecraft:tuff: 4
+    layers: 1
+  - materials:
+      - minecraft:air: 2
+      - minecraft:smooth_basalt: 1
+      - minecraft:tuff: 4
+    layers: 1
+  - materials:
+      - minecraft:air: 1
+      - minecraft:magma_block: 1
+      - minecraft:smooth_basalt: 1
+      - minecraft:tuff: 3
+    layers: 1
+  - materials:
+      - minecraft:lava: 1
+      - minecraft:magma_block: 1
+      - minecraft:smooth_basalt: 1
+      - minecraft:tuff: 3
+    layers: 5
+  - materials:
+      - minecraft:lava: 1
+      - minecraft:magma_block: 1
+      - minecraft:smooth_basalt: 2
+      - minecraft:tuff: 5
+    layers: 5
+  - materials:
+      - minecraft:tuff: 1
+    layers: 1
+    type: CONSTANT

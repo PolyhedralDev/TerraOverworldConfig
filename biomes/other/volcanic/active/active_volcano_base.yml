@@ -1,0 +1,9 @@
+id: ACTIVE_VOLCANO_BASE
+type: BIOME
+extends: [ EQ_VOLCANO_BASE, CARVING_OCEAN, BASE ]
+vanilla: minecraft:badlands
+color: $biomes/colors.yml:ACTIVE_VOLCANO_BASE
+
+palette:
+  - LAVA_CRACKS_TUFF: 319
+

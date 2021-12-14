@@ -1,0 +1,19 @@
+id: LAVA_CRACKS_FILLED
+type: PALETTE
+extends: LAVA_CRACKS
+
+layers:
+  - materials:
+      - minecraft:lava: 1
+      - minecraft:magma_block: 1
+      - minecraft:smooth_basalt: 4
+    layers: 5
+  - materials:
+      - minecraft:lava: 1
+      - minecraft:magma_block: 1
+      - minecraft:smooth_basalt: 7
+    layers: 5
+  - materials:
+      - minecraft:smooth_basalt: 1
+    layers: 1
+    type: CONSTANT

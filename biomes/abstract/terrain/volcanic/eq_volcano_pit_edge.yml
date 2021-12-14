@@ -1,0 +1,20 @@
+id: EQ_VOLCANO_PIT_EDGE
+type: BIOME
+abstract: true
+
+vars: &variables
+  base: 150
+  height: 20
+
+noise:
+  dimensions: 3
+  type: EXPRESSION
+  variables: *variables
+  expression: -y + base
+
+elevation:
+  equation:
+    dimensions: 2
+    type: EXPRESSION
+    variables: *variables
+    expression: (simplex(x, z)+1)/2 * height
