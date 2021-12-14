@@ -17,6 +17,3 @@ colors:
 palette:
   - SAND: 255
   - << meta.yml:palette-bottom
-
-#features:
-#  - SAND_SLABS

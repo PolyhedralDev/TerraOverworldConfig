@@ -18,7 +18,9 @@ palette:
   - << meta.yml:palette-bottom
 
 features:
-  - FLOWER_PATCHES
-  - GRASS
-  - BLACK_OAK_TREES
-  - PUMPKIN_PATCHES
+  flora:
+    - GRASS
+    - FLOWER_PATCHES
+    - PUMPKIN_PATCHES
+  trees:
+    - BLACK_OAK_TREES

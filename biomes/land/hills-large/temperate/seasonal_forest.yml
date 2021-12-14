@@ -24,7 +24,9 @@ slant:
       - << meta.yml:palette-bottom
 
 features:
-  - SEASONAL_TREES
-  - PUMPKIN_PATCHES
-  - FOREST_FLOWER_PATCHES
-  - GRASS
+  flora:
+    - GRASS
+    - FOREST_FLOWER_PATCHES
+    - PUMPKIN_PATCHES
+  trees:
+    - SEASONAL_TREES

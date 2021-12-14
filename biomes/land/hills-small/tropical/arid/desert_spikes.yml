@@ -37,5 +37,5 @@ slant:
       - << meta.yml:palette-bottom
 
 features:
-  - DEL_FLOATING_BLOCKS
-#  - SAND_SLABS
+  preprocessors:
+    - DEL_FLOATING_BLOCKS

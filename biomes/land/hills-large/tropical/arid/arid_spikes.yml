@@ -61,9 +61,11 @@ slant:
       - << meta.yml:palette-bottom
 
 features:
-  - DEL_FLOATING_BLOCKS
-  - SPARSE_OAK_TREES
-  - OAK_BUSHES
-#  - RED_SAND_SLABS
-  - FLOWER_PATCHES
-  - GRASS
+  preprocessors:
+    - DEL_FLOATING_BLOCKS
+  flora:
+    - GRASS
+    - FLOWER_PATCHES
+  trees:
+    - OAK_BUSHES
+    - SPARSE_OAK_TREES

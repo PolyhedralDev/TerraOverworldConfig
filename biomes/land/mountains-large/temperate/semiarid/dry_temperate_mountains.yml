@@ -15,4 +15,5 @@ slant:
       - << meta.yml:palette-bottom
 
 features:
-  - GRASS
+  flora:
+    - GRASS

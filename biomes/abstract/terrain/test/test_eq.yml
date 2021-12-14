@@ -18,4 +18,5 @@ slant:
       - SAND: 64
 
 features:
-  - GRASS
+  flora:
+    - GRASS

@@ -18,5 +18,6 @@ palette:
   - << meta.yml:palette-bottom
 
 features:
-  - PRAIRIE_FLOWER_PATCHES
-  - TALL_GRASS
+  flora:
+    - TALL_GRASS
+    - PRAIRIE_FLOWER_PATCHES

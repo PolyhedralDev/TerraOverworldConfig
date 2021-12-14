@@ -24,6 +24,8 @@ slant:
     - << meta.yml:palette-bottom
 
 features:
-  - SPRUCE_TREES
-  - FLOWER_PATCHES
-  - GRASS
+  flora:
+    - GRASS
+    - FLOWER_PATCHES
+  trees:
+    - SPRUCE_TREES

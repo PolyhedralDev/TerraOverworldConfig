@@ -23,4 +23,5 @@ slant:
       - << meta.yml:palette-bottom
 
 features:
-  - SNOW_LAYERS
+  slabs:
+    - SNOW_LAYERS

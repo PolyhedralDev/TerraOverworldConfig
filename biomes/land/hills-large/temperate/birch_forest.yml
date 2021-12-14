@@ -24,6 +24,8 @@ slant:
       - << meta.yml:palette-bottom
 
 features:
-  - BIRCH_TREES
-  - FOREST_FLOWER_PATCHES
-  - GRASS
+  flora:
+    - GRASS
+    - FOREST_FLOWER_PATCHES
+  trees:
+    - BIRCH_TREES

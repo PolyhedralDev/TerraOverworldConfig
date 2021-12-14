@@ -53,7 +53,14 @@ biomes: $biome-providers/presets/default.yml:biomes
 #biomes: $biomes/abstract/terrain/test/pipeline.yml:biomes
 
 stages:
-  - FEATURE
+  - type: FEATURE
+    id: preprocessors
+  - type: FEATURE
+    id: slabs
+  - type: FEATURE
+    id: flora
+  - type: FEATURE
+    id: trees
 
 functions:
   "<<":

@@ -18,6 +18,8 @@ palette:
   - << meta.yml:palette-bottom
 
 features:
-  - STEPPE_FLOWER_PATCHES
-  - GRASS
-  - MIXED_BUSHES
+  flora:
+    - GRASS
+    - STEPPE_FLOWER_PATCHES
+  trees:
+    - MIXED_BUSHES

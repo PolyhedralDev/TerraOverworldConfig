@@ -18,6 +18,8 @@ palette:
   - << meta.yml:palette-bottom
 
 features:
-  - SPARSE_OAK_TREES
-  - FLOWER_PATCHES
-  - GRASS
+  flora:
+    - GRASS
+    - FLOWER_PATCHES
+  trees:
+    - SPARSE_OAK_TREES

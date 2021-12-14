@@ -82,12 +82,14 @@ slant:
       - << meta.yml:palette-bottom
 
 features:
-  - CROSSING_VINES
-  - LARGE_LEAF_VINES
-  - LARGE_CEILING_VINES
+  flora:
+    - GRASS
+    - CROSSING_VINES
+    - LARGE_LEAF_VINES
+    - LARGE_CEILING_VINES
+    - FOREST_FLOWER_PATCHES
+  trees:
+    - MIXED_TREES
+    - OAK_BUSHES
+  
 
-  - MIXED_TREES
-  - OAK_BUSHES
-
-  - FOREST_FLOWER_PATCHES
-  - GRASS

@@ -24,7 +24,9 @@ slant:
       - << meta.yml:palette-bottom
 
 features:
-  - EVERGREEN_TREES
-  - SUBTROPICAL_BUSHES
-  - FOREST_FLOWER_PATCHES
-  - GRASS
+  flora:
+    - GRASS
+    - FOREST_FLOWER_PATCHES
+  trees:
+    - SUBTROPICAL_BUSHES
+    - EVERGREEN_TREES
