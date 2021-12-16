@@ -62,6 +62,8 @@ stages:
   - type: FEATURE
     id: ores
   - type: FEATURE
+    id: deposits
+  - type: FEATURE
     id: flora
   - type: FEATURE
     id: trees
