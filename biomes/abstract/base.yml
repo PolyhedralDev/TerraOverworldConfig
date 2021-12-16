@@ -14,3 +14,5 @@ features:
     - DIRT_DEPOSITS
     - GRANITE_DEPOSITS
     - GRAVEL_DEPOSITS
+  lava:
+    - LAVA_FLOOR
