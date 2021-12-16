@@ -1,0 +1,6 @@
+id: ANDESITE_SLABS
+type: FEATURE
+extends: SLABS
+
+structures:
+  structures: andesite_slabs

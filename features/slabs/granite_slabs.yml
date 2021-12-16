@@ -1,0 +1,6 @@
+id: GRANITE_SLABS
+type: FEATURE
+extends: SLABS
+
+structures:
+  structures: granite_slabs
