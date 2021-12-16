@@ -1,0 +1,9 @@
+id: CLAY_DEPOSIT
+type: ORE
+
+material: minecraft:clay
+
+replace:
+  - minecraft:stone
+
+size: 64

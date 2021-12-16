@@ -1,0 +1,10 @@
+id: GOLD_ORE
+type: ORE
+extends: ABSTRACT_ORE
+
+material: minecraft:gold_ore
+
+material-overrides:
+  minecraft:deepslate: minecraft:deepslate_gold_ore
+
+size: 9

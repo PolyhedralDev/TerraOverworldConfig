@@ -1,0 +1,10 @@
+id: EMERALD_ORE
+type: ORE
+extends: ABSTRACT_ORE
+
+material: minecraft:emerald_ore
+
+material-overrides:
+  minecraft:deepslate: minecraft:deepslate_emerald_ore
+
+size: 3

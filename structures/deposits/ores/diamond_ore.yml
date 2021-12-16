@@ -1,0 +1,10 @@
+id: DIAMOND_ORE
+type: ORE
+extends: ABSTRACT_ORE
+
+material: minecraft:diamond_ore
+
+material-overrides:
+  minecraft:deepslate: minecraft:deepslate_diamond_ore
+
+size: 8

@@ -1,0 +1,10 @@
+id: GRAVEL_DEPOSIT
+type: ORE
+
+material: minecraft:gravel
+
+replace:
+  - minecraft:stone
+  - minecraft:deepslate
+
+size: 32

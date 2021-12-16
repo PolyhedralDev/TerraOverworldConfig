@@ -1,0 +1,10 @@
+id: TUFF_DEPOSIT
+type: ORE
+
+material: minecraft:tuff
+
+replace:
+  - minecraft:stone
+  - minecraft:deepslate
+
+size: 64

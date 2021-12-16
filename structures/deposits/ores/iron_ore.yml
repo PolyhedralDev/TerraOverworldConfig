@@ -1,0 +1,10 @@
+id: IRON_ORE
+type: ORE
+extends: ABSTRACT_ORE
+
+material: minecraft:iron_ore
+
+material-overrides:
+  minecraft:deepslate: minecraft:deepslate_iron_ore
+
+size: 9

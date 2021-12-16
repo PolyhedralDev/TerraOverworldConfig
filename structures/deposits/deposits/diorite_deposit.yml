@@ -1,0 +1,9 @@
+id: DIORITE_DEPOSIT
+type: ORE
+
+material: minecraft:diorite
+
+replace:
+  - minecraft:stone
+
+size: 64

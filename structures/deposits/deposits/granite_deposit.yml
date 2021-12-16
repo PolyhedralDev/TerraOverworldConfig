@@ -1,0 +1,9 @@
+id: GRANITE_DEPOSIT
+type: ORE
+
+material: minecraft:granite
+
+replace:
+  - minecraft:stone
+
+size: 64

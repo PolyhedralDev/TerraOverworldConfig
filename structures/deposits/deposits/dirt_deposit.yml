@@ -1,0 +1,9 @@
+id: DIRT_DEPOSIT
+type: ORE
+
+material: minecraft:dirt
+
+replace:
+  - minecraft:stone
+
+size: 32
