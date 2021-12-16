@@ -6,3 +6,11 @@ extends: DEFAULT_ORES
 ocean:
   palette: BLOCK:minecraft:water
   level: 62
+
+features:
+  deposits:
+    - ANDESITE_DEPOSITS
+    - DIORITE_DEPOSITS
+    - DIRT_DEPOSITS
+    - GRANITE_DEPOSITS
+    - GRAVEL_DEPOSITS
