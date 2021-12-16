@@ -4,8 +4,9 @@ type: FEATURE
 distributor:
   type: NOISE
   distribution:
-    type: WHITE_NOISE
-  threshold: 0.9999
+    type: POSITIVE_WHITE_NOISE
+    salt: 4654
+  threshold: 0.0001
 
 locator:
   type: SURFACE
