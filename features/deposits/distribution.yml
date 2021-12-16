@@ -69,7 +69,7 @@ iron-high:
   salt: 2031
   range:
     min: 80
-    max: 319 #384
+    max: 384
 
 copper:
   averageCountPerChunk: 16
@@ -125,7 +125,7 @@ emerald:
   salt: 5091
   range:
     min: -16
-    max: 319 #480
+    max: 480
 
 # ---
 # Deposits
