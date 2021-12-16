@@ -58,6 +58,8 @@ stages:
   - type: FEATURE
     id: slabs
   - type: FEATURE
+    id: ores
+  - type: FEATURE
     id: flora
   - type: FEATURE
     id: trees

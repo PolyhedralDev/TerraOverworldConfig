@@ -1,6 +1,7 @@
 id: BASE
 type: BIOME
 abstract: true
+extends: DEFAULT_ORES
 
 ocean:
   palette: BLOCK:minecraft:water
