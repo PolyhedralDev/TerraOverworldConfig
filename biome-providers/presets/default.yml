@@ -4,7 +4,7 @@ biomes:
   initial-size: 50
   blend:
     amplitude: 1
-    noise:
+    sampler:
       type: GAUSSIAN
   pipeline:
     source: $biome-providers/sources/basic_continents.yml:source

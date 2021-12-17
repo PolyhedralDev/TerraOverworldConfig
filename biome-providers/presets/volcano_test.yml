@@ -4,7 +4,7 @@ biomes:
   initial-size: 50
   blend:
     amplitude: 2
-    noise:
+    sampler:
       type: GAUSSIAN
   pipeline:
     source:
