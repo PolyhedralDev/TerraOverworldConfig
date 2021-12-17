@@ -58,11 +58,11 @@ biomes:
   initial-size: 50
   blend:
     amplitude: 1
-    noise:
+    sampler:
       type: GAUSSIAN
   pipeline:
     source:
-      type: NOISE
+      type: SAMPLER
       biomes:
         - deep-ocean: *deep-ocean-biome-count
         - ocean: *ocean-biome-count
@@ -71,7 +71,7 @@ biomes:
         - hills-large: *hills-large-biome-count
         - mountains-small: *mountains-small-biome-count
         - mountains-large: *mountains-large-biome-count
-      noise: *elevation-noise
+      sampler: *elevation-noise
     stages:
       - type: REPLACE_LIST
         noise: *variant-noise

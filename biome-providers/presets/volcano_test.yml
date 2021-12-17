@@ -8,7 +8,7 @@ biomes:
       type: GAUSSIAN
   pipeline:
     source:
-      type: NOISE
+      type: SAMPLER
       biomes:
         - ACTIVE_VOLCANO_PIT: 1
         - ACTIVE_VOLCANO_PIT_EDGE: 2
