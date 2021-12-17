@@ -16,7 +16,7 @@ locator:
       pattern:
         type: MATCH_AIR
         offset: 0
-    - type: NOISE_3D
+    - type: SAMPLER_3D
       sampler:
         dimensions: 3
         type: EXPRESSION
