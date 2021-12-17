@@ -75,6 +75,6 @@ functions:
     - math/functions/lerp.yml:functions
     - math/functions/maskSmooth.yml:functions
 
-noise:
+samplers:
   "<<":
-    - math/samplers/simplex.yml:noise
+    - math/samplers/simplex.yml:samplers
