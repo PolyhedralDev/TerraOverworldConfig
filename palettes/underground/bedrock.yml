@@ -6,7 +6,7 @@ layers:
       - minecraft:deepslate: 1
       - minecraft:bedrock: 1
     layers: 1
-    noise:
+    sampler:
       dimensions: 3
       type: EXPRESSION
       expression: |

@@ -11,7 +11,7 @@ layers:
       - minecraft:smooth_sandstone: 6
     layers: 1
 
-noise:
+sampler:
   dimensions: 3
   type: EXPRESSION
   expression: noise(x/10, y, z/10)

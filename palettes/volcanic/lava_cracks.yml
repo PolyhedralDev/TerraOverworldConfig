@@ -39,7 +39,7 @@ layers:
     noise:
       type: CONSTANT
 
-noise:
+sampler:
   dimensions: 2
   type: DOMAIN_WARP
   amplitude: 5
