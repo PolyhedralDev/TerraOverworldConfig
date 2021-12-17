@@ -1,7 +1,7 @@
 id: EQ_HILLS
 type: BIOME
 abstract: true
-extends: NO_ELEVATION
+extends: NO_TERRAIN_2D
 
 # Basic hilly terrain.
 
@@ -9,8 +9,9 @@ vars: &variables
   base: 70
   height: 35
 
-noise:
-  type: EXPRESSION
-  dimensions: 3
-  variables: *variables
-  expression: -y + base + (simplex(x, z)+1)/2 * height
+terrain:
+  sampler:
+    type: EXPRESSION
+    dimensions: 3
+    variables: *variables
+    expression: -y + base + (simplex(x, z)+1)/2 * height

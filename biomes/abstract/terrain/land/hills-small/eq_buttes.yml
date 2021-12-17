@@ -21,26 +21,26 @@ vars: &variables
   butteMaskLowerBound: 0.6
   butteMaskUpperBound: 0.8
 
-noise:
-  dimensions: 3
-  type: EXPRESSION
-  variables: *variables
-  expression: |
-    // If above butteBase, terrace the base function, otherwise just use linear base
-    if(y<base+butteBase,
-      -y,
-      terrace(-y,
-        terraceHeight, terraceVariation(x, z) * terraceHeightVariation, 0
-      )
-    ) + base
-  samplers:
-    terraceVariation:
-      dimensions: 2
-      type: OPEN_SIMPLEX_2
-      frequency: 0.001
+terrain:
+  sampler:
+    dimensions: 3
+    type: EXPRESSION
+    variables: *variables
+    expression: |
+      // If above butteBase, terrace the base function, otherwise just use linear base
+      if(y<base+butteBase,
+        -y,
+        terrace(-y,
+          terraceHeight, terraceVariation(x, z) * terraceHeightVariation, 0
+        )
+      ) + base
+    samplers:
+      terraceVariation:
+        dimensions: 2
+        type: OPEN_SIMPLEX_2
+        frequency: 0.001
 
-elevation:
-  equation:
+  sampler-2d:
     dimensions: 2
     type: EXPRESSION
     variables: *variables

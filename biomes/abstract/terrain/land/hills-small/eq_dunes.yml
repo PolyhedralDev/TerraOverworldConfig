@@ -13,15 +13,14 @@ vars: &variables
   duneFrequency: 0.5 # Overall dune frequency
   duneRotationRange: pi/3 # How much dune cells are randomly rotated, 0 = anisotrophic, pi = isotrophic
   
-  
-noise:
-  dimensions: 3
-  type: EXPRESSION
-  variables: *variables
-  expression: -y + base
+terrain:
+  sampler:
+    dimensions: 3
+    type: EXPRESSION
+    variables: *variables
+    expression: -y + base
 
-elevation:
-  equation:
+  sampler-2d:
     dimensions: 2
     type: EXPRESSION
     variables: *variables

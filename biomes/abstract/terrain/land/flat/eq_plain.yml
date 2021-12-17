@@ -8,14 +8,14 @@ vars: &variables
   base: 64
   height: 10
 
-noise:
-  type: EXPRESSION
-  dimensions: 3
-  variables: *variables
-  expression: -y + base
+terrain:
+  sampler:
+    type: EXPRESSION
+    dimensions: 3
+    variables: *variables
+    expression: -y + base
 
-elevation:
-  equation:
+  sampler-2d:
     dimensions: 2
     type: EXPRESSION
     variables: *variables

@@ -1,7 +1,7 @@
 id: EQ_RIVER
 type: BIOME
 abstract: true
-extends: NO_ELEVATION
+extends: NO_TERRAIN_2D
 
 # Generic river terrain.
 
@@ -10,11 +10,12 @@ vars: &variables
   height: 4
   density: 2
 
-noise:
-  dimensions: 3
-  type: EXPRESSION
-  expression: |
-    (
-      -y + base + (simplex(x, z)+1)/2 * height
-    ) * density
-  variables: *variables
+terrain:
+  sampler:
+    dimensions: 3
+    type: EXPRESSION
+    expression: |
+      (
+        -y + base + (simplex(x, z)+1)/2 * height
+      ) * density
+    variables: *variables

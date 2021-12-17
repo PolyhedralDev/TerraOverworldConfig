@@ -1,8 +1,8 @@
-id: NO_ELEVATION
+id: NO_TERRAIN_2D
 type: BIOME
 abstract: true
 
-elevation:
-  equation:
+terrain:
+  sampler-2d:
     dimensions: 2
     type: CONSTANT
