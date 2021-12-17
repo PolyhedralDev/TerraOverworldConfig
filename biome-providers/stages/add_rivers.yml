@@ -12,7 +12,7 @@ stages:
       MOUNTAINS:
         - SELF: 1
         - MOUNTAINS_RIVER: 1
-    noise:
+    sampler:
       type: EXPRESSION
       expression: if(noise(x/riverWidth, z/riverWidth)!=0,1,-1)
       variables: *variables

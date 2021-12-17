@@ -16,7 +16,7 @@ biomes:
         - ACTIVE_VOLCANO_BASE: 5
         - ARCHIPELAGO: 19
         - OCEAN: 80
-      noise:
+      sampler:
         dimensions: 2
         type: LINEAR
         min: -1

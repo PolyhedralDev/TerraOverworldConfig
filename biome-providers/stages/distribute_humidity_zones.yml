@@ -11,7 +11,7 @@ humidity-map: &humidity-map
 
 stages:
   - type: REPLACE_LIST
-    noise: *humidity-map
+    sampler: *humidity-map
     # Deep Ocean Temperature Zones
     default-from: deep-ocean-tropical
     default-to:

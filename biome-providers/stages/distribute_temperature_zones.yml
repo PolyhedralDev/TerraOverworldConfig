@@ -10,7 +10,7 @@ temperature-map: &temperature-map
 
 stages:
   - type: REPLACE_LIST
-    noise: *temperature-map
+    sampler: *temperature-map
     default-from: deep-ocean
     default-to:
       - deep-ocean-tropical: 1
