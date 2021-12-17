@@ -5,7 +5,7 @@
 humidity-map: &humidity-map
   dimensions: 2
   #type: FBM
-  #function:
+  #sampler:
   type: OPEN_SIMPLEX_2
   frequency: 0.003
 

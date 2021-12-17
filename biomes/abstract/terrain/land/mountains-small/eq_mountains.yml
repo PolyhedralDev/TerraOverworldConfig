@@ -19,10 +19,10 @@ noise:
       dimensions: 2
       type: FBM
       octaves: 5
-      function:
+      sampler:
         type: LINEAR
         min: -1
         max: 0.2
-        function:
+        sampler:
           type: CELLULAR
           frequency: 0.008

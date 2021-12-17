@@ -47,10 +47,10 @@ noise:
       warp:
         type: FBM
         octaves: 2
-        function:
+        sampler:
           type: OPEN_SIMPLEX_2
           frequency: 0.03
-      function:
+      sampler:
         type: CELLULAR
         return: Distance2Div
         frequency: 0.003

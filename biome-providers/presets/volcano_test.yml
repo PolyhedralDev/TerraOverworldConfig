@@ -21,13 +21,13 @@ biomes:
         type: LINEAR
         min: -1
         max: -0.2
-        function:
+        sampler:
           type: DOMAIN_WARP
           amplitude: 3
           warp:
             type: OPEN_SIMPLEX_2
             frequency: 0.04
-          function:
+          sampler:
             type: CELLULAR
             frequency: 0.01
     stages: []

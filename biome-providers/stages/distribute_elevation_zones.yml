@@ -3,7 +3,7 @@ stages:
     noise:
       dimensions: 2
       #type: FBM
-      #function:
+      #sampler:
       type: OPEN_SIMPLEX_2
       salt: 1
       frequency: 0.003

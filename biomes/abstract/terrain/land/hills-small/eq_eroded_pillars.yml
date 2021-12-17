@@ -65,7 +65,7 @@ noise:
       dimensions: 3
       type: FBM
       octaves: 2
-      function:
+      sampler:
         type: OPEN_SIMPLEX_2
         frequency: 0.02
 
@@ -80,7 +80,7 @@ elevation:
         dimensions: 2
         type: FBM
         octaves: 2
-        function:
+        sampler:
           type: OPEN_SIMPLEX_2
           frequency: 0.01
           salt: 3

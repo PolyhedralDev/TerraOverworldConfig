@@ -6,5 +6,5 @@ source:
   noise:
     dimensions: 2
     type: FBM
-    function:
+    sampler:
       type: OPEN_SIMPLEX_2

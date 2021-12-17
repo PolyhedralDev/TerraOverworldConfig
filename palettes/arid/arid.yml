@@ -23,11 +23,11 @@ noise:
     type: LINEAR
     min: -1
     max: 0.2
-    function:
+    sampler:
       type: CELLULAR
       frequency: 0.08
-  function:
+  sampler:
     type: FBM
     octaves: 3
-    function:
+    sampler:
       type: OPEN_SIMPLEX_2

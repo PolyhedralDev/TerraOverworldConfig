@@ -10,11 +10,11 @@ source:
     type: LINEAR
     min: -1
     max: -0.65
-    function:
+    sampler:
       type: FBM
       lacunarity: 3
       gain: 0.4
       octaves: 5
-      function:
+      sampler:
         type: CELLULAR
         frequency: 0.005

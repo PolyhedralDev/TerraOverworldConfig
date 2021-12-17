@@ -70,7 +70,7 @@ elevation:
           type: OPEN_SIMPLEX_2
           frequency: 0.03
           salt: 6
-        function:
+        sampler:
           type: OPEN_SIMPLEX_2
           frequency: 0.005
           salt: 5
@@ -78,10 +78,10 @@ elevation:
         dimensions: 2
         type: FBM
         octaves: 3
-        function:
+        sampler:
           type: LINEAR
           min: -1
           max: -0.2
-          function:
+          sampler:
             type: CELLULAR
             frequency: 0.02

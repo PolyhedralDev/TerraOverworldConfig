@@ -58,11 +58,11 @@ noise:
       dimensions: 2
       type: FBM
       octaves: 4
-      function:
+      sampler:
         type: LINEAR
         min: -1
         max: 0.2
-        function:
+        sampler:
           type: CELLULAR
           frequency: 0.007
     dunes: # Dune height map [0, 1]
@@ -72,14 +72,14 @@ noise:
       warp:
         type: OPEN_SIMPLEX_2
         frequency: 0.04
-      function:
+      sampler:
         type: DOMAIN_WARP
         amplitude: 15
         warp:
           type: OPEN_SIMPLEX_2
           frequency: 0.02
           salt: 1
-        function: # Absolute sine wave domain rotated via CELL_VALUE, cell edges are hidden by DISTANCE_2_DIV
+        sampler: # Absolute sine wave domain rotated via CELL_VALUE, cell edges are hidden by DISTANCE_2_DIV
           type: EXPRESSION
           variables: *variables
           expression: |
@@ -101,7 +101,7 @@ noise:
       dimensions: 2
       type: FBM
       octaves: 2
-      function:
+      sampler:
         type: OPEN_SIMPLEX_2
         frequency: 0.001
     spikes: # Height map for spikes
@@ -122,7 +122,7 @@ noise:
           dimensions: 2
           type: FBM
           octaves: 2
-          function:
+          sampler:
             type: OPEN_SIMPLEX_2
             frequency: 0.01
         spike: # Height map for big & little spikes
@@ -130,7 +130,7 @@ noise:
           type: LINEAR
           min: -1
           max: 0.2
-          function:
+          sampler:
             type: CELLULAR
             frequency: 0.04
             salt: 1

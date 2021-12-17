@@ -46,7 +46,7 @@ noise:
   warp:
     type: OPEN_SIMPLEX_2
     frequency: 0.06
-  function:
+  sampler:
     type: EXPRESSION
     expression: -noise(x,z)*2-1
     samplers:

@@ -16,7 +16,7 @@ noise:
   amplitude: 1
   warp:
     type: GAUSSIAN
-  function:
+  sampler:
     type: EXPRESSION
     expression: noise(x/5, y, z/5)
     samplers:

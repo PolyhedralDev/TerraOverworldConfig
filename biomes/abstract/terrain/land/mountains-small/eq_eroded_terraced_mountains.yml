@@ -36,17 +36,17 @@ noise:
       warp:
         type: FBM
         octaves: 2
-        function:
+        sampler:
           type: OPEN_SIMPLEX_2
           salt: 1
-      function:
+      sampler:
         type: FBM
         octaves: 4
-        function:
+        sampler:
           type: LINEAR
           min: -1
           max: 0.2
-          function:
+          sampler:
             type: CELLULAR
             frequency: 0.005
     terraceVariation:
@@ -54,6 +54,6 @@ noise:
       type: FBM
       octaves: 3
       lacunarity: 2.5
-      function:
+      sampler:
         type: OPEN_SIMPLEX_2
         frequency: 0.0015

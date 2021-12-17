@@ -25,7 +25,7 @@ stages:
             [ 1, -4, 1 ],
             [ 0,  1, 0 ]
           ]
-          function:
+          sampler:
             type: EXPRESSION
             expression: noise(x*riverWidth*riverFrequency, z*riverWidth*riverFrequency)>0
             variables: *variables
@@ -34,7 +34,7 @@ stages:
                 dimensions: 2
                 type: DOMAIN_WARP
                 amplitude: 2
-                function:
+                sampler:
                   type: OPEN_SIMPLEX_2
                 warp:
                   type: OPEN_SIMPLEX_2

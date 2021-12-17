@@ -20,7 +20,7 @@ noise:
       dimensions: 2
       type: FBM
       octaves: 5
-      function:
+      sampler:
         type: OPEN_SIMPLEX_2
         frequency: 0.005
     noise3:
