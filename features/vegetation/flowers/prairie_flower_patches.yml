@@ -2,8 +2,8 @@ id: PRAIRIE_FLOWER_PATCHES
 type: FEATURE
 
 distributor:
-  type: NOISE
-  distribution:
+  type: SAMPLER
+  sampler:
     type: POSITIVE_WHITE_NOISE
     salt: 244
   threshold: 0.001

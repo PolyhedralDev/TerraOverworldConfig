@@ -9,8 +9,8 @@ anchors:
   - &standard-deviation (${features/deposits/distribution.yml:iron.range.max}-${features/deposits/distribution.yml:iron.range.min})/6
                         # Divide distance from min to max by 6 to fit 3 standard deviations (~99.7% of results) within the range.
 distributor:
-  type: NOISE
-  distribution:
+  type: SAMPLER
+  sampler:
     type: POSITIVE_WHITE_NOISE
     salt: *salt
   threshold: *densityThreshold

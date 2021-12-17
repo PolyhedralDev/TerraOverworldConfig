@@ -2,8 +2,8 @@ id: BLACK_OAK_TREES
 type: FEATURE
 
 distributor:
-  type: NOISE
-  distribution:
+  type: SAMPLER
+  sampler:
     type: POSITIVE_WHITE_NOISE
     salt: 4654
   threshold: 0.0001

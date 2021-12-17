@@ -2,8 +2,8 @@ id: EVERGREEN_TREES
 type: FEATURE
 
 distributor:
-  type: NOISE
-  distribution:
+  type: SAMPLER
+  sampler:
     type: POSITIVE_WHITE_NOISE
     salt: 31948
   threshold: 0.01

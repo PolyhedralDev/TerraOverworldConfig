@@ -2,8 +2,8 @@ id: MIXED_TREES
 type: FEATURE
 
 distributor:
-  type: NOISE
-  distribution:
+  type: SAMPLER
+  sampler:
     type: POSITIVE_WHITE_NOISE
     salt: 1945
   threshold: 0.01

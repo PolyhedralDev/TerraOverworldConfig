@@ -4,8 +4,8 @@ type: FEATURE
 # Adds leaf + vine segments that generate down from ceilings
 
 distributor:
-  type: NOISE
-  distribution:
+  type: SAMPLER
+  sampler:
     type: POSITIVE_WHITE_NOISE
     salt: 1975
   threshold: 0.05
