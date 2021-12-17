@@ -21,6 +21,7 @@ addons:
   language-yaml: "0.1.+"
   generation-stage-feature: "0.1.+"
   structure-function-check-noise-3d: "0.1.+"
+  palette-block-shortcut: "0.1.+"
 
 
 # ---
