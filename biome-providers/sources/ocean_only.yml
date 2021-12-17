@@ -1,9 +1,9 @@
 source:
-  type: NOISE
+  type: SAMPLER
   biomes:
     - ocean: 2
     - deep-ocean: 1
-  noise:
+  sampler:
     dimensions: 2
     type: FBM
     sampler:

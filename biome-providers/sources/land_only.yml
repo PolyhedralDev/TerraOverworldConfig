@@ -1,7 +1,7 @@
 source:
-  type: NOISE
+  type: SAMPLER
   biomes:
     - land: 1
-  noise:
+  sampler:
     dimensions: 2
     type: CONSTANT
