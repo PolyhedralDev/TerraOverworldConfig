@@ -10,13 +10,13 @@ layers:
       - minecraft:pink_terracotta: 1
     layers: 1
 
-noise:
+sampler:
   dimensions: 3
   type: DOMAIN_WARP
   amplitude: 1
   warp:
     type: GAUSSIAN
-  function:
+  sampler:
     type: EXPRESSION
     expression: noise(x/5, y, z/5)
     samplers:

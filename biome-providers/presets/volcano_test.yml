@@ -4,11 +4,11 @@ biomes:
   initial-size: 50
   blend:
     amplitude: 2
-    noise:
+    sampler:
       type: GAUSSIAN
   pipeline:
     source:
-      type: NOISE
+      type: SAMPLER
       biomes:
         - ACTIVE_VOLCANO_PIT: 1
         - ACTIVE_VOLCANO_PIT_EDGE: 2
@@ -16,18 +16,18 @@ biomes:
         - ACTIVE_VOLCANO_BASE: 5
         - ARCHIPELAGO: 19
         - OCEAN: 80
-      noise:
+      sampler:
         dimensions: 2
         type: LINEAR
         min: -1
         max: -0.2
-        function:
+        sampler:
           type: DOMAIN_WARP
           amplitude: 3
           warp:
             type: OPEN_SIMPLEX_2
             frequency: 0.04
-          function:
+          sampler:
             type: CELLULAR
             frequency: 0.01
     stages: []

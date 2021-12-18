@@ -2,8 +2,8 @@ id: SPRUCE_BUSHES
 type: FEATURE
 
 distributor:
-  type: NOISE
-  distribution:
+  type: SAMPLER
+  sampler:
     type: POSITIVE_WHITE_NOISE
     salt: 465
   threshold: 0.01

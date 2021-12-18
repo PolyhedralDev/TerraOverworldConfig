@@ -2,8 +2,8 @@ id: SEASONAL_TREES
 type: FEATURE
 
 distributor:
-  type: NOISE
-  distribution:
+  type: SAMPLER
+  sampler:
     type: POSITIVE_WHITE_NOISE
     salt: 38746
   threshold: 0.01

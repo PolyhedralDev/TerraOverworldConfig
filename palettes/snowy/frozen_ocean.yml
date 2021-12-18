@@ -6,7 +6,7 @@ layers:
       - minecraft:water: 1
       - minecraft:ice: 6
     layers: 1
-    noise:
+    sampler:
       dimensions: 2
       type: EXPRESSION
       expression: ((mask(x,z)+1)/2 * -noise(x,z) * -noise(x*4,z*4))*2-1
@@ -20,7 +20,7 @@ layers:
           dimensions: 2
           type: FBM
           octaves: 2
-          function:
+          sampler:
             type: OPEN_SIMPLEX_2
             frequency: 0.005
   - materials: minecraft:water

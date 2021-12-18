@@ -4,7 +4,7 @@ biomes:
   initial-size: 50
   blend:
     amplitude: 1
-    noise:
+    sampler:
       type: GAUSSIAN
   pipeline:
     source: $biome-providers/sources/basic_continents.yml:source
@@ -23,6 +23,6 @@ biomes:
         from: tbd
         to:
           - MYSTERY_ZONE: 1
-        noise:
+        sampler:
           dimensions: 2
           type: CONSTANT

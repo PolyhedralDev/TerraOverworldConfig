@@ -3,14 +3,14 @@
 temperature-map: &temperature-map
   dimensions: 2
   #type: FBM
-  #function:
+  #sampler:
   type: OPEN_SIMPLEX_2
   frequency: 0.001
   salt: 53
 
 stages:
   - type: REPLACE_LIST
-    noise: *temperature-map
+    sampler: *temperature-map
     default-from: deep-ocean
     default-to:
       - deep-ocean-tropical: 1

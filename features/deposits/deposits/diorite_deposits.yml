@@ -8,8 +8,8 @@ anchors:
   - &range $features/deposits/distribution.yml:diorite.range
 
 distributor:
-  type: NOISE
-  distribution:
+  type: SAMPLER
+  sampler:
     type: POSITIVE_WHITE_NOISE
     salt: *salt
   threshold: *densityThreshold

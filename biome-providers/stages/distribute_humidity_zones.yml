@@ -5,13 +5,13 @@
 humidity-map: &humidity-map
   dimensions: 2
   #type: FBM
-  #function:
+  #sampler:
   type: OPEN_SIMPLEX_2
   frequency: 0.003
 
 stages:
   - type: REPLACE_LIST
-    noise: *humidity-map
+    sampler: *humidity-map
     # Deep Ocean Temperature Zones
     default-from: deep-ocean-tropical
     default-to:

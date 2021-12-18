@@ -2,8 +2,8 @@ id: SPARSE_OAK_TREES
 type: FEATURE
 
 distributor:
-  type: NOISE
-  distribution:
+  type: SAMPLER
+  sampler:
     type: POSITIVE_WHITE_NOISE
     salt: 13845
   threshold: 0.0001

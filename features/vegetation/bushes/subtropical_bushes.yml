@@ -2,8 +2,8 @@ id: SUBTROPICAL_BUSHES
 type: FEATURE
 
 distributor:
-  type: NOISE
-  distribution:
+  type: SAMPLER
+  sampler:
     type: POSITIVE_WHITE_NOISE
     salt: 346
   threshold: 0.01

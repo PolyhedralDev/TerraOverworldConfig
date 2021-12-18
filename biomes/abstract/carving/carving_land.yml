@@ -65,10 +65,10 @@ carving:
         type: LINEAR
         min: -0.9
         max: 0.9
-        function:
+        sampler:
           type: FBM
           octaves: 4
-          function:
+          sampler:
             type: OPEN_SIMPLEX_2
             frequency: 0.0075
       
@@ -77,6 +77,6 @@ carving:
         dimensions: 3
         type: FBM
         octaves: 2
-        function:
+        sampler:
           type: OPEN_SIMPLEX_2
           frequency: 0.0075

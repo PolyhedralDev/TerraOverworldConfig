@@ -44,4 +44,5 @@ layers:
   - materials:
       - minecraft:tuff: 1
     layers: 1
-    type: CONSTANT
+    sampler:
+      type: CONSTANT

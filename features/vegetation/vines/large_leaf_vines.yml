@@ -16,7 +16,7 @@ locator:
       pattern:
         type: MATCH_AIR
         offset: 0
-    - type: NOISE_3D
+    - type: SAMPLER_3D
       sampler:
         dimensions: 3
         type: EXPRESSION
@@ -32,13 +32,13 @@ locator:
             warp:
               type: FBM
               octaves: 2
-              function:
+              sampler:
                 type: OPEN_SIMPLEX_2
-            function:
+            sampler:
               type: LINEAR
               min: -1
               max: 0
-              function:
+              sampler:
                 type: CELLULAR
                 return: Distance2Div
                 frequency: 0.06

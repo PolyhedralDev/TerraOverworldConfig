@@ -1,7 +1,7 @@
 id: EQ_SPIKES
 type: BIOME
 abstract: true
-extends: NO_ELEVATION
+extends: NO_TERRAIN_2D
 
 # Relatively flat terrain with small lakes, populated by large protruding spikes.
 
@@ -32,92 +32,93 @@ vars: &variables
   platformMaskNone: 0
   platformMaskFull: 0.1
 
-noise:
-  dimensions: 3
-  type: EXPRESSION
-  variables: *variables
-  expression: |
-    -y + base
-    + if(y<base,0, // Skip spike calculations below base height
-      max(
-        // Ground
-        groundHeight * (ground(x, z)+1)/2
-        // Spikes
-        + spikes(
-          x+y*spikeSlantStrength*spikeDirection(x, z),
-          z+y*spikeSlantStrength*spikeDirection(x, z+1000)
-        ),
-        babySpikeHeight * (babySpikes(x, z)+1)/2
+terrain:
+  sampler:
+    dimensions: 3
+    type: EXPRESSION
+    variables: *variables
+    expression: |
+      -y + base
+      + if(y<base,0, // Skip spike calculations below base height
+        max(
+          // Ground
+          groundHeight * (ground(x, z)+1)/2
+          // Spikes
+          + spikes(
+            x+y*spikeSlantStrength*spikeDirection(x, z),
+            z+y*spikeSlantStrength*spikeDirection(x, z+1000)
+          ),
+          babySpikeHeight * (babySpikes(x, z)+1)/2
+        )
       )
-    )
-  samplers:
-    ground: # Basic ground height map
-      dimensions: 2
-      type: FBM
-      octaves: 4
-      function:
+    samplers:
+      ground: # Basic ground height map
+        dimensions: 2
+        type: FBM
+        octaves: 4
+        sampler:
+          type: LINEAR
+          min: -1
+          max: 0.2
+          sampler:
+            type: CELLULAR
+            frequency: 0.007
+      babySpikes: # Small spikes protruding from ground
+        dimensions: 2
         type: LINEAR
         min: -1
         max: 0.2
-        function:
+        sampler:
           type: CELLULAR
-          frequency: 0.007
-    babySpikes: # Small spikes protruding from ground
-      dimensions: 2
-      type: LINEAR
-      min: -1
-      max: 0.2
-      function:
-        type: CELLULAR
-        frequency: 0.09
-        salt: 1
-    spikeDirection: # Determines the direction large spikes slant towards
-      dimensions: 2
-      type: OPEN_SIMPLEX_2
-      frequency: 0.0005
-    spikes: # Height map for spikes
-      dimensions: 2
-      type: EXPRESSION
-      expression: |
-        max(
-          maskSmooth(
-            bigSpikeHeight * min(spikeCap,(-spike(x, z))^2),
-            bigSpikeMaskNone, bigSpikeMaskFull, mask(x, z)
+          frequency: 0.09
+          salt: 1
+      spikeDirection: # Determines the direction large spikes slant towards
+        dimensions: 2
+        type: OPEN_SIMPLEX_2
+        frequency: 0.0005
+      spikes: # Height map for spikes
+        dimensions: 2
+        type: EXPRESSION
+        expression: |
+          max(
+            maskSmooth(
+              bigSpikeHeight * min(spikeCap,(-spike(x, z))^2),
+              bigSpikeMaskNone, bigSpikeMaskFull, mask(x, z)
+            )
+            + maskSmooth(
+              littleSpikeHeight * min(spikeCap,(-spike(x*2, z*2))^2),
+              littleSpikeMaskNone, littleSpikeMaskFull, mask(x, z)
+            ),
+            maskSmooth(
+              platformHeight * (platform(x, z)+1)/2,
+              platformMaskNone, platformMaskFull, mask(x, z)
+            )
           )
-          + maskSmooth(
-            littleSpikeHeight * min(spikeCap,(-spike(x*2, z*2))^2),
-            littleSpikeMaskNone, littleSpikeMaskFull, mask(x, z)
-          ),
-          maskSmooth(
-            platformHeight * (platform(x, z)+1)/2,
-            platformMaskNone, platformMaskFull, mask(x, z)
-          )
-        )
-      variables: *variables
-      samplers:
-        mask: # Masks the spikes so they only appear in patches
-          dimensions: 2
-          type: FBM
-          octaves: 2
-          function:
-            type: OPEN_SIMPLEX_2
-            frequency: 0.006
-        spike: # Height map for big & little spikes
-          dimensions: 2
-          type: LINEAR
-          min: -1
-          max: 0.2
-          function:
-            type: CELLULAR
-            frequency: 0.03
-            salt: 1
-        platform: # Height map for platform
-          dimensions: 2
-          type: LINEAR
-          min: -1
-          max: 0.2
-          function:
-            type: CELLULAR
-            return: CellValue
-            frequency: 0.035
-            salt: 2
+        variables: *variables
+        samplers:
+          mask: # Masks the spikes so they only appear in patches
+            dimensions: 2
+            type: FBM
+            octaves: 2
+            sampler:
+              type: OPEN_SIMPLEX_2
+              frequency: 0.006
+          spike: # Height map for big & little spikes
+            dimensions: 2
+            type: LINEAR
+            min: -1
+            max: 0.2
+            sampler:
+              type: CELLULAR
+              frequency: 0.03
+              salt: 1
+          platform: # Height map for platform
+            dimensions: 2
+            type: LINEAR
+            min: -1
+            max: 0.2
+            sampler:
+              type: CELLULAR
+              return: CellValue
+              frequency: 0.035
+              salt: 2

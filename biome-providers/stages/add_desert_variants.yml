@@ -5,7 +5,7 @@ stages:
       - SELF: 5
       - ROCKY_DESERT: 3
       - DESERT_SPIKES: 1
-    noise:
+    sampler:
       dimensions: 2
       type: CELLULAR
       return: CellValue
@@ -16,7 +16,7 @@ stages:
     to:
       - SELF: 6
       - DESERT_SPIKES_GOLD: 1
-    noise:
+    sampler:
       dimensions: 2
       type: CELLULAR
       return: CellValue
