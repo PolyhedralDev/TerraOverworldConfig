@@ -2,8 +2,8 @@ id: SPARSE_ACACIA_TREES
 type: FEATURE
 
 distributor:
-  type: NOISE
-  distribution:
+  type: SAMPLER
+  sampler:
     type: POSITIVE_WHITE_NOISE
     salt: 2349
   threshold: 1/2000
