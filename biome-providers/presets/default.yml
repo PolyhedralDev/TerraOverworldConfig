@@ -11,7 +11,7 @@ biomes:
     stages:
       - << biome-providers/stages/distribute_elevation_zones.yml:stages
       - << biome-providers/stages/distribute_temperature_zones.yml:stages
-      - << biome-providers/stages/distribute_humidity_zones.yml:stages
+      - << biome-providers/stages/distribute_precipitation_zones.yml:stages
 
       - << biome-providers/stages/add_desert_variants.yml:stages
 

@@ -1,0 +1,26 @@
+id: TUFF_DEPOSITS
+type: FEATURE
+
+anchors:
+  - &structure TUFF_DEPOSIT
+  - &densityThreshold 1/256 * ${features/deposits/distribution.yml:tuff.averageCountPerChunk} # Divide by 16^2 to get % per column
+  - &salt $features/deposits/distribution.yml:tuff.salt
+  - &range $features/deposits/distribution.yml:tuff.range
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: *salt
+  threshold: *densityThreshold
+
+locator:
+  type: RANDOM
+  amount: 1
+  height: *range
+  salt: *salt
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: *structure

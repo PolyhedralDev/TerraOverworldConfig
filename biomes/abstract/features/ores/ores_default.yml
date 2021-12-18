@@ -1,4 +1,4 @@
-id: DEFAULT_ORES
+id: ORES_DEFAULT
 type: BIOME
 abstract: true
 

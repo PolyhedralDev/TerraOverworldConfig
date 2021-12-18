@@ -1,8 +1,8 @@
-# Replaces Temperature Zones with Humidity Zones,
+# Replaces Temperature Zones with Precipitation Zones,
 # or to just the raw biomes if there are no variants
-# inside humidity zone
+# inside precipitation zone
 
-humidity-map: &humidity-map
+precipitation-map: &precipitation-map
   dimensions: 2
   #type: FBM
   #sampler:
@@ -11,7 +11,7 @@ humidity-map: &humidity-map
 
 stages:
   - type: REPLACE_LIST
-    sampler: *humidity-map
+    sampler: *precipitation-map
     # Deep Ocean Temperature Zones
     default-from: deep-ocean-tropical
     default-to:

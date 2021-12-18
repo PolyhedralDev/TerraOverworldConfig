@@ -1,0 +1,12 @@
+id: DEPOSITS_DEFAULT
+type: BIOME
+abstract: true
+
+features:
+  deposits:
+    - ANDESITE_DEPOSITS
+    - DIORITE_DEPOSITS
+    - DIRT_DEPOSITS
+    - GRANITE_DEPOSITS
+    - GRAVEL_DEPOSITS
+    - TUFF_DEPOSITS

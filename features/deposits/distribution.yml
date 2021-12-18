@@ -161,8 +161,15 @@ diorite:
     max: 319
 
 gravel:
+  averageCountPerChunk: 4
+  salt: 1239
+  range:
+    min: -32
+    max: 319
+
+tuff:
   averageCountPerChunk: 2
   salt: 1239
   range:
-    min: 0
-    max: 319
+    min: -64
+    max: 0
