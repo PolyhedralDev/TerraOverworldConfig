@@ -1,0 +1,20 @@
+id: SPARSE_ACACIA_TREES
+type: FEATURE
+
+distributor:
+  type: NOISE
+  distribution:
+    type: POSITIVE_WHITE_NOISE
+    salt: 2349
+  threshold: 1/2000
+
+locator:
+  type: SURFACE
+  range:
+    min: 60
+    max: 255
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: acacia_tree_procedural
