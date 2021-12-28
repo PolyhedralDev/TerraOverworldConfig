@@ -1,0 +1,7 @@
+if (getBlock(0, 0, 0) != "minecraft:air") fail;
+
+str blockBelow = getBlock(0, -1, 0);
+if (blockBelow != "minecraft:sand" &&
+    blockBelow != "minecraft:red_sand") {
+    fail;
+}
