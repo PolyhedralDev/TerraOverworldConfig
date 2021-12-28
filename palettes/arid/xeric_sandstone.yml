@@ -1,0 +1,33 @@
+id: XERIC_SANDSTONE
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:grass_block: 3
+      - minecraft:sandstone: 2
+    layers: 1
+  - materials:
+      - minecraft:dirt: 2
+      - minecraft:sandstone: 2
+    layers: 4
+  - materials:
+      - minecraft:stone: 1
+    layers: 1
+
+sampler:
+  dimensions: 2
+  type: DOMAIN_WARP
+  amplitude: 10
+  warp:
+    dimensions: 2
+    type: LINEAR
+    min: -1
+    max: 0.2
+    sampler:
+      type: CELLULAR
+      frequency: 0.08
+  sampler:
+    type: FBM
+    octaves: 3
+    sampler:
+      type: OPEN_SIMPLEX_2
