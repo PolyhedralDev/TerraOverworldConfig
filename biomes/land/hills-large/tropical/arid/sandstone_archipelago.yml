@@ -11,3 +11,7 @@ palette:
   - BLOCK:minecraft:sandstone: 255
   - SANDY_BEACH: 64
   - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - CACTUS_SPARSE

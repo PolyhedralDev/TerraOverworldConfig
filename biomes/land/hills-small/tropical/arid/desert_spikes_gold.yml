@@ -31,3 +31,7 @@ slant:
     palette:
       - TERRACOTTA_STRATA_GOLD: 255
       - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - CACTUS_SPARSE

@@ -39,3 +39,5 @@ slant:
 features:
   preprocessors:
     - DEL_FLOATING_BLOCKS
+  flora:
+    - CACTUS_SPARSE

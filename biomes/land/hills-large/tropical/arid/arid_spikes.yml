@@ -66,6 +66,7 @@ features:
   flora:
     - GRASS
     - FLOWER_PATCHES
+    - CACTUS_SPARSE
   trees:
     - OAK_BUSHES
     - SPARSE_OAK_TREES
