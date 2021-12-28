@@ -12,6 +12,9 @@ stages:
       MOUNTAINS:
         - SELF: 1
         - MOUNTAINS_RIVER: 1
+      XERIC_MOUNTAINS:
+        - SELF: 1
+        - XERIC_MOUNTAINS_RIVER: 1
     sampler:
       type: EXPRESSION
       expression: if(noise(x/riverWidth, z/riverWidth)!=0,1,-1)
