@@ -1,0 +1,21 @@
+id: DEAD_BUSHES
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 6479
+  threshold: 0.01
+
+locator:
+  type: SURFACE
+  range:
+    min: 60
+    max: 255
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures:
+    - dead_bush: 1

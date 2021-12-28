@@ -26,6 +26,7 @@ slant:
 features:
   flora:
     - GRASS
+    - DEAD_BUSHES
     - FLOWER_PATCHES
     - CACTUS_SPARSE
   trees:
