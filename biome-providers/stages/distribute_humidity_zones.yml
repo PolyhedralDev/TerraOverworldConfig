@@ -65,6 +65,7 @@ stages:
       # Large Hills Temperature Zones
       hills-large-tropical:
         - ARID_SPIKES: 1
+        - XERIC_HILLS: 1
       hills-large-subtropical:
         - EVERGREEN_FOREST: 1
       hills-large-temperate:
@@ -78,6 +79,7 @@ stages:
       # Small Mountains Temperature Zones
       mountains-small-tropical:
         - BADLANDS_MOUNTAINS: 1
+        - XERIC_MOUNTAINS: 1
       mountains-small-subtropical:
         - tbd: 1
       mountains-small-temperate:
