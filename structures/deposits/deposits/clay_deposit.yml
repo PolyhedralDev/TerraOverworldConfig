@@ -1,9 +1,5 @@
 id: CLAY_DEPOSIT
 type: ORE
+extends: ABSTRACT_DEPOSIT
 
 material: minecraft:clay
-
-replace:
-  - minecraft:stone
-
-size: 64

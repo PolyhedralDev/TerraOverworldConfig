@@ -1,18 +1,14 @@
 id: BASE
 type: BIOME
 abstract: true
-extends: DEFAULT_ORES
+extends:
+  - DEPOSITS_DEFAULT
+  - ORES_DEFAULT
 
 ocean:
   palette: BLOCK:minecraft:water
   level: 62
 
 features:
-  deposits:
-    - ANDESITE_DEPOSITS
-    - DIORITE_DEPOSITS
-    - DIRT_DEPOSITS
-    - GRANITE_DEPOSITS
-    - GRAVEL_DEPOSITS
   lava:
     - LAVA_FLOOR

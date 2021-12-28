@@ -1,9 +1,6 @@
 id: ANDESITE_DEPOSIT
 type: ORE
+extends: ABSTRACT_DEPOSIT
 
 material: minecraft:andesite
 
-replace:
-  - minecraft:stone
-
-size: 64
