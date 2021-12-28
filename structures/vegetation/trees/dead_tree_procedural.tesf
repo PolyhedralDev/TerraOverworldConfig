@@ -1,0 +1,56 @@
+// literally just the mesquite tree without the leaves and fewer logs
+
+if (check(0,0,0) == "LAND") fail;
+if (!structure(0, 0, 0, "plantable", "NONE")) fail;
+if (!structure(0, 0, 0, "has_sunlight", "NONE")) fail;
+
+num minHeight = 6;
+num maxHeight = 8;
+
+num trunkChance = 1;
+num trunkOutOf = 6;
+
+num leafChance = 1;
+num leafOutOf = 2;
+
+str leafBlock = "minecraft:acacia_leaves[distance=1,persistent=false]";
+str logBlock = "minecraft:dark_oak_log";
+
+num size = randomInt(maxHeight - minHeight) + minHeight;
+
+block(0, 0, 0, logBlock, false);
+block(0, 1, 0, logBlock, false);
+
+
+for(num y = 2; y < size; y = y + 1) {
+
+    num offsetY = (y - (size / 2)) - 1;
+    num radius = ((-(offsetY*offsetY)/size) + 2)*3;
+
+
+    num r2 = radius*radius; // radius squared
+    for(num x = -radius; x <= radius; x = x + 1) {
+        for(num z = -radius; z <= radius; z = z + 1) {
+            if((x*x+z*z) <= r2) {
+                if(randomInt(trunkOutOf) < trunkChance) {
+                    bool valid = false;
+
+                    for(num xi = -1; xi <= 1; xi = xi + 1) {
+                        for(num zi = -1; zi <= 1; zi = zi + 1) {
+                            for(num yi = -1; yi <= 1; yi = yi + 1) {
+                                if(xi == 0 && yi == 0 && zi == 0) continue;
+                                if(getBlock(x+xi, y+yi, z+zi) == logBlock) valid = true; // make sure we're bordering a log.
+                            }
+                        }
+                    }
+
+                    if(valid) {
+                        block(x, y, z, logBlock, false);
+                    }
+                }
+            }
+        }
+    }
+}
+
+block(0, -1, 0, "minecraft:dirt");

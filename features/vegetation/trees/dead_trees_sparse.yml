@@ -1,12 +1,12 @@
-id: MESQUITE_TREES
+id: DEAD_TREES_SPARSE
 type: FEATURE
 
 distributor:
   type: SAMPLER
   sampler:
     type: POSITIVE_WHITE_NOISE
-    salt: 2728
-  threshold: 0.001
+    salt: 36453
+  threshold: 0.00025
 
 locator:
   type: SURFACE
@@ -17,5 +17,5 @@ locator:
 structures:
   distribution:
     type: CONSTANT
-  structures: mesquite_tree_procedural
+  structures: dead_tree_procedural
   
