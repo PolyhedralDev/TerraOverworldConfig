@@ -30,6 +30,9 @@ slant:
       - XERIC_LIGHT_GRAY_TERRACOTTA: 255
       - << meta.yml:palette-bottom
 
+slant-depth: 5
+
+
 features:
   flora:
     - GRASS
