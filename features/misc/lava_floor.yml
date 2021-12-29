@@ -16,4 +16,4 @@ locator:
 structures:
   distribution:
     type: CONSTANT
-  structures: lava
+  structures: BLOCK:minecraft:lava
