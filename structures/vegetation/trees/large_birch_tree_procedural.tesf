@@ -7,7 +7,7 @@ num goldenAngle = 2.39996;
 num pi = 3.14159;
 
 num trunkHeight = 4+randomInt(20);
-str trunkBlock = "minecraft:oak_log";
+str trunkBlock = "minecraft:birch_log";
 
 num sideBranchInterval = 3+randomInt(2);
 num sideBranchMinHeight = 3+randomInt(3);
@@ -20,10 +20,10 @@ num sideBranchLeafTranslate = 0;
 num sideBranchLeafTopFlatness = 0.5;
 num sideBranchLeafBottomFlatness = 2;
 num sideBranchLeafRarity = 2;
-str sideBranchLeafStructure = "oak_leaves_clump";
-str sideBranchBlockX = "minecraft:oak_log[axis=x]";
-str sideBranchBlockY = "minecraft:oak_log[axis=y]";
-str sideBranchBlockZ = "minecraft:oak_log[axis=z]";
+str sideBranchLeafBlock = "minecraft:birch_leaves[distance=1,persistent=false]";
+str sideBranchBlockX = "minecraft:birch_log[axis=x]";
+str sideBranchBlockY = "minecraft:birch_log[axis=y]";
+str sideBranchBlockZ = "minecraft:birch_log[axis=z]";
 
 num topBranches = 2+randomInt(2);
 num topBranchLengthUpwardsMin = 7+randomInt(3);
@@ -34,10 +34,10 @@ num topBranchLeafTranslate = 0;
 num topBranchLeafTopFlatness = 0.7;
 num topBranchLeafBottomFlatness = 1.5;
 num topBranchLeafRarity = 2;
-str topBranchLeafStructure = "oak_leaves_clump";
-str topBranchBlockX = "minecraft:oak_log[axis=x]";
-str topBranchBlockY = "minecraft:oak_log[axis=y]";
-str topBranchBlockZ = "minecraft:oak_log[axis=z]";
+str topBranchLeafBlock = "minecraft:birch_leaves[distance=1,persistent=false]";
+str topBranchBlockX = "minecraft:birch_log[axis=x]";
+str topBranchBlockY = "minecraft:birch_log[axis=y]";
+str topBranchBlockZ = "minecraft:birch_log[axis=z]";
 
 num branchAngle = randomInt(randPrecision)/randPrecision*2*pi;
 for (num i = 0; i < trunkHeight; i = i + 1) {
@@ -82,7 +82,7 @@ for (num i = 0; i < trunkHeight; i = i + 1) {
                         num distanceSquared = pow(cx,2)+pow(cy*squashFactor,2)+pow(cz,2);
                         if (distanceSquared/radiusSquared < randomInt(randPrecision)/randPrecision) {
                             if (randomInt(sideBranchLeafRarity) == 0) {
-                                structure(lox+cx, loy+cy, loz+cz, sideBranchLeafStructure, "NONE", "CW_90", "CCW_90", "CW_180");
+                                block(lox+cx, loy+cy, loz+cz, sideBranchLeafBlock, false);
                             }
                         }
                     }
@@ -135,7 +135,7 @@ for (num b = 1; b <= topBranches; b = b + 1) {
                 num distanceSquared = pow(cx,2)+pow(cy*squashFactor,2)+pow(cz,2);
                 if (distanceSquared/radiusSquared < randomInt(randPrecision)/randPrecision) {
                     if (randomInt(topBranchLeafRarity) == 0) {
-                        structure(lox+cx, loy+cy, loz+cz, topBranchLeafStructure, "NONE", "CW_90", "CCW_90", "CW_180");
+                        block(lox+cx, loy+cy, loz+cz, topBranchLeafBlock, false);
                     }
                 }
             }

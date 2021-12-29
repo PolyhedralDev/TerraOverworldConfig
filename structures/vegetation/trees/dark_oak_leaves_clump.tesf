@@ -1,0 +1,10 @@
+block(0, 0, 0, "minecraft:dark_oak_leaves[distance=1,persistent=false]", false);
+if (randomInt(4) == 0) {
+    block(0, 0, 1, "minecraft:dark_oak_leaves[distance=1,persistent=false]", false);
+    block(0, 1, 0, "minecraft:dark_oak_leaves[distance=1,persistent=false]", false);
+    block(0, 1, 1, "minecraft:dark_oak_leaves[distance=1,persistent=false]", false);
+    block(1, 0, 0, "minecraft:dark_oak_leaves[distance=1,persistent=false]", false);
+    block(1, 0, 1, "minecraft:dark_oak_leaves[distance=1,persistent=false]", false);
+    block(1, 1, 0, "minecraft:dark_oak_leaves[distance=1,persistent=false]", false);
+    block(1, 1, 1, "minecraft:dark_oak_leaves[distance=1,persistent=false]", false);
+}
