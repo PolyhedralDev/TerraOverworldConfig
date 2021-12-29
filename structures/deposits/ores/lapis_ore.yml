@@ -8,3 +8,5 @@ material-overrides:
   minecraft:deepslate: minecraft:deepslate_lapis_ore
 
 size: 7
+
+exposed: 0.2
