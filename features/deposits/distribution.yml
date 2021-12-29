@@ -44,7 +44,7 @@ lapis-uniform:
     max: 64
 
 diamond:
-  averageCountPerChunk: 12
+  averageCountPerChunk: 6
   salt: 1032
   range:
     min: -144
