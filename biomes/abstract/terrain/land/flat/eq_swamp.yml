@@ -1,0 +1,49 @@
+id: EQ_SWAMP
+type: BIOME
+abstract: true
+extends: NO_TERRAIN_2D
+
+vars: &variables
+  base: 64
+  height: 10
+  pond_chance: -0.5
+  pond_depth: 0.25
+
+terrain:
+  sampler:
+    type: EXPRESSION
+    dimensions: 3
+    variables: *variables
+    expression: -y + base
+  
+  sampler-2d:
+    dimensions: 2
+    type: EXPRESSION
+    variables: *variables
+    expression: (cells(x, z)+1)/2 * height
+    samplers:
+      cells:
+        dimensions: 2
+        type: DOMAIN_WARP
+        amplitude: 2
+        warp:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.1
+        sampler:
+          type: EXPRESSION
+          expression: "if(cellular_random(x, z) > pond_chance,
+                        simplex(x, z),
+                        cellular(x, z) - pond_depth
+                      )"
+          variables: *variables
+          samplers:
+            cellular: &cells
+              frequency: 0.075
+              dimensions: 2
+              type: CELLULAR
+              return: NoiseLookup
+              lookup: $math/samplers/simplex.yml:samplers.simplex
+            cellular_random:
+              <<: *cells
+              return: CellValue
+            simplex: $math/samplers/simplex.yml:samplers.simplex

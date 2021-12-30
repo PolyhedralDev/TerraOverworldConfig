@@ -1,0 +1,26 @@
+id: SWAMP
+type: BIOME
+extends: [ EQ_SWAMP, CARVING_OCEAN, BASE ]
+vanilla: minecraft:swamp
+color: $biomes/colors.yml:PALM_BEACH
+
+tags:
+  - USE_RIVER
+
+colors:
+  grass: 0x88bd59
+  foliage: 0x73c441
+  water: 0x44aff5
+  water-fog: 0x44aff5
+
+palette:
+  - BAMBOO_PONDS_WATER: 255
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 2
+    palette:
+      - GRASS: 255
+      - << meta.yml:palette-bottom
+
+slant-depth: 1
