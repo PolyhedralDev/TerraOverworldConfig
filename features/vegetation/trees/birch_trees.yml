@@ -15,8 +15,10 @@ locator:
 
 structures:
   distribution:
-    type: CELLULAR
-    return: CellValue
-    frequency: 0.03
-  structures: birch_tree_procedural
+    type: WHITE_NOISE
+    salt: 5011
+  structures:
+    - birch_tree_procedural: 20
+    - large_birch_tree_procedural: 1
+    - large_thin_birch_tree_procedural: 1
   
