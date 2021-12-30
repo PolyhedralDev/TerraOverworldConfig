@@ -1,0 +1,43 @@
+id: EQ_CERROS_DE_MAVECURE
+type: BIOME
+abstract: true
+
+
+vars: &variables
+  base: 64
+  cellular_shift: -0.7
+  scale: 250
+  height: 10
+
+terrain:
+  sampler:
+    dimensions: 3
+    type: EXPRESSION
+    variables: *variables
+    expression: -y + base
+  
+  sampler-2d:
+    dimensions: 2
+    type: EXPRESSION
+    variables: *variables
+    expression: "smooth((simplex(x, z)+1)/2 * height, (cellular_shift - cells(x, z)) * scale)"
+    functions:
+      smooth:
+        arguments: [simplex, cell]
+        #expression: "max(simplex, cell)"
+        expression: "lerp(max(min(cell, 100), 0), 0, simplex, 100, cell)"
+        functions:
+          lerp: $math/functions/lerp.yml:functions.lerp
+    samplers:
+      cells:
+        dimensions: 2
+        type: DOMAIN_WARP
+        amplitude: 4
+        warp:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.05
+        sampler:
+          type: CELLULAR
+          return: Distance
+          frequency: 0.01
+      simplex: $math/samplers/simplex.yml:samplers.simplex
