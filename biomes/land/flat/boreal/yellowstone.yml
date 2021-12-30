@@ -1,0 +1,50 @@
+id: YELLOWSTONE
+type: BIOME
+extends: [ EQ_PONDS, CARVING_LAND, BASE ]
+vanilla: minecraft:taiga
+color: $biomes/colors.yml:YELLOWSTONE
+
+tags:
+  - USE_RIVER
+
+colors:
+  grass: 0x91bd59
+  foliage: 0x77ab2f
+  water: 0x44aff5
+  water-fog: 0x44aff5
+
+palette:
+  - YELLOWSTONE_WATER: 255
+  - CALCITE: 72
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 2
+    palette:
+      - YELLOWSTONE: 255
+      - CALCITE: 72
+      - << meta.yml:palette-bottom
+  - threshold: 3
+    palette:
+      - YELLOWSTONE_RED_SAND: 255
+      - CALCITE: 72
+      - << meta.yml:palette-bottom
+  - threshold: 4
+    palette:
+      - YELLOWSTONE_BASALT: 255
+      - CALCITE: 72
+      - << meta.yml:palette-bottom
+  - threshold: 7
+    palette:
+      - BLOCK:minecraft:calcite: 255
+      - CALCITE: 64
+      - << meta.yml:palette-bottom
+
+slant-depth: 12
+
+features:
+  flora:
+    - GRASS
+    - FLOWER_PATCHES
+  trees:
+    - SPARSE_OAK_TREES

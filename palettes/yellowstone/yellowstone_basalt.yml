@@ -1,0 +1,10 @@
+id: YELLOWSTONE_BASALT
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:basalt: 1
+    layers: 1
+  - materials:
+      - minecraft:calcite: 1
+    layers: 1

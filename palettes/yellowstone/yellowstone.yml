@@ -1,0 +1,10 @@
+id: YELLOWSTONE
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:yellow_terracotta: 1
+    layers: 1
+  - materials:
+      - minecraft:calcite: 1
+    layers: 1

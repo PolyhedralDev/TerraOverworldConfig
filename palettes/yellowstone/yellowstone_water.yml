@@ -1,0 +1,22 @@
+id: YELLOWSTONE_WATER
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:water: 1
+    layers: 2
+  - materials:
+      - minecraft:water: 1
+      - minecraft:cyan_terracotta: 1
+    layers: 1
+  - materials:
+      - minecraft:cyan_terracotta: 1
+    layers: 1
+
+sampler:
+  dimensions: 2
+  type: FBM
+  octaves: 3
+  sampler:
+    type: OPEN_SIMPLEX_2
+    frequency: 0.05
