@@ -1,0 +1,64 @@
+id: EQ_PONDS
+type: BIOME
+abstract: true
+
+# Basic relatively flat terrain.
+
+vars: &variables
+  base: 64
+  height: 10
+  cellHeight: 3
+  cellClampFalloff: 5
+  cellThreshold: 0
+  cellClampOrigin: 0.85
+  sideMultiplier: 3
+
+terrain:
+  sampler:
+    type: EXPRESSION
+    dimensions: 3
+    variables: *variables
+    expression: -y + base
+
+  sampler-2d:
+    dimensions: 2
+    type: EXPRESSION
+    variables: *variables
+    expression: (cells(x, z)+1)/2 * height
+    samplers:
+      cells:
+        dimensions: 2
+        type: DOMAIN_WARP
+        amplitude: 2
+        warp:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.1
+        sampler:
+          type: EXPRESSION
+          expression: "if(
+                        simplex_mask(x, z) > cellThreshold,
+                        max(
+                          if(cellular_distance(x, z) > -cellClampOrigin,
+                            (-cellClampOrigin - (cellular_distance(x, z))) * sideMultiplier,
+                            0
+                          ) + cellular(x, z) * cellHeight,
+                          0),
+                        simplex(x, z))"
+          variables: *variables
+          samplers:
+            simplex_mask: &simplex
+              dimensions: 2
+              type: FBM
+              octaves: 2
+              sampler:
+                type: OPEN_SIMPLEX_2
+                frequency: 0.025
+            cellular: &cells
+              frequency: 0.075
+              dimensions: 2
+              type: CELLULAR
+              return: NoiseLookup
+              lookup: *simplex
+            cellular_distance:
+              <<: *cells
+              return: Distance

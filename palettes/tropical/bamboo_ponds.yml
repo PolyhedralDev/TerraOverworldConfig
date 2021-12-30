@@ -1,0 +1,29 @@
+id: BAMBOO_PONDS
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:brown_terracotta: 2
+      - minecraft:grass_block: 2
+      - minecraft:podzol: 1
+      - minecraft:rooted_dirt: 1
+    layers: 1
+  - materials:
+      - minecraft:brown_terracotta: 1
+      - minecraft:dirt: 2
+    layers: 4
+  - materials:
+      - minecraft:stone: 1
+    layers: 1
+
+sampler:
+  dimensions: 2
+  type: DOMAIN_WARP
+  amplitude: 1
+  warp:
+    type: WHITE_NOISE
+  sampler:
+    type: FBM
+    octaves: 3
+    sampler:
+      type: OPEN_SIMPLEX_2
