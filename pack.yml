@@ -28,7 +28,7 @@ addons:
 # Biome distribution
 # ---
 # Several preset biome providers are available to choose from below.
-# Chosing which one is in use is as simple as commenting the enabled one
+# Choosing which one is in use is as simple as commenting the enabled one
 # (by adding a # at the start) and uncommenting the one you wish to use.
 # You can further configure the behaviour of each one in their respective files.
 
