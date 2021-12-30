@@ -20,7 +20,7 @@ palette:
 slant:
   - threshold: 3
     palette:
-      - CALCITE_DIORITE_MIX: 255
+      - BLOCK:minecraft:stone: 255
       - << meta.yml:palette-bottom
 
 features:
