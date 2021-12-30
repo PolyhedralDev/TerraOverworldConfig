@@ -2,11 +2,10 @@ id: BIRCH_TREES
 type: FEATURE
 
 distributor:
-  type: SAMPLER
-  sampler:
-    type: POSITIVE_WHITE_NOISE
-    salt: 23498
-  threshold: 0.03
+  type: PADDED_GRID
+  width: 6
+  padding: 2
+  salt: 7234
 
 locator:
   type: SURFACE

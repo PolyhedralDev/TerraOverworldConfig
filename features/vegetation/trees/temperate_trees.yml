@@ -2,11 +2,10 @@ id: TEMPERATE_TREES
 type: FEATURE
 
 distributor:
-  type: SAMPLER
-  sampler:
-    type: POSITIVE_WHITE_NOISE
-    salt: 7954
-  threshold: 0.015
+  type: PADDED_GRID
+  width: 10
+  padding: 3
+  salt: 9591
 
 locator:
   type: SURFACE
