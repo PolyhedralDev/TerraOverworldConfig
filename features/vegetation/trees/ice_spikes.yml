@@ -1,0 +1,21 @@
+id: ICE_SPIKES
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 8
+  padding: 5
+  salt: 7234
+
+locator:
+  type: SURFACE
+  range:
+    min: 60
+    max: 255
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures:
+    - ice_spike: 1
+  
