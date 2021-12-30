@@ -1,0 +1,31 @@
+id: JUNGLE_TREES
+type: FEATURE
+
+distributor:
+  type: AND
+  distributors:
+    - type: PADDED_GRID
+      width: 5
+      padding: 8
+      salt: 4602
+    - type: SAMPLER
+      sampler:
+        type: CELLULAR
+        return: CellValue
+        frequency: 0.03
+        salt: 0101
+      threshold: -0.6
+
+locator:
+  type: SURFACE
+  range:
+    min: 60
+    max: 92
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+    salt: 5341
+  structures:
+    - medium_jungle_tree_procedural: 6
+    - large_jungle_tree_procedural: 1
