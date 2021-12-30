@@ -61,7 +61,7 @@ stages:
       hills-small-boreal:
         - tbd: 1
       hills-small-polar:
-        - tbd: 1
+        - ICE_SPIKES: 1
       # Large Hills Temperature Zones
       hills-large-tropical:
         - ARID_SPIKES: 1
