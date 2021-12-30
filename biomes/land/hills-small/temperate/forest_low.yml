@@ -1,0 +1,4 @@
+id: FOREST_LOW
+type: BIOME
+extends: [ EQ_TERRACED_HILLS, FOREST ]
+color: $biomes/colors.yml:FOREST_LOW

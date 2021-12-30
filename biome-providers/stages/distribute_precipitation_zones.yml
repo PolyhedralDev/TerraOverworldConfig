@@ -57,7 +57,7 @@ stages:
       hills-small-subtropical:
         - OVERGROWN_CLIFFS: 1
       hills-small-temperate:
-        - tbd: 1
+        - FOREST_LOW: 1
       hills-small-boreal:
         - tbd: 1
       hills-small-polar:

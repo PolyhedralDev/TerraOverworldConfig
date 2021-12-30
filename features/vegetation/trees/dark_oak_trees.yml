@@ -1,4 +1,4 @@
-id: BLACK_OAK_TREES
+id: DARK_OAK_TREES
 type: FEATURE
 
 distributor:
@@ -17,4 +17,4 @@ locator:
 structures:
   distribution:
     type: CONSTANT
-  structures: black_oak_tree_procedural
+  structures: dark_oak_tree_procedural

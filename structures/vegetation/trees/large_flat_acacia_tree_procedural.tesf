@@ -6,58 +6,38 @@ num randPrecision = 100;
 num goldenAngle = 2.39996;
 num pi = 3.14159;
 
-num trunkHeight = 4+randomInt(20);
-str trunkBlock = "minecraft:oak_log";
-str rootBlock = "minecraft:oak_wood";
+num trunkHeight = 4+randomInt(10);
+str trunkBlock = "minecraft:acacia_log";
 
-num sideBranchInterval = 3+randomInt(2);
-num sideBranchMinHeight = 3+randomInt(3);
-num sideBranchLengthMin = 4+randomInt(2);
+num sideBranchInterval = 5;
+num sideBranchMinHeight = 3+randomInt(4);
+num sideBranchLengthMin = 6+randomInt(2);
 num sideBranchLengthVariation = 2;
 num sideBranchVerticalVariation = 0;
-num sideBranchVerticalDirection = 0.5+randomInt(randPrecision)/randPrecision/2;
-num sideBranchLeafRadiusMin = 4;
+num sideBranchVerticalDirection = 1.5+randomInt(randPrecision)/randPrecision/2;
+num sideBranchLeafRadiusMin = 5;
 num sideBranchLeafTranslate = 0;
-num sideBranchLeafTopFlatness = 0.5;
-num sideBranchLeafBottomFlatness = 2;
-num sideBranchLeafRarity = 2;
-str sideBranchLeafStructure = "oak_leaves_clump";
-str sideBranchBlockX = "minecraft:oak_log[axis=x]";
-str sideBranchBlockY = "minecraft:oak_log[axis=y]";
-str sideBranchBlockZ = "minecraft:oak_log[axis=z]";
+num sideBranchLeafTopFlatness = 2;
+num sideBranchLeafBottomFlatness = 3;
+num sideBranchLeafRarity = 1;
+str sideBranchLeafBlock = "minecraft:acacia_leaves[distance=1,persistent=false]";
+str sideBranchBlockX = "minecraft:acacia_log[axis=x]";
+str sideBranchBlockY = "minecraft:acacia_log[axis=y]";
+str sideBranchBlockZ = "minecraft:acacia_log[axis=z]";
 
-num topBranches = 2+randomInt(2);
-num topBranchLengthUpwardsMin = 7+randomInt(3);
-num topBranchLengthOutwardsMin = 4+randomInt(3);
-num topBranchVerticalDirection = 1;
-num topBranchLeafRadiusMin = 4;
+num topBranches = 4+randomInt(3);
+num topBranchLengthUpwardsMin = 11+randomInt(2);
+num topBranchLengthOutwardsMin = 9+randomInt(6);
+num topBranchVerticalDirection = 0.8;
+num topBranchLeafRadiusMin = 6;
 num topBranchLeafTranslate = 0;
-num topBranchLeafTopFlatness = 0.7;
-num topBranchLeafBottomFlatness = 1.5;
-num topBranchLeafRarity = 2;
-str topBranchLeafStructure = "oak_leaves_clump";
-str topBranchBlockX = "minecraft:oak_log[axis=x]";
-str topBranchBlockY = "minecraft:oak_log[axis=y]";
-str topBranchBlockZ = "minecraft:oak_log[axis=z]";
-
-// Generate roots at base of trunk
-num roots = 1+randomInt(3);
-num rootMaxDepth = 3;
-num rootHeight = 5;
-num rootLength = 2;
-num rootAngle = randomInt(randPrecision)/randPrecision*2*pi;
-for (num r = 0; r < roots; r = r + 1) {
-    num dx = sin(rootAngle);
-    num dz = cos(rootAngle);
-    for (num l = 0; l <= rootLength; l = l + 1) {
-        num height = rootHeight * (1-(l/rootLength));
-        for (num h = height; h >= -rootMaxDepth; h = h - 1) {
-            if (check(round(l*dx),round(h),round(l*dz)) != "AIR") break;
-            block(l*dx, h, l*dz, rootBlock);
-        }
-    }
-    rootAngle = rootAngle + goldenAngle;
-}
+num topBranchLeafTopFlatness = 2;
+num topBranchLeafBottomFlatness = 3;
+num topBranchLeafRarity = 1;
+str topBranchLeafBlock = "minecraft:acacia_leaves[distance=1,persistent=false]";
+str topBranchBlockX = "minecraft:acacia_log[axis=x]";
+str topBranchBlockY = "minecraft:acacia_log[axis=y]";
+str topBranchBlockZ = "minecraft:acacia_log[axis=z]";
 
 num branchAngle = randomInt(randPrecision)/randPrecision*2*pi;
 for (num i = 0; i < trunkHeight; i = i + 1) {
@@ -102,7 +82,7 @@ for (num i = 0; i < trunkHeight; i = i + 1) {
                         num distanceSquared = pow(cx,2)+pow(cy*squashFactor,2)+pow(cz,2);
                         if (distanceSquared/radiusSquared < randomInt(randPrecision)/randPrecision) {
                             if (randomInt(sideBranchLeafRarity) == 0) {
-                                structure(lox+cx, loy+cy, loz+cz, sideBranchLeafStructure, "NONE", "CW_90", "CCW_90", "CW_180");
+                                block(lox+cx, loy+cy, loz+cz, sideBranchLeafBlock, false);
                             }
                         }
                     }
@@ -155,7 +135,7 @@ for (num b = 1; b <= topBranches; b = b + 1) {
                 num distanceSquared = pow(cx,2)+pow(cy*squashFactor,2)+pow(cz,2);
                 if (distanceSquared/radiusSquared < randomInt(randPrecision)/randPrecision) {
                     if (randomInt(topBranchLeafRarity) == 0) {
-                        structure(lox+cx, loy+cy, loz+cz, topBranchLeafStructure, "NONE", "CW_90", "CCW_90", "CW_180");
+                        block(lox+cx, loy+cy, loz+cz, topBranchLeafBlock, false);
                     }
                 }
             }
