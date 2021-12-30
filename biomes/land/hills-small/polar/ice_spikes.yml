@@ -1,0 +1,20 @@
+id: ICE_SPIKES
+type: BIOME
+extends: [ EQ_TERRACED_HILLS, TUNDRA ]
+color: $biomes/colors.yml:ICE_SPIKES
+
+slant:
+  - threshold: 2.5
+    palette:
+      - BLOCK:minecraft:ice: 255
+      - << meta.yml:palette-bottom
+  - threshold: 3
+    palette:
+      - BLOCK:minecraft:packed_ice: 255
+      - << meta.yml:palette-bottom
+
+slant-depth: 1
+
+features:
+  trees:
+    - ICE_SPIKES
