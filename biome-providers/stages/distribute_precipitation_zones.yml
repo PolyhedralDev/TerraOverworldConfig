@@ -97,6 +97,7 @@ stages:
       mountains-large-temperate:
         - TEMPERATE_ALPHA_MOUNTAINS: 1
         - DRY_TEMPERATE_MOUNTAINS: 1
+        - DRY_TEMPERATE_WHITE_MOUNTAINS: 1
       mountains-large-boreal:
         - tbd: 1
       mountains-large-polar:
