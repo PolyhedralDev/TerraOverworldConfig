@@ -10,8 +10,8 @@ block(0, 0, 0, "minecraft:spruce_log");
 for(num x = -radiusCeil; x <= radiusCeil; x = x + 1) {
     for(num y = 0; y <= radiusCeil; y = y + 1) {
         for(num z = -radiusCeil; z <= radiusCeil; z = z + 1) {
-            num dist = (pow(x,2) + pow(y*3,2) + pow(z,2));
-            if (dist < radiusSquared && (dist < 1.5 || randomInt(2) == 0)) {
+            num distanceSquared = (pow(x,2) + pow(y*3,2) + pow(z,2));
+            if (distanceSquared/radiusSquared < randomInt(randPrecision)/randPrecision) {
                 block(x, y, z, "minecraft:spruce_leaves[distance=1,persistent=false]", false);
             }
         }
