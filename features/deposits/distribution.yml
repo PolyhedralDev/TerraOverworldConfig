@@ -93,14 +93,14 @@ redstone-uniform:
     max: 16
 
 coal:
-  averageCountPerChunk: 20
+  averageCountPerChunk: 10
   salt: 1068
   range:
     min: 0
     max: 192
 
 coal-uniform:
-  averageCountPerChunk: 30
+  averageCountPerChunk: 15
   salt: 7012
   range:
     min: 136
