@@ -2,10 +2,10 @@ id: OAK_BUSHES
 type: FEATURE
 
 distributor:
-  type: SAMPLER
-  sampler:
-    type: POSITIVE_WHITE_NOISE
-  threshold: 0.01
+  type: PADDED_GRID
+  width: 7
+  padding: 2
+  salt: 9152
 
 locator:
   type: SURFACE
@@ -15,5 +15,5 @@ locator:
 
 structures:
   distribution:
-    type: WHITE_NOISE
+    type: CONSTANT
   structures: oak_bush
