@@ -6,6 +6,7 @@ color: $biomes/colors.yml:DRY_TEMPERATE_MOUNTAINS
 
 palette:
   - GRASS: 319
+  - SANDY_BEACH: 64
   - << meta.yml:palette-bottom
 
 slant:
@@ -17,3 +18,6 @@ slant:
 features:
   flora:
     - GRASS
+  trees:
+    - OAK_BUSH_PATCHES
+    - SPARSE_OAK_TREES
