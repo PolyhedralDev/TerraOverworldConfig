@@ -8,6 +8,8 @@ palette:
   - RED_SAND: 319
   - << meta.yml:palette-bottom
 
+slant-depth: 50
+
 slant:
   - threshold: 4
     palette:
