@@ -3,7 +3,7 @@ type: BIOME
 abstract: true
 extends: NO_TERRAIN_2D
 
-# Large smooth stylized mountains with lots of overhangs.
+# Spiky mountains with some water underneath, serves to be an ocean border biome.
 
 vars: &variables
   base: 54
