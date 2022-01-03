@@ -1,0 +1,17 @@
+id: SERRATED_COASTS
+type: BIOME
+extends: [ EQ_SERRATED_COAST, BASE ]
+vanilla: minecraft:beach
+color: $biomes/colors.yml:PLAINS
+
+palette:
+  - CALCITE_DIORITE_MIX_HEAVY: 319
+  - SANDY_BEACH_CALCITE_MIX: 66
+  - SANDY_BEACH: 64
+  - << meta.yml:palette-bottom
+      
+features:
+  flora:
+    - CROSSING_VINES
+    - LARGE_LEAF_VINES
+    - LARGE_CEILING_VINES
