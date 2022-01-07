@@ -16,6 +16,7 @@ colors:
 palette:
   - YELLOWSTONE_WATER: 319
   - CALCITE: 72
+  - SANDY_BEACH: 64
   - << meta.yml:palette-bottom
 
 slant:

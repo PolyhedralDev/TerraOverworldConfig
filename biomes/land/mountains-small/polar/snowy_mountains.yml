@@ -9,6 +9,7 @@ ocean:
 
 palette:
   - TUNDRA: 319
+  - SANDY_BEACH: 64
   - << meta.yml:palette-bottom
 
 slant:
