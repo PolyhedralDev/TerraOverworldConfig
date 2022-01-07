@@ -13,3 +13,6 @@ ocean:
 features:
   lava:
     - LAVA_FLOOR
+  underwater-flora:
+    - KELP
+    - SEAGRASS
