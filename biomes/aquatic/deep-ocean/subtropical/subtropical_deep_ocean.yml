@@ -5,7 +5,7 @@ vanilla: minecraft:deep_lukewarm_ocean
 color: $biomes/colors.yml:SUBTROPICAL_DEEP_OCEAN
 
 palette:
-  - SANDY_BEACH: 255
+  - SANDY_BEACH: 319
   - << meta.yml:palette-bottom
 
 #colors:

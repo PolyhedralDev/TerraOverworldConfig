@@ -18,7 +18,7 @@ ocean:
   palette: FROZEN_OCEAN
 
 palette:
-  - TUNDRA: 255
+  - TUNDRA: 319
   - << meta.yml:palette-bottom
 
 features:

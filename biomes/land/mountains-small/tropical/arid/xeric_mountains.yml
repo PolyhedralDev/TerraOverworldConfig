@@ -15,7 +15,7 @@ colors:
   water-fog: 0x007bf7
 
 palette:
-  - XERIC_SANDSTONE: 255
+  - XERIC_SANDSTONE: 319
   - XERIC_SANDSTONE_HALF: 100
   - XERIC: 92
   - << meta.yml:palette-bottom
@@ -23,11 +23,11 @@ palette:
 slant:
   - threshold: 5
     palette:
-      - XERIC_WHITE_TERRACOTTA: 255
+      - XERIC_WHITE_TERRACOTTA: 319
       - << meta.yml:palette-bottom
   - threshold: 7.5
     palette:
-      - XERIC_LIGHT_GRAY_TERRACOTTA: 255
+      - XERIC_LIGHT_GRAY_TERRACOTTA: 319
       - << meta.yml:palette-bottom
 
 slant-depth: 5

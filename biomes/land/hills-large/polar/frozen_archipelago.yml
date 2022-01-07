@@ -11,14 +11,14 @@ ocean:
   palette: FROZEN_OCEAN
 
 palette:
-  - TUNDRA: 255
+  - TUNDRA: 319
   - SANDY_BEACH: 64
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 10
     palette:
-      - BLOCK:minecraft:stone: 255
+      - BLOCK:minecraft:stone: 319
       - SANDY_BEACH: 64
       - << meta.yml:palette-bottom
 

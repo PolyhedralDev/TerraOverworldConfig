@@ -8,6 +8,6 @@ tags:
   - USE_RIVER
 
 palette:
-  - SALT: 255
+  - SALT: 319
   - CALCITE_DIORITE_MIX: 63
   - << meta.yml:palette-bottom

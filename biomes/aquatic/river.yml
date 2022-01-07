@@ -5,7 +5,7 @@ vanilla: minecraft:river
 color: $biomes/colors.yml:RIVER
 
 palette:
-  - SANDY_BEACH: 255
+  - SANDY_BEACH: 319
   - << meta.yml:palette-bottom
 
 colors:

@@ -14,5 +14,5 @@ colors:
   water-fog: 0x44aff5
 
 palette:
-  - SHALE_BEACH: 255
+  - SHALE_BEACH: 319
   - << meta.yml:palette-bottom

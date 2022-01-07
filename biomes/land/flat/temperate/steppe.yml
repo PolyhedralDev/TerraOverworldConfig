@@ -14,7 +14,7 @@ colors:
   water-fog: 0x44aff5
 
 palette:
-  - GRASS_VARIATION: 255
+  - GRASS_VARIATION: 319
   - << meta.yml:palette-bottom
 
 features:
