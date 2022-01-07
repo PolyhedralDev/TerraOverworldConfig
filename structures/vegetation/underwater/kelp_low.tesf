@@ -1,0 +1,10 @@
+num maxHeight = randomInt(5);
+for (num i = 0; i <= maxHeight; i = i + 1) {
+    if (getBlock(0, i, 0) == "minecraft:water") {
+        block(0, i, 0, "minecraft:kelp_plant");
+    } else {
+        block(0, i-1, 0, "minecraft:kelp[age=25]");
+        return;
+    }
+}
+block(0, maxHeight, 0, "minecraft:kelp[age=25]");
