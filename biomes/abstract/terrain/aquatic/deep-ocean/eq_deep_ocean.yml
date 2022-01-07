@@ -1,17 +1,17 @@
 id: EQ_DEEP_OCEAN
 type: BIOME
 abstract: true
-extends: NO_TERRAIN_2D
 
 # Simple relatively flat terrain under ocean level.
-
-vars: &variables
-  base: 20
-  height: 30
 
 terrain:
   sampler:
     dimensions: 3
+    type: LINEAR_HEIGHTMAP
+    base: 20
+  sampler-2d:
+    dimensions: 2
     type: EXPRESSION
-    variables: *variables
-    expression: -y + base + |simplex(x/2, z/2)| * height
+    variables:
+      height: 30
+    expression: "|simplex(x/2, z/2)| * height"
