@@ -65,6 +65,8 @@ stages:
   - type: FEATURE
     id: deposits
   - type: FEATURE
+    id: underwater-flora
+  - type: FEATURE
     id: flora
   - type: FEATURE
     id: trees
