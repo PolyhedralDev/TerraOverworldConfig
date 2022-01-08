@@ -1,0 +1,11 @@
+id: COLOR_FROZEN
+type: BIOME
+abstract: true
+
+colors:
+  sky: 0xe4f1ff
+  fog: 0xbacddc
+  grass: 0x73a247
+  foliage: 0x62bc3f
+  water: 0x3181ff
+  water-fog: 0x2756ab

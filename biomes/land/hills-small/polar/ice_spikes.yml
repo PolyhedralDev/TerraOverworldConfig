@@ -1,6 +1,6 @@
 id: ICE_SPIKES
 type: BIOME
-extends: [ EQ_TERRACED_HILLS, TUNDRA ]
+extends: [ COLOR_FROZEN, EQ_TERRACED_HILLS, TUNDRA ]
 color: $biomes/colors.yml:ICE_SPIKES
 
 slant:
