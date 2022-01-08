@@ -1,18 +1,11 @@
 id: XERIC_MOUNTAINS
 type: BIOME
-extends: [ EQ_ERODED_MOUNTAINS, CARVING_LAND, BASE ]
+extends: [ COLOR_XERIC, EQ_ERODED_MOUNTAINS, CARVING_LAND, BASE ]
 vanilla: minecraft:desert
 color: $biomes/colors.yml:XERIC_MOUNTAINS
 
 tags:
   - LAND
-
-colors:
-  fog: 0xfff17c
-  grass: 0x8ab689
-  foliage: 0x6da36b
-  water: 0x007bf7
-  water-fog: 0x007bf7
 
 palette:
   - XERIC_SANDSTONE: 319

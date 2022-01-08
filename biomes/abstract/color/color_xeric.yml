@@ -1,0 +1,11 @@
+id: COLOR_XERIC
+type: BIOME
+abstract: true
+
+colors:
+  sky: 0xdffffd
+  fog: 0xfffce1
+  grass: 0xced398
+  foliage: 0xbdd885
+  water: 0x007bf7
+  water-fog: 0x007bf7

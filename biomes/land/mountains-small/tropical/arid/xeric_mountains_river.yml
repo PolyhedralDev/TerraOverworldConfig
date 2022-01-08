@@ -2,10 +2,3 @@ id: XERIC_MOUNTAINS_RIVER
 type: BIOME
 extends: [ EQ_ERODED_MOUNTAINS_RIVER, CARVING_OCEAN, XERIC_MOUNTAINS ]
 color: $biomes/colors.yml:MOUNTAINS_RIVER
-
-colors:
-  fog: 0xfff17c
-  grass: 0x8ab689
-  foliage: 0x6da36b
-  water: 0x007bf7
-  water-fog: 0x007bf7

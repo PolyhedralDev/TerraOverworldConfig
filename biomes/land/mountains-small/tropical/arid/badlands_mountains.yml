@@ -1,6 +1,6 @@
 id: BADLANDS_MOUNTAINS
 type: BIOME
-extends: [ EQ_ERODED_MOUNTAINS, CARVING_LAND, BASE ]
+extends: [ COLOR_XERIC, EQ_ERODED_MOUNTAINS, CARVING_LAND, BASE ]
 vanilla: minecraft:badlands
 color: $biomes/colors.yml:BADLANDS_MOUNTAINS
 
