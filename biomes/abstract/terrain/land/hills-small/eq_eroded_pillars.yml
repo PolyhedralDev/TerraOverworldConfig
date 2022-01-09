@@ -11,8 +11,8 @@ vars: &variables
   pillarHeight: 80
   pillarPlatformHeight: 20
   pillarHeightVariation: 20
-  pillarWarpStrength: 10
-  pillarErosionStrength: 2
+  pillarWarpStrength: 15
+  pillarErosionStrength: 2.1
   pillarErosionTop: 150
   pillarErosionBottom: 80
 
@@ -40,7 +40,7 @@ terrain:
               pillarErosionBottom, pillarErosionStrength * lerp(|pillarErosion(x,y,z)|,0,1,0.25,0) * (-y+pillarErosionTop)
             ),
             // Mask parameters
-            0.5, 0.8, pillarMask(
+            0.45, 0.75, pillarMask(
               x+pillarWarp(x,y/2,z)*pillarWarpStrength,
               z+pillarWarp(x,y/2,z+1000)*pillarWarpStrength
             )
