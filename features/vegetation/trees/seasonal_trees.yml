@@ -2,11 +2,10 @@ id: SEASONAL_TREES
 type: FEATURE
 
 distributor:
-  type: SAMPLER
-  sampler:
-    type: POSITIVE_WHITE_NOISE
-    salt: 38746
-  threshold: 0.01
+  type: PADDED_GRID
+  width: 8
+  padding: 2
+  salt: 1931
 
 locator:
   type: SURFACE
