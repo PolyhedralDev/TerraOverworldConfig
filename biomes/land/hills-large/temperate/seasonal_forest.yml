@@ -21,7 +21,7 @@ palette:
 slant:
   - threshold: 3
     palette:
-      - GRANITE_STONE_MIX: 319
+      - GRANITE_SLANT: 319
       - << meta.yml:palette-bottom
 
 features:

@@ -3,9 +3,17 @@ type: PALETTE
 
 layers:
   - materials:
-      - minecraft:grass_block: 24
-      - minecraft:coarse_dirt: 6
+      - minecraft:grass_block: 3
+      - minecraft:coarse_dirt: 2
     layers: 1
+    sampler:
+      type: DOMAIN_WARP
+      amplitude: 2
+      warp:
+        type: GAUSSIAN
+      sampler:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.03
   - materials:
       - minecraft:dirt: 2
     layers: 1

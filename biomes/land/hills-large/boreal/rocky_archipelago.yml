@@ -9,5 +9,5 @@ tags:
 
 palette:
   - BLOCK:minecraft:stone: 319
-  - SANDY_BEACH: 64
+  - GRAVEL: 62
   - << meta.yml:palette-bottom

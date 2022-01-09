@@ -7,10 +7,12 @@ slant:
   - threshold: 2.5
     palette:
       - BLOCK:minecraft:ice: 319
+      - SANDY_BEACH: 61
       - << meta.yml:palette-bottom
   - threshold: 3
     palette:
       - BLOCK:minecraft:packed_ice: 319
+      - SANDY_BEACH: 61
       - << meta.yml:palette-bottom
 
 slant-depth: 1
