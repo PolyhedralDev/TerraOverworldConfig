@@ -4,28 +4,55 @@ type: FEATURE
 # Adds 'webs' of leaf blocks to surface blocks
 
 distributor:
-  type: "YES"
+  type: SAMPLER
+  sampler:
+    type: PROBABILITY
+    sampler:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.03
+  threshold: 0.75
 
 locator:
   type: AND
-  locators: # Could be significantly optimized with an adjacency locator
+  locators:
+    # Check if block is solid air
     - type: PATTERN
-      range:
+      range: &range
         min: 90
         max: 180
       pattern:
         type: MATCH_AIR
         offset: 0
+    # Check if there is a surrounding solid block
+    - type: OR
+      locators:
+        # If any side faces are solid
+        - type: ADJACENT_PATTERN
+          range: *range
+          pattern:
+            type: MATCH_SOLID
+            offset: 0
+        # OR any top / bottom faces are solid
+        - type: PATTERN
+          range: *range
+          pattern:
+            type: OR
+            patterns:
+              - type: MATCH_SOLID
+                offset: 1
+              - type: MATCH_SOLID
+                offset: -1
+    # Use noise to create 'webbed' effect
     - type: SAMPLER_3D
       sampler:
         dimensions: 3
         type: EXPRESSION
-        expression: if(|mask(x, y, z)| > maskThreshold, if(noise(x, y, z) > noiseThreshold, 1, -1), -1)
         variables:
-          maskThreshold: 0.5
-          noiseThreshold: 0.5
+          threshold: 0.5
+        expression: if(noise(x,y,z) > threshold, 1, -1)
         samplers:
           noise:
+            # Warped distance2div produces a web effect
             dimensions: 3
             type: DOMAIN_WARP
             amplitude: 10
@@ -42,13 +69,8 @@ locator:
                 type: CELLULAR
                 return: Distance2Div
                 frequency: 0.06
-          mask:
-            dimensions: 3
-            type: OPEN_SIMPLEX_2
-            frequency: 0.01
-            seed: 1
 
 structures:
   distribution:
     type: CONSTANT
-  structures: large_leaf_vines
+  structures: BLOCK:minecraft:jungle_leaves[persistent=true]
