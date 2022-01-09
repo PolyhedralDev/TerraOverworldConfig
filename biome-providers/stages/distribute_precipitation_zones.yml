@@ -50,7 +50,7 @@ stages:
       flat-boreal:
         - tbd: 1
       flat-polar:
-        - TUNDRA: 1
+        - SNOWY_PLAINS: 1
       # Small Hills Temperature Zones
       hills-small-tropical:
         - DESERT: 1
