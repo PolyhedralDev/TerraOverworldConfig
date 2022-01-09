@@ -11,5 +11,6 @@ slant-depth: 4
 slant:
   - threshold: 2.5
     palette:
-      - GRAVEL: 319
+      - SANDY_BEACH: 319
+      - GRAVEL: 61
       - << meta.yml:palette-bottom
