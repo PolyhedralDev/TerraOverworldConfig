@@ -1,0 +1,10 @@
+stages:
+  - type: REPLACE
+    from: coast
+    to:
+      - coast: 2
+      - coast-flat: 1
+    sampler:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.03
+      salt: 9129

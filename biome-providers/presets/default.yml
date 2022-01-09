@@ -9,6 +9,7 @@ biomes:
   pipeline:
     source: $biome-providers/sources/basic_continents.yml:source
     stages:
+      - << biome-providers/stages/flatten_coast_randomly.yml:stages
       - << biome-providers/stages/distribute_elevation_zones.yml:stages
       - << biome-providers/stages/distribute_temperature_zones.yml:stages
       - << biome-providers/stages/distribute_precipitation_zones.yml:stages
