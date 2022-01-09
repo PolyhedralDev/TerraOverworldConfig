@@ -27,7 +27,8 @@ stages:
         - ocean-polar: 1
       coast-flat:
         - PALM_BEACH: 1
-        - BEACH: 4
+        - BEACH: 3
+        - FROZEN_BEACH: 1
       coast-hills:
         - SANDSTONE_WETLANDS: 1
         - WETLANDS: 2
