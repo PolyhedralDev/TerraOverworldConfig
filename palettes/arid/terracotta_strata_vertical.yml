@@ -1,0 +1,18 @@
+id: TERRACOTTA_STRATA_VERTICAL
+type: PALETTE
+extends: TERRACOTTA_STRATA
+
+sampler:
+  dimensions: 3
+  type: DOMAIN_WARP
+  amplitude: 0.2
+  warp:
+    type: GAUSSIAN
+  sampler:
+    type: EXPRESSION
+    expression: noise(x*8, y, z*8)
+    samplers:
+      noise:
+        dimensions: 3
+        type: OPEN_SIMPLEX_2
+        frequency: 0.005
