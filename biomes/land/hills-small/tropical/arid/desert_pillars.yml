@@ -1,0 +1,29 @@
+id: DESERT_PILLARS
+type: BIOME
+extends: [ COLOR_XERIC, EQ_ERODED_PILLARS, CARVING_LAND, BASE ]
+vanilla: minecraft:badlands
+color: $biomes/colors.yml:DESERT_PILLARS
+
+tags:
+  - USE_RIVER
+
+palette:
+  - SAND: 319
+  - SANDY_BEACH: 64
+  - << meta.yml:palette-bottom
+
+slant-depth: 50
+
+slant:
+  - threshold: 2.3
+    palette:
+      - DIORITE_SLANT: 319
+      - << meta.yml:palette-bottom
+  - threshold: 3
+    palette:
+      - GRANITE_SLANT: 319
+      - << meta.yml:palette-bottom
+  - threshold: 3.5
+    palette:
+      - TERRACOTTA_STRATA_VERTICAL: 319
+      - << meta.yml:palette-bottom
