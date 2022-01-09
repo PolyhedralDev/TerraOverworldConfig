@@ -90,7 +90,7 @@ features:
     - LARGE_CEILING_VINES
     - FOREST_FLOWER_PATCHES
   trees:
-    - MIXED_TREES
+    - DENSE_TEMPERATE_TREES
     - OAK_BUSHES
   
 
