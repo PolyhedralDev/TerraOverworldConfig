@@ -18,3 +18,5 @@ palette:
 features:
   slabs:
     - SNOW_LAYERS
+  preprocessors:
+    - ICE_COASTLINE

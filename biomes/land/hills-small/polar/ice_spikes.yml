@@ -20,3 +20,5 @@ slant-depth: 1
 features:
   trees:
     - ICE_SPIKES
+  preprocessors:
+    - ICE_COASTLINE
