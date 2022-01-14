@@ -1,7 +1,7 @@
 id: TEST_EQ
 type: BIOME
 abstract: true
-extends: BASE
+extends: [ CARVING_LAND, BASE ]
 vanilla: minecraft:plains
 
 tags:
@@ -10,6 +10,7 @@ tags:
 palette:
   - GRASS: 319
   - SAND: 64
+  - << meta.yml:palette-bottom
 
 slant:
   - threshold: 5
