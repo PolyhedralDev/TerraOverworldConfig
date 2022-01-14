@@ -5,7 +5,7 @@ vanilla: minecraft:beach
 color: $biomes/colors.yml:FROZEN_ARCHIPELAGO
 
 tags:
-  - USE_RIVER
+  - USE_FROZEN_RIVER
 
 ocean:
   palette: FROZEN_OCEAN

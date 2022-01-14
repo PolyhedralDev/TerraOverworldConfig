@@ -19,3 +19,10 @@ stages:
         - SELF: 1
         - XERIC_MOUNTAINS_RIVER: 1
     sampler: *riverSampler
+  # Frozen Rivers
+  - type: REPLACE
+    from: USE_FROZEN_RIVER
+    to:
+      - SELF: 1
+      - FROZEN_RIVER: 1
+    sampler: *riverSampler
