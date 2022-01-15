@@ -18,6 +18,9 @@ stages:
       XERIC_MOUNTAINS:
         - SELF: 1
         - XERIC_MOUNTAINS_RIVER: 1
+      BADLANDS_MOUNTAINS:
+        - SELF: 1
+        - BADLANDS_MOUNTAINS_RIVER: 1
     sampler: *riverSampler
   # Frozen Rivers
   - type: REPLACE
