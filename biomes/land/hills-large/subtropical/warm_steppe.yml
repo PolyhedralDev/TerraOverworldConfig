@@ -1,0 +1,13 @@
+id: WARM_STEPPE
+type: BIOME
+extends: [ COLOR_XERIC, SAVANNA ]
+color: $biomes/colors.yml:WARM_STEPPE
+
+features:
+  flora:
+    - GRASS
+    - FLOWER_PATCHES
+  trees: []
+
+colors:
+  grass: 0xc6d563

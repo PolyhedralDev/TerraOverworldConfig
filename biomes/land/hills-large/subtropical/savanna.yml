@@ -1,0 +1,29 @@
+id: SAVANNA
+type: BIOME
+extends: [ EQ_HILLS, CARVING_LAND, BASE ]
+vanilla: minecraft:savanna
+color: $biomes/colors.yml:SAVANNA
+
+tags:
+  - USE_RIVER
+
+colors:
+  grass: 0xa1c342
+
+palette:
+  - GRASS_VARIATION: 319
+  - SANDY_BEACH: 64
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 3
+    palette:
+      - TERRACOTTA_SLANT: 319
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - GRASS
+    - FLOWER_PATCHES
+  trees:
+    - ACACIA_TREES

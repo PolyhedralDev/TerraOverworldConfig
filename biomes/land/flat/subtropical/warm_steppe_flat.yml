@@ -1,0 +1,4 @@
+id: WARM_STEPPE_FLAT
+type: BIOME
+extends: [ EQ_PLAIN, WARM_STEPPE ]
+color: $biomes/colors.yml:WARM_STEPPE_FLAT

@@ -1,0 +1,4 @@
+id: WARM_PRAIRIE_LOW
+type: BIOME
+extends: [ EQ_TERRACED_HILLS, WARM_PRAIRIE ]
+color: $biomes/colors.yml:WARM_PRAIRIE_FLAT
