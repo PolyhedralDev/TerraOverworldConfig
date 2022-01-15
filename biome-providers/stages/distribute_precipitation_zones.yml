@@ -38,45 +38,81 @@ stages:
         - FROZEN_OCEAN: 1
       # Flat Temperature Zones
       flat-tropical:
-        - tbd: 3
+        - tbd: 1 # Flat jungle
+        - tbd: 1 # Flat savanna
+        - tbd: 1 # Flat hot plains
         - SALT_FLATS: 1
       flat-subtropical:
-        - tbd: 1
+        - tbd: 1 # Rainforest
+        - tbd: 1 # Rainforest
+        - tbd: 1 # Temperateish biome
       flat-temperate:
+        - FOREST_FLAT: 1
         - OAK_SAVANNA: 1
-        - PRAIRIE: 1
         - PLAINS: 1
+        - PRAIRIE: 1
         - STEPPE: 1
       flat-boreal:
-        - tbd: 1
+        - TAIGA_FLAT: 1
+        - TAIGA_FLAT: 1
+        - TAIGA_FLAT: 1
+        - TAIGA_FLAT: 1
       flat-polar:
         - SNOWY_PLAINS: 1
+        - SNOWY_PLAINS: 1
+        - TUNDRA_PLAINS: 1
         - TUNDRA_PLAINS: 1
       # Small Hills Temperature Zones
       hills-small-tropical:
+        - tbd: 1 # Hilly jungle
+        - tbd: 1 # Hilly savanna
+        - tbd: 1 # Small xeric hills / shrubland
         - DESERT: 1
       hills-small-subtropical:
         - tbd: 1
+        - tbd: 1
+        - tbd: 1
+        - tbd: 1
       hills-small-temperate:
+        - FOREST_LOW: 1
+        - FOREST_LOW: 1
+        - FOREST_LOW: 1
         - FOREST_LOW: 1
       hills-small-boreal:
         - TAIGA_LOW: 1
+        - TAIGA_LOW: 1
+        - TAIGA_LOW: 1
+        - TAIGA_LOW: 1
       hills-small-polar:
         - ICE_SPIKES: 1
+        - ICE_SPIKES: 1
+        - TUNDRA_LOW: 1
         - TUNDRA_LOW: 1
       # Large Hills Temperature Zones
       hills-large-tropical:
-        - ARID_SPIKES: 1
+        - tbd: 1
         - XERIC_HILLS: 1
+        - ARID_SPIKES: 1
+        - tbd: 1
       hills-large-subtropical:
         - EVERGREEN_FOREST: 1
+        - EVERGREEN_FOREST: 1
+        - EVERGREEN_FOREST: 1
+        - EVERGREEN_FOREST: 1
       hills-large-temperate:
-        - BIRCH_FOREST: 1
-        - FOREST: 1
         - SEASONAL_FOREST: 1
+        - FOREST: 1
+        - FOREST: 1
+        - BIRCH_FOREST: 1
       hills-large-boreal:
         - TAIGA: 1
+        - TAIGA: 1
+        - TAIGA: 1
+        - TAIGA: 1
       hills-large-polar:
+        - TUNDRA_HILLS: 1
+        - TUNDRA_HILLS: 1
+        - TUNDRA_HILLS: 1
         - TUNDRA_HILLS: 1
       # Small Mountains Temperature Zones
       mountains-small-tropical:
@@ -86,23 +122,47 @@ stages:
         - DESERT_PILLARS: 1
       mountains-small-subtropical:
         - tbd: 1
+        - tbd: 1
+        - tbd: 1
+        - tbd: 1
       mountains-small-temperate:
+        - tbd: 1
+        - tbd: 1
+        - tbd: 1
         - tbd: 1
       mountains-small-boreal:
         - MOUNTAINS: 1
+        - MOUNTAINS: 1
+        - MOUNTAINS: 1
+        - MOUNTAINS: 1
       mountains-small-polar:
         - SNOWY_MOUNTAINS: 1
+        - SNOWY_MOUNTAINS: 1
+        - SNOWY_ERODED_TERRACED_MOUNTAINS: 1
         - SNOWY_ERODED_TERRACED_MOUNTAINS: 1
       # Large Mountains Temperature Zones
       mountains-large-tropical:
+        - tbd: 1
+        - tbd: 1
+        - tbd: 1
         - CRACKED_BADLANDS_PLATEAU: 1
       mountains-large-subtropical:
+        - tbd: 1
+        - tbd: 1
+        - tbd: 1
         - tbd: 1
       mountains-large-temperate:
         - TEMPERATE_ALPHA_MOUNTAINS: 1
         - DRY_TEMPERATE_MOUNTAINS: 1
+        - DRY_TEMPERATE_MOUNTAINS: 1
         - DRY_TEMPERATE_WHITE_MOUNTAINS: 1
       mountains-large-boreal:
         - tbd: 1
+        - tbd: 1
+        - tbd: 1
+        - tbd: 1
       mountains-large-polar:
+        - SNOWY_TERRACED_MOUNTAINS: 1
+        - SNOWY_TERRACED_MOUNTAINS: 1
+        - SNOWY_TERRACED_MOUNTAINS: 1
         - SNOWY_TERRACED_MOUNTAINS: 1
