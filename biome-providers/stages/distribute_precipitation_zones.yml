@@ -55,9 +55,8 @@ stages:
       # Small Hills Temperature Zones
       hills-small-tropical:
         - DESERT: 1
-        - DESERT_PILLARS: 1
       hills-small-subtropical:
-        - OVERGROWN_CLIFFS: 1
+        - tbd: 1
       hills-small-temperate:
         - FOREST_LOW: 1
       hills-small-boreal:
@@ -81,8 +80,10 @@ stages:
         - TUNDRA_HILLS: 1
       # Small Mountains Temperature Zones
       mountains-small-tropical:
-        - BADLANDS_MOUNTAINS: 1
+        - OVERGROWN_CLIFFS: 1
         - XERIC_MOUNTAINS: 1
+        - BADLANDS_MOUNTAINS: 1
+        - DESERT_PILLARS: 1
       mountains-small-subtropical:
         - tbd: 1
       mountains-small-temperate:
