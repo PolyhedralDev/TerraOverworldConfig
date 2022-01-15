@@ -2,17 +2,16 @@ id: SPRUCE_TREES
 type: FEATURE
 
 distributor:
-  type: SAMPLER
-  sampler:
-    type: POSITIVE_WHITE_NOISE
-    salt: 1119
-  threshold: 0.01
+  type: PADDED_GRID
+  width: 6
+  padding: 2
+  salt: 9591
 
 locator:
   type: SURFACE
   range:
-    min: 90
-    max: 255
+    min: 66
+    max: 130
 
 structures:
   distribution:
