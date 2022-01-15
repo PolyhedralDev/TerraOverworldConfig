@@ -43,12 +43,16 @@ stages:
         - tbd: 1 # Flat hot plains
         - SALT_FLATS: 1
       flat-subtropical:
-        - tbd: 1 # Rainforest
-        - tbd: 1 # Rainforest
-        - tbd: 1 # Temperateish biome
+        - tbd: 3
+        - FOREST_FLAT: 3
+        - OAK_SAVANNA: 3
+        - SAVANNA_FLAT: 1
+        - WARM_PRAIRIE_FLAT: 1
+        - WARM_STEPPE_FLAT: 1
       flat-temperate:
-        - FOREST_FLAT: 1
-        - OAK_SAVANNA: 1
+        - tbd: 3
+        - FOREST_FLAT: 3
+        - OAK_SAVANNA: 3
         - PLAINS: 1
         - PRAIRIE: 1
         - STEPPE: 1
@@ -69,10 +73,11 @@ stages:
         - tbd: 1 # Small xeric hills / shrubland
         - DESERT: 1
       hills-small-subtropical:
-        - tbd: 1
-        - tbd: 1
-        - tbd: 1
-        - tbd: 1
+        - FOREST_LOW: 3
+        - tbd: 3
+        - SAVANNA_LOW: 1
+        - WARM_PRAIRIE_LOW: 1
+        - WARM_STEPPE_LOW: 1
       hills-small-temperate:
         - FOREST_LOW: 1
         - FOREST_LOW: 1
@@ -95,10 +100,12 @@ stages:
         - ARID_SPIKES: 1
         - tbd: 1
       hills-large-subtropical:
-        - EVERGREEN_FOREST: 1
-        - EVERGREEN_FOREST: 1
-        - EVERGREEN_FOREST: 1
-        - EVERGREEN_FOREST: 1
+        - EVERGREEN_FOREST: 3
+        - tbd: 3
+        - tbd: 3
+        - SAVANNA: 1
+        - WARM_PRAIRIE: 1
+        - WARM_STEPPE: 1
       hills-large-temperate:
         - SEASONAL_FOREST: 1
         - FOREST: 1
@@ -116,8 +123,9 @@ stages:
         - TUNDRA_HILLS: 1
       # Small Mountains Temperature Zones
       mountains-small-tropical:
-        - OVERGROWN_CLIFFS: 1
-        - XERIC_MOUNTAINS: 1
+        - OVERGROWN_CLIFFS: 2
+        - tbd: 2
+        - XERIC_MOUNTAINS: 2
         - BADLANDS_MOUNTAINS: 1
         - DESERT_PILLARS: 1
       mountains-small-subtropical:
