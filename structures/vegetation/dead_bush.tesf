@@ -1,2 +1,0 @@
-if (!structure(0, 0, 0, "plantable_desert", "NONE")) fail;
-block(0, 0, 0, "minecraft:dead_bush");

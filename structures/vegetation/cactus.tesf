@@ -1,14 +1,4 @@
-if (check(0,0,0) == "LAND") fail;
-if (!structure(0, 0, 0, "plantable_desert", "NONE")) fail;
-if (!structure(0, 0, 0, "has_sunlight", "NONE")) fail;
-
-if(getBlock(0, 0, -1) != "minecraft:air" ||
-   getBlock(0, 0, 1)  != "minecraft:air" ||
-   getBlock(-1, 0, 1) != "minecraft:air" ||
-   getBlock(1, 0, 1)  != "minecraft:air") fail; // dont generate if blocks are bordering
-
 num height = randomInt(4) + 1;
-
 for(num i = 0; i < height; i = i + 1) {
-    block(0, i, 0, "minecraft:cactus");
+    block(0, i, 0, "minecraft:cactus", false);
 }

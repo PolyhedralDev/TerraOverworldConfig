@@ -9,14 +9,22 @@ distributor:
   threshold: 0.125
 
 locator:
-  type: SURFACE
-  range:
-    min: 60
-    max: 255
+  type: AND
+  locators:
+    - type: SURFACE
+      range: &range
+        min: 62
+        max: 319
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:plantable-blocks
+        offset: -1
 
 structures:
   distribution:
     type: WHITE_NOISE
   structures:
     - tall_grass: 8
-    - grass: 1
+    - BLOCK:minecraft:grass: 1

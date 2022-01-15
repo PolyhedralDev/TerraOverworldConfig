@@ -9,14 +9,22 @@ distributor:
   threshold: 0.05
 
 locator:
-  type: SURFACE
-  range:
-    min: 60
-    max: 255
+  type: AND
+  locators:
+    - type: SURFACE
+      range: &range
+        min: 62
+        max: 319
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:plantable-blocks
+        offset: -1
 
 structures:
   distribution:
     type: WHITE_NOISE
   structures:
-    - fern: 6
+    - BLOCK:minecraft:fern: 6
     - large_fern: 1

@@ -9,10 +9,26 @@ distributor:
   threshold: 0.005
 
 locator:
-  type: SURFACE
-  range:
-    min: 60
-    max: 255
+  type: AND
+  locators:
+    - type: SURFACE
+      range: &range
+        min: 62
+        max: 319
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:sand
+          - minecraft:red_sand
+        offset: -1
+    - type: ADJACENT_PATTERN
+      range: *range
+      match-all: true
+      pattern:
+        type: MATCH_AIR
+        offset: 0
 
 structures:
   distribution:
