@@ -15,6 +15,7 @@ vars: &variables
   pillarErosionStrength: 2.1
   pillarErosionTop: 150
   pillarErosionBottom: 80
+  pillarYMin: 50 # Pillars are only evaluated above this y level for performance
 
 terrain:
   sampler:
@@ -23,7 +24,7 @@ terrain:
     variables: *variables
     expression: |
       -y + base
-      + if(y<base||y>base+height+pillarHeight+pillarHeightVariation,0, // Skip unnecessary calculations
+      + if(y<pillarYMin||y>base+height+pillarHeight+pillarHeightVariation,0, // Skip unnecessary calculations
         max(
           // Pillar 'platform'
           maskSmooth(
