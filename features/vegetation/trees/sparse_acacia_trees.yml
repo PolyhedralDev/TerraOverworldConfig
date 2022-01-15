@@ -1,5 +1,6 @@
 id: SPARSE_ACACIA_TREES
 type: FEATURE
+extends: ACACIA_TREES
 
 distributor:
   type: SAMPLER
@@ -8,13 +9,9 @@ distributor:
     salt: 2349
   threshold: 1/2000
 
-locator:
-  type: SURFACE
-  range:
-    min: 60
-    max: 255
-
 structures:
   distribution:
-    type: CONSTANT
-  structures: acacia_tree_procedural
+    type: WHITE_NOISE
+  structures:
+    - acacia_tree_procedural: 4
+    - large_flat_acacia_tree_procedural: 1

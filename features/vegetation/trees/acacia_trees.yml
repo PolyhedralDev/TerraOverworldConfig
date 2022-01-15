@@ -1,0 +1,21 @@
+id: ACACIA_TREES
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 17
+  padding: 3
+  salt: 1923
+
+locator:
+  type: SURFACE
+  range:
+    min: 60
+    max: 255
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures:
+    - acacia_tree_procedural: 10
+    - large_flat_acacia_tree_procedural: 1
