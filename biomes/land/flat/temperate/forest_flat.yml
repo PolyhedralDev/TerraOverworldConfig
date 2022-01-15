@@ -1,0 +1,4 @@
+id: FOREST_FLAT
+type: BIOME
+extends: [ EQ_PLAIN, FOREST ]
+color: $biomes/colors.yml:FOREST_FLAT
