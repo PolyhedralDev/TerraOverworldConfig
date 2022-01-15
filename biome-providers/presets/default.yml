@@ -16,10 +16,6 @@ biomes:
 
       - << biome-providers/stages/add_desert_variants.yml:stages
 
-      #- << biome-providers/stages/expand.yml:stages
-
-      - << biome-providers/stages/add_rivers.yml:stages
-
       - type: REPLACE
         from: tbd
         to:
@@ -27,3 +23,7 @@ biomes:
         sampler:
           dimensions: 2
           type: CONSTANT
+
+      #- << biome-providers/stages/expand.yml:stages
+
+      - << biome-providers/stages/add_rivers.yml:stages
