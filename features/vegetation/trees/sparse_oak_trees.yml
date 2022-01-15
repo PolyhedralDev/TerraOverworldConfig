@@ -9,10 +9,18 @@ distributor:
   threshold: 0.0001
 
 locator:
-  type: SURFACE
-  range:
-    min: 60
-    max: 255
+  type: AND
+  locators:
+    - type: SURFACE
+      range: &range
+        min: 64
+        max: 255
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:plantable-blocks
+        offset: -1
 
 structures:
   distribution:

@@ -8,10 +8,18 @@ distributor:
   salt: 9591
 
 locator:
-  type: SURFACE
-  range:
-    min: 66
-    max: 130
+  type: AND
+  locators:
+    - type: SURFACE
+      range: &range
+        min: 64
+        max: 130
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:plantable-blocks
+        offset: -1
 
 structures:
   distribution:
