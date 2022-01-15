@@ -1,5 +1,3 @@
-if (!structure(0, 0, 0, "has_sunlight", "NONE")) fail;
-
 num randPrecision = 100;
 num goldenAngle = 2.39996;
 num pi = 3.14159;

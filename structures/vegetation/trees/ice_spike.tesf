@@ -1,10 +1,3 @@
-if (check(0,0,0) == "LAND") {
-    fail;
-}
-if (check(0,-1,0) == "AIR") {
-    fail;
-}
-
 num randPrecision = 100;
 
 num length = 10 + randomInt(randPrecision)/randPrecision*40;

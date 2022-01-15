@@ -11,7 +11,7 @@ distributor:
 locator:
   type: AND
   locators:
-    - type: SURFACE
+    - type: TOP
       range: &range
         min: 64
         max: 255
