@@ -12,8 +12,11 @@ layers:
       warp:
         type: GAUSSIAN
       sampler:
-        type: OPEN_SIMPLEX_2
-        frequency: 0.03
+        type: FBM
+        octaves: 3
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.015
   - materials:
       - minecraft:dirt: 2
     layers: 1
