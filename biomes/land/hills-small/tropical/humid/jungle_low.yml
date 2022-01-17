@@ -1,0 +1,4 @@
+id: JUNGLE_LOW
+type: BIOME
+extends: [ EQ_TERRACED_HILLS, JUNGLE ]
+color: $biomes/colors.yml:JUNGLE_LOW

@@ -1,0 +1,4 @@
+id: JUNGLE_FLAT
+type: BIOME
+extends: [ EQ_PLAIN, JUNGLE ]
+color: $biomes/colors.yml:JUNGLE_FLAT

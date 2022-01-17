@@ -68,7 +68,7 @@ stages:
         - TUNDRA_PLAINS: 1
       # Small Hills Temperature Zones
       hills-small-tropical:
-        - tbd: 1 # Hilly jungle
+        - JUNGLE_LOW: 1
         - tbd: 1 # Hilly savanna
         - tbd: 1 # Small xeric hills / shrubland
         - DESERT: 1
@@ -95,7 +95,7 @@ stages:
         - TUNDRA_LOW: 1
       # Large Hills Temperature Zones
       hills-large-tropical:
-        - tbd: 1
+        - JUNGLE: 1
         - XERIC_HILLS: 1
         - ARID_SPIKES: 1
         - tbd: 1
