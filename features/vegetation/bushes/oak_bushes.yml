@@ -17,9 +17,16 @@ locator:
     - type: PATTERN
       range: *range
       pattern:
-        type: MATCH_SET
-        blocks: $features/vegetation/meta.yml:plantable-blocks
-        offset: -1
+        type: OR
+        patterns:
+          - type: MATCH_SET
+            blocks: $features/vegetation/meta.yml:plantable-blocks
+            offset: -1
+          - type: MATCH_SET
+            blocks:
+              - minecraft:sand
+              - minecraft:red_sand
+            offset: -1
 
 structures:
   distribution:
