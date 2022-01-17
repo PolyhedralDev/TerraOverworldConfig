@@ -2,11 +2,10 @@ id: DARK_OAK_TREES
 type: FEATURE
 
 distributor:
-  type: SAMPLER
-  sampler:
-    type: POSITIVE_WHITE_NOISE
-    salt: 4654
-  threshold: 0.0001
+  type: PADDED_GRID
+  width: 30
+  padding: 3
+  salt: 9591
 
 locator:
   type: AND
@@ -25,4 +24,6 @@ locator:
 structures:
   distribution:
     type: CONSTANT
-  structures: dark_oak_tree_procedural
+  structures:
+    - large_dark_oak_tree_procedural: 3
+    - dark_oak_tree_procedural: 1
