@@ -26,7 +26,8 @@ slant:
 
 features:
   flora:
-    - GRASS
     - FLOWER_PATCHES
+    - GRASS
+    - FERNS
   trees:
-    - SPRUCE_TREES
+    - SPRUCE_TREE_PATCHES

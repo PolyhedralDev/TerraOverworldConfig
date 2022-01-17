@@ -14,5 +14,6 @@ distributor:
         type: PROBABILITY
         sampler:
           type: OPEN_SIMPLEX_2
+          frequency: 0.06
           salt: 3333
-      threshold: 0.75
+      threshold: 0.3

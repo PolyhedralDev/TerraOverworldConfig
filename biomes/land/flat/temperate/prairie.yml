@@ -22,3 +22,4 @@ features:
   flora:
     - TALL_GRASS
     - PRAIRIE_FLOWER_PATCHES
+    - SPARSE_OAK_TREES
