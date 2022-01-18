@@ -22,7 +22,6 @@ terrain:
     type: EXPRESSION
     variables: *variables
     expression: $biomes/abstract/terrain/land/hills-small/eq_buttes.yml:terrain.sampler.expression
-    samplers: $biomes/abstract/terrain/land/hills-small/eq_buttes.yml:terrain.sampler.samplers
   sampler-2d:
     dimensions: 2
     type: EXPRESSION
