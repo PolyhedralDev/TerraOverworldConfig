@@ -22,7 +22,7 @@ terrain:
     expression: |
       terrace(
         (noise(x, z)+1)/2 * height,
-        18, terraceVariation(x, z)*1, 0
+        18, terraceVariation(x, z)*1, 0, 1
       )
     samplers:
       noise:

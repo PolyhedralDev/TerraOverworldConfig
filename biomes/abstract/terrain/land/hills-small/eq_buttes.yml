@@ -31,7 +31,7 @@ terrain:
       if(y<base+butteBase,
         -y,
         terrace(-y,
-          terraceHeight, terraceVariation(x, z) * terraceHeightVariation, 0
+          terraceHeight, terraceVariation(x, z) * terraceHeightVariation, 0, 1
         )
       ) + base
     samplers:
