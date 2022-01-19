@@ -1,0 +1,29 @@
+id: BOULDERS
+type: FEATURE
+
+distributor:
+  type: AND
+  distributors:
+    - type: PADDED_GRID
+      width: 8
+      padding: 5
+      salt: 1923
+    - type: SAMPLER
+      sampler:
+        type: PROBABILITY
+        sampler:
+          type: OPEN_SIMPLEX_2
+          salt: 9112
+          frequency: 0.01
+      threshold: 0.2
+
+locator:
+  type: SURFACE
+  range:
+    min: 64
+    max: 300
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: boulder
