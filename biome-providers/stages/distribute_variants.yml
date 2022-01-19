@@ -1,0 +1,185 @@
+
+# Here all zones not assigned a biome, such as oceanic, coastal,
+# and polar zones are finally assigned one or more biomes.
+
+variation-map: &variation-map
+  dimensions: 2
+  type: CELLULAR
+  return: CellValue
+  frequency: 0.03
+
+stages:
+  - type: REPLACE_LIST
+    sampler: *variation-map
+
+    # ---------------
+    # Tropical Biomes
+    # ---------------
+    
+    # Tropical Oceanic
+    
+    default-from: deep-ocean-tropical
+    default-to:
+      - TROPICAL_DEEP_OCEAN: 1
+      # TODO - DEEP CORAL REEF
+    to:
+      ocean-tropical:
+        - TROPICAL_OCEAN: 1
+        # TODO - CORAL REEF
+      
+      # Tropical Coastal
+      
+      coast-flat-tropical:
+        - PALM_BEACH: 1
+      
+      coast-hills-tropical:
+        - SANDSTONE_WETLANDS: 1
+      
+      coast-mountains-small-tropical:
+        - SANDSTONE_ARCHIPELAGO: 1
+      
+      coast-mountains-large-tropical:
+        - SANDSTONE_ARCHIPELAGO: 1
+      
+      # Tropical Land
+      
+      hills-small-tropical-arid:
+        - BADLANDS_BUTTES: 1
+        - DESERT: 1
+      
+      hills-large-tropical-semi-arid:
+        - XERIC_HILLS: 1
+        - ARID_SPIKES: 1
+      
+      mountains-small-tropical-arid:
+        - BADLANDS_MOUNTAINS: 1
+        - DESERT_PILLARS: 1
+      
+      mountains-large-tropical-arid:
+        - CRACKED_BADLANDS_PLATEAU: 1
+      
+      # ------------------
+      # Subtropical Biomes
+      # ------------------
+      
+      # Subtropical Oceanic
+      
+      deep-ocean-subtropical:
+        - SUBTROPICAL_DEEP_OCEAN: 1
+      
+      ocean-subtropical:
+        - SUBTROPICAL_OCEAN: 1
+      
+      # Subtropical Coastal
+      
+      coast-flat-subtropical:
+        - BEACH: 1
+      
+      coast-hills-subtropical:
+        - WETLANDS: 1
+      
+      coast-mountains-small-subtropical:
+        - ARCHIPELAGO: 1
+      
+      coast-mountains-large-subtropical:
+        - ARCHIPELAGO: 1
+      
+      # ----------------
+      # Temperate Biomes
+      # ----------------
+      
+      # Temperate Oceanic
+      
+      deep-ocean-temperate:
+        - DEEP_OCEAN: 1
+      
+      ocean-temperate:
+        - OCEAN: 1
+      
+      # Temperate Coastal
+      
+      coast-flat-temperate:
+        - BEACH: 1
+      
+      coast-hills-temperate:
+        - WETLANDS: 1
+      
+      coast-mountains-small-temperate:
+        - ARCHIPELAGO: 1
+      
+      coast-mountains-large-temperate:
+        - ARCHIPELAGO: 1
+      
+      mountains-large-temperate-semi-arid:
+        - DRY_TEMPERATE_MOUNTAINS: 1
+        - DRY_TEMPERATE_WHITE_MOUNTAINS: 1
+      
+      # -------------
+      # Boreal Biomes
+      # -------------
+      
+      # Boreal Oceanic
+      deep-ocean-boreal:
+        - COLD_DEEP_OCEAN: 1
+      
+      ocean-boreal:
+        - COLD_OCEAN: 1
+        
+      # Boreal Coastal
+      coast-flat-boreal:
+        - BEACH: 1
+      
+      coast-hills-boreal:
+        - ROCKY_WETLANDS: 1
+      
+      coast-mountains-small-boreal:
+        - ROCKY_ARCHIPELAGO: 1
+      
+      coast-mountains-large-boreal:
+        - ROCKY_ARCHIPELAGO: 1
+  
+      # ------------
+      # Polar Biomes
+      # ------------
+      
+      # Polar Oceanic
+      
+      deep-ocean-polar:
+        - FROZEN_DEEP_OCEAN: 1
+      
+      ocean-polar:
+        - FROZEN_OCEAN: 1
+        
+      # Polar Coastal
+      
+      coast-flat-polar:
+        - FROZEN_BEACH: 1
+      
+      coast-hills-polar:
+        - FROZEN_WETLANDS: 1
+      
+      coast-mountains-small-polar:
+        - FROZEN_ARCHIPELAGO: 1
+      
+      coast-mountains-large-polar:
+        - FROZEN_ARCHIPELAGO: 1
+      
+      # Polar Land
+      
+      flat-polar:
+        - SNOWY_PLAINS: 1
+        - TUNDRA_PLAINS: 1
+      
+      hills-small-polar:
+        - ICE_SPIKES: 1
+        - TUNDRA_LOW: 3
+      
+      hills-large-polar:
+        - TUNDRA_HILLS: 1
+      
+      mountains-small-polar:
+        - SNOWY_MOUNTAINS: 1
+        - SNOWY_ERODED_TERRACED_MOUNTAINS: 1
+      
+      mountains-large-polar:
+        - SNOWY_TERRACED_MOUNTAINS: 1

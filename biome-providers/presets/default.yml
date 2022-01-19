@@ -7,23 +7,37 @@ biomes:
     sampler:
       type: GAUSSIAN
   pipeline:
+    # The source controls ocean / coast / land distribution
     source: $biome-providers/sources/basic_continents.yml:source
     stages:
+      # Replace some higher coastal zones with flat ones
       - << biome-providers/stages/flatten_coast_randomly.yml:stages
+
+      # Split land & coast (determined by the source) into elevation zones
       - << biome-providers/stages/distribute_elevation_zones.yml:stages
+
+      # Split elevation zones into temperature zones
       - << biome-providers/stages/distribute_temperature_zones.yml:stages
+
+      # Split temperature zones into precipitation zones or singular biomes
+      # - Some temperature zones aren't affected by precipitation (such as polar)
+      #   and are handled by the next stage instead.
       - << biome-providers/stages/distribute_precipitation_zones.yml:stages
 
+      # Choose final biome(s) for any zones not assigned biomes in the previous stage.
+      - << biome-providers/stages/distribute_variants.yml:stages
+
+      # Biome specific variations
       - << biome-providers/stages/add_desert_variants.yml:stages
 
+      # Temporary placeholder biome used for zones without a corresponding biome
       - type: REPLACE
-        from: tbd
+        from: todo
         to:
           - MYSTERY_ZONE: 1
         sampler:
           dimensions: 2
           type: CONSTANT
-
-      #- << biome-providers/stages/expand.yml:stages
-
+  
+      # Add rivers to all biomes
       - << biome-providers/stages/add_rivers.yml:stages

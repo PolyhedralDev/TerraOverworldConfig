@@ -6,5 +6,5 @@ stages:
       - coast-flat: 1
     sampler:
       type: OPEN_SIMPLEX_2
-      frequency: 0.03
+      frequency: 0.02
       salt: 9129
