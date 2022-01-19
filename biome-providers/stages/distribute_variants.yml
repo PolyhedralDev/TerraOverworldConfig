@@ -34,12 +34,13 @@ stages:
       
       coast-hills-tropical:
         - SANDSTONE_WETLANDS: 1
+        - SANDSTONE_ARCHIPELAGO: 1
       
       coast-mountains-small-tropical:
-        - SANDSTONE_ARCHIPELAGO: 1
+        - ROCKY_SEA_CAVES: 1
       
       coast-mountains-large-tropical:
-        - SANDSTONE_ARCHIPELAGO: 1
+        - ROCKY_SEA_ARCHES: 1
       
       # Tropical Land
       
@@ -77,12 +78,13 @@ stages:
       
       coast-hills-subtropical:
         - WETLANDS: 1
+        - ARCHIPELAGO: 1
       
       coast-mountains-small-subtropical:
-        - ARCHIPELAGO: 1
+        - LUSH_SEA_CAVES: 1
       
       coast-mountains-large-subtropical:
-        - ARCHIPELAGO: 1
+        - TEMPERATE_SEA_ARCHES: 1
       
       # ----------------
       # Temperate Biomes
@@ -103,12 +105,13 @@ stages:
       
       coast-hills-temperate:
         - WETLANDS: 1
+        - ARCHIPELAGO: 1
       
       coast-mountains-small-temperate:
-        - ARCHIPELAGO: 1
+        - LUSH_SEA_CAVES: 1
       
       coast-mountains-large-temperate:
-        - ARCHIPELAGO: 1
+        - TEMPERATE_SEA_ARCHES: 1
       
       mountains-large-temperate-semi-arid:
         - DRY_TEMPERATE_MOUNTAINS: 1
@@ -131,12 +134,13 @@ stages:
       
       coast-hills-boreal:
         - ROCKY_WETLANDS: 1
+        - ROCKY_ARCHIPELAGO: 1
       
       coast-mountains-small-boreal:
-        - ROCKY_ARCHIPELAGO: 1
+        - ROCKY_SEA_CAVES: 1
       
       coast-mountains-large-boreal:
-        - ROCKY_ARCHIPELAGO: 1
+        - ROCKY_SEA_ARCHES: 1
   
       # ------------
       # Polar Biomes
@@ -157,12 +161,13 @@ stages:
       
       coast-hills-polar:
         - FROZEN_WETLANDS: 1
-      
-      coast-mountains-small-polar:
         - FROZEN_ARCHIPELAGO: 1
+
+      coast-mountains-small-polar:
+        - SNOWY_SEA_CAVES: 1
       
       coast-mountains-large-polar:
-        - FROZEN_ARCHIPELAGO: 1
+        - SNOWY_SEA_ARCHES: 1
       
       # Polar Land
       

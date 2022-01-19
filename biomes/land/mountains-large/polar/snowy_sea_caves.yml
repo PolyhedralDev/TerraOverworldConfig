@@ -1,0 +1,27 @@
+id: SNOWY_SEA_CAVES
+type: BIOME
+extends: [ EQ_SEA_CAVES, CARVING_OCEAN, BASE ]
+vanilla: minecraft:snowy_beach
+color: $biomes/colors.yml:SNOWY_SEA_CAVES
+
+tags:
+  - USE_FROZEN_RIVER
+
+palette:
+  - SNOW: 319
+  - SANDY_BEACH: 62
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 4
+    palette:
+      - BLOCK:minecraft:stone: 319
+      - SANDY_BEACH: 62
+      - << meta.yml:palette-bottom
+
+features:
+  slabs:
+    - SNOW_LAYERS
+    - STONE_SLABS
+  preprocessors:
+    - ICE_COASTLINE
