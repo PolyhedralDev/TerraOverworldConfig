@@ -8,8 +8,8 @@ tags:
   - USE_RIVER
 
 colors:
-  grass: 0xd8f75d
-  foliage: 0xb5db69
+  grass: 0x88be56
+  foliage: 0x96d937
   water: 0x44aff5
   water-fog: 0x44aff5
 
