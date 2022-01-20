@@ -1,7 +1,5 @@
 // literally just the mesquite tree without the leaves and fewer logs
 
-if (!structure(0, 0, 0, "has_sunlight", "NONE")) fail;
-
 num minHeight = 6;
 num maxHeight = 8;
 
