@@ -1,13 +1,26 @@
 variables: &variables
-  riverWidth: 3
+  riverMaxWidth: 5
   riverFrequency: 0.1
+  riverThreshold: 0.1
 
 sampler:
   type: EXPRESSION
-  expression: if(noise(x/riverWidth, z/riverWidth)!=0,1,-1)
+  expression: |
+    if(|riverNoise((x+riverMaxWidth)*riverFrequency,(z+riverMaxWidth)*riverFrequency)|>riverThreshold,-1,
+      if(riverKerneled(x/riverMaxWidth, z/riverMaxWidth)!=0,1,-1)
+    )
   variables: *variables
   samplers:
-    noise:
+    riverNoise: &riverNoise
+      dimensions: 2
+      type: DOMAIN_WARP
+      amplitude: 2
+      sampler:
+        type: OPEN_SIMPLEX_2
+      warp:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.14
+    riverKerneled:
       dimensions: 2
       type: KERNEL # Edge detection
       kernel: [
@@ -17,15 +30,7 @@ sampler:
       ]
       sampler:
         type: EXPRESSION
-        expression: noise(x*riverWidth*riverFrequency, z*riverWidth*riverFrequency)>0
+        expression: riverNoise(x*riverMaxWidth*riverFrequency, z*riverMaxWidth*riverFrequency)>0
         variables: *variables
         samplers:
-          noise:
-            dimensions: 2
-            type: DOMAIN_WARP
-            amplitude: 2
-            sampler:
-              type: OPEN_SIMPLEX_2
-            warp:
-              type: OPEN_SIMPLEX_2
-              frequency: 0.14
+          riverNoise: *riverNoise
