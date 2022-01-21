@@ -11,13 +11,15 @@ carving:
       carvingThreshold: 0.55 # Higher = less carving
       carvingMinHeight: -63
       carvingMinTaper: 8
-      carvingMaxHeight: 90
-      carvingMaxTaper: 40
+      carvingMaxHeight: 140
+      carvingMaxTaper: 20
       carvingCap: 1 # Caps the amount of base carving
 
       cheeseStrength: 0.8
       cheeseHorizontalFrequency: 1.5
       cheeseVerticalFrequency: 3
+      cheeseMaxHeight: 90
+      cheeseMaxTaper: 40
 
       spaghettiStrengthLarge: 0.59
       spaghettiStrengthSmall: 0.57
@@ -37,14 +39,20 @@ carving:
             ),
 
             // Cheese caves
-            cheeseStrength * (simplex3(
-              x * cheeseHorizontalFrequency,
-              (y + simplex2(x, z) * 5) * cheeseVerticalFrequency,
-              z * cheeseHorizontalFrequency
-            )+1)/2
-        
-            // Pillars
-            -lerp(cavePillars(x, z),-1+pillarRadius,0,-1,1) * pillarStrength
+            if(y>cheeseMaxHeight,0,
+              maskSmooth(
+                cheeseStrength * (simplex3(
+                  x * cheeseHorizontalFrequency,
+                  (y + simplex2(x, z) * 5) * cheeseVerticalFrequency,
+                  z * cheeseHorizontalFrequency
+                )+1)/2
+                // Pillars
+                -lerp(cavePillars(x, z),-1+pillarRadius,0,-1,1) * pillarStrength,
+      
+                // Cheese clamp parameters
+                cheeseMaxHeight, cheeseMaxHeight - cheeseMaxTaper, y
+              )
+            )
           )
         ),
         // Clamp parameters
