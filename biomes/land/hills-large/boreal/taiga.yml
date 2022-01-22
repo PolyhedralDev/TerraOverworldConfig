@@ -21,6 +21,10 @@ palette:
 slant:
   - threshold: 3
     palette:
+      - COARSE_DIRT: 319
+      - << meta.yml:palette-bottom
+  - threshold: 3.5
+    palette:
       - BLOCK:minecraft:stone: 319
       - << meta.yml:palette-bottom
 

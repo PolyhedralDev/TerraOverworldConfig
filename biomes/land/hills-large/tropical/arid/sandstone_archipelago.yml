@@ -12,6 +12,16 @@ palette:
   - SANDY_BEACH: 64
   - << meta.yml:palette-bottom
 
+slant:
+  - threshold: 3
+    palette:
+      - SANDY_BEACH: 319
+      - << meta.yml:palette-bottom
+  - threshold: 5
+    palette:
+      - TERRACOTTA_SLANT: 319
+      - << meta.yml:palette-bottom
+
 features:
   flora:
     - CACTUS_SPARSE

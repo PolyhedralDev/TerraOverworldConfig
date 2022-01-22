@@ -12,7 +12,7 @@ palette:
 slant:
   - threshold: 4
     palette:
-      - TERRACOTTA_STRATA: 319
+      - BADLANDS_STRATA: 319
       - << meta.yml:palette-bottom
 
 features:

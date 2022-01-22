@@ -18,6 +18,12 @@ palette:
   - SANDY_BEACH: 64
   - << meta.yml:palette-bottom
 
+slant:
+  - threshold: 4
+    palette:
+      - BLOCK:minecraft:stone: 319
+      - << meta.yml:palette-bottom
+
 features:
   flora:
     - GRASS

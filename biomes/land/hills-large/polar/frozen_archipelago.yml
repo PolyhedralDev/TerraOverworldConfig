@@ -16,7 +16,7 @@ palette:
   - << meta.yml:palette-bottom
 
 slant:
-  - threshold: 10
+  - threshold: 4
     palette:
       - BLOCK:minecraft:stone: 319
       - SANDY_BEACH: 61
