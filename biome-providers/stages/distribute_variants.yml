@@ -6,7 +6,7 @@ variation-map: &variation-map
   dimensions: 2
   type: CELLULAR
   return: CellValue
-  frequency: 0.03
+  frequency: 0.005 * ${meta.yml:biome-distribution.global-frequency}
 
 stages:
   - type: REPLACE_LIST

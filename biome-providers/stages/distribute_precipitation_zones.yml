@@ -12,7 +12,8 @@ precipitation-map: &precipitation-map
   octaves: 2
   sampler:
     type: OPEN_SIMPLEX_2
-    frequency: 0.003
+    salt: 5055
+    frequency: 0.0015 * ${meta.yml:biome-distribution.global-frequency}
 
 stages:
   - type: REPLACE_LIST

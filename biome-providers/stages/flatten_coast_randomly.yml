@@ -6,5 +6,5 @@ stages:
       - coast-flat: 1
     sampler:
       type: OPEN_SIMPLEX_2
-      frequency: 0.02
+      frequency: 0.02 * ${meta.yml:biome-distribution.global-frequency}
       salt: 9129

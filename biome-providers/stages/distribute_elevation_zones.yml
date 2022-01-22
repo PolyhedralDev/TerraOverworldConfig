@@ -9,8 +9,8 @@ elevation-map: &elevation-map
   octaves: 3
   sampler:
     type: OPEN_SIMPLEX_2
-    salt: 1
-    frequency: 0.005
+    salt: 2313
+    frequency: 0.002 * ${meta.yml:biome-distribution.global-frequency}
 
 stages:
   - type: REPLACE_LIST

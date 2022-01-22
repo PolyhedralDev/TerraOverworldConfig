@@ -12,7 +12,7 @@ temperature-map: &temperature-map
   octaves: 2
   sampler:
     type: OPEN_SIMPLEX_2
-    frequency: 0.001
+    frequency: 0.001 * ${meta.yml:biome-distribution.global-frequency}
     salt: 53
 
 stages:

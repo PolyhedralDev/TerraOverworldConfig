@@ -1,7 +1,7 @@
 variables: &variables
-  riverMaxWidth: 5
-  riverFrequency: 0.1
-  riverThreshold: 0.1
+  riverMaxWidth: 5 / ${meta.yml:biome-distribution.global-frequency}
+  riverFrequency: 0.1 * ${meta.yml:biome-distribution.global-frequency}
+  riverThreshold: 0.15
 
 sampler:
   type: EXPRESSION

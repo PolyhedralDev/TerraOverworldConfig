@@ -1,3 +1,6 @@
+biome-distribution:
+  global-frequency: 1
+
 strata: # Controls global Y level ranges of strata
   deepslate:
     top: 7
