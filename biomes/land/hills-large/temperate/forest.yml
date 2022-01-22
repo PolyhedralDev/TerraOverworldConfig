@@ -35,3 +35,6 @@ features:
     - FOREST_FLOWER_PATCHES
   trees:
     - TEMPERATE_TREES
+  landforms:
+    - BOULDERS
+    - SMALL_BOULDER_PATCHES

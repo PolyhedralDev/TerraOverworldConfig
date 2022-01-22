@@ -21,3 +21,6 @@ features:
   trees:
     - OAK_BUSH_PATCHES
     - SPARSE_OAK_TREES
+  landforms:
+    - BOULDERS
+    - SMALL_BOULDER_PATCHES

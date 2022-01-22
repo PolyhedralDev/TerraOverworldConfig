@@ -4,7 +4,7 @@ num warp = 5;
 num warpFreq = 2;
 num squish = 1+randomInt(randPrecision)/randPrecision;
 num radiusSquared = pow(radius,2);
-num yTranslate = -2;
+num yTranslate = -1;
 
 if (check(radius, -radius/squish, 0) != "LAND" ||
     check(-radius, -radius/squish, 0) != "LAND" ||

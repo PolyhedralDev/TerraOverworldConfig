@@ -17,3 +17,7 @@ palette:
   - BLOCK:minecraft:stone: 319
   - SANDY_BEACH: 75
   - << meta.yml:palette-bottom
+
+features:
+  landforms:
+    - SMALL_BOULDER_PATCHES
