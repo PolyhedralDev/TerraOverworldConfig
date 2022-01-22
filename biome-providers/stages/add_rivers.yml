@@ -50,8 +50,7 @@ stages:
     from: USE_FROZEN_RIVER
     to:
       - SELF: 1
-      - FROZEN_MARSH: 1
-      - FROZEN_RIVER: 2
+      - FROZEN_RIVER: 1
     sampler: *riverSampler
   # Flat Frozen Rivers
   - type: REPLACE
