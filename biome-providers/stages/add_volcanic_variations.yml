@@ -1,0 +1,20 @@
+active-weight: &active-weight 1
+caldera-weight: &caldera-weight 3
+
+stages:
+  - type: REPLACE_LIST
+    default-from: volcano-pit
+    default-to:
+      - ACTIVE_VOLCANO_PIT: *active-weight
+      - CALDERA_VOLCANO_PIT: *caldera-weight
+    to:
+      volcano-pit-edge:
+        - ACTIVE_VOLCANO_PIT_EDGE: *active-weight
+        - CALDERA_VOLCANO_PIT_EDGE: *caldera-weight
+      volcano-base-edge:
+        - ACTIVE_VOLCANO_BASE_EDGE: *active-weight
+        - CALDERA_VOLCANO_BASE_EDGE: *caldera-weight
+      volcano-base:
+        - ACTIVE_VOLCANO_BASE: *active-weight
+        - CALDERA_VOLCANO_BASE: *caldera-weight
+    sampler: $biome-providers/stages/add_volcanic_zones.yml:variation-sampler

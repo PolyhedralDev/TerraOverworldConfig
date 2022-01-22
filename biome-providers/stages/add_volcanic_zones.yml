@@ -1,0 +1,67 @@
+
+# Uses warped cellular distance to determine where volcanoes are placed
+zone-sampler:
+  dimensions: 2
+  type: LINEAR
+  min: -1
+  max: -0.2
+  sampler:
+    type: DOMAIN_WARP
+    amplitude: 6 / ${meta.yml:biome-distribution.global-frequency}
+    warp:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.04 * ${meta.yml:biome-distribution.global-frequency}
+    sampler: &cellular
+      type: CELLULAR
+      salt: 1293
+      frequency: 0.0015 * ${meta.yml:biome-distribution.global-frequency}
+
+# Variations use the same cellular noise as above but return the cell value
+# instead to determine the variation, such that each volcano can be assigned
+# a random value.
+variation-sampler:
+  type: DOMAIN_WARP
+  amplitude: 6 / ${meta.yml:biome-distribution.global-frequency}
+  warp:
+    type: OPEN_SIMPLEX_2
+    frequency: 0.04 * ${meta.yml:biome-distribution.global-frequency}
+  sampler:
+    <<: *cellular
+    return: CellValue
+
+stages:
+  - type: REPLACE_LIST
+    default-from: deep-ocean
+    default-to:
+      - volcano-pit: 1
+      - volcano-pit-edge: 2
+      - volcano-base-edge: 2
+      - volcano-base: 3
+      - mountains-small: 3
+      - coast-mountains-small: 3
+      - deep-ocean: &self-weight 800
+    to:
+      ocean:
+        - volcano-pit: 1
+        - volcano-pit-edge: 2
+        - volcano-base-edge: 2
+        - volcano-base: 3
+        - hills-large: 3
+        - coast-hills: 3
+        - ocean: *self-weight
+      coast:
+        - volcano-pit: 1
+        - volcano-pit-edge: 2
+        - volcano-base-edge: 2
+        - volcano-base: 3
+        - coast-mountains-small: 6
+        - coast: *self-weight
+      land:
+        - volcano-pit: 1
+        - volcano-pit-edge: 2
+        - volcano-base-edge: 2
+        - volcano-base: 3
+        - land: 6
+        - land: *self-weight
+    sampler: $biome-providers/stages/add_volcanic_zones.yml:zone-sampler
+

@@ -10,11 +10,17 @@ biomes:
     # The source controls ocean / coast / land distribution
     source: $biome-providers/sources/basic_continents.yml:source
     stages:
+      # Assign zones for volcanic biomes
+      - << biome-providers/stages/add_volcanic_zones.yml:stages
+
       # Replace some higher coastal zones with flat ones
       - << biome-providers/stages/flatten_coast_randomly.yml:stages
 
       # Split land & coast (determined by the source) into elevation zones
       - << biome-providers/stages/distribute_elevation_zones.yml:stages
+
+      # Replace volcanic biomes with variants
+      - << biome-providers/stages/add_volcanic_variations.yml:stages
 
       # Split elevation zones into temperature zones
       - << biome-providers/stages/distribute_temperature_zones.yml:stages
