@@ -1,0 +1,20 @@
+id: EQ_VOLCANO_PIT_CALDERA
+type: BIOME
+abstract: true
+
+vars: &variables
+  base: 90
+  height: 40
+
+terrain:
+  sampler:
+    dimensions: 3
+    type: EXPRESSION
+    variables: *variables
+    expression: -y + base
+
+  sampler-2d:
+    dimensions: 2
+    type: EXPRESSION
+    variables: *variables
+    expression: (simplex(x/2, z/2)+1)/2 * height
