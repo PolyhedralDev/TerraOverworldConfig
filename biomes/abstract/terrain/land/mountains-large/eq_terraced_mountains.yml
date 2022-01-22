@@ -5,8 +5,8 @@ abstract: true
 # Large jittered hills with inter-connected terraced steps.
 
 vars: &variables
-  base: 64
-  height: 170
+  base: 80
+  height: 150
 
 terrain:
   sampler:
