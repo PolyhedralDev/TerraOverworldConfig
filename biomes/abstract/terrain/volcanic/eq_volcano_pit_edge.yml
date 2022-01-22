@@ -3,8 +3,8 @@ type: BIOME
 abstract: true
 
 vars: &variables
-  base: 150
-  height: 20
+  base: 160
+  height: 30
 
 terrain:
   sampler:
@@ -17,4 +17,4 @@ terrain:
     dimensions: 2
     type: EXPRESSION
     variables: *variables
-    expression: (simplex(x, z)+1)/2 * height
+    expression: (simplex(x*2, z*2)+1)/2 * height

@@ -17,4 +17,4 @@ terrain:
     dimensions: 2
     type: EXPRESSION
     variables: *variables
-    expression: (simplex(x, z)+1)/2 * height
+    expression: (simplex(x*2, z*2)+1)/2 * height
