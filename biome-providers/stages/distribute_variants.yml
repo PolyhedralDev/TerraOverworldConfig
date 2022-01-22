@@ -37,10 +37,10 @@ stages:
         - SANDSTONE_ARCHIPELAGO: 1
       
       coast-mountains-small-tropical:
-        - ROCKY_SEA_CAVES: 1
+        - TERRACOTTA_SEA_CAVES: 1
       
       coast-mountains-large-tropical:
-        - ROCKY_SEA_ARCHES: 1
+        - TERRACOTTA_SEA_ARCHES: 1
       
       # Tropical Land
       

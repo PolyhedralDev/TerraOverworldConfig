@@ -1,0 +1,35 @@
+id: TERRACOTTA_SEA_CAVES
+type: BIOME
+extends: [ EQ_SEA_CAVES, CARVING_OCEAN, BASE ]
+vanilla: minecraft:beach
+color: $biomes/colors.yml:TERRACOTTA_SEA_CAVES
+
+tags:
+  - USE_RIVER
+
+palette:
+  - BLOCK:minecraft:terracotta: 319
+  - SANDY_BEACH: 62
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 3
+    palette:
+      - BLOCK:minecraft:granite: 319
+      - SANDY_BEACH: 62
+      - << meta.yml:palette-bottom
+  - threshold: 5
+    palette:
+      - BLOCK:minecraft:light_gray_terracotta: 319
+      - SANDY_BEACH: 62
+      - << meta.yml:palette-bottom
+  - threshold: 7
+    palette:
+      - BLOCK:minecraft:dripstone_block: 319
+      - SANDY_BEACH: 62
+      - << meta.yml:palette-bottom
+  - threshold: 9
+    palette:
+      - BLOCK:minecraft:stone: 319
+      - SANDY_BEACH: 62
+      - << meta.yml:palette-bottom
