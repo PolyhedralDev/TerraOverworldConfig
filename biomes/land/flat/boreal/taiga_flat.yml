@@ -2,3 +2,6 @@ id: TAIGA_FLAT
 type: BIOME
 extends: [ EQ_PLAIN, TAIGA ]
 color: $biomes/colors.yml:TAIGA_FLAT
+
+tags:
+  - USE_RIVER_FLAT

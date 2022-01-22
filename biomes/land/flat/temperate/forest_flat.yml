@@ -2,3 +2,6 @@ id: FOREST_FLAT
 type: BIOME
 extends: [ EQ_PLAIN_PEAKS, FOREST ]
 color: $biomes/colors.yml:FOREST_FLAT
+
+tags:
+  - USE_RIVER_FLAT

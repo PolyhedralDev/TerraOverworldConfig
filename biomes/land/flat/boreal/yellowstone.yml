@@ -5,7 +5,7 @@ vanilla: minecraft:taiga
 color: $biomes/colors.yml:YELLOWSTONE
 
 tags:
-  - USE_RIVER
+  - USE_RIVER_FLAT
 
 colors:
   grass: 0x91bd59

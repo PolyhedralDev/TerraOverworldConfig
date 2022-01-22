@@ -5,7 +5,7 @@ vanilla: minecraft:plains
 color: $biomes/colors.yml:STEPPE
 
 tags:
-  - USE_RIVER
+  - USE_RIVER_FLAT
 
 colors:
   grass: 0x9db55b

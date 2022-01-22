@@ -2,15 +2,24 @@ variables: &variables
   riverMaxWidth: 5 / ${meta.yml:biome-distribution.global-frequency}
   riverFrequency: 0.1 * ${meta.yml:biome-distribution.global-frequency}
   riverThreshold: 0.15
+  borderThreshold: 0.5
+  borderValue: -0.5
 
 sampler:
   type: EXPRESSION
   expression: |
     if(|riverNoise((x+riverMaxWidth)*riverFrequency,(z+riverMaxWidth)*riverFrequency)|>riverThreshold,-1,
-      if(riverKerneled(x/riverMaxWidth, z/riverMaxWidth)!=0,1,-1)
+      if(riverKerneled(x/riverMaxWidth, z/riverMaxWidth)!=0,1,if(borderMask(x,z)>borderThreshold,borderValue,-1))
     )
   variables: *variables
   samplers:
+    borderMask:
+      dimensions: 2
+      type: PROBABILITY
+      sampler:
+        type: OPEN_SIMPLEX_2
+        salt: 4812
+      frequency: 0.005
     riverNoise: &riverNoise
       dimensions: 2
       type: DOMAIN_WARP

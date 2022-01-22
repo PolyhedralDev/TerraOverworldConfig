@@ -5,7 +5,7 @@ vanilla: minecraft:snowy_plains
 color: $biomes/colors.yml:TUNDRA_PLAINS
 
 tags:
-  - USE_FROZEN_RIVER
+  - USE_FROZEN_RIVER_FLAT
 
 ocean:
   palette: FROZEN_OCEAN

@@ -5,7 +5,7 @@ vanilla: minecraft:frozen_river
 color: $biomes/colors.yml:FROZEN_MARSH
 
 tags:
-  - USE_FROZEN_RIVER
+  - USE_FROZEN_RIVER_FLAT
 
 ocean:
   palette: FROZEN_OCEAN

@@ -4,7 +4,7 @@ extends: [ COLOR_FROZEN, EQ_TERRACED_HILLS, SNOWY_PLAINS ]
 color: $biomes/colors.yml:ICE_SPIKES
 
 tags:
-  - USE_FROZEN_RIVER
+  - USE_FROZEN_RIVER_FLAT
 
 slant:
   - threshold: 2.5

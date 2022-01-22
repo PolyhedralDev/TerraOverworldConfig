@@ -5,7 +5,7 @@ vanilla: minecraft:forest
 color: $biomes/colors.yml:TEMPERATE_BUTTES
 
 tags:
-  - USE_RIVER
+  - USE_RIVER_FLAT
 
 palette:
   - GRASS: 319

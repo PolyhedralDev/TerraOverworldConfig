@@ -37,10 +37,27 @@ stages:
         - SELF: 1
         - SNOWY_ERODED_TERRACED_MOUNTAINS_RIVER: 1
     sampler: *riverSampler
+  # Flat Rivers
+  - type: REPLACE
+    from: USE_RIVER_FLAT
+    to:
+      - SELF: 1
+      - MARSH: 1
+      - RIVER: 2
+    sampler: *riverSampler
   # Frozen Rivers
   - type: REPLACE
     from: USE_FROZEN_RIVER
     to:
       - SELF: 1
-      - FROZEN_RIVER: 1
+      - FROZEN_MARSH: 1
+      - FROZEN_RIVER: 2
+    sampler: *riverSampler
+  # Flat Frozen Rivers
+  - type: REPLACE
+    from: USE_FROZEN_RIVER_FLAT
+    to:
+      - SELF: 1
+      - FROZEN_MARSH: 1
+      - FROZEN_RIVER: 2
     sampler: *riverSampler

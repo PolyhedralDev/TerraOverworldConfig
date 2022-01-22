@@ -2,3 +2,6 @@ id: WARM_STEPPE_LOW
 type: BIOME
 extends: [ EQ_TERRACED_HILLS, WARM_STEPPE ]
 color: $biomes/colors.yml:WARM_STEPPE_FLAT
+
+tags:
+  - USE_RIVER_FLAT

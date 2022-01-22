@@ -5,7 +5,7 @@ vanilla: minecraft:swamp
 color: $biomes/colors.yml:PALM_BEACH
 
 tags:
-  - USE_RIVER
+  - USE_RIVER_FLAT
 
 colors:
   grass: 0x88bd59

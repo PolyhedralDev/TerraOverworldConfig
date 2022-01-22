@@ -2,3 +2,6 @@ id: WARM_PRAIRIE_FLAT
 type: BIOME
 extends: [ EQ_PLAIN, WARM_PRAIRIE ]
 color: $biomes/colors.yml:WARM_PRAIRIE_FLAT
+
+tags:
+  - USE_RIVER_FLAT
