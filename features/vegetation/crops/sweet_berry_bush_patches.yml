@@ -1,0 +1,27 @@
+id: SWEET_BERRY_BUSH_PATCHES
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 30
+  padding: 2
+  salt: 1510
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: 64
+        max: 180
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:plantable-blocks
+        offset: -1
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: sweet_berry_bush_patch

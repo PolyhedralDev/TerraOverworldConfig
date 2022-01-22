@@ -33,6 +33,7 @@ features:
     - BOULDERS
     - SMALL_BOULDER_PATCHES
   flora:
+    - SWEET_BERRY_BUSH_PATCHES
     - FOREST_FLOWER_PATCHES
     - GRASS
     - FERNS
