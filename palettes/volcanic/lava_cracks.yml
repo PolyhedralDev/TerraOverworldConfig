@@ -35,9 +35,10 @@ layers:
     layers: 5
   - materials:
       - minecraft:smooth_basalt: 1
+    layers: 2
+  - materials:
+      - minecraft:stone: 1
     layers: 1
-    noise:
-      type: CONSTANT
 
 sampler:
   dimensions: 2
@@ -45,7 +46,7 @@ sampler:
   amplitude: 5
   warp:
     type: OPEN_SIMPLEX_2
-    frequency: 0.06
+    frequency: 0.045
   sampler:
     type: EXPRESSION
     expression: -noise(x,z)*2-1
@@ -54,4 +55,4 @@ sampler:
         dimensions: 2
         type: CELLULAR
         return: Distance2Div
-        frequency: 0.02
+        frequency: 0.015
