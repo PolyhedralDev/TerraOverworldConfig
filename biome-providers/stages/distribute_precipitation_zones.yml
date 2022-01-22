@@ -208,7 +208,7 @@ stages:
         - OVERGROWN_CLIFFS: 1
   
         # Small mountains tropical semi-humid
-        - todo: 1
+        - TEMPERATE_MOUNTAINS: 1
   
         # Small mountains tropical semi-arid
         - XERIC_MOUNTAINS: 1
@@ -224,7 +224,7 @@ stages:
         - todo: 1
   
         # Small mountains subtropical 
-        - todo: 1
+        - TEMPERATE_MOUNTAINS: 1
   
         # Small mountains subtropical 
         - todo: 1
@@ -234,10 +234,10 @@ stages:
         - todo: 1
   
         # Small mountains temperate semi-humid
-        - todo: 1
+        - TEMPERATE_MOUNTAINS: 1
   
         # Small mountains temperate semi-arid
-        - todo: 1
+        - TEMPERATE_MOUNTAINS: 1
   
         # Small mountains temperate arid
         - todo: 1
