@@ -31,7 +31,12 @@ addons:
 # Several preset biome providers are available to choose from below.
 # Choosing which one is in use is as simple as commenting the enabled one
 # (by adding a # at the start) and uncommenting the one you wish to use.
-# You can further configure the behaviour of each one in their respective files.
+
+# If you want to tweak biome distribution, there are some basic
+# parameters that can be found in the meta.yml config file.
+
+# You can also further configure the behaviour of each preset in the
+# referenced file(s) below.
 
 # Default biome distribution
 biomes: $biome-providers/presets/default.yml:biomes
@@ -54,25 +59,44 @@ biomes: $biome-providers/presets/default.yml:biomes
 # Terrain test pipeline
 #biomes: $biomes/abstract/terrain/test/pipeline.yml:biomes
 
+# ---
+# Population stages
+# ---
+# Here are the population stages that occur after the initial terrain
+# within a chunk is generated. Stages are ordered from top to bottom
+# chronologically, where the top stage is executed first.
+
+# If you wish to disable a generation stage, you can simply comment
+# it out by prepending it with #, this is useful if you want
+# something like a world without ores.
+
 stages:
-  - type: FEATURE
-    id: preprocessors
-  - type: FEATURE
-    id: lava
-  - type: FEATURE
-    id: landforms
-  - type: FEATURE
-    id: slabs
-  - type: FEATURE
-    id: ores
-  - type: FEATURE
-    id: deposits
-  - type: FEATURE
-    id: underwater-flora
-  - type: FEATURE
-    id: flora
-  - type: FEATURE
-    id: trees
+  - id: preprocessors # Misc features that are treated as small modifications
+    type: FEATURE     # to the initial chunk generation.
+
+  - id: lava # Used to generate lava at the bottom of the world
+    type: FEATURE
+
+  - id: landforms # Used for things like boulders and features that act
+    type: FEATURE # like a part of the terrain.
+
+  - id: slabs # Adds slab versions of some blocks to make terrain look smoother
+    type: FEATURE
+
+  - id: ores # Self-explanatory - used to generate ores
+    type: FEATURE
+
+  - id: deposits # Adds things like dirt, andesite and gravel patches
+    type: FEATURE
+
+  - id: underwater-flora # Used for small features placed underwater like sea-grass
+    type: FEATURE
+
+  - id: flora # Used for small features placed on the surface like tall grass and vines
+    type: FEATURE
+
+  - id: trees # Used for larger things that generate on the surface like trees, some other
+    type: FEATURE # features are also treated as trees like ice spikes.
 
 functions:
   "<<":
