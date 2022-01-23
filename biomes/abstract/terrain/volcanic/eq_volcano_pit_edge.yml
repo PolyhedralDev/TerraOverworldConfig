@@ -4,9 +4,12 @@ abstract: true
 
 vars: &variables
   base: 160
-  height: 30
+  height: 25
 
 terrain:
+  blend:
+    weight: 2
+  
   sampler:
     dimensions: 3
     type: EXPRESSION
@@ -17,4 +20,4 @@ terrain:
     dimensions: 2
     type: EXPRESSION
     variables: *variables
-    expression: (simplex(x*2, z*2)+1)/2 * height
+    expression: (simplex(x, z)+1)/2 * height
