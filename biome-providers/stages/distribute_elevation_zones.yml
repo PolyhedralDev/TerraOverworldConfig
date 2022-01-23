@@ -10,7 +10,7 @@ elevation-map: &elevation-map
   sampler:
     type: OPEN_SIMPLEX_2
     salt: 2313
-    frequency: 0.002 * ${meta.yml:biome-distribution.global-frequency}
+    frequency: 1 / ${meta.yml:biome-distribution.elevation-scale} / ${meta.yml:biome-distribution.global-scale}
 
 stages:
   - type: REPLACE_LIST
@@ -21,12 +21,12 @@ stages:
       - coast-flat: 2
       - coast-hills: 1
       - coast-hills: 1
-      - coast-mountains-small: 2
-      - coast-mountains-large: 3
+      - coast-mountains-small: 1
+      - coast-mountains-large: 2
     to:
       land:
-        - flat: 2
+#        - flat: 2
         - hills-small: 1
         - hills-large: 1
-        - mountains-small: 2
-        - mountains-large: 3
+        - mountains-small: 1
+        - mountains-large: 2

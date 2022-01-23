@@ -3,8 +3,8 @@
 # or a precipitation zone, which contains climate variants,
 # handled in the distribute_variants.yml file.
 
-# Aquatic, coastal, and polar zones aren't affected by precipitation
-# and are distributed via the distribute_variants.yml file instead.
+# Aquatic, coastal (except tropical coastal), and polar zones aren't affected
+# by precipitation and are distributed via the distribute_variants.yml file instead.
 
 precipitation-map: &precipitation-map
   dimensions: 2
@@ -13,7 +13,7 @@ precipitation-map: &precipitation-map
   sampler:
     type: OPEN_SIMPLEX_2
     salt: 5055
-    frequency: 0.0015 * ${meta.yml:biome-distribution.global-frequency}
+    frequency: 1 / ${meta.yml:biome-distribution.precipitation-scale} / ${meta.yml:biome-distribution.global-scale}
 
 stages:
   - type: REPLACE_LIST
@@ -310,3 +310,30 @@ stages:
   
         # Large mountains boreal arid
         - SNOWY_TERRACED_MOUNTAINS: 1
+  
+    # ------------------------------
+    # Coastal Small Mountains Biomes
+    # ------------------------------
+      coast-mountains-small-tropical:
+        # Coastal small mountains tropical humid
+        - coast-mountains-small-tropical-humid: 1
+  
+        # Coastal small mountains tropical semi-humid to semi-arid
+        - coast-mountains-small-tropical: 2
+        
+        # Coastal small mountains tropical arid
+        - coast-mountains-small-tropical-arid: 1
+        
+    # ------------------------------
+    # Coastal Large Mountains Biomes
+    # ------------------------------
+      coast-mountains-large-tropical:
+        # Coastal large mountains tropical humid
+        - coast-mountains-large-tropical-humid: 1
+  
+        # Coastal large mountains tropical semi-humid to semi-arid
+        - coast-mountains-large-tropical: 2
+  
+        # Coastal large mountains tropical arid
+        - coast-mountains-large-tropical-arid: 1
+        

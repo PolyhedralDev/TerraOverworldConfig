@@ -1,5 +1,13 @@
 biome-distribution:
-  global-frequency: 1
+  global-scale: 1
+  continental-scale: 200 # 1000
+  elevation-scale: 40 # 500
+  temperature-scale: 50 # 1000
+  precipitation-scale: 40 # 650
+  variation-scale: 60 # 300
+  river-spread-scale: 10 # 10
+  volcano-spread: 70
+  volcano-radius: 7
 
 strata: # Controls global Y level ranges of strata
   deepslate:

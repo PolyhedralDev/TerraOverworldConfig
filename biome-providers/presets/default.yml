@@ -45,5 +45,19 @@ biomes:
           dimensions: 2
           type: CONSTANT
   
+      - << biome-providers/stages/expand.yml:stages
+      - << biome-providers/stages/expand.yml:stages
+      - << biome-providers/stages/expand.yml:stages
+
+      - << biome-providers/stages/smooth.yml:stages
+      - << biome-providers/stages/smooth.yml:stages
+      - << biome-providers/stages/smooth.yml:stages
+
+      - << biome-providers/stages/expand.yml:stages
+
+      - << biome-providers/stages/smooth.yml:stages
+      - << biome-providers/stages/smooth.yml:stages
+      - << biome-providers/stages/smooth.yml:stages
+      
       # Add rivers to all biomes
       - << biome-providers/stages/add_rivers.yml:stages

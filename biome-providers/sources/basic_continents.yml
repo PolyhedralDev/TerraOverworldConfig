@@ -1,10 +1,10 @@
 source:
   type: SAMPLER
   biomes:
-    - deep-ocean: 1
-    - ocean: 2
+    - deep-ocean: 8
+    - ocean: 4
     - coast: 1
-    - land: 4
+    - land: 8
   sampler:
     dimensions: 2
     type: LINEAR
@@ -14,7 +14,7 @@ source:
       type: FBM
       lacunarity: 3
       gain: 0.4
-      octaves: 5
+      octaves: 4
       sampler:
         type: CELLULAR
-        frequency: 0.001 * ${meta.yml:biome-distribution.global-frequency}
+        frequency: 1 / ${meta.yml:biome-distribution.continental-scale} / ${meta.yml:biome-distribution.global-scale}
