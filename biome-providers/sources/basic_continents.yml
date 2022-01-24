@@ -1,9 +1,10 @@
 source:
   type: SAMPLER
   biomes:
-    - deep-ocean: 8
+    - deep-ocean: 7
+    - deep-ocean-border: 1 # Used for the border of deep ocean island biomes crossing into regular ocean
     - ocean: 4
-    - coast: 1
+    - coast: 1 # Used for the border of land biomes crossing into ocean
     - land: 8
   sampler:
     dimensions: 2

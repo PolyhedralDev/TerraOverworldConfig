@@ -56,6 +56,16 @@ stages:
       # Non-volcano area
       - deep-ocean: *volcano-area-weight
     to:
+      deep-ocean-border:
+        # Volcano area
+        - volcano-pit: 1
+        - volcano-pit-edge: 1
+        - volcano-base-edge: 2
+        - volcano-base: 4
+        - mountains-small: 3
+        - coast-mountains-small: 3
+        # Non-volcano area
+        - deep-ocean-border: *volcano-area-weight
       ocean:
         # Volcano area
         - volcano-pit: 1

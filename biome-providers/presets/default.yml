@@ -12,6 +12,9 @@ biomes:
     stages:
       # Assign zones for volcanic biomes
       - << biome-providers/stages/add_volcanic_zones.yml:stages
+      
+      # Replace deep ocean border with deep ocean
+      - << biome-providers/stages/replace_deep_ocean_border.yml:stages
 
       # Replace some higher coastal zones with flat ones
       - << biome-providers/stages/flatten_coast_randomly.yml:stages
