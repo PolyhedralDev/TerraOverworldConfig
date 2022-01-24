@@ -1,0 +1,4 @@
+id: MUSHROOM_HILLS
+type: BIOME
+extends: [ EQ_HILLS, MUSHROOM_FIELDS ]
+color: $biomes/colors.yml:MUSHROOM_HILLS
