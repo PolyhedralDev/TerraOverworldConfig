@@ -1,0 +1,12 @@
+num randPrecision = 100;
+num radius = 2+randomInt(randPrecision)/randPrecision*4;
+num radiusSquared = pow2(radius);
+num distanceSquared = 0;
+for (num x = -radius; x < radius; x = x + 1) {
+    for (num z = -radius; z < radius; z = z + 1) {
+        distanceSquared = pow2(x)+pow2(z);
+        if (distanceSquared < radiusSquared) {
+            block(x, 0, z, "minecraft:brown_mushroom_block[down=false]");
+        }
+    }
+}

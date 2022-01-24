@@ -1,0 +1,42 @@
+num randPrecision = 100;
+num radius = 2+randomInt(4);
+num innerRadius = radius-4;
+num midRadius = radius-2;
+num warpTop = 0.5;
+num warpTopFrequency = 2;
+num squish = 1.5+randomInt(randPrecision)/randPrecision;
+num radiusHorizontal = round(radius + radius*warpTop);
+
+str outerBlock = "minecraft:red_mushroom_block";
+str innerBlock = "minecraft:red_mushroom_block[up=false,down=false,north=false,east=false,south=false,west=false]";
+str spotBlock = "minecraft:mushroom_stem";
+
+num radiusSquared = pow2(radius);
+num innerRadiusSquared = pow2(innerRadius);
+num midRadiusSquared = pow2(midRadius);
+num distanceSquared = 0;
+
+num ox = (randomInt(randPrecision)/randPrecision-0.5)*radius;
+num oy = -radius/squish+2;
+num oz = (randomInt(randPrecision)/randPrecision-0.5)*radius;
+
+for (num x = -radiusHorizontal; x < radiusHorizontal; x = x + 1) {
+    for (num y = 0; y < radius / squish; y = y + 1) {
+        for (num z = -radiusHorizontal; z < radiusHorizontal; z = z + 1) {
+            num warpX = sampler("simplex", warpTopFrequency*(originX()+x), warpTopFrequency*(originZ()+z)) * abs(y-midRadius) * warpTop;
+            num warpZ = sampler("simplex", warpTopFrequency*(originZ()+x+1000), warpTopFrequency*(originZ()+z)) * abs(y-midRadius) * warpTop;
+            distanceSquared = pow2(x+warpX)+pow2(y*squish)+pow2(z+warpZ);
+            if (distanceSquared < radiusSquared && distanceSquared > innerRadiusSquared && y+1 >= abs(warpX+warpZ)) {
+                if (distanceSquared > midRadiusSquared) {
+                    if (randomInt(40) == 0) {
+                        block(ox+x, oy+y, oz+z, spotBlock);
+                    } else {
+                        block(ox+x, oy+y, oz+z, outerBlock);
+                    }
+                } else {
+                    block(ox+x, oy+y, oz+z, innerBlock);
+                }
+            }
+        }
+    }
+}
