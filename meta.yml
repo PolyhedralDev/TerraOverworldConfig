@@ -44,11 +44,11 @@ biome-distribution:
   # Controls how far / close apart rivers generally are, larger scale = further apart
   # rivers, smaller scale = closer packed together rivers.
 
-  volcano-spread: 70
+  volcano-spread: 90
   # Controls how far / close together volcanoes are, larger scale = volcanoes that generate
   # further apart, smaller scale = more packed together volcanoes.
 
-  volcano-radius: 7
+  volcano-radius: 5
   # Controls the radius of all volcanoes, decreasing this too much can result in some
   # glitchy generation for volcanoes filled with fluids above sea level, so keep this in mind
   # if you want smaller volcanoes!
