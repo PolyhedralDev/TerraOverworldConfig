@@ -2,17 +2,24 @@ id: SPRUCE_TREES
 type: FEATURE
 
 distributor:
-  type: SAMPLER
-  sampler:
-    type: POSITIVE_WHITE_NOISE
-    salt: 1119
-  threshold: 0.01
+  type: PADDED_GRID
+  width: 6
+  padding: 2
+  salt: 9591
 
 locator:
-  type: SURFACE
-  range:
-    min: 90
-    max: 255
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: 64
+        max: 130
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:plantable-blocks
+        offset: -1
 
 structures:
   distribution:

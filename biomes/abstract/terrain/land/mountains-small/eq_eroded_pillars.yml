@@ -1,0 +1,87 @@
+id: EQ_ERODED_PILLARS
+type: BIOME
+abstract: true
+
+# Tall thin pillars with cracks in them, reminiscent of Zhangjiajie National Forest Park.
+
+vars: &variables
+  base: 64
+  height: 10
+  
+  pillarHeight: 80
+  pillarPlatformHeight: 20
+  pillarHeightVariation: 20
+  pillarWarpStrength: 15
+  pillarErosionStrength: 2.1
+  pillarErosionTop: 150
+  pillarErosionBottom: 80
+  pillarYMin: 50 # Pillars are only evaluated above this y level for performance
+
+terrain:
+  sampler:
+    dimensions: 3
+    type: EXPRESSION
+    variables: *variables
+    expression: |
+      -y + base
+      + if(y<pillarYMin||y>base+height+pillarHeight+pillarHeightVariation,0, // Skip unnecessary calculations
+        max(
+          // Pillar 'platform'
+          maskSmooth(
+            pillarPlatformHeight,
+            -0.2, 1, pillarMask(x, z)
+          ),
+          // Pillars
+          maskSmooth(
+            // Pillar height
+            pillarHeight + (pillarVariation(x, z)+1)/2 * pillarHeightVariation
+            // Erode
+            - lerp(y,
+              pillarErosionTop, 0,
+              pillarErosionBottom, pillarErosionStrength * lerp(|pillarErosion(x,y,z)|,0,1,0.25,0) * (-y+pillarErosionTop)
+            ),
+            // Mask parameters
+            0.45, 0.75, pillarMask(
+              x+pillarWarp(x,y/2,z)*pillarWarpStrength,
+              z+pillarWarp(x,y/2,z+1000)*pillarWarpStrength
+            )
+          )
+        )
+      )
+    samplers:
+      pillarMask: # Determines where pillars will go, only higher end values will be turned into pillars
+        dimensions: 2
+        type: OPEN_SIMPLEX_2
+        frequency: 0.015
+      pillarVariation: # Varies heights of pillars
+        dimensions: 2
+        type: OPEN_SIMPLEX_2
+        frequency: 0.01
+        salt: 1
+      pillarErosion: # Subtracts from pillars to emulate erosion
+        dimensions: 3
+        type: OPEN_SIMPLEX_2
+        frequency: 0.03
+        salt: 2
+      pillarWarp: # Domain warps pillars such that the surface is rugged
+        dimensions: 3
+        type: FBM
+        octaves: 2
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.02
+
+  sampler-2d:
+    dimensions: 2
+    type: EXPRESSION
+    variables: *variables
+    expression: (noise(x, z)+1)/2 * height
+    samplers:
+      noise:
+        dimensions: 2
+        type: FBM
+        octaves: 2
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.01
+          salt: 3

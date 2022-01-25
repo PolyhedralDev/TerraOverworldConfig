@@ -1,0 +1,19 @@
+id: SPRUCE_TREE_PATCHES
+type: FEATURE
+extends: SPRUCE_TREES
+
+distributor:
+  type: AND
+  distributors:
+    - type: PADDED_GRID
+      width: 6
+      padding: 2
+      salt: 6912
+    - type: SAMPLER
+      sampler:
+        type: PROBABILITY
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.06
+          salt: 3333
+      threshold: 0.3

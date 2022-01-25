@@ -1,15 +1,5 @@
 id: TROPICAL_DEEP_OCEAN
 type: BIOME
-extends: [ EQ_DEEP_OCEAN, CARVING_OCEAN, BASE ]
+extends: [ PALETTE_OCEAN, EQ_DEEP_OCEAN, CARVING_OCEAN, BASE ]
 vanilla: minecraft:warm_ocean # Apparently there is no deep_warm_ocean in 1.18?
 color: $biomes/colors.yml:TROPICAL_DEEP_OCEAN
-
-palette:
-  - SANDY_BEACH: 255
-  - << meta.yml:palette-bottom
-
-#colors:
-#  grass: 0x8eb971
-#  foliage: 0x71a74d
-#  water: 0x1787d4
-#  water-fog: 0x1165b0

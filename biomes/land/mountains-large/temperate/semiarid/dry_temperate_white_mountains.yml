@@ -8,3 +8,8 @@ slant:
     palette:
       - DIORITE_SLANT: 319
       - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - WHITE_FLOWER_COVER
+    - GRASS

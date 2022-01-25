@@ -1,0 +1,24 @@
+id: ROCKY_SEA_CAVES
+type: BIOME
+extends: [ EQ_SEA_CAVES, CARVING_OCEAN, BASE ]
+vanilla: minecraft:beach
+color: $biomes/colors.yml:ROCKY_SEA_CAVES
+
+tags:
+  - USE_RIVER
+
+palette:
+  - BLOCK:minecraft:stone: 319
+  - SANDY_BEACH: 62
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 4
+    palette:
+      - BLOCK:minecraft:stone: 319
+      - SANDY_BEACH: 62
+      - << meta.yml:palette-bottom
+
+features:
+  slabs:
+    - STONE_SLABS

@@ -1,0 +1,33 @@
+id: TUNDRA_PLAINS
+type: BIOME
+extends: [ COLOR_TUNDRA, EQ_PLAIN, CARVING_LAND, BASE ]
+vanilla: minecraft:snowy_plains
+color: $biomes/colors.yml:TUNDRA_PLAINS
+
+tags:
+  - USE_FROZEN_RIVER_FLAT
+
+ocean:
+  palette: FROZEN_OCEAN
+
+palette:
+  - GRASS_SNOW_MIX: 319
+  - SANDY_BEACH: 64
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 3
+    palette:
+      - BLOCK:minecraft:stone: 319
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - GRASS_SPARSE
+    - FERNS
+  trees:
+    - OAK_BUSH_PATCHES
+  slabs:
+    - SNOW_LAYERS
+  preprocessors:
+    - ICE_COASTLINE

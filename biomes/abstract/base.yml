@@ -4,6 +4,7 @@ abstract: true
 extends:
   - DEPOSITS_DEFAULT
   - ORES_DEFAULT
+
 slant-depth: 15
 
 ocean:
@@ -13,3 +14,6 @@ ocean:
 features:
   lava:
     - LAVA_FLOOR
+  underwater-flora:
+    - KELP
+    - SEAGRASS

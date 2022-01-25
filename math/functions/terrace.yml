@@ -5,7 +5,8 @@ template: &template
     - sc # Scale
     - o  # Offset
     - g  # Gap
-  expression: sc * profile(clamp(floorMod(i/sc-o, 1+g))) + i
+    - d  # Terrace depth
+  expression: d * sc * profile(clamp(floorMod(i/sc-o, 1+g))) + i
 
 childFunctions: &childFunctions
   # Ancillary functions
@@ -24,6 +25,14 @@ functions:
       profile:
         arguments: [x]
         expression: "|x - 0.5| - 0.5"
+
+  terraceStrata:
+    <<: *template
+    functions:
+      <<: *childFunctions
+      profile:
+        arguments: [x]
+        expression: -if(x>0.95,-(x-1)/0.05,x/0.95)
 
   terraceParabolic:
     <<: *template

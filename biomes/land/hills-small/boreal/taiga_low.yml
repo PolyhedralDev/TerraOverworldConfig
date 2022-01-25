@@ -2,3 +2,7 @@ id: TAIGA_LOW
 type: BIOME
 extends: [ EQ_TERRACED_HILLS, TAIGA ]
 color: $biomes/colors.yml:TAIGA_LOW
+
+features:
+  trees:
+    - SPRUCE_TREE_PATCHES

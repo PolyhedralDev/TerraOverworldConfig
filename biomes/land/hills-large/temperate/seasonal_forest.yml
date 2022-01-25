@@ -14,13 +14,14 @@ colors:
   water-fog: 0x1e97f2
 
 palette:
-  - GRASS: 255
+  - GRASS: 319
+  - SANDY_BEACH: 64
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 3
     palette:
-      - GRANITE_STONE_MIX: 255
+      - GRANITE_SLANT: 319
       - << meta.yml:palette-bottom
 
 features:

@@ -14,18 +14,28 @@ colors:
   water-fog: 0x287082
 
 palette:
-  - GRASS: 255
+  - GRASS: 319
+  - SANDY_BEACH: 64
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 3
     palette:
-      - BLOCK:minecraft:stone: 255
+      - COARSE_DIRT: 319
+      - << meta.yml:palette-bottom
+  - threshold: 3.5
+    palette:
+      - BLOCK:minecraft:stone: 319
       - << meta.yml:palette-bottom
 
 features:
+  landforms:
+    - BOULDERS
+    - SMALL_BOULDER_PATCHES
   flora:
-    - GRASS
+    - SWEET_BERRY_BUSH_PATCHES
     - FOREST_FLOWER_PATCHES
+    - GRASS
+    - FERNS
   trees:
     - SPRUCE_TREES

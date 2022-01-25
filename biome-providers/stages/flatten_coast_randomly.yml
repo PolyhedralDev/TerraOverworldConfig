@@ -1,0 +1,10 @@
+stages:
+  - type: REPLACE
+    from: coast
+    to:
+      - coast: 2
+      - coast-flat: 1
+    sampler:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.001 / ${meta.yml:biome-distribution.global-scale}
+      salt: 9129

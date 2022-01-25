@@ -1,0 +1,63 @@
+
+# Uses warped cellular distance to determine where mushroom islands are placed.
+# The output is modified to allow users to define the spread and radius easily.
+zone-sampler:
+  type: EXPRESSION
+  expression: split((noise(x/spread,z/spread)+1)*4/(radius/spread)-1)
+  variables:
+    spread: 0+${meta.yml:biome-distribution.global-scale} * ${meta.yml:biome-distribution.mushroom-island-spread}
+    radius: 0+${meta.yml:biome-distribution.global-scale} * ${meta.yml:biome-distribution.mushroom-island-radius}
+  functions:
+    split:
+      arguments: [x]
+      expression: if(x<0,x,1)
+  samplers:
+    noise:
+      dimensions: 2
+      type: DOMAIN_WARP
+      amplitude: 0.04
+      warp:
+        type: OPEN_SIMPLEX_2
+        salt: 4161
+        frequency: 7
+      sampler:
+        type: CELLULAR
+        salt: 5171
+        frequency: 1
+
+variation-sampler:
+  type: OPEN_SIMPLEX_2
+  salt: 1959
+  frequency: 0.04 / ${meta.yml:biome-distribution.global-scale}
+
+mushroom-area-weight: &mushroom-area-weight 5 # Summed weights allocated to mushroom area
+
+stages:
+  - type: REPLACE_LIST
+    default-from: deep-ocean
+    default-to:
+      # Mushroom area - The weights should sum to mushroom-area-weight.
+      - MUSHROOM_MOUNTAINS: 1
+      - MUSHROOM_HILLS: 1
+      - mushroom-land: 2
+      - mushroom-coast: 1
+      # Non-mushroom area
+      - deep-ocean: *mushroom-area-weight
+    to:
+      deep-ocean-border:
+        # Mushroom area
+        - mushroom-coast: 5
+        # Non-mushroom area
+        - deep-ocean-border: *mushroom-area-weight
+    sampler: $biome-providers/stages/add_mushroom_islands.yml:zone-sampler
+  - type: REPLACE_LIST
+    default-from: mushroom-land
+    default-to:
+      - MUSHROOM_MOUNTAINS: 1
+      - MUSHROOM_HILLS: 1
+      - MUSHROOM_FIELDS: 1
+    to:
+      mushroom-coast:
+        - MUSHROOM_COAST: 1
+        - ROCKY_WETLANDS: 2
+    sampler: $biome-providers/stages/add_mushroom_islands.yml:variation-sampler

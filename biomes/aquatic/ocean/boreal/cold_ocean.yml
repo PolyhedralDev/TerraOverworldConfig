@@ -1,13 +1,8 @@
 id: COLD_OCEAN
 type: BIOME
-extends: [ EQ_OCEAN, CARVING_OCEAN, BASE ]
+extends: [ PALETTE_OCEAN, EQ_OCEAN, CARVING_OCEAN, BASE ]
 vanilla: minecraft:cold_ocean
 color: $biomes/colors.yml:COLD_OCEAN
-
-
-palette:
-  - SHALE_BEACH: 255
-  - << meta.yml:palette-bottom
 
 colors:
   grass: 0x8eb971

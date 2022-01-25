@@ -1,0 +1,7 @@
+id: JUNGLE_FLAT
+type: BIOME
+extends: [ EQ_PLAIN_PEAKS, JUNGLE ]
+color: $biomes/colors.yml:JUNGLE_FLAT
+
+tags:
+  - USE_RIVER_FLAT

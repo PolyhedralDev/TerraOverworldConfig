@@ -1,10 +1,11 @@
 source:
   type: SAMPLER
   biomes:
-    - deep-ocean: 1
-    - ocean: 2
-    - coast: 1
-    - land: 4
+    - deep-ocean: 7
+    - deep-ocean-border: 1 # Used for the border of deep ocean island biomes crossing into regular ocean
+    - ocean: 4
+    - coast: 1 # Used for the border of land biomes crossing into ocean
+    - land: 8
   sampler:
     dimensions: 2
     type: LINEAR
@@ -14,7 +15,7 @@ source:
       type: FBM
       lacunarity: 3
       gain: 0.4
-      octaves: 5
+      octaves: 4
       sampler:
         type: CELLULAR
-        frequency: 0.005
+        frequency: 1 / ${meta.yml:biome-distribution.continental-scale} / ${meta.yml:biome-distribution.global-scale}

@@ -6,17 +6,18 @@ abstract: true
 
 vars: &variables
   base: 64
+  
   groundHeight: 10
   groundFrequency: 0.8
 
   terraceHeight: 30 # Block height of terrace levels
-  terraceHeightVariation: 8
+  terraceHeightVariation: 5
   
   depositMaskLowerBound: 0.3
   depositMaskUpperBound: 1
 
   butteHeight: 100
-  butteBase: 25 # How many blocks above base buttes begin
+  butteBase: 28 # How many blocks above base buttes begin
   butteMaskFrequency: 1
   butteMaskLowerBound: 0.6
   butteMaskUpperBound: 0.8
@@ -26,19 +27,7 @@ terrain:
     dimensions: 3
     type: EXPRESSION
     variables: *variables
-    expression: |
-      // If above butteBase, terrace the base function, otherwise just use linear base
-      if(y<base+butteBase,
-        -y,
-        terrace(-y,
-          terraceHeight, terraceVariation(x, z) * terraceHeightVariation, 0
-        )
-      ) + base
-    samplers:
-      terraceVariation:
-        dimensions: 2
-        type: OPEN_SIMPLEX_2
-        frequency: 0.001
+    expression: -y + base
 
   sampler-2d:
     dimensions: 2
@@ -48,27 +37,39 @@ terrain:
       // Ground
       (simplex(x*groundFrequency, z*groundFrequency)+1)/2 * groundHeight
       
-      // Deposits
-      + maskSmooth(
-        butteBase,
-        depositMaskLowerBound, depositMaskUpperBound,
-        |mask(x*butteMaskFrequency, z*butteMaskFrequency)|
-      )
-      
-      // Buttes
-      + maskSmooth(
-        ((buttes(x, z)+1)/2)^2 * butteHeight,
-        butteMaskLowerBound, butteMaskUpperBound,
-        |mask(x*butteMaskFrequency, z*butteMaskFrequency)|
+      + max(
+        terraceStrata(
+          // Deposits
+          maskSmooth(
+            butteBase,
+            depositMaskLowerBound, depositMaskUpperBound,
+            |mask(x*butteMaskFrequency, z*butteMaskFrequency)|
+          ),
+          4, 0, 0, lerp(simplex(x*3,z*3),0.2,0,0.3,0.5)
+        )
+        ,
+        // Buttes
+        terraceStrata(
+          maskSmooth(
+            (buttes(x, z)+1)/2 * butteHeight,
+            butteMaskLowerBound, butteMaskUpperBound,
+            |mask(x*butteMaskFrequency, z*butteMaskFrequency)|
+          ),
+          terraceHeight, terraceVariation(x, z) * terraceHeightVariation, 0, 0.5
+        )
       )
     samplers:
+      terraceVariation:
+        dimensions: 2
+        type: OPEN_SIMPLEX_2
+        frequency: 0.001
       mask:
         dimensions: 2
         type: DOMAIN_WARP
-        amplitude: 4
+        amplitude: 2
         warp:
           type: OPEN_SIMPLEX_2
-          frequency: 0.03
+          frequency: 0.06
           salt: 6
         sampler:
           type: OPEN_SIMPLEX_2

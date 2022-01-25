@@ -1,0 +1,7 @@
+id: SAVANNA_FLAT
+type: BIOME
+extends: [ EQ_PLAIN_PEAKS, SAVANNA ]
+color: $biomes/colors.yml:SAVANNA_FLAT
+
+tags:
+  - USE_RIVER_FLAT

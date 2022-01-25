@@ -6,6 +6,7 @@ color: $biomes/colors.yml:CERROS_DE_MAVECURE
 
 palette:
   - GRASS: 319
+  - SANDY_BEACH: 64
   - << meta.yml:palette-bottom
 
 slant:

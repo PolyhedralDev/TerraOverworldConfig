@@ -3,10 +3,13 @@ type: BIOME
 abstract: true
 
 vars: &variables
-  base: 150
-  height: 20
+  base: 160
+  height: 25
 
 terrain:
+  blend:
+    weight: 2
+  
   sampler:
     dimensions: 3
     type: EXPRESSION

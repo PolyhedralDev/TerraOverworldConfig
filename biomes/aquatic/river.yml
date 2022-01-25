@@ -5,8 +5,15 @@ vanilla: minecraft:river
 color: $biomes/colors.yml:RIVER
 
 palette:
-  - SANDY_BEACH: 255
+  - BLOCK:minecraft:stone: 319
+  - SANDY_BEACH: 75
   - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 5
+    palette:
+      - BLOCK:minecraft:stone: 319
+      - << meta.yml:palette-bottom
 
 colors:
   grass: 0x8eb971

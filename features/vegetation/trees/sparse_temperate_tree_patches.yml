@@ -1,0 +1,20 @@
+id: SPARSE_TEMPERATE_TREE_PATCHES
+type: FEATURE
+extends: DENSE_TEMPERATE_TREE_PATCHES
+
+distributor:
+  type: AND
+  distributors:
+    - type: PADDED_GRID
+      width: 7
+      padding: 2
+      salt: 9591
+    - type: SAMPLER
+      sampler:
+        type: PROBABILITY
+        sampler:
+          type: OPEN_SIMPLEX_2
+          salt: 6912
+          frequency: 0.01
+      threshold: 0.2
+

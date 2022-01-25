@@ -1,0 +1,10 @@
+id: GRASS_SPARSE
+type: FEATURE
+extends: GRASS
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 1933
+  threshold: 0.05

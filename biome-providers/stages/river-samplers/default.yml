@@ -1,0 +1,45 @@
+variables: &variables
+  riverMaxWidth: 5 * ${meta.yml:biome-distribution.global-scale}
+  riverFrequency: 1 / ${meta.yml:biome-distribution.river-spread-scale} / ${meta.yml:biome-distribution.global-scale}
+  riverThreshold: 0.15
+  borderThreshold: 0.5
+  borderValue: -0.5
+
+sampler:
+  type: EXPRESSION
+  expression: |
+    if(|riverNoise((x+riverMaxWidth)*riverFrequency,(z+riverMaxWidth)*riverFrequency)|>riverThreshold,-1,
+      if(riverKerneled(x/riverMaxWidth, z/riverMaxWidth)!=0,1,if(borderMask(x,z)>borderThreshold,borderValue,-1))
+    )
+  variables: *variables
+  samplers:
+    borderMask:
+      dimensions: 2
+      type: PROBABILITY
+      sampler:
+        type: OPEN_SIMPLEX_2
+        salt: 4812
+      frequency: 0.005
+    riverNoise: &riverNoise
+      dimensions: 2
+      type: DOMAIN_WARP
+      amplitude: 2
+      sampler:
+        type: OPEN_SIMPLEX_2
+      warp:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.14
+    riverKerneled:
+      dimensions: 2
+      type: KERNEL # Edge detection
+      kernel: [
+        [ 0,  1, 0 ],
+        [ 1, -4, 1 ],
+        [ 0,  1, 0 ]
+      ]
+      sampler:
+        type: EXPRESSION
+        expression: riverNoise(x*riverMaxWidth*riverFrequency, z*riverMaxWidth*riverFrequency)>0
+        variables: *variables
+        samplers:
+          riverNoise: *riverNoise

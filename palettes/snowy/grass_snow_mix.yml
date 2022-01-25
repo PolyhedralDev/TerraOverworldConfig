@@ -1,0 +1,23 @@
+id: GRASS_SNOW_MIX
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:grass_block: 3
+      - minecraft:coarse_dirt: 1
+      - minecraft:snow_block: 5
+    layers: 1
+    sampler:
+      type: DOMAIN_WARP
+      amplitude: 1
+      warp:
+        type: GAUSSIAN
+      sampler:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.02
+  - materials:
+      - minecraft:coarse_dirt: 1
+      - minecraft:dirt: 2
+    layers: 1
+  - materials: minecraft:stone
+    layers: 1

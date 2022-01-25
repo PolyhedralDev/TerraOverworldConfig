@@ -9,7 +9,7 @@ stages:
       dimensions: 2
       type: CELLULAR
       return: CellValue
-      frequency: 0.03
+      frequency: 0.03 / ${meta.yml:biome-distribution.global-scale}
 
   - type: REPLACE
     from: BIOME:DESERT_SPIKES
@@ -20,5 +20,5 @@ stages:
       dimensions: 2
       type: CELLULAR
       return: CellValue
-      frequency: 0.06
+      frequency: 0.06 / ${meta.yml:biome-distribution.global-scale}
       salt: 23

@@ -1,16 +1,24 @@
-# Elevation Zones -> Temperature Zones
+
+# Splits elevation zones into temperature zones.
+
+# These temperature zones are then later split into different
+# precipitation zones by the distribute_precipitation_zones.yml file.
+# Zones unaffected by precipitation such oceanic, coastal, and
+# polar as are handled in the distribute_variants.yml file instead.
 
 temperature-map: &temperature-map
   dimensions: 2
-  #type: FBM
-  #sampler:
-  type: OPEN_SIMPLEX_2
-  frequency: 0.001
-  salt: 53
+  type: FBM
+  octaves: 2
+  sampler:
+    type: OPEN_SIMPLEX_2
+    frequency: 1 / ${meta.yml:biome-distribution.temperature-scale} / ${meta.yml:biome-distribution.global-scale}
+    salt: 53
 
 stages:
   - type: REPLACE_LIST
     sampler: *temperature-map
+    
     default-from: deep-ocean
     default-to:
       - deep-ocean-tropical: 1
@@ -18,50 +26,72 @@ stages:
       - deep-ocean-temperate: 1
       - deep-ocean-boreal: 1
       - deep-ocean-polar: 1
+    
     to:
+
       ocean:
         - ocean-tropical: 1
         - ocean-subtropical: 1
         - ocean-temperate: 1
         - ocean-boreal: 1
         - ocean-polar: 1
+  
       coast-flat:
-        - PALM_BEACH: 1
-        - BEACH: 4
+        - coast-flat-tropical: 1
+        - coast-flat-subtropical: 1
+        - coast-flat-temperate: 1
+        - coast-flat-boreal: 1
+        - coast-flat-polar: 1
+  
       coast-hills:
-        - SANDSTONE_WETLANDS: 1
-        - WETLANDS: 2
-        - ROCKY_WETLANDS: 1
-        - FROZEN_WETLANDS: 1
-      coast-mountains:
-        - SANDSTONE_ARCHIPELAGO: 1
-        - ARCHIPELAGO: 2
-        - ROCKY_ARCHIPELAGO: 1
-        - FROZEN_ARCHIPELAGO: 1
+        - coast-hills-tropical: 1
+        - coast-hills-subtropical: 1
+        - coast-hills-temperate: 1
+        - coast-hills-boreal: 1
+        - coast-hills-polar: 1
+  
+      coast-mountains-small:
+        - coast-mountains-small-tropical: 1
+        - coast-mountains-small-subtropical: 1
+        - coast-mountains-small-temperate: 1
+        - coast-mountains-small-boreal: 1
+        - coast-mountains-small-polar: 1
+  
+      coast-mountains-large:
+        - coast-mountains-large-tropical: 1
+        - coast-mountains-large-subtropical: 1
+        - coast-mountains-large-temperate: 1
+        - coast-mountains-large-boreal: 1
+        - coast-mountains-large-polar: 1
+  
       flat:
         - flat-tropical: 1
         - flat-subtropical: 1
         - flat-temperate: 1
         - flat-boreal: 1
         - flat-polar: 1
+  
       hills-small:
         - hills-small-tropical: 1
         - hills-small-subtropical: 1
         - hills-small-temperate: 1
         - hills-small-boreal: 1
         - hills-small-polar: 1
+
       hills-large:
         - hills-large-tropical: 1
         - hills-large-subtropical: 1
         - hills-large-temperate: 1
         - hills-large-boreal: 1
         - hills-large-polar: 1
+
       mountains-small:
         - mountains-small-tropical: 1
         - mountains-small-subtropical: 1
         - mountains-small-temperate: 1
         - mountains-small-boreal: 1
         - mountains-small-polar: 1
+
       mountains-large:
         - mountains-large-tropical: 1
         - mountains-large-subtropical: 1

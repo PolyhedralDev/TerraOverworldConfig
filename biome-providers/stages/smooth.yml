@@ -1,0 +1,4 @@
+stages:
+  - type: SMOOTH
+    sampler:
+      type: WHITE_NOISE

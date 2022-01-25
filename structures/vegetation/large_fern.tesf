@@ -1,0 +1,2 @@
+block(0, 1, 0, "minecraft:large_fern[half=upper]", false);
+block(0, 0, 0, "minecraft:large_fern[half=lower]", false);

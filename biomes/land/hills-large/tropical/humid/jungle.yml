@@ -1,0 +1,41 @@
+id: JUNGLE
+type: BIOME
+extends: [ EQ_HILLS, CARVING_LAND, BASE ]
+vanilla: minecraft:jungle
+color: $biomes/colors.yml:JUNGLE
+
+tags:
+  - USE_RIVER
+
+palette:
+  - GRASS: 319
+  - GRASS_VARIATION: 62
+  - SANDY_BEACH: 61
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 2.5
+    palette:
+      - MOSS_STONE: 319
+      - << meta.yml:palette-bottom
+  - threshold: 3
+    palette:
+      - MOSSY_COBBLESTONE_STONE: 319
+      - << meta.yml:palette-bottom
+  - threshold: 3.5
+    palette:
+      - TUFF_STONE: 319
+      - << meta.yml:palette-bottom
+  - threshold: 4
+    palette:
+      - BLOCK:minecraft:stone: 319
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - GRASS
+    - LARGE_LEAF_VINES
+    - FOREST_FLOWER_PATCHES
+  trees:
+    - DENSE_TEMPERATE_TREE_PATCHES
+    - OAK_BUSHES

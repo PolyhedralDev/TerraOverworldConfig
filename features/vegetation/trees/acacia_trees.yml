@@ -1,0 +1,29 @@
+id: ACACIA_TREES
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 17
+  padding: 3
+  salt: 1923
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: 64
+        max: 255
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:plantable-blocks
+        offset: -1
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures:
+    - acacia_tree_procedural: 10
+    - large_flat_acacia_tree_procedural: 1

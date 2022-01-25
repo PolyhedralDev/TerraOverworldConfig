@@ -1,27 +1,29 @@
 id: FROZEN_ARCHIPELAGO
 type: BIOME
-extends: [ EQ_BUTTES_ARCHIPELAGO, CARVING_OCEAN, BASE ]
+extends: [ COLOR_FROZEN, EQ_BUTTES_ARCHIPELAGO, CARVING_OCEAN, BASE ]
 vanilla: minecraft:beach
 color: $biomes/colors.yml:FROZEN_ARCHIPELAGO
 
 tags:
-  - USE_RIVER
+  - USE_FROZEN_RIVER
 
 ocean:
   palette: FROZEN_OCEAN
 
 palette:
-  - TUNDRA: 255
-  - SANDY_BEACH: 64
+  - SNOW: 319
+  - SANDY_BEACH: 61
   - << meta.yml:palette-bottom
 
 slant:
-  - threshold: 10
+  - threshold: 4
     palette:
-      - BLOCK:minecraft:stone: 255
-      - SANDY_BEACH: 64
+      - BLOCK:minecraft:stone: 319
+      - SANDY_BEACH: 61
       - << meta.yml:palette-bottom
 
 features:
   slabs:
     - SNOW_LAYERS
+  preprocessors:
+    - ICE_COASTLINE

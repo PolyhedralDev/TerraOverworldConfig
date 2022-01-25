@@ -1,2 +1,0 @@
-if (!structure(0, 0, 0, "plantable", "NONE")) fail;
-block(0, 0, 0, "minecraft:lily_of_the_valley", false);

@@ -1,0 +1,6 @@
+stages:
+  - type: REPLACE
+    from: deep-ocean-border
+    to: deep-ocean
+    sampler:
+      type: CONSTANT

@@ -1,104 +1,339 @@
-# Replaces Temperature Zones with Precipitation Zones,
-# or to just the raw biomes if there are no variants
-# inside precipitation zone
+
+# Replaces temperature zones with the relevant biome,
+# or a precipitation zone, which contains climate variants,
+# handled in the distribute_variants.yml file.
+
+# Aquatic, coastal (except tropical coastal), and polar zones aren't affected
+# by precipitation and are distributed via the distribute_variants.yml file instead.
 
 precipitation-map: &precipitation-map
   dimensions: 2
-  #type: FBM
-  #sampler:
-  type: OPEN_SIMPLEX_2
-  frequency: 0.003
+  type: FBM
+  octaves: 2
+  sampler:
+    type: OPEN_SIMPLEX_2
+    salt: 5055
+    frequency: 1 / ${meta.yml:biome-distribution.precipitation-scale} / ${meta.yml:biome-distribution.global-scale}
 
 stages:
   - type: REPLACE_LIST
     sampler: *precipitation-map
-    # Deep Ocean Temperature Zones
-    default-from: deep-ocean-tropical
+    
+    # -----------
+    # Flat Biomes
+    # -----------
+    default-from: flat-tropical
     default-to:
-      - TROPICAL_DEEP_OCEAN: 1
+      # Flat tropical humid
+      - JUNGLE_FLAT: 2
+
+      # Flat tropical semi-humid
+      - OAK_SAVANNA_FLAT: 2
+
+      # Flat tropical semi-arid
+      - SAVANNA_FLAT: 1
+      - WARM_PRAIRIE_FLAT: 1
+
+      # Flat tropical arid
+      - WARM_STEPPE_FLAT: 1
+      - XERIC_PLAINS: 1
+  
     to:
-      deep-ocean-subtropical:
-        - SUBTROPICAL_DEEP_OCEAN: 1
-      deep-ocean-temperate:
-        - DEEP_OCEAN: 1
-      deep-ocean-boreal:
-        - COLD_DEEP_OCEAN: 1
-      deep-ocean-polar:
-        - FROZEN_DEEP_OCEAN: 1
-      # Ocean Temperature Zones
-      ocean-tropical:
-        - TROPICAL_OCEAN: 1
-      ocean-subtropical:
-        - SUBTROPICAL_OCEAN: 1
-      ocean-temperate:
-        - OCEAN: 1
-      ocean-boreal:
-        - COLD_OCEAN: 1
-      ocean-polar:
-        - FROZEN_OCEAN: 1
-      # Flat Temperature Zones
-      flat-tropical:
-        - tbd: 3
-        - SALT_FLATS: 1
       flat-subtropical:
-        - tbd: 1
+        # Flat subtropical humid
+        - JUNGLE_FLAT: 3
+  
+        # Flat subtropical semi-humid
+        - FOREST_FLAT: 3
+  
+        # Flat subtropical semi-arid
+        - OAK_SAVANNA: 3
+  
+        # Flat subtropical arid
+        - SAVANNA_FLAT: 1
+        - WARM_PRAIRIE_FLAT: 1
+        - WARM_STEPPE_FLAT: 1
+  
       flat-temperate:
+        # Flat temperate humid
+        - FOREST_FLAT: 1
         - OAK_SAVANNA: 1
+  
+        # Flat temperate semi-humid
+        - PLAINS: 2
+  
+        # Flat temperate semi-arid
+        - PLAINS: 2
+  
+        # Flat temperate arid
         - PRAIRIE: 1
-        - PLAINS: 1
         - STEPPE: 1
+  
       flat-boreal:
-        - tbd: 1
-      flat-polar:
-        - TUNDRA: 1
-      # Small Hills Temperature Zones
+        # Flat boreal humid
+        - TAIGA_FLAT: 1
+  
+        # Flat boreal semi-humid
+        - TAIGA_FLAT: 1
+  
+        # Flat boreal semi-arid
+        - TAIGA_FLAT: 1
+  
+        # Flat boreal arid
+        - TAIGA_FLAT: 1
+    
+      # ------------------
+      # Small Hills Biomes
+      # ------------------
       hills-small-tropical:
-        - DESERT: 1
+        # Small hills tropical humid
+        - JUNGLE_LOW: 2
+  
+        # Small hills tropical semi-humid
+        - SAVANNA_LOW: 2
+  
+        # Small hills tropical semi-arid
+        - WARM_PRAIRIE_LOW: 1
+        - WARM_STEPPE_LOW: 1
+  
+        # Small hills tropical arid
+        - hills-small-tropical-arid: 2
+  
       hills-small-subtropical:
-        - OVERGROWN_CLIFFS: 1
+        # Small hills subtropical humid
+        - FOREST_LOW: 3
+  
+        # Small hills subtropical semi-humid
+        - todo: 3
+  
+        # Small hills subtropical semi-arid
+        - todo: 3
+  
+        # Small hills subtropical arid
+        - SAVANNA_LOW: 1
+        - WARM_PRAIRIE_LOW: 1
+        - WARM_STEPPE_LOW: 1
+  
       hills-small-temperate:
+        # Small hills temperate humid
+        - TEMPERATE_BUTTES: 1
+  
+        # Small hills temperate semi-humid
+        - TEMPERATE_BUTTES: 1
+  
+        # Small hills temperate semi-arid
         - FOREST_LOW: 1
+  
+        # Small hills temperate arid
+        - FOREST_LOW: 1
+  
       hills-small-boreal:
+        # Small hills boreal humid
         - TAIGA_LOW: 1
-      hills-small-polar:
-        - ICE_SPIKES: 1
-      # Large Hills Temperature Zones
+  
+        # Small hills boreal semi-humid
+        - TAIGA_LOW: 1
+  
+        # Small hills boreal semi-arid
+        - TAIGA_LOW: 1
+  
+        # Small hills boreal arid
+        - TAIGA_LOW: 1
+  
+      # ------------------
+      # Large Hills Biomes
+      # ------------------
       hills-large-tropical:
-        - ARID_SPIKES: 1
-        - XERIC_HILLS: 1
+  
+        # Large hills tropical humid
+        - JUNGLE: 2
+  
+        # Large hills tropical semi-humid
+        - SAVANNA: 2
+  
+        # Large hills tropical semi-arid
+        - WARM_PRAIRIE: 1
+        - WARM_STEPPE: 1
+  
+        # Large hills tropical semi-arid
+        - hills-large-tropical-semi-arid: 2
+  
       hills-large-subtropical:
-        - EVERGREEN_FOREST: 1
+        # Large hills subtropical humid
+        - FOREST: 3
+  
+        # Large hills subtropical semi-humid
+        - SEASONAL_FOREST: 3
+  
+        # Large hills subtropical semi-arid
+        - EVERGREEN_FOREST: 3
+  
+        # Large hills subtropical arid
+        - SAVANNA: 1
+        - WARM_PRAIRIE: 1
+        - WARM_STEPPE: 1
+  
       hills-large-temperate:
-        - BIRCH_FOREST: 1
-        - FOREST: 1
+        # Large hills temperate humid
         - SEASONAL_FOREST: 1
+  
+        # Large hills temperate semi-humid
+        - FOREST: 1
+  
+        # Large hills temperate semi-arid
+        - FOREST: 1
+  
+        # Large hills temperate arid
+        - BIRCH_FOREST: 1
+  
       hills-large-boreal:
+        # Large hills boreal humid
         - TAIGA: 1
-      hills-large-polar:
-        - tbd: 1
-      # Small Mountains Temperature Zones
+  
+        # Large hills boreal semi-humid
+        - TAIGA: 1
+  
+        # Large hills boreal semi-arid
+        - TAIGA: 1
+  
+        # Large hills boreal arid
+        - TAIGA: 1
+
+      # ----------------------
+      # Small Mountains Biomes
+      # ----------------------
       mountains-small-tropical:
-        - BADLANDS_MOUNTAINS: 1
+  
+        # Small mountains tropical humid
+        - OVERGROWN_CLIFFS: 1
+  
+        # Small mountains tropical semi-humid
+        - TEMPERATE_MOUNTAINS: 1
+  
+        # Small mountains tropical semi-arid
         - XERIC_MOUNTAINS: 1
+  
+        # Small mountains tropical arid
+        - mountains-small-tropical-arid: 1
+  
       mountains-small-subtropical:
-        - tbd: 1
+        # Small mountains subtropical 
+        - todo: 1
+  
+        # Small mountains subtropical 
+        - todo: 1
+  
+        # Small mountains subtropical 
+        - TEMPERATE_MOUNTAINS: 1
+  
+        # Small mountains subtropical 
+        - todo: 1
+  
       mountains-small-temperate:
-        - tbd: 1
+        # Small mountains temperate humid
+        - todo: 1
+  
+        # Small mountains temperate semi-humid
+        - TEMPERATE_MOUNTAINS: 1
+  
+        # Small mountains temperate semi-arid
+        - TEMPERATE_MOUNTAINS: 1
+  
+        # Small mountains temperate arid
+        - todo: 1
+  
       mountains-small-boreal:
-        - MOUNTAINS: 1
-      mountains-small-polar:
-        - SNOWY_MOUNTAINS: 1
+        
+        # Small mountains boreal humid
         - SNOWY_ERODED_TERRACED_MOUNTAINS: 1
-      # Large Mountains Temperature Zones
+  
+        # Small mountains boreal semi-humid
+        - MOUNTAINS: 1
+  
+        # Small mountains boreal semi-arid
+        - MOUNTAINS: 1
+  
+        # Small mountains boreal arid
+        - MOUNTAINS: 1
+  
+    # ----------------------
+    # Large Mountains Biomes
+    # ----------------------
       mountains-large-tropical:
-        - CRACKED_BADLANDS_PLATEAU: 1
+        # Large mountains tropical humid
+        - todo: 1
+  
+        # Large mountains tropical semi-humid
+        - todo: 1
+  
+        # Large mountains tropical semi-arid
+        - todo: 1
+  
+        # Large mountains tropical arid
+        - mountains-large-tropical-arid: 1
+  
       mountains-large-subtropical:
-        - tbd: 1
+        # Large mountains subtropical humid
+        - todo: 1
+  
+        # Large mountains subtropical semi-humid
+        - todo: 1
+  
+        # Large mountains subtropical semi-arid
+        - todo: 1
+  
+        # Large mountains subtropical arid
+        - todo: 1
+  
       mountains-large-temperate:
+        # Large mountains temperate humid
+        - todo: 1
+  
+        # Large mountains temperate semi-humid
         - TEMPERATE_ALPHA_MOUNTAINS: 1
-        - DRY_TEMPERATE_MOUNTAINS: 1
-        - DRY_TEMPERATE_WHITE_MOUNTAINS: 1
+  
+        # Large mountains temperate semi-arid
+        - mountains-large-temperate-semi-arid: 1
+  
+        # Large mountains temperate arid
+        - todo: 1
+  
       mountains-large-boreal:
-        - tbd: 1
-      mountains-large-polar:
+        # Large mountains boreal humid
         - SNOWY_TERRACED_MOUNTAINS: 1
+  
+        # Large mountains boreal semi-humid
+        - SNOWY_TERRACED_MOUNTAINS: 1
+  
+        # Large mountains boreal semi-arid
+        - SNOWY_TERRACED_MOUNTAINS: 1
+  
+        # Large mountains boreal arid
+        - SNOWY_TERRACED_MOUNTAINS: 1
+  
+    # ------------------------------
+    # Coastal Small Mountains Biomes
+    # ------------------------------
+      coast-mountains-small-tropical:
+        # Coastal small mountains tropical humid
+        - coast-mountains-small-tropical-humid: 1
+  
+        # Coastal small mountains tropical semi-humid to semi-arid
+        - coast-mountains-small-tropical: 2
+        
+        # Coastal small mountains tropical arid
+        - coast-mountains-small-tropical-arid: 1
+        
+    # ------------------------------
+    # Coastal Large Mountains Biomes
+    # ------------------------------
+      coast-mountains-large-tropical:
+        # Coastal large mountains tropical humid
+        - coast-mountains-large-tropical-humid: 1
+  
+        # Coastal large mountains tropical semi-humid to semi-arid
+        - coast-mountains-large-tropical: 2
+  
+        # Coastal large mountains tropical arid
+        - coast-mountains-large-tropical-arid: 1
+        

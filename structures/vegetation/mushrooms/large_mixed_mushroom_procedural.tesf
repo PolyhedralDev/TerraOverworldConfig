@@ -1,0 +1,96 @@
+if (recursions() > 1) fail;
+
+num randPrecision = 100;
+
+num warp = 10;
+num stemHeight = 6+randomInt(20);
+num stemStartRadius = 1 + stemHeight/25;
+num stemEndRadius = 1.2;
+num stemCollarThreshold = 1 - randomInt(randPrecision)/randPrecision/2;
+num stemCollarThickness = 3;
+num diskMinHeight = 4;
+num diskMaxHeight = stemHeight - 4;
+num diskInterval = 3+randomInt(3);
+bool addDisks = false;
+if (randomInt(2) == 0) addDisks = true;
+
+num radius = stemHeight/2;
+num innerRadius = radius-3;
+num midRadius = radius-2;
+num warpTop = 0.5;
+num warpTopFrequency = 2;
+num squish = 1 - randomInt(randPrecision)/randPrecision*0.5;
+num radiusHorizontal = round(radius + radius*warpTop);
+
+str outerBlock = "minecraft:red_mushroom_block";
+str innerBlock = "minecraft:red_mushroom_block[up=false,down=false,north=false,east=false,south=false,west=false]";
+str spotBlock = "minecraft:mushroom_stem";
+str diskStructure = "red_mushroom_disk";
+
+if (randomInt(2) == 0) {
+    squish = 2;
+    innerRadius = radius-4;
+    midRadius = radius-2;
+    outerBlock = "minecraft:brown_mushroom_block";
+    innerBlock = "minecraft:brown_mushroom_block[up=false,down=false,north=false,east=false,south=false,west=false]";
+    spotBlock = "minecraft:brown_mushroom_block";
+    diskStructure = "brown_mushroom_disk";
+}
+
+num t = 0;
+num it = 1;
+num currentRadius = stemStartRadius;
+num currentRadiusSquared = pow2(currentRadius);
+num distanceSquared = 0;
+for (num h = -2; h < stemHeight; h = h + 1) {
+    if (addDisks && h > diskMinHeight && h < diskMaxHeight && h % diskInterval == 0) {
+        num ox = sampler("simplex", h, originX())*warp*t;
+        num oz = sampler("simplex", h, originZ())*warp*t;
+        structure(ox, h, oz, diskStructure, "NONE");
+    }
+
+    t = h/stemHeight;
+    it = 1-t;
+    currentRadius = stemStartRadius * it + stemEndRadius * t;
+    if (t > stemCollarThreshold) currentRadius = currentRadius + stemCollarThickness * it;
+    currentRadiusSquared = pow2(currentRadius);
+    for (num x = round(-currentRadius); x < round(currentRadius); x = x + 1) {
+        for (num z = round(-currentRadius); z < round(currentRadius); z = z + 1) {
+            distanceSquared = pow2(x)+pow2(z);
+            if (distanceSquared < currentRadiusSquared) {
+                num warpX = sampler("simplex", h, originX())*warp*t;
+                num warpZ = sampler("simplex", h, originZ())*warp*t;
+                block(x+warpX, h, z+warpZ, "minecraft:mushroom_stem");
+            }
+        }
+    }
+}
+
+num radiusSquared = pow2(radius);
+num innerRadiusSquared = pow2(innerRadius);
+num midRadiusSquared = pow2(midRadius);
+
+num ox = sampler("simplex", stemHeight, originX())*warp;
+num oy = stemHeight-radius/squish;
+num oz = sampler("simplex", stemHeight, originZ())*warp;
+
+for (num x = -radiusHorizontal; x < radiusHorizontal; x = x + 1) {
+    for (num y = 0; y < radius / squish; y = y + 1) {
+        for (num z = -radiusHorizontal; z < radiusHorizontal; z = z + 1) {
+            num warpX = sampler("simplex", warpTopFrequency*(originX()+ox+x), warpTopFrequency*(originZ()+oz+z)) * abs(y-midRadius) * warpTop;
+            num warpZ = sampler("simplex", warpTopFrequency*(originZ()+ox+x+1000), warpTopFrequency*(originZ()+oz+z)) * abs(y-midRadius) * warpTop;
+            distanceSquared = pow2(x+warpX)+pow2(y*squish)+pow2(z+warpZ);
+            if (distanceSquared < radiusSquared && distanceSquared > innerRadiusSquared && y+1 >= abs(warpX+warpZ)) {
+                if (distanceSquared > midRadiusSquared) {
+                    if (randomInt(40) == 0) {
+                        block(ox+x, oy+y, oz+z, spotBlock);
+                    } else {
+                        block(ox+x, oy+y, oz+z, outerBlock);
+                    }
+                } else {
+                    block(ox+x, oy+y, oz+z, innerBlock);
+                }
+            }
+        }
+    }
+}

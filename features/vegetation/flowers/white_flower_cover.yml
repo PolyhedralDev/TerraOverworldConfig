@@ -1,0 +1,49 @@
+id: WHITE_FLOWER_COVER
+type: FEATURE
+
+distributor:
+  type: AND
+  distributors:
+    - type: SAMPLER
+      sampler:
+        type: POSITIVE_WHITE_NOISE
+        salt: 8972
+      threshold: 0.7
+    - type: SAMPLER
+      sampler:
+        type: PROBABILITY
+        sampler:
+          type: DOMAIN_WARP
+          amplitude: 5
+          warp:
+            type: GAUSSIAN
+          sampler:
+            type: OPEN_SIMPLEX_2
+      threshold: 0.2
+
+locator:
+  type: AND
+  locators:
+    - type: SURFACE
+      range: &range
+        min: 64
+        max: 255
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:plantable-blocks
+        offset: -1
+
+structures:
+  distribution:
+    type: FBM
+    octaves: 2
+    sampler:
+      type: WHITE_NOISE
+      seed: 5919
+  structures:
+    - BLOCK:minecraft:lily_of_the_valley: 5
+    - BLOCK:minecraft:azure_bluet: 4
+    - BLOCK:minecraft:white_tulip: 2
+    - BLOCK:minecraft:oxeye_daisy: 1

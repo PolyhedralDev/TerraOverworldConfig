@@ -7,29 +7,22 @@ color: $biomes/colors.yml:DESERT_SPIKES_GOLD
 tags:
   - USE_RIVER
 
-colors:
-  fog: 0xfff17c
-  grass: 0x8ab689
-  foliage: 0x6da36b
-  water: 0x007bf7
-  water-fog: 0x007bf7
-
 slant:
   - threshold: 3
     palette:
-      - BLOCK:minecraft:smooth_sandstone: 255
+      - BLOCK:minecraft:smooth_sandstone: 319
       - << meta.yml:palette-bottom
   - threshold: 4
     palette:
-      - BLOCK:minecraft:white_terracotta: 255
+      - BLOCK:minecraft:white_terracotta: 319
       - << meta.yml:palette-bottom
   - threshold: 5
     palette:
-      - BLOCK:minecraft:light_gray_terracotta: 255
+      - BLOCK:minecraft:light_gray_terracotta: 319
       - << meta.yml:palette-bottom
   - threshold: 6
     palette:
-      - TERRACOTTA_STRATA_GOLD: 255
+      - TERRACOTTA_STRATA_GOLD: 319
       - << meta.yml:palette-bottom
 
 features:

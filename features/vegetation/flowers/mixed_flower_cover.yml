@@ -1,0 +1,64 @@
+id: MIXED_FLOWER_COVER
+type: FEATURE
+
+distributor:
+  type: AND
+  distributors:
+    - type: SAMPLER
+      sampler:
+        type: POSITIVE_WHITE_NOISE
+        salt: 1031
+      threshold: 0.4
+    - type: SAMPLER
+      sampler:
+        type: PROBABILITY
+        sampler:
+          type: DOMAIN_WARP
+          amplitude: 5
+          warp:
+            type: GAUSSIAN
+          sampler:
+            type: OPEN_SIMPLEX_2
+            salt: 9419
+      threshold: 0.4
+
+locator:
+  type: AND
+  locators:
+    - type: SURFACE
+      range: &range
+        min: 64
+        max: 255
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:plantable-blocks
+        offset: -1
+
+structures:
+  distribution:
+    type: DOMAIN_WARP
+    amplitude: 4
+    warp:
+      type: GAUSSIAN
+    sampler:
+      type: CELLULAR
+      return: CellValue
+      frequency: 0.06
+      seed: 9231
+  structures:
+    - BLOCK:minecraft:blue_orchid: 3
+    - BLOCK:minecraft:cornflower: 3
+    - BLOCK:minecraft:allium: 3
+    - BLOCK:minecraft:red_tulip: 3
+    - BLOCK:minecraft:orange_tulip: 3
+    - lilac: 1
+    - peony: 1
+    - rose_bush: 1
+    - BLOCK:minecraft:dandelion: 3
+    - BLOCK:minecraft:oxeye_daisy: 3
+    - BLOCK:minecraft:azure_bluet: 1
+    - BLOCK:minecraft:lily_of_the_valley: 1
+    - BLOCK:minecraft:white_tulip: 1
+    - BLOCK:minecraft:pink_tulip: 1

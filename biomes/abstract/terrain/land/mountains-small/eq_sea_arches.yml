@@ -1,0 +1,40 @@
+id: EQ_SEA_ARCHES
+type: BIOME
+abstract: true
+
+vars: &variables
+  base: 80
+  height: 50
+  erosionTop: 120
+  erosionMiddle: 75
+  erosionBottom: 55
+  erosionStrength: 3
+
+terrain:
+  sampler:
+    type: EXPRESSION
+    dimensions: 3
+    variables: *variables
+    expression: |
+      -y + base
+      + (simplex(x,z)+1)/2 * height
+      - lerp(y,
+        erosionTop, 0,
+        erosionMiddle,
+        lerp(y,
+          erosionMiddle, erosionStrength * lerp(|erosion(x,z)|,0,1,1,0) * (-y+erosionTop),
+          erosionBottom, 0
+        )
+      )
+    samplers:
+      erosion:
+        dimensions: 2
+        type: OPEN_SIMPLEX_2
+        frequency: 0.02
+        salt: 2
+  
+  sampler-2d:
+    dimensions: 2
+    type: EXPRESSION
+    variables: *variables
+    expression: (simplex(x/3, z/3)+1)/2*10

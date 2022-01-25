@@ -1,63 +1,57 @@
 id: ARID_SPIKES
 type: BIOME
-extends: [ EQ_SPIKES, CARVING_LAND, BASE ]
+extends: [ COLOR_XERIC, EQ_SPIKES, CARVING_LAND, BASE ]
 vanilla: minecraft:badlands
 color: $biomes/colors.yml:ARID_SPIKES
 
 tags:
   - USE_RIVER
 
-colors:
-  fog: 0xfff17c
-  grass: 0x8ab689
-  foliage: 0x6da36b
-  water: 0x007bf7
-  water-fog: 0x007bf7
-
 palette:
-  - ARID: 255
+  - ARID: 319
+  - SANDY_BEACH: 64
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 3
     palette:
-      - BLOCK:minecraft:smooth_red_sandstone: 255
+      - BLOCK:minecraft:smooth_red_sandstone: 319
       - << meta.yml:palette-bottom
   - threshold: 4
     palette:
-      - BLOCK:minecraft:orange_terracotta: 255
+      - BLOCK:minecraft:orange_terracotta: 319
       - << meta.yml:palette-bottom
   - threshold: 5
     palette:
-      - BLOCK:minecraft:terracotta: 255
+      - BLOCK:minecraft:terracotta: 319
       - << meta.yml:palette-bottom
   - threshold: 7
     palette:
-      - TERRACOTTA_STRATA: 255
+      - TERRACOTTA_STRATA: 319
       - << meta.yml:palette-bottom
   - threshold: 8
     palette:
-      - BLOCK:minecraft:granite: 255
+      - BLOCK:minecraft:granite: 319
       - << meta.yml:palette-bottom
   - threshold: 9
     palette:
-      - BLOCK:minecraft:stone: 255
+      - BLOCK:minecraft:stone: 319
       - << meta.yml:palette-bottom
   - threshold: 11
     palette:
-      - TERRACOTTA_STRATA: 255
+      - TERRACOTTA_STRATA: 319
       - << meta.yml:palette-bottom
   - threshold: 13
     palette:
-      - BLOCK:minecraft:granite: 255
+      - BLOCK:minecraft:granite: 319
       - << meta.yml:palette-bottom
   - threshold: 14
     palette:
-      - BLOCK:minecraft:stone: 255
+      - BLOCK:minecraft:stone: 319
       - << meta.yml:palette-bottom
   - threshold: 15
     palette:
-      - BLOCK:minecraft:andesite: 255
+      - BLOCK:minecraft:andesite: 319
       - << meta.yml:palette-bottom
 
 features:

@@ -5,13 +5,14 @@ extends: NO_TERRAIN_2D
 
 # Simple relatively flat terrain under ocean level.
 
-vars: &variables
-  base: 40
-  height: 20
-
 terrain:
   sampler:
     dimensions: 3
+    type: LINEAR_HEIGHTMAP
+    base: 40
+  sampler-2d:
+    dimensions: 2
     type: EXPRESSION
-    variables: *variables
-    expression: -y + base + |simplex(x/2, z/2)| * height
+    variables:
+      height: 20
+    expression: "|simplex(x/2, z/2)| * height"

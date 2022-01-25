@@ -1,6 +1,6 @@
 id: SNOWY_MOUNTAINS
 type: BIOME
-extends: [ EQ_MOUNTAINS, CARVING_LAND, BASE ]
+extends: [ COLOR_FROZEN, EQ_MOUNTAINS, CARVING_LAND, BASE ]
 vanilla: minecraft:snowy_slopes
 color: $biomes/colors.yml:SNOWY_MOUNTAINS
 
@@ -8,16 +8,20 @@ ocean:
   palette: FROZEN_OCEAN
 
 palette:
-  - TUNDRA: 319
+  - SNOW: 319
+  - SANDY_BEACH: 61
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 3
     palette:
       - BLOCK:minecraft:stone: 319
+      - SANDY_BEACH: 61
       - << meta.yml:palette-bottom
 
 features:
   slabs:
     - STONE_SLABS
     - SNOW_LAYERS
+  preprocessors:
+    - ICE_COASTLINE

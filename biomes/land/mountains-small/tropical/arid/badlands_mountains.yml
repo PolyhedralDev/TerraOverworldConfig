@@ -1,17 +1,18 @@
 id: BADLANDS_MOUNTAINS
 type: BIOME
-extends: [ EQ_ERODED_MOUNTAINS, CARVING_LAND, BASE ]
+extends: [ COLOR_XERIC, EQ_ERODED_MOUNTAINS, CARVING_LAND, BASE ]
 vanilla: minecraft:badlands
 color: $biomes/colors.yml:BADLANDS_MOUNTAINS
 
 palette:
   - RED_SAND: 319
+  - SANDY_BEACH: 64
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 4
     palette:
-      - TERRACOTTA_STRATA: 319
+      - BADLANDS_STRATA: 319
       - << meta.yml:palette-bottom
 
 features:

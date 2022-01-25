@@ -1,33 +1,27 @@
 id: XERIC_MOUNTAINS
 type: BIOME
-extends: [ EQ_ERODED_MOUNTAINS, CARVING_LAND, BASE ]
+extends: [ COLOR_XERIC, EQ_ERODED_MOUNTAINS, CARVING_LAND, BASE ]
 vanilla: minecraft:desert
 color: $biomes/colors.yml:XERIC_MOUNTAINS
 
 tags:
   - LAND
 
-colors:
-  fog: 0xfff17c
-  grass: 0x8ab689
-  foliage: 0x6da36b
-  water: 0x007bf7
-  water-fog: 0x007bf7
-
 palette:
-  - XERIC_SANDSTONE: 255
+  - XERIC_SANDSTONE: 319
   - XERIC_SANDSTONE_HALF: 100
   - XERIC: 92
+  - SANDY_BEACH: 64
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 5
     palette:
-      - XERIC_WHITE_TERRACOTTA: 255
+      - XERIC_WHITE_TERRACOTTA: 319
       - << meta.yml:palette-bottom
   - threshold: 7.5
     palette:
-      - XERIC_LIGHT_GRAY_TERRACOTTA: 255
+      - XERIC_LIGHT_GRAY_TERRACOTTA: 319
       - << meta.yml:palette-bottom
 
 slant-depth: 5

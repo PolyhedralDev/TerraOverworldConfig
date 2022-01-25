@@ -1,0 +1,14 @@
+id: WARM_PRAIRIE
+type: BIOME
+extends: SAVANNA
+color: $biomes/colors.yml:WARM_PRAIRIE
+
+features:
+  flora:
+    - TALL_GRASS
+    - FLOWER_PATCHES
+  trees:
+    - SPARSE_ACACIA_TREES
+
+colors:
+  grass: 0xb5cc47

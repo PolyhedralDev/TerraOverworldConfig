@@ -1,0 +1,56 @@
+id: CONNECT_LAVA_STEPS
+type: FEATURE
+
+distributor:
+  type: AND
+  distributors:
+    - type: SAMPLER
+      sampler:
+        type: POSITIVE_WHITE_NOISE
+        salt: 5123
+      threshold: 0.7
+    - type: SAMPLER
+      sampler:
+        type: PROBABILITY
+        sampler:
+          type: FBM
+          octaves: 2
+          sampler:
+            type: OPEN_SIMPLEX_2
+            salt: 9123
+            frequency: 0.01
+      threshold: 0.3
+
+locator:
+  type: AND
+  locators:
+    - type: PATTERN
+      range: &range
+        min: 64
+        max: 150
+      pattern:
+        type: AND
+        patterns:
+          - type: MATCH_AIR
+            offset: 1
+          - type: MATCH
+            block: minecraft:smooth_basalt
+            offset: 0
+    - type: ADJACENT_PATTERN
+      range: *range
+      pattern:
+        type: MATCH
+        block: minecraft:lava
+        offset: 0
+    - type: ADJACENT_PATTERN
+      range: *range
+      pattern:
+        type: MATCH
+        block: minecraft:lava
+        offset: -1
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: BLOCK:minecraft:lava[level=5]
+      

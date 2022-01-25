@@ -1,0 +1,41 @@
+id: MUSHROOM_DISK_PATCHES
+type: FEATURE
+
+distributor:
+  type: AND
+  distributors:
+    - type: PADDED_GRID
+      width: 4
+      padding: 2
+      salt: 4127
+    - type: SAMPLER
+      sampler:
+        type: PROBABILITY
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.02
+          seed: 2617
+      threshold: 0.1
+
+locator:
+  type: PATTERN
+  range:
+    min: 64
+    max: 319
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH_AIR
+        offset: 0
+      - type: OR
+        patterns:
+          - type: MATCH_SOLID
+            offset: 1
+          - type: MATCH_SOLID
+            offset: -1
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: small_brown_mushroom_disk
+  

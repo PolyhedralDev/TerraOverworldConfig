@@ -1,4 +1,8 @@
 id: ACTIVE_VOLCANO_PIT_EDGE
 type: BIOME
-extends: [ EQ_VOLCANO_PIT_EDGE, ACTIVE_VOLCANO_PIT, CARVING_OCEAN, BASE ]
+extends: [ EQ_VOLCANO_PIT_EDGE, ACTIVE_VOLCANO_PIT ]
 color: $biomes/colors.yml:ACTIVE_VOLCANO_PIT_EDGE
+
+colors:
+  sky: 0x32444e
+  fog: 0xe79760

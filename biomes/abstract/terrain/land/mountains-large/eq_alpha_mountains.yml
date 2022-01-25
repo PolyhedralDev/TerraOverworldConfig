@@ -6,9 +6,9 @@ extends: NO_TERRAIN_2D
 # Large smooth stylized mountains with lots of overhangs.
 
 vars: &variables
-  base: 64
+  base: 80
   height: 60
-  blobStrength: 30
+  blobStrength: 25
 
 terrain:
   sampler:

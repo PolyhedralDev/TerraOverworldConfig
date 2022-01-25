@@ -1,0 +1,13 @@
+id: SNOW
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:snow_block: 1
+    layers: 2
+  - materials:
+      - minecraft:coarse_dirt: 1
+      - minecraft:dirt: 2
+    layers: 1
+  - materials: minecraft:stone
+    layers: 1

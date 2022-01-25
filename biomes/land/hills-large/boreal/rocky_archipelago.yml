@@ -8,6 +8,6 @@ tags:
   - USE_RIVER
 
 palette:
-  - BLOCK:minecraft:stone: 255
-  - SANDY_BEACH: 64
+  - BLOCK:minecraft:stone: 319
+  - GRAVEL: 62
   - << meta.yml:palette-bottom
