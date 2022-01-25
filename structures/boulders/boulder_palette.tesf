@@ -1,0 +1,7 @@
+num blockSelection = randomInt(70);
+if(blockSelection <= 14) block(0, 0, 0,"minecraft:stone");
+else if(blockSelection <= 29) block(0, 0, 0,"minecraft:andesite");
+else if(blockSelection <= 44) block(0, 0, 0,"minecraft:cobblestone");
+else if(blockSelection <= 59) block(0, 0, 0,"minecraft:gravel");
+else if(blockSelection <= 65) block(0, 0, 0,"minecraft:mossy_cobblestone");
+else if(blockSelection <= 69) block(0, 0, 0,"minecraft:tuff"); //nice
