@@ -34,5 +34,3 @@ for (num x = -radius-warp; x < radius+warp; x = x + 1) {
         }
     }
 }
-
-//Credits to Astrash
