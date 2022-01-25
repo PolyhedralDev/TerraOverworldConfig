@@ -27,9 +27,12 @@ for (num x = -radius-warp; x < radius+warp; x = x + 1) {
                                 warpFreq*(x+originX()),
                                 warpFreq*(y+originY()+3000),
                                 warpFreq*(z+originZ()));
-            if (pow(x+warpX,2)+pow((y+warpY)*squish,2)+pow(z+warpZ,2) < radiusSquared) {
-                block(x, y+yTranslate, z,"minecraft:stone", false);
+			num distanceSquared = pow(x+warpX,2)+pow((y+warpY)*squish,2)+pow(z+warpZ,2);
+            if (distanceSquared < radiusSquared) {
+				structure(x, y+yTranslate, z, "boulder_palette", "NONE");
             }
         }
     }
 }
+
+//Credits to Astrash
