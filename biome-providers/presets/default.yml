@@ -37,7 +37,7 @@ biomes:
       - << biome-providers/stages/distribute_precipitation_zones.yml:stages
 
       # Choose final biome(s) for any zones not assigned biomes in the previous stage.
-      - << biome-providers/stages/distribute_variants.yml:stages
+      - << biome-providers/stages/distribute_climate_variants.yml:stages
 
       # Biome specific variations
       - << biome-providers/stages/add_desert_variants.yml:stages
