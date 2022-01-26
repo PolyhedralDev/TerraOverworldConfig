@@ -188,7 +188,7 @@ stages:
   
       hills-large-boreal:
         # Large hills boreal humid
-        - TAIGA: 1
+        - REDWOOD_FOREST: 1
   
         # Large hills boreal semi-humid
         - TAIGA: 1
