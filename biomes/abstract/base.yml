@@ -12,8 +12,9 @@ ocean:
   level: 62
 
 features:
-  lava:
+  global-preprocessors:
     - LAVA_FLOOR
+    - CONTAIN_FLOATING_WATER
   underwater-flora:
     - KELP
     - SEAGRASS

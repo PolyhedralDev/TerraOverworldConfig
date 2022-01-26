@@ -71,11 +71,11 @@ biomes: $biome-providers/presets/default.yml:biomes
 # something like a world without ores.
 
 stages:
+  - id: global-preprocessors # Used to generate lava at the bottom of the world
+    type: FEATURE
+
   - id: preprocessors # Misc features that are treated as small modifications
     type: FEATURE     # to the initial chunk generation.
-
-  - id: lava # Used to generate lava at the bottom of the world
-    type: FEATURE
 
   - id: landforms # Used for things like boulders and features that act
     type: FEATURE # like a part of the terrain.
