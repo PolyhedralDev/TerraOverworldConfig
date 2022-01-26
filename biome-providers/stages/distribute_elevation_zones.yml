@@ -25,7 +25,7 @@ stages:
       - coast-mountains-large: 2
     to:
       land:
-#        - flat: 2
+        - flat: 2
         - hills-small: 1
         - hills-large: 1
         - mountains-small: 1
