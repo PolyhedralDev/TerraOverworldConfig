@@ -29,7 +29,7 @@ for (num x = -radius-warp; x < radius+warp; x = x + 1) {
                                 warpFreq*(z+originZ()));
 			num distanceSquared = pow(x+warpX,2)+pow((y+warpY)*squish,2)+pow(z+warpZ,2);
             if (distanceSquared < radiusSquared) {
-				structure(x, y+yTranslate, z, "boulder_palette", "NONE");
+		structure(x, y+yTranslate, z, "boulder_palette", "NONE");
             }
         }
     }
