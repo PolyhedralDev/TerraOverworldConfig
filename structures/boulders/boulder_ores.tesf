@@ -1,0 +1,4 @@
+num blockSelection = randomInt(34);
+if(blockSelection <= 27) structure(0, 0, 0, "boulder_palette", "NONE");
+else if(blockSelection <= 32) block(0, 0, 0,"minecraft:coal_ore");
+else if(blockSelection <= 33) block(0, 0, 0,"minecraft:iron_ore");

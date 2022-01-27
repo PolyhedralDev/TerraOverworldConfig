@@ -1,0 +1,39 @@
+num randPrecision = 100;
+num radius = 2+randomInt(randPrecision)/randPrecision*6;
+num warp = 5;
+num warpFreq = 2;
+num squish = 1+randomInt(randPrecision)/randPrecision;
+num radiusSquared = pow(radius,2);
+num yTranslate = -1;
+
+if (check(radius, -radius/squish, 0) != "LAND" ||
+    check(-radius, -radius/squish, 0) != "LAND" ||
+    check(0, -radius/squish, radius) != "LAND" ||
+    check(0, -radius/squish, -radius) != "LAND"
+    ) fail;
+
+for (num x = -radius-warp; x < radius+warp; x = x + 1) {
+    for (num y = (-radius-warp)/squish; y < (radius+warp)/squish; y = y + 1) {
+        for (num z = -radius-warp; z < radius+warp; z = z + 1) {
+            num warpX = warp * sampler("simplex3",
+                                warpFreq*(x+originX()),
+                                warpFreq*(y+originY()+1000),
+                                warpFreq*(z+originZ()));
+            num warpY = warp * sampler("simplex3",
+                                warpFreq*(x+originX()),
+                                warpFreq*(y+originY()+2000),
+                                warpFreq*(z+originZ()));
+            num warpZ = warp * sampler("simplex3",
+                                warpFreq*(x+originX()),
+                                warpFreq*(y+originY()+3000),
+                                warpFreq*(z+originZ()));
+			num distanceSquared = pow(x+warpX,2)+pow((y+warpY)*squish,2)+pow(z+warpZ,2);
+            if (distanceSquared < radiusSquared / 2) {
+				structure(x, y+yTranslate, z, "boulder_ores", "NONE");
+            }
+			else if (distanceSquared < radiusSquared) {
+				structure(x, y+yTranslate, z, "boulder_palette", "NONE");
+			}
+        }
+    }
+}
