@@ -2,8 +2,6 @@ num randPrecision = 100;
 num goldenAngle = 2.39996;
 num pi = 3.14159;
 
-num warp = 15;
-num warpFrequency = 20;
 num trunkHeight = 40+randomInt(10);
 num trunkStartRadius = 2.5;
 num trunkMidRadius = 1.5;
@@ -26,7 +24,6 @@ str sideBranchBlockY = "minecraft:spruce_wood[axis=y]";
 str sideBranchBlockZ = "minecraft:spruce_wood[axis=z]";
 
 num t = 0;
-num it = 1;
 num currentRadius = trunkStartRadius;
 num currentRadiusSquared = pow2(currentRadius);
 num distanceSquared = 0;
@@ -81,13 +78,12 @@ for (num i = -2; i < trunkHeight; i = i + 1) {
     }
 
     t = i/trunkHeight;
-    it = 1-t;
     if (t < trunkMidPoint) currentRadius = t*(-trunkStartRadius+trunkMidRadius)/trunkMidPoint+trunkStartRadius;
     else currentRadius = (t-trunkMidPoint)*(trunkEndRadius-trunkMidRadius)/(1-trunkMidPoint)+trunkMidRadius;
     currentRadiusSquared = pow2(currentRadius);
     for (num x = round(-currentRadius); x < round(currentRadius); x = x + 1) {
         for (num z = round(-currentRadius); z < round(currentRadius); z = z + 1) {
-            distanceSquared = pow2(x)+pow2(z)+sampler("simplex3", x*warpFrequency, i, z*warpFrequency) * warp * it;
+            distanceSquared = pow2(x)+pow2(z);
             if (distanceSquared < currentRadiusSquared) {
                 block(x, i, z, trunkBlock, false);
             }
