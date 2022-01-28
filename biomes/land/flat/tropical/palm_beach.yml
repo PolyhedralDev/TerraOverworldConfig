@@ -21,5 +21,5 @@ palette:
 features:
   landforms:
     - SMALL_BOULDER_PATCHES
-
-# TODO: ADD PALM TREES
+  trees:
+    - PALM_TREES

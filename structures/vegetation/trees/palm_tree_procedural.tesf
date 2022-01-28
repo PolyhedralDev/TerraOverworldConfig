@@ -1,0 +1,50 @@
+num randPrecision = 100;
+num goldenAngle = 2.39996;
+num pi = 3.14159;
+
+num height = 6 + randomInt(20);
+num x = 0;
+num y = 0;
+num z = 0;
+num dx = (randomInt(11)-5)/15;
+num dz = (randomInt(11)-5)/15;
+
+// Generate trunk
+for (num unused = 0; y < height; y = y + 1) {
+    block(x, y, z, "minecraft:jungle_wood");
+    block(x, y+1, z, "minecraft:jungle_wood");
+    x = x + dx;
+    z = z + dz;
+}
+
+// Generate leaves at top
+num branches = 10;
+num branchLength = 3+height/4;
+num droop = 0.03;
+
+num branchAngle = randomInt(randPrecision)/randPrecision*2*pi;
+num dy = 0;
+num mag = 1;
+for (num b = 0; b < branches; b = b + 1) {
+    // Branch direction vector
+    dx = sin(branchAngle);
+    dy = b/branches*2-1;
+    dz = cos(branchAngle);
+    // Normalize vector
+    mag = sqrt(pow(dx,2)+pow(dy,2)+pow(dz,2));
+    dx = dx/mag;
+    dy = dy/mag;
+    dz = dz/mag;
+    for (num i = 0; i < branchLength; i = i + 0.5) {
+        block(x+dx*i, y+dy*i, z+dz*i, "minecraft:jungle_leaves[distance=1,persistent=false]", false);
+        block(x+dx*i, y+dy*i+0.5, z+dz*i, "minecraft:jungle_leaves[distance=1,persistent=false]", false);
+        // Downwards velocity as branch is further away
+        dy = dy - droop;
+        // Normalize vector
+        mag = sqrt(pow2(dx)+pow2(dy)+pow2(dz));
+        dx = dx/mag;
+        dy = dy/mag;
+        dz = dz/mag;
+    }
+    branchAngle = branchAngle + goldenAngle;
+}
