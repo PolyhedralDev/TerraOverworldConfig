@@ -1,0 +1,4 @@
+num height = 1+randomInt(4);
+for (num i = 0; i < height; i = i + 1) {
+    block(0, i, 0, "minecraft:sugar_cane", false);
+}

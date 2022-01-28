@@ -5,3 +5,13 @@ plantable-blocks:
   - minecraft:coarse_dirt
   - minecraft:moss_block
   - minecraft:rooted_dirt
+
+sugarcane-plantable-blocks:
+  - minecraft:sand
+  - minecraft:red_sand
+  - minecraft:grass_block
+  - minecraft:podzol
+  - minecraft:dirt
+  - minecraft:coarse_dirt
+  - minecraft:moss_block
+  - minecraft:rooted_dirt
