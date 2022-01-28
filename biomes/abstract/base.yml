@@ -14,6 +14,7 @@ ocean:
 features:
   global-preprocessors:
     - LAVA_FLOOR
+    - UNDERGROUND_LAVA_COLUMNS
     - CONTAIN_FLOATING_WATER
     - CAVE_GLOW_LICHEN
   underwater-flora:

@@ -1,0 +1,18 @@
+num i = 0;
+bool foundTop = false;
+for (num unused = 0; i < 319; i = i + 1) {
+    if (structure(0, i+1, 0, "is_rock", "NONE")) {
+        if (structure(1, i+1, 0, "is_rock", "NONE") &&
+            structure(-1, i+1, 0, "is_rock", "NONE") &&
+            structure(0, i+1, 1, "is_rock", "NONE") &&
+            structure(0, i+1, -1, "is_rock", "NONE")) {
+            block(0, i+1, 0, "minecraft:lava");
+            foundTop = true;
+            break;
+        }
+    }
+}
+if (!foundTop) fail;
+for (num unused = 0; i >= 0; i = i - 1) {
+    block(0, i, 0, "minecraft:lava[level=8]");
+}
