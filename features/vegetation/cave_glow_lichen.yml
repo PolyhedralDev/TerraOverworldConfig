@@ -1,0 +1,55 @@
+id: CAVE_GLOW_LICHEN
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 2313
+  threshold: 0.1
+
+locator:
+  type: AND
+  locators:
+    # Random heights
+    - type: RANDOM
+      height: &range
+        min: -50
+        max: 30
+      amount: 1
+      salt: 2913
+    # Require either air or water
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: OR
+        patterns:
+          - type: MATCH_AIR
+            offset: 0
+          - type: MATCH
+            block: minecraft:water
+            offset: 0
+    # Require an adjacent solid block
+    - type: OR
+      locators:
+        # Either solid above / below
+        - type: PATTERN
+          range: *range
+          pattern:
+            type: OR
+            patterns:
+              - type: MATCH_SOLID
+                offset: 1
+              - type: MATCH_SOLID
+                offset: -1
+        # Or solid next to block
+        - type: ADJACENT_PATTERN
+          range: *range
+          pattern:
+            type: MATCH_SOLID
+            offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: glow_lichen
