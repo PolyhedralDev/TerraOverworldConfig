@@ -30,8 +30,8 @@ slant:
 
 features:
   landforms:
-    - BOULDERS
-    - SMALL_BOULDER_PATCHES
+    - MOSSY_BOULDERS
+    - SMALL_MOSSY_BOULDER_PATCHES
   flora:
     - SWEET_BERRY_BUSH_PATCHES
     - FOREST_FLOWER_PATCHES

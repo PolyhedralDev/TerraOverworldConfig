@@ -33,3 +33,6 @@ slant:
 features:
   flora:
     - CACTUS_SPARSE
+  landforms:
+    - GRANITE_BOULDERS
+    - SMALL_GRANITE_BOULDER_PATCHES

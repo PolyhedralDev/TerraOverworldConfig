@@ -31,3 +31,5 @@ features:
     - SNOW_LAYERS
   preprocessors:
     - ICE_COASTLINE
+  landforms:
+    - BOULDERS

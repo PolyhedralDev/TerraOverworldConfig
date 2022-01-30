@@ -36,5 +36,5 @@ features:
   trees:
     - TEMPERATE_TREES
   landforms:
-    - BOULDERS
-    - SMALL_BOULDER_PATCHES
+    - MOSSY_BOULDERS
+    - SMALL_MOSSY_BOULDER_PATCHES
