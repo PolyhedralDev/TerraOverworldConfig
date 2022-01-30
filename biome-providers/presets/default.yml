@@ -19,11 +19,11 @@ biomes:
       # Replace deep ocean border with deep ocean
       - << biome-providers/stages/replace_deep_ocean_border.yml:stages
 
-      # Replace some higher coastal zones with flat ones
-      - << biome-providers/stages/flatten_coast_randomly.yml:stages
-
       # Split land & coast (determined by the source) into elevation zones
       - << biome-providers/stages/distribute_elevation_zones.yml:stages
+
+      # Replace some higher coastal zones with flat ones
+      - << biome-providers/stages/flatten_coast_randomly.yml:stages
 
       # Replace volcanic biomes with variants
       - << biome-providers/stages/add_volcanic_variations.yml:stages
