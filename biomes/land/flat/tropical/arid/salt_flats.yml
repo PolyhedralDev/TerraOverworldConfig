@@ -10,5 +10,5 @@ tags:
 palette:
   - SALT: 319
   - CALCITE_DIORITE_MIX: 63
-  - SANDY_BEACH: 61
+  - SAND: 61
   - << meta.yml:palette-bottom

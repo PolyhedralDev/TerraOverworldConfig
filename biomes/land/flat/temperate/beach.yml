@@ -15,7 +15,7 @@ colors:
 
 palette:
   - BLOCK:minecraft:stone: 319
-  - SANDY_BEACH: 75
+  - SAND: 75
   - << meta.yml:palette-bottom
 
 features:

@@ -9,7 +9,7 @@ ocean:
 
 palette:
   - SNOW: 319
-  - SANDY_BEACH: 61
+  - SAND: 61
   - << meta.yml:palette-bottom
 
 features:

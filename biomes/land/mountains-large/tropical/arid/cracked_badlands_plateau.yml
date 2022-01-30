@@ -6,7 +6,7 @@ color: $biomes/colors.yml:CRACKED_BADLANDS_PLATEAU
 
 palette:
   - RED_SAND: 319
-  - SANDY_BEACH: 64
+  - SAND: 64
   - << meta.yml:palette-bottom
 
 slant-depth: 50

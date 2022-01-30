@@ -9,14 +9,14 @@ tags:
 
 palette:
   - BLOCK:minecraft:stone: 319
-  - SANDY_BEACH: 62
+  - SAND: 62
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 4
     palette:
       - BLOCK:minecraft:stone: 319
-      - SANDY_BEACH: 62
+      - SAND: 62
       - << meta.yml:palette-bottom
 
 features:

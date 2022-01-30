@@ -15,14 +15,14 @@ colors:
 
 palette:
   - GRASS: 319
-  - SANDY_BEACH: 64
+  - SAND: 64
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 4
     palette:
       - BLOCK:minecraft:stone: 319
-      - SANDY_BEACH: 64
+      - SAND: 64
       - << meta.yml:palette-bottom
 
 features:

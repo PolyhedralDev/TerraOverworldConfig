@@ -3,7 +3,7 @@ type: BIOME
 abstract: true
 
 palette:
-  - SANDY_BEACH: 319
+  - SAND: 319
   - << meta.yml:palette-bottom
 
 slant-depth: 4

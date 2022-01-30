@@ -9,7 +9,7 @@ tags:
 
 palette:
   - SAND: 319
-  - SANDY_BEACH: 64
+  - SAND: 64
   - << meta.yml:palette-bottom
 
 features:

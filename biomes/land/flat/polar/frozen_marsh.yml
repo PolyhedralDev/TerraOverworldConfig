@@ -12,7 +12,7 @@ ocean:
 
 palette:
   - GRASS_SNOW_MIX: 319
-  - SANDY_BEACH: 61
+  - SAND: 61
   - << meta.yml:palette-bottom
 
 slant:

@@ -9,7 +9,6 @@ tags:
 
 palette:
   - GRASS: 319
-  - SAND: 64
   - << meta.yml:palette-bottom
 
 slant:
