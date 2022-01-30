@@ -11,3 +11,7 @@ palette:
   - BLOCK:minecraft:stone: 319
   - GRAVEL: 62
   - << meta.yml:palette-bottom
+
+features:
+  preprocessors:
+    - COASTAL_WATER_POOLS

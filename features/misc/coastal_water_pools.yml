@@ -1,0 +1,54 @@
+id: COASTAL_WATER_POOLS
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: PROBABILITY
+    sampler:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.03
+      salt: 4293
+  threshold: 0.15
+
+locator:
+  type: AND
+  locators:
+    - type: PATTERN
+      range: &range
+        min: 62
+        max: 69
+      pattern:
+        type: AND
+        patterns:
+          - type: MATCH_AIR
+            offset: 1
+          - type: MATCH_SET
+            blocks:
+              - minecraft:stone
+              - minecraft:sand
+              - minecraft:gravel
+            offset: 0
+          - type: MATCH_SOLID
+            offset: -1
+    - type: ADJACENT_PATTERN
+      range: *range
+      match-all: true
+      pattern:
+        type: OR
+        patterns:
+          - type: MATCH_SET
+            blocks:
+              - minecraft:stone
+              - minecraft:sand
+              - minecraft:gravel
+            offset: 0
+          - type: MATCH
+            block: minecraft:water
+            offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: BLOCK:minecraft:water
+      
