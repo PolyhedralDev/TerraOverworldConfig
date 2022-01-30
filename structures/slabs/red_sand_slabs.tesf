@@ -64,9 +64,5 @@ if (check(0, -0.5, 0) == "LAND") {
         block(0, 0, 0, "minecraft:red_sandstone_stairs[half=bottom,shape=inner_left,facing=west]");
         // #.
         // ##
-    } else {
-        block(0, 0, 0, "minecraft:red_sandstone_slab");
-        // ..
-        // ..
     }
 }
