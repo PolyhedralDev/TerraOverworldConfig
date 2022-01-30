@@ -173,3 +173,10 @@ tuff:
   range:
     min: -64
     max: 0
+
+river-dripstone:
+  averageCountPerChunk: 2
+  salt: 2952
+  range:
+    min: 75
+    max: 85

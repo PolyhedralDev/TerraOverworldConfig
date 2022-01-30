@@ -1,0 +1,7 @@
+id: RIVER_FROZEN
+type: BIOME
+abstract: true
+
+features:
+  river-decoration:
+    - CEILING_ICICLES

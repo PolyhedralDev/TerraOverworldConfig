@@ -89,6 +89,9 @@ stages:
   - id: deposits # Adds things like dirt, andesite and gravel patches
     type: FEATURE
 
+  - id: river-decoration # Used for biome specific river variant features
+    type: FEATURE
+
   - id: underwater-flora # Used for small features placed underwater like sea-grass
     type: FEATURE
 

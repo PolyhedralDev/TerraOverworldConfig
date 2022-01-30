@@ -1,0 +1,7 @@
+num length = 2+randomInt(5);
+block(0, 0, 0, "minecraft:pointed_dripstone[vertical_direction=down, thickness=base]", false);
+for (num i = 1; i <= length - 2; i = i + 1) {
+    block(0, -i, 0, "minecraft:pointed_dripstone[vertical_direction=down, thickness=middle]", false);
+}
+block(0, -(length-1), 0, "minecraft:pointed_dripstone[vertical_direction=down, thickness=frustum]", false);
+block(0, -length, 0, "minecraft:pointed_dripstone[vertical_direction=down, thickness=tip]", false);
