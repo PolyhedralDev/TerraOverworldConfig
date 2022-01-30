@@ -3,15 +3,25 @@ type: FEATURE
 
 distributor:
   type: PADDED_GRID
-  width: 8
-  padding: 5
+  width: 7
+  padding: 4
   salt: 7234
 
 locator:
-  type: TOP
-  range:
-    min: 60
-    max: 255
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: 60
+        max: 255
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:ice
+          - minecraft:packed_ice
+        offset: -1
 
 structures:
   distribution:
