@@ -9,7 +9,7 @@ str trunkBlockZ = "minecraft:oak_log[axis=z]";
 str leafBlock   = "minecraft:oak_leaves[distance=1,persistent=false]";
 
 // Tree gen logic
-num leafMidPointRatio = 0.3;
+num leafMidPointRatio = 0.25;
 num leafMidHeight = leafBottomHeight + (leafTopHeight-leafBottomHeight) * leafMidPointRatio;
 for (num y = 0; y <= leafTopHeight; y = y + 1) {
     num radius = 0;
@@ -71,4 +71,10 @@ for (num y = 0; y <= leafTopHeight; y = y + 1) {
         block(0, y, 0, trunkBlockY); // Main trunk
     }
 }
+
+num beeNestRoll = randomInt(30); // 1 in 30 chance
+if (beeNestRoll == 0) {
+    structure(0, leafBottomHeight, 0, "bee_nest", "NONE", "CW_90", "CCW_90", "CW_180");
+}
+
 block(0, -1, 0, "minecraft:dirt");

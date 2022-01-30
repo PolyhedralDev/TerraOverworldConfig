@@ -1,0 +1,13 @@
+// Rotate bee nest outwards
+if (rotation() == "NONE") block(-1, 0, 0, "minecraft:bee_nest[facing=west]");
+else if (rotation() == "CW_90") block(-1, 0, 0, "minecraft:bee_nest[facing=south]");
+else if (rotation() == "CW_180") block(-1, 0, 0, "minecraft:bee_nest[facing=east]");
+else block(-1, 0, 0, "minecraft:bee_nest[facing=north]");
+// Spawn bees
+entity(-2, 0, 0, "minecraft:bee");
+entity(-2, 0, 0, "minecraft:bee");
+entity(-2, 0, 0, "minecraft:bee");
+// Add air so bees don't suffocate
+block(-1, -1, 0, "minecraft:air");
+block(-2, 0, 0, "minecraft:air");
+block(-2, -1, 0, "minecraft:air");
