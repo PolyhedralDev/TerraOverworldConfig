@@ -53,6 +53,9 @@ biomes:
   
       - << biome-providers/stages/expand.yml:stages
       - << biome-providers/stages/expand.yml:stages
+
+      - << biome-providers/stages/add_border_biomes.yml:stages
+      
       - << biome-providers/stages/expand.yml:stages
 
       - << biome-providers/stages/smooth.yml:stages

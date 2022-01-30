@@ -1,0 +1,13 @@
+stages:
+  - type: BORDER
+    from: ALL
+    replace: BIOME:OVERGROWN_CLIFFS
+    to: OVERGROWN_CLIFFS_BORDER
+    sampler:
+      type: CONSTANT
+  - type: BORDER
+    from: ALL
+    replace: BIOME:DESERT_PILLARS
+    to: DESERT_PILLARS_BORDER
+    sampler:
+      type: CONSTANT
