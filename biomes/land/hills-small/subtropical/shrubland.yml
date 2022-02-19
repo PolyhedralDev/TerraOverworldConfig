@@ -1,0 +1,24 @@
+id: SHRUBLAND
+type: BIOME
+extends: [ EQ_HILLS, CARVING_LAND, BASE ]
+vanilla: minecraft:plains
+color: $biomes/colors.yml:SHRUBLAND
+
+tags:
+  - USE_RIVER
+
+colors:
+  grass: 0x90af3b
+
+palette:
+  - GRASS_VARIATION: 319
+  - SAND: 64
+  - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - GRASS
+    - TALL_GRASS
+    - FLOWER_PATCHES
+  trees:
+    - OAK_BUSHES
