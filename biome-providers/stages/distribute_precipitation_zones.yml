@@ -104,10 +104,10 @@ stages:
         - FOREST_LOW: 3
   
         # Small hills subtropical semi-humid
-        - todo: 3
+        - SHRUBLAND: 3
   
         # Small hills subtropical semi-arid
-        - todo: 3
+        - DRY_SHRUBLAND: 3
   
         # Small hills subtropical arid
         - SAVANNA_LOW: 1
