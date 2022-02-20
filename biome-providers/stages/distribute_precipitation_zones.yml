@@ -261,13 +261,13 @@ stages:
     # ----------------------
       mountains-large-tropical:
         # Large mountains tropical humid
-        - todo: 1
+        - JUNGLY_MOUNTAINS: 1
   
         # Large mountains tropical semi-humid
-        - todo: 1
+        - WILD_HIGHLANDS: 1
   
         # Large mountains tropical semi-arid
-        - todo: 1
+        - DRY_WILD_HIGHLANDS: 1
   
         # Large mountains tropical arid
         - mountains-large-tropical-arid: 1

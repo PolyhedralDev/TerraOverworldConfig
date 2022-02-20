@@ -1,0 +1,45 @@
+id: DRY_WILD_HIGHLANDS
+type: BIOME
+extends: [ EQ_ERODED_TERRACED_MOUNTAINS, CARVING_LAND, BASE ]
+vanilla: minecraft:jungle
+color: $biomes/colors.yml:DRY_WILD_HIGHLANDS
+
+palette:
+  - GRASS: 319
+  - SAND: 63
+  - << meta.yml:palette-bottom
+
+colors:
+  grass: 0x919c33
+
+slant:
+  - threshold: 2
+    palette:
+      - SAND: 319
+      - << meta.yml:palette-bottom
+  - threshold: 2.5
+    palette:
+      - MOSSY_COBBLESTONE_STONE: 319
+      - << meta.yml:palette-bottom
+  - threshold: 3.5
+    palette:
+      - TUFF_STONE: 319
+      - << meta.yml:palette-bottom
+  - threshold: 4
+    palette:
+      - BLOCK:minecraft:stone: 319
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - GRASS_SPARSE
+    - FERNS
+    - DEAD_BUSHES
+  trees:
+    - JUNGLE_TREES
+    - OAK_BUSHES
+    - LARGE_LEAF_VINES
+    - JUNGLE_BUSHES
+  landforms:
+    - MOSSY_BOULDERS
+    - SMALL_MOSSY_BOULDER_PATCHES
