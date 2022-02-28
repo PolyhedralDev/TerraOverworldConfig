@@ -28,6 +28,9 @@ features:
   flora:
     - GRASS
     - FOREST_FLOWER_PATCHES
+    - FERNS
   trees:
     - SUBTROPICAL_BUSHES
     - EVERGREEN_TREES
+  landforms:
+    - SMALL_BOULDER_PATCHES
