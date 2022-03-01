@@ -32,7 +32,7 @@ stages:
 
       # Flat tropical semi-arid
       - SAVANNA_FLAT: 1
-      - WARM_PRAIRIE_FLAT: 1
+      - GRASS_SAVANNA: 1
 
       # Flat tropical arid
       - WARM_STEPPE_FLAT: 1
@@ -51,7 +51,7 @@ stages:
   
         # Flat subtropical arid
         - SAVANNA_FLAT: 1
-        - WARM_PRAIRIE_FLAT: 1
+        - GRASS_SAVANNA: 1
         - WARM_STEPPE_FLAT: 1
   
       flat-temperate:
@@ -93,7 +93,7 @@ stages:
         - SAVANNA_LOW: 2
   
         # Small hills tropical semi-arid
-        - WARM_PRAIRIE_LOW: 1
+        - GRASS_SAVANNA_LOW_HILLS: 1
         - WARM_STEPPE_LOW: 1
   
         # Small hills tropical arid
@@ -111,7 +111,7 @@ stages:
   
         # Small hills subtropical arid
         - SAVANNA_LOW: 1
-        - WARM_PRAIRIE_LOW: 1
+        - GRASS_SAVANNA_LOW_HILLS: 1
         - WARM_STEPPE_LOW: 1
   
       hills-small-temperate:
@@ -152,7 +152,7 @@ stages:
         - SAVANNA: 2
   
         # Large hills tropical semi-arid
-        - WARM_PRAIRIE: 1
+        - GRASS_SAVANNA_HILLS: 1
         - WARM_STEPPE: 1
   
         # Large hills tropical semi-arid
@@ -170,7 +170,7 @@ stages:
   
         # Large hills subtropical arid
         - SAVANNA: 1
-        - WARM_PRAIRIE: 1
+        - GRASS_SAVANNA_HILLS: 1
         - WARM_STEPPE: 1
   
       hills-large-temperate:

@@ -1,7 +1,7 @@
-id: WARM_PRAIRIE
+id: GRASS_SAVANNA_HILLS
 type: BIOME
 extends: SAVANNA
-color: $biomes/colors.yml:WARM_PRAIRIE
+color: $biomes/colors.yml:GRASS_SAVANNA_HILLS
 
 features:
   flora:

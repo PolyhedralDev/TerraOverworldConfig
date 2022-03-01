@@ -1,0 +1,7 @@
+id: GRASS_SAVANNA
+type: BIOME
+extends: [ EQ_PLAIN, GRASS_SAVANNA_HILLS ]
+color: $biomes/colors.yml:GRASS_SAVANNA
+
+tags:
+  - USE_RIVER_FLAT
