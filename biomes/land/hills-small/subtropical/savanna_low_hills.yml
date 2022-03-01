@@ -1,7 +1,7 @@
-id: SAVANNA_LOW
+id: SAVANNA_LOW_HILLS
 type: BIOME
 extends: [ EQ_TERRACED_HILLS, SAVANNA ]
-color: $biomes/colors.yml:SAVANNA_FLAT
+color: $biomes/colors.yml:SAVANNA_LOW_HILLS
 
 tags:
   - USE_RIVER_FLAT

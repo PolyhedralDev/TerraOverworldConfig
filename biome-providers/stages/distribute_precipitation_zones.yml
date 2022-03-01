@@ -31,7 +31,7 @@ stages:
       - OAK_SAVANNA_FLAT: 2
 
       # Flat tropical semi-arid
-      - SAVANNA_FLAT: 1
+      - SAVANNA: 1
       - GRASS_SAVANNA: 1
 
       # Flat tropical arid
@@ -50,7 +50,7 @@ stages:
         - OAK_SAVANNA: 3
   
         # Flat subtropical arid
-        - SAVANNA_FLAT: 1
+        - SAVANNA: 1
         - GRASS_SAVANNA: 1
         - WARM_STEPPE_FLAT: 1
   
@@ -90,7 +90,7 @@ stages:
         - JUNGLE_LOW: 2
   
         # Small hills tropical semi-humid
-        - SAVANNA_LOW: 2
+        - SAVANNA_LOW_HILLS: 2
   
         # Small hills tropical semi-arid
         - GRASS_SAVANNA_LOW_HILLS: 1
@@ -110,7 +110,7 @@ stages:
         - DRY_SHRUBLAND: 3
   
         # Small hills subtropical arid
-        - SAVANNA_LOW: 1
+        - SAVANNA_LOW_Hills: 1
         - GRASS_SAVANNA_LOW_HILLS: 1
         - WARM_STEPPE_LOW: 1
   
@@ -149,7 +149,7 @@ stages:
         - JUNGLE: 2
   
         # Large hills tropical semi-humid
-        - SAVANNA: 2
+        - SAVANNA_HILLS: 2
   
         # Large hills tropical semi-arid
         - GRASS_SAVANNA_HILLS: 1
@@ -169,7 +169,7 @@ stages:
         - EVERGREEN_FOREST: 3
   
         # Large hills subtropical arid
-        - SAVANNA: 1
+        - SAVANNA_HILLS: 1
         - GRASS_SAVANNA_HILLS: 1
         - WARM_STEPPE: 1
   
