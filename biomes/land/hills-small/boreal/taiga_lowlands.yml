@@ -1,7 +1,7 @@
-id: TAIGA_LOW
+id: TAIGA_LOWLANDS
 type: BIOME
 extends: [ EQ_TERRACED_HILLS, TAIGA ]
-color: $biomes/colors.yml:TAIGA_LOW
+color: $biomes/colors.yml:TAIGA_LOWLANDS
 
 features:
   trees:
