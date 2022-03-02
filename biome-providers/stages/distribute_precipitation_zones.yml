@@ -160,28 +160,31 @@ stages:
   
       hills-large-subtropical:
         # Large hills subtropical humid
-        - FOREST: 3
+        - EVERGREEN_FOREST: 3
+        - FLOWER_FOREST: 1
   
         # Large hills subtropical semi-humid
-        - SEASONAL_FOREST: 3
+        - FLOWER_FOREST: 3
+        - EVERGREEN_FOREST: 1
   
         # Large hills subtropical semi-arid
-        - EVERGREEN_FOREST: 3
+        - FOREST: 1
   
         # Large hills subtropical arid
-        - SAVANNA_HILLS: 1
         - GRASS_SAVANNA_HILLS: 1
+        - SAVANNA_HILLS: 1
         - WARM_HILLS: 1
   
       hills-large-temperate:
         # Large hills temperate humid
-        - SEASONAL_FOREST: 1
+        - EVERGREEN_FOREST: 1
   
         # Large hills temperate semi-humid
-        - FOREST: 1
+        - FOREST: 6
+        - FLOWER_FOREST: 1
   
         # Large hills temperate semi-arid
-        - FOREST: 1
+        - SEASONAL_FOREST: 1
   
         # Large hills temperate arid
         - BIRCH_FOREST: 1
