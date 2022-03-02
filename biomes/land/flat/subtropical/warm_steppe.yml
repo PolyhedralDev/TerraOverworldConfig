@@ -1,0 +1,7 @@
+id: WARM_STEPPE
+type: BIOME
+extends: [ EQ_PLAIN, WARM_HILLS ]
+color: $biomes/colors.yml:WARM_STEPPE
+
+tags:
+  - USE_RIVER_FLAT
