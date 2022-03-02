@@ -25,10 +25,10 @@ stages:
     default-from: flat-tropical
     default-to:
       # Flat tropical humid
-      - JUNGLE_FLAT: 2
+      - JUNGLE_FLATS: 2
 
       # Flat tropical semi-humid
-      - OAK_SAVANNA_FLAT: 2
+      - OAK_SAVANNA_FLATS: 2
 
       # Flat tropical semi-arid
       - SAVANNA: 1
@@ -41,10 +41,10 @@ stages:
     to:
       flat-subtropical:
         # Flat subtropical humid
-        - JUNGLE_FLAT: 3
+        - JUNGLE_FLATS: 3
   
         # Flat subtropical semi-humid
-        - FOREST_FLAT: 3
+        - FOREST_FLATS: 3
   
         # Flat subtropical semi-arid
         - OAK_SAVANNA: 3
@@ -56,7 +56,7 @@ stages:
   
       flat-temperate:
         # Flat temperate humid
-        - FOREST_FLAT: 1
+        - FOREST_FLATS: 1
         - OAK_SAVANNA: 1
   
         # Flat temperate semi-humid
@@ -71,17 +71,17 @@ stages:
   
       flat-boreal:
         # Flat boreal humid
-        - TAIGA_FLAT: 1
+        - TAIGA_FLATS: 1
   
         # Flat boreal semi-humid
-        - TAIGA_FLAT: 1
+        - TAIGA_FLATS: 1
   
         # Flat boreal semi-arid
-        - TAIGA_FLAT: 1
+        - TAIGA_FLATS: 1
   
         # Flat boreal arid
-        - TAIGA_FLAT: 1
-    
+        - TAIGA_FLATS: 1
+
       # ------------------
       # Small Hills Biomes
       # ------------------
