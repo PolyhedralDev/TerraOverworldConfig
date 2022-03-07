@@ -1,0 +1,7 @@
+id: EVERGREEN_FLATS
+type: BIOME
+extends: [ EQ_PLAIN, EVERGREEN_FOREST ]
+color: $biomes/colors.yml:EVERGREEN_FOREST
+
+tags:
+  - USE_RIVER_FLAT
