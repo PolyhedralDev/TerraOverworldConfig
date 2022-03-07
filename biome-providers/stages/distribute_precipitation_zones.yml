@@ -44,7 +44,7 @@ stages:
         - JUNGLE_FLATS: 3
   
         # Flat subtropical semi-humid
-        - FOREST_FLATS: 3
+        - EVERGREEN_FLATS: 3
   
         # Flat subtropical semi-arid
         - OAK_SAVANNA: 3
