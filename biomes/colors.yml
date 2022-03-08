@@ -112,6 +112,7 @@ SUBTROPICAL_DEEP_OCEAN: 0x296fad
 # Temperate Aquatic Biomes
 OCEAN: 0x1787d4
 DEEP_OCEAN: 0x3757ad
+DEEP_OCEAN_TRENCH: 0x29458f
 
 # Boreal Aquatic Biomes
 COLD_OCEAN: 0x2080c9
