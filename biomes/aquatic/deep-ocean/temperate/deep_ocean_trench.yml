@@ -1,6 +1,6 @@
 id: DEEP_OCEAN_TRENCH
 type: BIOME
-extends: [ PALETTE_OCEAN, EQ_DEEP_OCEAN, CARVING_OCEAN, BASE ]
+extends: [ PALETTE_OCEAN, EQ_OCEAN_TRENCH, CARVING_OCEAN, BASE ]
 vanilla: minecraft:deep_ocean
 color: $biomes/colors.yml:DEEP_OCEAN_TRENCH
 
