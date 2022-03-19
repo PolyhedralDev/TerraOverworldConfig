@@ -87,7 +87,7 @@ stages:
       # ------------------
       hills-small-tropical:
         # Small hills tropical humid
-        - JUNGLE_LOW: 2
+        - JUNGLE_LOWLANDS: 2
   
         # Small hills tropical semi-humid
         - SAVANNA_LOW_HILLS: 2
@@ -101,7 +101,7 @@ stages:
   
       hills-small-subtropical:
         # Small hills subtropical humid
-        - FOREST_LOW: 3
+        - FOREST_LOWLANDS: 3
   
         # Small hills subtropical semi-humid
         - SHRUBLAND: 3
@@ -122,23 +122,23 @@ stages:
         - TEMPERATE_BUTTES: 1
   
         # Small hills temperate semi-arid
-        - FOREST_LOW: 1
+        - FOREST_LOWLANDS: 1
   
         # Small hills temperate arid
-        - FOREST_LOW: 1
+        - FOREST_LOWLANDS: 1
   
       hills-small-boreal:
         # Small hills boreal humid
-        - TAIGA_LOW: 1
+        - TAIGA_LOWLANDS: 1
   
         # Small hills boreal semi-humid
-        - TAIGA_LOW: 1
+        - TAIGA_LOWLANDS: 1
   
         # Small hills boreal semi-arid
-        - TAIGA_LOW: 1
+        - TAIGA_LOWLANDS: 1
   
         # Small hills boreal arid
-        - TAIGA_LOW: 1
+        - TAIGA_LOWLANDS: 1
   
       # ------------------
       # Large Hills Biomes
