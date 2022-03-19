@@ -132,7 +132,7 @@ stages:
         # -------------
         # Small Hills Subtropical Arid
         # -------------
-        - DESERT: 1
+        - XERIC_LOW_HILLS: 1
 
       hills-small-temperate:
         # -------------

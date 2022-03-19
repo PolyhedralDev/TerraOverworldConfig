@@ -1,0 +1,7 @@
+id: XERIC_LOW_HILLS
+type: BIOME
+extends: [ EQ_TERRACED_HILLS, XERIC_HILLS ]
+color: $biomes/colors.yml:XERIC_LOW_HILLS
+
+tags:
+  - USE_RIVER_FLAT
