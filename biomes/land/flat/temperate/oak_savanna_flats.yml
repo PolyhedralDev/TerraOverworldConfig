@@ -1,7 +1,0 @@
-id: OAK_SAVANNA_FLATS
-type: BIOME
-extends: [ EQ_PLAIN_PEAKS, OAK_SAVANNA ]
-color: $biomes/colors.yml:OAK_SAVANNA_FLATS
-
-tags:
-  - USE_RIVER_FLAT

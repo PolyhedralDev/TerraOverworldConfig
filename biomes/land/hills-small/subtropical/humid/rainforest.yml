@@ -1,0 +1,7 @@
+id: RAINFOREST
+type: BIOME
+extends: [ EQ_PLAIN, RAINFOREST_HILLS ]
+color: $biomes/colors.yml:RAINFOREST
+
+tags:
+  - USE_RIVER_FLAT

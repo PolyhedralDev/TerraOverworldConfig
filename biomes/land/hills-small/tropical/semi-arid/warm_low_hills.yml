@@ -1,0 +1,7 @@
+id: WARM_LOW_HILLS
+type: BIOME
+extends: [ EQ_TERRACED_HILLS, WARM_HILLS ]
+color: $biomes/colors.yml:WARM_LOW_HILLS
+
+tags:
+  - USE_RIVER_FLAT

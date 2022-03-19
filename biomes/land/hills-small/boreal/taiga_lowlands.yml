@@ -1,8 +1,0 @@
-id: TAIGA_LOWLANDS
-type: BIOME
-extends: [ EQ_TERRACED_HILLS, TAIGA ]
-color: $biomes/colors.yml:TAIGA_LOWLANDS
-
-features:
-  trees:
-    - SPRUCE_TREE_PATCHES
