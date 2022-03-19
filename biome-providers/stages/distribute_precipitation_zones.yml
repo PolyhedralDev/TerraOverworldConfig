@@ -110,7 +110,7 @@ stages:
         - DRY_SHRUBLAND: 3
   
         # Small hills subtropical arid
-        - SAVANNA_LOW_Hills: 1
+        - SAVANNA_LOW_HILLS: 1
         - GRASS_SAVANNA_LOW_HILLS: 1
         - WARM_HILLY_STEPPE: 1
   
