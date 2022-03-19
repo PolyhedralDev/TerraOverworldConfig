@@ -184,10 +184,13 @@ stages:
         - FLOWER_FOREST: 1
   
         # Large hills temperate semi-arid
-        - SEASONAL_FOREST: 1
+        - SEASONAL_FOREST: 6
+        - SEASONAL_FLOWER_FOREST: 1
   
         # Large hills temperate arid
-        - BIRCH_FOREST: 1
+        - BIRCH_FOREST: 8
+        - SEASONAL_FOREST: 2
+        - SEASONAL_FLOWER_FOREST: 1
   
       hills-large-boreal:
         # Large hills boreal humid
