@@ -270,10 +270,6 @@ stages:
         # Mountains Temperate Semi-Humid
         # -------------
         - TEMPERATE_MOUNTAINS: 8
-        # -------------
-        # Mountains Temperate Semi-Arid
-        # -------------
-        - todo: 1
 
       mountains-small-boreal:
         # -------------
@@ -311,19 +307,7 @@ stages:
         # -------------
         # Large Mountains Subtropical Humid
         # -------------
-        - todo: 1
-        # -------------
-        # Large Mountains Subtropical Semi-Humid
-        # -------------
-        - todo: 1
-        # -------------
-        # Large Mountains Subtropical Semi-Arid
-        # -------------
-        - todo: 1
-        # -------------
-        # Large Mountains Subtropical Arid
-        # -------------
-        - todo: 1
+        - LARGE_MONSOON_MOUNTAINS: 1
 
       mountains-large-temperate:
         # -------------

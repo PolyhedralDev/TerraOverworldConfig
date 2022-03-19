@@ -1,0 +1,6 @@
+id: LARGE_MONSOON_MOUNTAINS
+type: BIOME
+extends: [ EQ_TERRACED_MOUNTAINS, MONSOON_MOUNTAINS ]
+vanilla: minecraft:sparse_jungle
+color: $biomes/colors.yml:LARGE_MONSOON_MOUNTAINS
+
