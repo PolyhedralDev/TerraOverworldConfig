@@ -189,7 +189,7 @@ stages:
       
       hills-small-polar:
         - ICE_SPIKES: 1
-        - TUNDRA_LOW: 3
+        - TUNDRA_LOWLANDS: 3
       
       hills-large-polar:
         - TUNDRA_HILLS: 1
