@@ -110,7 +110,7 @@ stages:
         # -------------
         - WARM_LOW_HILLS: 1
         # -------------
-        # Small Hills Tropical Semi-Arid
+        # Small Hills Tropical Arid
         # -------------
         - DESERT: 6
         - BADLANDS_BUTTES: 1
