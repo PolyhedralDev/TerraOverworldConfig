@@ -27,6 +27,6 @@ stages:
       land:
         - flat: 2
         - hills-small: 1
-        - hills-large: 1
+        - hills-large: 2
         - mountains-small: 1
         - mountains-large: 2
