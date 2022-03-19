@@ -14,19 +14,19 @@ biome-distribution:
   # this produces larger landmasses and larger oceans, and vice-versa when
   # decreasing it.
 
-  temperature-scale: 50
+  temperature-scale: 60
   # Controls the scale of temperature zones. Most biomes are placed according to
   # a temperature map so hot biomes can't generate next to cold biomes, as well as
   # allowing for biomes of similar temperatures to generate together. Increasing this
   # will increase the distance between temperature changes, which results in things like
   # hot and cold biomes generating further apart - and vice versa when decreasing it.
 
-  precipitation-scale: 40
+  precipitation-scale: 50
   # Controls the scale of precipitation zones. Same idea as temperature zones, where
   # humid biomes generate away from arid biomes, and biomes of similar precipitation
   # generate together.
   
-  elevation-scale: 40
+  elevation-scale: 35
   # Controls the scale of elevation zones. Most land biomes belong to
   # an elevation zone, in addition to temperature and precipitation. How far apart / close
   # together these elevation zones are is determined by this parameter. If you want more
