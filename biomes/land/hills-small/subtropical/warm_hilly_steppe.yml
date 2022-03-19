@@ -1,0 +1,7 @@
+id: WARM_HILLY_STEPPE
+type: BIOME
+extends: [ EQ_TERRACED_HILLS, WARM_HILLS ]
+color: $biomes/colors.yml:WARM_HILLY_STEPPE
+
+tags:
+  - USE_RIVER_FLAT

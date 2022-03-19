@@ -1,7 +1,7 @@
-id: WARM_STEPPE
+id: WARM_HILLS
 type: BIOME
 extends: [ COLOR_XERIC, SAVANNA ]
-color: $biomes/colors.yml:WARM_STEPPE
+color: $biomes/colors.yml:WARM_HILLS
 
 features:
   flora:

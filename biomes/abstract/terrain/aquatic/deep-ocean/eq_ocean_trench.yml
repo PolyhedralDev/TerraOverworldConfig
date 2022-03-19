@@ -1,0 +1,17 @@
+id: EQ_OCEAN_TRENCH
+type: BIOME
+abstract: true
+
+# Rocky terrain far under ocean level.
+
+terrain:
+  sampler:
+    dimensions: 3
+    type: LINEAR_HEIGHTMAP
+    base: 20
+  sampler-2d:
+    dimensions: 2
+    type: EXPRESSION
+    variables:
+      height: 60
+    expression: "|simplex(x/2, z/2)| * height"

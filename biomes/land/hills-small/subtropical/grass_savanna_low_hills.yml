@@ -1,0 +1,7 @@
+id: GRASS_SAVANNA_LOW_HILLS
+type: BIOME
+extends: [ EQ_TERRACED_HILLS, GRASS_SAVANNA_HILLS ]
+color: $biomes/colors.yml:GRASS_SAVANNA_LOW_HILLS
+
+tags:
+  - USE_RIVER_FLAT

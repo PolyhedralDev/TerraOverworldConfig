@@ -33,4 +33,5 @@ features:
     - SUBTROPICAL_BUSHES
     - EVERGREEN_TREES
   landforms:
+    - MOSSY_BOULDERS
     - SMALL_BOULDER_PATCHES

@@ -1,7 +1,7 @@
-id: FOREST_FLAT
+id: FOREST_FLATS
 type: BIOME
 extends: [ EQ_PLAIN_PEAKS, FOREST ]
-color: $biomes/colors.yml:FOREST_FLAT
+color: $biomes/colors.yml:FOREST_FLATS
 
 tags:
   - USE_RIVER_FLAT

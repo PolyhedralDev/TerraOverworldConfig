@@ -25,38 +25,38 @@ stages:
     default-from: flat-tropical
     default-to:
       # Flat tropical humid
-      - JUNGLE_FLAT: 2
+      - JUNGLE_FLATS: 2
 
       # Flat tropical semi-humid
-      - OAK_SAVANNA_FLAT: 2
+      - OAK_SAVANNA_FLATS: 2
 
       # Flat tropical semi-arid
-      - SAVANNA_FLAT: 1
-      - WARM_PRAIRIE_FLAT: 1
+      - SAVANNA: 1
+      - GRASS_SAVANNA: 1
 
       # Flat tropical arid
-      - WARM_STEPPE_FLAT: 1
+      - WARM_STEPPE: 1
       - XERIC_PLAINS: 1
   
     to:
       flat-subtropical:
         # Flat subtropical humid
-        - JUNGLE_FLAT: 3
+        - JUNGLE_FLATS: 3
   
         # Flat subtropical semi-humid
-        - FOREST_FLAT: 3
+        - EVERGREEN_FLATS: 3
   
         # Flat subtropical semi-arid
         - OAK_SAVANNA: 3
   
         # Flat subtropical arid
-        - SAVANNA_FLAT: 1
-        - WARM_PRAIRIE_FLAT: 1
-        - WARM_STEPPE_FLAT: 1
+        - SAVANNA: 1
+        - GRASS_SAVANNA: 1
+        - WARM_STEPPE: 1
   
       flat-temperate:
         # Flat temperate humid
-        - FOREST_FLAT: 1
+        - FOREST_FLATS: 1
         - OAK_SAVANNA: 1
   
         # Flat temperate semi-humid
@@ -71,17 +71,17 @@ stages:
   
       flat-boreal:
         # Flat boreal humid
-        - TAIGA_FLAT: 1
+        - TAIGA_FLATS: 1
   
         # Flat boreal semi-humid
-        - TAIGA_FLAT: 1
+        - TAIGA_FLATS: 1
   
         # Flat boreal semi-arid
-        - TAIGA_FLAT: 1
+        - TAIGA_FLATS: 1
   
         # Flat boreal arid
-        - TAIGA_FLAT: 1
-    
+        - TAIGA_FLATS: 1
+
       # ------------------
       # Small Hills Biomes
       # ------------------
@@ -90,11 +90,11 @@ stages:
         - JUNGLE_LOW: 2
   
         # Small hills tropical semi-humid
-        - SAVANNA_LOW: 2
+        - SAVANNA_LOW_HILLS: 2
   
         # Small hills tropical semi-arid
-        - WARM_PRAIRIE_LOW: 1
-        - WARM_STEPPE_LOW: 1
+        - GRASS_SAVANNA_LOW_HILLS: 1
+        - WARM_HILLY_STEPPE: 1
   
         # Small hills tropical arid
         - hills-small-tropical-arid: 2
@@ -110,9 +110,9 @@ stages:
         - DRY_SHRUBLAND: 3
   
         # Small hills subtropical arid
-        - SAVANNA_LOW: 1
-        - WARM_PRAIRIE_LOW: 1
-        - WARM_STEPPE_LOW: 1
+        - SAVANNA_LOW_Hills: 1
+        - GRASS_SAVANNA_LOW_HILLS: 1
+        - WARM_HILLY_STEPPE: 1
   
       hills-small-temperate:
         # Small hills temperate humid
@@ -149,39 +149,42 @@ stages:
         - JUNGLE: 2
   
         # Large hills tropical semi-humid
-        - SAVANNA: 2
+        - SAVANNA_HILLS: 2
   
         # Large hills tropical semi-arid
-        - WARM_PRAIRIE: 1
-        - WARM_STEPPE: 1
+        - GRASS_SAVANNA_HILLS: 1
+        - WARM_HILLS: 1
   
         # Large hills tropical semi-arid
         - hills-large-tropical-semi-arid: 2
   
       hills-large-subtropical:
         # Large hills subtropical humid
-        - FOREST: 3
+        - EVERGREEN_FOREST: 3
+        - FLOWER_FOREST: 1
   
         # Large hills subtropical semi-humid
-        - SEASONAL_FOREST: 3
+        - FLOWER_FOREST: 3
+        - EVERGREEN_FOREST: 1
   
         # Large hills subtropical semi-arid
-        - EVERGREEN_FOREST: 3
+        - FOREST: 1
   
         # Large hills subtropical arid
-        - SAVANNA: 1
-        - WARM_PRAIRIE: 1
-        - WARM_STEPPE: 1
+        - GRASS_SAVANNA_HILLS: 1
+        - SAVANNA_HILLS: 1
+        - WARM_HILLS: 1
   
       hills-large-temperate:
         # Large hills temperate humid
-        - SEASONAL_FOREST: 1
+        - EVERGREEN_FOREST: 1
   
         # Large hills temperate semi-humid
-        - FOREST: 1
+        - FOREST: 6
+        - FLOWER_FOREST: 1
   
         # Large hills temperate semi-arid
-        - FOREST: 1
+        - SEASONAL_FOREST: 1
   
         # Large hills temperate arid
         - BIRCH_FOREST: 1
