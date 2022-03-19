@@ -149,7 +149,7 @@ stages:
         - JUNGLE: 2
   
         # Large hills tropical semi-humid
-        - SAVANNA_HILLS: 2
+        - SAVANNA_HILLS: 1
   
         # Large hills tropical semi-arid
         - GRASS_SAVANNA_HILLS: 1
@@ -223,17 +223,17 @@ stages:
         - mountains-small-tropical-arid: 1
   
       mountains-small-subtropical:
-        # Small mountains subtropical 
-        - WILD_BUMPY_MOUNTAINS: 1
+        # Small mountains subtropical humid
+        - todo: 1
   
-        # Small mountains subtropical 
-        - ROCKY_BUMPY_MOUNTAINS: 1
+        # Small mountains subtropical semi-humid
+        - EVERGREEN_OVERHANGS: 1
   
-        # Small mountains subtropical 
+        # Small mountains subtropical semi-arid
         - TEMPERATE_MOUNTAINS: 1
   
-        # Small mountains subtropical 
-        - DRY_ROCKY_BUMPY_MOUNTAINS: 1
+        # Small mountains subtropical arid
+        - ARID_OVERHANGS: 1
   
       mountains-small-temperate:
         # Small mountains temperate humid
