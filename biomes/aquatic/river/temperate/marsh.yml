@@ -9,7 +9,7 @@ tags:
 
 palette:
   - GRASS: 319
-  - GRASS_VARIATION: 62
+  - GRASS_MARSH: 72
   - SAND: 61
   - << meta.yml:palette-bottom
 
