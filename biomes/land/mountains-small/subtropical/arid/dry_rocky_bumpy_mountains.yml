@@ -1,7 +1,7 @@
 id: DRY_ROCKY_BUMPY_MOUNTAINS
 type: BIOME
 extends: [ EQ_BUMPY_MOUNTAINS, CARVING_LAND, BASE ]
-vanilla: minecraft:desert
+vanilla: minecraft:savanna
 color: $biomes/colors.yml:DRY_ROCKY_BUMPY_MOUNTAINS
 
 tags:
