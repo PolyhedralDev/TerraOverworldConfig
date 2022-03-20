@@ -254,16 +254,19 @@ stages:
         # -------------
         # Small Mountains Subtropical Semi-Humid
         # -------------
+        - WILD_BUMPY_MOUNTAINS: 3
         - EVERGREEN_OVERHANGS: 1
         # -------------
         # Small Mountains Subtropical Semi-Arid
         # -------------
-        - XERIC_MOUNTAINS: 3
+        - ROCKY_BUMPY_MOUNTAINS: 3
+        - XERIC_MOUNTAINS: 1
         # -------------
         # Small Mountains Subtropical Arid
         # -------------
-        - BADLANDS_MOUNTAINS: 3
-        - DESERT_PILLARS: 3
+        - DRY_ROCKY_BUMPY_MOUNTAINS: 3
+        - BADLANDS_MOUNTAINS: 1
+        - DESERT_PILLARS: 1
 
       mountains-small-temperate:
         # -------------
