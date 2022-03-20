@@ -224,16 +224,16 @@ stages:
   
       mountains-small-subtropical:
         # Small mountains subtropical 
-        - todo: 1
+        - WILD_BUMPY_MOUNTAINS: 1
   
         # Small mountains subtropical 
-        - todo: 1
+        - ROCKY_BUMPY_MOUNTAINS: 1
   
         # Small mountains subtropical 
         - TEMPERATE_MOUNTAINS: 1
   
         # Small mountains subtropical 
-        - todo: 1
+        - DRY_ROCKY_BUMPY_MOUNTAINS: 1
   
       mountains-small-temperate:
         # Small mountains temperate humid

@@ -1,0 +1,46 @@
+id: DRY_ROCKY_BUMPY_MOUNTAINS
+type: BIOME
+extends: [ EQ_BUMPY_MOUNTAINS, CARVING_LAND, BASE ]
+vanilla: minecraft:desert
+color: $biomes/colors.yml:DRY_ROCKY_BUMPY_MOUNTAINS
+
+tags:
+  - USE_RIVER
+
+palette:
+  - GRASS: 319
+  - SAND: 64
+  - << meta.yml:palette-bottom
+
+slant-depth: 1
+
+slant:
+  - threshold: 3
+    palette:
+      - GRASS: 319
+      - << meta.yml:palette-bottom
+  - threshold: 4
+    palette:
+      - BLOCK:minecraft:mossy_cobblestone: 319
+      - << meta.yml:palette-bottom
+  - threshold: 5
+    palette:
+      - BLOCK:minecraft:cobblestone: 319
+      - << meta.yml:palette-bottom
+  - threshold: 6
+    palette:
+      - SAND: 319
+      - << meta.yml:palette-bottom
+      
+features:
+  flora:
+    - GRASS
+    - OAK_BUSHES
+    - FERNS
+    - FLOWER_PATCHES
+    - TALL_GRASS
+  trees:
+    - JUNGLE_TREES
+  landforms:
+    - SMALL_MOSSY_BOULDER_PATCHES
+  
