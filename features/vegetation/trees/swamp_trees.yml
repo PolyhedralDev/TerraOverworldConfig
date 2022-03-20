@@ -26,4 +26,4 @@ structures:
     type: WHITE_NOISE
     seed: 8817
   structures:
-    - dark_tree_procedural: 1
+    - dark_oak_tree_procedural: 1
