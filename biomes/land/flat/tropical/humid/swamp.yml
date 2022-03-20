@@ -2,7 +2,7 @@ id: SWAMP
 type: BIOME
 extends: [ EQ_SWAMP, CARVING_OCEAN, BASE ]
 vanilla: minecraft:swamp
-color: $biomes/colors.yml:PALM_BEACH
+color: $biomes/colors.yml:SWAMP
 
 tags:
   - USE_RIVER_FLAT
