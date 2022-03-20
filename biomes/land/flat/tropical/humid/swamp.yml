@@ -8,10 +8,10 @@ tags:
   - USE_RIVER_FLAT
 
 colors:
-  grass: 0x88bd59
-  foliage: 0x73c441
-  water: 0x44aff5
-  water-fog: 0x44aff5
+  grass: 0x4C763C
+  foliage: 0x6A7039
+  water: 0x4C6559
+  water-fog: 0x232317
 
 palette:
   - BAMBOO_PONDS_WATER: 319
@@ -25,3 +25,10 @@ slant:
       - << meta.yml:palette-bottom
 
 slant-depth: 1
+
+features:
+  flora:
+    - GRASS
+    - SWAMP_FLOWER_PATCHES
+  trees:
+    - OAK_BUSHES

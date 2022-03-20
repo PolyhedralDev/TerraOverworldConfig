@@ -1,0 +1,31 @@
+id: SWAMP_FLOWER_PATCHES
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 7120
+  threshold: 0.001
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: 62
+        max: 319
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:plantable-blocks
+        offset: -1
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures:
+    - poppy_patch: 6
+    - dandelion_patch: 6
+    - BLOCK:minecraft:blue_orchid: 3
