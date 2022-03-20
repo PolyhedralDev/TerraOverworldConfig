@@ -1,0 +1,7 @@
+id: FOREST
+type: BIOME
+extends: [ EQ_TERRACED_HILLS, FOREST_HILLS ]
+color: $biomes/colors.yml:FOREST
+
+tags:
+  - USE_RIVER_FLAT

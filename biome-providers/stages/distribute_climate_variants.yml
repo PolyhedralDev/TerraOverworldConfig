@@ -54,23 +54,6 @@ stages:
       coast-mountains-large-tropical-arid:
         - TERRACOTTA_SEA_ARCHES: 1
       
-      # Tropical Land
-      
-      hills-small-tropical-arid:
-        - BADLANDS_BUTTES: 1
-        - DESERT: 1
-      
-      hills-large-tropical-semi-arid:
-        - XERIC_HILLS: 1
-        - ARID_SPIKES: 1
-      
-      mountains-small-tropical-arid:
-        - BADLANDS_MOUNTAINS: 1
-        - DESERT_PILLARS: 1
-      
-      mountains-large-tropical-arid:
-        - CRACKED_BADLANDS_PLATEAU: 1
-      
       # ------------------
       # Subtropical Biomes
       # ------------------
@@ -97,7 +80,6 @@ stages:
       
       coast-mountains-large-subtropical:
         - TEMPERATE_SEA_ARCHES: 1
-      
       # ----------------
       # Temperate Biomes
       # ----------------
@@ -189,7 +171,7 @@ stages:
       
       hills-small-polar:
         - ICE_SPIKES: 1
-        - TUNDRA_LOWLANDS: 3
+        - TUNDRA_MIDLANDS: 3
       
       hills-large-polar:
         - TUNDRA_HILLS: 1

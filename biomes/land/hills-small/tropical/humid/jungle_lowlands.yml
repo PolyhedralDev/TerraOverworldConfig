@@ -1,7 +1,0 @@
-id: JUNGLE_LOWLANDS
-type: BIOME
-extends: [ EQ_TERRACED_HILLS, JUNGLE ]
-color: $biomes/colors.yml:JUNGLE_LOWLANDS
-
-tags:
-  - USE_RIVER_FLAT

@@ -1,0 +1,7 @@
+id: BIRCH_FOREST
+type: BIOME
+extends: [ EQ_TERRACED_HILLS, BIRCH_FOREST_HILLS ]
+color: $biomes/colors.yml:BIRCH_FOREST
+
+tags:
+  - USE_RIVER_FLAT

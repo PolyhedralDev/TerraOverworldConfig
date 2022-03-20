@@ -1,0 +1,26 @@
+id: GRASS_MARSH
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:moss_block: 8
+      - minecraft:grass_block: 3
+      - minecraft:coarse_dirt: 2
+    layers: 1
+    sampler:
+      type: DOMAIN_WARP
+      amplitude: 2
+      warp:
+        type: GAUSSIAN
+      sampler:
+        type: FBM
+        octaves: 3
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.015
+  - materials:
+      - minecraft:dirt: 2
+    layers: 1
+  - materials:
+      - minecraft:stone: 1
+    layers: 1

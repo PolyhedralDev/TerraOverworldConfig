@@ -1,7 +1,0 @@
-id: FOREST_LOWLANDS
-type: BIOME
-extends: [ EQ_TERRACED_HILLS, FOREST ]
-color: $biomes/colors.yml:FOREST_LOWLANDS
-
-tags:
-  - USE_RIVER_FLAT
