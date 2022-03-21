@@ -1,15 +1,3 @@
 id: CARVING_OCEAN
 type: BIOME
 abstract: true
-
-carving:
-  sampler:
-    dimensions: 3
-    type: EXPRESSION
-    variables:
-      "<<":
-        - biomes/abstract/carving/carving_land.yml:carving.sampler.variables
-      carvingMaxHeight: 40
-
-    expression: $biomes/abstract/carving/carving_land.yml:carving.sampler.expression
-    samplers: $biomes/abstract/carving/carving_land.yml:carving.sampler.samplers
