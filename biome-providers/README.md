@@ -10,7 +10,7 @@ A collection of preset biome provider configurations. A biome provider is simply
 something that tells Terra how to distribute biomes. We have a couple presets
 available for those who want alternative biome distributions but may not know
 how to configure them. The provider in use is determined under the `biomes`
-parameter in the pack manifest (pack.yml). (Only one can be selected at a time.)
+parameter in the pack manifest (`pack.yml`). (Only one can be selected at a time.)
 
 ## Sources
 Contains various configs that define different base biome distributions used for
