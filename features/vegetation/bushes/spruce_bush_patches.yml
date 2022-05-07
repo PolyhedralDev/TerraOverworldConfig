@@ -1,0 +1,18 @@
+id: SPRUCE_BUSH_PATCHES
+type: FEATURE
+extends: SPRUCE_BUSHES
+
+distributor:
+  type: AND
+  distributors:
+    - type: PADDED_GRID
+      width: 5
+      padding: 2
+      salt: 4602
+    - type: SAMPLER
+      sampler:
+        type: CELLULAR
+        return: CellValue
+        frequency: 0.025
+        salt: 0101
+      threshold: -0.6
