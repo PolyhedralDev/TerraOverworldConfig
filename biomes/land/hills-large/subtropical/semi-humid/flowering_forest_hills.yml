@@ -8,3 +8,4 @@ features:
   flora:
     - GRASS
     - MIXED_FLOWER_COVER
+    - BEETROOT_PATCHES

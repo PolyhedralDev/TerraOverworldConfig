@@ -29,6 +29,7 @@ features:
     - GRASS
     - FOREST_FLOWER_PATCHES
     - FERNS
+    - BEETROOT_PATCHES
   trees:
     - SUBTROPICAL_BUSHES
     - EVERGREEN_TREES

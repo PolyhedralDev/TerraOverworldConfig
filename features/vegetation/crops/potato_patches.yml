@@ -1,0 +1,27 @@
+id: POTATO_PATCHES
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 40
+  padding: 3
+  salt: 1020
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: 64
+        max: 180
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:plantable-blocks
+        offset: -1
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: potato_patch
