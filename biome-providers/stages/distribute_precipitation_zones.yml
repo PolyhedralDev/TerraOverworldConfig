@@ -30,7 +30,6 @@ stages:
   # Flat Tropical Humid
   # -------------
       - JUNGLE_FLATS: 5
-      - SWAMP: 2
       - BAMBOO_PONDS: 1
   # -------------
   # Flat Tropical Semi-Humid
