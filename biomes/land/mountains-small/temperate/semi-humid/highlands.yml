@@ -14,10 +14,6 @@ slant:
     palette:
       - GRASS: 319
       - << meta.yml:palette-bottom
-  - threshold: 3
-    palette:
-      - MOSS_STONE: 319
-      - << meta.yml:palette-bottom
   - threshold: 4
     palette:
       - MOSSY_COBBLESTONE_STONE: 319
