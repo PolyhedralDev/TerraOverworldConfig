@@ -71,7 +71,7 @@ stages:
     # -------------
     # Flat Temperate Semi-Arid
     # -------------
-        - PLAINS: 5
+        - PLAINS: 3
         - PRAIRIE: 3
         - STEPPE: 3
         - SUNFLOWER_PLAINS: 1
