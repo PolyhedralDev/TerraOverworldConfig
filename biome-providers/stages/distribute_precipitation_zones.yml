@@ -71,7 +71,7 @@ stages:
     # -------------
     # Flat Temperate Semi-Arid
     # -------------
-        - PLAINS: 3
+        - PLAINS: 5
         - PRAIRIE: 3
         - STEPPE: 3
         - SUNFLOWER_PLAINS: 1
@@ -272,6 +272,7 @@ stages:
         # -------------
         # Mountains Temperate Semi-Humid
         # -------------
+        - HIGHLANDS: 4
         - TEMPERATE_MOUNTAINS: 8
 
       mountains-small-boreal:
