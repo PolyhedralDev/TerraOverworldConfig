@@ -3,8 +3,8 @@ type: FEATURE
 
 distributor:
   type: PADDED_GRID
-  width: 6
-  padding: 2
+  width: 20
+  padding: 3
   salt: 7718
 
 locator:
@@ -23,7 +23,7 @@ locator:
 
 structures:
   distribution:
-    type: WHITE_NOISE
-    seed: 8817
+    type: CONSTANT
   structures:
+    - large_dark_oak_tree_procedural: 2
     - dark_oak_tree_procedural: 1
