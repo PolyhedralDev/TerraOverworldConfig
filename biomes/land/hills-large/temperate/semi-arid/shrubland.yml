@@ -1,7 +1,7 @@
 id: SHRUBLAND
 type: BIOME
 extends: [ EQ_HILLS, CARVING_LAND, BASE ]
-vanilla: minecraft:plains
+vanilla: minecraft:forest_hills
 color: $biomes/colors.yml:SHRUBLAND
 
 tags:
@@ -9,6 +9,9 @@ tags:
 
 colors:
   grass: 0x90af3b
+  foliage: 0xacb840
+  water: 0x44aff5
+  water-fog: 0x44aff5
 
 palette:
   - GRASS_VARIATION: 319

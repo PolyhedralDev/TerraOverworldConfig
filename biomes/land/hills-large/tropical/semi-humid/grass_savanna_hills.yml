@@ -1,6 +1,6 @@
 id: GRASS_SAVANNA_HILLS
 type: BIOME
-extends: SAVANNA
+extends: SAVANNA_HILLS
 color: $biomes/colors.yml:GRASS_SAVANNA_HILLS
 
 features:
@@ -9,6 +9,3 @@ features:
     - FLOWER_PATCHES
   trees:
     - SPARSE_ACACIA_TREES
-
-colors:
-  grass: 0xb5cc47
