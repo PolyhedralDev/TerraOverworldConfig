@@ -1,0 +1,26 @@
+id: TREE_SNOW
+type: FEATURE
+
+distributor:
+  type: "YES"
+
+locator:
+  type: PATTERN
+  range:
+    min: 62
+    max: 255
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH_AIR
+        offset: 0
+      - type: MATCH_SET
+        blocks:
+          - minecraft:oak_leaves
+          - minecraft:spruce_leaves
+        offset: -1
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: BLOCK:minecraft:snow
