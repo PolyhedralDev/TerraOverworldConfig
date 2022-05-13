@@ -13,6 +13,7 @@ biome-distribution:
   # Controls the scale of land / costal / oceanic distribution. Increasing
   # this produces larger landmasses and larger oceans, and vice-versa when
   # decreasing it.
+  # Default: 200
 
   temperature-scale: 60
   # Controls the scale of temperature zones. Most biomes are placed according to
@@ -20,11 +21,13 @@ biome-distribution:
   # allowing for biomes of similar temperatures to generate together. Increasing this
   # will increase the distance between temperature changes, which results in things like
   # hot and cold biomes generating further apart - and vice versa when decreasing it.
+  # Default: 60
 
   precipitation-scale: 50
   # Controls the scale of precipitation zones. Same idea as temperature zones, where
   # humid biomes generate away from arid biomes, and biomes of similar precipitation
   # generate together.
+  # Default: 50
   
   elevation-scale: 35
   # Controls the scale of elevation zones. Most land biomes belong to
@@ -34,32 +37,39 @@ biome-distribution:
   # Conversely, if you want more sudden changes in elevation, you can decrease this.
   # Note - This does not affect how tall the terrain is in individual biomes, just the
   #        elevation map that distributes biomes of similar elevation together!
+  # Default: 35
 
   variation-scale: 60
   # Controls biome variations within each temperature + precipitation + elevation zone.
   # Some biomes belong to the same groups, and so we have an extra variation map that
   # determines which of these biomes within the same group get generated.
+  # Default: 60
 
   river-spread-scale: 10
   # Controls how far / close apart rivers generally are, larger scale = further apart
   # rivers, smaller scale = closer packed together rivers.
+  # Default: 10
 
   volcano-spread: 90
   # Controls how far / close together volcanoes are, larger scale = volcanoes that generate
   # further apart, smaller scale = more packed together volcanoes.
+  # Default: 90
 
   volcano-radius: 5
   # Controls the radius of all volcanoes, decreasing this too much can result in some
   # glitchy generation for volcanoes filled with fluids above sea level, so keep this in mind
   # if you want smaller volcanoes!
+  # Default: 5
 
   mushroom-island-spread: 110
   # Controls the distance between mushroom islands (which only generate on deep oceans).
   # Increasing this will spread mushroom islands out more, which effectively makes them more
   # rare, decreasing will make islands closer and therefore more common.
+  # Default: 110
   
   mushroom-island-radius: 4
   # How large any given mushroom island will be.
+  # Default: 4
   
   global-scale: 1
   # Modifies the scale of everything, you can use this parameter to if you
@@ -67,6 +77,7 @@ biome-distribution:
   # By doubling the scale, you double the length & width of everything,
   # e.g. if you have a biome that is 300 blocks wide with a scale of 1, and
   # increase that scale to 2, that biome will generate 600 blocks wide.
+  # Default: 1
 
 # Misc global config stuff
 
