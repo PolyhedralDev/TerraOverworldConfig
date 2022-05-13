@@ -270,6 +270,7 @@ stages:
         # -------------
         # Mountains Temperate Semi-Humid
         # -------------
+        - HIGHLANDS: 4
         - TEMPERATE_MOUNTAINS: 8
 
       mountains-small-boreal:
