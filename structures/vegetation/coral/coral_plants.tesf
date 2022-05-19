@@ -1,0 +1,16 @@
+setWaterlog(true);
+// Use random number to pick which coral to use
+num coralRand = randomInt(5);
+
+str blockID = "minecraft:seagrass";
+if(coralRand == 0) blockID = "minecraft:brain_coral";
+else if(coralRand == 1) blockID = "minecraft:bubble_coral";
+else if(coralRand == 2) blockID = "minecraft:tube_coral";
+else if(coralRand == 3) blockID = "minecraft:fire_coral";
+else if(coralRand == 4) blockID = "minecraft:horn_coral";
+
+// If block is not in water, fail
+if (getBlock(0, 1, 0) != "minecraft:water") fail;
+
+// Place coral
+block(0, 0, 0, blockID);

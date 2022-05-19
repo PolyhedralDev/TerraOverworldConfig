@@ -25,7 +25,7 @@ stages:
     to:
       ocean-tropical:
         - TROPICAL_OCEAN: 1
-        # TODO - CORAL REEF
+        - CORAL_OCEAN: 1
       
       # Tropical Coastal
       

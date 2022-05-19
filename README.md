@@ -1,6 +1,6 @@
 # Terra Overworld Config
 
-The default overworld configuration for Terra 6.0+. 
+The default overworld configuration for Terra 6.0+, containing over _140_ different biomes.
 
 ---
 
