@@ -1,7 +1,7 @@
 id: SHRUBLAND
 type: BIOME
 extends: [ EQ_HILLS, CARVING_LAND, BASE ]
-vanilla: minecraft:forest_hills
+vanilla: minecraft:windswept_forest
 color: $biomes/colors.yml:SHRUBLAND
 
 tags:
