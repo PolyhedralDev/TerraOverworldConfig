@@ -10,6 +10,6 @@ if (blockID != "minecraft:oak_log" &&
     blockID != "minecraft:spruce_leaves" &&
     blockID != "minecraft:jungle_leaves" &&
     blockID != "minecraft:acacia_leaves" &&
-    blockID != "minecraft:dark_oak_leaves" &&) {
+    blockID != "minecraft:dark_oak_leaves") {
     fail;
 }
