@@ -4,6 +4,12 @@ extends: [ EQ_HILLS, CARVING_LAND, BASE ]
 vanilla: minecraft:jungle
 color: $biomes/colors.yml:JUNGLE_HILLS
 
+colors:
+  grass: 0x59c93c
+  foliage: 0x30bb0b
+  water: 0x14a2c5
+  water-fog: 0x14a2c5
+
 tags:
   - USE_RIVER
 
@@ -41,6 +47,7 @@ features:
     - DENSE_TEMPERATE_TREE_PATCHES
     - OAK_BUSHES
     - SUBTROPICAL_BUSHES
+    - POTATO_PATCHES
   landforms:
     - MOSSY_BOULDERS
     - SMALL_MOSSY_BOULDER_PATCHES

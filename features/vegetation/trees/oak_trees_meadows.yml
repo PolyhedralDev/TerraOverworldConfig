@@ -1,12 +1,12 @@
-id: SPARSE_OAK_TREES
+id: OAK_TREES_MEADOWS
 type: FEATURE
 
 distributor:
   type: SAMPLER
   sampler:
     type: POSITIVE_WHITE_NOISE
-    salt: 13845
-  threshold: 0.0001
+    salt: 3487
+  threshold: 0.0005
 
 locator:
   type: AND
@@ -33,7 +33,8 @@ locator:
 structures:
   distribution:
     type: WHITE_NOISE
-    salt: 9512
+    salt: 2987
   structures:
-    - oak_tree_procedural: 2
+    - oak_tree_procedural: 4
     - large_oak_tree_procedural: 1
+    - large_oak_tree_procedural_2: 1

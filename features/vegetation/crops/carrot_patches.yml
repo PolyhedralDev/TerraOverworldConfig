@@ -1,11 +1,11 @@
-id: ACACIA_TREES
+id: CARROT_PATCHES
 type: FEATURE
 
 distributor:
   type: PADDED_GRID
-  width: 17
+  width: 40
   padding: 3
-  salt: 1923
+  salt: 1120
 
 locator:
   type: AND
@@ -13,25 +13,15 @@ locator:
     - type: TOP
       range: &range
         min: 64
-        max: 255
+        max: 180
     - type: PATTERN
       range: *range
       pattern:
         type: MATCH_SET
         blocks: $features/vegetation/meta.yml:plantable-blocks
         offset: -1
-    - type: PATTERN
-      range: *range
-      pattern:
-        type: MATCH_SET
-        blocks:
-          - minecraft:snow
-          - minecraft:air
-        offset: 0
 
 structures:
   distribution:
-    type: WHITE_NOISE
-  structures:
-    - acacia_tree_procedural: 10
-    - large_flat_acacia_tree_procedural: 1
+    type: CONSTANT
+  structures: carrot_patch

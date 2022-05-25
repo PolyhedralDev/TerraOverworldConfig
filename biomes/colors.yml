@@ -1,4 +1,4 @@
-# Tropical Land Biomes
+# Tropical Land Biomes (36)
 SANDSTONE_ARCHIPELAGO: 0xf5f5ba
 SANDSTONE_WETLANDS: 0xe8e8c1
 
@@ -48,7 +48,7 @@ GRASS_SAVANNA: 0x959641
 GRASS_SAVANNA_LOW_HILLS: 0x958e34
 GRASS_SAVANNA_HILLS: 0x524e1a
 
-# Subtropical Land Biomes
+# Subtropical Land Biomes (23)
 EVERGREEN_FOREST: 0x93c465
 EVERGREEN_FOREST_HILLS: 0x5b9438
 EVERGREEN_FLATS: 0xa5d17b
@@ -81,7 +81,7 @@ RAINFOREST_HILLS: 0x203628
 MONSOON_MOUNTAINS: 0x121f17
 LARGE_MONSOON_MOUNTAINS: 0x08120c
 
-# Temperate Land Biomes
+# Temperate Land Biomes (23)
 BEACH: 0xe6e7a8
 WETLANDS: 0xc5e785
 ARCHIPELAGO: 0xbfff6b
@@ -114,7 +114,7 @@ DRY_TEMPERATE_WHITE_MOUNTAINS_RIVER: 0x00f0d4
 
 TEMPERATE_SEA_ARCHES: 0x6b8e70
 
-# Boreal Land Biomes
+# Boreal Land Biomes (18)
 TAIGA: 0x86b783
 TAIGA_HILLS: 0x96b793
 TAIGA_FLATS: 0x7d9a7a
@@ -141,12 +141,13 @@ BIRCH_FOREST: 0x88bb67
 BIRCH_FOREST_HILLS: 0x88aa90
 BIRCH_FLATS: 0x88ba89
 
-# Polar Land Biomes
+# Polar Land Biomes (18)
 TUNDRA_PLAINS: 0xfab53c
 TUNDRA_MIDLANDS: 0xfaae4e
 TUNDRA_HILLS: 0xfa9c4a
 
 SNOWY_PLAINS: 0xccefdd
+SNOWY_MEADOW: 0xe6f7ee
 
 ICE_SPIKES: 0xd1e3ef
 
@@ -167,38 +168,38 @@ FROZEN_MARSH: 0xa3ff9e
 SNOWY_SEA_ARCHES: 0x68677e
 SNOWY_SEA_CAVES: 0x807e97
 
-# Tropical Aquatic Biomes
+# Tropical Aquatic Biomes (2)
 TROPICAL_OCEAN: 0x02b0e5
 TROPICAL_DEEP_OCEAN: 0x2a7aac
 
-# Subtropical Aquatic Biomes
+# Subtropical Aquatic Biomes (2)
 SUBTROPICAL_OCEAN: 0x0d96db
 SUBTROPICAL_DEEP_OCEAN: 0x296fad
 
-# Temperate Aquatic Biomes
+# Temperate Aquatic Biomes (3)
 OCEAN: 0x1787d4
 DEEP_OCEAN: 0x3757ad
 DEEP_OCEAN_TRENCH: 0x29458f
 
-# Boreal Aquatic Biomes
+# Boreal Aquatic Biomes (2)
 COLD_OCEAN: 0x2080c9
 COLD_DEEP_OCEAN: 0x3c5893
 
-# Polar Aquatic Biomes
+# Polar Aquatic Biomes (3)
 FROZEN_RIVER: 0x9c9ff3
 FROZEN_OCEAN: 0x83c0f3
 FROZEN_DEEP_OCEAN: 0x5376bf
 
-# Other Aquatic Biomes
+# Other Aquatic Biomes (1)
 RIVER: 0x0084ff
 
-# Mushroom Biomes
+# Mushroom Biomes (4)
 MUSHROOM_COAST: 0xff00d9
 MUSHROOM_FIELDS: 0xdb00ba
 MUSHROOM_HILLS: 0xc200a2
 MUSHROOM_MOUNTAINS: 0x9b0081
 
-# Volcanic Biomes
+# Volcanic Biomes (8)
 ACTIVE_VOLCANO_BASE: 0x362c2b
 ACTIVE_VOLCANO_BASE_EDGE: 0x572e28
 ACTIVE_VOLCANO_PIT_EDGE: 0x9e6a2d

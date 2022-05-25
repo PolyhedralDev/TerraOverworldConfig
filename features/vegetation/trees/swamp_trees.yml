@@ -3,8 +3,8 @@ type: FEATURE
 
 distributor:
   type: PADDED_GRID
-  width: 6
-  padding: 2
+  width: 20
+  padding: 3
   salt: 7718
 
 locator:
@@ -20,10 +20,18 @@ locator:
         type: MATCH_SET
         blocks: $features/vegetation/meta.yml:plantable-blocks
         offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:snow
+          - minecraft:air
+        offset: 0
 
 structures:
   distribution:
-    type: WHITE_NOISE
-    seed: 8817
+    type: CONSTANT
   structures:
+    - large_dark_oak_tree_procedural: 2
     - dark_oak_tree_procedural: 1

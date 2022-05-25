@@ -25,7 +25,7 @@ stages:
     to:
       ocean-tropical:
         - TROPICAL_OCEAN: 1
-        # TODO - CORAL REEF
+        - CORAL_OCEAN: 1
       
       # Tropical Coastal
       
@@ -166,8 +166,9 @@ stages:
       # Polar Land
       
       flat-polar:
-        - SNOWY_PLAINS: 1
-        - TUNDRA_PLAINS: 1
+        - SNOWY_PLAINS: 2
+        - TUNDRA_PLAINS: 2
+        - SNOWY_MEADOW: 1
       
       hills-small-polar:
         - ICE_SPIKES: 1

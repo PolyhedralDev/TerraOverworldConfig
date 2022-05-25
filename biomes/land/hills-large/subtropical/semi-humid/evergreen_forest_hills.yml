@@ -8,8 +8,8 @@ tags:
   - USE_RIVER
 
 colors:
-  grass: 0x80c465
-  foliage: 0x59a940
+  grass: 0x60bf4b
+  foliage: 0x80c465
   water: 0x0677ce
   water-fog: 0x0677ce
 
@@ -29,6 +29,7 @@ features:
     - GRASS
     - FOREST_FLOWER_PATCHES
     - FERNS
+    - BEETROOT_PATCHES
   trees:
     - SUBTROPICAL_BUSHES
     - EVERGREEN_TREES
