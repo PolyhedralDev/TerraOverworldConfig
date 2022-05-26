@@ -4,4 +4,4 @@ extends: [ EQ_PLAIN, EVERGREEN_FOREST_HILLS ]
 color: $biomes/colors.yml:EVERGREEN_FOREST
 
 tags:
-  - USE_RIVER_FLAT
+  - USE_RIVER_FLAT_SWAMP

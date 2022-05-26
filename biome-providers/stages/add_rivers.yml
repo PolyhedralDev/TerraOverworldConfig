@@ -44,9 +44,17 @@ stages:
   - type: REPLACE
     from: USE_RIVER_FLAT
     to:
-      - SELF: 4
-      - MARSH: 4
-      - RIVER: 8
+      - SELF: 1
+      - MARSH: 1
+      - RIVER: 2
+    sampler: *riverSampler
+  # Flat Rivers
+  - type: REPLACE
+    from: USE_RIVER_FLAT_SWAMP
+    to:
+      - SELF: 1
+      - SWAMP: 1
+      - RIVER: 2
     sampler: *riverSampler
   # Frozen Rivers
   - type: REPLACE
