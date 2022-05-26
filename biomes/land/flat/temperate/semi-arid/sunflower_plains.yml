@@ -8,3 +8,4 @@ features:
   flora:
     - GRASS
     - SUNFLOWER_COVER
+    - CARROT_PATCHES

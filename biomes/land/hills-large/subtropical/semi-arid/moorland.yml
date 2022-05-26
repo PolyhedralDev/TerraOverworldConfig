@@ -9,6 +9,9 @@ tags:
 
 colors:
   grass: 0xb9d277
+  foliage: 0xcce66e
+  water: 0x2590a8
+  water-fog: 0x2590a8
 
 palette:
   - GRASS_VARIATION: 319

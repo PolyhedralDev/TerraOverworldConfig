@@ -1,0 +1,26 @@
+id: SNOWY_MEADOW
+type: BIOME
+extends: [ COLOR_FROZEN, EQ_PLAIN, CARVING_LAND, BASE ]
+vanilla: minecraft:snowy_plains
+color: $biomes/colors.yml:SNOWY_MEADOW
+
+tags:
+  - USE_FROZEN_RIVER_FLAT
+
+ocean:
+  palette: FROZEN_OCEAN
+
+palette:
+  - SNOW: 319
+  - SAND: 61
+  - << meta.yml:palette-bottom
+
+features:
+  natural:
+    - BOULDERS
+    - SMALL_BOULDER_PATCHES
+  trees:
+    - OAK_TREES_MEADOWS
+  postplacement:
+    - SNOW_LAYERS
+    - TREE_SNOW

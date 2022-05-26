@@ -19,17 +19,10 @@ distributor:
       threshold: 0.7
 
 locator:
-  type: AND
-  locators:
-    - type: TOP
-      range: &range
-        min: 64
-        max: 319
-    - type: PATTERN
-      range: *range
-      pattern:
-        type: MATCH_SOLID
-        offset: -1
+  type: TOP
+  range: &range
+    min: 64
+    max: 319
 
 structures:
   distribution:

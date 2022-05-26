@@ -1,5 +1,5 @@
 id: OVERWORLD
-version: 0.2.1
+version: 0.3.0
 author: "Astrash, Sancires"
 
 generator: NOISE_3D
@@ -41,6 +41,9 @@ addons:
 # Default biome distribution
 #biomes: $biome-providers/presets/default.yml:biomes
 
+# TODO: Bukkit - Excludes biomes that depend on custom biome colors.
+#biomes: $biome-providers/presets/planetary.yml:biomes
+
 # Single biome - to change the single biome to use, check the configuration file.
 biomes: $biome-providers/presets/single.yml:biomes
 
@@ -55,6 +58,9 @@ biomes: $biome-providers/presets/single.yml:biomes
 
 # TODO: Frozen World - Frozen biomes only
 #biomes: $biome-providers/presets/frozen_world.yml:biomes
+
+# TODO: Planet World - Continents with ice caps at each pole
+#biomes: $biome-providers/presets/planetary.yml:biomes
 
 # Terrain test pipeline
 #biomes: $biomes/abstract/terrain/test/pipeline.yml:biomes

@@ -6,6 +6,10 @@ plantable-blocks:
   - minecraft:moss_block
   - minecraft:rooted_dirt
 
+aquatic-plantable-blocks:
+  - minecraft:sand
+  - minecraft:gravel
+
 sugarcane-plantable-blocks:
   - minecraft:sand
   - minecraft:red_sand

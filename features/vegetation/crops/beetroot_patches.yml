@@ -1,11 +1,11 @@
-id: SWAMP_TREES
+id: BEETROOT_PATCHES
 type: FEATURE
 
 distributor:
   type: PADDED_GRID
-  width: 20
+  width: 40
   padding: 3
-  salt: 7718
+  salt: 1241
 
 locator:
   type: AND
@@ -24,6 +24,4 @@ locator:
 structures:
   distribution:
     type: CONSTANT
-  structures:
-    - large_dark_oak_tree_procedural: 2
-    - dark_oak_tree_procedural: 1
+  structures: beetroot_patch
