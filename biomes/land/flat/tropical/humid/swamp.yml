@@ -33,6 +33,7 @@ features:
     - DANDELION_PATCH
     - BLUE_ORCHID_PATCH
     - LILY_PADS
+    - SUGAR_CANE
   trees:
     - OAK_BUSHES
     - SWAMP_TREES

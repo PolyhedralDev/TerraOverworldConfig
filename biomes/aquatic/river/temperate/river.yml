@@ -20,3 +20,7 @@ colors:
   foliage: 0x71a74d
   water: 0x0084ff
   water-fog: 0x0084ff
+  
+features:
+  flora:
+    - SUGAR_CANE
