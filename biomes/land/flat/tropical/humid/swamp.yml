@@ -15,7 +15,7 @@ colors:
 
 palette:
   - BAMBOO_PONDS_WATER: 319
-  - SAND: 64
+  - SAND: 60
   - << meta.yml:palette-bottom
 
 slant:
@@ -29,7 +29,9 @@ slant-depth: 1
 features:
   flora:
     - GRASS
-    - SWAMP_FLOWER_PATCHES
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - BLUE_ORCHID_PATCH
   trees:
     - OAK_BUSHES
     - SWAMP_TREES

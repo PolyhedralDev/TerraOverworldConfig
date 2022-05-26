@@ -24,7 +24,8 @@ features:
   flora:
     - GRASS
     - DEAD_BUSHES
-    - FLOWER_PATCHES
+    - POPPY_PATCH
+    - DANDELION_PATCH
     - CACTUS_SPARSE
   trees:
     - OAK_BUSHES

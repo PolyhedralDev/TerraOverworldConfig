@@ -28,7 +28,8 @@ slant:
 features:
   flora:
     - GRASS
-    - FLOWER_PATCHES
+    - POPPY_PATCH
+    - DANDELION_PATCH
     - PUMPKIN_PATCHES
   trees:
     - DARK_OAK_TREES

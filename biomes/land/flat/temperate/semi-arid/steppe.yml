@@ -21,6 +21,9 @@ palette:
 features:
   flora:
     - GRASS
-    - STEPPE_FLOWER_PATCHES
+    - POPPY_PATCH
+    - OXEYE_DAISY_PATCH
+    - CORNFLOWER_PATCH
+    - ALLIUM_PATCH
   trees:
     - MIXED_BUSHES

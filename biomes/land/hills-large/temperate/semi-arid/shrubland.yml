@@ -22,6 +22,7 @@ features:
   flora:
     - GRASS
     - TALL_GRASS
-    - FLOWER_PATCHES
+    - POPPY_PATCH
+    - DANDELION_PATCH
   trees:
     - OAK_BUSHES

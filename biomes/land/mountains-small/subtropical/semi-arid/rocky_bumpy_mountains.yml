@@ -41,7 +41,8 @@ features:
     - GRASS
     - SUBTROPICAL_BUSHES
     - FERNS
-    - FLOWER_PATCHES
+    - POPPY_PATCH
+    - DANDELION_PATCH
     - TALL_GRASS
   trees:
     - JUNGLE_TREES

@@ -59,7 +59,8 @@ features:
     - DEL_FLOATING_BLOCKS
   flora:
     - GRASS
-    - FLOWER_PATCHES
+    - POPPY_PATCH
+    - DANDELION_PATCH
     - CACTUS_SPARSE
   trees:
     - OAK_BUSHES

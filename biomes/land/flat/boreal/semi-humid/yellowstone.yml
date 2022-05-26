@@ -46,6 +46,7 @@ slant-depth: 12
 features:
   flora:
     - GRASS
-    - FLOWER_PATCHES
+    - POPPY_PATCH
+    - DANDELION_PATCH
   trees:
     - SPARSE_OAK_TREES
