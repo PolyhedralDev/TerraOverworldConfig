@@ -1,0 +1,44 @@
+id: ALLIUM_PATCH
+type: FEATURE
+
+distributor:
+  type: AND
+  distributors:
+    - type: PADDED_GRID
+      width: 4
+      padding: 3
+      salt: 7115
+    - type: SAMPLER
+      sampler:
+        type: CELLULAR
+        return: CellValue
+        frequency: 0.06
+        salt: 6541
+      threshold: -0.7
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: 62
+        max: 319
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:plantable-blocks
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:snow
+          - minecraft:air
+        offset: 0
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures: BLOCK:minecraft:allium
