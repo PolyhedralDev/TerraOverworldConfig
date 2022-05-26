@@ -29,7 +29,8 @@ stages:
   # -------------
   # Flat Tropical Humid
   # -------------
-      - JUNGLE_FLATS: 5
+      - JUNGLE_FLATS: 3
+      - SWAMP: 2
   # -------------
   # Flat Tropical Semi-Humid
   # -------------

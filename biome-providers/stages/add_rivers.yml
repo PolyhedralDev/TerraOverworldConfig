@@ -44,7 +44,6 @@ stages:
   - type: REPLACE
     from: USE_RIVER_FLAT
     to:
-      - SWAMP: 2
       - SELF: 4
       - MARSH: 4
       - RIVER: 8
