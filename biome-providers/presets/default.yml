@@ -41,15 +41,6 @@ biomes:
 
       # Biome specific variations
       - << biome-providers/stages/add_desert_variants.yml:stages
-
-      # Temporary placeholder biome used for zones without a corresponding biome
-      - type: REPLACE
-        from: todo
-        to:
-          - MYSTERY_ZONE: 1
-        sampler:
-          dimensions: 2
-          type: CONSTANT
   
       - << biome-providers/stages/expand.yml:stages
       - << biome-providers/stages/expand.yml:stages
