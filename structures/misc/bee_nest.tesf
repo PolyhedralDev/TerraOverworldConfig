@@ -1,13 +1,28 @@
-// Rotate bee nest outwards
-if (rotation() == "NONE") block(-1, 0, 0, "minecraft:bee_nest[facing=west]");
-else if (rotation() == "CW_90") block(-1, 0, 0, "minecraft:bee_nest[facing=south]");
-else if (rotation() == "CW_180") block(-1, 0, 0, "minecraft:bee_nest[facing=east]");
-else block(-1, 0, 0, "minecraft:bee_nest[facing=north]");
-// Spawn bees
+num dir = randomInt(4);
+num x = 0;
+num z = 0;
+str face = "west";
+
+if (dir == 0) {
+    face = "west";
+    x = -1;
+    z = 0;
+} else if (dir == 1) {
+    face = "north";
+    x = 0;
+    z = -1;
+} else if (dir == 2) {
+    face = "east"; 
+    x = 1;
+    z = 0;
+} else if (dir == 3) {
+    face = "south";
+    x = 0;
+    z = 1;
+}
+
+block(x, 0, z, "minecraft:bee_nest[facing=" + face + "]");
 entity(-2, 0, 0, "minecraft:bee");
 entity(-2, 0, 0, "minecraft:bee");
 entity(-2, 0, 0, "minecraft:bee");
-// Add air so bees don't suffocate
-block(-1, -1, 0, "minecraft:air");
-block(-2, 0, 0, "minecraft:air");
-block(-2, -1, 0, "minecraft:air");
+
