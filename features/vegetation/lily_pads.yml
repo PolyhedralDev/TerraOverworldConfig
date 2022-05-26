@@ -1,0 +1,28 @@
+id: LILY_PADS
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 8514
+  threshold: 0.025
+
+locator:
+  type: AND
+  locators:
+    - type: SURFACE
+      range: &range
+        min: 60
+        max: 319
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH
+        block: minecraft:water
+        offset: -1
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures: BLOCK:minecraft:lily_pad
