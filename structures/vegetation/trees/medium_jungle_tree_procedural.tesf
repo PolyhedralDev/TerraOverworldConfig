@@ -36,6 +36,13 @@ str topBranchBlockX = "minecraft:jungle_log[axis=x]";
 str topBranchBlockY = "minecraft:jungle_log[axis=y]";
 str topBranchBlockZ = "minecraft:jungle_log[axis=z]";
 
+// cocoa
+num cocoaRoll = randomInt(10); // 1 in 10 chance
+if (cocoaRoll == 0) {
+structure(0, 1, 0, "cocoa_bean", "NONE");
+structure(0, 2, 0, "cocoa_bean", "NONE");
+}
+
 // Generate roots at base of trunk
 num roots = 1+randomInt(3);
 num rootMaxDepth = 3;
