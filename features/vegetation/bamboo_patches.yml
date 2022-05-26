@@ -3,8 +3,8 @@ type: FEATURE
 
 distributor:
   type: PADDED_GRID
-  width: 3
-  padding: 1
+  width: 2
+  padding: 0
   salt: 3452
 
 locator:
@@ -25,8 +25,7 @@ structures:
   distribution:
     type: CELLULAR
     return: CellValue
-    frequency: 0.05
+    frequency: 0.075
   structures:
-    - blank: 12
-    - bamboo: 7
-    - blank: 8
+    - blank: 7
+    - bamboo: 2

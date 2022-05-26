@@ -98,6 +98,8 @@ stages:
         # Small Hills Tropical Humid
         # -------------
         - JUNGLE: 3
+        - BAMBOO_PONDS: 1
+        
         # -------------
         # Small Hills Tropical Semi-Humid
         # -------------
