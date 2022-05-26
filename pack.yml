@@ -39,10 +39,10 @@ addons:
 # referenced file(s) below.
 
 # Default biome distribution
-biomes: $biome-providers/presets/default.yml:biomes
+#biomes: $biome-providers/presets/default.yml:biomes
 
 # Single biome - to change the single biome to use, check the configuration file.
-#biomes: $biome-providers/presets/single.yml:biomes
+biomes: $biome-providers/presets/single.yml:biomes
 
 # TODO: Continental - Generates large continents
 #biomes: $biome-providers/presets/continental.yml:biomes
