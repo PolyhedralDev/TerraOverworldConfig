@@ -31,5 +31,6 @@ slant:
 features:
   flora:
     - GRASS
+    - CALDERA_SEAGRASS
   trees:
     - SPARSE_TEMPERATE_TREE_PATCHES
