@@ -5,7 +5,7 @@ vanilla: minecraft:swamp
 color: $biomes/colors.yml:SWAMP
 
 tags:
-  - USE_RIVER_FLAT
+  - USE_RIVER_FLAT_TROPICAL
 
 colors:
   grass: 0x4C763C

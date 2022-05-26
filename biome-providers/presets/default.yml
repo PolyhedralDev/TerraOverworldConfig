@@ -70,3 +70,4 @@ biomes:
       
       # Add rivers to all biomes
       - << biome-providers/stages/add_rivers.yml:stages
+

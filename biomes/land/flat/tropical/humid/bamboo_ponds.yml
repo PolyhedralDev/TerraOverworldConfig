@@ -5,7 +5,7 @@ vanilla: minecraft:jungle
 color: $biomes/colors.yml:BAMBOO_PONDS
 
 tags:
-  - USE_RIVER_FLAT
+  - USE_RIVER_FLAT_TROPICAL
 
 colors:
   grass: 0x3abf13
