@@ -29,7 +29,8 @@ features:
     - BOULDERS
     - SMALL_BOULDER_PATCHES
   flora:
-    - FLOWER_PATCHES
+    - POPPY_PATCH
+    - DANDELION_PATCH
     - GRASS
     - FERNS
   trees:

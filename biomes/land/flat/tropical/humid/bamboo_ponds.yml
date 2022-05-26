@@ -30,7 +30,8 @@ slant-depth: 1
 features:
   flora:
     - GRASS
-    - FLOWER_PATCHES
+    - POPPY_PATCH
+    - DANDELION_PATCH
   trees:
     - BAMBOO_PATCHES
     - OAK_BUSHES

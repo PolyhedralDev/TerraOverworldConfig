@@ -32,7 +32,12 @@ slant:
 features:
   flora:
     - GRASS
-    - FOREST_FLOWER_PATCHES
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - ROSE_BUSH_PATCH
+    - PEONY_PATCH
+    - LILAC_PATCH
+    - LILY_OF_THE_VALLEY_PATCH
   trees:
     - TEMPERATE_TREES
   landforms:

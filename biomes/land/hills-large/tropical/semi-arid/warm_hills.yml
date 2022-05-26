@@ -6,7 +6,8 @@ color: $biomes/colors.yml:WARM_HILLS
 features:
   flora:
     - GRASS
-    - FLOWER_PATCHES
+    - POPPY_PATCH
+    - DANDELION_PATCH
   trees: []
 
 colors:

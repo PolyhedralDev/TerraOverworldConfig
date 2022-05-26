@@ -22,6 +22,22 @@ locator:
           - minecraft:ice
           - minecraft:packed_ice
         offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:snow
+          - minecraft:air
+        offset: 0
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:dirt
+        offset: -3
+
 
 structures:
   distribution:

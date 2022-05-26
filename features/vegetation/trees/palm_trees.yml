@@ -29,6 +29,14 @@ locator:
         type: MATCH_SET
         blocks: $features/vegetation/meta.yml:sugarcane-plantable-blocks
         offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:snow
+          - minecraft:air
+        offset: 0
 
 structures:
   distribution:
