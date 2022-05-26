@@ -50,7 +50,7 @@ stages:
     sampler: *riverSampler
   # Flat Rivers
   - type: REPLACE
-    from: USE_RIVER_FLAT_TROPICAL
+    from: USE_RIVER_FLAT_SWAMP
     to:
       - SELF: 1
       - SWAMP: 1

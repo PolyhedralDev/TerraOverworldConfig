@@ -4,4 +4,4 @@ extends: [ EQ_PLAIN, RAINFOREST_HILLS ]
 color: $biomes/colors.yml:RAINFOREST
 
 tags:
-  - USE_RIVER_FLAT_TROPICAL
+  - USE_RIVER_FLAT_SWAMP
