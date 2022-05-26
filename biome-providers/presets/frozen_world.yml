@@ -16,10 +16,3 @@ biomes:
 
       - << biome-providers/stages/add_rivers.yml:stages
 
-      - type: REPLACE
-        from: tbd
-        to:
-          - MYSTERY_ZONE: 1
-        sampler:
-          dimensions: 2
-          type: CONSTANT
