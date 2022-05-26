@@ -1,0 +1,32 @@
+id: BAMBOO_PATCHES
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 3
+  padding: 1
+  salt: 3452
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: 64
+        max: 255
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:plantable-blocks
+        offset: -1
+
+structures:
+  distribution:
+    type: CELLULAR
+    return: CellValue
+    frequency: 0.05
+  structures:
+    - blank: 12
+    - bamboo: 7
+    - blank: 8

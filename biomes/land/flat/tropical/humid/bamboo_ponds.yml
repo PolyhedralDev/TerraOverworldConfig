@@ -1,17 +1,17 @@
 id: BAMBOO_PONDS
 type: BIOME
 extends: [ EQ_PONDS, CARVING_LAND, BASE ]
-vanilla: minecraft:plains
-color: $biomes/colors.yml:PLAINS
+vanilla: minecraft:jungle
+color: $biomes/colors.yml:BAMBOO_PONDS
 
 tags:
   - USE_RIVER_FLAT
 
 colors:
-  grass: 0x91bd59
-  foliage: 0x77ab2f
-  water: 0x44aff5
-  water-fog: 0x44aff5
+  grass: 0x3abf13
+  foliage: 0x00aa17
+  water: 0x1e97f2
+  water-fog: 0x1e97f2
 
 palette:
   - BAMBOO_PONDS_WATER: 319
@@ -32,4 +32,8 @@ features:
     - GRASS
     - FLOWER_PATCHES
   trees:
-    - SPARSE_OAK_TREES
+    - BAMBOO_PATCHES
+    - OAK_BUSHES
+    - SUBTROPICAL_BUSHES
+  landforms:
+    - SMALL_MOSSY_BOULDER_PATCHES

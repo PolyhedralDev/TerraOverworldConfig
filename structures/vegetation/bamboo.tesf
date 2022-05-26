@@ -1,0 +1,15 @@
+num height = randomInt(10) + 5;
+
+for(num i = 0; i < height; i = i + 1) {
+    if(getBlock(0,i,0) != "minecraft:air") fail;
+}
+
+
+num current = 0;
+for(num i = 0; i < height - 3; i = i + 1) {
+    block(0, current, 0, "minecraft:bamboo[age=1,leaves=none,stage=0]", false);
+    current = current + 1;
+}
+block(0, current, 0, "minecraft:bamboo[age=1,leaves=small,stage=0]", false);
+block(0, current+1, 0, "minecraft:bamboo[age=1,leaves=large,stage=0]", false);
+block(0, current+2, 0, "minecraft:bamboo[age=1,leaves=large,stage=1]", false);
