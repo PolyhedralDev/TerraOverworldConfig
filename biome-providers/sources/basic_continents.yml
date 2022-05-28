@@ -4,7 +4,7 @@ source:
     - deep-ocean: 28
     - deep-ocean-border: 4 # Used for the border of deep ocean island biomes crossing into regular ocean
     - ocean: 16
-    - coast: 3 # Used for the border of land biomes crossing into ocean
+    - coast: 4 # Used for the border of land biomes crossing into ocean
     - land: 32
   sampler:
     dimensions: 2

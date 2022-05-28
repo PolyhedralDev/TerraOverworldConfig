@@ -9,11 +9,11 @@ biome-distribution:
   # You can find these configs in the biome-providers directory, most of which contain
   # additional more specific parameters.
   
-  continental-scale: 200
-  # Controls the scale of land / costal / oceanic distribution. Increasing
+  continental-scale: 100
+  # Controls the scale of land / coastal / oceanic distribution. Increasing
   # this produces larger landmasses and larger oceans, and vice-versa when
   # decreasing it.
-  # Default: 200
+  # Default: 100
 
   temperature-scale: 60
   # Controls the scale of temperature zones. Most biomes are placed according to
