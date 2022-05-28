@@ -77,6 +77,19 @@ stages:
       TAIGA_HILLS:
         - SELF: 6
         - REDWOOD_FOREST_HILLS: 1
+      JUNGLE_FLATS:
+        - SELF: 3
+        - BAMBOO_JUNGLE_FLATS: 1
+      JUNGLE:
+        - SELF: 3
+        - BAMBOO_JUNGLE: 1
+      JUNGLE_HILLS:
+        - SELF: 3
+        - BAMBOO_JUNGLE_HILLS: 1
+      JUNGLE_MOUNTAINS:
+        - SELF: 3
+        - BAMBOO_JUNGLE_MOUNTAINS: 1
+      
     sampler:
       dimensions: 2
       type: CELLULAR
