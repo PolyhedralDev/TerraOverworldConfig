@@ -1,6 +1,7 @@
 num randPrecision = 100;
 num goldenAngle = 2.39996;
 num pi = 3.14159;
+num twopi = 6.28318530718;
 
 num trunkHeight = 4+randomInt(20);
 str trunkBlock = "minecraft:jungle_log";
@@ -166,6 +167,15 @@ for (num b = 1; b <= topBranches; b = b + 1) {
             }
         }
     }
+}
+
+for (num v = 35; v > trunkHeight; v = v - 1) {
+    num rx = sin(randomInt(100)/100 * twopi) * (randomInt(9) + 3);
+    num rz = cos(randomInt(100)/100 * twopi) * (randomInt(9) + 3);
+    structure(rx, v, rz, "place_vines", "NONE");
+    structure(-rx, v, rz, "place_vines", "NONE");
+    structure(rx, v, -rz, "place_vines", "NONE");
+    structure(-rx, v, -rz, "place_vines", "NONE");
 }
 
 block(0, -1, 0, "minecraft:dirt");

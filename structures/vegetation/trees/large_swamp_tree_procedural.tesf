@@ -180,7 +180,7 @@ if (sporeBlossomRoll == 0) {
     structure(sporeBlossomX, sporeBlossomY, sporeBlossomZ, "spore_blossom", "NONE");
 }
 
-for (num v = 20; v > trunkHeight; v = v - 1) {
+for (num v = 15; v > trunkHeight; v = v - 1) {
     num rx = sin(randomInt(100)/100 * twopi) * (randomInt(5) + 2);
     num rz = cos(randomInt(100)/100 * twopi) * (randomInt(5) + 2);
     structure(rx, v, rz, "place_vines", "NONE");
