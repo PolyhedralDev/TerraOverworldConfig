@@ -1,7 +1,7 @@
 id: BAMBOO_JUNGLE_FLATS
 type: BIOME
 extends: [ EQ_PLAIN_PEAKS, JUNGLE ]
-color: $biomes/colors.yml:JUNGLE_FLATS
+color: $biomes/colors.yml:BAMBOO_JUNGLE_FLATS
 
 palette:
   - GRASS: 319

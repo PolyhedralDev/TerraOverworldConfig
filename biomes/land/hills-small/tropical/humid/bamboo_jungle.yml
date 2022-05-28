@@ -1,7 +1,7 @@
 id: BAMBOO_JUNGLE
 type: BIOME
 extends: [ EQ_TERRACED_HILLS, JUNGLE ]
-color: $biomes/colors.yml:JUNGLE
+color: $biomes/colors.yml:BAMBOO_JUNGLE
 
 palette:
   - GRASS: 319

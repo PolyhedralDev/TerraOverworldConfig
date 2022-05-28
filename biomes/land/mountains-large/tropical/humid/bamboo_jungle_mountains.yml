@@ -2,7 +2,7 @@ id: BAMBOO_JUNGLE_MOUNTAINS
 type: BIOME
 extends: [ EQ_ERODED_TERRACED_MOUNTAINS, CARVING_LAND, BASE ]
 vanilla: minecraft:jungle
-color: $biomes/colors.yml:JUNGLE_MOUNTAINS
+color: $biomes/colors.yml:BAMBOO_JUNGLE_MOUNTAINS
 
 palette:
   - GRASS: 319
