@@ -1,4 +1,4 @@
-id: JUNGLE
+id: BAMBOO_JUNGLE
 type: BIOME
 extends: [ EQ_TERRACED_HILLS, JUNGLE_HILLS ]
 color: $biomes/colors.yml:JUNGLE

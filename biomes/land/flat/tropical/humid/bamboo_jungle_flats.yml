@@ -1,4 +1,4 @@
-id: JUNGLE_FLATS
+id: BAMBOO_JUNGLE_FLATS
 type: BIOME
 extends: [ EQ_PLAIN_PEAKS, JUNGLE ]
 color: $biomes/colors.yml:JUNGLE_FLATS
