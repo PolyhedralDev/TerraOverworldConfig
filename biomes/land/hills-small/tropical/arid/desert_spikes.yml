@@ -35,3 +35,4 @@ features:
     - DEL_FLOATING_BLOCKS
   flora:
     - CACTUS_SPARSE
+    - DEAD_BUSHES

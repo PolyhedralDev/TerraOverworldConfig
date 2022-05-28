@@ -1,6 +1,6 @@
 id: DESERT
 type: BIOME
-extends: [ COLOR_XERIC, EQ_DUNES, CARVING_LAND, BASE ]
+extends: [ COLOR_XERIC, EQ_DESERT, CARVING_LAND, BASE ]
 vanilla: minecraft:desert
 color: $biomes/colors.yml:DESERT
 
@@ -9,9 +9,9 @@ tags:
 
 palette:
   - SAND: 319
-  - SAND: 64
   - << meta.yml:palette-bottom
 
 features:
   flora:
     - CACTUS_SPARSE
+    - DEAD_BUSHES

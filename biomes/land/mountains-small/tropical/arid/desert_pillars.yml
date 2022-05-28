@@ -26,3 +26,8 @@ slant:
     palette:
       - TERRACOTTA_STRATA_VERTICAL: 319
       - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - CACTUS_SPARSE
+    - DEAD_BUSHES
