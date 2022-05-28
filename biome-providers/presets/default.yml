@@ -40,7 +40,7 @@ biomes:
       - << biome-providers/stages/distribute_climate_variants.yml:stages
 
       # Biome specific variations
-      - << biome-providers/stages/add_desert_variants.yml:stages
+      - << biome-providers/stages/add_variants.yml:stages
   
       - << biome-providers/stages/expand.yml:stages
       - << biome-providers/stages/expand.yml:stages
