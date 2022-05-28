@@ -1,98 +1,90 @@
 stages:
   # Climate variations
   - type: REPLACE_LIST
-    default-from: BIOME:DESERT
+    default-from: desert-variants
     default-to:
-      - SELF: 5
+      - DESERT: 5
       - ROCKY_DESERT: 3
-      - DESERT_SPIKES: 1
-      - BADLANDS_BUTTES: 1
-      - ERODED_BADLANDS_BUTTES: 1
+      - desert-spikes-microvariants: 1
     to:
-      JUNGLE_FLATS:
-        - SELF: 5
+      jungle-flats-variants:
+        - jungle-flats-microvariants: 5
         - SWAMP: 1
-      EVERGREEN_FLATS:
-        - SELF: 5
+      evergreen-flats-variants:
+        - EVERGREEN_FLATS: 5
         - FLOWERING_FLATS: 3
-      PLAINS:
-        - SELF: 3
+      plains-variants:
+        - plains-microvariants: 3
         - PRAIRIE: 3
-        - STEPPE: 3
-        - SUNFLOWER_PLAINS: 1
-      BIRCH_FLATS:
-        - SELF: 3
+      birch-flats-variants:
+        - BIRCH_FLATS: 3
         - AUTUMNAL_FLATS: 2
-      JUNGLE:
-        - SELF: 4
+      jungle-variants:
+        - jungle-microvariants: 4
         - BAMBOO_PONDS: 1
-      EVERGREEN_FOREST:
-        - SELF: 3
+      evergreen-forest-variants:
+        - EVERGREEN_FOREST: 3
         - FLOWERING_FOREST: 2
-      BIRCH_FOREST:
-        - SELF: 3
+      birch-forest-variants:
+        - BIRCH_FOREST: 3
         - AUTUMNAL_FOREST: 1
-      XERIC_HILLS:
-        - SELF: 4
-        - ARID_SPIKES: 1
-      BIRCH_FOREST_HILLS:
-        - SELF: 5
+      birch-forest-hills-variants:
+        - BIRCH_FOREST_HILLS: 5
         - AUTUMNAL_FOREST_HILLS: 3
         - FLOWERING_AUTUMNAL_FOREST_HILLS: 1
-      BADLANDS_MOUNTAINS:
-        - SELF: 1
+      badlands-variants:
+        - BADLANDS_MOUNTAINS: 2
         - DESERT_PILLARS: 1
-      DRY_ROCKY_BUMPY_MOUNTAINS:
-        - SELF: 1
-        - BADLANDS_MOUNTAINS: 1
-        - DESERT_PILLARS: 1
-      DESERT_FLATS:
-        - SELF: 7
-        - SALT_FLATS: 1
-      FOREST_HILLS:
-        - SELF: 5
+        - BADLANDS_BUTTES: 2
+        - ERODED_BADLANDS_BUTTES: 1
+      forest-hills-variants:
+        - FOREST_HILLS: 5
         - FLOWERING_FOREST_HILLS: 3
-      WILD_BUMPY_MOUNTAINS:
-        - SELF: 3
+      wild-mountains-variants:
+        - WILD_BUMPY_MOUNTAINS: 3
         - EVERGREEN_OVERHANGS: 1
-      ROCKY_BUMPY_MOUNTAINS:
-        - SELF: 1
-        - XERIC_MOUNTAINS: 1
     sampler:
       dimensions: 2
       type: CELLULAR
       return: CellValue
-      frequency: 0.08 / ${meta.yml:biome-distribution.global-scale}
+      salt: 42342
+      frequency: 0.06 / ${meta.yml:biome-distribution.global-scale}
 
   # Direct variants - color variations, etc
   - type: REPLACE_LIST
-    default-from: BIOME:DESERT_SPIKES
+    default-from: desert-spikes-microvariants
     default-to:
-      - SELF: 6
+      - DESERT_SPIKES: 6
       - DESERT_SPIKES_GOLD: 1
     to:
       DRY_TEMPERATE_MOUNTAINS:
         - SELF: 2
         - DRY_TEMPERATE_WHITE_MOUNTAINS: 1
       TAIGA_HILLS:
-        - SELF: 6
+        - SELF: 9
         - REDWOOD_FOREST_HILLS: 1
-      JUNGLE_FLATS:
-        - SELF: 3
+      jungle-flats-microvariants:
+        - JUNGLE_FLATS: 3
         - BAMBOO_JUNGLE_FLATS: 1
-      JUNGLE:
-        - SELF: 3
+      jungle-microvariants:
+        - JUNGLE: 3
         - BAMBOO_JUNGLE: 1
+      plains-microvariants:
+        - PLAINS: 3
+        - SUNFLOWER_PLAINS: 1
       JUNGLE_HILLS:
         - SELF: 3
         - BAMBOO_JUNGLE_HILLS: 1
       JUNGLE_MOUNTAINS:
         - SELF: 3
         - BAMBOO_JUNGLE_MOUNTAINS: 1
+      desert-flats-microvariants:
+        - DESERT_FLATS: 7
+        - SALT_FLATS: 1
       
     sampler:
       dimensions: 2
       type: CELLULAR
       return: CellValue
-      frequency: 0.8 / ${meta.yml:biome-distribution.global-scale}
-      salt: 23
+      frequency: 0.3 / ${meta.yml:biome-distribution.global-scale}
+      salt: 34534

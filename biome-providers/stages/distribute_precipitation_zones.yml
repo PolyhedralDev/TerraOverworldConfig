@@ -29,7 +29,7 @@ stages:
   # -------------
   # Flat Tropical Humid
   # -------------
-      - JUNGLE_FLATS: 5
+      - jungle-flats-variants: 5
   # -------------
   # Flat Tropical Semi-Humid
   # -------------
@@ -46,14 +46,14 @@ stages:
   # -------------
   # Flat Tropical Arid
   # -------------
-      - DESERT_FLATS: 4
+      - desert-flats-microvariants: 4
 
     to:
       flat-subtropical:
     # -------------
     # Flat Subtropical Semi Humid
     # -------------
-        - EVERGREEN_FLATS: 8
+        - evergreen-flats-variants: 8
     # -------------
     # Flat Subtropical Semi-Arid
     # -------------
@@ -65,13 +65,17 @@ stages:
 
       flat-temperate:
     # -------------
-    # Flat Temperate Semi-Humid
+    # Flat Temperate Humid
     # -------------
         - FOREST_FLATS: 5
     # -------------
+    # Flat Temperate Semi-Humid
+    # -------------
+        - plains-variants: 5
+    # -------------
     # Flat Temperate Semi-Arid
     # -------------
-        - PLAINS: 9
+        - STEPPE: 3
     # -------------
     # Flat Temperate Arid (Mediterranean)
     # -------------
@@ -81,7 +85,7 @@ stages:
     # -------------
     # Flat Boreal Humid (Wetter Forests)
     # -------------
-        - BIRCH_FLATS: 3
+        - birch-flats-variants: 3
     # -------------
     # Flat Boreal Semi-Humid (Dryer Forests)
     # -------------
@@ -95,7 +99,7 @@ stages:
         # -------------
         # Small Hills Tropical Humid
         # -------------
-        - JUNGLE: 5
+        - jungle-variants: 5
         
         # -------------
         # Small Hills Tropical Semi-Humid
@@ -109,7 +113,7 @@ stages:
         # -------------
         # Small Hills Tropical Arid
         # -------------
-        - DESERT: 7
+        - desert-variants: 7
 
       hills-small-subtropical:
         # -------------
@@ -119,7 +123,7 @@ stages:
         # -------------
         # Small Hills Subtropical Semi Humid
         # -------------
-        - EVERGREEN_FOREST: 6
+        - evergreen-forest-variants: 6
         # -------------
         # Small Hills Subtropical Semi-Arid
         # -------------
@@ -143,7 +147,7 @@ stages:
         # -------------
         # Small Hills Boreal Humid (Wetter Forests)
         # -------------
-        - BIRCH_FOREST: 3
+        - birch-forest-variants: 3
         # -------------
         # Small Hills Boreal Semi-Humid (Dryer Forests)
         # -------------
@@ -170,7 +174,7 @@ stages:
         # -------------
         # Large Hills Tropical Arid
         # -------------
-        - XERIC_HILLS: 5
+        - ARID_SPIKES: 5
 
       hills-large-subtropical:
         # -------------
@@ -194,7 +198,7 @@ stages:
         # -------------
         # Large Hills Temperate Semi-Humid
         # -------------
-        - FOREST_HILLS: 8
+        - forest-hills-variants: 8
         # -------------
         # Large Hills Temperate Semi-Arid
         # -------------
@@ -205,7 +209,7 @@ stages:
         # -------------
         # Large Hills Boreal Semi-Humid
         # -------------
-        - BIRCH_FOREST_HILLS: 9
+        - birch-forest-hills-variants: 9
         # -------------
         # Large Hills Boreal Semi-Arid
         # -------------
@@ -231,17 +235,17 @@ stages:
         # -------------
         # Small Mountains Tropical Arid
         # -------------
-        - BADLANDS_MOUNTAINS: 6
+        - badlands-variants: 6
         
       mountains-small-subtropical:
         # -------------
         # Small Mountains Subtropical Semi-Humid
         # -------------
-        - MONSOON_MOUNTAINS: 3
+        - MONSOON_MOUNTAINS: 5
         # -------------
         # Small Mountains Subtropical Semi-Humid
         # -------------
-        - WILD_BUMPY_MOUNTAINS: 3
+        - wild-mountains-variants: 3
         # -------------
         # Small Mountains Subtropical Semi-Arid
         # -------------
