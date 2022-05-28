@@ -1,0 +1,17 @@
+id: DESERT_FLATS
+type: BIOME
+extends: [ COLOR_XERIC, EQ_DESERT, CARVING_LAND, BASE ]
+vanilla: minecraft:desert
+color: $biomes/colors.yml:DESERT
+
+tags:
+  - USE_RIVER
+
+palette:
+  - SAND: 319
+  - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - CACTUS_SPARSE
+    - DEAD_BUSHES

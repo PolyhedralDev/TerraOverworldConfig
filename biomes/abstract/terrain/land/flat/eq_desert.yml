@@ -1,0 +1,76 @@
+id: EQ_DESERT
+type: BIOME
+abstract: true
+
+# Flat low elevation desert terrain
+
+vars: &variables
+  base: 64 # Base terrain y level
+  groundHeight: 5 # Block height of base noise
+
+  duneHeight: 10 # Block height of dunes
+  duneSpacing: 20 # Higher number = more spacing between dunes
+  duneFrequency: 0.7 # Overall dune frequency
+  duneRotationRange: pi/3 # How much dune cells are randomly rotated, 0 = anisotrophic, pi = isotrophic
+
+terrain:
+  sampler:
+    dimensions: 3
+    type: EXPRESSION
+    variables: *variables
+    expression: -y + base
+
+  sampler-2d:
+    dimensions: 2
+    type: EXPRESSION
+    variables: *variables
+    expression: |
+      duneHeight * dunes(x*duneFrequency, z*duneFrequency) * ((duneHeightVariation(x,z)/4)+0.75)
+      + groundHeight * (ground(x, z)+1)/2
+    samplers:
+      duneHeightVariation:
+        dimensions: 2
+        type: FBM
+        octaves: 2
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.02
+      dunes: # Dune height map [0, 1]
+        dimensions: 2
+        type: DOMAIN_WARP
+        amplitude: 5
+        warp:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.04
+        sampler:
+          type: DOMAIN_WARP
+          amplitude: 15
+          warp:
+            type: OPEN_SIMPLEX_2
+            frequency: 0.02
+            salt: 1
+          sampler: # Absolute sine wave domain rotated via CELL_VALUE, cell edges are hidden by DISTANCE_2_DIV
+            type: EXPRESSION
+            variables: *variables
+            expression: |
+              -mask(x, z) * (-|sin((
+                 x*sin(rotation(x,z)*duneRotationRange)
+                +z*cos(rotation(x,z)*duneRotationRange))/duneSpacing)|+1)
+            samplers:
+              height: &cell
+                dimensions: 2
+                type: CELLULAR
+                frequency: 0.01
+              rotation:
+                <<: *cell
+                return: CellValue
+              mask:
+                <<: *cell
+                return: Distance2Div
+
+      ground:
+        dimensions: 2
+        type: FBM
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.005
