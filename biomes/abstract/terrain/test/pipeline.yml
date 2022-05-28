@@ -74,7 +74,7 @@ biomes:
       sampler: *elevation-noise
     stages:
       - type: REPLACE_LIST
-        noise: *variant-noise
+        sampler: *variant-noise
         default-from: deep-ocean
         default-to: *deep-ocean-biomes
         to:
@@ -104,7 +104,7 @@ biomes:
           TEST_EQ_CRACKED_PLATEAU:
             - SELF: 1
             - TEST_EQ_CRACKED_PLATEAU_RIVER: 1
-        noise:
+        sampler:
           type: EXPRESSION
           expression: if(noise(x/riverWidth, z/riverWidth)!=0,1,-1)
           variables: *riverVariables
