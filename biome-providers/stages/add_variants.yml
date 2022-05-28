@@ -62,7 +62,7 @@ stages:
       dimensions: 2
       type: CELLULAR
       return: CellValue
-      frequency: 0.025 / ${meta.yml:biome-distribution.global-scale}
+      frequency: 0.08 / ${meta.yml:biome-distribution.global-scale}
 
   # Direct variants - color variations, etc
   - type: REPLACE_LIST
@@ -77,9 +77,22 @@ stages:
       TAIGA_HILLS:
         - SELF: 6
         - REDWOOD_FOREST_HILLS: 1
+      JUNGLE_FLATS:
+        - SELF: 3
+        - BAMBOO_JUNGLE_FLATS: 1
+      JUNGLE:
+        - SELF: 3
+        - BAMBOO_JUNGLE: 1
+      JUNGLE_HILLS:
+        - SELF: 3
+        - BAMBOO_JUNGLE_HILLS: 1
+      JUNGLE_MOUNTAINS:
+        - SELF: 3
+        - BAMBOO_JUNGLE_MOUNTAINS: 1
+      
     sampler:
       dimensions: 2
       type: CELLULAR
       return: CellValue
-      frequency: 0.06 / ${meta.yml:biome-distribution.global-scale}
+      frequency: 0.8 / ${meta.yml:biome-distribution.global-scale}
       salt: 23
