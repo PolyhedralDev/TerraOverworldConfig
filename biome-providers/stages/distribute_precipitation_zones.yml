@@ -166,7 +166,7 @@ stages:
         # -------------
         # Large Hills Tropical Semi-Arid
         # -------------
-        - WARM_HILLS: 3
+        - WARM_HILLS: 2
         # -------------
         # Large Hills Tropical Arid
         # -------------
@@ -241,7 +241,7 @@ stages:
         # -------------
         # Small Mountains Subtropical Semi-Humid
         # -------------
-        - WILD_BUMPY_MOUNTAINS: 4
+        - WILD_BUMPY_MOUNTAINS: 3
         # -------------
         # Small Mountains Subtropical Semi-Arid
         # -------------

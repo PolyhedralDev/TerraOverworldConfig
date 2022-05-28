@@ -43,7 +43,7 @@ stages:
         - SELF: 1
         - DESERT_PILLARS: 1
       DRY_ROCKY_BUMPY_MOUNTAINS:
-        - SELF: 2
+        - SELF: 1
         - BADLANDS_MOUNTAINS: 1
         - DESERT_PILLARS: 1
       DESERT_FLATS:
@@ -56,7 +56,7 @@ stages:
         - SELF: 3
         - EVERGREEN_OVERHANGS: 1
       ROCKY_BUMPY_MOUNTAINS:
-        - SELF: 3
+        - SELF: 1
         - XERIC_MOUNTAINS: 1
     sampler:
       dimensions: 2
