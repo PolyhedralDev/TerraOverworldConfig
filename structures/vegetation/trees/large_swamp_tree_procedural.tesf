@@ -179,4 +179,8 @@ if (sporeBlossomRoll == 0) {
     structure(sporeBlossomX, sporeBlossomY, sporeBlossomZ, "spore_blossom", "NONE");
 }
 
+for (num v = 20; v > 0; v = v - 1) {
+    structure(0, v, 0, "place_vines", "NONE");
+}
+
 block(0, -1, 0, "minecraft:dirt");
