@@ -3,3 +3,8 @@ type: ORE
 extends: ABSTRACT_DEPOSIT
 
 material: minecraft:clay
+
+replace:
+  - minecraft:stone
+  - minecraft:sand
+  - minecraft:dirt
