@@ -1,3 +1,0 @@
-id: TEST_EQ_ERODED_PILLARS
-type: BIOME
-extends: [ EQ_ERODED_PILLARS, TEST_EQ ]

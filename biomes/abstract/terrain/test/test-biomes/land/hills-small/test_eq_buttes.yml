@@ -1,3 +1,0 @@
-id: TEST_EQ_BUTTES
-type: BIOME
-extends: [ EQ_BUTTES, TEST_EQ ]

@@ -1,3 +1,0 @@
-id: TEST_EQ_SPIKES
-type: BIOME
-extends: [ EQ_SPIKES, TEST_EQ ]

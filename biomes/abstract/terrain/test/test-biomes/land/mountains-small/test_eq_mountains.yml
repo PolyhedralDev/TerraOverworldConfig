@@ -1,3 +1,0 @@
-id: TEST_EQ_MOUNTAINS
-type: BIOME
-extends: [ EQ_MOUNTAINS, TEST_EQ ]

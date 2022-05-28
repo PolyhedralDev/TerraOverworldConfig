@@ -1,4 +1,0 @@
-id: TEST_EQ_ALPHA_MOUNTAINS_RIVER
-type: BIOME
-extends: [ EQ_ALPHA_MOUNTAINS_RIVER, TEST_EQ ]
-tags: []

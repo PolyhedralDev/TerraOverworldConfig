@@ -1,3 +1,0 @@
-id: TEST_EQ_PLAIN
-type: BIOME
-extends: [ EQ_PLAIN, TEST_EQ ]

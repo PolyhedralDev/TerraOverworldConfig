@@ -1,3 +1,0 @@
-id: TEST_EQ_TERRACED_HILLS
-type: BIOME
-extends: [ EQ_TERRACED_HILLS, TEST_EQ ]
