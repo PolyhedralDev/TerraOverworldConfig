@@ -21,80 +21,80 @@ stages:
     
     default-from: deep-ocean
     default-to:
-      - deep-ocean-tropical: 1
-      - deep-ocean-subtropical: 1
-      - deep-ocean-temperate: 1
-      - deep-ocean-boreal: 1
-      - deep-ocean-polar: 1
+      - deep-ocean-tropical: 6
+      - deep-ocean-subtropical: 5
+      - deep-ocean-temperate: 4
+      - deep-ocean-boreal: 5
+      - deep-ocean-polar: 6
     
     to:
 
       ocean:
-        - ocean-tropical: 1
-        - ocean-subtropical: 1
-        - ocean-temperate: 1
-        - ocean-boreal: 1
-        - ocean-polar: 1
+        - ocean-tropical: 6
+        - ocean-subtropical: 5
+        - ocean-temperate: 4
+        - ocean-boreal: 5
+        - ocean-polar: 6
   
       coast-flat:
-        - coast-flat-tropical: 1
-        - coast-flat-subtropical: 1
-        - coast-flat-temperate: 1
-        - coast-flat-boreal: 1
-        - coast-flat-polar: 1
+        - coast-flat-tropical: 6
+        - coast-flat-subtropical: 5
+        - coast-flat-temperate: 4
+        - coast-flat-boreal: 5
+        - coast-flat-polar: 6
   
       coast-hills:
-        - coast-hills-tropical: 1
-        - coast-hills-subtropical: 1
-        - coast-hills-temperate: 1
-        - coast-hills-boreal: 1
-        - coast-hills-polar: 1
+        - coast-hills-tropical: 6
+        - coast-hills-subtropical: 5
+        - coast-hills-temperate: 4
+        - coast-hills-boreal: 5
+        - coast-hills-polar: 6
   
       coast-mountains-small:
-        - coast-mountains-small-tropical: 1
-        - coast-mountains-small-subtropical: 1
-        - coast-mountains-small-temperate: 1
-        - coast-mountains-small-boreal: 1
-        - coast-mountains-small-polar: 1
+        - coast-mountains-small-tropical: 6
+        - coast-mountains-small-subtropical: 5
+        - coast-mountains-small-temperate: 4
+        - coast-mountains-small-boreal: 5
+        - coast-mountains-small-polar: 6
   
       coast-mountains-large:
-        - coast-mountains-large-tropical: 1
-        - coast-mountains-large-subtropical: 1
-        - coast-mountains-large-temperate: 1
-        - coast-mountains-large-boreal: 1
-        - coast-mountains-large-polar: 1
+        - coast-mountains-large-tropical: 6
+        - coast-mountains-large-subtropical: 5
+        - coast-mountains-large-temperate: 4
+        - coast-mountains-large-boreal: 5
+        - coast-mountains-large-polar: 6
   
       flat:
-        - flat-tropical: 1
-        - flat-subtropical: 1
-        - flat-temperate: 1
-        - flat-boreal: 1
-        - flat-polar: 1
+        - flat-tropical: 6
+        - flat-subtropical: 5
+        - flat-temperate: 4
+        - flat-boreal: 5
+        - flat-polar: 6
   
       hills-small:
-        - hills-small-tropical: 1
-        - hills-small-subtropical: 1
-        - hills-small-temperate: 1
-        - hills-small-boreal: 1
-        - hills-small-polar: 1
+        - hills-small-tropical: 6
+        - hills-small-subtropical: 5
+        - hills-small-temperate: 4
+        - hills-small-boreal: 5
+        - hills-small-polar: 6
 
       hills-large:
-        - hills-large-tropical: 1
-        - hills-large-subtropical: 1
-        - hills-large-temperate: 1
-        - hills-large-boreal: 1
-        - hills-large-polar: 1
+        - hills-large-tropical: 6
+        - hills-large-subtropical: 5
+        - hills-large-temperate: 4
+        - hills-large-boreal: 5
+        - hills-large-polar: 6
 
       mountains-small:
-        - mountains-small-tropical: 1
-        - mountains-small-subtropical: 1
-        - mountains-small-temperate: 1
-        - mountains-small-boreal: 1
-        - mountains-small-polar: 1
+        - mountains-small-tropical: 6
+        - mountains-small-subtropical: 5
+        - mountains-small-temperate: 4
+        - mountains-small-boreal: 5
+        - mountains-small-polar: 6
 
       mountains-large:
-        - mountains-large-tropical: 1
-        - mountains-large-subtropical: 1
-        - mountains-large-temperate: 1
-        - mountains-large-boreal: 1
-        - mountains-large-polar: 1
+        - mountains-large-tropical: 6
+        - mountains-large-subtropical: 5
+        - mountains-large-temperate: 4
+        - mountains-large-boreal: 5
+        - mountains-large-polar: 6
