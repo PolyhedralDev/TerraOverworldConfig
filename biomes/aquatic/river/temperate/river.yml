@@ -24,3 +24,5 @@ colors:
 features:
   flora:
     - SUGAR_CANE
+  ores:
+    - CLAY_DEPOSITS

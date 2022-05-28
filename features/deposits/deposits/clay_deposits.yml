@@ -1,0 +1,32 @@
+id: CLAY_DEPOSITS
+type: FEATURE
+
+anchors:
+  - &structure CLAY_DEPOSIT
+  - &densityThreshold 1/256 * ${features/deposits/distribution.yml:clay.averageCountPerChunk} # Divide by 16^2 to get % per column
+  - &salt $features/deposits/distribution.yml:clay.salt
+  - &range $features/deposits/distribution.yml:clay.range
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: *salt
+  threshold: *densityThreshold
+
+locator:
+  type: PATTERN
+  range: *range
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH_SOLID
+        offset: 0
+      - type: MATCH
+        block: minecraft:water
+        offset: 1
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: *structure
