@@ -113,8 +113,7 @@ stages:
         # -------------
         # Small Hills Tropical Arid
         # -------------
-        - DESERT: 6
-        - BADLANDS_BUTTES: 1
+        - DESERT: 7
 
       hills-small-subtropical:
         # -------------
