@@ -1,0 +1,9 @@
+str blockID = getBlock(0, 0, 0);
+if (blockID != "minecraft:oak_leaves" &&
+    blockID != "minecraft:birch_leaves" &&
+    blockID != "minecraft:spruce_leaves" &&
+    blockID != "minecraft:jungle_leaves" &&
+    blockID != "minecraft:acacia_leaves" &&
+    blockID != "minecraft:dark_oak_leaves") {
+    fail;
+}
