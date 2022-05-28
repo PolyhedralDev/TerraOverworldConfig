@@ -1,9 +1,9 @@
-id: SWAMP_TREES
+id: DEAD_SWAMP_TREES
 type: FEATURE
 
 distributor:
   type: PADDED_GRID
-  width: 20
+  width: 100
   padding: 3
   salt: 7718
 
@@ -32,4 +32,4 @@ locator:
 structures:
   distribution:
     type: CONSTANT
-  structures: large_swamp_tree_procedural
+  structures: dead_large_swamp_tree_procedural

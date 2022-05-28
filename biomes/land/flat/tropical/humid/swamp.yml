@@ -37,3 +37,4 @@ features:
   trees:
     - OAK_BUSHES
     - SWAMP_TREES
+    - DEAD_SWAMP_TREES
