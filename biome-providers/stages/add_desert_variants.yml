@@ -6,6 +6,7 @@ stages:
       - ROCKY_DESERT: 3
       - DESERT_SPIKES: 1
       - BADLANDS_BUTTES: 1
+      - ERODED_BADLANDS_BUTTES: 1
     sampler:
       dimensions: 2
       type: CELLULAR
