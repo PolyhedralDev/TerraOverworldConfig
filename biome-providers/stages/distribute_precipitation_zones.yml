@@ -219,7 +219,7 @@ stages:
         # -------------
         # Small Mountains Tropical Humid
         # -------------
-        - OVERGROWN_CLIFFS: 5
+        - OVERGROWN_CLIFFS: 6
         # -------------
         # Small Mountains Tropical Semi-Humid
         # -------------
