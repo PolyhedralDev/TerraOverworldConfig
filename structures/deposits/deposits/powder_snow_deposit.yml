@@ -1,0 +1,9 @@
+id: POWDER_SNOW_DEPOSIT
+type: ORE
+extends: ABSTRACT_DEPOSIT
+
+material: minecraft:powder_snow
+
+replace:
+  - minecraft:snow_block
+  - minecraft:snow[layers=8]
