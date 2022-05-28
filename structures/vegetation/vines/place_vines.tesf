@@ -2,27 +2,20 @@ setWaterlog(false);
 str blockID = "minecraft:vine[";
 bool isUp = false;
 
-if (structure(0, 1, 0, "is_leaf", "NONE")) {
-    blockID = blockID + "up=true,";
-    isUp = true;
-}
-else blockID = blockID + "up=false,";
-if (structure(0, 0, -1, "is_leaf", "NONE")) blockID = blockID + "north=true,";
-else blockID = blockID + "north=false,";
-if (structure(1, 0, 0, "is_leaf", "NONE")) blockID = blockID + "east=true,";
-else blockID = blockID + "east=false,";
-if (structure(0, 0, 1, "is_leaf", "NONE")) blockID = blockID + "south=true,";
-else blockID = blockID + "south=false,";
-if (structure(-1, 0, 0, "is_leaf", "NONE")) blockID = blockID + "west=true]";
-else blockID = blockID + "west=false]";
+bool north = structure(0, 0, -1, "is_leaf", "NONE");
 
-if (blockID != "minecraft:vine[up=false,down=false,north=false,east=false,south=false,west=false]") block(0, 0, 0, blockID, false);
+bool south = structure(0, 0, 1, "is_leaf", "NONE");
 
-// Chance to place a hanging strand of vines
-if (randomInt(10) == 0) {
-    num length = randomInt(10);
-    for (num i = 0; i < length; i = i + 1) {
-        if (isUp == true) break;
-        block(0, -i, 0, blockID, false);
-    }
+bool east = structure(1, 0, 0, "is_leaf", "NONE");
+
+bool west = structure(-1, 0, 0, "is_leaf", "NONE");
+
+if(!(north || south || east || west)) fail;
+
+str vine = "minecraft:vine[north=" + north + ",south=" + south + ",east=" + east + ",west=" + west + "]";
+
+block(0, 0, 0, vine, false);
+num length = randomInt(6) + 4;
+for (num i = 0; i < length; i = i + 1) {
+    block(0, -i, 0, vine, false);
 }

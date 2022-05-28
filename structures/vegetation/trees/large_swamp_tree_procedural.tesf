@@ -1,6 +1,7 @@
 num randPrecision = 100;
 num goldenAngle = 2.39996;
 num pi = 3.14159;
+num twopi = 6.28318530718;
 
 num trunkHeight = 4+randomInt(4);
 str trunkBlock = "minecraft:dark_oak_log";
@@ -179,8 +180,13 @@ if (sporeBlossomRoll == 0) {
     structure(sporeBlossomX, sporeBlossomY, sporeBlossomZ, "spore_blossom", "NONE");
 }
 
-for (num v = 20; v > 0; v = v - 1) {
-    structure(0, v, 0, "place_vines", "NONE");
+for (num v = 20; v > trunkHeight; v = v - 1) {
+    num rx = sin(randomInt(100)/100 * twopi) * (randomInt(5) + 2);
+    num rz = cos(randomInt(100)/100 * twopi) * (randomInt(5) + 2);
+    structure(rx, v, rz, "place_vines", "NONE");
+    structure(-rx, v, rz, "place_vines", "NONE");
+    structure(rx, v, -rz, "place_vines", "NONE");
+    structure(-rx, v, -rz, "place_vines", "NONE");
 }
 
 block(0, -1, 0, "minecraft:dirt");
