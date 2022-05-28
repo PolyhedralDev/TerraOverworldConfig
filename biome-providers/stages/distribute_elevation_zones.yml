@@ -18,15 +18,15 @@ stages:
 
     default-from: coast
     default-to:
-      - coast-flat: 5
+      - coast-flat: 6
+      - coast-hills: 5
       - coast-hills: 4
-      - coast-hills: 3
-      - coast-mountains-small: 4
-      - coast-mountains-large: 5
+      - coast-mountains-small: 5
+      - coast-mountains-large: 6
     to:
       land:
-        - flat: 5
-        - hills-small: 4
-        - hills-large: 3
-        - mountains-small: 4
-        - mountains-large: 5
+        - flat: 6
+        - hills-small: 5
+        - hills-large: 4
+        - mountains-small: 5
+        - mountains-large: 6
