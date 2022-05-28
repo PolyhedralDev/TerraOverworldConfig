@@ -13,6 +13,10 @@ tags:
   - USE_RIVER_FLAT_SWAMP
 
 features:
-  flora:
-    trees:
-      - BAMBOO_PATCHES
+  trees:
+    - JUNGLE_TREES
+    - DENSE_TEMPERATE_TREE_PATCHES
+    - OAK_BUSHES
+    - SUBTROPICAL_BUSHES
+    - POTATO_PATCHES
+    - BAMBOO_PATCHES
