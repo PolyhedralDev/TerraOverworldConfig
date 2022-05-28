@@ -1,23 +1,82 @@
 stages:
-  - type: REPLACE
-    from: BIOME:DESERT
-    to:
+  # Climate variations
+  - type: REPLACE_LIST
+    default-from: BIOME:DESERT
+    default-to:
       - SELF: 5
       - ROCKY_DESERT: 3
       - DESERT_SPIKES: 1
       - BADLANDS_BUTTES: 1
       - ERODED_BADLANDS_BUTTES: 1
+    to:
+      JUNGLE_FLATS:
+        - SELF: 5
+        - SWAMP: 1
+      EVERGREEN_FLATS:
+        - SELF: 5
+        - FLOWERING_FLATS: 3
+      PLAINS:
+        - SELF: 3
+        - PRAIRIE: 3
+        - STEPPE: 3
+        - SUNFLOWER_PLAINS: 1
+      BIRCH_FLATS:
+        - SELF: 3
+        - AUTUMNAL_FLATS: 2
+      JUNGLE:
+        - SELF: 4
+        - BAMBOO_PONDS: 1
+      EVERGREEN_FOREST:
+        - SELF: 3
+        - FLOWERING_FOREST: 2
+      BIRCH_FOREST:
+        - SELF: 3
+        - AUTUMNAL_FOREST: 1
+      XERIC_HILLS:
+        - SELF: 4
+        - ARID_SPIKES: 1
+      BIRCH_FOREST_HILLS:
+        - SELF: 5
+        - AUTUMNAL_FOREST_HILLS: 3
+        - FLOWERING_AUTUMNAL_FOREST_HILLS: 1
+      BADLANDS_MOUNTAINS:
+        - SELF: 1
+        - DESERT_PILLARS: 1
+      DRY_ROCKY_BUMPY_MOUNTAINS:
+        - SELF: 2
+        - BADLANDS_MOUNTAINS: 1
+        - DESERT_PILLARS: 1
+      DESERT_FLATS:
+        - SELF: 7
+        - SALT_FLATS: 1
+      FOREST_HILLS:
+        - SELF: 5
+        - FLOWERING_FOREST_HILLS: 3
+      WILD_BUMPY_MOUNTAINS:
+        - SELF: 3
+        - EVERGREEN_OVERHANGS: 1
+      ROCKY_BUMPY_MOUNTAINS:
+        - SELF: 3
+        - XERIC_MOUNTAINS: 1
     sampler:
       dimensions: 2
       type: CELLULAR
       return: CellValue
-      frequency: 0.03 / ${meta.yml:biome-distribution.global-scale}
+      frequency: 0.025 / ${meta.yml:biome-distribution.global-scale}
 
-  - type: REPLACE
-    from: BIOME:DESERT_SPIKES
-    to:
+  # Direct variants - color variations, etc
+  - type: REPLACE_LIST
+    default-from: BIOME:DESERT_SPIKES
+    default-to:
       - SELF: 6
       - DESERT_SPIKES_GOLD: 1
+    to:
+      DRY_TEMPERATE_MOUNTAINS:
+        - SELF: 2
+        - DRY_TEMPERATE_WHITE_MOUNTAINS: 1
+      TAIGA_HILLS:
+        - SELF: 6
+        - REDWOOD_FOREST_HILLS: 1
     sampler:
       dimensions: 2
       type: CELLULAR

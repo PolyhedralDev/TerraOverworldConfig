@@ -29,8 +29,7 @@ stages:
   # -------------
   # Flat Tropical Humid
   # -------------
-      - JUNGLE_FLATS: 3
-      - SWAMP: 2
+      - JUNGLE_FLATS: 5
   # -------------
   # Flat Tropical Semi-Humid
   # -------------
@@ -44,15 +43,17 @@ stages:
   # Flat Tropical Semi-Arid
   # -------------
       - XERIC_PLAINS: 3
-      - SALT_FLATS: 1
+  # -------------
+  # Flat Tropical Arid
+  # -------------
+      - DESERT_FLATS: 4
 
     to:
       flat-subtropical:
     # -------------
     # Flat Subtropical Semi Humid
     # -------------
-        - EVERGREEN_FLATS: 5
-        - FLOWERING_FLATS: 3
+        - EVERGREEN_FLATS: 8
     # -------------
     # Flat Subtropical Semi-Arid
     # -------------
@@ -60,7 +61,7 @@ stages:
     # -------------
     # Flat Subtropical Arid
     # -------------
-        - XERIC_PLAINS: 1
+        - XERIC_PLAINS: 5
 
       flat-temperate:
     # -------------
@@ -70,21 +71,17 @@ stages:
     # -------------
     # Flat Temperate Semi-Arid
     # -------------
-        - PLAINS: 3
-        - PRAIRIE: 3
-        - STEPPE: 3
-        - SUNFLOWER_PLAINS: 1
+        - PLAINS: 9
     # -------------
     # Flat Temperate Arid (Mediterranean)
     # -------------
-        - OAK_SAVANNA: 1
+        - OAK_SAVANNA: 4
 
       flat-boreal:
     # -------------
     # Flat Boreal Humid (Wetter Forests)
     # -------------
-        - AUTUMNAL_FLATS: 1
-        - BIRCH_FLATS: 2
+        - BIRCH_FLATS: 3
     # -------------
     # Flat Boreal Semi-Humid (Dryer Forests)
     # -------------
@@ -98,8 +95,7 @@ stages:
         # -------------
         # Small Hills Tropical Humid
         # -------------
-        - JUNGLE: 4
-        - BAMBOO_PONDS: 1
+        - JUNGLE: 5
         
         # -------------
         # Small Hills Tropical Semi-Humid
@@ -109,7 +105,7 @@ stages:
         # -------------
         # Small Hills Tropical Semi-Arid
         # -------------
-        - WARM_LOW_HILLS: 1
+        - WARM_LOW_HILLS: 3
         # -------------
         # Small Hills Tropical Arid
         # -------------
@@ -119,20 +115,19 @@ stages:
         # -------------
         # Small Hills Subtropical Humid
         # -------------
-        - RAINFOREST: 1
+        - RAINFOREST: 5
         # -------------
         # Small Hills Subtropical Semi Humid
         # -------------
-        - EVERGREEN_FOREST: 5
-        - FLOWERING_FOREST: 3
+        - EVERGREEN_FOREST: 6
         # -------------
         # Small Hills Subtropical Semi-Arid
         # -------------
-        - WARM_LOW_HILLS: 3
+        - WARM_LOW_HILLS: 4
         # -------------
         # Small Hills Subtropical Arid
         # -------------
-        - XERIC_LOW_HILLS: 1
+        - XERIC_LOW_HILLS: 5
 
       hills-small-temperate:
         # -------------
@@ -142,14 +137,13 @@ stages:
         # -------------
         # Small Hills Temperate Semi-Arid
         # -------------
-        - WOODED_BUTTES: 1
+        - WOODED_BUTTES: 2
 
       hills-small-boreal:
         # -------------
         # Small Hills Boreal Humid (Wetter Forests)
         # -------------
-        - AUTUMNAL_FOREST: 1
-        - BIRCH_FOREST: 2
+        - BIRCH_FOREST: 3
         # -------------
         # Small Hills Boreal Semi-Humid (Dryer Forests)
         # -------------
@@ -177,18 +171,16 @@ stages:
         # Large Hills Tropical Arid
         # -------------
         - XERIC_HILLS: 5
-        - ARID_SPIKES: 1
 
       hills-large-subtropical:
         # -------------
         # Large Hills Subtropical Humid
         # -------------
-        - RAINFOREST_HILLS: 3
+        - RAINFOREST_HILLS: 5
         # -------------
         # Large Hills Subtropical Semi-Humid
         # -------------
-        - EVERGREEN_FOREST: 5
-        - FLOWERING_FOREST: 3
+        - EVERGREEN_FOREST_HILLS: 6
         # -------------
         # Large Hills Subtropical Semi-Arid
         # -------------
@@ -196,32 +188,28 @@ stages:
         # -------------
         # Large Hills Subtropical Arid
         # -------------
-        - XERIC_HILLS: 3
-        - ARID_SPIKES: 2
+        - XERIC_HILLS: 5
 
       hills-large-temperate:
         # -------------
         # Large Hills Temperate Semi-Humid
         # -------------
-        - FOREST: 8
+        - FOREST_HILLS: 8
         # -------------
         # Large Hills Temperate Semi-Arid
         # -------------
-        - SHRUBLAND: 2
+        - SHRUBLAND: 4
         # -------------
 
       hills-large-boreal:
         # -------------
         # Large Hills Boreal Semi-Humid
         # -------------
-        - BIRCH_FOREST_HILLS: 5
-        - AUTUMNAL_FOREST_HILLS: 3
-        - FLOWERING_AUTUMNAL_FOREST_HILLS: 1
+        - BIRCH_FOREST_HILLS: 9
         # -------------
         # Large Hills Boreal Semi-Arid
         # -------------
-        - TAIGA_HILLS: 8
-        - REDWOOD_FOREST_HILLS: 4
+        - TAIGA_HILLS: 11
 
     # --------------------------------------------
     #            Small Mountains Biomes
@@ -231,7 +219,7 @@ stages:
         # -------------
         # Small Mountains Tropical Humid
         # -------------
-        - OVERGROWN_CLIFFS: 3
+        - OVERGROWN_CLIFFS: 5
         # -------------
         # Small Mountains Tropical Semi-Humid
         # -------------
@@ -243,9 +231,8 @@ stages:
         # -------------
         # Small Mountains Tropical Arid
         # -------------
-        - BADLANDS_MOUNTAINS: 3
-        - DESERT_PILLARS: 3
-
+        - BADLANDS_MOUNTAINS: 6
+        
       mountains-small-subtropical:
         # -------------
         # Small Mountains Subtropical Semi-Humid
@@ -254,19 +241,15 @@ stages:
         # -------------
         # Small Mountains Subtropical Semi-Humid
         # -------------
-        - WILD_BUMPY_MOUNTAINS: 3
-        - EVERGREEN_OVERHANGS: 1
+        - WILD_BUMPY_MOUNTAINS: 4
         # -------------
         # Small Mountains Subtropical Semi-Arid
         # -------------
-        - ROCKY_BUMPY_MOUNTAINS: 3
-        - XERIC_MOUNTAINS: 1
+        - ROCKY_BUMPY_MOUNTAINS: 4
         # -------------
         # Small Mountains Subtropical Arid
         # -------------
-        - DRY_ROCKY_BUMPY_MOUNTAINS: 3
-        - BADLANDS_MOUNTAINS: 1
-        - DESERT_PILLARS: 1
+        - DRY_ROCKY_BUMPY_MOUNTAINS: 5
 
       mountains-small-temperate:
         # -------------
@@ -305,7 +288,7 @@ stages:
         # -------------
         # Large Mountains Tropical Arid
         # -------------
-        - CRACKED_BADLANDS_PLATEAU: 3
+        - CRACKED_BADLANDS_PLATEAU: 5
 
       mountains-large-subtropical:
         # -------------
@@ -317,12 +300,11 @@ stages:
         # -------------
         # Large Mountains Temperate Semi-Humid
         # -------------
-        - TEMPERATE_ALPHA_MOUNTAINS: 3
+        - TEMPERATE_ALPHA_MOUNTAINS: 4
         # -------------
         # Large Mountains Temperate Semi-Arid
         # -------------
-        - DRY_TEMPERATE_MOUNTAINS: 1
-        - DRY_TEMPERATE_WHITE_MOUNTAINS: 1
+        - DRY_TEMPERATE_MOUNTAINS: 3
 
       mountains-large-boreal:
         # -------------
