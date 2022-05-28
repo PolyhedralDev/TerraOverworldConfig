@@ -187,3 +187,10 @@ river-dripstone:
   range:
     min: 75
     max: 85
+
+powdersnow:
+  averageCountPerChunk: 2
+  salt: 5825
+  range:
+    min: 50
+    max: 319

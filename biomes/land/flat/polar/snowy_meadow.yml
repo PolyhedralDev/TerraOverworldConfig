@@ -24,3 +24,5 @@ features:
   postplacement:
     - SNOW_LAYERS
     - TREE_SNOW
+  ores:
+    - POWDER_SNOW_DEPOSITS
