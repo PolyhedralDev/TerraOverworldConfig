@@ -62,7 +62,7 @@ stages:
       dimensions: 2
       type: CELLULAR
       return: CellValue
-      frequency: 0.025 / ${meta.yml:biome-distribution.global-scale}
+      frequency: 0.15 / ${meta.yml:biome-distribution.global-scale}
 
   # Direct variants - color variations, etc
   - type: REPLACE_LIST
@@ -94,5 +94,5 @@ stages:
       dimensions: 2
       type: CELLULAR
       return: CellValue
-      frequency: 0.06 / ${meta.yml:biome-distribution.global-scale}
+      frequency: 0.8 / ${meta.yml:biome-distribution.global-scale}
       salt: 23
