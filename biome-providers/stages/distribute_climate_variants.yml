@@ -96,6 +96,7 @@ stages:
       
       coast-flat-temperate:
         - BEACH: 1
+        - SHALE_BEACH: 1
       
       coast-hills-temperate:
         - WETLANDS: 1
