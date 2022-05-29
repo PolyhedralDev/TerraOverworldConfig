@@ -1,0 +1,48 @@
+// Used to randomize what coral block the coral uses
+num stemRand = randomInt(5);
+str stemBlock = "minecraft:stone";
+
+if(stemRand == 0) stemBlock = "minecraft:brain_coral_block";
+else if(stemRand == 1) stemBlock = "minecraft:bubble_coral_block";
+else if(stemRand == 2) stemBlock = "minecraft:tube_coral_block";
+else if(stemRand == 3) stemBlock = "minecraft:fire_coral_block";
+else if(stemRand == 4) stemBlock = "minecraft:horn_coral_block";
+
+for(num x = -3; x <= 3; x = x + 1) {
+    for(num z = -3; z <= 3; z = z + 1) {
+
+        for(num y = 0; y <= 5; y = y + 1) {
+            num r = floor(pow(x, 2) + pow(z, 2) + pow(y-3, 2));
+            if(r < 3 || (r > 7) ) continue;
+
+                num placeReef = randomInt(2);
+                if (placeReef == 0) block(x, y-2, z, stemBlock, true);
+
+                // Randomize what coral to use on block
+                num coralRand = randomInt(9);
+                str coralBlock = "minecraft:stone";
+
+                if(coralRand == 0) coralBlock = "minecraft:brain_coral";
+                else if(coralRand == 1) coralBlock = "minecraft:bubble_coral";
+                else if(coralRand == 2) coralBlock = "minecraft:tube_coral";
+                else if(coralRand == 3) coralBlock = "minecraft:fire_coral";
+                else if(coralRand == 4) coralBlock = "minecraft:horn_coral";
+                else if(coralRand == 5) coralBlock = "minecraft:brain_coral_fan";
+                else if(coralRand == 6) coralBlock = "minecraft:bubble_coral_fan";
+                else if(coralRand == 7) coralBlock = "minecraft:tube_coral_fan";
+                else if(coralRand == 8) coralBlock = "minecraft:fire_coral_fan";
+                else if(coralRand == 9) coralBlock = "minecraft:horn_coral_fan";
+
+                // 33.3% chance to place coral on top OR on sides, otherwise no coral
+                num doCoral = randomInt(2);
+                if(doCoral == 0 && placeReef == 0) block(x, y-1, z, coralBlock);
+
+                // TODO add coral on sides of block once I can get them to work
+                // once these are added adjust doCoral to 14 to fix percentage
+                //else if(doCoral == 3) block(dx*l, stemHeight+dy*l, dz*l+1, coralBlock);
+                //else if(doCoral == 7) block(dx*l, stemHeight+dy*l, dz*l-1, coralBlock);
+                //else if(doCoral == 11) block(dx*l+1, stemHeight+dy*l, dz*l, coralBlock);
+                //else if(doCoral == 14) block(dx*l-1, stemHeight+dy*l, dz*l, coralBlock);
+        }
+    }
+}
