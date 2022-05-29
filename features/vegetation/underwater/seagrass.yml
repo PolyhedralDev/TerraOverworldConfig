@@ -5,7 +5,7 @@ distributor:
   type: SAMPLER
   sampler:
     type: POSITIVE_WHITE_NOISE
-    salt: 5912
+    salt: 5252
   threshold: 0.5
 
 locator:
@@ -19,7 +19,8 @@ locator:
       - type: MATCH
         block: minecraft:water
         offset: 0
-      - type: MATCH_SOLID
+      - type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:aquatic-plantable-blocks
         offset: -1
 
 structures:
@@ -31,7 +32,7 @@ structures:
     sampler:
       type: OPEN_SIMPLEX_2
       frequency: 0.03
-    salt: 1239
+    salt: 3696
   structures:
     - tall_seagrass: 1
     - BLOCK:minecraft:seagrass: 1
