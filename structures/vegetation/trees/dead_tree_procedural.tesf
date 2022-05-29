@@ -4,8 +4,8 @@ num goldenAngle = 2.39996;
 num pi = 3.14159;
 
 num trunkHeight = 2+randomInt(2);
-str trunkBlock = "minecraft:oak_log";
-str rootBlock = "minecraft:oak_log";
+str trunkBlock = "minecraft:dark_oak_log";
+str rootBlock = "minecraft:dark_oak_log";
 
 num sideBranchInterval = 3+randomInt(2);
 num sideBranchMinHeight = 2+randomInt(2);
@@ -19,9 +19,9 @@ num sideBranchLeafTopFlatness = 1.5;
 num sideBranchLeafBottomFlatness = 2;
 num sideBranchLeafRarity = 2;
 str sideBranchLeafStructure = "blank";
-str sideBranchBlockX = "minecraft:oak_log[axis=x]";
-str sideBranchBlockY = "minecraft:oak_log[axis=y]";
-str sideBranchBlockZ = "minecraft:oak_log[axis=z]";
+str sideBranchBlockX = "minecraft:dark_oak_log[axis=x]";
+str sideBranchBlockY = "minecraft:dark_oak_log[axis=y]";
+str sideBranchBlockZ = "minecraft:dark_oak_log[axis=z]";
 
 num topBranches = 2+randomInt(2);
 num topBranchLengthUpwardsMin = 2+randomInt(2);
@@ -33,9 +33,9 @@ num topBranchLeafTopFlatness = 1;
 num topBranchLeafBottomFlatness = 2;
 num topBranchLeafRarity = 2;
 str topBranchLeafStructure = "blank";
-str topBranchBlockX = "minecraft:oak_log[axis=x]";
-str topBranchBlockY = "minecraft:oak_log[axis=y]";
-str topBranchBlockZ = "minecraft:oak_log[axis=z]";
+str topBranchBlockX = "minecraft:dark_oak_log[axis=x]";
+str topBranchBlockY = "minecraft:dark_oak_log[axis=y]";
+str topBranchBlockZ = "minecraft:dark_oak_log[axis=z]";
 
 // Generate roots at base of trunk
 num roots = 0;
