@@ -12,7 +12,7 @@ locator:
   type: PATTERN
   range:
     min: 0
-    max: 55
+    max: 60
   pattern:
     type: AND
     patterns:
@@ -30,7 +30,7 @@ structures:
       type: GAUSSIAN
     sampler:
       type: OPEN_SIMPLEX_2
-      frequency: 0.03
+      frequency: 0.04
     salt: 4201
   structures:
     - coral_fans: 2

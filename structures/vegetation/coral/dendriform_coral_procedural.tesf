@@ -1,6 +1,6 @@
 num randPrecision = 100;
 
-// Used to randomize what coral block the coral uses, as TS does not support lists
+// Used to randomize what coral block the coral uses
 num stemRand = randomInt(5);
 str stemBlock = "minecraft:stone";
 
