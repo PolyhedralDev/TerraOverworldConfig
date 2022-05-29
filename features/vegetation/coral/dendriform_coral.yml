@@ -6,7 +6,7 @@ distributor:
   sampler:
     type: POSITIVE_WHITE_NOISE
     salt: 8526
-  threshold: 0.5
+  threshold: 0.6
 
 locator:
   type: PATTERN
@@ -34,5 +34,5 @@ structures:
       frequency: 0.03
     salt: 2565
   structures:
-    - dendriform_coral_procedural: 2
-    - blank: 7
+    - dendriform_coral_procedural: 1
+    - blank: 8
