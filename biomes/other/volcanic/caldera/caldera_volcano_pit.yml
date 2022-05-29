@@ -34,7 +34,8 @@ ocean:
 
 features:
   flora:
-    - CALDERA_SEAGRASS
     - GRASS
+    - CALDERA_SEAGRASS
   trees:
     - SPARSE_TEMPERATE_TREE_PATCHES
+    - SUBMERGED_DEAD_TREES
