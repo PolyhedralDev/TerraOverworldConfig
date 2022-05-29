@@ -98,7 +98,7 @@ features:
     - LILAC_PATCH
     - LILY_OF_THE_VALLEY_PATCH
   trees:
-    - DENSE_TEMPERATE_TREE_PATCHES
-    - OAK_BUSHES
+    - JUNGLE_TREES
+    - JUNGLE_BUSHES
   
 
