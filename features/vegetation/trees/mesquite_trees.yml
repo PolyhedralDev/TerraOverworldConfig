@@ -2,11 +2,10 @@ id: MESQUITE_TREES
 type: FEATURE
 
 distributor:
-  type: SAMPLER
-  sampler:
-    type: POSITIVE_WHITE_NOISE
-    salt: 2728
-  threshold: 0.001
+  type: PADDED_GRID
+  width: 20
+  padding: 2
+  salt: 7732
 
 locator:
   type: AND

@@ -2,11 +2,11 @@ id: DEAD_TREES_SPARSE
 type: FEATURE
 
 distributor:
-  type: SAMPLER
-  sampler:
-    type: POSITIVE_WHITE_NOISE
-    salt: 36453
-  threshold: 0.00025
+  type: PADDED_GRID
+  width: 30
+  padding: 2
+  salt: 1285
+
 
 locator:
   type: AND
