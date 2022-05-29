@@ -1,0 +1,34 @@
+id: SUBMERGED_DEAD_TREES
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 80
+  padding: 2
+  salt: 1285
+
+
+locator:
+  type: AND
+  locators:
+    - type: PATTERN
+      range: &range
+        min: 64
+        max: 255
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:aquatic-plantable-blocks
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:snow
+          - minecraft:water
+        offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: submerged_dead_tree_procedural

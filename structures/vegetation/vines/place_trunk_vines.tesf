@@ -1,0 +1,21 @@
+setWaterlog(false);
+str blockID = "minecraft:vine[";
+bool isUp = false;
+
+bool north = structure(0, 0, -1, "is_log", "NONE");
+
+bool south = structure(0, 0, 1, "is_log", "NONE");
+
+bool east = structure(1, 0, 0, "is_log", "NONE");
+
+bool west = structure(-1, 0, 0, "is_log", "NONE");
+
+if(!(north || south || east || west)) fail;
+
+str vine = "minecraft:vine[north=" + north + ",south=" + south + ",east=" + east + ",west=" + west + "]";
+
+block(0, 0, 0, vine, false);
+num length = randomInt(6) + 4;
+for (num i = 0; i < length; i = i + 1) {
+    block(0, -i, 0, vine, false);
+}
