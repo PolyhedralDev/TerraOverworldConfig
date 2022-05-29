@@ -43,7 +43,7 @@ features:
     - MELON_PATCHES
   trees:
     - JUNGLE_TREES
-    - OAK_BUSHES
+    - JUNGLE_BUSHES
     - BAMBOO_PATCHES
   landforms:
     - MOSSY_BOULDERS
