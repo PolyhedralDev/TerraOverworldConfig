@@ -13,11 +13,11 @@ else if(stemRand == 4) stemBlock = "minecraft:horn_coral_block";
 num stemHeight = randomInt(2) + 1; // Length of main trunk
 
 // 'Top branch' = branches that stem from the top of the main stem
-num topBranchCount = randomInt(2) + 2; // How many top branches will generate
-num topBranchLengthMin = 3; // Minimum length of each branch
-num topBranchLengthVariation = 3; // Random branch length variation in blocks from 0 - n
-num topBranchVerticalDirection = 0.9; // Roughly how much any given branch will point upwards
-num topBranchVerticalVariation = 2; // Adds random number from 0 - n to above variable
+num topBranchCount = randomInt(1) + 1; // How many top branches will generate
+num topBranchLengthMin = 2; // Minimum length of each branch
+num topBranchLengthVariation = 2; // Random branch length variation in blocks from 0 - n
+num topBranchVerticalDirection = 0.75; // Roughly how much any given branch will point upwards
+num topBranchVerticalVariation = 1; // Adds random number from 0 - n to above variable
 
 // Generate main stem
 for (num i = 0; i <= stemHeight; i = i + 1) {
