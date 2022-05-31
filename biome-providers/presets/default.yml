@@ -1,7 +1,7 @@
 biomes:
   type: PIPELINE
   resolution: 2
-  initial-size: 50
+  initial-size: 10
   blend:
     amplitude: 1
     sampler:
