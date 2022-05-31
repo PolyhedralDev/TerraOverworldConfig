@@ -20,7 +20,7 @@ distributor:
 locator:
   type: RANDOM
   height:
-    min: -64
+    min: -42
     max: 30
   amount: 1
   salt: 7414
