@@ -1,6 +1,6 @@
 id: HIGHLANDS
 type: BIOME
-extends: [ EQ_ERODED_TERRACED_MOUNTAINS, CARVING_LAND, BASE ]
+extends: [ EQ_HIGHLANDS, CARVING_LAND, BASE ]
 vanilla: minecraft:plains
 color: $biomes/colors.yml:HIGHLANDS
 
@@ -10,25 +10,29 @@ palette:
   - << meta.yml:palette-bottom
 
 slant:
-  - threshold: 2.5
+  - threshold: 3
     palette:
       - GRASS: 319
       - << meta.yml:palette-bottom
   - threshold: 4
     palette:
-      - MOSSY_COBBLESTONE_STONE: 319
+      - MOSS_STONE: 319
       - << meta.yml:palette-bottom
   - threshold: 5
     palette:
-      - TUFF_STONE: 319
+      - MOSSY_COBBLESTONE_STONE: 319
       - << meta.yml:palette-bottom
-  - threshold: 6
+  - threshold: 7
     palette:
-      - BLOCK:minecraft:stone: 319
+      - BLOCK:minecraft:andesite: 319
       - << meta.yml:palette-bottom
 
 features:
+  landforms:
+    - SMALL_MOSSY_BOULDER_PATCHES
   flora:
     - GRASS
+    - DANDELION_PATCH
+    - SWEET_BERRY_BUSH_PATCHES
   trees:
     - OAK_BUSH_PATCHES
