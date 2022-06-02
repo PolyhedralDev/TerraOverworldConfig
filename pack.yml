@@ -41,9 +41,6 @@ addons:
 # Default biome distribution
 biomes: $biome-providers/presets/default.yml:biomes
 
-# TODO: Bukkit - Excludes biomes that depend on custom biome colors.
-#biomes: $biome-providers/presets/planetary.yml:biomes
-
 # Single biome - to change the single biome to use, check the configuration file.
 #biomes: $biome-providers/presets/single.yml:biomes
 
