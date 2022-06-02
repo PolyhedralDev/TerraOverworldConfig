@@ -236,7 +236,6 @@ stages:
         # Small Mountains Tropical Arid
         # -------------
         - badlands-variants: 6
-        - ARID_HIGHLANDS: 5
         
       mountains-small-subtropical:
         # -------------
