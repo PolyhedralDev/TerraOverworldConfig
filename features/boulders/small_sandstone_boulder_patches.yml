@@ -1,0 +1,29 @@
+id: SMALL_SANDSTONE_BOULDER_PATCHES
+type: FEATURE
+
+distributor:
+  type: AND
+  distributors:
+    - type: PADDED_GRID
+      width: 5
+      padding: 1
+      salt: 8833
+    - type: SAMPLER
+      sampler:
+        type: PROBABILITY
+        sampler:
+          type: OPEN_SIMPLEX_2
+          salt: 9138
+          frequency: 0.01
+      threshold: 0.2
+
+locator:
+  type: SURFACE
+  range:
+    min: 64
+    max: 300
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: small_sandstone_boulder

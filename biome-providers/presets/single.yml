@@ -1,3 +1,3 @@
 biomes:
   type: SINGLE
-  biome: SWAMP # The singular biome that will be used.
+  biome: ARID_HIGHLANDS # The singular biome that will be used.

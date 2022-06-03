@@ -37,6 +37,7 @@ stages:
         - DESERT_PILLARS: 1
         - BADLANDS_BUTTES: 2
         - ERODED_BADLANDS_BUTTES: 1
+        - ARID_HIGHLANDS: 1
       forest-hills-variants:
         - FOREST_HILLS: 5
         - FLOWERING_FOREST_HILLS: 3
