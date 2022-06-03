@@ -76,6 +76,7 @@ stages:
     # Flat Temperate Semi-Arid
     # -------------
         - STEPPE: 3
+        - EUCALYPTUS_FOREST: 3
     # -------------
     # Flat Temperate Arid (Mediterranean)
     # -------------

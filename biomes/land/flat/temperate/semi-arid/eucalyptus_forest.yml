@@ -1,0 +1,18 @@
+id: EUCALYPTUS_FOREST
+type: BIOME
+extends: [ STEPPE ]
+vanilla: minecraft:plains
+
+colors:
+  foliage: 0x4fb06d
+
+features:
+  flora:
+    - GRASS
+    - POPPY_PATCH
+    - OXEYE_DAISY_PATCH
+    - CORNFLOWER_PATCH
+    - ALLIUM_PATCH
+  trees:
+    - MIXED_BUSHES
+    - EUCALYPTUS_TREES
