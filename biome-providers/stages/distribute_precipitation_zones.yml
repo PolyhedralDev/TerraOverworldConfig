@@ -109,7 +109,7 @@ stages:
         # -------------
         # Small Hills Tropical Semi-Arid
         # -------------
-        - WARM_LOW_HILLS: 3
+        - LOW_CHAPARRAL: 3
         # -------------
         # Small Hills Tropical Arid
         # -------------
@@ -170,7 +170,7 @@ stages:
         # -------------
         # Large Hills Tropical Semi-Arid
         # -------------
-        - WARM_HILLS: 2
+        - CHAPARRAL: 2
         # -------------
         # Large Hills Tropical Arid
         # -------------
