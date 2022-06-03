@@ -1,6 +1,6 @@
 id: EVERGREEN_FOREST_HILLS
 type: BIOME
-extends: [ EQ_HILLS, CARVING_LAND, BASE ]
+extends: [ RAINFOREST_HILLS ]
 vanilla: minecraft:taiga # This is only so foxes will spawn
 color: $biomes/colors.yml:EVERGREEN_FOREST_HILLS
 
@@ -13,17 +13,6 @@ colors:
   water: 0x0677ce
   water-fog: 0x0677ce
 
-palette:
-  - GRASS_MOSSY: 319
-  - SAND: 64
-  - << meta.yml:palette-bottom
-
-slant:
-  - threshold: 3
-    palette:
-      - BLOCK:minecraft:stone: 319
-      - << meta.yml:palette-bottom
-
 features:
   flora:
     - GRASS
@@ -35,9 +24,12 @@ features:
     - LILY_OF_THE_VALLEY_PATCH
     - FERNS
     - BEETROOT_PATCHES
+    -
   trees:
+    - DENSE_TEMPERATE_TREE_PATCHES
+    - OAK_BUSHES
     - SUBTROPICAL_BUSHES
-    - EVERGREEN_TREES
+    - SPRUCE_BUSHES
+    - SPRUCE_TREES
   landforms:
-    - MOSSY_BOULDERS
-    - SMALL_BOULDER_PATCHES
+    - SMALL_MOSSY_BOULDER_PATCHES
