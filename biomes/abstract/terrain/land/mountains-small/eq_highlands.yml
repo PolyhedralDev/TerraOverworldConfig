@@ -1,0 +1,40 @@
+id: EQ_HIGHLANDS
+type: BIOME
+abstract: true
+
+# Rolling, scottish-style highlands.
+
+vars: &variables
+  base: 70
+  height: 150
+
+terrain:
+  sampler:
+    dimensions: 3
+    type: EXPRESSION
+    variables: *variables
+    expression: -y + base
+    samplers:
+  sampler-2d:
+    dimensions: 2
+    type: EXPRESSION
+    expression: (noise(x, z)+1)/2.1 * height
+    variables: *variables
+    samplers:
+      noise:
+        dimensions: 2
+        type: DOMAIN_WARP
+        amplitude: 5
+        warp:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.025
+        sampler:
+          type: FBM
+          octaves: 4
+          sampler:
+            type: LINEAR
+            min: -1
+            max: 0.2
+            sampler:
+              type: CELLULAR
+              frequency: 0.0055

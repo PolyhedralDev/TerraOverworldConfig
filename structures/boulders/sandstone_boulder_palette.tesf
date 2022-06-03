@@ -1,0 +1,3 @@
+num blockSelection = randomInt(1000)/1000;
+if (blockSelection <= 0.8) block(0, 0, 0,"minecraft:sandstone");
+else block(0, 0, 0,"minecraft:smooth_sandstone");
