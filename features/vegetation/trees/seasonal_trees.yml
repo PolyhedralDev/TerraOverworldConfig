@@ -3,9 +3,9 @@ type: FEATURE
 
 distributor:
   type: PADDED_GRID
-  width: 8
+  width: 6
   padding: 2
-  salt: 1931
+  salt: 7234
 
 locator:
   type: AND
@@ -31,10 +31,9 @@ locator:
 
 structures:
   distribution:
-    type: CELLULAR
-    return: CellValue
-    frequency: 0.02
+    type: WHITE_NOISE
+    salt: 5011
   structures:
-    - blank: 4
-    - autumnal_birch_tree_procedural: 3
-    - spruce_tree_procedural: 2
+    - autumnal_birch_tree_procedural: 20
+    - large_autumnal_birch_tree_procedural: 1
+    - large_thin_autumnal_birch_tree_procedural: 1

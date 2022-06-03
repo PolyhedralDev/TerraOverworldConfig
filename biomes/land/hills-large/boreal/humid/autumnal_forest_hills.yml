@@ -8,8 +8,8 @@ tags:
   - USE_RIVER
 
 colors:
-  grass: 0xb5b065
-  foliage: 0xffa500
+  grass: 0xf7863b
+  foliage: 0xff6a19
   water: 0x1e97f2
   water-fog: 0x1e97f2
 
@@ -19,7 +19,7 @@ palette:
   - << meta.yml:palette-bottom
 
 slant:
-  - threshold: 3
+  - threshold: 3.5
     palette:
       - GRANITE_SLANT: 319
       - << meta.yml:palette-bottom
