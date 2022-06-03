@@ -38,7 +38,7 @@ stages:
   # -------------
   # Flat Tropical Semi-Arid
   # -------------
-      - WARM_STEPPE: 1
+      - CHAPARRAL_FLATS: 1
   # -------------
   # Flat Tropical Semi-Arid
   # -------------
@@ -57,7 +57,7 @@ stages:
     # -------------
     # Flat Subtropical Semi-Arid
     # -------------
-        - WARM_STEPPE: 3
+        - CHAPARRAL_FLATS: 3
     # -------------
     # Flat Subtropical Arid
     # -------------
