@@ -47,7 +47,7 @@ stages:
       temperate-mountains-variants:
         - HIGHLANDS: 4
         - TEMPERATE_MOUNTAINS: 8
-        - SAKURA_MOUNTAINS: 2
+        - SAKURA_MOUNTAINS: 4
     sampler:
       dimensions: 2
       type: CELLULAR
