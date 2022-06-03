@@ -5,8 +5,8 @@ distributor:
   type: AND
   distributors:
     - type: PADDED_GRID
-      width: 30
-      padding: 5
+      width: 10
+      padding: 200
       salt: 2274
     - type: SAMPLER
       sampler:
@@ -18,12 +18,25 @@ distributor:
       threshold: 1
 
 locator:
-  type: RANDOM
-  height:
-    min: -42
-    max: 30
-  amount: 1
-  salt: 7414
+  type: AND
+  locators:
+    - type: RANDOM
+      amount: 1
+      height:
+        min: -42
+        max: 30
+      salt: 5844
+    - type: PATTERN
+      range:
+        min: -42
+        max: 30
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:stone
+          - minecraft:deepslate
+          - minecraft:tuff
+        offset: 0
 
 structures:
   distribution:
