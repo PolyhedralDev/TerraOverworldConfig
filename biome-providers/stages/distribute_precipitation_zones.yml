@@ -127,7 +127,7 @@ stages:
         # -------------
         # Small Hills Subtropical Semi-Arid
         # -------------
-        - WARM_LOW_HILLS: 4
+        - LOW_CHAPARRAL: 4
         # -------------
         # Small Hills Subtropical Arid
         # -------------
