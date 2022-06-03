@@ -2,6 +2,7 @@ id: CHAPARRAL
 type: BIOME
 extends: [ EQ_HILLS, CARVING_LAND, BASE ]
 color: $biomes/colors.yml:CHAPARRAL
+vanilla: SAVANNA
 
 tags:
   - USE_RIVER
