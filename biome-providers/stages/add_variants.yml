@@ -44,6 +44,10 @@ stages:
       wild-mountains-variants:
         - WILD_BUMPY_MOUNTAINS: 3
         - EVERGREEN_OVERHANGS: 1
+      temperate-mountains-variants:
+        - HIGHLANDS: 4
+        - TEMPERATE_MOUNTAINS: 8
+        - SAKURA_MOUNTAINS: 2
     sampler:
       dimensions: 2
       type: CELLULAR

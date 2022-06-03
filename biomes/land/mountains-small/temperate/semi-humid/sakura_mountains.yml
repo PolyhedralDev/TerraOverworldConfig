@@ -1,0 +1,8 @@
+id: SAKURA_MOUNTAINS
+type: BIOME
+extends: [ TEMPERATE MOUNTAINS ]
+vanilla: minecraft:plains
+color: $biomes/colors.yml:SAKURA_MOUNTAINS
+
+colors:
+  foliage: 0xff5ff3
