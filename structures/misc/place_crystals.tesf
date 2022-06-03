@@ -1,0 +1,20 @@
+setWaterlog(false);
+// Choose amethyst crystal size
+num crystalSize = randomInt(4);
+str blockID = "minecraft:stone";
+if(crystalSize == 0) blockID = "minecraft:small_amethyst_bud";
+if(crystalSize == 1) blockID = "minecraft:medium_amethyst_bud";
+if(crystalSize == 2) blockID = "minecraft:large_amethyst_bud";
+if(crystalSize == 3) blockID = "minecraft:amethyst_cluster";
+
+// Determine facing direction
+str crystal = "minecraft:stone";
+if (getBlock(0, 0, -1) == "minecraft:budding_amethyst") crystal = blockID + "[facing=south]";
+if (getBlock(0, 0, 1) == "minecraft:budding_amethyst") crystal = blockID + "[facing=north]";
+if (getBlock(-1, 0, 0) == "minecraft:budding_amethyst") crystal = blockID + "[facing=east]";
+if (getBlock(1, 0, 0) == "minecraft:budding_amethyst") crystal = blockID + "[facing=west]";
+if (getBlock(0, -1, 0) == "minecraft:budding_amethyst") crystal = blockID + "[facing=up]";
+if (getBlock(0, 1, 0) == "minecraft:budding_amethyst") crystal = blockID + "[facing=down]";
+
+// Place crystal
+if (crystal != "minecraft:stone") block(0, 0, 0, crystal, false);

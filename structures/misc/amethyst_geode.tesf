@@ -1,4 +1,5 @@
 num radius = randomInt(3)+4;
+num twopi = 6.28318530718;
 
 num r2 = radius*radius; // radius squared
 num inr2 = (radius-1)*(radius-1); // inside radius squared
@@ -13,78 +14,24 @@ for(num x = -radius; x <= radius; x = x + 1) {
             num d = (x*x + y*y + z*z + ((randomInt(5) - 2)/2));
             if(d <= basaltr2 && d >= inr2) {
                 if(getBlock(x,y,z) == "minecraft:air") continue;
-                if(d >= calciter2) block(x,y,z,"minecraft:smooth_basalt");
-                else if(d >= r2) block(x,y,z,"minecraft:calcite");
+                if(d >= calciter2 && getBlock(x,y,z) != "minecraft:air") block(x,y,z,"minecraft:smooth_basalt");
+                else if(d >= r2 && getBlock(x,y,z) != "minecraft:air") block(x,y,z,"minecraft:calcite");
                 else {
-                    if(randomInt(10) == 0) {
+                    if(randomInt(10) == 0 && getBlock(x,y,z) != "minecraft:air") {
                         block(x,y,z,"minecraft:budding_amethyst");
-                        setMark(x,y,z,"crystal");
-                    } else block(x,y,z,"minecraft:amethyst_block");
+                    } else if(getBlock(x,y,z) != "minecraft:air") block(x,y,z,"minecraft:amethyst_block");
                 }
             } else if(d < inr2) {
                 block(x,y,z,"minecraft:air");
-                setMark(x,y,z,"air");
             }
         }
     }
 }
 
-radius = radius - 3; // remove padding
-
-// now place the crystals
 for(num x = -radius; x <= radius; x = x + 1) {
     for(num z = -radius; z <= radius; z = z + 1) {
         for(num y = -radius; y <= radius; y = y + 1) {
-            if(getMark(x,y,z) == "crystal") {
-                if(getMark(x,y+1,z) == "air" || getBlock(x,y+1,z) == "minecraft:air") {
-                    num select = randomInt(4);
-
-                    if(select == 0) block(x,y+1,z,"minecraft:small_amethyst_bud[facing=up]");
-                    if(select == 1) block(x,y+1,z,"minecraft:medium_amethyst_bud[facing=up]");
-                    if(select == 2) block(x,y+1,z,"minecraft:large_amethyst_bud[facing=up]");
-                    if(select == 3) block(x,y+1,z,"minecraft:amethyst_cluster[facing=up]");
-                }
-                if(getMark(x,y-1,z) == "air" || getBlock(x,y-1,z) == "minecraft:air") {
-                    num select = randomInt(4);
-
-                    if(select == 0) block(x,y-1,z,"minecraft:small_amethyst_bud[facing=down]");
-                    if(select == 1) block(x,y-1,z,"minecraft:medium_amethyst_bud[facing=down]");
-                    if(select == 2) block(x,y-1,z,"minecraft:large_amethyst_bud[facing=down]");
-                    if(select == 3) block(x,y-1,z,"minecraft:amethyst_cluster[facing=down]");
-                }
-                if(getMark(x+1,y,z) == "air" || getBlock(x+1,y,z) == "minecraft:air") {
-                    num select = randomInt(4);
-
-                    if(select == 0) block(x+1,y,z,"minecraft:small_amethyst_bud[facing=east]");
-                    if(select == 1) block(x+1,y,z,"minecraft:medium_amethyst_bud[facing=east]");
-                    if(select == 2) block(x+1,y,z,"minecraft:large_amethyst_bud[facing=east]");
-                    if(select == 3) block(x+1,y,z,"minecraft:amethyst_cluster[facing=east]");
-                }
-                if(getMark(x-1,y,z) == "air" || getBlock(x-1,y,z) == "minecraft:air") {
-                    num select = randomInt(4);
-
-                    if(select == 0) block(x-1,y,z,"minecraft:small_amethyst_bud[facing=west]");
-                    if(select == 1) block(x-1,y,z,"minecraft:medium_amethyst_bud[facing=west]");
-                    if(select == 2) block(x-1,y,z,"minecraft:large_amethyst_bud[facing=west]");
-                    if(select == 3) block(x-1,y,z,"minecraft:amethyst_cluster[facing=west]");
-                }
-                if(getMark(x,y,z+1) == "air" || getBlock(x,y,z+1) == "minecraft:air") {
-                    num select = randomInt(4);
-
-                    if(select == 0) block(x,y,z+1,"minecraft:small_amethyst_bud[facing=south]");
-                    if(select == 1) block(x,y,z+1,"minecraft:medium_amethyst_bud[facing=south]");
-                    if(select == 2) block(x,y,z+1,"minecraft:large_amethyst_bud[facing=south]");
-                    if(select == 3) block(x,y,z+1,"minecraft:amethyst_cluster[facing=south]");
-                }
-                if(getMark(x,y,z-1) == "air" || getBlock(x,y,z-1) == "minecraft:air") {
-                    num select = randomInt(4);
-
-                    if(select == 0) block(x,y,z-1,"minecraft:small_amethyst_bud[facing=north]");
-                    if(select == 1) block(x,y,z-1,"minecraft:medium_amethyst_bud[facing=north]");
-                    if(select == 2) block(x,y,z-1,"minecraft:large_amethyst_bud[facing=north]");
-                    if(select == 3) block(x,y,z-1,"minecraft:amethyst_cluster[facing=north]");
-                }
-            }
+            structure(x, y, z, "place_crystals", "NONE");
         }
     }
 }
