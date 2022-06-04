@@ -44,6 +44,8 @@ features:
     - PEONY_PATCH
     - LILAC_PATCH
     - ROSE_BUSH_PATCH
+    - SMALL_DRIPLEAF
+    - BIG_DRIPLEAF
   trees:
     - DENSE_TEMPERATE_TREE_PATCHES
     - OAK_BUSHES

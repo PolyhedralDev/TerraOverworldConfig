@@ -32,6 +32,8 @@ features:
   flora:
     - GRASS
     - CALDERA_SEAGRASS
+    - SMALL_DRIPLEAF
+    - BIG_DRIPLEAF
   trees:
     - SPARSE_TEMPERATE_TREE_PATCHES
     - SUBMERGED_DEAD_TREES

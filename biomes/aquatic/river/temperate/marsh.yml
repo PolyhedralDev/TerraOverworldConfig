@@ -23,4 +23,6 @@ features:
   flora:
     - TALL_GRASS
     - SUGAR_CANE
+    - SMALL_DRIPLEAF
+    - BIG_DRIPLEAF
 

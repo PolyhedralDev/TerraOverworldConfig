@@ -44,6 +44,8 @@ features:
     - POPPY_PATCH
     - DANDELION_PATCH
     - TALL_GRASS
+    - SMALL_DRIPLEAF
+    - BIG_DRIPLEAF
   trees:
     - JUNGLE_TREES
   landforms:

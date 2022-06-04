@@ -31,5 +31,7 @@ features:
     - SUBTROPICAL_BUSHES
     - FERNS
     - TALL_GRASS
+    - SMALL_DRIPLEAF
+    - BIG_DRIPLEAF
   trees:
     - JUNGLE_TREES

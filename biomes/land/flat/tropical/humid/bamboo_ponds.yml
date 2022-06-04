@@ -33,6 +33,8 @@ features:
     - POPPY_PATCH
     - DANDELION_PATCH
     - LILY_PADS
+    - SMALL_DRIPLEAF
+    - BIG_DRIPLEAF_PONDS
   trees:
     - BAMBOO_PATCHES
     - OAK_BUSHES
