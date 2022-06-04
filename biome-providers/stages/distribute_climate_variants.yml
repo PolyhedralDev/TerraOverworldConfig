@@ -21,7 +21,6 @@ stages:
     default-from: deep-ocean-tropical
     default-to:
       - TROPICAL_DEEP_OCEAN: 1
-      # TODO - DEEP CORAL REEF
     to:
       ocean-tropical:
         - TROPICAL_OCEAN: 1

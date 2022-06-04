@@ -47,6 +47,8 @@ features:
     - PEONY_PATCH
     - LILAC_PATCH
     - LILY_OF_THE_VALLEY_PATCH
+    - SMALL_DRIPLEAF
+    - BIG_DRIPLEAF
   trees:
     - JUNGLE_TREES
     - JUNGLE_BUSHES

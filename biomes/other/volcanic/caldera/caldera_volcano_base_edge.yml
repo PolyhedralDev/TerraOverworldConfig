@@ -32,3 +32,5 @@ features:
   flora:
     - CALDERA_SEAGRASS
     - GRASS
+    - SMALL_DRIPLEAF
+    - BIG_DRIPLEAF
