@@ -1,0 +1,35 @@
+id: BIG_DRIPLEAF
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 8893
+  threshold: 0.015
+
+locator:
+  type: PATTERN
+  range:
+    min: 60
+    max: 319
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH_SET
+        blocks:
+          - minecraft:air
+        offset: 1
+      - type: MATCH_SET
+        blocks:
+          - minecraft:air
+          - minecraft:water
+        offset: 0
+      - type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:dripleaf-plantable-blocks
+        offset: -1
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures: big_dripleaf

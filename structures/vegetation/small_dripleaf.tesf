@@ -1,0 +1,20 @@
+setWaterlog(true);
+str blockID = getBlock(0, 0, 0);
+num facing = randomInt(4);
+str dripleaf = "minecraft:small_dripleaf[";
+
+// Determine facing
+if (facing == 0) dripleaf = dripleaf + "facing=north,";
+if (facing == 1) dripleaf = dripleaf + "facing=south,";
+if (facing == 2) dripleaf = dripleaf + "facing=west,";
+if (facing == 3) dripleaf = dripleaf + "facing=east,";
+
+// Finish dripleaf block id string
+str dripleafUpper = dripleaf + "half=upper]";
+// Waterlog dripleaf (for bamboo ponds)
+if (blockID == "minecraft:water") dripleaf = dripleaf + "waterlogged=true,";
+dripleaf = dripleaf + "half=lower]";
+
+// Place dripleaf
+block(0, 0, 0, dripleaf);
+block(0, 1, 0, dripleafUpper);

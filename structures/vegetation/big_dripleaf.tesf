@@ -1,0 +1,50 @@
+setWaterlog(true);
+str blockID = getBlock(0, 0, 0);
+num height = randomInt(3);
+num facing = randomInt(4);
+str dripleaf = "minecraft:big_dripleaf[";
+str dripleafStem = "minecraft:big_dripleaf_stem[";
+str dripleafStemBottom = "minecraft:big_dripleaf_stem[";
+
+// Waterlog dripleaf (for bamboo ponds)
+if (blockID == "minecraft:water") {
+    if (height == 0) {
+        dripleaf = dripleaf + "waterlogged=true,";
+    } else {
+        dripleafStemBottom = dripleafStemBottom + "waterlogged=true,";
+    }
+}
+
+// Determine facing
+if (facing == 0) {
+    dripleaf = dripleaf + "facing=north]";
+    dripleafStem = dripleafStem + "facing=north]";
+    dripleafStemBottom = dripleafStemBottom + "facing=north]";
+}
+if (facing == 1) {
+    dripleaf = dripleaf + "facing=south]";
+    dripleafStem = dripleafStem + "facing=south]";
+    dripleafStemBottom = dripleafStemBottom + "facing=south]";
+}
+if (facing == 2) {
+    dripleaf = dripleaf + "facing=west]";
+    dripleafStem = dripleafStem + "facing=west]";
+    dripleafStemBottom = dripleafStemBottom + "facing=west]";
+}
+if (facing == 3) {
+    dripleaf = dripleaf + "facing=east]";
+    dripleafStem = dripleafStem + "facing=east]";
+    dripleafStemBottom = dripleafStemBottom + "facing=east]";
+}
+
+// Place dripleaf
+if (height == 0) block(0, 0, 0, dripleaf);
+if (height == 1) {
+    block(0, 1, 0, dripleaf);
+    block(0, 0, 0, dripleafStemBottom);
+}
+if (height == 2) {
+    block(0, 2, 0, dripleaf);
+    block(0, 1, 0, dripleafStem);
+    block(0, 0, 0, dripleafStemBottom);
+}
