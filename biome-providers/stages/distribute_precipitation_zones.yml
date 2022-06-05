@@ -46,14 +46,14 @@ stages:
   # -------------
   # Flat Tropical Arid
   # -------------
-      - desert-flats-microvariants: 4
+      - desert-flats-microvariants: 7
 
     to:
       flat-subtropical:
     # -------------
     # Flat Subtropical Semi Humid
     # -------------
-        - evergreen-flats-variants: 8
+        - evergreen-flats-variants: 7
     # -------------
     # Flat Subtropical Semi-Arid
     # -------------
@@ -86,11 +86,11 @@ stages:
     # -------------
     # Flat Boreal Humid (Wetter Forests)
     # -------------
-        - birch-flats-variants: 3
+        - birch-flats-variants: 5
     # -------------
     # Flat Boreal Semi-Humid (Dryer Forests)
     # -------------
-        - TAIGA_FLATS: 3
+        - TAIGA_FLATS: 5
 
     # --------------------------------------------
     #               Small Hills Biomes
@@ -114,7 +114,7 @@ stages:
         # -------------
         # Small Hills Tropical Arid
         # -------------
-        - desert-variants: 7
+        - desert-variants: 9
 
       hills-small-subtropical:
         # -------------
@@ -124,7 +124,7 @@ stages:
         # -------------
         # Small Hills Subtropical Semi Humid
         # -------------
-        - evergreen-forest-variants: 6
+        - evergreen-forest-variants: 5
         # -------------
         # Small Hills Subtropical Semi-Arid
         # -------------
@@ -138,7 +138,7 @@ stages:
         # -------------
         # Small Hills Temperate Semi-Humid
         # -------------
-        - FOREST: 3
+        - FOREST: 4
         # -------------
         # Small Hills Temperate Semi-Arid
         # -------------
@@ -199,11 +199,11 @@ stages:
         # -------------
         # Large Hills Temperate Semi-Humid
         # -------------
-        - forest-hills-variants: 8
+        - forest-hills-variants: 9
         # -------------
         # Large Hills Temperate Semi-Arid
         # -------------
-        - SHRUBLAND: 4
+        - SHRUBLAND: 5
         # -------------
 
       hills-large-boreal:
@@ -224,19 +224,19 @@ stages:
         # -------------
         # Small Mountains Tropical Humid
         # -------------
-        - OVERGROWN_CLIFFS: 6
+        - OVERGROWN_CLIFFS: 5
         # -------------
         # Small Mountains Tropical Semi-Humid
         # -------------
-        - SAVANNA_OVERHANGS: 1
+        - SAVANNA_OVERHANGS: 2
         # -------------
         # Small Mountains Tropical Semi-Arid
         # -------------
-        - XERIC_MOUNTAINS: 3
+        - XERIC_MOUNTAINS: 4
         # -------------
         # Small Mountains Tropical Arid
         # -------------
-        - badlands-variants: 6
+        - badlands-variants: 7
         
       mountains-small-subtropical:
         # -------------
@@ -246,7 +246,7 @@ stages:
         # -------------
         # Small Mountains Subtropical Semi-Humid
         # -------------
-        - wild-mountains-variants: 3
+        - wild-mountains-variants: 4
         # -------------
         # Small Mountains Subtropical Semi-Arid
         # -------------
@@ -260,7 +260,7 @@ stages:
         # -------------
         # Mountains Temperate Semi-Humid
         # -------------
-        - temperate-mountains-variants: 12
+        - temperate-mountains-variants: 16
 
       mountains-small-boreal:
         # -------------
@@ -280,11 +280,11 @@ stages:
         # -------------
         # Large Mountains Tropical Humid
         # -------------
-        - JUNGLE_MOUNTAINS: 5
+        - JUNGLE_MOUNTAINS: 4
         # -------------
         # Large Mountains Tropical Semi-Humid
         # -------------
-        - WILD_HIGHLANDS: 5
+        - WILD_HIGHLANDS: 4
         # -------------
         # Large Mountains Tropical Semi-Arid
         # -------------
@@ -304,11 +304,11 @@ stages:
         # -------------
         # Large Mountains Temperate Semi-Humid
         # -------------
-        - TEMPERATE_ALPHA_MOUNTAINS: 4
+        - TEMPERATE_ALPHA_MOUNTAINS: 2
         # -------------
         # Large Mountains Temperate Semi-Arid
         # -------------
-        - DRY_TEMPERATE_MOUNTAINS: 3
+        - DRY_TEMPERATE_MOUNTAINS: 5
 
       mountains-large-boreal:
         # -------------
