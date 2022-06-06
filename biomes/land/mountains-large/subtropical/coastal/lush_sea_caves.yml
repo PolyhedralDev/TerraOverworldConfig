@@ -24,3 +24,4 @@ features:
     - STONE_SLABS
   flora:
     - GRASS
+    - SMALL_DRIPLEAF
