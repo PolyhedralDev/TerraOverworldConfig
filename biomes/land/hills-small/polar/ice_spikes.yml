@@ -25,3 +25,5 @@ features:
     - ICE_SPIKES
   preprocessors:
     - ICE_COASTLINE
+  postprocessors:
+    - TREE_SNOW
