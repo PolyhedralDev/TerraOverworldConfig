@@ -4,7 +4,8 @@ type: PALETTE
 layers:
   - materials:
       - minecraft:grass_block: 3
-      - minecraft:coarse_dirt: 2
+      - minecraft:coarse_dirt: 1
+      - minecraft:packed_mud: 2
     layers: 1
     sampler:
       type: DOMAIN_WARP
