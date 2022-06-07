@@ -21,7 +21,7 @@ palette:
 slant:
   - threshold: 2
     palette:
-      - GRASS: 319
+      - GRASS_MUDDY: 319
       - << meta.yml:palette-bottom
 
 slant-depth: 1
