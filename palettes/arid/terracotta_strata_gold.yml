@@ -8,7 +8,9 @@ layers:
       - minecraft:smooth_sandstone: 1
       - minecraft:yellow_terracotta: 1
       - minecraft:yellow_concrete: 1
-      - minecraft:smooth_sandstone: 6
+      - minecraft:smooth_sandstone: 3
+      - minecraft:packed_mud: 1
+      - minecraft:smooth_sandstone: 3
     layers: 1
 
 sampler:

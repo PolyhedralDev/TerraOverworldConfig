@@ -5,6 +5,7 @@ layers:
   - materials:
       - minecraft:orange_terracotta: 1
       - minecraft:terracotta: 4
+      - minecraft:packed_mud: 1
       - minecraft:light_gray_terracotta: 2
       - minecraft:granite: 2
       - minecraft:pink_terracotta: 1
