@@ -168,7 +168,7 @@ stages:
       flat-polar:
         - SNOWY_PLAINS: 2
         - TUNDRA_PLAINS: 2
-        - SNOWY_MEADOW: 1
+        - SNOWY_MEADOW: 4
       
       hills-small-polar:
         - ICE_SPIKES: 1
