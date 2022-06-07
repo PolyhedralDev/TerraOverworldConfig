@@ -44,7 +44,6 @@ TODO
 
 ## [1.1.0]
 ### Added
-- Added Chaparral biomes.
 - Added Arid Highlands biomes (by @ Eris#0075).
 - Added Eucalyptus trees and forests biome.
 - Added Sakura biomes.
@@ -53,9 +52,11 @@ TODO
 - Added small/big dripleaf features to many jungle-like biomes.
 
 ### Changed
+- Replaced Warm Hills biomes and variants with Chaparrals.
 - Improved Highlands biomes (by @ Eris#0075).
-- Improved Autumnal forest density.
+- Improved Autumnal forest density and biome colors.
 - Updated Evergreen tree types.
+- Evergreen Forests now inherit from Rainforests.
 - Amethyst crystals now generate in geodes.
 
 ## [1.0.1]
