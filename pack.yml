@@ -104,6 +104,9 @@ stages:
   - id: trees # Used for larger things that generate on the surface like trees, some other
     type: FEATURE # features are also treated as trees like ice spikes.
 
+  - id: postprocessors # Used to generate something that must come after all other features, such as snow on trees
+    type: FEATURE
+
 functions:
   "<<":
     - math/functions/terrace.yml:functions
