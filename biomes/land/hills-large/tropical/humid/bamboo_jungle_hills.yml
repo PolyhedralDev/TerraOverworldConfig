@@ -15,7 +15,7 @@ tags:
 
 palette:
   - GRASS: 319
-  - GRASS_PODZOL: 75
+  - GRASS_PODZOL_MUDDY: 85
   - SAND: 61
   - << meta.yml:palette-bottom
 
