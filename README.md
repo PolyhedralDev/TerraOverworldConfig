@@ -2,6 +2,9 @@
 
 The default overworld configuration for Terra 6.0+, containing over _140_ different biomes.
 
+You can find Terra - the main project this config pack is designed for
+[here](https://github.com/PolyhedralDev/Terra).
+
 ---
 
 ## Navigating through the config
@@ -36,12 +39,24 @@ can refer to their respective README files.
 
 ## Customization
 
-You can find some easy to modify parameters specific to this pack in the
-`meta.yml` file, which also contains annotations for what each parameter does.
-In addition to these parameters, this pack comes with several biome distribution
-presets, which can be chosen within the `pack.yml` file.
+### How do I make biomes larger / smaller?
 
----
+You can find some easy to modify parameters in the [`meta.yml`](./meta.yml) file
+under `biome-distribution`, which control the scales of different areas of biome
+distribution.
 
-You can find Terra - the main project this config pack is designed for
-[here](https://github.com/PolyhedralDev/Terra).
+### How do I remove all oceans / all land / all hot biomes / etc?
+
+This pack comes with several biome distribution presets, which can be chosen
+within the [`pack.yml`](./pack.yml) file. If none of these presets do exactly
+what you want, you can further modify biome distribution presets with alternate
+sources and stages. Check out the
+[`biome-providers/presets/default.yml`](./biome-providers/presets/default.yml)
+config for these alternative sources and stages.
+
+### Where can I learn more about configuration?
+
+If you want more in-depth customization, or simply just want to know what makes
+this pack tick, you can check out the
+[config development](https://terra.polydev.org/config/development/index.html)
+section of the Terra wiki to learn more.
