@@ -39,8 +39,19 @@ generate in an area where it previously did not (resulting in a chunk border).
 ---
 
 ## [Unreleased]
+### Added
 
-TODO
+
+### Changed
+
+
+### Removed
+
+
+### Fixed
+
+## [1.1.1]
+<!-- Needs changelog -->
 
 ## [1.1.0]
 ### Added
