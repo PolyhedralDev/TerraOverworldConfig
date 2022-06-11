@@ -1,4 +1,4 @@
-name: Upload Artifacts
+name: CD
 
 on:
   push:
@@ -6,14 +6,57 @@ on:
       - master
 
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
+    if: github.repository == 'PolyhedralDev/TerraOverworldConfig'
+
+    env:
+      repo_url: ${{ github.server_url }}/${{ github.repository }}
+      changelog: CHANGELOG.md
+      release_changelog: RELEASE_CHANGELOG.md
+      start_regex: "^## \\[Unreleased\\]"
+      end_regex: "^## "
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Create Artifacts
-        run: zip -r ./default.zip *
-      - name: ""
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: '2'
+  
+      - name: Check for version bump
+        run: sh ./.scripts/check-version-bump.sh
+
+      - name: Create artifacts
+        run: sh ./.scripts/pack.sh
+
+      - name: Grab release changelog
+        if: env.version-bumped == 'true'
+        run: sh ./.scripts/grab-release-changelog.sh
+
+      - name: Update changelog
+        if: env.version-bumped == 'true'
+        run: sh ./.scripts/update-changelog.sh
+
+      - name: Push changelog
+        if: env.version-bumped == 'true'
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: Polyhedral-Bot
+          author_email: polybot@protonmail.com
+          message: Version ${{ env.version }}
+          tag: v${{ env.version }} -F ${{ env.release_changelog }} --cleanup=verbatim
+          add: CHANGELOG.md
+
+      - name: Release
+        if: env.version-bumped == 'true'
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ env.version }}
+          body_path: ${{ env.release_changelog }}
+          files: |
+            .artifacts/*
+
+      - name: Release latest
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
@@ -21,4 +64,4 @@ jobs:
           prerelease: false
           title: "Latest Build"
           files: |
-            default.zip
+            .artifacts/*
