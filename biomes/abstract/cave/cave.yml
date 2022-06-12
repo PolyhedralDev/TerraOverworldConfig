@@ -8,6 +8,6 @@ carving:
 
 terrain:
   sampler:
-    type: EXPRESSION
+    type: CONSTANT
     dimensions: 3
-    expression: "1"
+    value: 1
