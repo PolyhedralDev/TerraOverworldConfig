@@ -11,6 +11,7 @@ colors:
   water-fog: 0x2C8b9c
 
 tags:
+  - LAND_CAVES
   - USE_RIVER
 
 palette:

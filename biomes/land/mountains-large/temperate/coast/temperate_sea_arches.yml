@@ -5,6 +5,7 @@ vanilla: minecraft:beach
 color: $biomes/colors.yml:TEMPERATE_SEA_ARCHES
 
 tags:
+  - LAND_CAVES
   - USE_RIVER
 
 palette:

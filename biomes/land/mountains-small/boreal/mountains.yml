@@ -5,6 +5,7 @@ vanilla: minecraft:jagged_peaks
 color: $biomes/colors.yml:MOUNTAINS
 
 tags:
+  - LAND_CAVES
   - LAND
 
 colors:

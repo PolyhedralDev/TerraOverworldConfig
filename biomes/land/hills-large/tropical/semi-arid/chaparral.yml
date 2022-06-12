@@ -5,6 +5,7 @@ color: $biomes/colors.yml:CHAPARRAL
 vanilla: minecraft:savanna
 
 tags:
+  - LAND_CAVES
   - USE_RIVER
 
 palette:

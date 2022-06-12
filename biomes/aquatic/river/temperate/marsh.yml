@@ -5,6 +5,7 @@ vanilla: minecraft:plains
 color: $biomes/colors.yml:MARSH
 
 tags:
+  - LAND_CAVES
   - USE_RIVER_FLAT
 
 palette:

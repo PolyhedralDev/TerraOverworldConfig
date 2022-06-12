@@ -10,6 +10,7 @@ palette:
   - << meta.yml:palette-bottom
 
 tags:
+  - LAND_CAVES
   - USE_RIVER_FLAT_SWAMP
 
 features:

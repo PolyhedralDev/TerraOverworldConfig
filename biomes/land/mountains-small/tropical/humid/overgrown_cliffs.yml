@@ -5,6 +5,7 @@ vanilla: minecraft:jungle
 color: $biomes/colors.yml:OVERGROWN_CLIFFS
 
 tags:
+  - LAND_CAVES
   - USE_RIVER
 
 colors:

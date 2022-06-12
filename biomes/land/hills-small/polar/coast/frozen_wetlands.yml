@@ -4,4 +4,5 @@ extends: [ EQ_BUTTES_WETLANDS, FROZEN_ARCHIPELAGO ]
 color: $biomes/colors.yml:FROZEN_WETLANDS
 
 tags:
+  - LAND_CAVES
   - USE_FROZEN_RIVER_FLAT

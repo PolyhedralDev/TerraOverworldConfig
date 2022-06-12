@@ -5,6 +5,7 @@ vanilla: minecraft:swamp
 color: $biomes/colors.yml:SWAMP
 
 tags:
+  - LAND_CAVES
   - USE_RIVER_FLAT_SWAMP
 
 colors:

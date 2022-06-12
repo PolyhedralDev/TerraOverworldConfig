@@ -5,6 +5,7 @@ vanilla: minecraft:taiga # This is only so foxes will spawn
 color: $biomes/colors.yml:EVERGREEN_OVERHANGS
 
 tags:
+  - LAND_CAVES
   - USE_RIVER
 
 colors:

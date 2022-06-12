@@ -1,0 +1,17 @@
+id: DRIPSTONE_CAVES
+type: BIOME
+extends: [ CAVE, BASE ]
+vanilla: minecraft:dripstone_caves
+
+palette:
+  - DRIPSTONE_CAVES: 319
+  - << meta.yml:palette-bottom
+
+tags:
+  - USE_RIVER_FLAT
+
+features:
+  preprocessors:
+    - CEILING_DRIPSTONE
+  flora:
+    - DRIPSTONE_CAVES_POINTED_DRIPSTONE

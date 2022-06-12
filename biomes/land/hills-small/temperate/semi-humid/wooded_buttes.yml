@@ -5,6 +5,7 @@ vanilla: minecraft:forest
 color: $biomes/colors.yml:WOODED_BUTTES
 
 tags:
+  - LAND_CAVES
   - USE_RIVER_FLAT
 
 palette:

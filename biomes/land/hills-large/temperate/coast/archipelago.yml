@@ -5,6 +5,7 @@ vanilla: minecraft:beach
 color: $biomes/colors.yml:ARCHIPELAGO
 
 tags:
+  - LAND_CAVES
   - USE_RIVER
 
 colors:

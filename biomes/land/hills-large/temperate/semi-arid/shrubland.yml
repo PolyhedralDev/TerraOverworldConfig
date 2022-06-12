@@ -5,6 +5,7 @@ vanilla: minecraft:windswept_forest
 color: $biomes/colors.yml:SHRUBLAND
 
 tags:
+  - LAND_CAVES
   - USE_RIVER
 
 colors:

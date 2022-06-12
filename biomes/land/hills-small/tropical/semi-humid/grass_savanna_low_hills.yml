@@ -4,4 +4,5 @@ extends: [ EQ_TERRACED_HILLS, GRASS_SAVANNA_HILLS ]
 color: $biomes/colors.yml:GRASS_SAVANNA_LOW_HILLS
 
 tags:
+  - LAND_CAVES
   - USE_RIVER_FLAT

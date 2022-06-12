@@ -5,6 +5,7 @@ vanilla: minecraft:snowy_beach
 color: $biomes/colors.yml:SNOWY_SEA_ARCHES
 
 tags:
+  - LAND_CAVES
   - USE_FROZEN_RIVER
 
 palette:

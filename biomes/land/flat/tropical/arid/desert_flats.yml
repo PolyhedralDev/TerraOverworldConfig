@@ -5,6 +5,7 @@ vanilla: minecraft:desert
 color: $biomes/colors.yml:DESERT
 
 tags:
+  - LAND_CAVES
   - USE_RIVER
 
 palette:

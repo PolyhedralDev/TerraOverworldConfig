@@ -4,4 +4,5 @@ extends: [ EQ_TERRACED_HILLS, JUNGLE_HILLS ]
 color: $biomes/colors.yml:JUNGLE
 
 tags:
+  - LAND_CAVES
   - USE_RIVER_FLAT_SWAMP

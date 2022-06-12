@@ -5,6 +5,7 @@ vanilla: minecraft:jungle
 color: $biomes/colors.yml:BAMBOO_PONDS
 
 tags:
+  - LAND_CAVES
   - USE_RIVER_FLAT_SWAMP
 
 colors:

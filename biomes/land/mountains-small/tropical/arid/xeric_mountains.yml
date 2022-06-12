@@ -5,6 +5,7 @@ vanilla: minecraft:desert
 color: $biomes/colors.yml:XERIC_MOUNTAINS
 
 tags:
+  - LAND_CAVES
   - LAND
 
 palette:

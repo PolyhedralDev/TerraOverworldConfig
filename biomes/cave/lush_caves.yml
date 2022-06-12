@@ -1,0 +1,15 @@
+id: LUSH_CAVES
+type: BIOME
+extends: [ CAVE, BASE ]
+vanilla: minecraft:lush_caves
+
+palette:
+  - LUSH_CAVES: 319
+  - << meta.yml:palette-bottom
+
+tags:
+  - USE_RIVER_FLAT
+
+features:
+  flora:
+    - MOSS_CARPET

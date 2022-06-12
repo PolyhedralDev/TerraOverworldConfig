@@ -5,6 +5,7 @@ vanilla: minecraft:plains
 color: $biomes/colors.yml:WILD_BUMPY_MOUNTAINS
 
 tags:
+  - LAND_CAVES
   - USE_RIVER
 
 colors:

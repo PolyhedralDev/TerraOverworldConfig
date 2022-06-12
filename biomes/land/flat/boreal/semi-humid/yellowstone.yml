@@ -5,6 +5,7 @@ vanilla: minecraft:taiga
 color: $biomes/colors.yml:YELLOWSTONE
 
 tags:
+  - LAND_CAVES
   - USE_RIVER_FLAT
 
 colors:

@@ -5,6 +5,7 @@ vanilla: minecraft:desert
 color: $biomes/colors.yml:DESERT_SPIKES_GOLD
 
 tags:
+  - LAND_CAVES
   - USE_RIVER
 
 slant:

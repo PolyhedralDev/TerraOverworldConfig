@@ -7,6 +7,7 @@ generator: NOISE_3D
 addons:
   biome-provider-pipeline: "1.+"
   biome-provider-single: "1.+"
+  biome-provider-extrusion: "1.+"
   chunk-generator-noise-3d: "1.+"
   config-biome: "1.+"
   config-flora: "1.+"
