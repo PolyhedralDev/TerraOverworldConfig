@@ -6,13 +6,13 @@ distributor:
   sampler:
     type: POSITIVE_WHITE_NOISE
     salt: 1023
-  threshold: 0.5
+  threshold: 0.2
 
 locator:
   type: PATTERN
   range:
-    min: 70
-    max: 90
+    min: -48
+    max: 48
   pattern:
     type: AND
     patterns:
