@@ -93,3 +93,8 @@ palette-bottom: # Added to the bottom of every palette
   - DEEPSLATE: $meta.yml:strata.deepslate.top
   - BEDROCK: $meta.yml:strata.bedrock.top
   - BLOCK:minecraft:bedrock: $meta.yml:strata.bedrock.bottom
+  
+palette-bedrock: # Bedrock generated in the world
+  - BEDROCK: $meta.yml:strata.bedrock.top
+  - BLOCK:minecraft:bedrock: $meta.yml:strata.bedrock.bottom
+  

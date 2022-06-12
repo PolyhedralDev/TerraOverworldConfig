@@ -1,0 +1,15 @@
+id: DEEP_DARK
+type: BIOME
+extends: [ CAVE, BASE ]
+vanilla: minecraft:deep_dark
+
+palette:
+  - LUSH_CAVES: 319
+  - LUSH_CAVES: 319
+  - DEEP_DARK_DEEPSLATE: $meta.yml:strata.deepslate.top
+  - << meta.yml:palette-bedrock
+
+
+features:
+  flora:
+    - MOSS_CARPET
