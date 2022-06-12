@@ -12,7 +12,7 @@ biomes:
         - LUSH_CAVES: 1
         - DRIPSTONE_CAVES: 1
       range:
-        min: -48
+        min: -16
         max: 48
     - type: REPLACE
       from: LAND_CAVES
