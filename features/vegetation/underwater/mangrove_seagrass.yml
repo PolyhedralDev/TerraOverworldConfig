@@ -1,0 +1,41 @@
+id: MANGROVE_SEAGRASS
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 1247
+  threshold: 0.5
+
+locator:
+  type: PATTERN
+  range:
+    min: 0
+    max: 62
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH
+        block: minecraft:water
+        offset: 0
+      - type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:aquatic-plantable-blocks
+        offset: -1
+
+structures:
+  distribution:
+    type: DOMAIN_WARP
+    amplitude: 3
+    warp:
+      type: GAUSSIAN
+    sampler:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.03
+    salt: 3696
+  structures:
+    - tall_seagrass: 1
+    - BLOCK:minecraft:seagrass: 1
+    - blank: 2
+    - BLOCK:minecraft:seagrass: 1
+    - tall_seagrass: 1
