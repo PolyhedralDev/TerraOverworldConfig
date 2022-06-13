@@ -40,15 +40,22 @@ generate in an area where it previously did not (resulting in a chunk border).
 
 ## [Unreleased]
 ### Added
-
+- Added Mangrove Swamps.
+- Added Dripstone Caves.
+- Added Lush Caves.
+- Added Deep Dark.
 
 ### Changed
-
+- Made river border biomes (Marshes, Swamps, Mangrove Swamps) more common.
+- Placed packed mud in many existing arid palettes.
+- Placed mud in bamboo jungles, swamps, and river palettes.
 
 ### Removed
 
 
 ### Fixed
+- Snow not generating on trees in polar biomes.
+- Trees not generating in Snowy Meadow biome.
 
 ## [1.1.1]
 <!-- Needs changelog -->
