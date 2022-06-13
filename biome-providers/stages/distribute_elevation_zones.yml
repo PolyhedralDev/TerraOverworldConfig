@@ -1,4 +1,3 @@
-
 # Splits land and coastal zones into different elevation zones.
 # These elevation zones are further divided into temperature zones
 # in the distribute_temperature_zones.yml file.
