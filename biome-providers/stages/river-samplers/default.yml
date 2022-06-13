@@ -1,8 +1,8 @@
 variables: &variables
   riverMaxWidth: 5 * ${meta.yml:biome-distribution.global-scale}
   riverFrequency: 1 / ${meta.yml:biome-distribution.river-spread-scale} / ${meta.yml:biome-distribution.global-scale}
-  riverThreshold: 0.15
-  borderThreshold: 0.3
+  riverThreshold: 0.5
+  borderThreshold: 0.35
   borderValue: -0.4
 
 sampler:
