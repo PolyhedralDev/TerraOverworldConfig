@@ -6,7 +6,7 @@ color: $biomes/colors.yml:BEACH
 
 tags:
   - LAND_CAVES
-  - USE_RIVER
+  - USE_RIVER_FLAT_COASTAL
 
 colors:
   grass: 0x91bd59

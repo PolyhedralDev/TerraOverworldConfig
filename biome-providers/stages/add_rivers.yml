@@ -45,7 +45,7 @@ stages:
     from: USE_RIVER_FLAT
     to:
       - SELF: 1
-      - MARSH: 1
+      - MARSH: 2
       - RIVER: 2
     sampler: *riverSampler
   # Flat Rivers
@@ -53,7 +53,15 @@ stages:
     from: USE_RIVER_FLAT_SWAMP
     to:
       - SELF: 1
-      - SWAMP: 1
+      - SWAMP: 2
+      - RIVER: 2
+    sampler: *riverSampler
+  # Flat Coastal Rivers
+  - type: REPLACE
+    from: USE_RIVER_FLAT_COASTAL
+    to:
+      - SELF: 1
+      - MANGROVE_SWAMP: 2
       - RIVER: 2
     sampler: *riverSampler
   # Frozen Rivers
@@ -68,6 +76,6 @@ stages:
     from: USE_FROZEN_RIVER_FLAT
     to:
       - SELF: 1
-      - FROZEN_MARSH: 1
+      - FROZEN_MARSH: 2
       - FROZEN_RIVER: 2
     sampler: *riverSampler
