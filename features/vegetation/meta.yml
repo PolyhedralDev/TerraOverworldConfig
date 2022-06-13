@@ -1,4 +1,5 @@
 plantable-blocks:
+  - minecraft:mud
   - minecraft:grass_block
   - minecraft:podzol
   - minecraft:dirt
@@ -7,10 +8,12 @@ plantable-blocks:
   - minecraft:rooted_dirt
 
 aquatic-plantable-blocks:
+  - minecraft:mud
   - minecraft:sand
   - minecraft:gravel
 
 sugarcane-plantable-blocks:
+  - minecraft:mud
   - minecraft:sand
   - minecraft:red_sand
   - minecraft:grass_block
@@ -21,6 +24,7 @@ sugarcane-plantable-blocks:
   - minecraft:rooted_dirt
 
 dripleaf-plantable-blocks:
+  - minecraft:mud
   - minecraft:clay
   - minecraft:coarse_dirt
   - minecraft:dirt
