@@ -1,0 +1,22 @@
+num dir = randomInt(4);
+num age = randomInt(4);
+num x = 0;
+num z = 0;
+
+if (dir == 0) {
+    x = -1;
+    z = 0;
+} else if (dir == 1) {
+    x = 0;
+    z = -1;
+} else if (dir == 2) {
+    x = 1;
+    z = 0;
+} else if (dir == 3) {
+    x = 0;
+    z = 1;
+}
+
+if (getBlock(x, 1, z) != "minecraft:mangrove_leaves") fail;
+
+block(x, 0, z, "minecraft:mangrove_propagule[hanging=true,age=" + age + "]", false);
