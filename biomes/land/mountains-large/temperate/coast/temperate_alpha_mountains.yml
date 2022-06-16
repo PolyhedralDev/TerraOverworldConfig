@@ -6,7 +6,8 @@ color: $biomes/colors.yml:TEMPERATE_ALPHA_MOUNTAINS
 
 palette:
   - GRASS: 319
-  - MUDDY_BEACH: 64
+  - SAND: 64
+  - MUDDY_BEACH: 61
   - << meta.yml:palette-bottom
 
 slant:
