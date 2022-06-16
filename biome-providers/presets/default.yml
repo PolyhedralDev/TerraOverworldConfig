@@ -30,9 +30,8 @@ biomes:
     resolution: 2
     initial-size: 10
     blend:
-      amplitude: 1
       sampler:
-        type: WHITE_NOISE
+        type: CONSTANT # handled by palette blending
     pipeline:
       # The source controls ocean / coast / land distribution
       source: $biome-providers/sources/basic_continents.yml:source
