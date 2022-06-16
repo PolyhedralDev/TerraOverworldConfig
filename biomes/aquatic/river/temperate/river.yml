@@ -6,7 +6,7 @@ color: $biomes/colors.yml:RIVER
 
 palette:
   - BLOCK:minecraft:stone: 319
-  - SANDY_BEACH: 75
+  - MUDDY_BEACH: 75
   - << meta.yml:palette-bottom
 
 slant:
