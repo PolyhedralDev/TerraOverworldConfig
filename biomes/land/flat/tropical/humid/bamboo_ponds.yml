@@ -17,7 +17,8 @@ colors:
 palette:
   - BAMBOO_PONDS_WATER: 319
   - BAMBOO_PONDS: 70
-  - MUDDY_BEACH: 64
+  - SAND: 64
+  - MUDDY_BEACH: 61
   - << meta.yml:palette-bottom
 
 slant:
