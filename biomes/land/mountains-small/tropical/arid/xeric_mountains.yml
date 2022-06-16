@@ -12,7 +12,7 @@ palette:
   - XERIC_SANDSTONE: 319
   - XERIC_SANDSTONE_HALF: 100
   - XERIC: 92
-  - SAND: 64
+  - MUDDY_BEACH: 64
   - << meta.yml:palette-bottom
 
 slant:

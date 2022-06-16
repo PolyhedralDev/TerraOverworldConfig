@@ -16,7 +16,7 @@ colors:
 
 palette:
   - GRASS_PODZOL: 319
-  - SAND: 64
+  - MUDDY_BEACH: 64
   - << meta.yml:palette-bottom
 
 slant:
