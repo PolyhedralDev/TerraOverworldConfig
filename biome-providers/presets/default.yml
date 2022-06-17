@@ -6,7 +6,7 @@ biomes:
       sampler:
         type: CELLULAR
         return: CellValue
-        frequency: 0.001
+        frequency: 0.01
       to:
         - SELF: 6
         - LUSH_CAVES: 1
@@ -20,8 +20,8 @@ biomes:
         type: OPEN_SIMPLEX_2
         frequency: 0.001
       to:
-        - SELF: 6
-        - DEEP_DARK: 2
+        - SELF: 4
+        - DEEP_DARK: 1
       range:
         min: -64
         max: 0
