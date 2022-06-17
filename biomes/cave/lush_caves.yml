@@ -5,7 +5,8 @@ vanilla: minecraft:lush_caves
 
 palette:
   - LUSH_CAVES: 319
-  - << meta.yml:palette-bottom
+  - LUSH_CAVES_DEEPSLATE: $meta.yml:strata.deepslate.top
+  - << meta.yml:palette-bedrock
 
 tags:
   - USE_RIVER_FLAT
