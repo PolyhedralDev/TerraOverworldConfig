@@ -4,6 +4,9 @@ extends: [ CAVE, BASE ]
 vanilla: minecraft:deep_dark
 
 palette:
-  - DEEP_DARK: 319
-  - DEEP_DARK_DEEPSLATE: $meta.yml:strata.deepslate.top
-  - << meta.yml:palette-bedrock
+  - BLOCK:minecraft:stone: 319
+  - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - SCULK_UNDERGROUND
