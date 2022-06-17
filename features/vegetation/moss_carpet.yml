@@ -8,18 +8,24 @@ distributor:
       sampler:
         type: POSITIVE_WHITE_NOISE
         seed: 6129
-      threshold: 0.05
+      threshold: 0.1
 
 locator:
-  type: PATTERN
-  range:
-    min: -64
-    max: 48
-  pattern:
-    type: MATCH_SET
-    blocks:
-      - minecraft:moss_block
-    offset: -1
+  type: AND
+  locators:
+    - type: SURFACE
+      range: &range
+        min: -64
+        max: 64
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:moss_block
+          - minecraft:clay
+          - minecraft:stone
+        offset: -1
 
 structures:
   distribution:
