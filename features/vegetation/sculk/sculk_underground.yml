@@ -69,7 +69,7 @@ locator:
               sampler:
                 type: CELLULAR
                 return: Distance2Div
-                frequency: 0.025
+                frequency: 0.035
 
 structures:
   distribution:
