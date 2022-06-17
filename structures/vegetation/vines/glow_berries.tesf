@@ -1,0 +1,18 @@
+// Generate a column of leaves down from ceiling block
+num leafDepth = 2 + randomInt(4); // Length of center column of leaves
+
+num i = 0;
+
+for (i; i < leafDepth; i = i + 1) {
+    if(getBlock(0, -i - 1, 0) != "minecraft:air") {
+        break;
+    }
+
+    if(randomInt(3) == 0) {
+        block(0, -i, 0, "minecraft:cave_vines_plant[berries=true]", false);
+    } else {
+        block(0, -i, 0, "minecraft:cave_vines_plant[berries=false]", false);
+    }
+}
+
+block(0, -i, 0, "minecraft:cave_vines", false);
