@@ -34,3 +34,22 @@ dripleaf-plantable-blocks:
   - minecraft:mycelium
   - minecraft:podzol
   - minecraft:rooted_dirt
+
+sculk-plantable-blocks:
+  - minecraft:stone
+  - minecraft:deepslate
+  - minecraft:cobbled_deepslate
+  - minecraft:chiseled_deepslate
+  - minecraft:polished_deepslate
+  - minecraft:deepslate_tiles
+  - minecraft:cracked_deepslate_tiles
+  - minecraft:deepslate_bricks
+  - minecraft:cracked_deepslate_bricks
+  - minecraft:polished_basalt
+  - minecraft:deepslate_tile_wall
+  - minecraft:cobbled_deepslate_wall
+  - minecraft:polished_deepslate_wall
+  - minecraft:deepslate_tile_stairs
+  - minecraft:dark_oak_log
+  - minecraft:dark_oak_planks
+  - minecraft:dark_oak_fence
