@@ -9,4 +9,5 @@ palette:
 
 features:
   flora:
-    - SCULK_UNDERGROUND
+    - SCULK_TENDRIL
+    - SCULK_TENDRIL_VEIN
