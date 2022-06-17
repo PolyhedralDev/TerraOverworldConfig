@@ -1,0 +1,15 @@
+setWaterlog(true);
+str blockID = "minecraft:sculk_vein[";
+if (structure(0, 1, 0, "is_rock", "NONE")) blockID = blockID + "up=true,";
+else blockID = blockID + "up=false,";
+if (structure(0, -1, 0, "is_rock", "NONE")) blockID = blockID + "down=true,";
+else blockID = blockID + "down=false,";
+if (structure(0, 0, -1, "is_rock", "NONE")) blockID = blockID + "north=true,";
+else blockID = blockID + "north=false,";
+if (structure(1, 0, 0, "is_rock", "NONE")) blockID = blockID + "east=true,";
+else blockID = blockID + "east=false,";
+if (structure(0, 0, 1, "is_rock", "NONE")) blockID = blockID + "south=true,";
+else blockID = blockID + "south=false,";
+if (structure(-1, 0, 0, "is_rock", "NONE")) blockID = blockID + "west=true]";
+else blockID = blockID + "west=false]";
+if (blockID != "minecraft:sculk_vein[up=false,down=false,north=false,east=false,south=false,west=false]") block(0, 0, 0, blockID, false);
