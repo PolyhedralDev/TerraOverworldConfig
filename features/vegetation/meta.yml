@@ -37,6 +37,7 @@ dripleaf-plantable-blocks:
 
 sculk-plantable-blocks:
   - minecraft:stone
+  - minecraft:tuff
   - minecraft:deepslate
   - minecraft:cobbled_deepslate
   - minecraft:chiseled_deepslate
