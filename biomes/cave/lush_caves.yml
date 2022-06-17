@@ -11,6 +11,8 @@ tags:
   - USE_RIVER_FLAT
 
 features:
+  preprocessors:
+    - LUSH_CAVE_WATER_POOLS
   flora:
     - MOSS_CARPET
     - LARGE_LEAF_VINES_UNDERGROUND
