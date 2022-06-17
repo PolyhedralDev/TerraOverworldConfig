@@ -1,0 +1,66 @@
+id: SCULK_TENDRIL_VEIN
+type: FEATURE
+
+# Adds 'webs' of sculk blocks to surface blocks
+
+distributor:
+  type: "YES"
+
+locator:
+  type: AND
+  locators:
+    # Check if block is air
+    - type: PATTERN
+      range: &range
+        min: -64
+        max: 64
+      pattern:
+        type: AND
+        patterns:
+          - type: MATCH_AIR
+            offset: 0
+          - type: OR
+            patterns:
+              - type: MATCH_SOLID
+                offset: 1
+              - type: MATCH_SOLID
+                offset: -1
+    # Check if there is a surrounding solid block
+    - type: OR
+      locators:
+        # If any side faces are sculk
+        - type: ADJACENT_PATTERN
+          range: *range
+          pattern:
+            type: MATCH
+            block: minecraft:sculk
+            offset: 0
+        # OR any top / bottom faces are sculk
+        - type: PATTERN
+          range: *range
+          pattern:
+            type: OR
+            patterns:
+              - type: MATCH
+                block: minecraft:sculk
+                offset: 1
+              - type: MATCH
+                block: minecraft:sculk
+                offset: -1
+        # OR any surrounding top / bottom faces are sculk
+        - type: ADJACENT_PATTERN
+          range: *range
+          pattern:
+            type: OR
+            patterns:
+              - type: MATCH
+                block: minecraft:sculk
+                offset: 1
+              - type: MATCH
+                block: minecraft:sculk
+                offset: -1
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: sculk_vein
