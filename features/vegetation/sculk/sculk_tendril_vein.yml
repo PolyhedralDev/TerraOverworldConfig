@@ -7,51 +7,45 @@ distributor:
   type: "YES"
 
 locator:
-  type: AND
+  type: OR
   locators:
-    # Check if block is air
+    - type: AND
+      locators:
+        - type: PATTERN
+          range: &range
+            min: -64
+            max: 64
+          pattern:
+            type: MATCH_AIR
+            offset: 0
+        - type: OR
+          locators:
+            - type: ADJACENT_PATTERN
+              range: *range
+              pattern:
+                type: MATCH
+                block: minecraft:sculk
+                offset: 0
+            - type: ADJACENT_PATTERN
+              range: *range
+              pattern:
+                type: MATCH
+                block: minecraft:sculk
+                offset: 1
+            - type: ADJACENT_PATTERN
+              range: *range
+              pattern:
+                type: MATCH
+                block: minecraft:sculk
+                offset: -1
     - type: PATTERN
-      range: &range
-        min: -64
-        max: 64
+      range: *range
       pattern:
         type: AND
         patterns:
           - type: MATCH_AIR
             offset: 0
           - type: OR
-            patterns:
-              - type: MATCH_SOLID
-                offset: 1
-              - type: MATCH_SOLID
-                offset: -1
-    # Check if there is a surrounding solid block
-    - type: OR
-      locators:
-        # If any side faces are sculk
-        - type: ADJACENT_PATTERN
-          range: *range
-          pattern:
-            type: MATCH
-            block: minecraft:sculk
-            offset: 0
-        # OR any top / bottom faces are sculk
-        - type: PATTERN
-          range: *range
-          pattern:
-            type: OR
-            patterns:
-              - type: MATCH
-                block: minecraft:sculk
-                offset: 1
-              - type: MATCH
-                block: minecraft:sculk
-                offset: -1
-        # OR any surrounding top / bottom faces are sculk
-        - type: ADJACENT_PATTERN
-          range: *range
-          pattern:
-            type: OR
             patterns:
               - type: MATCH
                 block: minecraft:sculk
