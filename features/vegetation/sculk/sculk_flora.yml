@@ -1,0 +1,42 @@
+id: SCULK_FLORA
+type: FEATURE
+
+distributor:
+  type: AND
+  distributors:
+    - type: PADDED_GRID
+      width: 1
+      padding: 3
+      salt: 3874
+    - type: SAMPLER
+      sampler:
+        type: CELLULAR
+        return: CellValue
+        frequency: 0.06
+        salt: 2289
+      threshold: 0.2
+  
+locator:
+  type: PATTERN
+  range:
+    min: -64
+    max: 64
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH_AIR
+        offset: 0
+      - type: MATCH
+        block: minecraft:sculk
+        offset: -1
+
+structures:
+  distribution:
+    type: OPEN_SIMPLEX_2
+    seed: 5919
+    frequency: 0.05
+  structures:
+    - BLOCK:minecraft:sculk_shrieker[can_summon=true]: 2
+    - BLOCK:minecraft:sculk_sensor: 3
+    - BLOCK:minecraft:sculk_catalyst: 1
+    - blank: 3
