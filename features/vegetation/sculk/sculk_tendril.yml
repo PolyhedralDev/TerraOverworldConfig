@@ -45,42 +45,53 @@ locator:
                 offset: -1
     # Use noise to create 'webbed' effect
     - type: SAMPLER_3D
-      sampler:
-        type: EXPRESSION
+      sampler: &sculkSampler
         dimensions: 3
-        variables:
-          threshold: 0.5
-        expression: if(noise(x,y,z) > threshold, 1, -1)
+        type: EXPRESSION
+        expression: |
+          if(|noise(x, y, z)|>0.5,-1,if(kernel(x, y, z)!=0,1,if(border(x,y,z)>0,-0.4,-1)))
         samplers:
-          noise:
+          border:
+            dimensions: 3
+            type: PROBABILITY
+            sampler:
+              type: OPEN_SIMPLEX_2
+              salt: 2585
+            frequency: 0.5
+          noise: &noise
             # Warped distance2div produces a web effect
             dimensions: 3
             type: DOMAIN_WARP
-            amplitude: 15
+            amplitude: 14
             warp:
-              type: PING_PONG
+              type: FBM
               octaves: 2
               sampler:
                 type: OPEN_SIMPLEX_2S
             sampler:
               type: LINEAR
               min: -1
-              max: 0
+              max: 0.5
               sampler:
                 type: CELLULAR
                 return: Distance2Div
-                frequency: 0.0125
+                frequency: 0.02
+          kernel:
+            dimensions: 3
+            type: KERNEL # Edge detection
+            kernel: [
+              [ 0,  1, 0 ],
+              [ 1, -1, 1 ],
+              [ 0,  1, 0 ]
+            ]
+            sampler:
+              type: EXPRESSION
+              expression: noise(x, y, z)>0
+              samplers:
+                noise: *noise
 
 structures:
-  distribution:
-    type: DOMAIN_WARP
-    amplitude: 4
-    warp:
-      type: GAUSSIAN
-    sampler:
-      type: CELLULAR
-      return: CellValue
-      frequency: 0.06
-      seed: 4417
+  distribution: *sculkSampler
   structures:
-    - BLOCK:minecraft:sculk: 1
+    - BLOCK:minecraft:sculk: 2
+    - BLOCK:minecraft:sculk_vein: 1
