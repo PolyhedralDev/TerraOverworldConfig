@@ -10,3 +10,5 @@ palette:
 features:
   flora:
     - SCULK_TENDRIL
+  postprocessors:
+    - SCULK_FLORA
