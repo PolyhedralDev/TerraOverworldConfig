@@ -39,4 +39,4 @@ structures:
     - BLOCK:minecraft:sculk_shrieker[can_summon=true]: 2
     - BLOCK:minecraft:sculk_sensor: 3
     - BLOCK:minecraft:sculk_catalyst: 1
-    - blank: 3
+    - blank: 4
