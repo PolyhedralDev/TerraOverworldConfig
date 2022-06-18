@@ -1,0 +1,6 @@
+structure(1, 0, 0, "sculk_vein", "NONE");
+structure(-1, 0, 0, "sculk_vein", "NONE");
+structure(0, 1, 0, "sculk_vein", "NONE");
+structure(0, -1, 0, "sculk_vein", "NONE");
+structure(0, 0, 1, "sculk_vein", "NONE");
+structure(0, 0, -1, "sculk_vein", "NONE");

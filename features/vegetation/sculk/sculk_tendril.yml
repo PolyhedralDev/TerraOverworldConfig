@@ -4,18 +4,12 @@ type: FEATURE
 # Adds 'webs' of sculk blocks to surface blocks
 
 distributor:
-  type: SAMPLER
-  sampler:
-    type: PROBABILITY
-    sampler:
-      type: OPEN_SIMPLEX_2
-      frequency: 0.03
-  threshold: 0.75
+  type: "YES"
 
 locator:
   type: AND
   locators:
-    # Check if block is solid block
+    # Check if block can be replaced with sculk
     - type: PATTERN
       range: &range
         min: -64
@@ -24,7 +18,7 @@ locator:
         type: MATCH_SET
         blocks: $features/vegetation/meta.yml:sculk-plantable-blocks
         offset: 0
-    # Check if there is a surrounding solid block
+    # Check if the block is exposed to air
     - type: OR
       locators:
         # If any side faces are air
@@ -43,55 +37,23 @@ locator:
                 offset: 1
               - type: MATCH_AIR
                 offset: -1
-    # Use noise to create 'webbed' effect
-    - type: SAMPLER_3D
-      sampler: &sculkSampler
-        dimensions: 3
-        type: EXPRESSION
-        expression: |
-          if(|noise(x, y, z)|>0.5,-1,if(kernel(x, y, z)!=0,1,if(border(x,y,z)>0,-0.4,-1)))
-        samplers:
-          border:
-            dimensions: 3
-            type: PROBABILITY
-            sampler:
-              type: OPEN_SIMPLEX_2
-              salt: 2585
-            frequency: 0.5
-          noise: &noise
-            # Warped distance2div produces a web effect
-            dimensions: 3
-            type: DOMAIN_WARP
-            amplitude: 14
-            warp:
-              type: FBM
-              octaves: 2
-              sampler:
-                type: OPEN_SIMPLEX_2S
-            sampler:
-              type: LINEAR
-              min: -1
-              max: 0.5
-              sampler:
-                type: CELLULAR
-                return: Distance2Div
-                frequency: 0.02
-          kernel:
-            dimensions: 3
-            type: KERNEL # Edge detection
-            kernel: [
-              [ 0,  1, 0 ],
-              [ 1, -1, 1 ],
-              [ 0,  1, 0 ]
-            ]
-            sampler:
-              type: EXPRESSION
-              expression: noise(x, y, z)>0
-              samplers:
-                noise: *noise
+        - type: ADJACENT_PATTERN
+          range: *range
+          pattern:
+            type: MATCH_AIR
+            offset: 0
 
 structures:
-  distribution: *sculkSampler
+  distribution:
+    dimensions: 3
+    type: LINEAR
+    min: -1
+    max: 0
+    sampler:
+      type: CELLULAR
+      return: Distance2Div
+      frequency: 0.07
   structures:
-    - BLOCK:minecraft:sculk: 2
-    - BLOCK:minecraft:sculk_vein: 1
+    - blank: 4
+    - place_adjacent_sculk_veins: 1
+    - BLOCK:minecraft:sculk: 3
