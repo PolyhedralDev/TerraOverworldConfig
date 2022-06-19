@@ -13,7 +13,7 @@ locator:
     - type: PATTERN
       range: &range
         min: -64
-        max: 64
+        max: 0
       pattern:
         type: MATCH_SET
         blocks: $features/vegetation/meta.yml:sculk-plantable-blocks
@@ -37,11 +37,6 @@ locator:
                 offset: 1
               - type: MATCH_AIR
                 offset: -1
-        - type: ADJACENT_PATTERN
-          range: *range
-          pattern:
-            type: MATCH_AIR
-            offset: 0
 
 structures:
   distribution:
@@ -52,8 +47,8 @@ structures:
     sampler:
       type: CELLULAR
       return: Distance2Div
-      frequency: 0.07
+      frequency: 0.04
   structures:
-    - blank: 4
+    - blank: 6
     - place_adjacent_sculk_veins: 1
     - BLOCK:minecraft:sculk: 3
