@@ -49,6 +49,7 @@ generate in an area where it previously did not (resulting in a chunk border).
 - Made river border biomes (Marshes, Swamps, Mangrove Swamps) more common.
 - Placed packed mud in many existing arid palettes.
 - Placed mud in bamboo jungles, swamps, and river palettes.
+- Changed cave generation to include rare giant caverns.
 
 ### Removed
 

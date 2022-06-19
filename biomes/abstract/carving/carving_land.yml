@@ -27,6 +27,9 @@ carving:
       pillarStrength: 0.5
       pillarRadius: 0.02
     
+      megaCaveStrength: 0.3
+      megaCaveSize: 0.3
+
     expression: |
       -carvingThreshold
       + if(y<carvingMinHeight||y>carvingMaxHeight,0,maskSmooth(maskSmooth( // Skip unnecessary calculations
@@ -46,6 +49,10 @@ carving:
                   (y + simplex2(x, z) * 5) * cheeseVerticalFrequency,
                   z * cheeseHorizontalFrequency
                 )+1)/2
+
+                // Mega caves
+                +lerp(megaCaves(x, y, z), 1-megaCaveSize, 0, 1, megaCaveStrength)
+
                 // Pillars
                 -lerp(cavePillars(x, z),-1+pillarRadius,0,-1,1) * pillarStrength,
       
@@ -66,6 +73,12 @@ carving:
         dimensions: 2
         type: CELLULAR
         frequency: 0.05
+      
+      megaCaves:
+        dimensions: 3
+        type: OPEN_SIMPLEX_2
+        salt: 777
+        frequency: 0.003
       
       # Basic 2D simplex noise
       simplex2:
