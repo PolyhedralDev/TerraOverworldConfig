@@ -8,7 +8,9 @@ palette:
   - << meta.yml:palette-bottom
 
 features:
-  flora:
+  preprocessors:
+    - SCULK_WEBS
+    - SCULK_PATCHES
     - SCULK_TENDRIL
-  postprocessors:
+  flora:
     - SCULK_FLORA
