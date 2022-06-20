@@ -57,6 +57,7 @@ generate in an area where it previously did not (resulting in a chunk border).
 ### Fixed
 - Snow not generating on trees in polar biomes.
 - Trees not generating in Snowy Meadow biome.
+- Changed caldera center vanilla biome. (https://github.com/PolyhedralDev/TerraOverworldConfig/issues/97)
 
 ## [1.1.1]
 <!-- Needs changelog -->
