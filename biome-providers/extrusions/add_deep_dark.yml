@@ -1,0 +1,12 @@
+extrusions:
+  - type: REPLACE
+    from: LAND_CAVES
+    sampler:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.001
+    to:
+      - SELF: 4
+      - DEEP_DARK: 1
+    range:
+      min: -64
+      max: 0

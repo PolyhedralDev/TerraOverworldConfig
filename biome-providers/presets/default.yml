@@ -1,30 +1,8 @@
 biomes:
   type: EXTRUSION
   extrusions:
-    - type: REPLACE
-      from: LAND_CAVES
-      sampler:
-        type: CELLULAR
-        return: CellValue
-        frequency: 0.01
-      to:
-        - SELF: 6
-        - LUSH_CAVES: 1
-        - DRIPSTONE_CAVES: 1
-      range:
-        min: -16
-        max: 48
-    - type: REPLACE
-      from: LAND_CAVES
-      sampler:
-        type: OPEN_SIMPLEX_2
-        frequency: 0.001
-      to:
-        - SELF: 4
-        - DEEP_DARK: 1
-      range:
-        min: -64
-        max: 0
+    - << biome-providers/extrusions/add_cave_biomes.yml:extrusions
+    - << biome-providers/extrusions/add_deep_dark.yml:extrusions
   provider:
     type: PIPELINE
     resolution: 2

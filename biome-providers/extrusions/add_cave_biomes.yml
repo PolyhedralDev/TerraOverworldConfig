@@ -1,0 +1,14 @@
+extrusions:
+  - type: REPLACE
+    from: LAND_CAVES
+    sampler:
+      type: CELLULAR
+      return: CellValue
+      frequency: 0.01
+    to:
+      - SELF: 6
+      - LUSH_CAVES: 1
+      - DRIPSTONE_CAVES: 1
+    range:
+      min: -16
+      max: 48
