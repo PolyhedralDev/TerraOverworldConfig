@@ -1,8 +1,7 @@
-id: RIVER_FROZEN
+id: RIVER_BASIC
 type: BIOME
 abstract: true
 
 features:
   river-decoration:
-    - CEILING_ICICLES
     - CLAY_DEPOSITS

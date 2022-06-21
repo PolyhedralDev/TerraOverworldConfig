@@ -24,7 +24,7 @@ features:
     - SNOW_LAYERS
   trees:
     - SPARSE_SPRUCE_TREES
+  preprocessors:
+    - POWDER_SNOW_DEPOSITS
   postprocessors:
     - TREE_SNOW
-  ores:
-    - POWDER_SNOW_DEPOSITS

@@ -25,6 +25,5 @@ features:
     - SNOW_LAYERS
     - STONE_SLABS
   preprocessors:
-    - ICE_COASTLINE
-  ores:
     - POWDER_SNOW_DEPOSITS
+    - ICE_COASTLINE

@@ -1,6 +1,6 @@
 id: RIVER
 type: BIOME
-extends: [ EQ_RIVER, CARVING_OCEAN, BASE ]
+extends: [ RIVER_BASIC, EQ_RIVER, CARVING_OCEAN, BASE ]
 vanilla: minecraft:river
 color: $biomes/colors.yml:RIVER
 
@@ -20,9 +20,7 @@ colors:
   foliage: 0x71a74d
   water: 0x0084ff
   water-fog: 0x0084ff
-  
+
 features:
   flora:
     - SUGAR_CANE
-  ores:
-    - CLAY_DEPOSITS
