@@ -1,0 +1,27 @@
+id: CAVE_SPORE_BLOSSOMS
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  salt: 1824
+  width: 15
+  padding: 1
+
+locator:
+  type: PATTERN
+  range:
+    min: -50
+    max: 64
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH_AIR
+        offset: 0
+      - type: MATCH_SOLID
+        offset: 1
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures:
+    - BLOCK:minecraft:spore_blossom: 1
