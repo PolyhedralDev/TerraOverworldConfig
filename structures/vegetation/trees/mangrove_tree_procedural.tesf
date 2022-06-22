@@ -4,22 +4,22 @@ num pi = 3.14159;
 num twopi = 6.28318530718;
 
 num trunkHeight = 4+randomInt(4);
-num trunkMinHeight = 1+randomInt(3);
+num trunkBase = 2+randomInt(5);
 str trunkBlock = "minecraft:mangrove_log";
 str rootBlock = "minecraft:mangrove_roots";
 str undergroundRootBlock = "minecraft:muddy_mangrove_roots";
 str underwaterRootBlock = "minecraft:mangrove_roots[waterlogged=true]";
 
-num sideBranchInterval = 3+randomInt(4);
-num sideBranchMinHeight = 3+randomInt(3)+trunkMinHeight;
-num sideBranchLengthMin = 4+randomInt(3);
+num sideBranchInterval = 3+randomInt(2);
+num sideBranchMinHeight = 2+randomInt(3);
+num sideBranchLengthMin = 3;
 num sideBranchLengthVariation = 2;
 num sideBranchVerticalVariation = 0;
-num sideBranchVerticalDirection = 0.3+randomInt(randPrecision)/randPrecision/2;
-num sideBranchLeafRadiusMin = 4;
+num sideBranchVerticalDirection = 1+randomInt(randPrecision)/randPrecision/2;
+num sideBranchLeafRadiusMin = 3;
 num sideBranchLeafTranslate = 0;
-num sideBranchLeafTopFlatness = 1.5;
-num sideBranchLeafBottomFlatness = 0.5;
+num sideBranchLeafTopFlatness = 2;
+num sideBranchLeafBottomFlatness = 4;
 num sideBranchLeafRarity = 2;
 str sideBranchLeafStructure = "mangrove_leaves_clump";
 str sideBranchBlockX = "minecraft:mangrove_log[axis=x]";
@@ -29,7 +29,7 @@ str sideBranchBlockZ = "minecraft:mangrove_log[axis=z]";
 num topBranches = 2+randomInt(3);
 num topBranchLengthUpwardsMin = 7+randomInt(3);
 num topBranchLengthOutwardsMin = 4+randomInt(3);
-num topBranchVerticalDirection = 1;
+num topBranchVerticalDirection = 0.4;
 num topBranchLeafRadiusMin = 5;
 num topBranchLeafTranslate = 0;
 num topBranchLeafTopFlatness = 1.5;
@@ -46,67 +46,62 @@ num sporeBlossomZ = 0;
 
 // Generate roots at base of trunk
 num roots = 3+randomInt(2);
-num rootHeight = 2+trunkMinHeight;
-num rootLength = 4+randomInt(3);
+num rootMaxLength = 30;
+num rootDroop = 0.06;
+num rootVerticalDirection = -0.4-randomInt(randPrecision)/randPrecision*0.3;
 num rootAngle = randomInt(randPrecision)/randPrecision*2*pi;
 for (num r = 0; r < roots; r = r + 1) {
-    // End coords
-    num ex = 0;
-    num ey = 0;
-    num ez = 0;
     // Branch direction vector
     num dx = sin(rootAngle);
-    num dy = -(r/roots*4-1);
+    num dy = rootVerticalDirection;
     num dz = cos(rootAngle);
     // Normalize vector
     num mag = sqrt(pow(dx,2)+pow(dy,2)+pow(dz,2));
     dx = dx/mag;
     dy = dy/mag;
     dz = dz/mag;
-    for (num i = 0; i <= rootLength; i = i + 0.5) {
-        num h = rootHeight * (1-(i/rootLength));
 
-        if (getBlock(i*dx, h, i*dz) == "minecraft:mud") {
-            block(i*dx, h, i*dz, undergroundRootBlock);
-        } else if (getBlock(i*dx, h, i*dz) == "minecraft:water") {
-            block(i*dx, h, i*dz, underwaterRootBlock);
+    for (num i = 0; i <= rootMaxLength; i = i + 0.5) {
+        num cx = i*dx;
+        num cy = trunkBase+i*dy;
+        num cz = i*dz;
+
+        // Place root block
+        str currentBlock = getBlock(cx, cy, cz);
+        if (currentBlock == "minecraft:stone") {
+            break;
+        } else if (currentBlock == "minecraft:mud") {
+            block(cx, cy, cz, undergroundRootBlock);
+        } else if (getBlock(cx+1, cy, cz) == "minecraft:water" ||
+                   getBlock(cx-1, cy, cz) == "minecraft:water" ||
+                   getBlock(cx, cy, cz+1) == "minecraft:water" ||
+                   getBlock(cx, cy, cz-1) == "minecraft:water"
+                  ) {
+            block(cx, cy, cz, underwaterRootBlock);
         } else {
-            block(i*dx, h, i*dz, rootBlock);
+            block(cx, cy, cz, rootBlock);
         }
 
+        // Place moss carpet on root block
         num mossRoll = randomInt(10); // 1 in 10 chance
         if (mossRoll == 0) {
-            block(i*dx, h+1, i*dz, "minecraft:moss_carpet", false);
+            block(cx, cy+1, cz, "minecraft:moss_carpet", false);
         }
 
+        // Point vector down more
+        dy = dy - rootDroop;
         // Normalize vector
         mag = sqrt(pow2(dx)+pow2(dy)+pow2(dz));
         dx = dx/mag;
         dy = dy/mag;
         dz = dz/mag;
-        // Set end coords
-        ex = i*dx;
-        ey = h;
-        ez = i*dz;
-    }
-
-    // At end coords, loop until finding stone
-    while (getBlock(ex,ey,ez) != "minecraft:stone") {
-         if (getBlock(ex,ey,ez) == "minecraft:mud") {
-            block(ex, ey, ez, undergroundRootBlock);
-         } else if (getBlock(ex,ey,ez) == "minecraft:water") {
-            block(ex, ey, ez, underwaterRootBlock);
-         } else {
-            block(ex, ey, ez, rootBlock);
-         }
-         ey = ey - 1;
     }
 
     rootAngle = rootAngle + goldenAngle;
 }
 
 num branchAngle = randomInt(randPrecision)/randPrecision*2*pi;
-for (num i = trunkMinHeight; i < trunkHeight; i = i + 1) {
+for (num i = 0; i < trunkHeight; i = i + 1) {
     if (i > sideBranchMinHeight) {
         if (i % sideBranchInterval == 0) {
             // Branch direction vector
@@ -120,7 +115,7 @@ for (num i = trunkMinHeight; i < trunkHeight; i = i + 1) {
             dz = dz/mag;
             // Branch origin
             num ox = 0;
-            num oy = i;
+            num oy = i+trunkBase;
             num oz = 0;
             // Set branch block based on largest unsigned vector component
             str branchBlock = sideBranchBlockY;
@@ -156,7 +151,7 @@ for (num i = trunkMinHeight; i < trunkHeight; i = i + 1) {
             }
         }
     }
-    block(0, i+trunkMinHeight, 0, trunkBlock);
+    block(0, i+trunkBase, 0, trunkBlock);
 }
 
 for (num b = 1; b <= topBranches; b = b + 1) {
@@ -173,7 +168,7 @@ for (num b = 1; b <= topBranches; b = b + 1) {
     dz = dz/mag;
     // Branch origin
     num ox = 0;
-    num oy = trunkHeight+trunkMinHeight;
+    num oy = trunkBase + trunkHeight;
     num oz = 0;
     // Set branch block based on largest unsigned vector component
     str branchBlock = topBranchBlockY;
@@ -225,7 +220,7 @@ if (beeNestRoll == 0) {
     structure(0, sideBranchMinHeight-1, 0, "bee_nest", "NONE");
 }
 
-for (num v = 25; v > trunkHeight+trunkMinHeight; v = v - 1) {
+for (num v = 25; v > trunkBase + trunkHeight; v = v - 1) {
     num rx = sin(randomInt(100)/100 * twopi) * (randomInt(5) + 5);
     num rz = cos(randomInt(100)/100 * twopi) * (randomInt(5) + 5);
     structure(rx, v, rz, "place_vines", "NONE");
