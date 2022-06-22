@@ -75,37 +75,56 @@ biomes: $biome-providers/presets/default.yml:biomes
 # something like a world without ores.
 
 stages:
-  - id: global-preprocessors # Used to generate lava at the bottom of the world
+  # Used to generate lava at the bottom of the world.
+  # NOTE - This key must only be defined in biomes/abstract/base.yml
+  - id: global-preprocessors
     type: FEATURE
-
-  - id: preprocessors # Misc features that are treated as small modifications
-    type: FEATURE     # to the initial chunk generation.
-
-  - id: landforms # Used for things like boulders and features that act
-    type: FEATURE # like a part of the terrain.
-
-  - id: slabs # Adds slab versions of some blocks to make terrain look smoother
+  
+  # Misc features that are treated as small modifications to the initial chunk generation.
+  - id: preprocessors
     type: FEATURE
-
-  - id: ores # Self-explanatory - used to generate ores, individual biomes should extend from configs
-    type: FEATURE # in biomes/abstract/features/ores, rather than overwriting this key themselves.
-
-  - id: deposits # Adds things like dirt, andesite and gravel patches
+  
+  # Used for things like boulders and features that act like a part of the terrain.
+  - id: landforms
     type: FEATURE
-
-  - id: river-decoration # Used for biome specific river variant features
+  
+  # Adds slab versions of some blocks to make terrain look smoother.
+  - id: slabs
     type: FEATURE
-
-  - id: underwater-flora # Used for small features placed underwater like sea-grass
+  
+  # Self-explanatory - used to generate ores.
+  # NOTE - Individual biomes should extend from configs in biomes/abstract/features/ores
+  #        rather than overwriting this key themselves.
+  - id: ores
     type: FEATURE
-
-  - id: flora # Used for small features placed on the surface like tall grass and vines
+  
+  # Adds things like dirt, andesite and gravel patches.
+  # NOTE - Individual biomes should extend from configs in biomes/abstract/features/deposits
+  #        rather than overwriting this key themselves.
+  - id: deposits
     type: FEATURE
-
-  - id: trees # Used for larger things that generate on the surface like trees, some other
-    type: FEATURE # features are also treated as trees like ice spikes.
-
-  - id: postprocessors # Used to generate something that must come after all other features, such as snow on trees
+  
+  # Used for biome specific river variant features.
+  # NOTE - Individual biomes should extend from configs in biomes/abstract/features/river
+  #        rather than overwriting this key themselves.
+  - id: river-decoration
+    type: FEATURE
+  
+  # Used for small features placed underwater like sea-grass.
+  - id: underwater-flora
+    type: FEATURE
+  
+  # Used for small features placed on the surface like tall grass and vines.
+  - id: flora
+    type: FEATURE
+  
+  # Used for larger things that generate on the surface like trees, some other features are
+  # also treated as trees like ice spikes.
+  - id: trees
+    type: FEATURE
+  
+  # Used to generate features that must come after all other features, such as snow on trees.
+  - id: postprocessors
     type: FEATURE
 
 functions:
