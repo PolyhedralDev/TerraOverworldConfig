@@ -44,6 +44,7 @@ generate in an area where it previously did not (resulting in a chunk border).
 - Added Dripstone Caves.
 - Added Lush Caves.
 - Added Deep Dark.
+- Added rare giant copper and iron ore veins.
 
 ### Changed
 - Made river border biomes (Marshes, Swamps, Mangrove Swamps) more common.
