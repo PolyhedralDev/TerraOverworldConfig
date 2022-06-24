@@ -1,4 +1,5 @@
 # Changelog
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
@@ -45,6 +46,7 @@ generate in an area where it previously did not (resulting in a chunk border).
 - Added Lush Caves.
 - Added Deep Dark.
 - Added rare giant copper and iron ore veins.
+- Added Dark Forests.
 
 ### Changed
 - Made river border biomes (Marshes, Swamps, Mangrove Swamps) more common.
