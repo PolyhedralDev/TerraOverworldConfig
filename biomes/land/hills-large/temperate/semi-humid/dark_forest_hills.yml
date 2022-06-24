@@ -1,0 +1,8 @@
+id: DARK_FOREST_HILLS
+type: BIOME
+extends: [ EQ_HILLS, DARK_FOREST ]
+color: $biomes/colors.yml:DARK_FOREST
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER
