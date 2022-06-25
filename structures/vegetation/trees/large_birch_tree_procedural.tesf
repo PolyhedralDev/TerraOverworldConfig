@@ -5,6 +5,9 @@ num pi = 3.14159;
 num trunkHeight = 4+randomInt(20);
 str trunkBlock = "minecraft:birch_log";
 
+num sideMushroomInterval = 2+randomInt(4);
+num sideMushroomMinHeight = 2+randomInt(10);
+
 num sideBranchInterval = 3+randomInt(2);
 num sideBranchMinHeight = 3+randomInt(3);
 num sideBranchLengthMin = 4+randomInt(2);
@@ -37,6 +40,9 @@ str topBranchBlockZ = "minecraft:birch_log[axis=z]";
 
 num branchAngle = randomInt(randPrecision)/randPrecision*2*pi;
 for (num i = 0; i < trunkHeight; i = i + 1) {
+    if (i > sideMushroomMinHeight && i % sideMushroomInterval == 0) {
+        structure(0, i, 0, "tree_trunk_mushroom_disk", "NONE", "CW_90", "CCW_90", "CW_180");
+    }
     if (i > sideBranchMinHeight) {
         if (i % sideBranchInterval == 0) {
             // Branch direction vector
