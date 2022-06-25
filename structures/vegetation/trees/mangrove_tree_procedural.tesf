@@ -70,7 +70,9 @@ for (num r = 0; r < roots; r = r + 1) {
         str currentBlock = getBlock(cx, cy, cz);
         if (currentBlock == "minecraft:stone") {
             break;
-        } else if (currentBlock == "minecraft:mud") {
+        } else if (currentBlock == "minecraft:mud" ||
+                   currentBlock == undergroundRootBlock
+                  ) {
             block(cx, cy, cz, undergroundRootBlock);
         } else if (getBlock(cx+1, cy, cz) == "minecraft:water" ||
                    getBlock(cx-1, cy, cz) == "minecraft:water" ||
