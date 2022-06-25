@@ -13,7 +13,7 @@ num sideBranchLengthMin = 3+randomInt(2);
 num sideBranchLengthVariation = 2;
 num sideBranchVerticalVariation = 0;
 num sideBranchVerticalDirection = 0.5+randomInt(randPrecision)/randPrecision/2;
-num sideBranchLeafRadiusMin = 6;
+num sideBranchLeafRadiusMin = 4;
 num sideBranchLeafTranslate = 0;
 num sideBranchLeafTopFlatness = 4;
 num sideBranchLeafBottomFlatness = 6;
@@ -27,7 +27,7 @@ num topBranches = 2+randomInt(2);
 num topBranchLengthUpwardsMin = 7+randomInt(3);
 num topBranchLengthOutwardsMin = 4+randomInt(3);
 num topBranchVerticalDirection = 1;
-num topBranchLeafRadiusMin = 6;
+num topBranchLeafRadiusMin = 5;
 num topBranchLeafTranslate = 0;
 num topBranchLeafTopFlatness = 4;
 num topBranchLeafBottomFlatness = 6;
@@ -164,8 +164,8 @@ for (num b = 1; b <= topBranches; b = b + 1) {
 }
 
 for (num v = 15; v > trunkHeight; v = v - 1) {
-    num rx = sin(randomInt(100)/100 * twopi) * (randomInt(7) + 3);
-    num rz = cos(randomInt(100)/100 * twopi) * (randomInt(7) + 3);
+    num rx = sin(randomInt(randPrecision)/randPrecision * twopi) * (randomInt(7) + 3);
+    num rz = cos(randomInt(randPrecision)/randPrecision * twopi) * (randomInt(7) + 3);
     structure(rx, v, rz, "place_vines", "NONE");
     structure(-rx, v, rz, "place_vines", "NONE");
     structure(rx, v, -rz, "place_vines", "NONE");

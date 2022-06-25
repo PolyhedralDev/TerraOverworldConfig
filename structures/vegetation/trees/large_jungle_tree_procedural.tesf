@@ -166,8 +166,8 @@ for (num b = 1; b <= topBranches; b = b + 1) {
 }
 
 for (num v = 35; v > trunkHeight; v = v - 1) {
-    num rx = sin(randomInt(100)/100 * twopi) * (randomInt(9) + 3);
-    num rz = cos(randomInt(100)/100 * twopi) * (randomInt(9) + 3);
+    num rx = sin(randomInt(randPrecision)/randPrecision * twopi) * (randomInt(9) + 3);
+    num rz = cos(randomInt(randPrecision)/randPrecision * twopi) * (randomInt(9) + 3);
     structure(rx, v, rz, "place_vines", "NONE");
     structure(-rx, v, rz, "place_vines", "NONE");
     structure(rx, v, -rz, "place_vines", "NONE");

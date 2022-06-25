@@ -30,7 +30,7 @@ num topBranches = 2+randomInt(3);
 num topBranchLengthUpwardsMin = 7+randomInt(3);
 num topBranchLengthOutwardsMin = 4+randomInt(3);
 num topBranchVerticalDirection = 0.4;
-num topBranchLeafRadiusMin = 5;
+num topBranchLeafRadiusMin = 4;
 num topBranchLeafTranslate = 0;
 num topBranchLeafTopFlatness = 1.5;
 num topBranchLeafBottomFlatness = 1;
@@ -219,8 +219,8 @@ if (beeNestRoll == 0) {
 }
 
 for (num v = 25; v > trunkBase + trunkHeight; v = v - 1) {
-    num rx = sin(randomInt(100)/100 * twopi) * (randomInt(5) + 5);
-    num rz = cos(randomInt(100)/100 * twopi) * (randomInt(5) + 5);
+    num rx = sin(randomInt(randPrecision)/randPrecision * twopi) * (randomInt(5) + 5);
+    num rz = cos(randomInt(randPrecision)/randPrecision * twopi) * (randomInt(5) + 5);
     structure(rx, v, rz, "place_vines", "NONE");
     structure(-rx, v, rz, "place_vines", "NONE");
     structure(rx, v, -rz, "place_vines", "NONE");
