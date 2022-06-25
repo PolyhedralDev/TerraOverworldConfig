@@ -69,7 +69,7 @@ for (num i = 0; i < trunkHeight; i = i + 1) {
         num by = oy;
         num bz = by;
         bool branchCollided = false;
-        for (num l = 0; l < branchLength; l = l + 1) {
+        for (num l = 0; l <= branchLength; l = l + 1) {
             bx = l*dx+ox;
             by = l*dy+oy;
             bz = l*dz+oz;
@@ -185,7 +185,7 @@ for (num b = 1; b <= topBranches; b = b + 1) {
     num by = oy;
     num bz = by;
     bool branchCollided = false;
-    for (num l = 0; l < branchLength; l = l + 1) {
+    for (num l = 0; l <= branchLength; l = l + 1) {
         bx = l*dx+ox;
         by = l*dy+oy;
         bz = l*dz+oz;

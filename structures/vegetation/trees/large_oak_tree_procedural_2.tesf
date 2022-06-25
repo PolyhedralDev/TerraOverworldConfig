@@ -86,7 +86,7 @@ for (num i = 0; i < trunkHeight; i = i + 1) {
             else if (abs(dz) > max(abs(dy),abs(dx))) branchBlock = sideBranchBlockZ;
             num branchLength = sideBranchLengthMin + randomInt(randPrecision)/randPrecision*sideBranchLengthVariation;
             // Generate branch
-            for (num l = 0; l < branchLength; l = l + 1) {
+            for (num l = 0; l <= branchLength; l = l + 1) {
                 block(l*dx+ox, l*dy+oy, l*dz+oz, branchBlock);
             }
             // Rotate angle of next branch
@@ -142,7 +142,7 @@ for (num b = 1; b <= topBranches; b = b + 1) {
     else if (abs(dz) > max(abs(dy),abs(dx))) branchBlock = topBranchBlockZ;
     num branchLength = topBranchLengthUpwardsMin*ti + topBranchLengthOutwardsMin*t;
     // Generate branch
-    for (num l = 0; l < branchLength; l = l + 1) {
+    for (num l = 0; l <= branchLength; l = l + 1) {
         block(l*dx+ox, l*dy+oy, l*dz+oz, branchBlock);
     }
     // Rotate angle of next branch
