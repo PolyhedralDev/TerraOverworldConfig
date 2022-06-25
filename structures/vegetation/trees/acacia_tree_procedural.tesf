@@ -16,7 +16,7 @@ num topBranchVerticalVariation = 1; // Adds random number from 0 - n to above va
 num topBranchLeafRadiusMin = 3; // Minimum radius in blocks that leaf clusters generate
 num topBranchLeafRadiusVariation = 3; // How much the radius can vary on top of the min
 num leafClusterFlatness = 3; // Higher = flatter leaf clusters
-num leafClusterLeafRarity = 2; // Density of leaves, higher = less leaves
+num leafClusterLeafDensity = 0.7; // Density of leaves, lower = less leaves
 
 // Generate main trunk
 for (num i = 0; i <= trunkHeight; i = i + 1) {
@@ -48,7 +48,7 @@ for (num i = 0; i <= topBranchCount; i = i + 1) {
         for(num y = 0; y <= radiusCeil; y = y + 1) {
             for(num z = -radiusCeil; z <= radiusCeil; z = z + 1) {
                 num dist = (pow(x,2) + pow(y*leafClusterFlatness,2) + pow(z,2));
-                if (dist < radiusSquared && randomInt(leafClusterLeafRarity) == 0) {
+                if (dist < radiusSquared && randomInt(randPrecision)/randPrecision < leafClusterLeafDensity) {
                     block(x+dx*branchLength, trunkHeight+y+dy*branchLength, z+dz*branchLength, leafBlock, false);
                 }
             }
