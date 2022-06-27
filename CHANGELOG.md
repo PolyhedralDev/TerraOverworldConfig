@@ -49,7 +49,7 @@ generate in an area where it previously did not (resulting in a chunk border).
 - Added Dark Forests.
 
 ### Changed
-- Made river border biomes (Marshes, Swamps, Mangrove Swamps) more common.
+- Adjusted the generation of river border biomes (Marshes, Swamps).
 - Placed packed mud in many existing arid palettes.
 - Placed mud in bamboo jungles, swamps, and river palettes.
 - Changed cave generation to include rare giant caverns.
