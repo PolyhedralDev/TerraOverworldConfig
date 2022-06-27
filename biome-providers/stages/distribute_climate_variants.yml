@@ -30,10 +30,12 @@ stages:
       
       coast-flat-tropical:
         - PALM_BEACH: 1
+        - MANGROVE_SWAMP: 1
       
       coast-hills-tropical:
         - SANDSTONE_WETLANDS: 1
         - SANDSTONE_ARCHIPELAGO: 1
+        - MANGROVE_SWAMP: 1
       
       coast-mountains-small-tropical-humid:
         - LUSH_SEA_CAVES: 1
@@ -69,10 +71,12 @@ stages:
       
       coast-flat-subtropical:
         - BEACH: 1
+        - MANGROVE_SWAMP: 1
       
       coast-hills-subtropical:
         - WETLANDS: 1
         - ARCHIPELAGO: 1
+        - MANGROVE_SWAMP: 1
       
       coast-mountains-small-subtropical:
         - LUSH_SEA_CAVES: 1
