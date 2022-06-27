@@ -6,7 +6,7 @@ color: $biomes/colors.yml:PALM_FOREST
 
 tags:
   - LAND_CAVES
-  - USE_RIVER_FLAT_SWAMP
+  - USE_RIVER_TEMPERATE_SWAMP
 
 colors:
   grass: 0x88bd59

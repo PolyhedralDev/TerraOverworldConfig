@@ -6,7 +6,7 @@ color: $biomes/colors.yml:SNOWY_PLAINS
 
 tags:
   - LAND_CAVES
-  - USE_FROZEN_RIVER_FLAT
+  - USE_FROZEN_RIVER_FROZEN_MARSH
 
 ocean:
   palette: FROZEN_OCEAN

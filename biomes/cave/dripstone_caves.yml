@@ -8,7 +8,7 @@ palette:
   - << meta.yml:palette-bottom
 
 tags:
-  - USE_RIVER_FLAT
+  - USE_RIVER_TEMPERATE_MARSH
 
 features:
   preprocessors:

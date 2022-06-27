@@ -5,7 +5,7 @@ color: $biomes/colors.yml:ICE_SPIKES
 
 tags:
   - LAND_CAVES
-  - USE_FROZEN_RIVER_FLAT
+  - USE_FROZEN_RIVER_FROZEN_MARSH
 
 slant:
   - threshold: 2.5

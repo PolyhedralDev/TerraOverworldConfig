@@ -5,4 +5,4 @@ color: $biomes/colors.yml:FROZEN_WETLANDS
 
 tags:
   - LAND_CAVES
-  - USE_FROZEN_RIVER_FLAT
+  - USE_FROZEN_RIVER_FROZEN_MARSH

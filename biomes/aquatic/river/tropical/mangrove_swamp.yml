@@ -5,7 +5,7 @@ vanilla: minecraft:mangrove_swamp
 color: $biomes/colors.yml:MANGROVE_SWAMP
 
 tags:
-  - USE_RIVER_FLAT_COASTAL
+  - USE_RIVER_COASTAL_TROPICAL_SWAMP
 
 colors:
   grass: 0x4C763C

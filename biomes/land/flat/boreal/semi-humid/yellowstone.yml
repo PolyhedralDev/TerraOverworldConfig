@@ -6,7 +6,7 @@ color: $biomes/colors.yml:YELLOWSTONE
 
 tags:
   - LAND_CAVES
-  - USE_RIVER_FLAT
+  - USE_RIVER_TEMPERATE_MARSH
 
 colors:
   grass: 0x91bd59
