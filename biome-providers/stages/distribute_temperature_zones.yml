@@ -43,12 +43,19 @@ stages:
         - coast-flat-boreal: 4
         - coast-flat-polar: 5
   
-      coast-hills:
-        - coast-hills-tropical: 5
-        - coast-hills-subtropical: 4
-        - coast-hills-temperate: 6
-        - coast-hills-boreal: 4
-        - coast-hills-polar: 5
+      coast-hills-small:
+        - coast-hills-small-tropical: 5
+        - coast-hills-small-subtropical: 4
+        - coast-hills-small-temperate: 6
+        - coast-hills-small-boreal: 4
+        - coast-hills-small-polar: 5
+  
+      coast-hills-large:
+        - coast-hills-large-tropical: 5
+        - coast-hills-large-subtropical: 4
+        - coast-hills-large-temperate: 6
+        - coast-hills-large-boreal: 4
+        - coast-hills-large-polar: 5
   
       coast-mountains-small:
         - coast-mountains-small-tropical: 5

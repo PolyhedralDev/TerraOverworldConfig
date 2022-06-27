@@ -18,8 +18,8 @@ stages:
     default-from: coast
     default-to:
       - coast-flat: 6
-      - coast-hills: 5
-      - coast-hills: 4
+      - coast-hills-small: 5
+      - coast-hills-large: 4
       - coast-mountains-small: 5
       - coast-mountains-large: 6
     to:
