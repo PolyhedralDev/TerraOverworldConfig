@@ -45,6 +45,11 @@ biome-distribution:
   # determines which of these biomes within the same group get generated.
   # Default: 60
 
+  cave-biome-scale: 200
+  # Controls the scale of the placement of cave biomes, larger scale = bigger areas of
+  # any given cave biome, smaller scale = smaller cave biomes.
+  # Default: 200
+
   river-spread-scale: 10
   # Controls how far / close apart rivers generally are, larger scale = further apart
   # rivers, smaller scale = closer packed together rivers.

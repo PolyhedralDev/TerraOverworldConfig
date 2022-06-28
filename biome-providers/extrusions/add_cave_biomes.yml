@@ -4,7 +4,8 @@ extrusions:
     sampler:
       type: CELLULAR
       return: CellValue
-      frequency: 0.01
+      salt: 1252
+      frequency: 1 / ${meta.yml:biome-distribution.cave-biome-scale} / ${meta.yml:biome-distribution.global-scale}
     to:
       - SELF: 6
       - LUSH_CAVES: 1
