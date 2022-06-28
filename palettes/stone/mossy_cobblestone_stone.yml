@@ -9,6 +9,9 @@ layers:
       - minecraft:mossy_cobblestone: 1
       - minecraft:stone: 1
     layers: 1
+    sampler:
+      type: WHITE_NOISE
+      salt: 4972
   - materials:
       - minecraft:stone: 1
     layers: 1

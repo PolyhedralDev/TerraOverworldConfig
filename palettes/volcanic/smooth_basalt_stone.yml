@@ -8,6 +8,9 @@ layers:
   - materials:
       - minecraft:smooth_basalt: 1
       - minecraft:stone: 1
+    sampler:
+      type: WHITE_NOISE
+      salt: 2931
     layers: 1
   - materials:
       - minecraft:stone: 1

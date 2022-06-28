@@ -62,6 +62,7 @@ generate in an area where it previously did not (resulting in a chunk border).
 - Trees not generating in Snowy Meadow biome.
 - Changed caldera center vanilla biome. (https://github.com/PolyhedralDev/TerraOverworldConfig/issues/97)
 - Fixed ore features being overwritten, resulting in some biomes not generating any ores.
+- Fixed some palettes missing samplers, resulting in some blocks not generating correctly.
 
 ## [1.1.1]
 <!-- Needs changelog -->
