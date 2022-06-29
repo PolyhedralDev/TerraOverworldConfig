@@ -15,7 +15,7 @@ features:
   preprocessors:
     - LUSH_CAVE_WATER_POOLS
   landforms:
-    - GRAND_AZALEA_TREES
+    - GREAT_AZALEA_TREES
   flora:
     - MOSS_CARPET
     - CAVE_GLOW_BERRIES
