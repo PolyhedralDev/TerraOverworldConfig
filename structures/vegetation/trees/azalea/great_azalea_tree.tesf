@@ -1,0 +1,238 @@
+num randPrecision = 100;
+num goldenAngle = 2.39996;
+num pi = 3.14159;
+
+str logBlockX = "minecraft:oak_wood[axis=x]";
+str logBlockY = "minecraft:oak_wood[axis=y]";
+str logBlockZ = "minecraft:oak_wood[axis=z]";
+
+str strippedLogBlockX = "minecraft:stripped_oak_wood[axis=x]";
+str strippedLogBlockY = "minecraft:stripped_oak_wood[axis=y]";
+str strippedLogBlockZ = "minecraft:stripped_oak_wood[axis=z]";
+num strippedNoiseHorizontalFrequency = 10;
+num strippedNoiseVerticalFrequency = 6;
+num strippedNoiseThreshold = 0.15;
+
+str mossBlock = "minecraft:moss_block";
+num mossNoiseFrequency = 30;
+num mossThreshold = 0.25;
+
+num trunkHeight = 20;
+num trunkRadius = 4;
+num trunkBranches = 2+randomInt(2);
+num trunkBranchLength = trunkHeight * 0.5;
+num trunkBranchLengthVariation = 10;
+num trunkBranchRadius = 2;
+num trunkBranchVerticalDirection = 4;
+num trunkSideBranches = 1+randomInt(3);
+num trunkSideBranchMinHeight = round(trunkHeight * 0.3);
+
+num curveStrength = 30;
+num curveStrengthVariation = 0;
+num curveMid = 0.5;
+
+num endBranches = 3;
+num endBranchMinHeight = trunkBranchLength * 0.4;
+num endBranchLength = 10;
+num endBranchLengthVariation = 1;
+num endTrunkBranchVerticalDirection = 1;
+num endBranchInterval = 3;
+num endBranchVerticalDirection = 0.1;
+
+// Generates a tree in 4 parts:
+// - Main trunk: Truncated cone with base radius set by trunkRadius, and top radius set by trunkBranchRadius
+// - Trunk branches: Cones that generate from the side and top of the main trunk. Base radius is set by trunkBranchRadius.
+// - End branches: Line segments generating from the sides and ends of trunk branches.
+// - Leaf clumps: Spheres that generate at the ends of each end branch.
+//
+//      o   o   o
+//       \_/   |_o
+//    o---|\  /|-o
+//      o-\ v /   o
+//  o--===| |    /
+//        | |====--o
+//       |  |
+//      |    |
+
+//print("Generating at X:" + originX() + ", Y:" + originY() + ", Z:" + originZ());
+
+// Generate trunk
+
+num trunkBranchAngle = randomInt(randPrecision)/randPrecision*2*pi;
+num trunkBranchInterval = round((trunkHeight - trunkSideBranchMinHeight)/trunkSideBranches);
+num currentTrunkLevelBranches = 1; // Only generate 1 branch at a time when placing in the middle of the trunk
+bool reachedTrunkTop = false;
+for (num trunkLevel = -3; trunkLevel <= trunkHeight; trunkLevel = trunkLevel + 1) {
+
+    if (trunkLevel == trunkHeight) {
+        reachedTrunkTop = true;
+        currentTrunkLevelBranches = trunkBranches; // If the top is reached, multiple branches can generate
+    }
+
+    // Determine if a branch should be placed at the current layer of the trunk
+    if ((trunkLevel >= trunkSideBranchMinHeight && (trunkLevel - trunkSideBranchMinHeight) % trunkBranchInterval == 0) || reachedTrunkTop) {
+
+        for (num trunkBranch = 0; trunkBranch < currentTrunkLevelBranches; trunkBranch = trunkBranch + 1) {
+
+            // Trunk branch generation
+            num dx = sin(trunkBranchAngle) * (1 - trunkBranch/currentTrunkLevelBranches);
+            num dy = trunkBranchVerticalDirection;
+            num dz = cos(trunkBranchAngle) * (1 - trunkBranch/currentTrunkLevelBranches);
+            num mag = sqrt(pow2(dx)+pow2(dy)+pow2(dz));
+            dx = dx/mag;
+            dy = dy/mag;
+            dz = dz/mag;
+
+            num px = 0;
+            num py = trunkLevel;
+            num pz = 0;
+
+            num currentEndBranches = 1; // How many end branches to generate at each interval
+            bool reachedTrunkBranchEnd = false;
+            num endTrunkBranchAngle = randomInt(randPrecision)/randPrecision*2*pi;
+            num currentCurveStrength = (curveStrength + randomInt(randPrecision)/randPrecision * curveStrengthVariation) * (1 - trunkBranch/currentTrunkLevelBranches);
+            num branchLength = trunkBranchLength + round(randomInt(randPrecision)/randPrecision * trunkBranchLengthVariation);
+            // ^ Should be an integer so the script can check discrete values.
+
+            for (num l = 0; l <= branchLength; l = l + 1) {
+
+                if (l == branchLength) {
+                    reachedTrunkBranchEnd = true;
+                    currentEndBranches = endBranches;
+                }
+
+                if ((l % endBranchInterval == 0 && l > endBranchMinHeight) || reachedTrunkBranchEnd) {
+                    for (num endBranch = 0; endBranch < currentEndBranches; endBranch = endBranch + 1) {
+                        // Local endBranch direction vector
+                        num cdx = sin(endTrunkBranchAngle);
+                        num cdy = endTrunkBranchVerticalDirection;
+                        num cdz = cos(endTrunkBranchAngle);
+
+                        // Transform endBranch local vector to be relative to constructed coordinate space of trunkBranch vector
+                        cdx = -dy*cdx + dx*cdy + dx*cdz;
+                        cdy = dx*cdx + dy*cdy + dz*cdz;
+                        cdz = dz*cdx + dz*cdy + -dy*cdz;
+
+                        // Point vector up towards y axis
+                        cdy = cdy + endBranchVerticalDirection;
+
+                        // Normalize vector
+                        num cmag = sqrt(pow2(cdx)+pow2(cdy)+pow2(cdz));
+                        cdx = cdx/cmag;
+                        cdy = cdy/cmag;
+                        cdz = cdz/cmag;
+
+                        // Origin for end branch
+                        num eox = px;
+                        num eoy = py;
+                        num eoz = pz;
+
+                        str endBranchBlock = logBlockY;
+                        if (abs(cdx) > max(abs(cdy),abs(cdz))) endBranchBlock = logBlockX;
+                        else if (abs(cdz) > max(abs(cdy),abs(cdx))) endBranchBlock = logBlockZ;
+
+                        // Generate end branch
+                        num currentEndBranchLength = endBranchLength + randomInt(randPrecision)/randPrecision * endBranchLengthVariation;
+                        for (num el = 0; el <= currentEndBranchLength; el = el + 0.5) {
+                            num sx = eox+el*cdx;
+                            num sy = eoy+el*cdy;
+                            num sz = eoz+el*cdz;
+                            block(sx, sy, sz, endBranchBlock, false);
+                        }
+
+                        num radius = 4;
+                        num radiusSquared = pow2(radius);
+                        num squish = 2;
+                        for (num x = floor(-radius); x < ceil(radius); x = x + 1) {
+                            for (num y = floor(-radius/squish); y < ceil(radius/squish); y = y + 1) {
+                                for (num z = floor(-radius); z < ceil(radius); z = z + 1) {
+                                    num distanceSquared = pow2(x)+pow2(y*squish)+pow2(z);
+                                    if (distanceSquared < radiusSquared && randomInt(randPrecision)/randPrecision < 0.5) {
+                                        structure(eox+currentEndBranchLength*cdx+x,
+                                                  eoy+currentEndBranchLength*cdy+y,
+                                                  eoz+currentEndBranchLength*cdz+z,
+                                                  "azalea_leaves_clump", "NONE", "CW_90", "CCW_90", "CW_180");
+                                    }
+                                }
+                            }
+                        }
+
+                        endTrunkBranchAngle = endTrunkBranchAngle + goldenAngle;
+                    }
+                }
+
+                str trunkBranchBlock = logBlockY;
+                if (abs(dx) > max(abs(dy),abs(dz))) trunkBranchBlock = logBlockX;
+                else if (abs(dz) > max(abs(dy),abs(dx))) trunkBranchBlock = logBlockZ;
+                num freq = 30;
+                if ((sampler("simplex3",
+                             mossNoiseFrequency*(originX()+px),
+                             mossNoiseFrequency*(originY()+py),
+                             mossNoiseFrequency*(originZ()+pz)
+                             )+1)/2 < mossThreshold) trunkBranchBlock = mossBlock;
+
+                num trunkBranchT = l/branchLength;
+                num trunkBranchTInverse = 1-trunkBranchT;
+                num radius = trunkBranchT + trunkBranchTInverse * trunkBranchRadius;
+                num radiusSquared = pow2(radius);
+
+
+                for (num x = floor(-radius); x < ceil(radius); x = x + 1) {
+                    for (num y = floor(-radius); y < ceil(radius); y = y + 1) {
+                        for (num z = floor(-radius); z < ceil(radius); z = z + 1) {
+                            num distanceSquared = pow2(x)+pow2(y)+pow2(z);
+                            if (distanceSquared < radiusSquared) {
+                                block(px+x, py+y, pz+z, trunkBranchBlock, false);
+                            }
+                        }
+                    }
+                }
+
+                // Adjust y component according to curve function
+                num dyv = currentCurveStrength * pow2(trunkBranchT) * (trunkBranchT-curveMid) * pow2(trunkBranchT-1);
+                dy = dy + dyv;
+
+                // Normalize vector
+                mag = sqrt(pow2(dx)+pow2(dy)+pow2(dz));
+                dx = dx/mag;
+                dy = dy/mag;
+                dz = dz/mag;
+
+                // Move to next point by 1 unit
+                px = px+dx;
+                py = py+dy;
+                pz = pz+dz;
+            }
+            trunkBranchAngle = trunkBranchAngle + goldenAngle;
+        }
+    }
+
+    // Main trunk block placement
+
+    num trunkT = trunkLevel/trunkHeight;
+    num trunkTInverse = 1-trunkT;
+    num trunkLevelRadius = trunkRadius * trunkTInverse + trunkBranchRadius * trunkT;
+    num trunkLevelRadiusSquared = pow2(trunkLevelRadius);
+    num trunkLevelRadiusInner = trunkLevelRadius - 1.5;
+    num trunkLevelRadiusInnerSquared = pow2(trunkLevelRadiusInner);
+
+    for (num x = round(-trunkLevelRadius); x < round(trunkLevelRadius); x = x + 1) {
+        for (num z = round(-trunkLevelRadius); z < round(trunkLevelRadius); z = z + 1) {
+            num distanceSquared = pow2(x)+pow2(z);
+            if (distanceSquared < trunkLevelRadiusSquared) {
+                if (distanceSquared < trunkLevelRadiusInnerSquared) {
+                    block(x, trunkLevel, z, "minecraft:air");
+                    block(x, max(0,trunkLevel-1), z, "minecraft:air"); // Sometimes trunk branches place blocks below so this should remove them
+                } else {
+                    str trunkBlock = logBlockY;
+                    if ((sampler("simplex3",
+                                strippedNoiseHorizontalFrequency*(originX()+x),
+                                strippedNoiseVerticalFrequency*(originY()+trunkLevel),
+                                strippedNoiseHorizontalFrequency*(originZ()+z)
+                                )+1)/2 < strippedNoiseThreshold) trunkBlock = strippedLogBlockY;
+                    block(x, trunkLevel, z, trunkBlock);
+                }
+            }
+        }
+    }
+}

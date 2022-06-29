@@ -44,6 +44,7 @@ generate in an area where it previously did not (resulting in a chunk border).
 - Added Mangrove Swamps.
 - Added Dripstone Caves.
 - Added Lush Caves.
+- Added rare Great Azalea trees.
 - Added Deep Dark.
 - Added rare giant copper and iron ore veins.
 - Added Dark Forests.
