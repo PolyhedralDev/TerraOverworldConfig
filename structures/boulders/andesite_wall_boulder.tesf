@@ -1,0 +1,20 @@
+num randPrecision = 100;
+num radius = 1.5+randomInt(randPrecision)/randPrecision;
+num squish = 0.5+randomInt(randPrecision)/randPrecision/2;
+num radiusSquared = pow(radius,2);
+num warp = 1;
+num warpFreq = 2;
+str blockID = "minecraft:andesite";
+
+for (num y = -radius/squish; y < radius/squish; y = y + 1) {
+    num warpX = warp*sampler("simplex", originX()*warpFreq, y*warpFreq);
+    num warpZ = warp*sampler("simplex", originZ()*warpFreq, y*warpFreq);
+    for (num x = -radius; x < radius; x = x + 1) {
+        for (num z = -radius; z < radius; z = z + 1) {
+            num distanceSquared = pow(x,2)+pow(y*squish,2)+pow(z,2);
+            if (distanceSquared < radiusSquared) {
+                block(x+warpX, y, z+warpZ, blockID, false);
+            }
+        }
+    }
+}

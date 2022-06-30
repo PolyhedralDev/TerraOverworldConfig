@@ -1,0 +1,86 @@
+id: TEXTURED_STONE_SLANT
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 7218
+  threshold: 0.2
+
+locator:
+  type: AND
+  locators:
+    - type: SAMPLER_3D
+      range: &range
+        min: 70
+        max: 160
+      sampler:
+        type: ADD
+        left:
+          type: POSITIVE_WHITE_NOISE
+          salt: 4823
+        right:
+          type: CONSTANT
+          value: -0.8
+    # Match stone adjacent air
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: &blocks
+          - minecraft:stone
+          - minecraft:andesite
+        offset: 0
+    - type: ADJACENT_PATTERN
+      range: *range
+      pattern:
+        type: MATCH_AIR
+        offset: 0
+    # Match either resting on top of stone, or hanging below stone
+    - type: OR
+      locators:
+        - type: AND
+          locators:
+            - type: PATTERN
+              range: *range
+              pattern:
+                type: MATCH_SET
+                blocks: *blocks
+                offset: 1
+            - type: ADJACENT_PATTERN
+              range: *range
+              pattern:
+                type: AND
+                patterns:
+                  - type: MATCH_AIR
+                    offset: 1
+                  - type: MATCH_SET
+                    blocks: *blocks
+                    offset: -1
+        - type: AND
+          locators:
+            - type: PATTERN
+              range: *range
+              pattern:
+                type: MATCH_SET
+                blocks: *blocks
+                offset: -1
+            - type: ADJACENT_PATTERN
+              range: *range
+              pattern:
+                type: AND
+                patterns:
+                  - type: MATCH_AIR
+                    offset: -1
+                  - type: MATCH_SET
+                    blocks: *blocks
+                    offset: 1
+    
+structures:
+  distribution:
+    type: WHITE_NOISE
+    salt: 4214
+  structures:
+    - stone_wall_boulder: 4
+    - andesite_wall_boulder: 1

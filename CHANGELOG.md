@@ -48,6 +48,7 @@ generate in an area where it previously did not (resulting in a chunk border).
 - Added Deep Dark.
 - Added rare giant copper and iron ore veins.
 - Added Dark Forests.
+- Added texturing to slanted stone areas.
 
 ### Changed
 - Adjusted the generation of river border biomes (Marshes, Swamps).
