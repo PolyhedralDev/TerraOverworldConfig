@@ -113,14 +113,14 @@ stages:
   # Used for small features placed underwater like sea-grass.
   - id: underwater-flora
     type: FEATURE
-  
-  # Used for small features placed on the surface like tall grass and vines.
-  - id: flora
-    type: FEATURE
-  
+    
   # Used for larger things that generate on the surface like trees, some other features are
   # also treated as trees like ice spikes.
   - id: trees
+    type: FEATURE
+    
+  # Used for small features placed on the surface like tall grass and vines.
+  - id: flora
     type: FEATURE
   
   # Used to generate features that must come after all other features, such as snow on trees.
