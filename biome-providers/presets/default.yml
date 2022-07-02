@@ -89,7 +89,7 @@ biomes:
         #- << biome-providers/stages/distribute_temperature_zones_polar.yml:stages
         #
         # Hot Biomes Only
-        #- TODO
+        #- << biome-providers/stages/distribute_temperature_zones_tropical.yml:stages
         #
         # Temperate Biomes Only
         #- TODO
