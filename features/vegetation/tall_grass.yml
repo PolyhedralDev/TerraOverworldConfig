@@ -23,16 +23,16 @@ locator:
         offset: -1
     - type: PATTERN
       range: *range
-        pattern:
-          type: MATCH
-          block: minecraft:air
-          offset: 0
+      pattern:
+        type: MATCH
+        block: minecraft:air
+        offset: 0
     - type: PATTERN
       range: *range
-        pattern:
-          type: MATCH
-          block: minecraft:air
-          offset: 1
+      pattern:
+        type: MATCH
+        block: minecraft:air
+        offset: 1
 
 structures:
   distribution:
