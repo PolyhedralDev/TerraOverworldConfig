@@ -1,12 +1,33 @@
-num randPrecision = 100;
-num radius = 3+randomInt(randPrecision)/randPrecision*2;
-num rand = randomInt(2);
-num yTranslate = 1;
+num minLength = 3;
+num maxLength = 12;
+num variationFrequency = 10;
 
-for (num x = -radius; x < -radius + (radius * 2); x = x + 1) {
-    for (num y = -radius-rand; y < (radius+rand) + (radius * 2); y = y + 1) {
-        for (num z = -radius; z < -radius + (radius * 2); z = z + 1) {
-            if (pow(x,2) + pow(z,2) == pow(y,2)) block(x, y+yTranslate, z,"minecraft:dripstone_block");
+num length = round(minLength+(maxLength-minLength)*(sampler("simplex", originX()*variationFrequency, originZ()*variationFrequency)+1)/2);
+num clampedLength = length;
+bool merge = false;
+for (num i = 0; i <= length; i = i + 1) {
+    str blockID = getBlock(0, -i, 0);
+    if (blockID != "minecraft:air") {
+        if (blockID == "minecraft:pointed_dripstone") {
+            merge = true;
+            block(0, -i-1, 0, "minecraft:pointed_dripstone[vertical_direction=up, thickness=tip_merge]");
         }
+        clampedLength = i-1;
+        break;
     }
+}
+for (num i = 1; i <= clampedLength; i = i + 1) {
+    str blockID = "minecraft:pointed_dripstone[vertical_direction=down, ";
+    if (i == 1) {
+        if (merge) blockID = blockID + "thickness=tip_merge]";
+        else blockID = blockID + "thickness=tip]";
+    } else if (i == 2) {
+        blockID = blockID + "thickness=frustum]";
+    } else if (i == clampedLength) {
+        blockID = blockID + "thickness=base]";
+    }
+    else {
+        blockID = blockID + "thickness=middle]";
+    }
+    block(0, -clampedLength+i, 0, blockID);
 }
