@@ -1,11 +1,11 @@
-id: DENSE_DARK_FOREST_TREES
+id: SPARSE_LARGE_MUSHROOMS
 type: FEATURE
 
 distributor:
   type: PADDED_GRID
-  width: 7
-  padding: 3
-  salt: 5932
+  width: 40
+  padding: 10
+  salt: 123454321
 
 locator:
   type: AND
@@ -32,6 +32,5 @@ locator:
 structures:
   distribution:
     type: WHITE_NOISE
-  structures:
-    - large_dark_oak_tree_procedural: 16
-    - dark_oak_tree_procedural: 6
+    salt: 9512
+  structures: large_mixed_mushroom_procedural
