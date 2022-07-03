@@ -1,7 +1,20 @@
 num length = 2+randomInt(5);
-block(0, 0, 0, "minecraft:pointed_dripstone[vertical_direction=down, thickness=base]", false);
-for (num i = 1; i <= length - 2; i = i + 1) {
-    block(0, -i, 0, "minecraft:pointed_dripstone[vertical_direction=down, thickness=middle]", false);
+
+if (getBlock(0, 1, 0) == "minecraft:dripstone_block") {
+    block(0, 0, 0, "minecraft:pointed_dripstone[vertical_direction=down, thickness=base]", false);
+    for (num i = 1; i <= length - 2; i = i + 1) {
+        if (getBlock(0, -i, 0) != "minecraft_air") {
+            block(0, -(i-2), 0, "minecraft:pointed_dripstone[vertical_direction=down, thickness=frustum]", false);
+            if (getBlock(0, -i, 0) == "minecraft:pointed_dripstone") {
+                block(0, -i, 0, "minecraft:pointed_dripstone[vertical_direction=down, thickness=tip_merge]", false);
+                block(0, -(i+1), 0, "minecraft:pointed_dripstone[vertical_direction=up, thickness=tip_merge]", false);
+                block(0, -(i+2), 0, "minecraft:pointed_dripstone[vertical_direction=up, thickness=frustum]", false);
+            }
+            block(0, -(i-1), 0, "minecraft:pointed_dripstone[vertical_direction=down, thickness=tip]", false);
+            fail;
+        }
+        block(0, -i, 0, "minecraft:pointed_dripstone[vertical_direction=down, thickness=middle]", false);
+    }
+    block(0, -(length-1), 0, "minecraft:pointed_dripstone[vertical_direction=down, thickness=frustum]", false);
+    block(0, -length, 0, "minecraft:pointed_dripstone[vertical_direction=down, thickness=tip]", false);
 }
-block(0, -(length-1), 0, "minecraft:pointed_dripstone[vertical_direction=down, thickness=frustum]", false);
-block(0, -length, 0, "minecraft:pointed_dripstone[vertical_direction=down, thickness=tip]", false);

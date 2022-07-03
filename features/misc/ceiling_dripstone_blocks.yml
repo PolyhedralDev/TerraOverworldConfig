@@ -35,6 +35,8 @@ locator:
 
 structures:
   distribution:
-    type: CONSTANT
+    type: OPEN_SIMPLEX_2
+    frequency: 0.02
+    salt: 112
   structures: BLOCK:minecraft:dripstone_block
       

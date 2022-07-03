@@ -5,13 +5,18 @@ vanilla: minecraft:dripstone_caves
 
 palette:
   - DRIPSTONE_CAVES: 319
-  - << meta.yml:palette-bottom
+  - DRIPSTONE_CAVES_DEEPSLATE: $meta.yml:strata.deepslate.top
+  - << meta.yml:palette-bedrock
 
 tags:
   - USE_RIVER_TEMPERATE_MARSH
 
 features:
   preprocessors:
+    - DRIPSTONE_CAVE_WATER_POOLS
     - CEILING_DRIPSTONE
+  landforms:
+    - DRIPSTONE_CAVES_LARGE_CEILING_DRIPSTONE
   flora:
-    - DRIPSTONE_CAVES_POINTED_DRIPSTONE
+    - DRIPSTONE_CAVES_CEILING_POINTED_DRIPSTONE
+    - DRIPSTONE_CAVES_FLOOR_POINTED_DRIPSTONE

@@ -1,0 +1,12 @@
+num randPrecision = 100;
+num radius = 3+randomInt(randPrecision)/randPrecision*2;
+num rand = randomInt(2);
+num yTranslate = 1;
+
+for (num x = -radius; x < -radius + (radius * 2); x = x + 1) {
+    for (num y = -radius-rand; y < (radius+rand) + (radius * 2); y = y + 1) {
+        for (num z = -radius; z < -radius + (radius * 2); z = z + 1) {
+            if (pow(x,2) + pow(z,2) == pow(y,2)) block(x, y+yTranslate, z,"minecraft:dripstone_block");
+        }
+    }
+}

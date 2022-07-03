@@ -1,15 +1,15 @@
-id: DRIPSTONE_CAVES
+id: DRIPSTONE_CAVES_DEEPSLATE
 type: PALETTE
 
 layers:
   - materials:
       - minecraft:dripstone_block: 1
       - minecraft:light_gray_terracotta: 1
-      - minecraft:stone: 1
+      - minecraft:deepslate: 1
     layers: 1
   - materials:
       - minecraft:dripstone_block: 1
-      - minecraft:stone: 2
+      - minecraft:deepslate: 2
     layers: 2
 
 sampler:
