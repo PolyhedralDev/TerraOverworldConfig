@@ -8,8 +8,10 @@ layers:
       - minecraft:clay: 3
     layers: 2
   - materials:
-      - minecraft:stone: 1
+      - minecraft:stone: 5
+      - minecraft:moss_block: 4
     layers: 1
+
 
 sampler:
   dimensions: 2
