@@ -1,0 +1,29 @@
+id: DRIPSTONE_COLUMNS
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 10
+  padding: 10
+  salt: 7421
+
+locator:
+  type: AND
+  locators:
+    - type: SURFACE
+      range: &range
+        min: -50
+        max: 64
+    - type: SAMPLER_3D
+      sampler:
+        type: EXPRESSION
+        expression: -random(x,y,z)+0.25
+        samplers:
+          random:
+            dimensions: 3
+            type: POSITIVE_WHITE_NOISE
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: dripstone_column

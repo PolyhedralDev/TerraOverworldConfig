@@ -13,6 +13,7 @@ tags:
 
 features:
   preprocessors:
+    - DRIPSTONE_COLUMNS
     - DRIPSTONE_CAVE_WATER_POOLS
     - CEILING_DRIPSTONE
   landforms:

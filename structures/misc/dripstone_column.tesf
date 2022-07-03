@@ -1,0 +1,91 @@
+num randPrecision = 100;
+num maxRadius = 5 + 5*randomInt(randPrecision)/randPrecision;
+num minRadius = -1 + maxRadius*0.5*randomInt(randPrecision)/randPrecision;
+num maxDepth = 10;
+num maxHeight = 100;
+num warpFrequency = 15;
+num warpAmplitude = 3;
+str columnBlock = "minecraft:dripstone_block";
+str replaceableMask = "is_dripstone_column_replaceable";
+
+// Search downwards for a valid area to start from
+num maxRadiusSquared = pow2(maxRadius);
+num depth = maxDepth;
+bool foundFloor = false;
+bool hitFloor = false; // Used to prevent column piercing through terrain
+for (num y = 0; y <= maxDepth; y = y + 1) {
+    if (!structure(0, -y, 0, replaceableMask, "NONE")) {
+        hitFloor = true;
+        bool solidArea = true;
+        for (num x = -maxRadius; x <= maxRadius; x = x + 1) {
+            for (num z = -maxRadius; z <= maxRadius; z = z + 1) {
+                if (pow2(x)+pow2(z) < maxRadiusSquared) {
+                    if (structure(x, -y, z, replaceableMask, "NONE")) {
+                        solidArea = false;
+                        break;
+                    }
+                    if (!solidArea) break;
+                }
+            }
+            if (!solidArea) break;
+        }
+        if (solidArea) {
+            foundFloor = true;
+            depth = y;
+            break;
+        }
+    } else if (hitFloor) break;
+}
+if (!foundFloor) fail;
+
+// Search upwards for a valid area to end at
+num height = maxHeight;
+bool foundCeiling = false;
+bool hitCeiling = false; // Used to prevent column piercing through terrain
+for (num y = 0; y <= maxHeight; y = y + 1) {
+    if (!structure(0, y, 0, replaceableMask, "NONE")) {
+        hitCeiling = true;
+        bool solidArea = true;
+        for (num x = -maxRadius; x <= maxRadius; x = x + 1) {
+            for (num z = -maxRadius; z <= maxRadius; z = z + 1) {
+                if (pow2(x)+pow2(z) < maxRadiusSquared) {
+                    if (structure(x, y, z, replaceableMask, "NONE")) {
+                        solidArea = false;
+                        break;
+                    }
+                    if (!solidArea) break;
+                }
+            }
+            if (!solidArea) break;
+        }
+        if (solidArea) {
+            foundCeiling = true;
+            height = y;
+            break;
+        }
+    } else if (hitCeiling) break;
+}
+if (!foundCeiling) fail;
+
+// Generate column
+for (num y = -depth; y <= height; y = y + 1) {
+
+    num t = (y+depth)/(height+depth);
+    num diskRadius = minRadius + (maxRadius-minRadius)*pow2(2)*pow2(t-0.5);
+    num diskRadiusCeil = ceil(diskRadius);
+    num diskRadiusSquared = pow2(diskRadius);
+
+    for (num x = -diskRadiusCeil; x <= diskRadiusCeil; x = x + 1) {
+        for (num z = -diskRadiusCeil; z <= diskRadiusCeil; z = z + 1) {
+            num distanceOffset = abs(sampler("simplex3",
+                                         (originX()+x)*warpFrequency,
+                                         (originY()+y)*warpFrequency,
+                                         (originZ()+z)*warpFrequency)) * warpAmplitude;
+
+            num distanceSquared = pow2(x)+pow2(z)+pow2(distanceOffset);
+            if (distanceSquared < diskRadiusSquared) {
+                if (structure(x, y, z, replaceableMask, "NONE")) block(x, y, z, columnBlock);
+            }
+        }
+    }
+}
