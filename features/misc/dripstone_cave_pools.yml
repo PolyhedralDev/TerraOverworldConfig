@@ -1,4 +1,4 @@
-id: DRIPSTONE_CAVE_WATER_POOLS
+id: DRIPSTONE_CAVE_POOLS
 type: FEATURE
 
 distributor:
@@ -16,7 +16,7 @@ locator:
   locators:
     - type: PATTERN
       range: &range
-        min: -64
+        min: -50
         max: 64
       pattern:
         type: AND
@@ -40,9 +40,18 @@ locator:
           - type: MATCH
             block: minecraft:water
             offset: 0
+          - type: MATCH
+            block: minecraft:lava
+            offset: 0
 
 structures:
   distribution:
-    type: CONSTANT
-  structures: BLOCK:minecraft:water
+    dimensions: 2
+    type: OPEN_SIMPLEX_2
+    salt: 4219
+    frequency: 0.01
+  structures:
+    - BLOCK:minecraft:water: 15
+    - blank: 1
+    - BLOCK:minecraft:lava: 5
   
