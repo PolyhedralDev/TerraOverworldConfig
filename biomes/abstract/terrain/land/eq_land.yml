@@ -1,0 +1,60 @@
+id: EQ_LAND
+type: BIOME
+abstract: true
+
+terrain:
+  sampler:
+    type: EXPRESSION
+    expression: -y+b
+    variables:
+      b: $meta.yml:terrain.base
+
+  sampler-2d:
+    type: EXPRESSION
+    expression: |
+      scale *
+      combine(
+        combine(
+          globalHeightmap(x, z),
+          mountainPeakStart, 0,
+          mountainPeakEnd, mountainPeaks(x,z) * mountainPeakFactor
+        ),
+        detailStart, 0,
+        detailEnd, detail(x, z) * detailFactor
+      )
+    variables:
+      scale: $meta.yml:terrain.scale
+      detailFactor: 0.2
+      detailStart: 0.05
+      detailEnd: 0.4
+      mountainPeakStart: 0.3
+      mountainPeakEnd: 0.8
+      mountainPeakFactor: 0.1
+    samplers:
+      detail:
+        dimensions: 2
+        type: FBM
+        octaves: 4
+        lacunarity: 2.5
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.003
+          salt: 5912
+      mountainPeaks:
+        dimensions: 2
+        type: RIDGED
+        octaves: 2
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.005
+          salt: 7129
+    functions:
+      combine:
+        arguments:
+          - x
+          - at
+          - a
+          - bt
+          - b
+        expression: x+lerp(x,at,a,bt,b)
+        functions: $math/functions/lerp.yml:functions

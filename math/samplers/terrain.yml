@@ -1,0 +1,36 @@
+samplers:
+  globalHeightmap:
+    dimensions: 2
+    type: EXPRESSION
+    expression: spline(generalHeight(x*frequency,z*frequency))
+    functions:
+      spline:
+        arguments: [x]
+        expression: x^3
+    variables:
+      frequency: 1
+    samplers:
+      generalHeight:
+        dimensions: 2
+        type: PROBABILITY
+        sampler:
+          type: DOMAIN_WARP
+          amplitude: 300
+          sampler:
+            type: FBM
+            sampler:
+              type: OPEN_SIMPLEX_2
+              frequency: 0.0007
+          warp:
+            type: DOMAIN_WARP
+            amplitude: 20
+            sampler:
+              type: FBM
+              sampler:
+                type: OPEN_SIMPLEX_2
+                frequency: 0.0007
+            warp:
+              type: FBM
+              sampler:
+                type: OPEN_SIMPLEX_2
+                frequency: 0.007
