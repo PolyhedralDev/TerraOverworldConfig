@@ -1,6 +1,6 @@
 id: WETLANDS
 type: BIOME
-extends: [ EQ_BUTTES_WETLANDS, ARCHIPELAGO ]
+extends: [ EQ_COAST, ARCHIPELAGO ]
 color: $biomes/colors.yml:WETLANDS
 
 tags:

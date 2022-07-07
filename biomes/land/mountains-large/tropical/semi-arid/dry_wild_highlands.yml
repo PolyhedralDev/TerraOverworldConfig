@@ -1,6 +1,6 @@
 id: DRY_WILD_HIGHLANDS
 type: BIOME
-extends: [ EQ_ERODED_TERRACED_MOUNTAINS, CARVING_LAND, BASE ]
+extends: [ EQ_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:jungle
 color: $biomes/colors.yml:DRY_WILD_HIGHLANDS
 

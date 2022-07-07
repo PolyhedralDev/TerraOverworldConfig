@@ -1,6 +1,6 @@
 id: BAMBOO_JUNGLE_HILLS
 type: BIOME
-extends: [ EQ_HILLS, CARVING_LAND, BASE ]
+extends: [ EQ_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:jungle
 color: $biomes/colors.yml:BAMBOO_JUNGLE_HILLS
 

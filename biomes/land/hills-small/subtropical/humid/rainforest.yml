@@ -1,6 +1,6 @@
 id: RAINFOREST
 type: BIOME
-extends: [ EQ_PLAIN, RAINFOREST_HILLS ]
+extends: [ EQ_LAND, RAINFOREST_HILLS ]
 color: $biomes/colors.yml:RAINFOREST
 
 tags:

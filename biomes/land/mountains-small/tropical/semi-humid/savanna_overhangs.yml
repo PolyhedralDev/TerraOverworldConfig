@@ -1,6 +1,6 @@
 id: SAVANNA_OVERHANGS
 type: BIOME
-extends: [ EQ_OVERHANGS, CARVING_LAND, BASE ]
+extends: [ EQ_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:badlands
 color: $biomes/colors.yml:SAVANNA_OVERHANGS
 

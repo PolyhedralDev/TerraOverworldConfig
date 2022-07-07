@@ -1,6 +1,6 @@
 id: FOREST
 type: BIOME
-extends: [ EQ_TERRACED_HILLS, FOREST_HILLS ]
+extends: [ EQ_LAND, FOREST_HILLS ]
 color: $biomes/colors.yml:FOREST
 
 tags:
