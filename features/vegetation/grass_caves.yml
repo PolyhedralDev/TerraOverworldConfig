@@ -1,0 +1,30 @@
+id: GRASS_CAVES
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 7544
+  threshold: 0.125
+
+locator:
+  type: AND
+  locators:
+    - type: SURFACE
+      range: &range
+        min: -64
+        max: 64
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:plantable-blocks
+        offset: -1
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures:
+    - BLOCK:minecraft:grass: 6
+    - tall_grass: 1

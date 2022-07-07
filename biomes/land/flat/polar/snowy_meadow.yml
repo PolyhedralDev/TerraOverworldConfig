@@ -5,24 +5,26 @@ vanilla: minecraft:snowy_plains
 color: $biomes/colors.yml:SNOWY_MEADOW
 
 tags:
-  - USE_FROZEN_RIVER_FLAT
+  - LAND_CAVES
+  - USE_FROZEN_RIVER_FROZEN_MARSH
 
 ocean:
   palette: FROZEN_OCEAN
 
 palette:
-  - SNOW: 319
+  - GRASS_SNOW_MIX: 319
   - SAND: 61
   - << meta.yml:palette-bottom
 
 features:
-  natural:
+  landforms:
     - BOULDERS
     - SMALL_BOULDER_PATCHES
-  trees:
-    - OAK_TREES_MEADOWS
-  postplacement:
+  slabs:
     - SNOW_LAYERS
-    - TREE_SNOW
-  ores:
+  trees:
+    - SPARSE_SPRUCE_TREES
+  preprocessors:
     - POWDER_SNOW_DEPOSITS
+  postprocessors:
+    - TREE_SNOW

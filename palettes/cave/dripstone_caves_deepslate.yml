@@ -1,0 +1,25 @@
+id: DRIPSTONE_CAVES_DEEPSLATE
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:dripstone_block: 1
+      - minecraft:light_gray_terracotta: 1
+      - minecraft:deepslate: 1
+    layers: 2
+  - materials:
+      - minecraft:dripstone_block: 1
+      - minecraft:deepslate: 2
+    layers: 1
+
+sampler:
+  dimensions: 2
+  type: DOMAIN_WARP
+  amplitude: 4
+  warp:
+    type: OPEN_SIMPLEX_2
+    frequency: 0.1
+  sampler:
+    type: CELLULAR
+    return: CellValue
+    frequency: 0.08

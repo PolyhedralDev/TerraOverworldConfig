@@ -1,4 +1,5 @@
 # Changelog
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
@@ -40,15 +41,30 @@ generate in an area where it previously did not (resulting in a chunk border).
 
 ## [Unreleased]
 ### Added
-
+- Added Mangrove Swamps.
+- Added Dripstone Caves.
+- Added Lush Caves.
+- Added rare Great Azalea trees.
+- Added Deep Dark.
+- Added rare giant copper and iron ore veins.
+- Added Dark Forests.
+- Added texturing to slanted stone areas.
 
 ### Changed
-
+- Adjusted the generation of river border biomes (Marshes, Swamps).
+- Placed packed mud in many existing arid palettes.
+- Placed mud in bamboo jungles, swamps, and river palettes.
+- Changed cave generation to include rare giant caverns.
 
 ### Removed
 
 
 ### Fixed
+- Snow not generating on trees in polar biomes.
+- Trees not generating in Snowy Meadow biome.
+- Changed caldera center vanilla biome. (https://github.com/PolyhedralDev/TerraOverworldConfig/issues/97)
+- Fixed ore features being overwritten, resulting in some biomes not generating any ores.
+- Fixed some palettes missing samplers, resulting in some blocks not generating correctly.
 
 ## [1.1.1]
 <!-- Needs changelog -->

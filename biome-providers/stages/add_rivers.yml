@@ -1,17 +1,23 @@
-# The samplers that control the shape of rivers, you can find various presets
+# The sampler that controls how rivers generate, you can find various presets
 # in the biome-providers/stages/river-samplers/ folder.
 riverSampler: &riverSampler $biome-providers/stages/river-samplers/default.yml:sampler
 # To pick the preset, simply change the file reference above ^
-# You can further edit and customize the parameters of presets within their own files.
+# You can further edit and customize the parameters of a river sampler preset within its own file.
+
+# Tags are used by biomes to determine the kind of river to use, except for biomes with
+# their own specific river biome. These tags are formatted by the type of river, and optionally
+# the type of river wetlands surrounding the river, e.g USE_FROZEN_RIVER_FROZEN_MARSH would mean
+# the biome will use a frozen river with frozen marshes surrounding it.
 
 stages:
-  # Regular rivers + biome specific river variants
+  # Regular rivers
   - type: REPLACE_LIST
     default-from: USE_RIVER
     default-to:
       - SELF: 1
       - RIVER: 1
     to:
+      # Biome specific rivers
       TEMPERATE_MOUNTAINS:
         - SELF: 1
         - TEMPERATE_MOUNTAINS_RIVER: 1
@@ -40,20 +46,28 @@ stages:
         - SELF: 1
         - SNOWY_ERODED_TERRACED_MOUNTAINS_RIVER: 1
     sampler: *riverSampler
-  # Flat Rivers
+  # Regular rivers with temperate marshes
   - type: REPLACE
-    from: USE_RIVER_FLAT
+    from: USE_RIVER_TEMPERATE_MARSH
     to:
       - SELF: 1
       - MARSH: 1
       - RIVER: 2
     sampler: *riverSampler
-  # Flat Rivers
+  # Regular rivers with bordering swamps
   - type: REPLACE
-    from: USE_RIVER_FLAT_SWAMP
+    from: USE_RIVER_TEMPERATE_SWAMP
     to:
       - SELF: 1
       - SWAMP: 1
+      - RIVER: 2
+    sampler: *riverSampler
+  # Regular coastal rivers with mangrove swamps
+  - type: REPLACE
+    from: USE_RIVER_COASTAL_TROPICAL_SWAMP
+    to:
+      - SELF: 1
+      - MANGROVE_SWAMP: 1
       - RIVER: 2
     sampler: *riverSampler
   # Frozen Rivers
@@ -63,9 +77,9 @@ stages:
       - SELF: 1
       - FROZEN_RIVER: 1
     sampler: *riverSampler
-  # Flat Frozen Rivers
+  # Frozen rivers with frozen marshes
   - type: REPLACE
-    from: USE_FROZEN_RIVER_FLAT
+    from: USE_FROZEN_RIVER_FROZEN_MARSH
     to:
       - SELF: 1
       - FROZEN_MARSH: 1

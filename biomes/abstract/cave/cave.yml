@@ -1,0 +1,13 @@
+id: CAVE
+abstract: true
+type: BIOME
+extends: [ CARVING_LAND ]
+
+carving:
+  update-palette: true
+
+terrain:
+  sampler:
+    type: CONSTANT
+    dimensions: 3
+    value: 10

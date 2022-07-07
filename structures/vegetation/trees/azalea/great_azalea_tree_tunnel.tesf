@@ -1,0 +1,110 @@
+// First search upwards for an area with enough air space to place the tree
+
+// Search variables
+num maxTunnelHeight = 150;
+num airGap = 50; // How much air must be above the base of the tree
+num undergroundGap = 3; // Determines how much air must be below the tunnel exit
+
+// Search tracking variables
+bool foundSpot = false;
+bool hasUndergroundSpace = true;
+num airHeight = 0; // Keeps track of how much air is below
+num surfaceHeight = 0; // Set to y level of surface if found
+num undergroundHeight = 0; // Set to the y level of tunnel exit
+
+// Run search
+for (num h = 0; h <= maxTunnelHeight; h = h + 1) {
+    str blockID = getBlock(0, h, 0);
+    if (blockID == "minecraft:air") {
+        // Hit air
+        if (airHeight == 0) {
+            airHeight = 1;
+            surfaceHeight = h;
+        }
+        else airHeight = airHeight + 1;
+    } else {
+        // Hit solid block
+        if (undergroundHeight == 0) {
+            // Hit first solid block
+            if (h < undergroundGap) {
+                hasUndergroundSpace = false;
+                break;
+            }
+            undergroundHeight = h;
+        }
+        airHeight = 0;
+    }
+    if (airHeight > airGap) {
+        if (structure(0, surfaceHeight-1, 0, "is_great_azalea_plantable", "NONE")) {
+            foundSpot = true;
+            break;
+        }
+    }
+}
+if (!foundSpot || !hasUndergroundSpace) fail;
+
+// Place tree at the top of the tunnel
+structure(0, surfaceHeight, 0, "great_azalea_tree", "NONE", "CW_90", "CCW_90", "CW_180");
+
+// Tunnel placement
+
+// Tunnel variables
+num randPrecision = 100;
+str logBlock = "minecraft:oak_wood[axis=y]";
+str rootedBlock = "minecraft:rooted_dirt";
+num rootedNoiseHorizontalFrequency = 30;
+num rootedNoiseVerticalFrequency = 30;
+num trunkRadius = 4;
+num helixFrequency = 8+randomInt(3);
+num helixAmplitude = 4;
+num helixJitter = 0.5;
+num helixLerpMin = 0.4;
+num helixLerpMax = 0.6;
+
+bool placeInAir = false;
+for (num trunkLevel = undergroundHeight; trunkLevel <= surfaceHeight; trunkLevel = trunkLevel + 1) {
+
+    num t = (trunkLevel-undergroundHeight)/(surfaceHeight-undergroundHeight);
+    num it = 1-t;
+    num amp = max(0,min(1,min(t/helixLerpMin,(t-1)/(-1+helixLerpMax))));
+    num inverseAmp = 1-amp;
+
+    num xOffset = sin(t*helixFrequency)*amp*helixAmplitude;
+    num zOffset = cos(t*helixFrequency)*amp*helixAmplitude;
+    num rootedNoiseThreshold = it;
+
+    num trunkLevelRadius = trunkRadius+amp*(2+randomInt(randPrecision)/randPrecision*helixJitter);
+    num trunkLevelRadiusSquared = pow2(trunkLevelRadius);
+    num trunkLevelRadiusInnerSquared = pow2(trunkLevelRadius-1-amp*2);
+
+    // Determines if all of the blocks in the current layer within the radius are solid.
+    bool allSolid = true;
+
+    // Place a layer of the tunnel
+    for (num x = round(-trunkLevelRadius); x < round(trunkLevelRadius); x = x + 1) {
+        for (num z = round(-trunkLevelRadius); z < round(trunkLevelRadius); z = z + 1) {
+            num distanceSquared = pow2(x)+pow2(z);
+            if (distanceSquared < trunkLevelRadiusSquared) {
+                if (distanceSquared < trunkLevelRadiusInnerSquared) {
+                    // Inside
+                    block(x+xOffset, trunkLevel, z+zOffset, "minecraft:air");
+                    block(x+xOffset, trunkLevel-1, z+zOffset, "minecraft:air");
+                } else {
+                    // Border
+                    if (getBlock(x+xOffset, trunkLevel, z+zOffset) == "minecraft:air") {
+                        if (!placeInAir) continue;
+                        allSolid = false;
+                    }
+                    str trunkBlock = logBlock;
+                    if ((sampler("simplex3",
+                                rootedNoiseHorizontalFrequency*(originX()+x),
+                                rootedNoiseVerticalFrequency*(originY()+trunkLevel),
+                                rootedNoiseHorizontalFrequency*(originZ()+z)
+                                )+1)/2 < rootedNoiseThreshold) trunkBlock = rootedBlock;
+                    block(x+xOffset, trunkLevel, z+zOffset, trunkBlock);
+                }
+            }
+        }
+    }
+    if (allSolid) placeInAir = true;
+}

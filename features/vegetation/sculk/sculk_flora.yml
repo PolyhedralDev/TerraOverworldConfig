@@ -1,0 +1,32 @@
+id: SCULK_FLORA
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 4
+  padding: 1
+  salt: 3874
+
+locator:
+  type: PATTERN
+  range:
+    min: -64
+    max: 0
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH_AIR
+        offset: 0
+      - type: MATCH
+        block: minecraft:sculk
+        offset: -1
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+    seed: 5919
+  structures:
+    - BLOCK:minecraft:sculk_shrieker[can_summon=true]: 2
+    - BLOCK:minecraft:sculk_catalyst: 2
+    - BLOCK:minecraft:sculk_sensor: 5
+    - blank: 8

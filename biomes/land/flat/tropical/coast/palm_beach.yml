@@ -5,7 +5,8 @@ vanilla: minecraft:beach
 color: $biomes/colors.yml:PALM_BEACH
 
 tags:
-  - USE_RIVER
+  - LAND_CAVES
+  - USE_RIVER_COASTAL_TROPICAL_SWAMP
 
 colors:
   grass: 0x88bd59

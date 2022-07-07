@@ -1,0 +1,7 @@
+id: RIVER_BASIC
+type: BIOME
+abstract: true
+
+features:
+  river-decoration:
+    - CLAY_DEPOSITS

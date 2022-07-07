@@ -5,6 +5,7 @@ vanilla: minecraft:sparse_jungle
 color: $biomes/colors.yml:RAINFOREST_HILLS
 
 tags:
+  - LAND_CAVES
   - USE_RIVER
 
 colors:

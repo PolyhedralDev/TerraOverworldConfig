@@ -1,0 +1,36 @@
+id: SPARSE_LARGE_MUSHROOMS
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 40
+  padding: 10
+  salt: 123454321
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: 64
+        max: 255
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:plantable-blocks
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:snow
+          - minecraft:air
+        offset: 0
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+    salt: 9512
+  structures: large_mixed_mushroom_procedural

@@ -1,0 +1,16 @@
+id: DEEP_DARK
+type: BIOME
+extends: [ CAVE, BASE ]
+vanilla: minecraft:deep_dark
+
+palette:
+  - BLOCK:minecraft:stone: 319
+  - << meta.yml:palette-bottom
+
+features:
+  preprocessors:
+    - SCULK_WEBS
+    - SCULK_PATCHES
+    - SCULK_TENDRIL
+  flora:
+    - SCULK_FLORA

@@ -1,0 +1,56 @@
+id: SCULK_WEBS
+type: FEATURE
+
+# Adds 'webs' of sculk blocks
+
+variables: &variables
+  wallThickness: 0.08
+  webThickness: 0.18
+
+distributor:
+  type: "YES"
+
+locator:
+  type: AND
+  locators:
+    # Match air underground
+    - type: PATTERN
+      range: &range
+        min: -50
+        max: 0
+      pattern:
+        type: MATCH_AIR
+        offset: 0
+
+    # Match ridged simplex to create 'walls'
+    - type: SAMPLER_3D
+      range: *range
+      sampler:
+        type: EXPRESSION
+        expression: "|webWalls(x,y,z)|<wallThickness"
+        variables: *variables
+        samplers:
+          webWalls:
+            dimensions: 3
+            type: OPEN_SIMPLEX_2
+            frequency: 0.015
+  
+    # Punch holes into walls using cellular
+    - type: SAMPLER_3D
+      range: *range
+      sampler:
+        type: EXPRESSION
+        expression: webPunchouts(x,y,z)>-webThickness
+        variables: *variables
+        samplers:
+          webPunchouts:
+            dimensions: 3
+            type: CELLULAR
+            distance: Euclidean
+            return: Distance2Div
+            frequency: 0.06
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: BLOCK:minecraft:sculk

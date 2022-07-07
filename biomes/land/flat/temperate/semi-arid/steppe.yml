@@ -5,7 +5,8 @@ vanilla: minecraft:plains
 color: $biomes/colors.yml:STEPPE
 
 tags:
-  - USE_RIVER_FLAT
+  - LAND_CAVES
+  - USE_RIVER_TEMPERATE_MARSH
 
 colors:
   grass: 0x9db55b
@@ -16,6 +17,7 @@ colors:
 palette:
   - GRASS_VARIATION: 319
   - SAND: 64
+  - MUDDY_BEACH: 61
   - << meta.yml:palette-bottom
 
 features:

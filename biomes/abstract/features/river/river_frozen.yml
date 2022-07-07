@@ -5,5 +5,4 @@ abstract: true
 features:
   river-decoration:
     - CEILING_ICICLES
-  ores:
     - CLAY_DEPOSITS

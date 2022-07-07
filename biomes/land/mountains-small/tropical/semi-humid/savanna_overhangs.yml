@@ -5,6 +5,7 @@ vanilla: minecraft:badlands
 color: $biomes/colors.yml:SAVANNA_OVERHANGS
 
 tags:
+  - LAND_CAVES
   - USE_RIVER
 
 colors:

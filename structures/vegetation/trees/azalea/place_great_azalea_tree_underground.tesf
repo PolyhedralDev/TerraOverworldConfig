@@ -1,0 +1,16 @@
+// Features can only generate within a 3x3 chunk area, so
+// generating exactly in the chunk center minimizes stuff
+// getting cut off causing the game to complain in console.
+
+// Get local coordinates within chunk
+num chunkX = originX() % 16;
+num chunkZ = originZ() % 16;
+if (chunkX < 0) chunkX = chunkX + 16;
+if (chunkZ < 0) chunkZ = chunkZ + 16;
+
+// Calculate the offset from the center of the chunk (randomized around 2x2 center)
+num offsetX = -chunkX+7+randomInt(2);
+num offsetZ = -chunkZ+7+randomInt(2);
+
+// Place structure in the center of the chunk
+structure(offsetX, 0, offsetZ, "great_azalea_tree_tunnel", "NONE");

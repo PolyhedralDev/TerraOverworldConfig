@@ -1,4 +1,3 @@
-
 # Splits land and coastal zones into different elevation zones.
 # These elevation zones are further divided into temperature zones
 # in the distribute_temperature_zones.yml file.
@@ -19,8 +18,8 @@ stages:
     default-from: coast
     default-to:
       - coast-flat: 6
-      - coast-hills: 5
-      - coast-hills: 4
+      - coast-hills-small: 5
+      - coast-hills-large: 4
       - coast-mountains-small: 5
       - coast-mountains-large: 6
     to:

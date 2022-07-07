@@ -5,7 +5,8 @@ vanilla: minecraft:frozen_river
 color: $biomes/colors.yml:FROZEN_MARSH
 
 tags:
-  - USE_FROZEN_RIVER_FLAT
+  - LAND_CAVES
+  - USE_FROZEN_RIVER_FROZEN_MARSH
 
 ocean:
   palette: FROZEN_OCEAN
@@ -26,6 +27,8 @@ features:
     - SNOW_LAYERS
   preprocessors:
     - ICE_COASTLINE
+  postprocessors:
+    - TREE_SNOW
   flora:
     - TALL_GRASS
 

@@ -4,4 +4,5 @@ extends: [ EQ_PLAIN_PEAKS, JUNGLE ]
 color: $biomes/colors.yml:JUNGLE_FLATS
 
 tags:
-  - USE_RIVER_FLAT_SWAMP
+  - LAND_CAVES
+  - USE_RIVER_TEMPERATE_SWAMP

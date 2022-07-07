@@ -1,0 +1,24 @@
+id: DRIPSTONE_CAVES
+type: BIOME
+extends: [ CAVE, BASE ]
+vanilla: minecraft:dripstone_caves
+
+palette:
+  - DRIPSTONE_CAVES: 319
+  - DRIPSTONE_CAVES_DEEPSLATE: $meta.yml:strata.deepslate.top
+  - << meta.yml:palette-bedrock
+
+tags:
+  - USE_RIVER_TEMPERATE_MARSH
+
+features:
+  preprocessors:
+    - DRIPSTONE_COLUMNS
+    - DRIPSTONE_CAVE_POOLS
+    - CEILING_DRIPSTONE
+  landforms:
+    - DRIPSTONE_CAVES_LARGE_CEILING_DRIPSTONE
+    - DRIPSTONE_CAVES_BOULDER_PATCHES
+  flora:
+    - DRIPSTONE_CAVES_CEILING_POINTED_DRIPSTONE
+    - DRIPSTONE_CAVES_FLOOR_POINTED_DRIPSTONE

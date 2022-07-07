@@ -11,16 +11,6 @@ layers:
       - minecraft:orange_terracotta: 1
       - minecraft:terracotta: 2
       - minecraft:yellow_terracotta: 2
-    #      - minecraft:white_terracotta: 1
-#      - minecraft:light_gray_terracotta: 1
-#      - minecraft:terracotta: 2
-#      - minecraft:orange_terracotta: 1
-#      - minecraft:yellow_terracotta: 1
-#      - minecraft:orange_terracotta: 1
-#      - minecraft:pink_terracotta: 1
-#      - minecraft:terracotta: 2
-#      - minecraft:light_gray_terracotta: 1
-#      - minecraft:brown_terracotta: 1
     layers: 1
 
 sampler:

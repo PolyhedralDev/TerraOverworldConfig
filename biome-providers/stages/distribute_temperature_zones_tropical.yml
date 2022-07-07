@@ -1,0 +1,54 @@
+
+# Splits elevation zones into temperature zones.
+
+# These temperature zones are then later split into different
+# precipitation zones by the distribute_precipitation_zones.yml file.
+# Zones unaffected by precipitation such oceanic, coastal, and
+# polar as are handled in the distribute_variants.yml file instead.
+
+temperature-map: &temperature-map
+  dimensions: 2
+  type: CONSTANT
+
+stages:
+  - type: REPLACE_LIST
+    sampler: *temperature-map
+    
+    default-from: deep-ocean
+    default-to:
+      - deep-ocean-tropical: 1
+    
+    to:
+
+      ocean:
+        - ocean-tropical: 1
+  
+      coast-flat:
+        - coast-flat-tropical: 1
+  
+      coast-hills-small:
+        - coast-hills-small-tropical: 1
+  
+      coast-hills-large:
+        - coast-hills-large-tropical: 1
+  
+      coast-mountains-small:
+        - coast-mountains-small-tropical: 1
+  
+      coast-mountains-large:
+        - coast-mountains-large-tropical: 1
+  
+      flat:
+        - flat-tropical: 1
+  
+      hills-small:
+        - hills-small-tropical: 1
+
+      hills-large:
+        - hills-large-tropical: 1
+
+      mountains-small:
+        - mountains-small-tropical: 1
+
+      mountains-large:
+        - mountains-large-tropical: 1

@@ -5,7 +5,8 @@ vanilla: minecraft:forest
 color: $biomes/colors.yml:WOODED_BUTTES
 
 tags:
-  - USE_RIVER_FLAT
+  - LAND_CAVES
+  - USE_RIVER_TEMPERATE_MARSH
 
 palette:
   - GRASS: 319

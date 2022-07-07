@@ -1,5 +1,5 @@
 id: OVERWORLD
-version: 1.1.1
+version: 1.2.0
 author: "Astrash, Sancires, Aureus"
 
 generator: NOISE_3D
@@ -7,6 +7,7 @@ generator: NOISE_3D
 addons:
   biome-provider-pipeline: "1.+"
   biome-provider-single: "1.+"
+  biome-provider-extrusion: "1.+"
   chunk-generator-noise-3d: "1.+"
   config-biome: "1.+"
   config-flora: "1.+"
@@ -44,23 +45,7 @@ biomes: $biome-providers/presets/default.yml:biomes
 # Single biome - to change the single biome to use, check the configuration file.
 #biomes: $biome-providers/presets/single.yml:biomes
 
-# TODO: Continental - Generates large continents
-#biomes: $biome-providers/presets/continental.yml:biomes
 
-# TODO: Water world - Ocean biomes only
-#biomes: $biome-providers/presets/water_world.yml:biomes
-
-# TODO: Desert world - Hot biomes only
-#biomes: $biome-providers/presets/desert_world.yml:biomes
-
-# TODO: Frozen World - Frozen biomes only
-#biomes: $biome-providers/presets/frozen_world.yml:biomes
-
-# TODO: Planet World - Continents with ice caps at each pole
-#biomes: $biome-providers/presets/planetary.yml:biomes
-
-# Terrain test pipeline
-#biomes: $biomes/abstract/terrain/test/pipeline.yml:biomes
 
 # ---
 # Population stages
@@ -74,35 +59,57 @@ biomes: $biome-providers/presets/default.yml:biomes
 # something like a world without ores.
 
 stages:
-  - id: global-preprocessors # Used to generate lava at the bottom of the world
+  # Used to generate lava at the bottom of the world.
+  # NOTE - This key must only be defined in biomes/abstract/base.yml
+  - id: global-preprocessors
     type: FEATURE
-
-  - id: preprocessors # Misc features that are treated as small modifications
-    type: FEATURE     # to the initial chunk generation.
-
-  - id: landforms # Used for things like boulders and features that act
-    type: FEATURE # like a part of the terrain.
-
-  - id: slabs # Adds slab versions of some blocks to make terrain look smoother
+  
+  # Misc features that are treated as small modifications to the initial chunk generation.
+  - id: preprocessors
     type: FEATURE
-
-  - id: ores # Self-explanatory - used to generate ores
+  
+  # Used for things like boulders and features that act like a part of the terrain.
+  - id: landforms
     type: FEATURE
-
-  - id: deposits # Adds things like dirt, andesite and gravel patches
+  
+  # Adds slab versions of some blocks to make terrain look smoother.
+  - id: slabs
     type: FEATURE
-
-  - id: river-decoration # Used for biome specific river variant features
+  
+  # Self-explanatory - used to generate ores.
+  # NOTE - Individual biomes should extend from configs in biomes/abstract/features/ores
+  #        rather than overwriting this key themselves.
+  - id: ores
     type: FEATURE
-
-  - id: underwater-flora # Used for small features placed underwater like sea-grass
+  
+  # Adds things like dirt, andesite and gravel patches.
+  # NOTE - Individual biomes should extend from configs in biomes/abstract/features/deposits
+  #        rather than overwriting this key themselves.
+  - id: deposits
     type: FEATURE
-
-  - id: flora # Used for small features placed on the surface like tall grass and vines
+  
+  # Used for biome specific river variant features.
+  # NOTE - Individual biomes should extend from configs in biomes/abstract/features/river
+  #        rather than overwriting this key themselves.
+  - id: river-decoration
     type: FEATURE
-
-  - id: trees # Used for larger things that generate on the surface like trees, some other
-    type: FEATURE # features are also treated as trees like ice spikes.
+  
+  # Used for larger things that generate on the surface like trees, some other features are
+  # also treated as trees like ice spikes.
+  - id: trees
+    type: FEATURE
+    
+  # Used for small features placed underwater like sea-grass.
+  - id: underwater-flora
+    type: FEATURE
+    
+  # Used for small features placed on the surface like tall grass and vines.
+  - id: flora
+    type: FEATURE
+  
+  # Used to generate features that must come after all other features, such as snow on trees.
+  - id: postprocessors
+    type: FEATURE
 
 functions:
   "<<":
@@ -113,3 +120,10 @@ functions:
 samplers:
   "<<":
     - math/samplers/simplex.yml:samplers
+
+blend:
+  palette:
+    resolution: 2
+    amplitude: 2
+    sampler:
+      type: WHITE_NOISE

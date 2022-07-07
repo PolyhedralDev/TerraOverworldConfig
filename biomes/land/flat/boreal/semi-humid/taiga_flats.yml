@@ -4,4 +4,5 @@ extends: [ EQ_PLAIN, TAIGA ]
 color: $biomes/colors.yml:TAIGA_FLATS
 
 tags:
-  - USE_RIVER_FLAT
+  - LAND_CAVES
+  - USE_RIVER_TEMPERATE_MARSH

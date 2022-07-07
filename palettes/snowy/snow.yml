@@ -9,5 +9,8 @@ layers:
       - minecraft:coarse_dirt: 1
       - minecraft:dirt: 2
     layers: 1
+    sampler:
+      type: WHITE_NOISE
+      salt: 5912
   - materials: minecraft:stone
     layers: 1

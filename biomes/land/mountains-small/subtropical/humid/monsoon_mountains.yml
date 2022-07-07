@@ -7,6 +7,7 @@ color: $biomes/colors.yml:MONSOON_MOUNTAINS
 palette:
   - GRASS_MOSSY: 319
   - SAND: 64
+  - MUDDY_BEACH: 61
   - << meta.yml:palette-bottom
 
 slant:

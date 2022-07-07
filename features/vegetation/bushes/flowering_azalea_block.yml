@@ -1,0 +1,28 @@
+id: FLOWERING_AZALEA_BLOCK
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 4201
+  threshold: 0.01
+
+locator:
+  type: PATTERN
+  range:
+    min: -64
+    max: 64
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH_AIR
+        offset: 0
+      - type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:plantable-blocks
+        offset: -1
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures: BLOCK:minecraft:flowering_azalea

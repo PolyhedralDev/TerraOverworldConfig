@@ -5,6 +5,7 @@ vanilla: minecraft:snowy_beach
 color: $biomes/colors.yml:SNOWY_SEA_CAVES
 
 tags:
+  - LAND_CAVES
   - USE_FROZEN_RIVER
 
 palette:
@@ -24,6 +25,5 @@ features:
     - SNOW_LAYERS
     - STONE_SLABS
   preprocessors:
-    - ICE_COASTLINE
-  ores:
     - POWDER_SNOW_DEPOSITS
+    - ICE_COASTLINE

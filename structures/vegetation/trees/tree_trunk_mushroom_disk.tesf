@@ -1,0 +1,4 @@
+block(0, 0, 0, "minecraft:brown_mushroom_block[down=false]", false);
+block(1, 0, 0, "minecraft:brown_mushroom_block[down=false]", false);
+block(0, 0, 1, "minecraft:brown_mushroom_block[down=false]", false);
+block(1, 0, 1, "minecraft:brown_mushroom_block[down=false]", false);

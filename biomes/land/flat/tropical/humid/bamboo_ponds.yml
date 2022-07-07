@@ -5,7 +5,8 @@ vanilla: minecraft:jungle
 color: $biomes/colors.yml:BAMBOO_PONDS
 
 tags:
-  - USE_RIVER_FLAT_SWAMP
+  - LAND_CAVES
+  - USE_RIVER_TEMPERATE_SWAMP
 
 colors:
   grass: 0x3abf13
@@ -17,6 +18,7 @@ palette:
   - BAMBOO_PONDS_WATER: 319
   - BAMBOO_PONDS: 70
   - SAND: 64
+  - MUDDY_BEACH: 61
   - << meta.yml:palette-bottom
 
 slant:

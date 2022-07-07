@@ -5,6 +5,7 @@ vanilla: minecraft:beach
 color: $biomes/colors.yml:FROZEN_ARCHIPELAGO
 
 tags:
+  - LAND_CAVES
   - USE_FROZEN_RIVER
 
 ocean:
@@ -27,3 +28,5 @@ features:
     - SNOW_LAYERS
   preprocessors:
     - ICE_COASTLINE
+  postprocessors:
+    - TREE_SNOW

@@ -5,7 +5,8 @@ vanilla: minecraft:sparse_jungle
 color: $biomes/colors.yml:PALM_FOREST
 
 tags:
-  - USE_RIVER_FLAT_SWAMP
+  - LAND_CAVES
+  - USE_RIVER_TEMPERATE_SWAMP
 
 colors:
   grass: 0x88bd59

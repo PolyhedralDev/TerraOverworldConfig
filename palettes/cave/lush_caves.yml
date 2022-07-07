@@ -1,0 +1,26 @@
+id: LUSH_CAVES
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:stone: 2
+      - minecraft:moss_block: 4
+      - minecraft:clay: 3
+    layers: 2
+  - materials:
+      - minecraft:stone: 5
+      - minecraft:moss_block: 4
+    layers: 1
+
+
+sampler:
+  dimensions: 2
+  type: DOMAIN_WARP
+  amplitude: 4
+  warp:
+    type: OPEN_SIMPLEX_2
+    frequency: 0.1
+  sampler:
+    type: CELLULAR
+    return: CellValue
+    frequency: 0.08

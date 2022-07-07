@@ -1,0 +1,40 @@
+id: MANGROVE_SWAMP
+type: BIOME
+extends: [ EQ_MANGROVE_SWAMP, CARVING_OCEAN, BASE ]
+vanilla: minecraft:mangrove_swamp
+color: $biomes/colors.yml:MANGROVE_SWAMP
+
+tags:
+  - USE_RIVER_COASTAL_TROPICAL_SWAMP
+
+colors:
+  grass: 0x4C763C
+  foliage: 0x8DB127
+  water: 0x3A7A6A
+  water-fog: 0x4D7A60
+
+palette:
+  - BLOCK:minecraft:stone: 319
+  - MUDDY_GRASS: 75
+  - MUD: 61
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 5
+    palette:
+      - BLOCK:minecraft:stone: 319
+      - << meta.yml:palette-bottom
+
+features:
+  underwater-flora:
+    - MANGROVE_SEAGRASS
+  flora:
+    - GRASS
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - BLUE_ORCHID_PATCH
+    - LILY_PADS
+    - SUGAR_CANE
+    - DEAD_BUSHES
+  trees:
+    - MANGROVE_TREES

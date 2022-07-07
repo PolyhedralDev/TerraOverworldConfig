@@ -5,6 +5,7 @@ vanilla: minecraft:badlands
 color: $biomes/colors.yml:DESERT_PILLARS
 
 tags:
+  - LAND_CAVES
   - USE_RIVER
 
 palette:

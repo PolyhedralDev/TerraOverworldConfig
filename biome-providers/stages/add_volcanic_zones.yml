@@ -73,7 +73,7 @@ stages:
         - volcano-base-edge: 2
         - volcano-base: 4
         - hills-large: 3
-        - coast-hills: 3
+        - coast-hills-large: 3
         # Non-volcano area
         - ocean: *volcano-area-weight
       coast:

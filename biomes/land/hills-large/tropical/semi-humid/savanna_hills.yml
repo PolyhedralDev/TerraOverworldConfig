@@ -11,11 +11,13 @@ colors:
   water-fog: 0x2C8b9c
 
 tags:
+  - LAND_CAVES
   - USE_RIVER
 
 palette:
   - GRASS_VARIATION: 319
   - SAND: 64
+  - MUDDY_BEACH: 61
   - << meta.yml:palette-bottom
 
 slant:

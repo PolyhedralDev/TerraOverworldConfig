@@ -1,0 +1,28 @@
+id: DRIPSTONE_CAVES_LARGE_CEILING_DRIPSTONE
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 1023
+  threshold: 0.1
+
+locator:
+  type: PATTERN
+  range:
+    min: -48
+    max: 48
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH
+        block: minecraft:dripstone_block
+        offset: 1
+      - type: MATCH_AIR
+        offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: large_ceiling_pointed_dripstone

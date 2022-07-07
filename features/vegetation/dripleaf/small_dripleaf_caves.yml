@@ -1,0 +1,51 @@
+id: SMALL_DRIPLEAF_CAVES
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 4417
+  threshold: 0.05
+
+locator:
+  type: PATTERN
+  range:
+    min: -64
+    max: 64
+  pattern:
+    type: OR
+    patterns:
+      - type: AND
+        patterns:
+          - type: MATCH_SET
+            blocks:
+              - minecraft:air
+            offset: 1
+          - type: MATCH_SET
+            blocks:
+              - minecraft:water
+            offset: 0
+          - type: MATCH_SET
+            blocks: $features/vegetation/meta.yml:dripleaf-plantable-blocks
+            offset: -1
+      - type: AND
+        patterns:
+          - type: MATCH_SET
+            blocks:
+              - minecraft:air
+            offset: 1
+          - type: MATCH_SET
+            blocks:
+              - minecraft:air
+            offset: 0
+          - type: MATCH_SET
+            blocks:
+              - minecraft:clay
+              - minecraft:moss_block
+            offset: -1
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures: small_dripleaf

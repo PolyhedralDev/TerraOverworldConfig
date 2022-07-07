@@ -1,0 +1,44 @@
+id: SCULK_PATCHES
+type: FEATURE
+
+# Adds patches of sculk blocks to the ground
+
+distributor:
+  type: "YES"
+
+locator:
+  type: AND
+  locators:
+    - type: PATTERN
+      range: &range
+        min: -50
+        max: 0
+      pattern:
+        type: AND
+        patterns:
+          - type: MATCH_SET
+            blocks: $features/vegetation/meta.yml:sculk-plantable-blocks
+            offset: 0
+          - type: MATCH_AIR
+            offset: 1
+    - type: ADJACENT_PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SOLID
+        offset: 0
+    - type: ADJACENT_PATTERN
+      range: *range
+      match-all: true
+      pattern:
+        type: MATCH_SOLID
+        offset: -1
+
+structures:
+  distribution:
+    type: OPEN_SIMPLEX_2
+    frequency: 0.02
+    salt: 727
+  structures: 
+    - blank: 9
+    - place_adjacent_sculk_veins: 1
+    - BLOCK:minecraft:sculk: 4

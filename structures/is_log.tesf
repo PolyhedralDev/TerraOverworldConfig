@@ -4,6 +4,7 @@ if (blockID != "minecraft:oak_log" &&
     blockID != "minecraft:spruce_log" &&
     blockID != "minecraft:jungle_log" &&
     blockID != "minecraft:acacia_log" &&
+    blockID != "minecraft:mangrove_log" &&
     blockID != "minecraft:dark_oak_log") {
     fail;
 }

@@ -1,0 +1,34 @@
+id: MANGROVE_TREES
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 7
+  padding: 3
+  salt: 7718
+
+locator:
+  type: AND
+  locators:
+    - type: PATTERN
+      range: &range
+        min: 57
+        max: 65
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:plantable-blocks
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:snow
+          - minecraft:air
+          - minecraft:water
+        offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: mangrove_tree_procedural

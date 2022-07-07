@@ -1,0 +1,21 @@
+id: GREAT_AZALEA_TREES
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 30
+  padding: 80
+  salt: 5132
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range:
+        min: 0
+        max: 50
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: place_great_azalea_tree_underground

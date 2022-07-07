@@ -1,0 +1,37 @@
+id: DENSE_DARK_FOREST_TREES
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 7
+  padding: 3
+  salt: 5932
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: 64
+        max: 255
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:plantable-blocks
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:snow
+          - minecraft:air
+        offset: 0
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures:
+    - large_dark_oak_tree_procedural: 16
+    - dark_oak_tree_procedural: 6

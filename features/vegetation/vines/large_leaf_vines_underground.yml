@@ -1,0 +1,78 @@
+id: LARGE_LEAF_VINES_UNDERGROUND
+type: FEATURE
+
+# Adds 'webs' of leaf blocks to surface blocks
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: PROBABILITY
+    sampler:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.03
+  threshold: 0.75
+
+locator:
+  type: AND
+  locators:
+    # Check if block is solid air
+    - type: PATTERN
+      range: &range
+        min: -64
+        max: 64
+      pattern:
+        type: MATCH_AIR
+        offset: 0
+    # Check if there is a surrounding solid block
+    - type: OR
+      locators:
+        # If any side faces are solid
+        - type: ADJACENT_PATTERN
+          range: *range
+          pattern:
+            type: MATCH_SOLID
+            offset: 0
+        # OR any top / bottom faces are solid
+        - type: PATTERN
+          range: *range
+          pattern:
+            type: OR
+            patterns:
+              - type: MATCH_SOLID
+                offset: 1
+              - type: MATCH_SOLID
+                offset: -1
+    # Use noise to create 'webbed' effect
+    - type: SAMPLER_3D
+      sampler:
+        dimensions: 3
+        type: EXPRESSION
+        variables:
+          threshold: 0.5
+        expression: if(noise(x,y,z) > threshold, 1, -1)
+        samplers:
+          noise:
+            # Warped distance2div produces a web effect
+            dimensions: 3
+            type: DOMAIN_WARP
+            amplitude: 14
+            warp:
+              type: FBM
+              octaves: 2
+              sampler:
+                type: OPEN_SIMPLEX_2
+            sampler:
+              type: LINEAR
+              min: -1
+              max: 0
+              sampler:
+                type: CELLULAR
+                return: Distance2Div
+                frequency: 0.065
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures:
+    - BLOCK:minecraft:azalea_leaves[persistent=true]: 1
+    - BLOCK:minecraft:flowering_azalea_leaves[persistent=true]: 1

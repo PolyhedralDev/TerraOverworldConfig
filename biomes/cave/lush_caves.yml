@@ -1,0 +1,28 @@
+id: LUSH_CAVES
+type: BIOME
+extends: [ CAVE, BASE ]
+vanilla: minecraft:lush_caves
+
+palette:
+  - LUSH_CAVES: 319
+  - LUSH_CAVES_DEEPSLATE: $meta.yml:strata.deepslate.top
+  - << meta.yml:palette-bedrock
+
+tags:
+  - USE_RIVER_TEMPERATE_MARSH
+
+features:
+  preprocessors:
+    - LUSH_CAVE_WATER_POOLS
+  landforms:
+    - GREAT_AZALEA_TREES
+  flora:
+    - LARGE_LEAF_VINES_UNDERGROUND
+    - MOSS_CARPET
+    - CAVE_GLOW_BERRIES
+    - CAVE_SPORE_BLOSSOMS
+    - SMALL_DRIPLEAF_CAVES
+    - BIG_DRIPLEAF_CAVES
+    - GRASS_CAVES
+    - AZALEA_BLOCK
+    - FLOWERING_AZALEA_BLOCK

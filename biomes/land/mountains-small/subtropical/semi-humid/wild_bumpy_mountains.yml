@@ -5,6 +5,7 @@ vanilla: minecraft:plains
 color: $biomes/colors.yml:WILD_BUMPY_MOUNTAINS
 
 tags:
+  - LAND_CAVES
   - USE_RIVER
 
 colors:
@@ -13,6 +14,7 @@ colors:
 palette:
   - GRASS: 319
   - SAND: 64
+  - MUDDY_BEACH: 61
   - << meta.yml:palette-bottom
 
 slant:

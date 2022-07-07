@@ -1,0 +1,15 @@
+extrusions:
+  - type: REPLACE
+    from: LAND_CAVES
+    sampler:
+      type: CELLULAR
+      return: CellValue
+      salt: 1252
+      frequency: 1 / ${meta.yml:biome-distribution.cave-biome-scale} / ${meta.yml:biome-distribution.global-scale}
+    to:
+      - SELF: 6
+      - LUSH_CAVES: 1
+      - DRIPSTONE_CAVES: 1
+    range:
+      min: -16
+      max: 48

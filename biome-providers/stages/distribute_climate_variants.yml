@@ -30,8 +30,14 @@ stages:
       
       coast-flat-tropical:
         - PALM_BEACH: 1
+        - MANGROVE_SWAMP: 1
       
-      coast-hills-tropical:
+      coast-hills-small-tropical:
+        - SANDSTONE_WETLANDS: 1
+        - SANDSTONE_ARCHIPELAGO: 1
+        - MANGROVE_SWAMP: 1
+      
+      coast-hills-large-tropical:
         - SANDSTONE_WETLANDS: 1
         - SANDSTONE_ARCHIPELAGO: 1
       
@@ -69,8 +75,14 @@ stages:
       
       coast-flat-subtropical:
         - BEACH: 1
+        - MANGROVE_SWAMP: 1
       
-      coast-hills-subtropical:
+      coast-hills-small-subtropical:
+        - WETLANDS: 1
+        - ARCHIPELAGO: 1
+        - MANGROVE_SWAMP: 1
+      
+      coast-hills-large-subtropical:
         - WETLANDS: 1
         - ARCHIPELAGO: 1
       
@@ -97,7 +109,11 @@ stages:
         - BEACH: 3
         - SHALE_BEACH: 1
       
-      coast-hills-temperate:
+      coast-hills-small-temperate:
+        - WETLANDS: 1
+        - ARCHIPELAGO: 1
+      
+      coast-hills-large-temperate:
         - WETLANDS: 1
         - ARCHIPELAGO: 1
       
@@ -126,7 +142,11 @@ stages:
       coast-flat-boreal:
         - BEACH: 1
       
-      coast-hills-boreal:
+      coast-hills-small-boreal:
+        - ROCKY_WETLANDS: 1
+        - ROCKY_ARCHIPELAGO: 1
+      
+      coast-hills-large-boreal:
         - ROCKY_WETLANDS: 1
         - ROCKY_ARCHIPELAGO: 1
       
@@ -153,7 +173,11 @@ stages:
       coast-flat-polar:
         - FROZEN_BEACH: 1
       
-      coast-hills-polar:
+      coast-hills-small-polar:
+        - FROZEN_WETLANDS: 1
+        - FROZEN_ARCHIPELAGO: 1
+
+      coast-hills-large-polar:
         - FROZEN_WETLANDS: 1
         - FROZEN_ARCHIPELAGO: 1
 
@@ -168,7 +192,7 @@ stages:
       flat-polar:
         - SNOWY_PLAINS: 2
         - TUNDRA_PLAINS: 2
-        - SNOWY_MEADOW: 1
+        - SNOWY_MEADOW: 4
       
       hills-small-polar:
         - ICE_SPIKES: 1

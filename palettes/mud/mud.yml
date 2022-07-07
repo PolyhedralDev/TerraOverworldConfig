@@ -1,0 +1,10 @@
+id: MUD
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:mud: 1
+    layers: 2
+  - materials:
+      - minecraft:stone: 1
+    layers: 1

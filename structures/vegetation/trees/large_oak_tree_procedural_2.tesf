@@ -17,7 +17,7 @@ num sideBranchLeafRadiusMin = 5;
 num sideBranchLeafTranslate = 0;
 num sideBranchLeafTopFlatness = 2;
 num sideBranchLeafBottomFlatness = 3;
-num sideBranchLeafRarity = 2;
+num sideBranchLeafDensity = 0.5;
 str sideBranchLeafStructure = "oak_leaves_clump";
 str sideBranchBlockX = "minecraft:oak_log[axis=x]";
 str sideBranchBlockY = "minecraft:oak_log[axis=y]";
@@ -31,7 +31,7 @@ num topBranchLeafRadiusMin = 6;
 num topBranchLeafTranslate = 0;
 num topBranchLeafTopFlatness = 2;
 num topBranchLeafBottomFlatness = 3;
-num topBranchLeafRarity = 2;
+num topBranchLeafDensity = 0.5;
 str topBranchLeafStructure = "oak_leaves_clump";
 str topBranchBlockX = "minecraft:oak_log[axis=x]";
 str topBranchBlockY = "minecraft:oak_log[axis=y]";
@@ -86,7 +86,7 @@ for (num i = 0; i < trunkHeight; i = i + 1) {
             else if (abs(dz) > max(abs(dy),abs(dx))) branchBlock = sideBranchBlockZ;
             num branchLength = sideBranchLengthMin + randomInt(randPrecision)/randPrecision*sideBranchLengthVariation;
             // Generate branch
-            for (num l = 0; l < branchLength; l = l + 1) {
+            for (num l = 0; l <= branchLength; l = l + 1) {
                 block(l*dx+ox, l*dy+oy, l*dz+oz, branchBlock);
             }
             // Rotate angle of next branch
@@ -104,10 +104,8 @@ for (num i = 0; i < trunkHeight; i = i + 1) {
                         num squashFactor = sideBranchLeafBottomFlatness;
                         if (cy > 0) squashFactor = sideBranchLeafTopFlatness;
                         num distanceSquared = pow(cx,2)+pow(cy*squashFactor,2)+pow(cz,2);
-                        if (distanceSquared/radiusSquared < randomInt(randPrecision)/randPrecision) {
-                            if (randomInt(sideBranchLeafRarity) == 0) {
-                                structure(lox+cx, loy+cy, loz+cz, sideBranchLeafStructure, "NONE", "CW_90", "CCW_90", "CW_180");
-                            }
+                        if (distanceSquared < radiusSquared && randomInt(randPrecision)/randPrecision < sideBranchLeafDensity) {
+                            structure(lox+cx, loy+cy, loz+cz, sideBranchLeafStructure, "NONE", "CW_90", "CCW_90", "CW_180");
                         }
                     }
                 }
@@ -142,7 +140,7 @@ for (num b = 1; b <= topBranches; b = b + 1) {
     else if (abs(dz) > max(abs(dy),abs(dx))) branchBlock = topBranchBlockZ;
     num branchLength = topBranchLengthUpwardsMin*ti + topBranchLengthOutwardsMin*t;
     // Generate branch
-    for (num l = 0; l < branchLength; l = l + 1) {
+    for (num l = 0; l <= branchLength; l = l + 1) {
         block(l*dx+ox, l*dy+oy, l*dz+oz, branchBlock);
     }
     // Rotate angle of next branch
@@ -160,10 +158,8 @@ for (num b = 1; b <= topBranches; b = b + 1) {
                 num squashFactor = topBranchLeafBottomFlatness;
                 if (cy > 0) squashFactor = topBranchLeafTopFlatness;
                 num distanceSquared = pow(cx,2)+pow(cy*squashFactor,2)+pow(cz,2);
-                if (distanceSquared/radiusSquared < randomInt(randPrecision)/randPrecision) {
-                    if (randomInt(topBranchLeafRarity) == 0) {
-                        structure(lox+cx, loy+cy, loz+cz, topBranchLeafStructure, "NONE", "CW_90", "CCW_90", "CW_180");
-                    }
+                if (distanceSquared < radiusSquared && randomInt(randPrecision)/randPrecision < topBranchLeafDensity) {
+                    structure(lox+cx, loy+cy, loz+cz, topBranchLeafStructure, "NONE", "CW_90", "CCW_90", "CW_180");
                 }
             }
         }

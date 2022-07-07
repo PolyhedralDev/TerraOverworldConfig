@@ -5,7 +5,8 @@ vanilla: minecraft:plains
 color: $biomes/colors.yml:MARSH
 
 tags:
-  - USE_RIVER_FLAT
+  - LAND_CAVES
+  - USE_RIVER_TEMPERATE_MARSH
 
 palette:
   - GRASS: 319

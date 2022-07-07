@@ -5,6 +5,7 @@ vanilla: minecraft:badlands
 color: $biomes/colors.yml:ARID_SPIKES
 
 tags:
+  - LAND_CAVES
   - USE_RIVER
 
 palette:

@@ -1,0 +1,36 @@
+id: DARK_FOREST
+type: BIOME
+extends: [ EQ_TERRACED_HILLS, CARVING_LAND, BASE ]
+vanilla: minecraft:dark_forest
+color: $biomes/colors.yml:DARK_FOREST
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER_TEMPERATE_MARSH
+
+palette:
+  - GRASS: 319
+  - COARSE_DIRT: 62
+  - MUDDY_BEACH: 61
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 3
+    palette:
+      - COARSE_DIRT: 319
+      - SAND: 64
+      - << meta.yml:palette-bottom
+  - threshold: 3.5
+    palette:
+      - BLOCK:minecraft:stone: 319
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - GRASS
+  trees:
+    - SPARSE_LARGE_MUSHROOMS
+    - DENSE_DARK_FOREST_TREES
+  landforms:
+    - MOSSY_BOULDERS
+    - SMALL_MOSSY_BOULDER_PATCHES
