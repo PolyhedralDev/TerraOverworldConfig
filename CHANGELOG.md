@@ -41,6 +41,19 @@ generate in an area where it previously did not (resulting in a chunk border).
 
 ## [Unreleased]
 ### Added
+
+
+### Changed
+
+
+### Removed
+
+
+### Fixed
+
+
+## [v1.2.0]
+### Added
 - Added Mangrove Swamps.
 - Added Dripstone Caves.
 - Added Lush Caves.
@@ -55,9 +68,6 @@ generate in an area where it previously did not (resulting in a chunk border).
 - Placed packed mud in many existing arid palettes.
 - Placed mud in bamboo jungles, swamps, and river palettes.
 - Changed cave generation to include rare giant caverns.
-
-### Removed
-
 
 ### Fixed
 - Snow not generating on trees in polar biomes.
@@ -94,7 +104,8 @@ generate in an area where it previously did not (resulting in a chunk border).
 ### Added
 - Everything
 
-[Unreleased]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.1.1...HEAD
+[Unreleased]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.2.0...HEAD
+[v1.2.0]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.1.1...v1.2.0
 [1.1.1]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.0.0...v1.0.1
