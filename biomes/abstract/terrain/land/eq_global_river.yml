@@ -1,0 +1,57 @@
+id: EQ_GLOBAL_RIVER
+type: BIOME
+abstract: true
+
+vars: &variables
+  base: $meta.yml:terrain.base
+  scale: $meta.yml:terrain.scale
+
+terrain:
+  sampler:
+    type: EXPRESSION
+    dimensions: 3
+    variables: *variables
+    expression: |
+      -y + base -
+      erode(
+        base,
+        globalHeightmap(x, z),
+        scale,
+        y,
+        1 + erosion(x/3, y, z/3)^2,
+        150+ceilingVariation(x, z)*200
+      )
+    samplers: &samplers
+      erosion:
+        dimensions: 3
+        type: FBM
+        octaves: 2
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.03
+          salt: 5
+      ceilingVariation:
+        dimensions: 2
+        type: PROBABILITY
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.01
+          salt: 9
+    functions:
+      erode:
+        arguments: [ base, height, scale, y, strength, ceiling ]
+        expression: |
+          lerp(y,
+            40,       // Bottom lower y level
+            0,        // Bottom lower strength
+            65,       // Bottom upper y level
+              lerp(y, // Bottom upper strength
+                lerp(height, 0, ceiling, 0.8, 80),                     // Top upper y level
+                0,                                                 // Top upper strength
+                lerp(height, 0, 80, 0.8, 65),                      // Top lower y level
+                lerp(height, 0.05, 0.15, 0.4, strength) * (-y+base+1*scale) // Top lower strength
+            )
+          )
+        functions: $math/functions/lerp.yml:functions
+  
+  sampler-2d: $biomes/abstract/terrain/land/eq_land.yml:terrain.sampler-2d
