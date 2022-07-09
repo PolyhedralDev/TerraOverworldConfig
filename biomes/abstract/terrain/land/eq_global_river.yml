@@ -19,7 +19,7 @@ terrain:
         scale,
         y,
         1 + erosion(x/3, y, z/3)^2,
-        150+ceilingVariation(x, z)*200
+        100+ceilingVariation(x, z)*100
       )
     samplers: &samplers
       erosion:

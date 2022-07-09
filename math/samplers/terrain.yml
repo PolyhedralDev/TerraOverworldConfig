@@ -6,9 +6,9 @@ samplers:
     functions:
       spline:
         arguments: [x]
-        expression: x^3
+        expression: x^2
     variables:
-      frequency: 1
+      frequency: 0.7
     samplers:
       generalHeight:
         dimensions: 2

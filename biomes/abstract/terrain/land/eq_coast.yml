@@ -33,7 +33,7 @@ terrain:
         type: PROBABILITY
         sampler:
           type: RIDGED
-          octaves: 2
+          octaves: 1
           gain: 1
           sampler:
             type: OPEN_SIMPLEX_2
