@@ -17,10 +17,10 @@ terrain:
       erode(
         erosionBottom + bottomVariation(x, z) * 10,
         base,
-        globalHeightmap(x,z)*(1+variation(x,z)*0.3),
+        globalHeightmap(x,z)*(1+variation(x,z)*0.2),
         scale,
         y,
-        1-erosion(x, z)
+        1-|erosion(x, z)|
       )
     samplers: &samplers
       variation:
@@ -32,19 +32,15 @@ terrain:
         dimensions: 2
         type: PROBABILITY
         sampler:
-          type: RIDGED
-          octaves: 1
-          gain: 1
-          sampler:
-            type: OPEN_SIMPLEX_2
-            frequency: 0.01
-            salt: 2
+          type: OPEN_SIMPLEX_2
+          frequency: 0.02
+          salt: 2
       bottomVariation:
         dimensions: 2
         type: PROBABILITY
         sampler:
           type: OPEN_SIMPLEX_2
-          frequency: 0.005
+          frequency: 0.008
           salt: 9
     functions:
       erode:
