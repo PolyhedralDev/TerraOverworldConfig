@@ -1,6 +1,6 @@
 id: DARK_FOREST_HILLS
 type: BIOME
-extends: [ EQ_LAND, DARK_FOREST ]
+extends: [ DARK_FOREST ]
 color: $biomes/colors.yml:DARK_FOREST
 
 tags:

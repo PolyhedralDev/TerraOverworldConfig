@@ -1,6 +1,6 @@
 id: BADLANDS_BUTTES
 type: BIOME
-extends: [ EQ_LAND, CARVING_LAND, BASE ]
+extends: [ EQ_STRATIFIED_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:badlands
 color: $biomes/colors.yml:BADLANDS_BUTTES
 

@@ -1,6 +1,6 @@
 id: EVERGREEN_FLATS
 type: BIOME
-extends: [ EQ_LAND, EVERGREEN_FOREST_HILLS ]
+extends: [ EVERGREEN_FOREST_HILLS ]
 color: $biomes/colors.yml:EVERGREEN_FOREST
 
 tags:

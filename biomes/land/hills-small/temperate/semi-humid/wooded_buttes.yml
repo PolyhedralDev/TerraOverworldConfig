@@ -1,6 +1,6 @@
 id: WOODED_BUTTES
 type: BIOME
-extends: [ EQ_LAND, CARVING_LAND, BASE ]
+extends: [ EQ_STRATIFIED_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:forest
 color: $biomes/colors.yml:WOODED_BUTTES
 

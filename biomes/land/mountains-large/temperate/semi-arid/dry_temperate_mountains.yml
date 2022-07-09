@@ -1,6 +1,6 @@
 id: DRY_TEMPERATE_MOUNTAINS
 type: BIOME
-extends: [ EQ_LAND, CARVING_LAND, BASE ]
+extends: [ EQ_MULTI_TERRACED_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:forest
 color: $biomes/colors.yml:DRY_TEMPERATE_MOUNTAINS
 

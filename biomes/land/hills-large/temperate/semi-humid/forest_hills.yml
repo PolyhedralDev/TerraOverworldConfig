@@ -1,6 +1,6 @@
 id: FOREST_HILLS
 type: BIOME
-extends: [ EQ_LAND, CARVING_LAND, BASE ]
+extends: [ EQ_MULTI_TERRACED_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:forest
 color: $biomes/colors.yml:FOREST_HILLS
 

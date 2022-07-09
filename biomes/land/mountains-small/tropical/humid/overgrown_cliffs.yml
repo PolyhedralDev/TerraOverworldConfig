@@ -1,6 +1,6 @@
 id: OVERGROWN_CLIFFS
 type: BIOME
-extends: [ EQ_LAND, CARVING_OCEAN, BASE ]
+extends: [ EQ_STRATIFIED_LAND, CARVING_OCEAN, BASE ]
 vanilla: minecraft:jungle
 color: $biomes/colors.yml:OVERGROWN_CLIFFS
 

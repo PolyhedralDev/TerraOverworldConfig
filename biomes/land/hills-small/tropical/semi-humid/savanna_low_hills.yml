@@ -1,6 +1,6 @@
 id: SAVANNA_LOW_HILLS
 type: BIOME
-extends: [ EQ_LAND, SAVANNA_HILLS ]
+extends: [ SAVANNA_HILLS ]
 color: $biomes/colors.yml:SAVANNA_LOW_HILLS
 
 tags:

@@ -1,6 +1,6 @@
 id: BIRCH_FLATS
 type: BIOME
-extends: [ EQ_LAND, BIRCH_FOREST_HILLS ]
+extends: [ BIRCH_FOREST_HILLS ]
 color: $biomes/colors.yml:BIRCH_FLATS
 
 tags:

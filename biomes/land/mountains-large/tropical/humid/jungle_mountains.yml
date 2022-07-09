@@ -1,6 +1,6 @@
 id: JUNGLE_MOUNTAINS
 type: BIOME
-extends: [ EQ_LAND, CARVING_LAND, BASE ]
+extends: [ EQ_MULTI_TERRACED_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:jungle
 color: $biomes/colors.yml:JUNGLE_MOUNTAINS
 

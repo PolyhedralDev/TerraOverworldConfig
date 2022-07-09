@@ -1,4 +1,4 @@
 id: SNOWY_TERRACED_MOUNTAINS
 type: BIOME
-extends: [ EQ_LAND, SNOWY_MOUNTAINS ]
+extends: [ SNOWY_MOUNTAINS ]
 color: $biomes/colors.yml:SNOWY_TERRACED_MOUNTAINS

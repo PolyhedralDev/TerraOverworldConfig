@@ -1,4 +1,4 @@
 id: XERIC_PLAINS
 type: BIOME
-extends: [ EQ_LAND, XERIC_HILLS ]
+extends: [ XERIC_HILLS ]
 color: $biomes/colors.yml:XERIC_PLAINS

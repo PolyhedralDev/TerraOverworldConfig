@@ -1,6 +1,6 @@
 id: PALM_FOREST
 type: BIOME
-extends: [ EQ_LAND, CARVING_OCEAN, BASE ]
+extends: [ EQ_MULTI_TERRACED_LAND, CARVING_OCEAN, BASE ]
 vanilla: minecraft:sparse_jungle
 color: $biomes/colors.yml:PALM_FOREST
 

@@ -1,6 +1,6 @@
 id: GRASS_SAVANNA_LOW_HILLS
 type: BIOME
-extends: [ EQ_LAND, GRASS_SAVANNA_HILLS ]
+extends: [ GRASS_SAVANNA_HILLS ]
 color: $biomes/colors.yml:GRASS_SAVANNA_LOW_HILLS
 
 tags:

@@ -1,6 +1,6 @@
 id: TUNDRA_MIDLANDS
 type: BIOME
-extends: [ EQ_LAND, TUNDRA_PLAINS ]
+extends: [ TUNDRA_PLAINS ]
 color: $biomes/colors.yml:TUNDRA_MIDLANDS
 
 tags:

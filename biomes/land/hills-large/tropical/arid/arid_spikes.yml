@@ -1,6 +1,6 @@
 id: ARID_SPIKES
 type: BIOME
-extends: [ COLOR_XERIC, EQ_LAND, CARVING_LAND, BASE ]
+extends: [ COLOR_XERIC, EQ_STRATIFIED_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:badlands
 color: $biomes/colors.yml:ARID_SPIKES
 

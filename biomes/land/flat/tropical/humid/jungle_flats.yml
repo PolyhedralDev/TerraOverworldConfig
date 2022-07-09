@@ -1,6 +1,6 @@
 id: JUNGLE_FLATS
 type: BIOME
-extends: [ EQ_LAND, JUNGLE ]
+extends: [ JUNGLE ]
 color: $biomes/colors.yml:JUNGLE_FLATS
 
 tags:

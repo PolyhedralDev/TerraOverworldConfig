@@ -1,6 +1,6 @@
 id: AUTUMNAL_FLATS
 type: BIOME
-extends: [ EQ_LAND, AUTUMNAL_FOREST_HILLS ]
+extends: [ AUTUMNAL_FOREST_HILLS ]
 color: $biomes/colors.yml:AUTUMNAL_FLATS
 
 tags:
