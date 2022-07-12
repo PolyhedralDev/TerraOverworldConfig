@@ -1,6 +1,6 @@
 id: MOUNTAINS
 type: BIOME
-extends: [ EQ_ERODED_MOUNTAINS, CARVING_LAND, BASE ]
+extends: [ EQ_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:jagged_peaks
 color: $biomes/colors.yml:MOUNTAINS
 

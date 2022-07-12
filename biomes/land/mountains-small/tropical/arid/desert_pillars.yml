@@ -1,6 +1,6 @@
 id: DESERT_PILLARS
 type: BIOME
-extends: [ COLOR_XERIC, EQ_ERODED_PILLARS, CARVING_OCEAN, BASE ]
+extends: [ COLOR_XERIC, EQ_STRATIFIED_LAND, CARVING_OCEAN, BASE ]
 vanilla: minecraft:badlands
 color: $biomes/colors.yml:DESERT_PILLARS
 

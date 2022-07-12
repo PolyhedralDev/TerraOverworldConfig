@@ -1,6 +1,6 @@
 id: TAIGA_FLATS
 type: BIOME
-extends: [ EQ_PLAIN, TAIGA ]
+extends: [ TAIGA ]
 color: $biomes/colors.yml:TAIGA_FLATS
 
 tags:

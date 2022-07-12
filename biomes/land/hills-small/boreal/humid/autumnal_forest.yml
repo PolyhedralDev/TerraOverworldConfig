@@ -1,6 +1,6 @@
 id: AUTUMNAL_FOREST
 type: BIOME
-extends: [ EQ_TERRACED_HILLS, AUTUMNAL_FOREST_HILLS ]
+extends: [ AUTUMNAL_FOREST_HILLS ]
 color: $biomes/colors.yml:AUTUMNAL_FOREST
 
 tags:

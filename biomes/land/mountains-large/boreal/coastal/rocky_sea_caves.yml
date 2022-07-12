@@ -1,6 +1,6 @@
 id: ROCKY_SEA_CAVES
 type: BIOME
-extends: [ EQ_SEA_CAVES, CARVING_OCEAN, BASE ]
+extends: [ EQ_COAST, CARVING_OCEAN, BASE ]
 vanilla: minecraft:beach
 color: $biomes/colors.yml:ROCKY_SEA_CAVES
 

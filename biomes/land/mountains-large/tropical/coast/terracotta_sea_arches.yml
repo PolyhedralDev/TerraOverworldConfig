@@ -1,6 +1,6 @@
 id: TERRACOTTA_SEA_ARCHES
 type: BIOME
-extends: [ EQ_SEA_ARCHES, CARVING_OCEAN, BASE ]
+extends: [ EQ_COAST, CARVING_OCEAN, BASE ]
 vanilla: minecraft:beach
 color: $biomes/colors.yml:TERRACOTTA_SEA_ARCHES
 

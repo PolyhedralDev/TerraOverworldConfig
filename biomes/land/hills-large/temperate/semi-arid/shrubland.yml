@@ -1,6 +1,6 @@
 id: SHRUBLAND
 type: BIOME
-extends: [ EQ_HILLS, CARVING_LAND, BASE ]
+extends: [ EQ_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:windswept_forest
 color: $biomes/colors.yml:SHRUBLAND
 

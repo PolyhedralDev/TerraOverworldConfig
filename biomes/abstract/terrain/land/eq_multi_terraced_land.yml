@@ -1,0 +1,83 @@
+id: EQ_MULTI_TERRACED_LAND
+type: BIOME
+abstract: true
+
+terrain:
+  sampler:
+    type: EXPRESSION
+    expression: -y+b
+    variables:
+      b: $meta.yml:terrain.base
+
+  sampler-2d:
+    type: EXPRESSION
+    expression: |
+      terraceParabolic(
+        terraceParabolic(
+          terraceParabolic(
+            combine(
+              combine(
+                globalHeightmap(x, z),
+                detailStart, 0,
+                detailEnd, detail(x, z) * detailFactor
+              ),
+              mountainPeakStart, 0,
+              mountainPeakEnd, mountainPeaks(x,z) * mountainPeakFactor
+            ) * scale,
+            10, terraceVariation(x, z)*1, 0, 1
+          ),
+          20, terraceVariation(x, z+1000)*2, 0, 1
+        ),
+        40, terraceVariation(x, z+2000)*3, 0, 1
+      ) + 20 // Add constant as terracing tends to shift terrain down
+    variables:
+      scale: $meta.yml:terrain.scale
+      detailFactor: 0.3
+      detailStart: 0.1
+      detailEnd: 0.4
+      mountainPeakStart: 0.3
+      mountainPeakEnd: 0.8
+      mountainPeakFactor: 0.1
+    samplers:
+      terraceVariation:
+        dimensions: 2
+        type: FBM
+        octaves: 3
+        lacunarity: 2
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.0008
+      detail:
+        dimensions: 2
+        type: FBM
+        octaves: 4
+        lacunarity: 2
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.003
+          salt: 5912
+      mountainPeaks:
+        dimensions: 2
+        type: DOMAIN_WARP
+        amplitude: 5
+        warp:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.03
+          salt: 812
+        sampler:
+          type: RIDGED
+          octaves: 2
+          sampler:
+            type: OPEN_SIMPLEX_2
+            frequency: 0.003
+            salt: 7129
+    functions:
+      combine:
+        arguments:
+          - x
+          - at
+          - a
+          - bt
+          - b
+        expression: x+lerp(x,at,a,bt,b)
+        functions: $math/functions/lerp.yml:functions

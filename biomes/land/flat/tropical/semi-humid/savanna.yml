@@ -1,6 +1,6 @@
 id: SAVANNA
 type: BIOME
-extends: [ EQ_PLAIN_PEAKS, SAVANNA_HILLS ]
+extends: [ SAVANNA_HILLS ]
 color: $biomes/colors.yml:SAVANNA
 
 tags:

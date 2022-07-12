@@ -1,6 +1,6 @@
 id: XERIC_MOUNTAINS
 type: BIOME
-extends: [ COLOR_XERIC, EQ_ERODED_MOUNTAINS, CARVING_LAND, BASE ]
+extends: [ COLOR_XERIC, EQ_STRATIFIED_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:desert
 color: $biomes/colors.yml:XERIC_MOUNTAINS
 

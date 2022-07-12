@@ -119,6 +119,7 @@ functions:
 
 samplers:
   "<<":
+    - math/samplers/terrain.yml:samplers
     - math/samplers/simplex.yml:samplers
 
 blend:
