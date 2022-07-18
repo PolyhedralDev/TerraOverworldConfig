@@ -20,4 +20,5 @@ do
 done
 if [[ $fail == true ]]; then
     echo -e $errors >&2
-    exit 1 fi
+    exit 1
+fi
