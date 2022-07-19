@@ -2,6 +2,7 @@ id: DRIPSTONE_CAVES
 type: BIOME
 extends: [ CAVE, BASE ]
 vanilla: minecraft:dripstone_caves
+color: $biomes/colors.yml:DRIPSTONE_CAVES
 
 palette:
   - DRIPSTONE_CAVES: 319
