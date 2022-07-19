@@ -2,6 +2,7 @@ id: DEEP_DARK
 type: BIOME
 extends: [ CAVE, BASE ]
 vanilla: minecraft:deep_dark
+color: $biomes/colors.yml:DEEP_DARK
 
 palette:
   - BLOCK:minecraft:stone: 319

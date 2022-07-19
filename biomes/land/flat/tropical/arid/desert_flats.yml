@@ -2,7 +2,7 @@ id: DESERT_FLATS
 type: BIOME
 extends: [ COLOR_XERIC, EQ_DESERT, CARVING_LAND, BASE ]
 vanilla: minecraft:desert
-color: $biomes/colors.yml:DESERT
+color: $biomes/colors.yml:DESERT_FLATS
 
 tags:
   - LAND_CAVES

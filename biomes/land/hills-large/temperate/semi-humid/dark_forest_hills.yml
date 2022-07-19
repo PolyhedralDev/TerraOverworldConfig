@@ -1,7 +1,7 @@
 id: DARK_FOREST_HILLS
 type: BIOME
 extends: [ EQ_HILLS, DARK_FOREST ]
-color: $biomes/colors.yml:DARK_FOREST
+color: $biomes/colors.yml:DARK_FOREST_HILLS
 
 tags:
   - LAND_CAVES
