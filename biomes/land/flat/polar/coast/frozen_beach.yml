@@ -1,6 +1,6 @@
 id: FROZEN_BEACH
 type: BIOME
-extends: [ COLOR_FROZEN, EQ_COAST, CARVING_OCEAN, BASE ]
+extends: [ COLOR_FROZEN, EQ_ERODED_COAST, CARVING_OCEAN, BASE ]
 vanilla: minecraft:beach
 color: $biomes/colors.yml:FROZEN_BEACH
 

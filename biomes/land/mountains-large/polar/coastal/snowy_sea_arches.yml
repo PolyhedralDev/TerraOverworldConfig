@@ -1,6 +1,6 @@
 id: SNOWY_SEA_ARCHES
 type: BIOME
-extends: [ RIVER_FROZEN, EQ_COAST, CARVING_OCEAN, BASE ]
+extends: [ RIVER_FROZEN, EQ_ERODED_COAST, CARVING_OCEAN, BASE ]
 vanilla: minecraft:snowy_beach
 color: $biomes/colors.yml:SNOWY_SEA_ARCHES
 
