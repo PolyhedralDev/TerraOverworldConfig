@@ -2,12 +2,16 @@ id: EQ_TERRACED_LAND
 type: BIOME
 abstract: true
 
+variables: &variables
+  base: $meta.yml:terrain.base
+  scale: $meta.yml:terrain.scale
+  
+
 terrain:
   sampler:
     type: EXPRESSION
-    expression: -y+b
-    variables:
-      b: $meta.yml:terrain.base
+    expression: -y + base
+    variables: *variables
 
   sampler-2d:
     type: EXPRESSION
@@ -17,8 +21,7 @@ terrain:
         40, 0.01, 0, 1
       ) +
       terraceOffset(x, z) * 5
-    variables:
-      scale: $meta.yml:terrain.scale
+    variables: *variables
     samplers:
       terraceOffset:
         dimensions: 2

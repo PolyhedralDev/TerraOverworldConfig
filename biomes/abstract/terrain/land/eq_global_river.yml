@@ -2,7 +2,7 @@ id: EQ_GLOBAL_RIVER
 type: BIOME
 abstract: true
 
-vars: &variables
+variables: &variables
   base: $meta.yml:terrain.base
   scale: $meta.yml:terrain.scale
 

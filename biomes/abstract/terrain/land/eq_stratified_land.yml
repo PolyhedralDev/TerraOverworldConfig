@@ -2,12 +2,16 @@ id: EQ_STRATIFIED_LAND
 type: BIOME
 abstract: true
 
+variables: &variables
+  base: $meta.yml:terrain.base
+  scale: $meta.yml:terrain.scale
+  
+
 terrain:
   sampler:
     type: EXPRESSION
-    expression: -y+b+10
-    variables:
-      b: $meta.yml:terrain.base
+    expression: -y + base + 10
+    variables: *variables
 
   sampler-2d:
     type: EXPRESSION
@@ -19,8 +23,7 @@ terrain:
           ,50, 0, 0, 0.1)
         ,30, 0, 0, 0.15)
       ,15, 0, 0, 0.2)
-    variables:
-      scale: $meta.yml:terrain.scale
+    variables: *variables
     samplers:
       heightmap:
         dimensions: 2

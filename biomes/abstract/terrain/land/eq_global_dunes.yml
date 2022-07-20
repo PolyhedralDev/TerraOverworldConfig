@@ -2,25 +2,26 @@ id: EQ_GLOBAL_DUNES
 type: BIOME
 abstract: true
 
+variables: &variables
+  base: $meta.yml:terrain.base
+  scale: $meta.yml:terrain.scale
+  
+  duneFactor: 0.07
+  duneStart: 0
+  duneEnd: 0.4
+  mountainPeakStart: 0.5
+  mountainPeakEnd: 0.8
+  mountainPeakFactor: 0.1
+  
+  duneSpacing: 7 # Higher number = more spacing between dunes
+  duneFrequency: 0.3 # Overall dune frequency
+  duneRotationRange: pi/3 # How much dune cells are randomly rotated, 0 = anisotrophic, pi = isotrophic
+
 terrain:
   sampler:
     type: EXPRESSION
     expression: -y + base
-    variables: &variables
-      
-      base: $meta.yml:terrain.base
-      scale: $meta.yml:terrain.scale
-      
-      duneFactor: 0.07
-      duneStart: 0
-      duneEnd: 0.4
-      mountainPeakStart: 0.3
-      mountainPeakEnd: 0.8
-      mountainPeakFactor: 0.1
-      
-      duneSpacing: 7 # Higher number = more spacing between dunes
-      duneFrequency: 0.3 # Overall dune frequency
-      duneRotationRange: pi/3 # How much dune cells are randomly rotated, 0 = anisotrophic, pi = isotrophic
+    variables: *variables
   
   sampler-2d:
     type: EXPRESSION

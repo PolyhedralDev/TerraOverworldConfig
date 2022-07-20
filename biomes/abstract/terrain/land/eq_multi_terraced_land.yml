@@ -2,12 +2,22 @@ id: EQ_MULTI_TERRACED_LAND
 type: BIOME
 abstract: true
 
+variables: &variables
+  base: $meta.yml:terrain.base
+  scale: $meta.yml:terrain.scale
+  
+  detailFactor: 0.3
+  detailStart: 0.1
+  detailEnd: 0.4
+  mountainPeakStart: 0.3
+  mountainPeakEnd: 0.8
+  mountainPeakFactor: 0.1
+
 terrain:
   sampler:
     type: EXPRESSION
-    expression: -y+b
-    variables:
-      b: $meta.yml:terrain.base
+    expression: -y + base
+    variables: *variables
 
   sampler-2d:
     type: EXPRESSION
@@ -24,29 +34,22 @@ terrain:
               mountainPeakStart, 0,
               mountainPeakEnd, mountainPeaks(x,z) * mountainPeakFactor
             ) * scale,
-            10, terraceVariation(x, z)*1, 0, 1
+            10, terraceVariation(x*2, z*2)*1, 0, 1
           ),
-          20, terraceVariation(x, z+1000)*2, 0, 1
+          20, terraceVariation(x*1.5, (z+1000)*1.5)*2, 0, 1
         ),
         40, terraceVariation(x, z+2000)*3, 0, 1
-      ) + 20 // Add constant as terracing tends to shift terrain down
-    variables:
-      scale: $meta.yml:terrain.scale
-      detailFactor: 0.3
-      detailStart: 0.1
-      detailEnd: 0.4
-      mountainPeakStart: 0.3
-      mountainPeakEnd: 0.8
-      mountainPeakFactor: 0.1
+      ) + 10 // Add constant as terracing tends to shift terrain down
+    variables: *variables
     samplers:
       terraceVariation:
         dimensions: 2
         type: FBM
         octaves: 3
-        lacunarity: 2
+        lacunarity: 2.5
         sampler:
           type: OPEN_SIMPLEX_2
-          frequency: 0.0008
+          frequency: 0.0015
       detail:
         dimensions: 2
         type: FBM
