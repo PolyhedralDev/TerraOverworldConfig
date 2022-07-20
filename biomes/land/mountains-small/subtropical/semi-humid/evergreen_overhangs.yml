@@ -1,6 +1,6 @@
 id: EVERGREEN_OVERHANGS
 type: BIOME
-extends: [ EQ_MULTI_TERRACED_LAND, CARVING_LAND, BASE ]
+extends: [ EQ_OVERHANGS, CARVING_LAND, BASE ]
 vanilla: minecraft:taiga # This is only so foxes will spawn
 color: $biomes/colors.yml:EVERGREEN_OVERHANGS
 
