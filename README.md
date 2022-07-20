@@ -45,18 +45,28 @@ You can find some easy to modify parameters in the [`meta.yml`](./meta.yml) file
 under `biome-distribution`, which control the scales of different areas of biome
 distribution.
 
-### How do I remove all oceans / all land / all hot biomes / etc?
+### How do I use a single biome or only frozen ones?
 
 This pack comes with several biome distribution presets, which can be chosen
-within the [`pack.yml`](./pack.yml) file. If none of these presets do exactly
-what you want, you can further modify biome distribution presets with alternate
-sources and stages. Check out the
+within the [`pack.yml`](./pack.yml) file.
+
+
+### How do I remove all oceans or all land?
+
+You can check out the
 [`biome-providers/presets/default.yml`](./biome-providers/presets/default.yml)
-config for these alternative sources and stages.
+config for these alternative sources.
+
+### How do I remove specific biomes?
+
+After deleting your desired biome file, you will need to work your way through
+the biome distribution files for pipeline stages listed in
+[`biome-providers/presets/default.yml`](./biome-providers/presets/default.yml)
+and remove any reference to the deleted biome.
 
 ### Where can I learn more about configuration?
 
 If you want more in-depth customization, or simply just want to know what makes
 this pack tick, you can check out the
 [config development](https://terra.polydev.org/config/development/index.html)
-section of the Terra wiki to learn more.
+section of the Terra Docs to learn more.
