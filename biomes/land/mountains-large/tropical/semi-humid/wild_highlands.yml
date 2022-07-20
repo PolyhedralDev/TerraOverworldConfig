@@ -9,8 +9,9 @@ palette:
   - SAND: 63
   - << meta.yml:palette-bottom
 
-colors:
-  grass: 0x44962b
+minecraft:
+  colors:
+    grass: 0x44962b
 
 slant:
   - threshold: 2.5

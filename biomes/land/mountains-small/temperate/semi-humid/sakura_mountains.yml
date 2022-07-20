@@ -4,5 +4,6 @@ extends: [ TEMPERATE_MOUNTAINS ]
 vanilla: minecraft:plains
 color: $biomes/colors.yml:SAKURA_MOUNTAINS
 
-colors:
-  foliage: 0xffb7c5
+minecraft:
+  colors:
+    foliage: 0xffb7c5

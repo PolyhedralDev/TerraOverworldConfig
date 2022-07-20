@@ -8,8 +8,9 @@ tags:
   - LAND_CAVES
   - USE_RIVER
 
-colors:
-  grass: 0xa1c342
+minecraft:
+  colors:
+    grass: 0xa1c342
 
 palette:
   - GRASS_VARIATION: 319

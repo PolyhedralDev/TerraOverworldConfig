@@ -15,11 +15,12 @@ slant:
       - BLOCK:minecraft:stone: 319
       - << meta.yml:palette-bottom
 
-colors:
-  grass: 0x8eb971
-  foliage: 0x71a74d
-  water: 0x0084ff
-  water-fog: 0x0084ff
+minecraft:
+  colors:
+    grass: 0x8eb971
+    foliage: 0x71a74d
+    water: 0x0084ff
+    water-fog: 0x0084ff
 
 features:
   flora:
