@@ -45,6 +45,8 @@ biomes: $biome-providers/presets/default.yml:biomes
 # Single biome - to change the single biome to use, check the configuration file.
 #biomes: $biome-providers/presets/single.yml:biomes
 
+# Frozen biomes - use only icy terrain.
+#biomes: $biome-providers/presets/frozen_world.yml:biomes
 
 
 # ---
