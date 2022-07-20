@@ -2,7 +2,7 @@ id: ERODED_BADLANDS_BUTTES
 type: BIOME
 extends: [ EQ_BUTTES, CARVING_LAND, BASE ]
 vanilla: minecraft:badlands
-color: $biomes/colors.yml:BADLANDS_BUTTES
+color: $biomes/colors.yml:ERODED_BADLANDS_BUTTES
 
 tags:
   - LAND_CAVES
