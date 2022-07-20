@@ -1,14 +1,27 @@
-name: CD
+name: CI
 
 on:
   push:
     branches:
       - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      
+      - name: Validate Biome Colors
+        run: bash ./.scripts/validate-biome-colors.sh
+  
   release:
     runs-on: ubuntu-latest
-    if: github.repository == 'PolyhedralDev/TerraOverworldConfig'
+    needs: validate
+    if: github.repository == 'PolyhedralDev/TerraOverworldConfig' && github.event_name == 'push'
 
     env:
       repo_url: ${{ github.server_url }}/${{ github.repository }}
@@ -22,9 +35,6 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: '2'
-
-      - name: Validate Biome Colors
-        run: bash ./.scripts/validate-biome-colors.sh
 
       - name: Check for version bump
         run: sh ./.scripts/check-version-bump.sh
