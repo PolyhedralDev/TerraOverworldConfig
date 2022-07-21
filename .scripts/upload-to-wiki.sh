@@ -14,6 +14,10 @@ echo "Setting up temporary repository in $WIKI_DIRECTORY..."
 cd $WIKI_DIRECTORY
 git init
 
+echo "Setting up authentication..."
+git config user.name $LOGIN_NAME
+git config user.email $LOGIN_EMAIL
+
 echo "Committing changes..."
 git add *
 git commit -m "GitHub Action Deployment"
