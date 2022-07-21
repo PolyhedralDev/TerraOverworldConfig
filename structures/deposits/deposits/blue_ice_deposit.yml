@@ -1,0 +1,9 @@
+id: BLUE_ICE_DEPOSIT
+type: ORE
+extends: ABSTRACT_DEPOSIT
+
+material: minecraft:blue_ice
+
+replace:
+  - minecraft:packed_ice
+
