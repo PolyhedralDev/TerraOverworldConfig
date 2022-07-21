@@ -91,6 +91,9 @@ jobs:
         uses: actions/checkout@v3
         with:
           submodules: recursive
+
+      - name: Create Biomes Wiki Page
+        run: bash ./.scripts/create-biomes-wiki-page.sh
     
       - name: Upload Documentation to Wiki
         run: sh ./.scripts/upload-to-wiki.sh
