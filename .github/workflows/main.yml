@@ -54,8 +54,8 @@ jobs:
         if: env.version-bumped == 'true'
         uses: EndBug/add-and-commit@v9
         with:
-          author_name: &polybotName Polyhedral-Bot
-          author_email: &polybotEmail polybot@protonmail.com
+          author_name: Polyhedral-Bot
+          author_email: polybot@protonmail.com
           message: Version ${{ env.version }}
           tag: v${{ env.version }} -F ${{ env.release_changelog }} --cleanup=verbatim
           add: CHANGELOG.md
@@ -95,6 +95,6 @@ jobs:
       - name: Upload Documentation to Wiki
         run: sh ./.scripts/upload-to-wiki.sh
         env:
-          LOGIN_NAME: *polybotName
-          LOGIN_EMAIL: *polybotEmail
+          LOGIN_NAME: Polyhedral-Bot
+          LOGIN_EMAIL: polybot@protonmail.com
           ACCESS_TOKEN: ${{ secrets.POLYBOT }}
