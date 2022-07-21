@@ -78,3 +78,21 @@ jobs:
           title: "Latest Build"
           files: |
             .artifacts/*
+
+  release-docs:
+    runs-on: ubuntu-latest
+    needs: release
+    env:
+      WIKI_DIRECTORY: .wiki # Contents of this directory get pushed to the wiki
+      WIKI_PARENT_REPOSITORY: ${{ github.repository }} # Where to publish to
+  
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+    
+      - name: Upload Documentation to Wiki
+        run: sh ./.scripts/upload-to-wiki.sh
+        env:
+          ACCESS_TOKEN: ${{ secrets.POLYBOT }}
