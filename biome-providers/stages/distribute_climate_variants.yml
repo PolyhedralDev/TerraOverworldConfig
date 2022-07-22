@@ -164,7 +164,7 @@ stages:
       
       deep-ocean-polar:
         - FROZEN_DEEP_OCEAN: 1
-        - GLACIER: 1
+        - ICEBERG_OCEAN: 1
 
       ocean-polar:
         - FROZEN_OCEAN: 1
