@@ -1,0 +1,38 @@
+id: DENSE_SUBTROPICAL_BUSHES
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 5
+  padding: 2
+  salt: 1776
+
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: 62
+        max: 319
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:plantable-blocks
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:snow
+          - minecraft:air
+        offset: 0
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures:
+    - oak_bush: 5
+    - azalea_bush: 1
