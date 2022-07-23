@@ -1,6 +1,6 @@
 id: LOW_CHAPARRAL
 type: BIOME
-extends: [ EQ_TERRACED_HILLS, CHAPARRAL ]
+extends: [ EQ_LAND, CHAPARRAL ]
 color: $biomes/colors.yml:LOW_CHAPARRAL
 
 tags:

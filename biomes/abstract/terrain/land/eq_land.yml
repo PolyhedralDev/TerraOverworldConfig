@@ -1,0 +1,112 @@
+id: EQ_LAND
+type: BIOME
+abstract: true
+
+vars: &variables
+  base: $meta.yml:terrain.base
+  scale: $meta.yml:terrain.scale
+  
+  detailFactor: 0.1
+  detailStart: 0
+  detailEnd: 0.5
+  mountainPeakStart: 0.5
+  mountainPeakEnd: 1
+  mountainPeakFactor: 0.2
+  
+  terraceBaseScale: 0.2
+  terraceScaleVariation: 0.1
+  terraceOffsetVariation: 1
+  terraceDepthVariation: 1
+
+terrain:
+  sampler:
+    type: EXPRESSION
+    expression: -y + base + lerp(overhangsMask(x, y, z), 0, 0, 1, overhangs(x, y*3, z) * 20)
+    variables: *variables
+    samplers:
+      overhangsMask:
+        dimensions: 3
+        type: OPEN_SIMPLEX_2
+        frequency: 0.002
+        salt: 8481
+      overhangs:
+        dimensions: 3
+        type: FBM
+        octaves: 3
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.01
+          salt: 4957
+
+  sampler-2d:
+    type: EXPRESSION
+    expression: |
+      scale *
+      (
+        terraceParalinear(
+          combine(
+            combine(
+              globalHeightmap(x, z),
+              detailStart, 0,
+              detailEnd, detail(x, z) * detailFactor
+            ),
+            mountainPeakStart, 0,
+            mountainPeakEnd, mountainPeaks(x,z) * mountainPeakFactor
+          ),
+          terraceBaseScale + terraceScale(x, z) * terraceScaleVariation,
+          terraceOffset(x, z) * terraceOffsetVariation,
+          0,
+          (terraceDepth(x, z)^3) * terraceDepthVariation
+        )
+      )
+    variables: *variables
+    samplers:
+      terraceScale:
+        dimensions: 2
+        type: OPEN_SIMPLEX_2
+        frequency: 0.002
+        salt: 1926
+      terraceDepth:
+        dimensions: 2
+        type: PROBABILITY
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.001
+          salt: 5812
+      terraceOffset:
+        dimensions: 2
+        type: OPEN_SIMPLEX_2
+        frequency: 0.001
+        salt: 8512
+      detail:
+        dimensions: 2
+        type: FBM
+        octaves: 4
+        lacunarity: 2
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.008
+          salt: 5912
+      mountainPeaks:
+        dimensions: 2
+        type: FBM
+        octaves: 3
+        sampler:
+          type: EXPRESSION
+          expression: (lerp(sampler(x, z), -1, 1, 1, -1)^4)*2-1
+          samplers:
+            sampler:
+              dimensions: 2
+              type: CELLULAR
+              distance: Euclidean
+              frequency: 0.01
+    functions:
+      combine: # Stacks a layer of noise on top scaled according to the base noise
+        arguments:
+          - x
+          - at
+          - a
+          - bt
+          - b
+        expression: x+lerp(x,at,a,bt,b)
+        functions: $math/functions/lerp.yml:functions

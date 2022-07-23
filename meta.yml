@@ -1,3 +1,6 @@
+terrain:
+  base: 65
+  scale: 240
 
 biome-distribution:
   # Biome distribution refers to the placement of biomes, this does *NOT*

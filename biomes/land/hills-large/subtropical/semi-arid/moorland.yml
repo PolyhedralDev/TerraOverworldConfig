@@ -1,6 +1,6 @@
 id: MOORLAND
 type: BIOME
-extends: [ EQ_HILLS, CARVING_LAND, BASE ]
+extends: [ EQ_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:plains
 color: $biomes/colors.yml:MOORLAND
 
@@ -8,11 +8,12 @@ tags:
   - LAND_CAVES
   - USE_RIVER
 
-colors:
-  grass: 0xb9d277
-  foliage: 0xcce66e
-  water: 0x2590a8
-  water-fog: 0x2590a8
+minecraft:
+  colors:
+    grass: 0xb9d277
+    foliage: 0xcce66e
+    water: 0x2590a8
+    water-fog: 0x2590a8
 
 palette:
   - GRASS_VARIATION: 319

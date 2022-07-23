@@ -1,6 +1,6 @@
 id: SHRUBLAND
 type: BIOME
-extends: [ EQ_HILLS, CARVING_LAND, BASE ]
+extends: [ EQ_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:windswept_forest
 color: $biomes/colors.yml:SHRUBLAND
 
@@ -8,11 +8,12 @@ tags:
   - LAND_CAVES
   - USE_RIVER
 
-colors:
-  grass: 0x90af3b
-  foliage: 0xacb840
-  water: 0x44aff5
-  water-fog: 0x44aff5
+minecraft:
+  colors:
+    grass: 0x90af3b
+    foliage: 0xacb840
+    water: 0x44aff5
+    water-fog: 0x44aff5
 
 palette:
   - GRASS_VARIATION: 319

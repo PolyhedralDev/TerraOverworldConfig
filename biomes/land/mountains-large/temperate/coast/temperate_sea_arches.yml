@@ -1,6 +1,6 @@
 id: TEMPERATE_SEA_ARCHES
 type: BIOME
-extends: [ EQ_SEA_ARCHES, CARVING_OCEAN, BASE ]
+extends: [ EQ_ERODED_COAST, CARVING_OCEAN, BASE ]
 vanilla: minecraft:beach
 color: $biomes/colors.yml:TEMPERATE_SEA_ARCHES
 

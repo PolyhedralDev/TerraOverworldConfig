@@ -3,6 +3,7 @@ type: BIOME
 extends: [ EQ_VOLCANO_PIT_EDGE, ACTIVE_VOLCANO_PIT ]
 color: $biomes/colors.yml:ACTIVE_VOLCANO_PIT_EDGE
 
-colors:
-  sky: 0x32444e
-  fog: 0xe79760
+minecraft:
+  colors:
+    sky: 0x32444e
+    fog: 0xe79760

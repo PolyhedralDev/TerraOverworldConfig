@@ -1,6 +1,6 @@
 id: DARK_FOREST
 type: BIOME
-extends: [ EQ_TERRACED_HILLS, CARVING_LAND, BASE ]
+extends: [ EQ_MULTI_TERRACED_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:dark_forest
 color: $biomes/colors.yml:DARK_FOREST
 

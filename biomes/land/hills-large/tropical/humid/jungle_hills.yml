@@ -1,14 +1,15 @@
 id: JUNGLE_HILLS
 type: BIOME
-extends: [ EQ_HILLS, CARVING_LAND, BASE ]
+extends: [ EQ_MULTI_TERRACED_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:jungle
 color: $biomes/colors.yml:JUNGLE_HILLS
 
-colors:
-  grass: 0x59c93c
-  foliage: 0x30bb0b
-  water: 0x14a2c5
-  water-fog: 0x14a2c5
+minecraft:
+  colors:
+    grass: 0x59c93c
+    foliage: 0x30bb0b
+    water: 0x14a2c5
+    water-fog: 0x14a2c5
 
 tags:
   - LAND_CAVES

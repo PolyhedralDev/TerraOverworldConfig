@@ -1,6 +1,6 @@
 id: BIRCH_FOREST_HILLS
 type: BIOME
-extends: [ EQ_HILLS, CARVING_LAND, BASE ]
+extends: [ EQ_MULTI_TERRACED_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:birch_forest
 color: $biomes/colors.yml:BIRCH_FOREST_HILLS
 
@@ -8,11 +8,12 @@ tags:
   - LAND_CAVES
   - USE_RIVER
 
-colors:
-  grass: 0x88bb67
-  foliage: 0x6ba941
-  water: 0x0677ce
-  water-fog: 0x0677ce
+minecraft:
+  colors:
+    grass: 0x88bb67
+    foliage: 0x6ba941
+    water: 0x0677ce
+    water-fog: 0x0677ce
 
 palette:
   - GRASS: 319

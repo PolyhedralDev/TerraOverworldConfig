@@ -8,11 +8,12 @@ tags:
   - LAND_CAVES
   - USE_RIVER_TEMPERATE_SWAMP
 
-colors:
-  grass: 0x4C763C
-  foliage: 0x6A7039
-  water: 0x4C6559
-  water-fog: 0x232317
+minecraft:
+  colors:
+    grass: 0x4C763C
+    foliage: 0x6A7039
+    water: 0x4C6559
+    water-fog: 0x232317
 
 palette:
   - BAMBOO_PONDS_WATER: 319

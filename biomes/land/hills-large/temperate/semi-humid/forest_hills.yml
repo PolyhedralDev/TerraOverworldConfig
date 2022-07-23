@@ -1,6 +1,6 @@
 id: FOREST_HILLS
 type: BIOME
-extends: [ EQ_HILLS, CARVING_LAND, BASE ]
+extends: [ EQ_MULTI_TERRACED_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:forest
 color: $biomes/colors.yml:FOREST_HILLS
 
@@ -8,11 +8,12 @@ tags:
   - LAND_CAVES
   - USE_RIVER
 
-colors:
-  grass: 0x79c05a
-  foliage: 0x59ae30
-  water: 0x1e97f2
-  water-fog: 0x1e97f2
+minecraft:
+  colors:
+    grass: 0x79c05a
+    foliage: 0x59ae30
+    water: 0x1e97f2
+    water-fog: 0x1e97f2
 
 palette:
   - GRASS: 319

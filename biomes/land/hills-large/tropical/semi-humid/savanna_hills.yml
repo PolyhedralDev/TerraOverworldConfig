@@ -1,14 +1,15 @@
 id: SAVANNA_HILLS
 type: BIOME
-extends: [ EQ_HILLS, CARVING_LAND, BASE ]
+extends: [ EQ_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:savanna
 color: $biomes/colors.yml:SAVANNA_HILLS
 
-colors:
-  grass: 0xb5cc47
-  foliage: 0xaea42a
-  water: 0x2C8b9c
-  water-fog: 0x2C8b9c
+minecraft:
+  colors:
+    grass: 0xb5cc47
+    foliage: 0xaea42a
+    water: 0x2C8b9c
+    water-fog: 0x2C8b9c
 
 tags:
   - LAND_CAVES

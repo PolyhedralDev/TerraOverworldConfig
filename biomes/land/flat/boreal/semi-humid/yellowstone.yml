@@ -1,6 +1,6 @@
 id: YELLOWSTONE
 type: BIOME
-extends: [ EQ_PONDS, CARVING_LAND, BASE ]
+extends: [ EQ_MULTI_TERRACED_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:taiga
 color: $biomes/colors.yml:YELLOWSTONE
 
@@ -8,11 +8,12 @@ tags:
   - LAND_CAVES
   - USE_RIVER_TEMPERATE_MARSH
 
-colors:
-  grass: 0x91bd59
-  foliage: 0x77ab2f
-  water: 0x44aff5
-  water-fog: 0x44aff5
+minecraft:
+  colors:
+    grass: 0x91bd59
+    foliage: 0x77ab2f
+    water: 0x44aff5
+    water-fog: 0x44aff5
 
 palette:
   - YELLOWSTONE_WATER: 319

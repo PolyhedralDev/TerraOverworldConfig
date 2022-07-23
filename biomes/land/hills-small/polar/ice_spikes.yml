@@ -1,6 +1,6 @@
 id: ICE_SPIKES
 type: BIOME
-extends: [ COLOR_FROZEN, EQ_TERRACED_HILLS, SNOWY_PLAINS ]
+extends: [ COLOR_FROZEN, EQ_MULTI_TERRACED_LAND, SNOWY_PLAINS ]
 color: $biomes/colors.yml:ICE_SPIKES
 
 tags:

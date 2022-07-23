@@ -1,6 +1,6 @@
 id: REDWOOD_FOREST_HILLS
 type: BIOME
-extends: [ EQ_HILLS, CARVING_LAND, BASE ]
+extends: [ EQ_MULTI_TERRACED_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:taiga
 color: $biomes/colors.yml:REDWOOD_FOREST_HILLS
 
@@ -8,11 +8,12 @@ tags:
   - LAND_CAVES
   - USE_RIVER
 
-colors:
-  grass: 0x86b783
-  foliage: 0x68a464
-  water: 0x287082
-  water-fog: 0x287082
+minecraft:
+  colors:
+    grass: 0x86b783
+    foliage: 0x68a464
+    water: 0x287082
+    water-fog: 0x287082
 
 palette:
   - GRASS_PODZOL: 319

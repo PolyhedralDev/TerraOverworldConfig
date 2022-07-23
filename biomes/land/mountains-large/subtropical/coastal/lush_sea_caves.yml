@@ -1,6 +1,6 @@
 id: LUSH_SEA_CAVES
 type: BIOME
-extends: [ EQ_SEA_CAVES, CARVING_OCEAN, BASE ]
+extends: [ EQ_ERODED_COAST, CARVING_OCEAN, BASE ]
 vanilla: minecraft:beach
 color: $biomes/colors.yml:LUSH_SEA_CAVES
 

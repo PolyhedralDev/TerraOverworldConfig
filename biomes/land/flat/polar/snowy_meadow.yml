@@ -1,6 +1,6 @@
 id: SNOWY_MEADOW
 type: BIOME
-extends: [ COLOR_FROZEN, EQ_PLAIN, CARVING_LAND, BASE ]
+extends: [ COLOR_FROZEN, EQ_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:snowy_plains
 color: $biomes/colors.yml:SNOWY_MEADOW
 

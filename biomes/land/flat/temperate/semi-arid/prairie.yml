@@ -1,6 +1,6 @@
 id: PRAIRIE
 type: BIOME
-extends: [ EQ_PLAIN, CARVING_LAND, BASE ]
+extends: [ EQ_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:plains
 color: $biomes/colors.yml:PRAIRIE
 
@@ -8,11 +8,12 @@ tags:
   - LAND_CAVES
   - USE_RIVER_TEMPERATE_MARSH
 
-colors:
-  grass: 0x72b95d
-  foliage: 0x5dae53
-  water: 0x44aff5
-  water-fog: 0x44aff5
+minecraft:
+  colors:
+    grass: 0x72b95d
+    foliage: 0x5dae53
+    water: 0x44aff5
+    water-fog: 0x44aff5
 
 palette:
   - GRASS: 319

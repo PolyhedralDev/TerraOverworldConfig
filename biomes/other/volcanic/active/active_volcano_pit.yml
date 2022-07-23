@@ -4,9 +4,10 @@ extends: [ EQ_VOLCANO_PIT, CARVING_OCEAN, BASE ]
 vanilla: minecraft:badlands
 color: $biomes/colors.yml:ACTIVE_VOLCANO_PIT
 
-colors:
-  sky: 0x154249
-  fog: 0xe7702d
+minecraft:
+  colors:
+    sky: 0x154249
+    fog: 0xe7702d
 
 palette:
   - LAVA_CRACKS: 319

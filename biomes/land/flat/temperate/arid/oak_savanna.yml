@@ -1,6 +1,6 @@
 id: OAK_SAVANNA
 type: BIOME
-extends: [ EQ_PLAIN_PEAKS, CARVING_LAND, BASE ]
+extends: [ EQ_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:plains
 color: $biomes/colors.yml:OAK_SAVANNA
 
@@ -8,11 +8,12 @@ tags:
   - LAND_CAVES
   - USE_RIVER_TEMPERATE_MARSH
 
-colors:
-  grass: 0x88be56
-  foliage: 0x96d937
-  water: 0x44aff5
-  water-fog: 0x44aff5
+minecraft:
+  colors:
+    grass: 0x88be56
+    foliage: 0x96d937
+    water: 0x44aff5
+    water-fog: 0x44aff5
 
 palette:
   - GRASS_VARIATION: 319

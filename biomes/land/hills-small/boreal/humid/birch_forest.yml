@@ -1,6 +1,6 @@
 id: BIRCH_FOREST
 type: BIOME
-extends: [ EQ_TERRACED_HILLS, BIRCH_FOREST_HILLS ]
+extends: [ BIRCH_FOREST_HILLS ]
 color: $biomes/colors.yml:BIRCH_FOREST
 
 tags:

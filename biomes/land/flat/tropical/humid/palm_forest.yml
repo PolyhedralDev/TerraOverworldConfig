@@ -1,6 +1,6 @@
 id: PALM_FOREST
 type: BIOME
-extends: [ EQ_PLAIN_PEAKS, CARVING_OCEAN, BASE ]
+extends: [ EQ_MULTI_TERRACED_LAND, CARVING_OCEAN, BASE ]
 vanilla: minecraft:sparse_jungle
 color: $biomes/colors.yml:PALM_FOREST
 
@@ -8,11 +8,12 @@ tags:
   - LAND_CAVES
   - USE_RIVER_TEMPERATE_SWAMP
 
-colors:
-  grass: 0x88bd59
-  foliage: 0x73c441
-  water: 0x44aff5
-  water-fog: 0x44aff5
+minecraft:
+  colors:
+    grass: 0x88bd59
+    foliage: 0x73c441
+    water: 0x44aff5
+    water-fog: 0x44aff5
 
 palette:
   - BLOCK:minecraft:stone: 319

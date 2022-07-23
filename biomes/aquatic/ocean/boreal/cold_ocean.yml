@@ -4,8 +4,9 @@ extends: [ PALETTE_OCEAN, EQ_OCEAN, CARVING_OCEAN, BASE ]
 vanilla: minecraft:cold_ocean
 color: $biomes/colors.yml:COLD_OCEAN
 
-colors:
-  grass: 0x8eb971
-  foliage: 0x71a74d
-  water: 0x2080c9
-  water-fog: 0x14559b
+minecraft:
+  colors:
+    grass: 0x8eb971
+    foliage: 0x71a74d
+    water: 0x2080c9
+    water-fog: 0x14559b
