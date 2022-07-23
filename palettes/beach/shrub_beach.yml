@@ -4,7 +4,7 @@ type: PALETTE
 layers:
   - materials:
       - minecraft:sand: 6
-      - minecraft:grass: 2
+      - minecraft:grass_block: 2
     layers: 3
   - materials:
       - minecraft:sand: 8
