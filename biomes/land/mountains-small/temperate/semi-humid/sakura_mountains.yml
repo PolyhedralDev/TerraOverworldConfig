@@ -6,3 +6,9 @@ color: $biomes/colors.yml:SAKURA_MOUNTAINS
 
 colors:
   foliage: 0xffb7c5
+
+features:
+  flora:
+    - GRASS
+  trees:
+    - DARK_OAK_TREES
