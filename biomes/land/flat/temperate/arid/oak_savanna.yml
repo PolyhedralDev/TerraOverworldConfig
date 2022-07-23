@@ -9,7 +9,7 @@ tags:
   - USE_RIVER_TEMPERATE_MARSH
 
 colors:
-  grass: 0x88be56
+  grass: 0xdff08d
   foliage: 0x96d937
   water: 0x44aff5
   water-fog: 0x44aff5

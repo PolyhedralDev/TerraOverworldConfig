@@ -1,0 +1,8 @@
+id: XEROPHYTIC_FOREST
+type: BIOME
+extends: [ EQ_PLAIN, DRY_ROCKY_BUMPY_MOUNTAINS ]
+color: $biomes/colors.yml:XEROPHYTIC_FOREST
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER

@@ -41,16 +41,20 @@ generate in an area where it previously did not (resulting in a chunk border).
 
 ## [Unreleased]
 ### Added
-
+- Added Shrub Beaches.
+- Added Xerophytic Forests.
+- Added Iceberg Oceans.
+- Added wheat crops to Prairies.
+- Added iceberg feature.
 
 ### Changed
-
-
-### Removed
-
+- Sakura Mountains now contain features from Dark Oak Forests.
+- Evergreen Overhangs now generate as an Evergreen variant.
+- Dry Rocky Bumpy Mountains now uses it's own grass and foliage color.
 
 ### Fixed
-
+- Evergreen biomes generating adjacent to Savanna biomes.
+- Prairies and Oak Savannas using incorrect biome colors.
 
 ## [v1.2.0]
 ### Added

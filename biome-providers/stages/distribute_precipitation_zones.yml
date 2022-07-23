@@ -33,8 +33,8 @@ stages:
   # -------------
   # Flat Tropical Semi-Humid
   # -------------
-      - GRASS_SAVANNA: 1
-      - SAVANNA: 1
+      - GRASS_SAVANNA: 2
+      - SAVANNA: 2
   # -------------
   # Flat Tropical Semi-Arid
   # -------------
@@ -51,19 +51,19 @@ stages:
     to:
       flat-subtropical:
     # -------------
-    # Flat Subtropical Semi Humid
-    # -------------
-        - evergreen-flats-variants: 7
-    # -------------
     # Flat Subtropical Semi-Arid
     # -------------
         - CHAPARRAL_FLATS: 3
+    # -------------
     # -------------
     # Flat Subtropical Arid
     # -------------
         - XERIC_PLAINS: 5
 
       flat-temperate:
+    # Flat Subtropical Extra-Humid
+    # -------------
+        - evergreen-forest-variants: 3
     # -------------
     # Flat Temperate Humid
     # -------------
@@ -124,17 +124,18 @@ stages:
         # -------------
         # Small Hills Subtropical Semi Humid
         # -------------
-        - evergreen-forest-variants: 5
-        # -------------
-        # Small Hills Subtropical Semi-Arid
-        # -------------
-        - LOW_CHAPARRAL: 4
+        - LOW_CHAPARRAL: 2
+        - XEROPHYTIC_FOREST: 5
         # -------------
         # Small Hills Subtropical Arid
         # -------------
         - XERIC_LOW_HILLS: 5
 
       hills-small-temperate:
+        # -------------
+        # Small Hills Temperate Humid
+        # -------------
+        - evergreen-forest-variants: 3
         # -------------
         # Small Hills Temperate Semi-Humid
         # -------------
@@ -184,19 +185,20 @@ stages:
         # -------------
         - RAINFOREST_HILLS: 5
         # -------------
-        # Large Hills Subtropical Semi-Humid
-        # -------------
-        - EVERGREEN_FOREST_HILLS: 6
-        # -------------
         # Large Hills Subtropical Semi-Arid
         # -------------
-        - MOORLAND: 2
+        - XEROPHYTIC_FOREST_HILLS: 6
+        - MOORLAND: 3
         # -------------
         # Large Hills Subtropical Arid
         # -------------
         - XERIC_HILLS: 5
 
       hills-large-temperate:
+        # -------------
+        # Large Hills Temperate Humid
+        # -------------
+        - EVERGREEN_FOREST_HILLS: 4
         # -------------
         # Large Hills Temperate Semi-Humid
         # -------------

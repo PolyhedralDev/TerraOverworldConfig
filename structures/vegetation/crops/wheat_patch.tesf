@@ -1,0 +1,18 @@
+num count = 6 + randomInt(10); // 4-12
+
+for (num p = 0; p < count; p = p + 1) {
+
+  num theta = randomInt(360) * 3.14159/180; // Pick random angle
+  num r = 5 - randomInt(randomInt(6) + 1);  // Pick random distance
+                                            // Accounts for radial distribution favoring the center
+  num x = cos(theta) * r;
+  num z = sin(theta) * r;
+
+  // Check from top downwards for valid spawn
+  num y = 4;
+  while (!structure(x, y, z, "plantable", "NONE")) {
+    y = y - 1;
+    if (y < -4) fail;
+  }
+  block(x, y, z, "minecraft:wheat[age=7]");
+}
