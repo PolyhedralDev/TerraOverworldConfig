@@ -33,8 +33,8 @@ stages:
   # -------------
   # Flat Tropical Semi-Humid
   # -------------
-      - GRASS_SAVANNA: 1
-      - SAVANNA: 1
+      - GRASS_SAVANNA: 2
+      - SAVANNA: 2
   # -------------
   # Flat Tropical Semi-Arid
   # -------------
