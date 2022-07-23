@@ -4,6 +4,11 @@ extends: [ EQ_BUMPY_MOUNTAINS, CARVING_LAND, BASE ]
 vanilla: minecraft:savanna
 color: $biomes/colors.yml:DRY_ROCKY_BUMPY_MOUNTAINS
 
+colors:
+  grass: 0x99be4c
+  foliage: 0x6fb01b
+
+
 tags:
   - LAND_CAVES
   - USE_RIVER
