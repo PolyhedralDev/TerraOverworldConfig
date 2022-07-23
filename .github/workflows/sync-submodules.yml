@@ -1,0 +1,27 @@
+name: Sync Submodules
+
+on:
+  repository_dispatch: # Submodules dispatch to this when they're updated
+    types: 
+      - Sync Images
+ 
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.POLYBOT }}
+          submodules: recursive
+
+      - name: Update submodules
+        run: |
+          git pull --recurse-submodules
+          git submodule update --remote --recursive 
+      - name: Commit updated submodules
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: Update submodules
+          add: "*"
+

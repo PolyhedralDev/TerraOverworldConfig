@@ -1,0 +1,46 @@
+num randPrecision = 100;
+num radius = 2+randomInt(randPrecision)/randPrecision*6;
+num warp = 5;
+num warpFreq = 8;
+// Randomize iceberg x,y,z 
+num xRand = 1+randomInt(3);
+num yRand = 1+randomInt(6);
+num zRand = 1+randomInt(3);
+num radiusSquared = pow(radius,2);
+num yTranslate = 1;
+
+for (num x = -radius-warp-xRand; x < radius+warp+xRand; x = x + 1) {
+    for (num y = (-radius-(warp*yRand)); y < (radius+(warp*yRand)); y = y + 1) {
+        for (num z = -radius-warp-zRand; z < radius+warp+zRand; z = z + 1) {
+            num warpX = warp * sampler("simplex3",
+                                warpFreq*(x+originX()),
+                                warpFreq*(y+originY()+1000),
+                                warpFreq*(z+originZ()));
+            num warpY = warp * sampler("simplex3",
+                                warpFreq*(x+originX()),
+                                warpFreq*(y+originY()+2000),
+                                warpFreq*(z+originZ()));
+            num warpZ = warp * sampler("simplex3",
+                                warpFreq*(x+originX()),
+                                warpFreq*(y+originY()+3000),
+                                warpFreq*(z+originZ()));
+
+            // Iceberg equation
+            num size = (pow(x+warpX,2)/xRand)+(pow((y+warpY),2)/yRand)+(pow(z+warpZ,2)/zRand);
+
+            // Places iceberg blocks if within range
+            if ( size < radiusSquared ) {
+                block(x, y+yTranslate, z,"minecraft:packed_ice");
+
+                // Places snow aroundish top
+                if ( (size) >= (radiusSquared-size) && (y > (6+randomInt(3))) ) {
+                    block(x, y+yTranslate, z,"minecraft:snow_block");
+                // Places blue ice aroundish bottom
+                } else if ( (size) >= (radiusSquared-size) && (y < -(5+randomInt(3))) ) {
+                    block(x, y+yTranslate, z,"minecraft:blue_ice");
+                } 
+            } 
+        }
+    }
+}
+

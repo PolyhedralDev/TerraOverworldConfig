@@ -1,0 +1,17 @@
+id: ICEBERG_OCEAN
+type: BIOME
+extends: [ COLOR_FROZEN, PALETTE_OCEAN, EQ_DEEP_OCEAN, CARVING_OCEAN, BASE ]
+vanilla: minecraft:deep_frozen_ocean
+color: $biomes/colors.yml:ICEBERG_OCEAN
+
+ocean:
+  palette: FROZEN_OCEAN
+
+features:
+  landforms: 
+    - ICEBERGS
+  slabs:
+    - ICEBERG_SNOW_LAYERS
+  preprocessors:
+    - BLUE_ICE_DEPOSITS
+    

@@ -1,0 +1,6 @@
+id: ICEBERG_SNOW_LAYERS
+type: FEATURE
+extends: SLABS
+
+structures:
+  structures: iceberg_snow_layers
