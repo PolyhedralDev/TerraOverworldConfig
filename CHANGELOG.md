@@ -39,7 +39,7 @@ generate in an area where it previously did not (resulting in a chunk border).
 
 ---
 
-## [Unreleased v1.3.0]
+## [Unreleased]
 ### Added
 - Added Shrub Beaches.
 - Added Xerophytic Forests.
