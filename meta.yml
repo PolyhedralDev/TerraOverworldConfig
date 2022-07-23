@@ -15,13 +15,13 @@ biome-distribution:
   # decreasing it.
   # Default: 100
 
-  temperature-scale: 50
+  temperature-scale: 60
   # Controls the scale of temperature zones. Most biomes are placed according to
   # a temperature map so hot biomes can't generate next to cold biomes, as well as
   # allowing for biomes of similar temperatures to generate together. Increasing this
   # will increase the distance between temperature changes, which results in things like
   # hot and cold biomes generating further apart - and vice versa when decreasing it.
-  # Default: 50
+  # Default: 60
 
   precipitation-scale: 50
   # Controls the scale of precipitation zones. Same idea as temperature zones, where
@@ -29,7 +29,7 @@ biome-distribution:
   # generate together.
   # Default: 50
   
-  elevation-scale: 40
+  elevation-scale: 35
   # Controls the scale of elevation zones. Most land biomes belong to
   # an elevation zone, in addition to temperature and precipitation. How far apart / close
   # together these elevation zones are is determined by this parameter. If you want more
@@ -37,7 +37,7 @@ biome-distribution:
   # Conversely, if you want more sudden changes in elevation, you can decrease this.
   # Note - This does not affect how tall the terrain is in individual biomes, just the
   #        elevation map that distributes biomes of similar elevation together!
-  # Default: 40
+  # Default: 35
 
   variation-scale: 60
   # Controls biome variations within each temperature + precipitation + elevation zone.
@@ -55,10 +55,10 @@ biome-distribution:
   # rivers, smaller scale = closer packed together rivers.
   # Default: 10
 
-  volcano-spread: 200
+  volcano-spread: 150
   # Controls how far / close together volcanoes are, larger scale = volcanoes that generate
   # further apart, smaller scale = more packed together volcanoes.
-  # Default: 200
+  # Default: 150
 
   volcano-radius: 5
   # Controls the radius of all volcanoes, decreasing this too much can result in some
