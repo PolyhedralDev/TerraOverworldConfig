@@ -1,4 +1,0 @@
-id: XERIC_PLAINS
-type: BIOME
-extends: [ XERIC_HILLS ]
-color: $biomes/colors.yml:XERIC_PLAINS

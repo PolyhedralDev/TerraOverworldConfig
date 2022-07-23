@@ -1,8 +1,0 @@
-id: TUNDRA_MIDLANDS
-type: BIOME
-extends: [ TUNDRA_PLAINS ]
-color: $biomes/colors.yml:TUNDRA_MIDLANDS
-
-tags:
-  - LAND_CAVES
-  - USE_FROZEN_RIVER_FROZEN_MARSH

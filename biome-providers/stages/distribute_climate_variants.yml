@@ -33,12 +33,12 @@ stages:
         - MANGROVE_SWAMP: 1
       
       coast-hills-small-tropical:
-        - SANDSTONE_WETLANDS: 1
+        - SANDSTONE_ARCHIPELAGO: 1
         - SANDSTONE_ARCHIPELAGO: 1
         - MANGROVE_SWAMP: 1
       
       coast-hills-large-tropical:
-        - SANDSTONE_WETLANDS: 1
+        - SANDSTONE_ARCHIPELAGO: 1
         - SANDSTONE_ARCHIPELAGO: 1
       
       coast-mountains-small-tropical-humid:
@@ -54,10 +54,10 @@ stages:
         - TEMPERATE_SEA_ARCHES: 1
       
       coast-mountains-large-tropical:
-        - ROCKY_SEA_ARCHES: 1
+        - ROCKY_SEA_CAVES: 1
       
       coast-mountains-large-tropical-arid:
-        - TERRACOTTA_SEA_ARCHES: 1
+        - TERRACOTTA_SEA_CAVES: 1
       
       # ------------------
       # Subtropical Biomes
@@ -78,12 +78,12 @@ stages:
         - MANGROVE_SWAMP: 1
       
       coast-hills-small-subtropical:
-        - WETLANDS: 1
+        - ARCHIPELAGO: 1
         - ARCHIPELAGO: 1
         - MANGROVE_SWAMP: 1
       
       coast-hills-large-subtropical:
-        - WETLANDS: 1
+        - ARCHIPELAGO: 1
         - ARCHIPELAGO: 1
       
       coast-mountains-small-subtropical:
@@ -110,11 +110,11 @@ stages:
         - SHALE_BEACH: 1
       
       coast-hills-small-temperate:
-        - WETLANDS: 1
+        - ARCHIPELAGO: 1
         - ARCHIPELAGO: 1
       
       coast-hills-large-temperate:
-        - WETLANDS: 1
+        - ARCHIPELAGO: 1
         - ARCHIPELAGO: 1
       
       coast-mountains-small-temperate:
@@ -143,18 +143,18 @@ stages:
         - BEACH: 1
       
       coast-hills-small-boreal:
-        - ROCKY_WETLANDS: 1
+        - ROCKY_ARCHIPELAGO: 1
         - ROCKY_ARCHIPELAGO: 1
       
       coast-hills-large-boreal:
-        - ROCKY_WETLANDS: 1
+        - ROCKY_ARCHIPELAGO: 1
         - ROCKY_ARCHIPELAGO: 1
       
       coast-mountains-small-boreal:
         - ROCKY_SEA_CAVES: 1
       
       coast-mountains-large-boreal:
-        - ROCKY_SEA_ARCHES: 1
+        - ROCKY_SEA_CAVES: 1
   
       # ------------
       # Polar Biomes
@@ -174,18 +174,18 @@ stages:
         - FROZEN_BEACH: 1
       
       coast-hills-small-polar:
-        - FROZEN_WETLANDS: 1
+        - FROZEN_ARCHIPELAGO: 1
         - FROZEN_ARCHIPELAGO: 1
 
       coast-hills-large-polar:
-        - FROZEN_WETLANDS: 1
+        - FROZEN_ARCHIPELAGO: 1
         - FROZEN_ARCHIPELAGO: 1
 
       coast-mountains-small-polar:
         - SNOWY_SEA_CAVES: 1
       
       coast-mountains-large-polar:
-        - SNOWY_SEA_ARCHES: 1
+        - SNOWY_SEA_CAVES: 1
       
       # Polar Land
       
@@ -196,14 +196,14 @@ stages:
       
       hills-small-polar:
         - ICE_SPIKES: 1
-        - TUNDRA_MIDLANDS: 3
+        - TUNDRA_PLAINS: 3
       
       hills-large-polar:
-        - TUNDRA_HILLS: 1
+        - TUNDRA_PLAINS: 1
       
       mountains-small-polar:
         - SNOWY_MOUNTAINS: 1
-        - SNOWY_ERODED_TERRACED_MOUNTAINS: 1
+        - SNOWY_MOUNTAINS: 1
       
       mountains-large-polar:
-        - SNOWY_TERRACED_MOUNTAINS: 1
+        - SNOWY_MOUNTAINS: 1

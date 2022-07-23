@@ -33,16 +33,16 @@ stages:
   # -------------
   # Flat Tropical Semi-Humid
   # -------------
-      - GRASS_SAVANNA: 1
-      - SAVANNA: 1
+      - GRASS_SAVANNA_HILLS: 1
+      - SAVANNA_HILLS: 1
   # -------------
   # Flat Tropical Semi-Arid
   # -------------
-      - CHAPARRAL_FLATS: 1
+      - CHAPARRAL: 1
   # -------------
   # Flat Tropical Semi-Arid
   # -------------
-      - XERIC_PLAINS: 3
+      - XERIC_HILLS: 3
   # -------------
   # Flat Tropical Arid
   # -------------
@@ -57,17 +57,17 @@ stages:
     # -------------
     # Flat Subtropical Semi-Arid
     # -------------
-        - CHAPARRAL_FLATS: 3
+        - CHAPARRAL: 3
     # -------------
     # Flat Subtropical Arid
     # -------------
-        - XERIC_PLAINS: 5
+        - XERIC_HILLS: 5
 
       flat-temperate:
     # -------------
     # Flat Temperate Humid
     # -------------
-        - FOREST_FLATS: 5
+        - FOREST_HILLS: 5
     # -------------
     # Flat Temperate Semi-Humid
     # -------------
@@ -90,7 +90,7 @@ stages:
     # -------------
     # Flat Boreal Semi-Humid (Dryer Forests)
     # -------------
-        - TAIGA_FLATS: 5
+        - TAIGA_HILLS: 5
 
     # --------------------------------------------
     #               Small Hills Biomes
@@ -105,12 +105,12 @@ stages:
         # -------------
         # Small Hills Tropical Semi-Humid
         # -------------
-        - GRASS_SAVANNA_LOW_HILLS: 2
-        - SAVANNA_LOW_HILLS: 2
+        - GRASS_SAVANNA_HILLS: 2
+        - SAVANNA_HILLS: 2
         # -------------
         # Small Hills Tropical Semi-Arid
         # -------------
-        - LOW_CHAPARRAL: 3
+        - CHAPARRAL: 3
         # -------------
         # Small Hills Tropical Arid
         # -------------
@@ -120,7 +120,7 @@ stages:
         # -------------
         # Small Hills Subtropical Humid
         # -------------
-        - RAINFOREST: 5
+        - RAINFOREST_HILLS: 5
         # -------------
         # Small Hills Subtropical Semi Humid
         # -------------
@@ -128,18 +128,18 @@ stages:
         # -------------
         # Small Hills Subtropical Semi-Arid
         # -------------
-        - LOW_CHAPARRAL: 4
+        - CHAPARRAL: 4
         # -------------
         # Small Hills Subtropical Arid
         # -------------
-        - XERIC_LOW_HILLS: 5
+        - XERIC_HILLS: 5
 
       hills-small-temperate:
         # -------------
         # Small Hills Temperate Semi-Humid
         # -------------
         - DARK_FOREST: 1
-        - FOREST: 3
+        - FOREST_HILLS: 3
         # -------------
         # Small Hills Temperate Semi-Arid
         # -------------
@@ -153,7 +153,7 @@ stages:
         # -------------
         # Small Hills Boreal Semi-Humid (Dryer Forests)
         # -------------
-        - TAIGA: 3
+        - TAIGA_HILLS: 3
 
     # --------------------------------------------
     #              Large Hills Biomes
@@ -200,7 +200,7 @@ stages:
         # -------------
         # Large Hills Temperate Semi-Humid
         # -------------
-        - DARK_FOREST_HILLS: 3
+        - DARK_FOREST: 3
         - forest-hills-variants: 6
         # -------------
         # Large Hills Temperate Semi-Arid
@@ -268,7 +268,7 @@ stages:
         # -------------
         # Mountains Boreal Semi-Humid
         # -------------
-        - SNOWY_ERODED_TERRACED_MOUNTAINS: 1
+        - SNOWY_MOUNTAINS: 1
         # -------------
         # Mountains Boreal Semi-Arid
         # -------------
@@ -300,7 +300,7 @@ stages:
         # -------------
         # Large Mountains Subtropical Humid
         # -------------
-        - LARGE_MONSOON_MOUNTAINS: 1
+        - MONSOON_MOUNTAINS: 1
 
       mountains-large-temperate:
         # -------------
@@ -316,7 +316,7 @@ stages:
         # -------------
         # Large Mountains Boreal Semi-Humid
         # -------------
-        - SNOWY_ERODED_TERRACED_MOUNTAINS: 1
+        - SNOWY_MOUNTAINS: 1
 
     # --------------------------------------------
     #        Coastal Small Mountains Biomes

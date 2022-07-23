@@ -1,4 +1,0 @@
-id: TUNDRA_HILLS
-type: BIOME
-extends: [ EQ_MULTI_TERRACED_LAND, TUNDRA_PLAINS ]
-color: $biomes/colors.yml:TUNDRA_HILLS

@@ -11,23 +11,23 @@ stages:
         - jungle-flats-microvariants: 5
         - SWAMP: 1
       evergreen-flats-variants:
-        - EVERGREEN_FLATS: 5
-        - FLOWERING_FLATS: 3
+        - EVERGREEN_FOREST_HILLS: 5
+        - FLOWERING_FOREST_HILLS: 3
       plains-variants:
         - plains-microvariants: 3
         - PRAIRIE: 3
       birch-flats-variants:
-        - BIRCH_FLATS: 3
-        - AUTUMNAL_FLATS: 2
+        - BIRCH_FOREST_HILLS: 3
+        - AUTUMNAL_FOREST_HILLS: 2
       jungle-variants:
         - jungle-microvariants: 4
         - BAMBOO_PONDS: 1
       evergreen-forest-variants:
-        - EVERGREEN_FOREST: 3
-        - FLOWERING_FOREST: 2
+        - EVERGREEN_FOREST_HILLS: 3
+        - FLOWERING_FOREST_HILLS: 2
       birch-forest-variants:
-        - BIRCH_FOREST: 3
-        - AUTUMNAL_FOREST: 1
+        - BIRCH_FOREST_HILLS: 3
+        - AUTUMNAL_FOREST_HILLS: 1
       birch-forest-hills-variants:
         - BIRCH_FOREST_HILLS: 5
         - AUTUMNAL_FOREST_HILLS: 3
@@ -69,11 +69,11 @@ stages:
         - SELF: 9
         - REDWOOD_FOREST_HILLS: 1
       jungle-flats-microvariants:
-        - JUNGLE_FLATS: 4
-        - BAMBOO_JUNGLE_FLATS: 2
+        - JUNGLE_HILLS: 4
+        - BAMBOO_JUNGLE: 2
         - PALM_FOREST: 2
       jungle-microvariants:
-        - JUNGLE: 3
+        - JUNGLE_HILLS: 3
         - BAMBOO_JUNGLE: 1
       plains-microvariants:
         - PLAINS: 3
@@ -85,7 +85,7 @@ stages:
         - SELF: 3
         - BAMBOO_JUNGLE_MOUNTAINS: 1
       desert-flats-microvariants:
-        - DESERT_FLATS: 7
+        - DESERT: 7
         - SALT_FLATS: 1
       
     sampler:

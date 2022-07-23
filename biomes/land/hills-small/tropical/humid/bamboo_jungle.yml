@@ -1,6 +1,6 @@
 id: BAMBOO_JUNGLE
 type: BIOME
-extends: [ JUNGLE ]
+extends: [ JUNGLE_HILLS ]
 color: $biomes/colors.yml:BAMBOO_JUNGLE
 
 palette:

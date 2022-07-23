@@ -1,4 +1,0 @@
-id: ROCKY_WETLANDS
-type: BIOME
-extends: [ EQ_ERODED_COAST, ROCKY_ARCHIPELAGO ]
-color: $biomes/colors.yml:ROCKY_WETLANDS

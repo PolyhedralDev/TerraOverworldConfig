@@ -1,8 +1,0 @@
-id: FOREST
-type: BIOME
-extends: [ EQ_MULTI_TERRACED_LAND, FOREST_HILLS ]
-color: $biomes/colors.yml:FOREST
-
-tags:
-  - LAND_CAVES
-  - USE_RIVER_TEMPERATE_MARSH
