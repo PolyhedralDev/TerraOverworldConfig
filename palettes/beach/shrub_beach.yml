@@ -3,9 +3,20 @@ type: PALETTE
 
 layers:
   - materials:
-      - minecraft:sand: 6
-      - minecraft:grass_block: 2
-    layers: 3
+      - minecraft:sand: 3
+      - minecraft:grass_block: 1
+    layers: 1
+    sampler:
+      type: DOMAIN_WARP
+      amplitude: 2
+      warp:
+        type: GAUSSIAN
+      sampler:
+        type: FBM
+        octaves: 3
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.015
   - materials:
       - minecraft:sand: 8
       - minecraft:clay: 2
@@ -14,15 +25,3 @@ layers:
   - materials:
       - minecraft:stone: 1
     layers: 1
-
-sampler:
-  type: DOMAIN_WARP
-  amplitude: 2
-  warp:
-    type: GAUSSIAN
-  sampler:
-    type: FBM
-    octaves: 3
-    sampler:
-      type: OPEN_SIMPLEX_2
-      frequency: 0.015
