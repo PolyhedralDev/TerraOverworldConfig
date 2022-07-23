@@ -1,0 +1,33 @@
+id: ICEBERGS
+type: FEATURE
+
+distributor:
+  type: AND
+  distributors:
+    - type: PADDED_GRID
+      width: 3
+      padding: 5
+      salt: 1923
+    - type: SAMPLER
+      sampler:
+        type: PROBABILITY
+        sampler:
+          type: OPEN_SIMPLEX_2
+          salt: 3119
+          frequency: 0.02
+      threshold: 0.2
+
+locator:
+  type: PATTERN
+  range:
+    min: 60
+    max: 65
+  pattern:
+    type: MATCH
+    block: minecraft:water
+    offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: iceberg

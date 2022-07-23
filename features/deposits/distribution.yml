@@ -194,3 +194,10 @@ powdersnow:
   range:
     min: 50
     max: 319
+
+blueice:
+  averageCountPerChunk: 7
+  salt: 1678
+  range:
+    min: 40
+    max: 65
