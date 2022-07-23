@@ -45,17 +45,14 @@ You can find some easy to modify parameters in the [`meta.yml`](./meta.yml) file
 under `biome-distribution`, which control the scales of different areas of biome
 distribution.
 
-### How do I use a single biome or only frozen ones?
+### How do I remove all oceans / all land / all hot biomes / etc?
 
 This pack comes with several biome distribution presets, which can be chosen
-within the [`pack.yml`](./pack.yml) file.
-
-
-### How do I remove all oceans or all land?
-
-You can check out the
+within the [`pack.yml`](./pack.yml) file. If none of these presets do exactly
+what you want, you can further modify biome distribution presets with alternate
+sources and stages. Check out the
 [`biome-providers/presets/default.yml`](./biome-providers/presets/default.yml)
-config for these alternative sources.
+config for these alternative sources and stages.
 
 ### How do I remove specific biomes?
 
