@@ -5,8 +5,8 @@ vanilla: minecraft:savanna
 color: $biomes/colors.yml:DRY_ROCKY_BUMPY_MOUNTAINS
 
 colors:
-  grass: 0xACD656
-  foliage: 0x94C348
+  grass: 0xcbd656
+  foliage: 0xa8c348
 
 
 tags:
