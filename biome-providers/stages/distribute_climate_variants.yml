@@ -33,12 +33,10 @@ stages:
         - MANGROVE_SWAMP: 1
       
       coast-hills-small-tropical:
-        - SANDSTONE_ARCHIPELAGO: 1
-        - SANDSTONE_ARCHIPELAGO: 1
+        - SANDSTONE_ARCHIPELAGO: 2
         - MANGROVE_SWAMP: 1
       
       coast-hills-large-tropical:
-        - SANDSTONE_ARCHIPELAGO: 1
         - SANDSTONE_ARCHIPELAGO: 1
       
       coast-mountains-small-tropical-humid:
@@ -78,12 +76,10 @@ stages:
         - MANGROVE_SWAMP: 1
       
       coast-hills-small-subtropical:
-        - ARCHIPELAGO: 1
-        - ARCHIPELAGO: 1
+        - ARCHIPELAGO: 2
         - MANGROVE_SWAMP: 1
       
       coast-hills-large-subtropical:
-        - ARCHIPELAGO: 1
         - ARCHIPELAGO: 1
       
       coast-mountains-small-subtropical:
@@ -111,10 +107,8 @@ stages:
       
       coast-hills-small-temperate:
         - ARCHIPELAGO: 1
-        - ARCHIPELAGO: 1
       
       coast-hills-large-temperate:
-        - ARCHIPELAGO: 1
         - ARCHIPELAGO: 1
       
       coast-mountains-small-temperate:
@@ -144,10 +138,8 @@ stages:
       
       coast-hills-small-boreal:
         - ROCKY_ARCHIPELAGO: 1
-        - ROCKY_ARCHIPELAGO: 1
       
       coast-hills-large-boreal:
-        - ROCKY_ARCHIPELAGO: 1
         - ROCKY_ARCHIPELAGO: 1
       
       coast-mountains-small-boreal:
@@ -175,10 +167,8 @@ stages:
       
       coast-hills-small-polar:
         - FROZEN_ARCHIPELAGO: 1
-        - FROZEN_ARCHIPELAGO: 1
 
       coast-hills-large-polar:
-        - FROZEN_ARCHIPELAGO: 1
         - FROZEN_ARCHIPELAGO: 1
 
       coast-mountains-small-polar:
@@ -202,7 +192,6 @@ stages:
         - TUNDRA_PLAINS: 1
       
       mountains-small-polar:
-        - SNOWY_MOUNTAINS: 1
         - SNOWY_MOUNTAINS: 1
       
       mountains-large-polar:
