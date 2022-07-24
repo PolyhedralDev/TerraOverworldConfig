@@ -11,27 +11,27 @@ stages:
         - jungle-flats-microvariants: 5
         - SWAMP: 1
       evergreen-flats-variants:
-        - EVERGREEN_FOREST_HILLS: 5
-        - FLOWERING_FOREST_HILLS: 3
+        - EVERGREEN_FOREST: 5
+        - FLOWERING_FOREST: 3
       plains-variants:
         - plains-microvariants: 3
         - PRAIRIE: 3
       birch-flats-variants:
-        - BIRCH_FOREST_HILLS: 3
-        - AUTUMNAL_FOREST_HILLS: 2
+        - BIRCH_FOREST: 3
+        - AUTUMNAL_FOREST: 2
       jungle-variants:
         - jungle-microvariants: 4
         - BAMBOO_PONDS: 1
       evergreen-forest-variants:
-        - EVERGREEN_FOREST_HILLS: 3
-        - FLOWERING_FOREST_HILLS: 2
+        - EVERGREEN_FOREST: 3
+        - FLOWERING_FOREST: 2
       birch-forest-variants:
-        - BIRCH_FOREST_HILLS: 3
-        - AUTUMNAL_FOREST_HILLS: 1
+        - BIRCH_FOREST: 3
+        - AUTUMNAL_FOREST: 1
       birch-forest-hills-variants:
-        - BIRCH_FOREST_HILLS: 5
-        - AUTUMNAL_FOREST_HILLS: 3
-        - FLOWERING_AUTUMNAL_FOREST_HILLS: 1
+        - BIRCH_FOREST: 5
+        - AUTUMNAL_FOREST: 3
+        - FLOWERING_AUTUMNAL_FOREST: 1
       badlands-variants:
         - BADLANDS_MOUNTAINS: 2
         - DESERT_PILLARS: 1
@@ -39,8 +39,8 @@ stages:
         - ERODED_BADLANDS_BUTTES: 1
         - ARID_HIGHLANDS: 1
       forest-hills-variants:
-        - FOREST_HILLS: 5
-        - FLOWERING_FOREST_HILLS: 3
+        - FOREST: 5
+        - FLOWERING_FOREST: 3
       wild-mountains-variants:
         - WILD_BUMPY_MOUNTAINS: 3
         - EVERGREEN_OVERHANGS: 1
@@ -65,22 +65,22 @@ stages:
       DRY_TEMPERATE_MOUNTAINS:
         - SELF: 2
         - DRY_TEMPERATE_WHITE_MOUNTAINS: 1
-      TAIGA_HILLS:
+      TAIGA:
         - SELF: 9
-        - REDWOOD_FOREST_HILLS: 1
+        - REDWOOD_FOREST: 1
       jungle-flats-microvariants:
-        - JUNGLE_HILLS: 4
+        - JUNGLE: 4
         - BAMBOO_JUNGLE: 2
         - PALM_FOREST: 2
       jungle-microvariants:
-        - JUNGLE_HILLS: 3
+        - JUNGLE: 3
         - BAMBOO_JUNGLE: 1
       plains-microvariants:
         - PLAINS: 3
         - SUNFLOWER_PLAINS: 1
-      JUNGLE_HILLS:
+      JUNGLE:
         - SELF: 3
-        - BAMBOO_JUNGLE_HILLS: 1
+        - BAMBOO_JUNGLE: 1
       JUNGLE_MOUNTAINS:
         - SELF: 3
         - BAMBOO_JUNGLE_MOUNTAINS: 1

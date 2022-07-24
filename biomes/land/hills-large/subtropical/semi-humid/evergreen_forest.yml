@@ -1,8 +1,8 @@
-id: EVERGREEN_FOREST_HILLS
+id: EVERGREEN_FOREST
 type: BIOME
-extends: [ RAINFOREST_HILLS ]
+extends: [ RAINFOREST ]
 vanilla: minecraft:taiga # This is only so foxes will spawn
-color: $biomes/colors.yml:EVERGREEN_FOREST_HILLS
+color: $biomes/colors.yml:EVERGREEN_FOREST
 
 tags:
   - LAND_CAVES

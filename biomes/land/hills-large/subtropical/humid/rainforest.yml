@@ -1,8 +1,8 @@
-id: RAINFOREST_HILLS
+id: RAINFOREST
 type: BIOME
 extends: [ EQ_MULTI_TERRACED_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:sparse_jungle
-color: $biomes/colors.yml:RAINFOREST_HILLS
+color: $biomes/colors.yml:RAINFOREST
 
 tags:
   - LAND_CAVES

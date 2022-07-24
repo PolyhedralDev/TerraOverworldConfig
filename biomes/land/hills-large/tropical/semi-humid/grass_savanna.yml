@@ -1,7 +1,7 @@
-id: GRASS_SAVANNA_HILLS
+id: GRASS_SAVANNA
 type: BIOME
-extends: SAVANNA_HILLS
-color: $biomes/colors.yml:GRASS_SAVANNA_HILLS
+extends: SAVANNA
+color: $biomes/colors.yml:GRASS_SAVANNA
 
 features:
   flora:

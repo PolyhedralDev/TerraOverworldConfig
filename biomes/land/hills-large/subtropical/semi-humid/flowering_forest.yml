@@ -1,8 +1,8 @@
-id: FLOWERING_FOREST_HILLS
+id: FLOWERING_FOREST
 type: BIOME
-extends: FOREST_HILLS
+extends: FOREST
 vanilla: minecraft:flower_forest
-color: $biomes/colors.yml:FLOWERING_FOREST_HILLS
+color: $biomes/colors.yml:FLOWERING_FOREST
 
 minecraft:
   colors:

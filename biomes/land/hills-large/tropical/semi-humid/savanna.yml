@@ -1,8 +1,8 @@
-id: SAVANNA_HILLS
+id: SAVANNA
 type: BIOME
 extends: [ EQ_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:savanna
-color: $biomes/colors.yml:SAVANNA_HILLS
+color: $biomes/colors.yml:SAVANNA
 
 minecraft:
   colors:

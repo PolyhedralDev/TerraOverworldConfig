@@ -1,8 +1,8 @@
-id: BAMBOO_JUNGLE_HILLS
+id: BAMBOO_JUNGLE
 type: BIOME
 extends: [ EQ_MULTI_TERRACED_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:jungle
-color: $biomes/colors.yml:BAMBOO_JUNGLE_HILLS
+color: $biomes/colors.yml:BAMBOO_JUNGLE
 
 minecraft:
   colors:

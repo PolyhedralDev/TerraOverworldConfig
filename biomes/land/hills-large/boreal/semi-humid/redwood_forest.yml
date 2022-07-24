@@ -1,8 +1,8 @@
-id: FOREST_HILLS
+id: REDWOOD_FOREST
 type: BIOME
 extends: [ EQ_MULTI_TERRACED_LAND, CARVING_LAND, BASE ]
-vanilla: minecraft:forest
-color: $biomes/colors.yml:FOREST_HILLS
+vanilla: minecraft:taiga
+color: $biomes/colors.yml:REDWOOD_FOREST
 
 tags:
   - LAND_CAVES
@@ -10,13 +10,13 @@ tags:
 
 minecraft:
   colors:
-    grass: 0x79c05a
-    foliage: 0x59ae30
-    water: 0x1e97f2
-    water-fog: 0x1e97f2
+    grass: 0x86b783
+    foliage: 0x68a464
+    water: 0x287082
+    water-fog: 0x287082
 
 palette:
-  - GRASS: 319
+  - GRASS_PODZOL: 319
   - SAND: 64
   - MUDDY_BEACH: 61
   - << meta.yml:palette-bottom
@@ -25,7 +25,6 @@ slant:
   - threshold: 3
     palette:
       - COARSE_DIRT: 319
-      - SAND: 64
       - << meta.yml:palette-bottom
   - threshold: 3.5
     palette:
@@ -33,16 +32,18 @@ slant:
       - << meta.yml:palette-bottom
 
 features:
+  landforms:
+    - BOULDERS
+    - SMALL_BOULDER_PATCHES
   flora:
-    - GRASS
+    - SWEET_BERRY_BUSH_PATCHES
     - POPPY_PATCH
     - DANDELION_PATCH
     - ROSE_BUSH_PATCH
     - PEONY_PATCH
     - LILAC_PATCH
     - LILY_OF_THE_VALLEY_PATCH
+    - GRASS
+    - FERNS
   trees:
-    - TEMPERATE_TREES
-  landforms:
-    - MOSSY_BOULDERS
-    - SMALL_MOSSY_BOULDER_PATCHES
+    - GIANT_REDWOODS

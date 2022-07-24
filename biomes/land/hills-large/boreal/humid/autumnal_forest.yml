@@ -1,8 +1,8 @@
-id: FLOWERING_AUTUMNAL_FOREST_HILLS
+id: AUTUMNAL_FOREST
 type: BIOME
 extends: [ EQ_MULTI_TERRACED_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:birch_forest
-color: $biomes/colors.yml:FLOWERING_AUTUMNAL_FOREST_HILLS
+color: $biomes/colors.yml:AUTUMNAL_FOREST
 
 tags:
   - LAND_CAVES
@@ -10,8 +10,8 @@ tags:
 
 minecraft:
   colors:
-    grass: 0xb5b065
-    foliage: 0xffa500
+    grass: 0xf7863b
+    foliage: 0xff6a19
     water: 0x1e97f2
     water-fog: 0x1e97f2
 
@@ -22,7 +22,7 @@ palette:
   - << meta.yml:palette-bottom
 
 slant:
-  - threshold: 3
+  - threshold: 3.5
     palette:
       - GRANITE_SLANT: 319
       - << meta.yml:palette-bottom
@@ -30,7 +30,12 @@ slant:
 features:
   flora:
     - GRASS
-    - MIXED_FLOWER_COVER
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - ROSE_BUSH_PATCH
+    - PEONY_PATCH
+    - LILAC_PATCH
+    - LILY_OF_THE_VALLEY_PATCH
     - PUMPKIN_PATCHES
   trees:
     - SEASONAL_TREES

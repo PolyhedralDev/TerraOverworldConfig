@@ -1,8 +1,8 @@
-id: TAIGA_HILLS
+id: TAIGA
 type: BIOME
 extends: [ EQ_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:taiga
-color: $biomes/colors.yml:TAIGA_HILLS
+color: $biomes/colors.yml:TAIGA
 
 tags:
   - LAND_CAVES

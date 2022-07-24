@@ -1,8 +1,8 @@
-id: JUNGLE_HILLS
+id: JUNGLE
 type: BIOME
 extends: [ EQ_MULTI_TERRACED_LAND, CARVING_LAND, BASE ]
 vanilla: minecraft:jungle
-color: $biomes/colors.yml:JUNGLE_HILLS
+color: $biomes/colors.yml:JUNGLE
 
 minecraft:
   colors:
