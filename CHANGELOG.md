@@ -44,10 +44,10 @@ generate in an area where it previously did not (resulting in a chunk border).
 
 
 ### Changed
-
+- Reworked terrain to use a global heightmap.
 
 ### Removed
-
+- Removed elevation biome variants, as biomes now use a global height map for terrain.
 
 ### Fixed
 
