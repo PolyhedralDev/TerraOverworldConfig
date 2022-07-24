@@ -52,6 +52,23 @@ generate in an area where it previously did not (resulting in a chunk border).
 ### Fixed
 
 
+## [v1.3.0]
+### Added
+- Added Shrub Beaches.
+- Added Xerophytic Forests.
+- Added Iceberg Oceans.
+- Added wheat crops to Prairies.
+- Added iceberg feature.
+
+### Changed
+- Sakura Mountains now contain features from Dark Oak Forests.
+- Evergreen Overhangs now generate as an Evergreen variant.
+- Dry Rocky Bumpy Mountains now uses it's own grass and foliage color.
+
+### Fixed
+- Evergreen biomes generating adjacent to Savanna biomes.
+- Prairies and Oak Savannas using incorrect biome colors.
+
 ## [v1.2.0]
 ### Added
 - Added Mangrove Swamps.
@@ -104,7 +121,8 @@ generate in an area where it previously did not (resulting in a chunk border).
 ### Added
 - Everything
 
-[Unreleased]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.2.0...HEAD
+[Unreleased]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.0...HEAD
+[v1.3.0]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.1.1...v1.2.0
 [1.1.1]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.0.1...v1.1.0

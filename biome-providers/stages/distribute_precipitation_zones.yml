@@ -33,8 +33,8 @@ stages:
   # -------------
   # Flat Tropical Semi-Humid
   # -------------
-      - GRASS_SAVANNA: 1
-      - SAVANNA: 1
+      - GRASS_SAVANNA: 2
+      - SAVANNA: 2
   # -------------
   # Flat Tropical Semi-Arid
   # -------------
@@ -51,19 +51,19 @@ stages:
     to:
       flat-subtropical:
     # -------------
-    # Flat Subtropical Semi Humid
-    # -------------
-        - evergreen-flats-variants: 7
-    # -------------
     # Flat Subtropical Semi-Arid
     # -------------
         - CHAPARRAL: 3
+    # -------------
     # -------------
     # Flat Subtropical Arid
     # -------------
         - XERIC_HILLS: 5
 
       flat-temperate:
+    # Flat Subtropical Extra-Humid
+    # -------------
+        - evergreen-forest-variants: 3
     # -------------
     # Flat Temperate Humid
     # -------------
@@ -136,6 +136,10 @@ stages:
 
       hills-small-temperate:
         # -------------
+        # Small Hills Temperate Humid
+        # -------------
+        - evergreen-forest-variants: 3
+        # -------------
         # Small Hills Temperate Semi-Humid
         # -------------
         - DARK_FOREST: 1
@@ -190,13 +194,18 @@ stages:
         # -------------
         # Large Hills Subtropical Semi-Arid
         # -------------
-        - MOORLAND: 2
+        - DRY_ROCKY_BUMPY_MOUNTAINS: 6
+        - MOORLAND: 3
         # -------------
         # Large Hills Subtropical Arid
         # -------------
         - XERIC_HILLS: 5
 
       hills-large-temperate:
+        # -------------
+        # Large Hills Temperate Humid
+        # -------------
+        - EVERGREEN_FOREST: 4
         # -------------
         # Large Hills Temperate Semi-Humid
         # -------------

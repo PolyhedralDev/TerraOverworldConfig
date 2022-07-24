@@ -1,0 +1,30 @@
+id: SHRUB_BEACH
+type: BIOME
+extends: [ EQ_FLAT_ERODED, CARVING_OCEAN, BASE ]
+vanilla: minecraft:beach
+color: $biomes/colors.yml:SHRUB_BEACH
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER_TEMPERATE_MARSH
+
+colors:
+  grass: 0x91bd59
+  foliage: 0x77ab2f
+  water: 0x44aff5
+  water-fog: 0x44aff5
+
+palette:
+  - BLOCK:minecraft:stone: 319
+  - SHRUB_BEACH: 75
+  - << meta.yml:palette-bottom
+
+features:
+  landforms:
+    - SMALL_BOULDER_PATCHES
+  flora:
+    - DEAD_BUSHES
+  trees:
+    - MESQUITE_TREES
+    - DEAD_TREES_SPARSE
+    - DENSE_SUBTROPICAL_BUSHES

@@ -74,6 +74,7 @@ stages:
       coast-flat-subtropical:
         - BEACH: 1
         - MANGROVE_SWAMP: 1
+        - SHRUB_BEACH: 1
       
       coast-hills-small-subtropical:
         - ARCHIPELAGO: 2
@@ -104,6 +105,7 @@ stages:
       coast-flat-temperate:
         - BEACH: 3
         - SHALE_BEACH: 1
+        - SHRUB_BEACH: 1
       
       coast-hills-small-temperate:
         - ARCHIPELAGO: 1
@@ -134,7 +136,8 @@ stages:
         
       # Boreal Coastal
       coast-flat-boreal:
-        - BEACH: 1
+        - BEACH: 2
+        - SHALE_BEACH: 1
       
       coast-hills-small-boreal:
         - ROCKY_ARCHIPELAGO: 1
@@ -156,7 +159,8 @@ stages:
       
       deep-ocean-polar:
         - FROZEN_DEEP_OCEAN: 1
-      
+        - ICEBERG_OCEAN: 1
+
       ocean-polar:
         - FROZEN_OCEAN: 1
         

@@ -23,8 +23,9 @@ stages:
         - jungle-microvariants: 4
         - BAMBOO_PONDS: 1
       evergreen-forest-variants:
-        - EVERGREEN_FOREST: 3
-        - FLOWERING_FOREST: 2
+        - EVERGREEN_FOREST: 5
+        - FLOWERING_FOREST: 3
+        - EVERGREEN_OVERHANGS: 1
       birch-forest-variants:
         - BIRCH_FOREST: 3
         - AUTUMNAL_FOREST: 1
@@ -43,7 +44,6 @@ stages:
         - FLOWERING_FOREST: 3
       wild-mountains-variants:
         - WILD_BUMPY_MOUNTAINS: 3
-        - EVERGREEN_OVERHANGS: 1
       temperate-mountains-variants:
         - HIGHLANDS: 4
         - TEMPERATE_MOUNTAINS: 8

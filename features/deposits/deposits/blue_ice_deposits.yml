@@ -1,0 +1,26 @@
+id: BLUE_ICE_DEPOSITS
+type: FEATURE
+
+anchors:
+  - &structure BLUE_ICE_DEPOSIT
+  - &densityThreshold 1/256 * ${features/deposits/distribution.yml:blueice.averageCountPerChunk} # Divide by 16^2 to get % per column
+  - &salt $features/deposits/distribution.yml:blueice.salt
+  - &range $features/deposits/distribution.yml:blueice.range
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: *salt
+  threshold: *densityThreshold
+
+locator:
+  type: RANDOM
+  amount: 1
+  height: *range
+  salt: *salt
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: *structure

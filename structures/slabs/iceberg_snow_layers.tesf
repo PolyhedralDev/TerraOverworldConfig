@@ -1,0 +1,12 @@
+str blockBelow = getBlock(0, -1, 0);
+if (blockBelow != "minecraft:snow_block") {
+    fail;
+}
+
+// Binary search to check which layer is OCEAN
+
+num layers = 1+randomInt(7);
+
+block(0, 0, 0, "minecraft:snow[layers="+layers+"]");
+
+

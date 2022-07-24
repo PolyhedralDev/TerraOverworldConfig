@@ -7,3 +7,12 @@ color: $biomes/colors.yml:SAKURA_MOUNTAINS
 minecraft:
   colors:
     foliage: 0xffb7c5
+
+features:
+  flora:
+    - GRASS
+  trees:
+    - DENSE_DARK_FOREST_TREES
+  landforms:
+    - MOSSY_BOULDERS
+    - SMALL_MOSSY_BOULDER_PATCHES
