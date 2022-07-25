@@ -5,9 +5,11 @@ abstract: true
 minecraft:
   colors:
     fog: 0xc0d8ff
-    water: 0x3f76e4
-    water-fog: 0x50533
+    water: 0x1E97F2
+    water-fog: 0x1E97F2
     sky: 0x78a7ff
+    grass: 0x91BD59
+    foliage: 0x59AE30
 
   climate:
     precipitation: rain
