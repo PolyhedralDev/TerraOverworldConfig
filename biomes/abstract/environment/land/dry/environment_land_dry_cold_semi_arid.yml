@@ -5,10 +5,12 @@ abstract: true
 minecraft:
   colors:
     fog: 0xc0d8ff
-    water: 0x3f76e4
-    water-fog: 0x50533
-    sky: 0x7fa1ff
+    water: 0x2080C9
+    water-fog: 0x2080C9
+    sky: 0x839eff
+    grass: 0x96b480
+    foliage: 0x86b480
 
   climate:
-    temperature: 0.0
+    temperature: 0.25
     downfall: 0.5
