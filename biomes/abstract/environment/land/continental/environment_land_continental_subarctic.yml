@@ -11,7 +11,7 @@ minecraft:
     grass: 0x80B497
     foliage: 0x60A17B
 
-climate:
-  precipitation: snow
-  temperature: 0.0
-  downfall: 0.4
+  climate:
+    precipitation: snow
+    temperature: 0.0
+    downfall: 0.4
