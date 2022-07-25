@@ -1,0 +1,15 @@
+id: ENVIRONMENT_LAND_CONTINENTAL_MONSOON
+type: BIOME
+abstract: true
+
+minecraft:
+  colors:
+    fog: 0xc0d8ff
+    water: 0x3f76e4
+    water-fog: 0x50533
+    sky: 0x7aa5ff
+
+  climate:
+    precipitation: rain
+    temperature: 0.6
+    downfall: 0.6

@@ -1,0 +1,14 @@
+id: ENVIRONMENT_LAND_CONTINENTAL_SUBARTIC
+type: BIOME
+abstract: true
+
+colors:
+  fog: 0xc0d8ff
+  water: 0x3d57d6
+  water-fog: 0x50533
+  sky: 0x839eff
+
+climate:
+  precipitation: snow
+  temperature: 0.0
+  downfall: 0.4

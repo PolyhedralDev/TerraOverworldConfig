@@ -1,0 +1,14 @@
+id: ENVIRONMENT_LAND_DRY_COLD_SEMI_ARID
+type: BIOME
+abstract: true
+
+minecraft:
+  colors:
+    fog: 0xc0d8ff
+    water: 0x3f76e4
+    water-fog: 0x50533
+    sky: 0x7fa1ff
+
+  climate:
+    temperature: 0.0
+    downfall: 0.5
