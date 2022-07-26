@@ -1,0 +1,57 @@
+id: RAINFOREST
+type: BIOME
+extends: [ EQ_MULTI_TERRACED_LAND, CARVING_LAND, BASE ]
+vanilla: minecraft:sparse_jungle
+color: $biomes/colors.yml:RAINFOREST
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER
+
+minecraft:
+  colors:
+    grass: 0x7ac465
+    foliage: 0x5fa649
+    water: 0x637d72
+    water-fog: 0x637d72
+
+palette:
+  - GRASS: 319
+  - GRASS_VARIATION: 96
+  - GRASS_MOSSY: 86
+  - SAND: 61
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 2.5
+    palette:
+      - MOSS_STONE: 319
+      - << meta.yml:palette-bottom
+  - threshold: 3.5
+    palette:
+      - ANDESITE: 319
+      - << meta.yml:palette-bottom
+  - threshold: 4
+    palette:
+      - BLOCK:minecraft:stone: 319
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - GRASS
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - ROSE_BUSH_PATCH
+    - PEONY_PATCH
+    - LILAC_PATCH
+    - LILY_OF_THE_VALLEY_PATCH
+    - FERNS
+    - BEETROOT_PATCHES
+  trees:
+    - DENSE_TEMPERATE_TREE_PATCHES
+    - OAK_BUSHES
+    - SUBTROPICAL_BUSHES
+    - SPRUCE_BUSHES
+    - SPRUCE_TREES
+  landforms:
+    - SMALL_MOSSY_BOULDER_PATCHES
