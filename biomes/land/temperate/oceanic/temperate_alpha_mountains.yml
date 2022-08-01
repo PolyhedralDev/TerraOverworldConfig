@@ -1,7 +1,10 @@
 id: TEMPERATE_ALPHA_MOUNTAINS
 type: BIOME
-extends: [ EQ_LAND, CARVING_LAND, BASE ]
-vanilla: minecraft:forest
+extends:
+  - ENVIRONMENT_LAND_TEMPERATE_OCEANIC
+  - EQ_LAND
+  - CARVING_LAND
+  - BASE
 color: $biomes/colors.yml:TEMPERATE_ALPHA_MOUNTAINS
 
 palette:

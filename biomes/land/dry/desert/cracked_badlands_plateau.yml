@@ -1,7 +1,11 @@
 id: CRACKED_BADLANDS_PLATEAU
 type: BIOME
-extends: [ COLOR_XERIC, EQ_STRATIFIED_LAND, CARVING_LAND, BASE ]
-vanilla: minecraft:badlands
+extends:
+  - COLOR_XERIC
+  - ENVIRONMENT_LAND_DRY_DESERT
+  - EQ_STRATIFIED_LAND
+  - CARVING_LAND
+  - BASE
 color: $biomes/colors.yml:CRACKED_BADLANDS_PLATEAU
 
 palette:

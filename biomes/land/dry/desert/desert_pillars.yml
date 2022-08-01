@@ -1,7 +1,11 @@
 id: DESERT_PILLARS
 type: BIOME
-extends: [ COLOR_XERIC, EQ_STRATIFIED_LAND, CARVING_OCEAN, BASE ]
-vanilla: minecraft:badlands
+extends:
+  - COLOR_XERIC
+  - ENVIRONMENT_LAND_DRY_DESERT
+  - EQ_STRATIFIED_LAND
+  - CARVING_OCEAN
+  - BASE
 color: $biomes/colors.yml:DESERT_PILLARS
 
 tags:

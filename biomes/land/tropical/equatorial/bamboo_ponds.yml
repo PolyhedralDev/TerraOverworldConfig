@@ -1,7 +1,10 @@
 id: BAMBOO_PONDS
 type: BIOME
-extends: [ EQ_LAND, CARVING_OCEAN, BASE ]
-vanilla: minecraft:jungle
+extends:
+  - ENVIRONMENT_LAND_TROPICAL_EQUATORIAL
+  - EQ_LAND
+  - CARVING_OCEAN
+  - BASE
 color: $biomes/colors.yml:BAMBOO_PONDS
 
 tags:

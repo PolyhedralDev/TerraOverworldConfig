@@ -1,7 +1,11 @@
 id: OCEAN
 type: BIOME
-extends: [ PALETTE_OCEAN, EQ_OCEAN, CARVING_OCEAN, BASE ]
-vanilla: minecraft:ocean
+extends:
+  - PALETTE_OCEAN
+  - ENVIRONMENT_MARINE_OCEAN
+  - EQ_OCEAN
+  - CARVING_OCEAN
+  - BASE
 color: $biomes/colors.yml:OCEAN
 
 minecraft:

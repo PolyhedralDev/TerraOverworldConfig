@@ -1,7 +1,10 @@
 id: MUSHROOM_FIELDS
 type: BIOME
-vanilla: minecraft:mushroom_fields
-extends: [ EQ_PLAIN_PEAKS, CARVING_OCEAN, BASE ]
+extends:
+  - ENVIRONMENT_LAND_UNIQUE_MUSHROOM
+  - EQ_PLAIN_PEAKS
+  - CARVING_OCEAN
+  - BASE
 color: $biomes/colors.yml:MUSHROOM_FIELDS
 
 palette:

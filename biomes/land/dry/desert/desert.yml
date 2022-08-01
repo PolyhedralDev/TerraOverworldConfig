@@ -1,7 +1,11 @@
 id: DESERT
 type: BIOME
-extends: [ COLOR_XERIC, EQ_GLOBAL_DUNES, CARVING_LAND, BASE ]
-vanilla: minecraft:desert
+extends:
+  - COLOR_XERIC
+  - ENVIRONMENT_LAND_DRY_DESERT
+  - EQ_GLOBAL_DUNES
+  - CARVING_LAND
+  - BASE
 color: $biomes/colors.yml:DESERT
 
 tags:

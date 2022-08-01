@@ -1,7 +1,6 @@
 id: SUNFLOWER_PLAINS
 type: BIOME
 extends: PLAINS
-vanilla: minecraft:sunflower_plains
 color: $biomes/colors.yml:SUNFLOWER_PLAINS
 
 features:

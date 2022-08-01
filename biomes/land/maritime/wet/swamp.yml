@@ -1,7 +1,10 @@
 id: SWAMP
 type: BIOME
-extends: [ EQ_SWAMP, CARVING_OCEAN, BASE ]
-vanilla: minecraft:swamp
+extends:
+  - ENVIRONMENT_LAND_MARITIME_WET
+  - EQ_SWAMP
+  - CARVING_OCEAN
+  - BASE
 color: $biomes/colors.yml:SWAMP
 
 tags:

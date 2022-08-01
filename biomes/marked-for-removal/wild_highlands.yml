@@ -1,7 +1,9 @@
 id: WILD_HIGHLANDS
 type: BIOME
-extends: [ EQ_LAND, CARVING_LAND, BASE ]
-vanilla: minecraft:jungle
+extends:
+  - EQ_LAND
+  - CARVING_LAND
+  - BASE
 color: $biomes/colors.yml:WILD_HIGHLANDS
 
 palette:

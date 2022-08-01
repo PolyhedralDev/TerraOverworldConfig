@@ -1,7 +1,11 @@
 id: ROCKY_DESERT
 type: BIOME
-extends: [ COLOR_XERIC, EQ_STRATIFIED_LAND, CARVING_LAND, BASE ]
-vanilla: minecraft:desert
+extends:
+  - COLOR_XERIC
+  - ENVIRONMENT_LAND_DRY_DESERT
+  - EQ_STRATIFIED_LAND
+  - CARVING_LAND
+  - BASE
 color: $biomes/colors.yml:ROCKY_DESERT
 
 tags:

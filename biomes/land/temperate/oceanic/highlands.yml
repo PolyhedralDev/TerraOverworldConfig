@@ -1,7 +1,10 @@
 id: HIGHLANDS
 type: BIOME
-extends: [ EQ_MULTI_TERRACED_LAND, CARVING_LAND, BASE ]
-vanilla: minecraft:plains
+extends:
+  - ENVIRONMENT_LAND_TEMPERATE_OCEANIC
+  - EQ_MULTI_TERRACED_LAND
+  - CARVING_LAND
+  - BASE
 color: $biomes/colors.yml:HIGHLANDS
 
 palette:

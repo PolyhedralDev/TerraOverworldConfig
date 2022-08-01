@@ -1,7 +1,11 @@
 id: TUNDRA_PLAINS
 type: BIOME
-extends: [ COLOR_TUNDRA, EQ_LAND, CARVING_LAND, BASE ]
-vanilla: minecraft:snowy_plains
+extends:
+  - COLOR_TUNDRA
+  - ENVIRONMENT_LAND_POLAR_TUNDRA
+  - EQ_LAND
+  - CARVING_LAND
+  - BASE
 color: $biomes/colors.yml:TUNDRA_PLAINS
 
 tags:

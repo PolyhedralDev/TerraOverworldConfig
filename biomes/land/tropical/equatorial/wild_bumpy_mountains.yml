@@ -1,7 +1,10 @@
 id: WILD_BUMPY_MOUNTAINS
 type: BIOME
-extends: [ EQ_LAND, CARVING_LAND, BASE ]
-vanilla: minecraft:plains
+extends:
+  - ENVIRONMENT_LAND_TROPICAL_EQUATORIAL
+  - EQ_LAND
+  - CARVING_LAND
+  - BASE
 color: $biomes/colors.yml:WILD_BUMPY_MOUNTAINS
 
 tags:

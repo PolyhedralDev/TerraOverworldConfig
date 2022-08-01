@@ -1,7 +1,11 @@
 id: SNOWY_MOUNTAINS
 type: BIOME
-extends: [ COLOR_FROZEN, EQ_MULTI_TERRACED_LAND, CARVING_LAND, BASE ]
-vanilla: minecraft:snowy_slopes
+extends:
+  - COLOR_FROZEN
+  - ENVIRONMENT_LAND_POLAR_TUNDRA
+  - EQ_MULTI_TERRACED_LAND
+  - CARVING_LAND
+  - BASE
 color: $biomes/colors.yml:SNOWY_MOUNTAINS
 
 ocean:

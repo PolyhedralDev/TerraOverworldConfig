@@ -1,7 +1,10 @@
 id: ACTIVE_VOLCANO_PIT
 type: BIOME
-extends: [ EQ_VOLCANO_PIT, CARVING_OCEAN, BASE ]
-vanilla: minecraft:badlands
+extends:
+  - ENVIRONMENT_LAND_UNIQUE_VOLCANIC
+  - EQ_VOLCANO_PIT
+  - CARVING_OCEAN
+  - BASE
 color: $biomes/colors.yml:ACTIVE_VOLCANO_PIT
 
 minecraft:

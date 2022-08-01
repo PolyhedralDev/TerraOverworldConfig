@@ -1,7 +1,10 @@
 id: RAINFOREST
 type: BIOME
-extends: [ EQ_MULTI_TERRACED_LAND, CARVING_LAND, BASE ]
-vanilla: minecraft:sparse_jungle
+extends:
+  - ENVIRONMENT_LAND_TEMPERATE_HUMID_SUBTROPICAL
+  - EQ_MULTI_TERRACED_LAND
+  - CARVING_LAND
+  - BASE
 color: $biomes/colors.yml:RAINFOREST
 
 tags:

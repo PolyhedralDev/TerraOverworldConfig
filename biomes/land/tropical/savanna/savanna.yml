@@ -1,7 +1,10 @@
 id: SAVANNA
 type: BIOME
-extends: [ EQ_LAND, CARVING_LAND, BASE ]
-vanilla: minecraft:savanna
+extends:
+  - ENVIRONMENT_LAND_TROPICAL_SAVANNA
+  - EQ_LAND
+  - CARVING_LAND
+  - BASE
 color: $biomes/colors.yml:SAVANNA
 
 minecraft:

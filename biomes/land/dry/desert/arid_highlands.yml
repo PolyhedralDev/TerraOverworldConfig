@@ -1,7 +1,10 @@
 id: ARID_HIGHLANDS
 type: BIOME
-extends: [ EQ_STRATIFIED_LAND, CARVING_LAND, BASE ]
-vanilla: minecraft:desert
+extends:
+  - ENVIRONMENT_LAND_DRY_DESERT
+  - EQ_STRATIFIED_LAND
+  - CARVING_LAND
+  - BASE
 color: $biomes/colors.yml:ARID_HIGHLANDS
 
 palette:

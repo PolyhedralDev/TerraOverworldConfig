@@ -1,7 +1,11 @@
 id: FROZEN_RIVER
 type: BIOME
-extends: [ COLOR_FROZEN, EQ_GLOBAL_RIVER, CARVING_OCEAN, BASE ]
-vanilla: minecraft:river
+extends:
+  - COLOR_FROZEN
+  - ENVIRONMENT_MARINE_RIVER_FROZEN
+  - EQ_GLOBAL_RIVER
+  - CARVING_OCEAN
+  - BASE
 color: $biomes/colors.yml:FROZEN_RIVER
 
 ocean:

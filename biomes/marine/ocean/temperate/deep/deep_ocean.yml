@@ -1,7 +1,8 @@
 id: DEEP_OCEAN
 type: BIOME
-extends: [ PALETTE_OCEAN, EQ_DEEP_OCEAN, CARVING_OCEAN, BASE ]
-vanilla: minecraft:deep_ocean
+extends:
+  - EQ_DEEP_OCEAN
+  - OCEAN
 color: $biomes/colors.yml:DEEP_OCEAN
 
 minecraft:

@@ -1,7 +1,10 @@
 id: FOREST
 type: BIOME
-extends: [ EQ_MULTI_TERRACED_LAND, CARVING_LAND, BASE ]
-vanilla: minecraft:forest
+extends:
+  - ENVIRONMENT_LAND_TEMPERATE_OCEANIC
+  - EQ_MULTI_TERRACED_LAND
+  - CARVING_LAND
+  - BASE
 color: $biomes/colors.yml:FOREST
 
 tags:

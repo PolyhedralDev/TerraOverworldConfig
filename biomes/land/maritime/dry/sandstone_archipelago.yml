@@ -1,7 +1,10 @@
 id: SANDSTONE_ARCHIPELAGO
 type: BIOME
-extends: [ EQ_ERODED_COAST, CARVING_OCEAN, BASE ]
-vanilla: minecraft:beach
+extends:
+  - ENVIRONMENT_LAND_MARITIME_DRY
+  - EQ_ERODED_COAST
+  - CARVING_OCEAN
+  - BASE
 color: $biomes/colors.yml:SANDSTONE_ARCHIPELAGO
 
 minecraft:

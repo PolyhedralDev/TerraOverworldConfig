@@ -1,7 +1,10 @@
 id: BAMBOO_JUNGLE_MOUNTAINS
 type: BIOME
-extends: [ EQ_MULTI_TERRACED_LAND, CARVING_LAND, BASE ]
-vanilla: minecraft:jungle
+extends:
+  - ENVIRONMENT_LAND_TROPICAL_EQUATORIAL
+  - EQ_MULTI_TERRACED_LAND
+  - CARVING_LAND
+  - BASE
 color: $biomes/colors.yml:BAMBOO_JUNGLE_MOUNTAINS
 
 palette:

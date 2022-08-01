@@ -1,7 +1,6 @@
 id: SAKURA_MOUNTAINS
 type: BIOME
-extends: [ TEMPERATE_MOUNTAINS ]
-vanilla: minecraft:plains
+extends: TEMPERATE_MOUNTAINS
 color: $biomes/colors.yml:SAKURA_MOUNTAINS
 
 minecraft:

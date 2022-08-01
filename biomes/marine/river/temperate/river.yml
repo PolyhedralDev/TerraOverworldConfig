@@ -1,7 +1,11 @@
 id: RIVER
 type: BIOME
-extends: [ RIVER_BASIC, EQ_GLOBAL_RIVER, CARVING_OCEAN, BASE ]
-vanilla: minecraft:river
+extends:
+  - RIVER_BASIC
+  - ENVIRONMENT_MARINE_RIVER
+  - EQ_GLOBAL_RIVER
+  - CARVING_OCEAN
+  - BASE
 color: $biomes/colors.yml:RIVER
 
 palette:

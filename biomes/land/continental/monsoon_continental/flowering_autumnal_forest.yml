@@ -1,7 +1,10 @@
 id: FLOWERING_AUTUMNAL_FOREST
 type: BIOME
-extends: [ EQ_MULTI_TERRACED_LAND, CARVING_LAND, BASE ]
-vanilla: minecraft:birch_forest
+extends:
+  - ENVIRONMENT_LAND_CONTINENTAL_MONSOON
+  - EQ_MULTI_TERRACED_LAND
+  - CARVING_LAND
+  - BASE
 color: $biomes/colors.yml:FLOWERING_AUTUMNAL_FOREST
 
 tags:

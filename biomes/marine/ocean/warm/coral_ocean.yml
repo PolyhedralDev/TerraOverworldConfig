@@ -1,7 +1,6 @@
 id: CORAL_OCEAN
 type: BIOME
-extends: [ TROPICAL_OCEAN, PALETTE_OCEAN, EQ_OCEAN, CARVING_OCEAN, BASE ]
-vanilla: minecraft:warm_ocean
+extends: TROPICAL_OCEAN
 color: $biomes/colors.yml:CORAL_OCEAN
 
 features:

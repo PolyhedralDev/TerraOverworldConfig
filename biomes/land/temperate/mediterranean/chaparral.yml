@@ -1,8 +1,11 @@
 id: CHAPARRAL
 type: BIOME
-extends: [ EQ_LAND, CARVING_LAND, BASE ]
+extends:
+  - ENVIRONMENT_LAND_TEMPERATE_MEDITERRANEAN
+  - EQ_LAND
+  - CARVING_LAND
+  - BASE
 color: $biomes/colors.yml:CHAPARRAL
-vanilla: minecraft:savanna
 
 tags:
   - LAND_CAVES

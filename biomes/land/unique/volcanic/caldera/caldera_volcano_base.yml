@@ -1,7 +1,10 @@
 id: CALDERA_VOLCANO_BASE
 type: BIOME
-extends: [ EQ_VOLCANO_BASE, CARVING_OCEAN, BASE ]
-vanilla: minecraft:plains
+extends:
+  - ENVIRONMENT_LAND_TEMPERATE_OCEANIC
+  - EQ_VOLCANO_BASE
+  - CARVING_OCEAN
+  - BASE
 color: $biomes/colors.yml:CALDERA_VOLCANO_BASE
 
 palette:

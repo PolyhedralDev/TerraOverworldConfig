@@ -1,7 +1,10 @@
 id: CERROS_DE_MAVECURE
 type: BIOME
-extends: [ EQ_LAND, CARVING_LAND, BASE ]
-vanilla: minecraft:jungle
+extends:
+  - ENVIRONMENT_LAND_TROPICAL_MONSOON
+  - EQ_LAND
+  - CARVING_LAND
+  - BASE
 color: $biomes/colors.yml:CERROS_DE_MAVECURE
 
 palette:

@@ -1,7 +1,10 @@
 id: REDWOOD_FOREST
 type: BIOME
-extends: [ EQ_MULTI_TERRACED_LAND, CARVING_LAND, BASE ]
-vanilla: minecraft:taiga
+extends:
+  - ENVIRONMENT_LAND_CONTINENTAL_HUMID
+  - EQ_MULTI_TERRACED_LAND
+  - CARVING_LAND
+  - BASE
 color: $biomes/colors.yml:REDWOOD_FOREST
 
 tags:

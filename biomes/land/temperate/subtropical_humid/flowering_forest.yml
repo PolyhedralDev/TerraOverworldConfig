@@ -1,7 +1,8 @@
 id: FLOWERING_FOREST
 type: BIOME
-extends: FOREST
-vanilla: minecraft:flower_forest
+extends:
+  - ENVIRONMENT_LAND_TEMPERATE_HUMID_SUBTROPICAL
+  - FOREST
 color: $biomes/colors.yml:FLOWERING_FOREST
 
 minecraft:

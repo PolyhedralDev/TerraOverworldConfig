@@ -1,7 +1,6 @@
 id: DESERT_SPIKES_GOLD
 type: BIOME
 extends: DESERT_SPIKES
-vanilla: minecraft:desert
 color: $biomes/colors.yml:DESERT_SPIKES_GOLD
 
 tags:

@@ -1,7 +1,11 @@
 id: FROZEN_ARCHIPELAGO
 type: BIOME
-extends: [ COLOR_FROZEN, EQ_ERODED_COAST, CARVING_OCEAN, BASE ]
-vanilla: minecraft:beach
+extends:
+  - COLOR_FROZEN
+  - ENVIRONMENT_LAND_MARITIME_FROZEN
+  - EQ_ERODED_COAST
+  - CARVING_OCEAN
+  - BASE
 color: $biomes/colors.yml:FROZEN_ARCHIPELAGO
 
 tags:

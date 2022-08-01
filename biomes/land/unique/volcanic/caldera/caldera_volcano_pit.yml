@@ -1,7 +1,10 @@
 id: CALDERA_VOLCANO_PIT
 type: BIOME
-extends: [ EQ_VOLCANO_PIT_CALDERA, CARVING_OCEAN, BASE ]
-vanilla: minecraft:river
+extends:
+  - ENVIRONMENT_MARINE_OCEAN
+  - EQ_VOLCANO_PIT_CALDERA
+  - CARVING_OCEAN
+  - BASE
 color: $biomes/colors.yml:CALDERA_VOLCANO_PIT
 
 palette:

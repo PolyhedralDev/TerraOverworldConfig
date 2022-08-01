@@ -1,7 +1,6 @@
 id: EUCALYPTUS_FOREST
 type: BIOME
-extends: [ STEPPE ]
-vanilla: minecraft:plains
+extends: STEPPE
 color: $biomes/colors.yml:EUCALYPTUS_FOREST
 
 minecraft:

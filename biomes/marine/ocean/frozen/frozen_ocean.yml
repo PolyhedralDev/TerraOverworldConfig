@@ -1,7 +1,12 @@
 id: FROZEN_OCEAN
 type: BIOME
-extends: [ COLOR_FROZEN, PALETTE_OCEAN, EQ_OCEAN, CARVING_OCEAN, BASE ]
-vanilla: minecraft:frozen_ocean
+extends:
+  - COLOR_FROZEN
+  - PALETTE_OCEAN
+  - ENVIRONMENT_MARINE_OCEAN_FROZEN
+  - EQ_OCEAN
+  - CARVING_OCEAN
+  - BASE
 color: $biomes/colors.yml:FROZEN_OCEAN
 
 ocean:

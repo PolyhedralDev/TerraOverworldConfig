@@ -1,7 +1,10 @@
 id: WOODED_BUTTES
 type: BIOME
-extends: [ EQ_STRATIFIED_LAND, CARVING_LAND, BASE ]
-vanilla: minecraft:forest
+extends:
+  - ENVIRONMENT_LAND_TEMPERATE_OCEANIC
+  - EQ_STRATIFIED_LAND
+  - CARVING_LAND
+  - BASE
 color: $biomes/colors.yml:WOODED_BUTTES
 
 tags:

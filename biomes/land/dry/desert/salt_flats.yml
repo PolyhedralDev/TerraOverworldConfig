@@ -1,7 +1,10 @@
 id: SALT_FLATS
 type: BIOME
-extends: [ EQ_LAND, CARVING_OCEAN, BASE ]
-vanilla: minecraft:desert
+extends:
+  - ENVIRONMENT_LAND_DRY_DESERT
+  - EQ_LAND
+  - CARVING_OCEAN
+  - BASE
 color: $biomes/colors.yml:SALT_FLATS
 
 tags:

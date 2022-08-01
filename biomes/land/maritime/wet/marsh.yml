@@ -1,7 +1,10 @@
 id: MARSH
 type: BIOME
-extends: [ EQ_WARPED_WETLANDS, CARVING_OCEAN, BASE ]
-vanilla: minecraft:plains
+extends:
+  - ENVIRONMENT_LAND_MARITIME_WET
+  - EQ_WARPED_WETLANDS
+  - CARVING_OCEAN
+  - BASE
 color: $biomes/colors.yml:MARSH
 
 tags:

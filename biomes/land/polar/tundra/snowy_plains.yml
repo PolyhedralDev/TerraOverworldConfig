@@ -1,7 +1,11 @@
 id: SNOWY_PLAINS
 type: BIOME
-extends: [ COLOR_FROZEN, EQ_LAND, CARVING_LAND, BASE ]
-vanilla: minecraft:snowy_plains
+extends:
+  - COLOR_FROZEN
+  - ENVIRONMENT_LAND_POLAR_TUNDRA
+  - EQ_LAND
+  - CARVING_LAND
+  - BASE
 color: $biomes/colors.yml:SNOWY_PLAINS
 
 tags:
