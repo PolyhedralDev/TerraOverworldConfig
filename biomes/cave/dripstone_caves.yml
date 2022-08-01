@@ -5,6 +5,20 @@ extends:
   - BASE
 color: $biomes/colors.yml:DRIPSTONE_CAVES
 
+minecraft:
+  colors:
+    fog: 0xa88328
+    water: 0x6fcaba
+    water-fog: 0x90caba
+    sky: 0xf8ffba
+    grass: 0x3c783b
+    foliage: 0x3c783b
+
+  climate:
+    precipitation: rain
+    temperature: 1.0
+    downfall: 1.0
+
 palette:
   - DRIPSTONE_CAVES: 319
   - DRIPSTONE_CAVES_DEEPSLATE: $meta.yml:strata.deepslate.top

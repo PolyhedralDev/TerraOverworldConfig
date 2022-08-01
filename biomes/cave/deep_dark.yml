@@ -5,6 +5,20 @@ extends:
   - BASE
 color: $biomes/colors.yml:DEEP_DARK
 
+minecraft:
+  colors:
+    fog: 0x000000
+    water: 0x102e38
+    water-fog: 0x171921
+    sky: 0x1c2742
+    grass: 0x163b46
+    foliage: 0x195a58
+
+  climate:
+    precipitation: rain
+    temperature: 1.0
+    downfall: 1.0
+
 palette:
   - BLOCK:minecraft:stone: 319
   - << meta.yml:palette-bottom
