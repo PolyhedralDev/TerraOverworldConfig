@@ -16,19 +16,19 @@ minecraft:
     grass: 0x919c33
 
 slant:
-  - threshold: 2
+  - threshold: 0.55
     palette:
       - SAND: 319
       - << meta.yml:palette-bottom
-  - threshold: 2.5
+  - threshold: 0.5
     palette:
       - MOSSY_COBBLESTONE_STONE: 319
       - << meta.yml:palette-bottom
-  - threshold: 3.5
+  - threshold: 0.45
     palette:
       - TUFF_STONE: 319
       - << meta.yml:palette-bottom
-  - threshold: 4
+  - threshold: 0.4
     palette:
       - BLOCK:minecraft:stone: 319
       - << meta.yml:palette-bottom

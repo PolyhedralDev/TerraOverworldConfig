@@ -20,15 +20,15 @@ palette:
 slant-depth: 20
 
 slant:
-  - threshold: 2.5
+  - threshold: 0.5
     palette:
       - RED_SAND: 319
       - << meta.yml:palette-bottom
-  - threshold: 6
+  - threshold: 0.45
     palette:
       - BLOCK:minecraft:terracotta: 319
       - << meta.yml:palette-bottom
-  - threshold: 7
+  - threshold: 0.4
     palette:
       - BADLANDS_STRATA: 319
       - TERRACOTTA_STRATA: 88

@@ -21,7 +21,7 @@ palette:
   - << meta.yml:palette-bottom
 
 slant:
-  - threshold: 6
+  - threshold: 0.4
     palette:
       - TERRACOTTA_SLANT: 319
       - << meta.yml:palette-bottom

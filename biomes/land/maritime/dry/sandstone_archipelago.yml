@@ -25,11 +25,11 @@ palette:
   - << meta.yml:palette-bottom
 
 slant:
-  - threshold: 3
+  - threshold: 0.45
     palette:
       - SAND: 319
       - << meta.yml:palette-bottom
-  - threshold: 5
+  - threshold: 0.4
     palette:
       - TERRACOTTA_SLANT: 319
       - << meta.yml:palette-bottom

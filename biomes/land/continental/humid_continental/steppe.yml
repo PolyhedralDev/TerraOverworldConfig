@@ -24,6 +24,12 @@ palette:
   - MUDDY_BEACH: 61
   - << meta.yml:palette-bottom
 
+slant:
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:stone: 319
+      - << meta.yml:palette-bottom
+
 features:
   flora:
     - GRASS

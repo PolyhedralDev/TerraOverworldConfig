@@ -19,7 +19,7 @@ palette:
   - << meta.yml:palette-bottom
 
 slant:
-  - threshold: 10
+  - threshold: 0.4
     palette:
       - BLOCK:minecraft:smooth_basalt: 319
       - << meta.yml:palette-bottom

@@ -4,7 +4,7 @@ extends: DRY_TEMPERATE_MOUNTAINS
 color: $biomes/colors.yml:DRY_TEMPERATE_WHITE_MOUNTAINS
 
 slant:
-  - threshold: 4
+  - threshold: 0.4
     palette:
       - DIORITE_SLANT: 319
       - << meta.yml:palette-bottom

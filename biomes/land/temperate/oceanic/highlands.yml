@@ -13,19 +13,19 @@ palette:
   - << meta.yml:palette-bottom
 
 slant:
-  - threshold: 3
+  - threshold: 0.55
     palette:
       - GRASS: 319
       - << meta.yml:palette-bottom
-  - threshold: 4
+  - threshold: 0.5
     palette:
       - MOSS_STONE: 319
       - << meta.yml:palette-bottom
-  - threshold: 5
+  - threshold: 0.45
     palette:
       - MOSSY_COBBLESTONE_STONE: 319
       - << meta.yml:palette-bottom
-  - threshold: 7
+  - threshold: 0.4
     palette:
       - BLOCK:minecraft:andesite: 319
       - << meta.yml:palette-bottom

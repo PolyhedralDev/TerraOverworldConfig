@@ -12,11 +12,15 @@ tags:
 
 palette:
   - MOSS_STONE: 319
-  - SAND: 62
+  - SAND: 70
   - << meta.yml:palette-bottom
 
 slant:
-  - threshold: 4
+  - threshold: 0.45
+    palette:
+      - MOSS_STONE: 319
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
     palette:
       - BLOCK:minecraft:stone: 319
       - SAND: 62

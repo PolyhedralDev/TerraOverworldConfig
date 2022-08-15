@@ -26,7 +26,7 @@ palette:
   - << meta.yml:palette-bottom
 
 slant:
-  - threshold: 2
+  - threshold: 0.8
     palette:
       - BAMBOO_PONDS: 319
       - << meta.yml:palette-bottom

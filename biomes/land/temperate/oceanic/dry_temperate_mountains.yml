@@ -13,7 +13,7 @@ palette:
   - << meta.yml:palette-bottom
 
 slant:
-  - threshold: 4
+  - threshold: 0.4
     palette:
       - BLOCK:minecraft:stone: 319
       - << meta.yml:palette-bottom

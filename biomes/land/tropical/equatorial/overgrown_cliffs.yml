@@ -25,68 +25,68 @@ palette:
   - << meta.yml:palette-bottom
 
 slant:
-  - threshold: 2.5
+  - threshold: 0.7
     palette:
       - MOSS_STONE: 319
       - << meta.yml:palette-bottom
-  - threshold: 3
+  - threshold: 0.65
     palette:
       - BLOCK:minecraft:mossy_cobblestone: 319
       - << meta.yml:palette-bottom
-  - threshold: 3.5
+  - threshold: 0.6
     palette:
       - BLOCK:minecraft:tuff: 319
       - << meta.yml:palette-bottom
-  - threshold: 4
+  - threshold: 0.55
     palette:
       - BLOCK:minecraft:stone: 319
       - << meta.yml:palette-bottom
-  - threshold: 5
+  - threshold: 0.5
     palette:
       - BLOCK:minecraft:andesite: 319
       - << meta.yml:palette-bottom
-  - threshold: 6
+  - threshold: 0.45
     palette:
       - MOSS_TUFF: 319
       - BLOCK:minecraft:tuff: 120
       - << meta.yml:palette-bottom
-  - threshold: 8
+  - threshold: 0.4
     palette:
       - MOSS_DEEPSLATE: 319
       - BLOCK:minecraft:deepslate: 120
       - << meta.yml:palette-bottom
-  - threshold: 10
+  - threshold: 0.35
     palette:
       - MOSS_TUFF: 319
       - BLOCK:minecraft:tuff: 120
       - << meta.yml:palette-bottom
-  - threshold: 13
+  - threshold: 0.3
     palette:
       - MOSS_STONE: 319
       - BLOCK:minecraft:stone: 120
       - << meta.yml:palette-bottom
-  - threshold: 17
+  - threshold: 0.25
     palette:
       - MOSS_ANDESITE: 319
       - BLOCK:minecraft:andesite: 120
       - << meta.yml:palette-bottom
-  - threshold: 20
+  - threshold: 0.2
     palette:
       - MOSS_TUFF: 319
       - << meta.yml:palette-bottom
-  - threshold: 25
+  - threshold: 0.15
     palette:
       - MOSS_DEEPSLATE: 319
       - << meta.yml:palette-bottom
-  - threshold: 28
+  - threshold: 0.1
     palette:
       - MOSS_TUFF: 319
       - << meta.yml:palette-bottom
-  - threshold: 32
+  - threshold: 0.05
     palette:
       - MOSS_STONE: 319
       - << meta.yml:palette-bottom
-  - threshold: 38
+  - threshold: 0
     palette:
       - MOSS_ANDESITE: 319
       - << meta.yml:palette-bottom

@@ -14,15 +14,15 @@ palette:
 slant-depth: 10
 
 slant:
-  - threshold: 3.5
+  - threshold: 0.5
     palette:
       - TUFF_STONE: 319
       - << meta.yml:palette-bottom
-  - threshold: 5
+  - threshold: 0.45
     palette:
       - BLOCK:minecraft:tuff: 319
       - << meta.yml:palette-bottom
-  - threshold: 8
+  - threshold: 0.4
     palette:
       - BLOCK:minecraft:stone: 319
       - << meta.yml:palette-bottom

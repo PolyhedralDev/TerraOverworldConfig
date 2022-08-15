@@ -13,15 +13,15 @@ palette:
   - << meta.yml:palette-bottom
 
 slant:
-  - threshold: 3
+  - threshold: 0.5
     palette:
       - BLOCK:minecraft:black_terracotta: 319
       - << meta.yml:palette-bottom
-  - threshold: 6
+  - threshold: 0.45
     palette:
       - BLOCK:minecraft:gray_terracotta: 319
       - << meta.yml:palette-bottom
-  - threshold: 9
+  - threshold: 0.4
     palette:
       - BLOCK:minecraft:brown_terracotta: 319
       - << meta.yml:palette-bottom

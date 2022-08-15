@@ -21,11 +21,11 @@ palette:
   - << meta.yml:palette-bottom
 
 slant:
-  - threshold: 5
+  - threshold: 0.45
     palette:
       - XERIC_WHITE_TERRACOTTA: 319
       - << meta.yml:palette-bottom
-  - threshold: 7.5
+  - threshold: 0.4
     palette:
       - XERIC_LIGHT_GRAY_TERRACOTTA: 319
       - << meta.yml:palette-bottom

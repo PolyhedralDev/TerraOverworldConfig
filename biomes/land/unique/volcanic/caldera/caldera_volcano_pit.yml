@@ -15,19 +15,19 @@ palette:
 slant-depth: 10
 
 slant:
-  - threshold: 3
+  - threshold: 0.55
     palette:
       - MOSS_STONE: 319
       - << meta.yml:palette-bottom
-  - threshold: 4
+  - threshold: 0.5
     palette:
       - BLOCK:minecraft:smooth_basalt: 319
       - << meta.yml:palette-bottom
-  - threshold: 5
+  - threshold: 0.45
     palette:
       - BLOCK:minecraft:tuff: 319
       - << meta.yml:palette-bottom
-  - threshold: 6
+  - threshold: 0.4
     palette:
       - BLOCK:minecraft:stone: 319
       - << meta.yml:palette-bottom

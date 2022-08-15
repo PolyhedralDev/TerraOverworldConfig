@@ -25,7 +25,7 @@ palette:
   - << meta.yml:palette-bottom
 
 slant:
-  - threshold: 3
+  - threshold: 0.4
     palette:
       - GRANITE_SLANT: 319
       - << meta.yml:palette-bottom

@@ -25,22 +25,22 @@ palette:
   - << meta.yml:palette-bottom
 
 slant:
-  - threshold: 2
+  - threshold: 0.55
     palette:
       - YELLOWSTONE: 319
       - CALCITE: 72
       - << meta.yml:palette-bottom
-  - threshold: 3
+  - threshold: 0.5
     palette:
       - YELLOWSTONE_RED_SAND: 319
       - CALCITE: 72
       - << meta.yml:palette-bottom
-  - threshold: 4
+  - threshold: 0.45
     palette:
       - YELLOWSTONE_BASALT: 319
       - CALCITE: 72
       - << meta.yml:palette-bottom
-  - threshold: 7
+  - threshold: 0.4
     palette:
       - BLOCK:minecraft:calcite: 319
       - CALCITE: 64

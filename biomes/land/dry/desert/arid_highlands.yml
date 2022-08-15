@@ -12,15 +12,11 @@ palette:
   - << meta.yml:palette-bottom
 
 slant:
-  - threshold: 3
-    palette:
-      - SAND: 319
-      - << meta.yml:palette-bottom
-  - threshold: 4
+  - threshold: 0.45
     palette:
       - BLOCK:minecraft:smooth_sandstone: 319
       - << meta.yml:palette-bottom
-  - threshold: 7
+  - threshold: 0.4
     palette:
       - BLOCK:minecraft:sandstone: 319
       - << meta.yml:palette-bottom

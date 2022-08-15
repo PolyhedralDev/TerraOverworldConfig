@@ -20,23 +20,23 @@ palette:
 slant-depth: 1
 
 slant:
-  - threshold: 2
+  - threshold: 0.6
     palette:
       - GRASS: 319
       - << meta.yml:palette-bottom
-  - threshold: 3
+  - threshold: 0.55
     palette:
       - MOSS_STONE: 319
       - << meta.yml:palette-bottom
-  - threshold: 4
+  - threshold: 0.5
     palette:
       - BLOCK:minecraft:mossy_cobblestone: 319
       - << meta.yml:palette-bottom
-  - threshold: 5
+  - threshold: 0.45
     palette:
       - BLOCK:minecraft:cobblestone: 319
       - << meta.yml:palette-bottom
-  - threshold: 6
+  - threshold: 0.4
     palette:
       - MOSS_STONE: 319
       - << meta.yml:palette-bottom

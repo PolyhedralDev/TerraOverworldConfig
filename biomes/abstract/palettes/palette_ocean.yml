@@ -9,7 +9,7 @@ palette:
 slant-depth: 4
 
 slant:
-  - threshold: 2.5
+  - threshold: 0.4
     palette:
       - BLOCK:minecraft:stone: 319
       - GRAVEL: 61

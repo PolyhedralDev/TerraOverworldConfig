@@ -19,9 +19,14 @@ minecraft:
     water-fog: 0x44aff5
 
 palette:
-  - BLOCK:minecraft:stone: 319
-  - SAND: 75
+  - SAND: 319
   - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:stone: 319
+      - << meta.yml:palette-bottom
 
 features:
   landforms:
