@@ -1,6 +1,6 @@
 id: SUNFLOWER_PRAIRIE
 type: BIOME
-extends: PLAINS
+extends: PRAIRIE
 color: $biomes/colors.yml:SUNFLOWER_PRAIRIE
 
 features:

@@ -40,7 +40,7 @@ stages:
         - ERODED_BADLANDS_BUTTES: 1
         - ARID_HIGHLANDS: 1
       forest-hills-variants:
-        - FOREST: 5
+        - BROADLEAF_FOREST: 5
         - FLOWERING_FOREST: 3
       wild-mountains-variants:
         - WILD_BUMPY_MOUNTAINS: 3

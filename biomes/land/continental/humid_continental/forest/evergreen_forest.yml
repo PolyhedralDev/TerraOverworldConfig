@@ -1,11 +1,11 @@
-id: FOREST
+id: EVERGREEN_FOREST
 type: BIOME
 extends:
-  - ENVIRONMENT_LAND_TEMPERATE_OCEANIC
-  - EQ_MULTI_TERRACED_LAND
+  - ENVIRONMENT_LAND_CONTINENTAL_HUMID
+  - EQ_LAND
   - CARVING_LAND
   - BASE
-color: $biomes/colors.yml:FOREST
+color: $biomes/colors.yml:EVERGREEN_FOREST
 
 tags:
   - LAND_CAVES
@@ -13,10 +13,8 @@ tags:
 
 minecraft:
   colors:
-    grass: 0x79c05a
-    foliage: 0x59ae30
-    water: 0x1e97f2
-    water-fog: 0x1e97f2
+    grass: 0x86b783
+    foliage: 0x64a464
 
 palette:
   - GRASS: 319
@@ -45,7 +43,7 @@ features:
     - LILAC_PATCH
     - LILY_OF_THE_VALLEY_PATCH
   trees:
-    - TEMPERATE_TREES
+    - COLD_EVERGREEN_TREES
   landforms:
     - MOSSY_BOULDERS
     - SMALL_MOSSY_BOULDER_PATCHES
