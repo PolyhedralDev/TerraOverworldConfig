@@ -1,7 +1,7 @@
-id: SAKURA_MOUNTAINS
+id: SAKURA_GROVE
 type: BIOME
 extends: TEMPERATE_MOUNTAINS
-color: $biomes/colors.yml:SAKURA_MOUNTAINS
+color: $biomes/colors.yml:SAKURA_GROVE
 
 minecraft:
   colors:

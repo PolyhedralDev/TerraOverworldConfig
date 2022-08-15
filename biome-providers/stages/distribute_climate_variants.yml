@@ -185,15 +185,15 @@ stages:
       
       flat-polar:
         - SNOWY_PLAINS: 2
-        - TUNDRA_PLAINS: 2
+        - TUNDRA: 2
         - SNOWY_MEADOW: 4
       
       hills-small-polar:
         - ICE_SPIKES: 1
-        - TUNDRA_PLAINS: 3
+        - TUNDRA: 3
       
       hills-large-polar:
-        - TUNDRA_PLAINS: 1
+        - TUNDRA: 1
       
       mountains-small-polar:
         - SNOWY_MOUNTAINS: 1

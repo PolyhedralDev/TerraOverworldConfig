@@ -1,16 +1,27 @@
-id: MONSOON_MOUNTAINS
+id: JUNGLE
 type: BIOME
 extends:
   - ENVIRONMENT_LAND_TROPICAL_EQUATORIAL
   - EQ_MULTI_TERRACED_LAND
   - CARVING_LAND
   - BASE
-color: $biomes/colors.yml:MONSOON_MOUNTAINS
+color: $biomes/colors.yml:JUNGLE
+
+minecraft:
+  colors:
+    grass: 0x59c93c
+    foliage: 0x30bb0b
+    water: 0x14a2c5
+    water-fog: 0x14a2c5
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER
 
 palette:
-  - GRASS_MOSSY: 319
-  - SAND: 64
-  - MUDDY_BEACH: 61
+  - GRASS: 319
+  - GRASS_VARIATION: 62
+  - SAND: 61
   - << meta.yml:palette-bottom
 
 slant:
@@ -44,8 +55,8 @@ features:
     - SMALL_DRIPLEAF
     - BIG_DRIPLEAF
   trees:
-    - DENSE_TEMPERATE_TREE_PATCHES
-    - OAK_BUSHES
-    - SUBTROPICAL_BUSHES
+    - JUNGLE_TREES
+    - JUNGLE_BUSHES
+    - POTATO_PATCHES
   landforms:
     - SMALL_MOSSY_BOULDER_PATCHES

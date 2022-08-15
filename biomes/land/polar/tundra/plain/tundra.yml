@@ -1,4 +1,4 @@
-id: TUNDRA_PLAINS
+id: TUNDRA
 type: BIOME
 extends:
   - COLOR_TUNDRA
@@ -6,7 +6,7 @@ extends:
   - EQ_LAND
   - CARVING_LAND
   - BASE
-color: $biomes/colors.yml:TUNDRA_PLAINS
+color: $biomes/colors.yml:TUNDRA
 
 tags:
   - LAND_CAVES

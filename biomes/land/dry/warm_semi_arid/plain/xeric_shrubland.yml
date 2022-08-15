@@ -1,4 +1,4 @@
-id: XERIC_HILLS
+id: XERIC_SHRUBLAND
 type: BIOME
 extends:
   - COLOR_XERIC
@@ -6,7 +6,7 @@ extends:
   - EQ_MULTI_TERRACED_LAND
   - CARVING_LAND
   - BASE
-color: $biomes/colors.yml:XERIC_HILLS
+color: $biomes/colors.yml:XERIC_SHRUBLAND
 
 tags:
   - LAND_CAVES

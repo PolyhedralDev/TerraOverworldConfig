@@ -47,7 +47,7 @@ stages:
       temperate-mountains-variants:
         - HIGHLANDS: 4
         - TEMPERATE_MOUNTAINS: 8
-        - SAKURA_MOUNTAINS: 4
+        - SAKURA_GROVE: 4
     sampler:
       dimensions: 2
       type: CELLULAR
@@ -77,7 +77,7 @@ stages:
         - BAMBOO_JUNGLE: 1
       plains-microvariants:
         - PLAINS: 3
-        - SUNFLOWER_PLAINS: 1
+        - SUNFLOWER_PRAIRIE: 1
       JUNGLE:
         - SELF: 3
         - BAMBOO_JUNGLE: 1

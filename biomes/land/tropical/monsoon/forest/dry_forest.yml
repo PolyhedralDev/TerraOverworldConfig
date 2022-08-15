@@ -1,18 +1,16 @@
-id: JUNGLE
+id: DRY_FOREST
 type: BIOME
 extends:
-  - ENVIRONMENT_LAND_TROPICAL_EQUATORIAL
-  - EQ_MULTI_TERRACED_LAND
+  - ENVIRONMENT_LAND_TROPICAL_MONSOON
+  - EQ_LAND
   - CARVING_LAND
   - BASE
-color: $biomes/colors.yml:JUNGLE
+color: $biomes/colors.yml:DRY_FOREST
 
 minecraft:
   colors:
-    grass: 0x59c93c
-    foliage: 0x30bb0b
-    water: 0x14a2c5
-    water-fog: 0x14a2c5
+    grass: 0xcbd656
+    foliage: 0xa8c348
 
 tags:
   - LAND_CAVES
@@ -20,44 +18,39 @@ tags:
 
 palette:
   - GRASS: 319
-  - GRASS_VARIATION: 62
-  - SAND: 61
+  - SAND: 64
   - << meta.yml:palette-bottom
+
+slant-depth: 1
 
 slant:
   - threshold: 0.55
     palette:
-      - MOSS_STONE: 319
+      - GRASS: 319
       - << meta.yml:palette-bottom
   - threshold: 0.5
     palette:
-      - MOSSY_COBBLESTONE_STONE: 319
+      - BLOCK:minecraft:mossy_cobblestone: 319
       - << meta.yml:palette-bottom
   - threshold: 0.45
     palette:
-      - TUFF_STONE: 319
+      - BLOCK:minecraft:cobblestone: 319
       - << meta.yml:palette-bottom
   - threshold: 0.4
     palette:
       - BLOCK:minecraft:stone: 319
       - << meta.yml:palette-bottom
-
+      
 features:
   flora:
     - GRASS
-    - LARGE_LEAF_VINES
+    - OAK_BUSHES
+    - FERNS
     - POPPY_PATCH
     - DANDELION_PATCH
-    - ROSE_BUSH_PATCH
-    - PEONY_PATCH
-    - LILAC_PATCH
-    - LILY_OF_THE_VALLEY_PATCH
-    - SMALL_DRIPLEAF
-    - BIG_DRIPLEAF
+    - TALL_GRASS
   trees:
     - JUNGLE_TREES
-    - JUNGLE_BUSHES
-    - POTATO_PATCHES
   landforms:
-    - MOSSY_BOULDERS
     - SMALL_MOSSY_BOULDER_PATCHES
+  

@@ -1,58 +1,51 @@
-id: ROCKY_BUMPY_MOUNTAINS
+id: MONSOON_FOREST
 type: BIOME
 extends:
   - ENVIRONMENT_LAND_TROPICAL_EQUATORIAL
-  - EQ_LAND
+  - EQ_MULTI_TERRACED_LAND
   - CARVING_LAND
   - BASE
-color: $biomes/colors.yml:ROCKY_BUMPY_MOUNTAINS
-
-tags:
-  - LAND_CAVES
-  - USE_RIVER
+color: $biomes/colors.yml:MONSOON_FOREST
 
 palette:
-  - GRASS: 319
+  - GRASS_MOSSY: 319
   - SAND: 64
   - MUDDY_BEACH: 61
   - << meta.yml:palette-bottom
 
-slant-depth: 1
-
 slant:
-  - threshold: 0.6
-    palette:
-      - GRASS: 319
-      - << meta.yml:palette-bottom
   - threshold: 0.55
     palette:
       - MOSS_STONE: 319
       - << meta.yml:palette-bottom
   - threshold: 0.5
     palette:
-      - BLOCK:minecraft:mossy_cobblestone: 319
+      - MOSSY_COBBLESTONE_STONE: 319
       - << meta.yml:palette-bottom
   - threshold: 0.45
     palette:
-      - BLOCK:minecraft:cobblestone: 319
+      - TUFF_STONE: 319
       - << meta.yml:palette-bottom
   - threshold: 0.4
     palette:
-      - MOSS_STONE: 319
+      - BLOCK:minecraft:stone: 319
       - << meta.yml:palette-bottom
-      
+
 features:
   flora:
     - GRASS
-    - SUBTROPICAL_BUSHES
-    - FERNS
+    - LARGE_LEAF_VINES
     - POPPY_PATCH
     - DANDELION_PATCH
-    - TALL_GRASS
+    - ROSE_BUSH_PATCH
+    - PEONY_PATCH
+    - LILAC_PATCH
+    - LILY_OF_THE_VALLEY_PATCH
     - SMALL_DRIPLEAF
     - BIG_DRIPLEAF
   trees:
-    - JUNGLE_TREES
+    - DENSE_TEMPERATE_TREE_PATCHES
+    - OAK_BUSHES
+    - SUBTROPICAL_BUSHES
   landforms:
     - SMALL_MOSSY_BOULDER_PATCHES
-  

@@ -1,16 +1,11 @@
-id: DRY_ROCKY_BUMPY_MOUNTAINS
+id: ROCKY_JUNGLE
 type: BIOME
 extends:
-  - ENVIRONMENT_LAND_TROPICAL_MONSOON
+  - ENVIRONMENT_LAND_TROPICAL_EQUATORIAL
   - EQ_LAND
   - CARVING_LAND
   - BASE
-color: $biomes/colors.yml:DRY_ROCKY_BUMPY_MOUNTAINS
-
-minecraft:
-  colors:
-    grass: 0xcbd656
-    foliage: 0xa8c348
+color: $biomes/colors.yml:ROCKY_JUNGLE
 
 tags:
   - LAND_CAVES
@@ -19,14 +14,19 @@ tags:
 palette:
   - GRASS: 319
   - SAND: 64
+  - MUDDY_BEACH: 61
   - << meta.yml:palette-bottom
 
 slant-depth: 1
 
 slant:
-  - threshold: 0.55
+  - threshold: 0.6
     palette:
       - GRASS: 319
+      - << meta.yml:palette-bottom
+  - threshold: 0.55
+    palette:
+      - MOSS_STONE: 319
       - << meta.yml:palette-bottom
   - threshold: 0.5
     palette:
@@ -38,19 +38,22 @@ slant:
       - << meta.yml:palette-bottom
   - threshold: 0.4
     palette:
-      - BLOCK:minecraft:stone: 319
+      - MOSS_STONE: 319
       - << meta.yml:palette-bottom
       
 features:
   flora:
     - GRASS
-    - OAK_BUSHES
+    - SUBTROPICAL_BUSHES
     - FERNS
     - POPPY_PATCH
     - DANDELION_PATCH
     - TALL_GRASS
+    - SMALL_DRIPLEAF
+    - BIG_DRIPLEAF
   trees:
     - JUNGLE_TREES
   landforms:
     - SMALL_MOSSY_BOULDER_PATCHES
+    - MOSSY_BOULDERS
   

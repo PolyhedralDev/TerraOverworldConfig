@@ -42,7 +42,7 @@ stages:
   # -------------
   # Flat Tropical Semi-Arid
   # -------------
-      - XERIC_HILLS: 3
+      - XERIC_SHRUBLAND: 3
   # -------------
   # Flat Tropical Arid
   # -------------
@@ -58,7 +58,7 @@ stages:
     # -------------
     # Flat Subtropical Arid
     # -------------
-        - XERIC_HILLS: 5
+        - XERIC_SHRUBLAND: 5
 
       flat-temperate:
     # Flat Subtropical Extra-Humid
@@ -132,7 +132,7 @@ stages:
         # -------------
         # Small Hills Subtropical Arid
         # -------------
-        - XERIC_HILLS: 5
+        - XERIC_SHRUBLAND: 5
 
       hills-small-temperate:
         # -------------
@@ -194,12 +194,12 @@ stages:
         # -------------
         # Large Hills Subtropical Semi-Arid
         # -------------
-        - DRY_ROCKY_BUMPY_MOUNTAINS: 6
+        - DRY_FOREST: 6
         - MOORLAND: 3
         # -------------
         # Large Hills Subtropical Arid
         # -------------
-        - XERIC_HILLS: 5
+        - XERIC_SHRUBLAND: 5
 
       hills-large-temperate:
         # -------------
@@ -253,7 +253,7 @@ stages:
         # -------------
         # Small Mountains Subtropical Semi-Humid
         # -------------
-        - MONSOON_MOUNTAINS: 5
+        - MONSOON_FOREST: 5
         # -------------
         # Small Mountains Subtropical Semi-Humid
         # -------------
@@ -261,11 +261,11 @@ stages:
         # -------------
         # Small Mountains Subtropical Semi-Arid
         # -------------
-        - ROCKY_BUMPY_MOUNTAINS: 4
+        - ROCKY_JUNGLE: 4
         # -------------
         # Small Mountains Subtropical Arid
         # -------------
-        - DRY_ROCKY_BUMPY_MOUNTAINS: 5
+        - DRY_FOREST: 5
 
       mountains-small-temperate:
         # -------------
@@ -309,7 +309,7 @@ stages:
         # -------------
         # Large Mountains Subtropical Humid
         # -------------
-        - MONSOON_MOUNTAINS: 1
+        - MONSOON_FOREST: 1
 
       mountains-large-temperate:
         # -------------
