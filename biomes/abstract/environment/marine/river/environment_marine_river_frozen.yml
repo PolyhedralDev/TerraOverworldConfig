@@ -14,5 +14,5 @@ minecraft:
   climate:
     precipitation: snow
     temperature: 0.5
-    temperature-modifier: frozen
+    temperature-modifier: FROZEN
     downfall: 0.5
