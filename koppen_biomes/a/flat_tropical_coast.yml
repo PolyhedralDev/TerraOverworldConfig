@@ -1,0 +1,4 @@
+id: FLAT_TROPICAL_COAST
+type: BIOME
+extends: KOPPEN_BIOME
+color: 0x0065ff

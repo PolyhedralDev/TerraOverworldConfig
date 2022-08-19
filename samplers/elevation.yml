@@ -1,0 +1,17 @@
+samplers:
+  elevation:
+    dimensions: 2
+    type: EXPRESSION
+    expression: ((noise(x / elevationScale / globalScale, z / elevationScale / globalScale)+1)/2)^2
+    variables:
+      globalScale: $customization.yml:global-scale
+      elevationScale: $customization.yml:elevation-scale
+    samplers:
+      noise:
+        dimensions: 2
+        type: FBM
+        octaves: 4
+        sampler:
+          type: OPEN_SIMPLEX_2
+          salt: 2
+          frequency: 1 / 2000

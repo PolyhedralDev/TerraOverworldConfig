@@ -1,0 +1,113 @@
+stages:
+  - type: REPLACE_LIST
+    sampler:
+      type: CELLULAR
+      return: CellValue
+      frequency: 0.005
+    
+    default-from: ice-cap
+    default-to: EF
+    to:
+        tundra-flat: ET
+        tundra: ET
+        tundra-highlands: TUNDRA_HIGHLANDS
+        
+        polar-coast-flat: FLAT_FROZEN_COAST
+        polar-coast: FROZEN_COAST
+        polar-coast-highlands: FROZEN_COAST
+  
+        boreal-hot-summer-flat: DFA
+        boreal-hot-summer: DFA
+        boreal-hot-summer-highlands: BOREAL_HIGHLANDS
+        
+        boreal-warm-summer-flat: DFB
+        boreal-warm-summer: DFB
+        boreal-warm-summer-highlands: BOREAL_HIGHLANDS
+
+        boreal-cold-summer-flat: DFC
+        boreal-cold-summer: DFC
+        boreal-cold-summer-highlands: BOREAL_HIGHLANDS
+      
+        boreal-very-cold-winter-flat: DFD
+        boreal-very-cold-winter: DFD
+        boreal-very-cold-winter-highlands: BOREAL_HIGHLANDS
+        
+        boreal-dry-winter-hot-summer-flat: DWA
+        boreal-dry-winter-hot-summer: DWA
+        boreal-dry-winter-hot-summer-highlands: DRY_BOREAL_HIGHLANDS
+
+        boreal-dry-winter-warm-summer-flat: DWB
+        boreal-dry-winter-warm-summer: DWB
+        boreal-dry-winter-warm-summer-highlands: DRY_BOREAL_HIGHLANDS
+
+        boreal-dry-winter-cold-summer-flat: DWC
+        boreal-dry-winter-cold-summer: DWC
+        boreal-dry-winter-cold-summer-highlands: DRY_BOREAL_HIGHLANDS
+
+        boreal-dry-winter-very-cold-summer-flat: DWD
+        boreal-dry-winter-very-cold-summer: DWD
+        boreal-dry-winter-very-cold-summer-highlands: DRY_BOREAL_HIGHLANDS
+
+        boreal-coast-flat: FLAT_BOREAL_COAST
+        boreal-coast: BOREAL_COAST
+        boreal-coast-highlands: BOREAL_COAST
+  
+        temperate-mediterranean-hot-summer-flat: CSA
+        temperate-mediterranean-hot-summer: CSA
+        temperate-mediterranean-hot-summer-highlands: MEDITERRANEAN_HIGHLANDS
+
+        temperate-mediterranean-warm-summer-flat: CSB
+        temperate-mediterranean-warm-summer: CSB
+        temperate-mediterranean-warm-summer-highlands: MEDITERRANEAN_HIGHLANDS
+
+        temperate-hot-summer-flat: CFA
+        temperate-hot-summer: CFA
+        temperate-hot-summer-highlands: TEMPERATE_HIGHLANDS
+
+        temperate-warm-summer-flat: CFB
+        temperate-warm-summer: CFB
+        temperate-warm-summer-highlands: TEMPERATE_HIGHLANDS
+
+        temperate-cold-summer-flat: CFC
+        temperate-cold-summer: CFC
+        temperate-cold-summer-highlands: TEMPERATE_HIGHLANDS
+
+        temperate-coast-flat: FLAT_TEMPERATE_COAST
+        temperate-coast: TEMPERATE_COAST
+        temperate-coast-highlands: TEMPERATE_COAST
+
+        hot-desert-flat: BWH
+        hot-desert: BWH
+        hot-desert-highlands: HOT_DESERT_HIGHLANDS
+
+        hot-steppe-flat: BSH
+        hot-steppe: BSH
+        hot-steppe-highlands: HOT_DESERT_HIGHLANDS
+
+        cold-desert-flat: BWK
+        cold-desert: BWK
+        cold-desert-highlands: COLD_DESERT_HIGHLANDS
+
+        cold-steppe-flat: BSK
+        cold-steppe: BSK
+        cold-steppe-highlands: COLD_DESERT_HIGHLANDS
+
+        arid-coast-flat: FLAT_ARID_COAST
+        arid-coast: ARID_COAST
+        arid-coast-highlands: ARID_COAST
+
+        tropical-rainforest-flat: AF
+        tropical-rainforest: AF
+        tropical-rainforest-highlands: AF
+
+        tropical-monsoon-flat: AM
+        tropical-monsoon: AM
+        tropical-monsoon-highlands: AM
+
+        tropical-savanna-flat: AW
+        tropical-savanna: AW
+        tropical-savanna-highlands: AW
+
+        tropical-coast-flat: FLAT_TROPICAL_COAST
+        tropical-coast: TROPICAL_COAST
+        tropical-coast-highlands: TROPICAL_COAST

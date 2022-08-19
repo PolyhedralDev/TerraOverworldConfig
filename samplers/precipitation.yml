@@ -1,0 +1,31 @@
+samplers:
+  rawPrecipitation:
+    dimensions: 2
+    type: EXPRESSION
+    expression: sampler(x / precipitationScale / globalScale, z / precipitationScale / globalScale) * precipitationSpread + precipitationOffset
+    variables:
+      globalScale: $customization.yml:global-scale
+      precipitationScale: $customization.yml:precipitation-scale
+      precipitationOffset: $customization.yml:precipitation-offset
+      precipitationSpread: $customization.yml:precipitation-spread
+    samplers:
+      sampler:
+        dimensions: 2
+        type: FBM
+        octaves: 2
+        sampler:
+          type: OPEN_SIMPLEX_2
+          salt: 4
+          frequency: 1 / 7500
+  
+  precipitation:
+    dimensions: 2
+    type: EXPRESSION
+    expression: lerp(continents(x, z), oceanThreshold, 1, landThreshold, rawPrecipitation(x, z))
+    functions: $functions/interpolation.yml:functions
+    variables:
+      oceanThreshold: $customization.yml:precipitation-ocean-threshold
+      landThreshold: $customization.yml:precipitation-land-threshold
+    samplers:
+      rawPrecipitation: $samplers/precipitation.yml:samplers.rawPrecipitation
+      continents: $samplers/continents.yml:samplers.continents

@@ -1,0 +1,4 @@
+id: K_DEEP_OCEAN
+type: BIOME
+extends: KOPPEN_BIOME
+color: 0x332d6a

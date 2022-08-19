@@ -1,0 +1,74 @@
+
+global-scale: 1
+# Default: 1
+
+# ---
+# Continental
+# ---
+
+continental-scale: 2
+# Default: 1
+
+continental-offset: 0.2
+# Default: 0.2
+
+continental-coast-width: 50
+# Default: 50
+
+continental-coast-threshold: 0.05
+# Default: 0.05
+
+# ---
+# Elevation
+# ---
+
+elevation-scale: 1
+# Default: 1
+
+elevation-highlands-threshold: 0.6
+# Default: 0.6
+
+elevation-flatlands-threshold: 0.2
+# Default: 0.2
+
+# ---
+# Temperature
+# ---
+
+temperature-scale: 1
+# Default: 1
+
+temperature-offset: 0
+# Offsets how hot / cold temperature is
+# Default: 0
+
+temperature-spread: 1
+# How spread out the temperature difference is
+# Default: 1
+
+temperature-altitude-lapse-rate: 2
+# How fast temperature drops with altitude
+# Default: 2
+
+temperature-altitude-lapse-start: 0.5
+# The altitude temperature should begin to drop at
+# Default: 0.5
+
+# ---
+# Precipitation
+# ---
+
+precipitation-scale: 1
+# Default: 1
+
+precipitation-offset: 0
+# Default 0
+
+precipitation-spread: 1
+# Default: 1
+
+precipitation-ocean-threshold: -1
+# Default -1
+
+precipitation-land-threshold: 0.4
+# Default: 0.4

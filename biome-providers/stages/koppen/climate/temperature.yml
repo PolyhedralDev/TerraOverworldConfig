@@ -1,0 +1,34 @@
+stages:
+  - type: REPLACE_LIST
+    sampler:
+      type: EXPRESSION
+      expression: temperature(x, z)
+
+    default-from: land
+    default-to:
+      - ice-cap:                 &iceCap         1
+      - tundra:                  &tundra         1
+      - boreal-very-cold-winter: &borealVeryCold 1
+      - boreal-cold-summer:      &borealCold     1
+      - boreal-warm-summer:      &borealWarm     1
+      - boreal-hot-summer:       &borealHot      1
+      - temperate-cold-summer:   &temperateCold  1
+      - temperate-warm-summer:   &temperateWarm  3
+      - temperate-hot-summer:    &temperateHot   2
+      - tropical-savanna:        &tropicalCold   1
+      - tropical-monsoon:        &tropicalWarm   1
+      - tropical-rainforest:     &tropicalHot    4
+    to:
+      coast:
+        - polar-coast: *iceCap
+        - polar-coast: *tundra
+        - boreal-coast: *borealVeryCold
+        - boreal-coast: *borealCold
+        - boreal-coast: *borealWarm
+        - boreal-coast: *borealHot
+        - temperate-coast: *temperateCold
+        - temperate-coast: *temperateWarm
+        - temperate-coast: *temperateHot
+        - hot-coast: *tropicalCold
+        - hot-coast: *tropicalWarm
+        - hot-coast: *tropicalHot

@@ -1,0 +1,4 @@
+id: BWH
+type: BIOME
+extends: KOPPEN_BIOME
+color: 0xd70003

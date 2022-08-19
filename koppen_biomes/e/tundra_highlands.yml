@@ -1,0 +1,4 @@
+id: TUNDRA_HIGHLANDS
+type: BIOME
+extends: KOPPEN_BIOME
+color: 0x00a6b4

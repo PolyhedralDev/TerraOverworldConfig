@@ -1,0 +1,53 @@
+samplers:
+  continents: &continents
+    dimensions: 2
+    type: EXPRESSION
+    expression: -sampler(x / continentalScale / globalScale, z / continentalScale / globalScale) + continentalOffset
+    variables:
+      globalScale: $customization.yml:global-scale
+      continentalScale: $customization.yml:continental-scale
+      continentalOffset: $customization.yml:continental-offset
+    samplers:
+      sampler:
+        dimensions: 2
+        type: RIDGED
+        lacunarity: 3
+        gain: 0.45
+        octaves: 4
+        sampler:
+          type: OPEN_SIMPLEX_2
+          salt: 1
+          frequency: 1 / 5000
+  
+  continentBorder:
+    dimensions: 2
+    type: EXPRESSION
+    expression: |
+      if(inRange(continents(x, z), -threshold, threshold),
+        if(continentsEdge((x-width)/width, (z-width)/width) != 0, 1, -1),
+        -1
+      )
+    variables: &continentBorderVariables
+      width: ${customization.yml:continental-coast-width} * ${customization.yml:global-scale}
+      threshold: $customization.yml:continental-coast-width
+    functions:
+      inRange:
+        arguments:
+          - x
+          - lower
+          - upper
+        expression: x >= lower && x <= upper
+    samplers:
+      continents: *continents
+      continentsEdge:
+        dimensions: 2
+        type: KERNEL
+        kernel: [[0,  1, 0],
+                 [1, -4, 1],
+                 [0,  1, 0]]
+        sampler:
+          type: EXPRESSION
+          expression: continents(x*width, z*width) > 0
+          variables: *continentBorderVariables
+          samplers:
+            continents: *continents

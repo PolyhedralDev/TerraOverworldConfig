@@ -1,0 +1,4 @@
+id: DSB
+type: BIOME
+extends: KOPPEN_BIOME
+color: 0x5a8997

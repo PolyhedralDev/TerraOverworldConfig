@@ -1,0 +1,48 @@
+biomes:
+  type: PIPELINE
+  resolution: 1
+  blend:
+    amplitude: 2
+    sampler:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.1
+  pipeline:
+    source:
+      type: SAMPLER
+      sampler:
+        type: EXPRESSION
+        expression: continents(x, z)
+      biomes:
+        ocean: 1
+        land: 1
+    stages:
+      - << biome-providers/stages/koppen/add_coast.yml:stages
+      - << biome-providers/stages/koppen/climate/temperature.yml:stages
+      - << biome-providers/stages/koppen/climate/precipitation.yml:stages
+      - << biome-providers/stages/koppen/climate/elevation.yml:stages
+      - << biome-providers/stages/koppen/set_biomes_in_climates.yml:stages
+      
+      - type: REPLACE
+        sampler:
+          type: CONSTANT
+        from: ocean
+        to: K_OCEAN
+      
+      - type: FRACTAL_EXPAND
+        sampler:
+          type: WHITE_NOISE
+      - type: FRACTAL_EXPAND
+        sampler:
+          type: WHITE_NOISE
+      - type: FRACTAL_EXPAND
+        sampler:
+          type: WHITE_NOISE
+      - type: SMOOTH
+        sampler:
+          type: WHITE_NOISE
+      - type: SMOOTH
+        sampler:
+          type: WHITE_NOISE
+      - type: SMOOTH
+        sampler:
+          type: WHITE_NOISE
