@@ -79,7 +79,7 @@ stages:
         hot-desert-flat: BWH
         hot-desert: BWH
         hot-desert-highlands: HOT_DESERT_HIGHLANDS
-
+      
         hot-steppe-flat: BSH
         hot-steppe: BSH
         hot-steppe-highlands: HOT_DESERT_HIGHLANDS
@@ -104,9 +104,13 @@ stages:
         tropical-monsoon: AM
         tropical-monsoon-highlands: AM
 
-        tropical-savanna-flat: AW
-        tropical-savanna: AW
-        tropical-savanna-highlands: AW
+        tropical-savanna-dry-flat: DRY_TROPICAL_SAVANNA
+        tropical-savanna-dry: DRY_TROPICAL_SAVANNA
+        tropical-savanna-dry-highlands: DRY_TROPICAL_SAVANNA
+
+        tropical-savanna-wet-flat: WET_TROPICAL_SAVANNA
+        tropical-savanna-wet: WET_TROPICAL_SAVANNA
+        tropical-savanna-wet-highlands: WET_TROPICAL_SAVANNA
 
         tropical-coast-flat: FLAT_TROPICAL_COAST
         tropical-coast: TROPICAL_COAST

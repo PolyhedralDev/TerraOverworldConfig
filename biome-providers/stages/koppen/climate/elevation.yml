@@ -117,10 +117,14 @@ stages:
         - tropical-monsoon-flat: 1 #AM: 1
         - tropical-monsoon: 1 #AM: 1
         - tropical-monsoon-highlands: 1 #AM: 1
-      tropical-savanna:
-        - tropical-savanna-flat: 1 #AW: 1
-        - tropical-savanna: 1 #AW: 1
-        - tropical-savanna-highlands: 1 #AW: 1
+      tropical-savanna-dry:
+        - tropical-savanna-dry-flat: 1 #AW: 1
+        - tropical-savanna-dry: 1 #AW: 1
+        - tropical-savanna-dry-highlands: 1 #AW: 1
+      tropical-savanna-wet:
+        - tropical-savanna-wet-flat: 1 #AW: 1
+        - tropical-savanna-wet: 1 #AW: 1
+        - tropical-savanna-wet-highlands: 1 #AW: 1
       tropical-coast:
         - tropical-coast-flat: 1 #FLAT_TROPICAL_COAST: 1
         - tropical-coast: 1 #TROPICAL_COAST: 1

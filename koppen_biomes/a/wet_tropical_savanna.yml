@@ -1,0 +1,4 @@
+id: WET_TROPICAL_SAVANNA
+type: BIOME
+extends: KOPPEN_BIOME
+color: 0x87e8ff

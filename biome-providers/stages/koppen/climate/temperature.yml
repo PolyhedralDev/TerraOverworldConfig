@@ -15,7 +15,7 @@ stages:
       - temperate-cold-summer:   &temperateCold  1
       - temperate-warm-summer:   &temperateWarm  3
       - temperate-hot-summer:    &temperateHot   2
-      - tropical-savanna:        &tropicalCold   1
+      - tropical-savanna-wet:    &tropicalCold   1
       - tropical-monsoon:        &tropicalWarm   1
       - tropical-rainforest:     &tropicalHot    4
     to:
