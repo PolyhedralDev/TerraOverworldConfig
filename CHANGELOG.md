@@ -45,6 +45,7 @@ generate in an area where it previously did not (resulting in a chunk border).
 
 ### Changed
 - Reworked terrain to use a global heightmap.
+- Reworked biome distribution to be based on the [Koppen Climate Classification](https://en.wikipedia.org/wiki/K%C3%B6ppen_climate_classification)
 
 ### Removed
 - Removed elevation biome variants, as biomes now use a global height map for terrain.
