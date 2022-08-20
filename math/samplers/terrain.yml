@@ -8,7 +8,7 @@ samplers:
         arguments: [x]
         expression: x^2
       "<<":
-        - math/functions/lerp.yml:functions
+        - math/functions/interpolation.yml:functions
     variables:
       globalScale: $customization.yml:global-scale
       elevationScale: $customization.yml:elevation-scale

@@ -23,7 +23,7 @@ samplers:
     dimensions: 2
     type: EXPRESSION
     expression: rawTemperature(x, z) - lerp(elevation(x, z), lapseStart, 0, 1, lapseRate)
-    functions: $functions/interpolation.yml:functions
+    functions: $math/functions/interpolation.yml:functions
     variables:
       lapseRate: $customization.yml:temperature-altitude-lapse-rate
       lapseStart: $customization.yml:temperature-altitude-lapse-start

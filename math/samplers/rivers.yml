@@ -44,7 +44,7 @@ samplers:
           frequency: 0.14
     functions:
       "<<":
-        - math/functions/lerp.yml:functions
+        - math/functions/interpolation.yml:functions
         - math/functions/maskSmooth.yml:functions
         - math/functions/terrace.yml:functions
       

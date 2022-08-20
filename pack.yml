@@ -115,7 +115,7 @@ stages:
 functions:
   "<<":
     - math/functions/terrace.yml:functions
-    - math/functions/lerp.yml:functions
+    - math/functions/interpolation.yml:functions
     - math/functions/maskSmooth.yml:functions
 
 samplers:

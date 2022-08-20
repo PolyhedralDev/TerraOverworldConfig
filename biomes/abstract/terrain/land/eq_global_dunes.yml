@@ -94,4 +94,4 @@ terrain:
           - bt
           - b
         expression: x+lerp(x,at,a,bt,b)
-        functions: $math/functions/lerp.yml:functions
+        functions: $math/functions/interpolation.yml:functions

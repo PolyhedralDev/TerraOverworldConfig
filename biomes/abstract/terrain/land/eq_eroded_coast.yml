@@ -54,7 +54,7 @@ terrain:
               bottom, 0
             )
           )
-        functions: $math/functions/lerp.yml:functions
+        functions: $math/functions/interpolation.yml:functions
 
   sampler-2d:
     type: EXPRESSION

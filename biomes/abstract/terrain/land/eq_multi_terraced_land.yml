@@ -73,7 +73,7 @@ terrain:
           - bt
           - b
         expression: x+lerp(x,at,a,bt,b)
-        functions: $math/functions/lerp.yml:functions
+        functions: $math/functions/interpolation.yml:functions
       
       triTerrace: # This is a terrible function that exists to avoid duplicate calculations of the 'in' value.
                   # Allows terrace depth to be controlled according to the value it terraces.
@@ -98,7 +98,7 @@ terrain:
           )
         functions:
           "<<":
-            math/functions/lerp.yml:functions
+            math/functions/interpolation.yml:functions
           triTerraceWithLerpedDepth:
             arguments:
               - in
