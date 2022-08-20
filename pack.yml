@@ -124,7 +124,6 @@ samplers:
     - math/samplers/simplex.yml:samplers
 
     - samplers/continents.yml:samplers
-    - samplers/elevation.yml:samplers
     - samplers/precipitation.yml:samplers
     - samplers/temperature.yml:samplers
 

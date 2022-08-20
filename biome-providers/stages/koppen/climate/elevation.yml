@@ -2,7 +2,7 @@ stages:
   - type: REPLACE_LIST
     sampler:
       type: EXPRESSION
-      expression: segment(elevation(x, z), flatlandsThreshold, highlandsThreshold)
+      expression: segment(globalHeightmap(x, z), flatlandsThreshold, highlandsThreshold)
       variables:
         flatlandsThreshold: $customization.yml:elevation-flatlands-threshold
         highlandsThreshold: $customization.yml:elevation-highlands-threshold

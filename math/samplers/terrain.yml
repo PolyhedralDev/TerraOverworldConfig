@@ -2,14 +2,18 @@ samplers:
   globalHeightmap:
     dimensions: 2
     type: EXPRESSION
-    expression: spline(generalHeight(x*frequency,z*frequency))
+    expression: herp(continents(x, z), -0.3, 0, 0.2, spline(generalHeight(x / elevationScale / globalScale, z / elevationScale / globalScale)))
     functions:
       spline:
         arguments: [x]
         expression: x^2
+      "<<":
+        - math/functions/lerp.yml:functions
     variables:
-      frequency: 1
+      globalScale: $customization.yml:global-scale
+      elevationScale: $customization.yml:elevation-scale
     samplers:
+      continents: $samplers/continents.yml:samplers.continents
       generalHeight:
         dimensions: 2
         type: PROBABILITY
