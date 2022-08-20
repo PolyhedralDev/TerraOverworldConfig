@@ -122,10 +122,9 @@ samplers:
   "<<":
     - math/samplers/terrain.yml:samplers
     - math/samplers/simplex.yml:samplers
-
-    - samplers/continents.yml:samplers
-    - samplers/precipitation.yml:samplers
-    - samplers/temperature.yml:samplers
+    - math/samplers/continents.yml:samplers
+    - math/samplers/precipitation.yml:samplers
+    - math/samplers/temperature.yml:samplers
 
 blend:
   palette:

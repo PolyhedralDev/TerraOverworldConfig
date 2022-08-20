@@ -29,4 +29,4 @@ samplers:
       lapseStart: $customization.yml:temperature-altitude-lapse-start
     samplers:
       elevation: $math/samplers/terrain.yml:samplers.globalHeightmap
-      rawTemperature: $samplers/temperature.yml:samplers.rawTemperature
+      rawTemperature: $math/samplers/temperature.yml:samplers.rawTemperature

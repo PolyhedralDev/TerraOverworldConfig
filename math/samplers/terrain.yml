@@ -13,7 +13,7 @@ samplers:
       globalScale: $customization.yml:global-scale
       elevationScale: $customization.yml:elevation-scale
     samplers:
-      continents: $samplers/continents.yml:samplers.continents
+      continents: $math/samplers/continents.yml:samplers.continents
       generalHeight:
         dimensions: 2
         type: PROBABILITY
