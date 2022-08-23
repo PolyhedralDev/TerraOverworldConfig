@@ -125,6 +125,7 @@ samplers:
     - math/samplers/continents.yml:samplers
     - math/samplers/precipitation.yml:samplers
     - math/samplers/temperature.yml:samplers
+    - math/samplers/rivers.yml:samplers
 
 blend:
   palette:

@@ -53,7 +53,7 @@ biome-distribution:
   # any given cave biome, smaller scale = smaller cave biomes.
   # Default: 200
 
-  river-spread-scale: 10
+  river-spread-scale: 20
   # Controls how far / close apart rivers generally are, larger scale = further apart
   # rivers, smaller scale = closer packed together rivers.
   # Default: 10

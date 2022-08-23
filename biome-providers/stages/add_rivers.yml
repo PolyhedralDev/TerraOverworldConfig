@@ -1,6 +1,8 @@
 # The sampler that controls how rivers generate, you can find various presets
 # in the biome-providers/stages/river-samplers/ folder.
-riverSampler: &riverSampler $biome-providers/stages/river-samplers/default.yml:sampler
+riverSampler: &riverSampler
+  type: EXPRESSION
+  expression: riverBiomeMap(x, z)
 # To pick the preset, simply change the file reference above ^
 # You can further edit and customize the parameters of a river sampler preset within its own file.
 
