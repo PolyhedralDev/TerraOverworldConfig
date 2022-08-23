@@ -2,7 +2,7 @@ id: SHALE_BEACH
 type: BIOME
 extends:
   - ENVIRONMENT_LAND_MARITIME_DRY
-  - EQ_ERODED_COAST
+  - EQ_FLAT_ERODED
   - CARVING_OCEAN
   - BASE
 color: $biomes/colors.yml:SHALE_BEACH

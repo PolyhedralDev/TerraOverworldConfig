@@ -2,7 +2,7 @@ id: PALM_BEACH
 type: BIOME
 extends:
   - ENVIRONMENT_LAND_MARITIME_WET
-  - EQ_ERODED_COAST
+  - EQ_FLAT_ERODED
   - CARVING_OCEAN
   - BASE
 color: $biomes/colors.yml:PALM_BEACH

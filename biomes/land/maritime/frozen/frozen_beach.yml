@@ -3,7 +3,7 @@ type: BIOME
 extends:
   - COLOR_FROZEN
   - ENVIRONMENT_LAND_MARITIME_FROZEN
-  - EQ_ERODED_COAST
+  - EQ_FLAT_ERODED
   - CARVING_OCEAN
   - BASE
 color: $biomes/colors.yml:FROZEN_BEACH
