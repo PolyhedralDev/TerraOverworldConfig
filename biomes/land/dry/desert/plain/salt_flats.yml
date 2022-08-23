@@ -2,7 +2,7 @@ id: SALT_FLATS
 type: BIOME
 extends:
   - ENVIRONMENT_LAND_DRY_DESERT
-  - EQ_LAND
+  - EQ_CRACKED_FLATS
   - CARVING_OCEAN
   - BASE
 color: $biomes/colors.yml:SALT_FLATS
