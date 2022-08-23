@@ -3,115 +3,278 @@ stages:
     sampler:
       type: CELLULAR
       return: CellValue
-      frequency: 0.005
+      frequency: 1 / 1000
     
-    default-from: ice-cap
-    default-to: EF
+    default-from: ice-cap-flat
+    default-to:
+      - ICE_SPIKES: 1
     to:
-        tundra-flat: ET
-        tundra: ET
-        tundra-highlands: TUNDRA_HIGHLANDS
+        ice-cap:
+          - SNOWY_MOUNTAINS: 1
+        ice-cap-highlands:
+          - SNOWY_MOUNTAINS: 1
         
-        polar-coast-flat: FLAT_FROZEN_COAST
-        polar-coast: FROZEN_COAST
-        polar-coast-highlands: FROZEN_COAST
+        tundra-flat:
+          - TUNDRA: 1
+        tundra:
+          - TUNDRA: 1
+        tundra-highlands:
+          - SNOWY_MOUNTAINS: 1
+        
+        polar-coast-flat:
+          - FROZEN_BEACH: 1
+        polar-coast:
+          - SNOWY_SEA_CAVES: 1
+        polar-coast-highlands:
+          - SNOWY_SEA_CAVES: 1
   
-        boreal-hot-summer-flat: DFA
-        boreal-hot-summer: DFA
-        boreal-hot-summer-highlands: BOREAL_HIGHLANDS
-        
-        boreal-warm-summer-flat: DFB
-        boreal-warm-summer: DFB
-        boreal-warm-summer-highlands: BOREAL_HIGHLANDS
-
-        boreal-cold-summer-flat: DFC
-        boreal-cold-summer: DFC
-        boreal-cold-summer-highlands: BOREAL_HIGHLANDS
-      
-        boreal-very-cold-winter-flat: DFD
-        boreal-very-cold-winter: DFD
-        boreal-very-cold-winter-highlands: BOREAL_HIGHLANDS
-        
-        boreal-dry-winter-hot-summer-flat: DWA
-        boreal-dry-winter-hot-summer: DWA
-        boreal-dry-winter-hot-summer-highlands: DRY_BOREAL_HIGHLANDS
-
-        boreal-dry-winter-warm-summer-flat: DWB
-        boreal-dry-winter-warm-summer: DWB
-        boreal-dry-winter-warm-summer-highlands: DRY_BOREAL_HIGHLANDS
-
-        boreal-dry-winter-cold-summer-flat: DWC
-        boreal-dry-winter-cold-summer: DWC
-        boreal-dry-winter-cold-summer-highlands: DRY_BOREAL_HIGHLANDS
-
-        boreal-dry-winter-very-cold-summer-flat: DWD
-        boreal-dry-winter-very-cold-summer: DWD
-        boreal-dry-winter-very-cold-summer-highlands: DRY_BOREAL_HIGHLANDS
-
-        boreal-coast-flat: FLAT_BOREAL_COAST
-        boreal-coast: BOREAL_COAST
-        boreal-coast-highlands: BOREAL_COAST
+        polar-ocean:
+          - FROZEN_OCEAN: 1
   
-        temperate-mediterranean-hot-summer-flat: CSA
-        temperate-mediterranean-hot-summer: CSA
-        temperate-mediterranean-hot-summer-highlands: MEDITERRANEAN_HIGHLANDS
+        boreal-hot-summer-flat:
+          - AUTUMNAL_FOREST: 1
+          - FLOWERING_AUTUMNAL_FOREST: 1
+          - BIRCH_FOREST: 1
+        boreal-hot-summer:
+          - AUTUMNAL_FOREST: 1
+          - FLOWERING_AUTUMNAL_FOREST: 1
+          - BIRCH_FOREST: 1
+        boreal-hot-summer-highlands:
+          - MOUNTAINS: 1
+        
+        boreal-warm-summer-flat:
+          - AUTUMNAL_FOREST: 1
+          - FLOWERING_AUTUMNAL_FOREST: 1
+          - BIRCH_FOREST: 1
+        boreal-warm-summer:
+          - EVERGREEN_FOREST: 1
+          - REDWOOD_FOREST: 1
+          - TAIGA: 5
+        boreal-warm-summer-highlands:
+          - MOUNTAINS: 1
 
-        temperate-mediterranean-warm-summer-flat: CSB
-        temperate-mediterranean-warm-summer: CSB
-        temperate-mediterranean-warm-summer-highlands: MEDITERRANEAN_HIGHLANDS
-
-        temperate-hot-summer-flat: CFA
-        temperate-hot-summer: CFA
-        temperate-hot-summer-highlands: TEMPERATE_HIGHLANDS
-
-        temperate-warm-summer-flat: CFB
-        temperate-warm-summer: CFB
-        temperate-warm-summer-highlands: TEMPERATE_HIGHLANDS
-
-        temperate-cold-summer-flat: CFC
-        temperate-cold-summer: CFC
-        temperate-cold-summer-highlands: TEMPERATE_HIGHLANDS
-
-        temperate-coast-flat: FLAT_TEMPERATE_COAST
-        temperate-coast: TEMPERATE_COAST
-        temperate-coast-highlands: TEMPERATE_COAST
-
-        hot-desert-flat: BWH
-        hot-desert: BWH
-        hot-desert-highlands: HOT_DESERT_HIGHLANDS
+        boreal-cold-summer-flat:
+          - TAIGA: 1
+        boreal-cold-summer:
+          - TAIGA: 1
+        boreal-cold-summer-highlands:
+          - MOUNTAINS: 1
       
-        hot-steppe-flat: BSH
-        hot-steppe: BSH
-        hot-steppe-highlands: HOT_DESERT_HIGHLANDS
+        boreal-very-cold-winter-flat:
+          - TAIGA: 1
+        boreal-very-cold-winter:
+          - SNOWY_MEADOW: 1
+        boreal-very-cold-winter-highlands:
+          - SNOWY_MOUNTAINS: 1
+        
+        boreal-dry-winter-hot-summer-flat:
+          - AUTUMNAL_FOREST: 1
+          - FLOWERING_AUTUMNAL_FOREST: 1
+          - BIRCH_FOREST: 1
+        boreal-dry-winter-hot-summer:
+          - TAIGA: 1
+        boreal-dry-winter-hot-summer-highlands:
+          - MOUNTAINS: 1
 
-        cold-desert-flat: BWK
-        cold-desert: BWK
-        cold-desert-highlands: COLD_DESERT_HIGHLANDS
+        boreal-dry-winter-warm-summer-flat:
+          - TAIGA: 1
+        boreal-dry-winter-warm-summer:
+          - TAIGA: 1
+        boreal-dry-winter-warm-summer-highlands:
+          - MOUNTAINS: 1
 
-        cold-steppe-flat: BSK
-        cold-steppe: BSK
-        cold-steppe-highlands: COLD_DESERT_HIGHLANDS
+        boreal-dry-winter-cold-summer-flat:
+          - SNOWY_MEADOW: 1
+        boreal-dry-winter-cold-summer:
+          - SNOWY_MEADOW: 1
+        boreal-dry-winter-cold-summer-highlands:
+          - SNOWY_MOUNTAINS: 1
 
-        arid-coast-flat: FLAT_ARID_COAST
-        arid-coast: ARID_COAST
-        arid-coast-highlands: ARID_COAST
+        boreal-dry-winter-very-cold-summer-flat:
+          - SNOWY_MEADOW: 1
+        boreal-dry-winter-very-cold-summer:
+          - SNOWY_MEADOW: 1
+        boreal-dry-winter-very-cold-summer-highlands:
+          - SNOWY_MOUNTAINS: 1
 
-        tropical-rainforest-flat: AF
-        tropical-rainforest: AF
-        tropical-rainforest-highlands: AF
+        boreal-coast-flat:
+          - ROCKY_ARCHIPELAGO: 5
+          - SHALE_BEACH: 1
+        boreal-coast:
+          - ROCKY_SEA_CAVES: 1
+        boreal-coast-highlands:
+          - ROCKY_SEA_CAVES: 1
+  
+        boreal-ocean:
+          - COLD_OCEAN: 1
+  
+        temperate-mediterranean-hot-summer-flat:
+          - PALM_FOREST: 1
+          - CHAPARRAL: 1
+          - MOORLAND: 1
+        temperate-mediterranean-hot-summer:
+          - CHAPARRAL: 1
+          - MOORLAND: 1
+        temperate-mediterranean-hot-summer-highlands:
+          - DRY_TEMPERATE_MOUNTAINS: 1
+          - DRY_TEMPERATE_WHITE_MOUNTAINS: 1
 
-        tropical-monsoon-flat: AM
-        tropical-monsoon: AM
-        tropical-monsoon-highlands: AM
+        temperate-mediterranean-warm-summer-flat:
+          - PALM_FOREST: 1
+          - CHAPARRAL: 1
+          - MOORLAND: 1
+        temperate-mediterranean-warm-summer:
+          - CHAPARRAL: 1
+          - MOORLAND: 1
+        temperate-mediterranean-warm-summer-highlands:
+          - DRY_TEMPERATE_MOUNTAINS: 1
+          - DRY_TEMPERATE_WHITE_MOUNTAINS: 1
 
-        tropical-savanna-dry-flat: DRY_TROPICAL_SAVANNA
-        tropical-savanna-dry: DRY_TROPICAL_SAVANNA
-        tropical-savanna-dry-highlands: DRY_TROPICAL_SAVANNA
+        temperate-hot-summer-flat:
+          - PLAINS: 1
+        temperate-hot-summer:
+          - WOODED_BUTTES: 1
+        temperate-hot-summer-highlands:
+          - HIGHLANDS: 1
+          - TEMPERATE_ALPHA_MOUNTAINS: 1
+          - TEMPERATE_MOUNTAINS: 1
 
-        tropical-savanna-wet-flat: WET_TROPICAL_SAVANNA
-        tropical-savanna-wet: WET_TROPICAL_SAVANNA
-        tropical-savanna-wet-highlands: WET_TROPICAL_SAVANNA
+        temperate-warm-summer-flat:
+          - FLOWERING_FOREST: 1
+          - RAINFOREST: 1
+          - BROADLEAF_FOREST: 1
+          - DARK_FOREST: 1
+          - SAKURA_GROVE: 1
+          - WOODED_BUTTES: 1
+        temperate-warm-summer:
+          - FLOWERING_FOREST: 1
+          - RAINFOREST: 1
+          - BROADLEAF_FOREST: 1
+          - DARK_FOREST: 1
+          - SAKURA_GROVE: 1
+          - WOODED_BUTTES: 1
+        temperate-warm-summer-highlands:
+          - HIGHLANDS: 1
+          - TEMPERATE_ALPHA_MOUNTAINS: 1
+          - TEMPERATE_MOUNTAINS: 1
 
-        tropical-coast-flat: FLAT_TROPICAL_COAST
-        tropical-coast: TROPICAL_COAST
-        tropical-coast-highlands: TROPICAL_COAST
+        temperate-cold-summer-flat:
+          - FLOWERING_FOREST: 1
+          - RAINFOREST: 1
+          - BROADLEAF_FOREST: 1
+          - DARK_FOREST: 1
+          - SAKURA_GROVE: 1
+          - WOODED_BUTTES: 1
+        temperate-cold-summer:
+          - FLOWERING_FOREST: 1
+          - RAINFOREST: 1
+          - BROADLEAF_FOREST: 1
+          - DARK_FOREST: 1
+          - SAKURA_GROVE: 1
+          - WOODED_BUTTES: 1
+        temperate-cold-summer-highlands:
+          - HIGHLANDS: 1
+          - TEMPERATE_ALPHA_MOUNTAINS: 1
+          - TEMPERATE_MOUNTAINS: 1
+
+        temperate-coast-flat:
+          - BEACH: 1
+        temperate-coast:
+          - TEMPERATE_SEA_ARCHES: 1
+        temperate-coast-highlands:
+          - TEMPERATE_SEA_ARCHES: 1
+
+        temperate-ocean:
+          - OCEAN: 1
+
+        hot-desert-flat:
+          - DESERT: 5
+          - SALT_FLATS: 1
+        hot-desert:
+          - DESERT: 10
+          - DESERT_PILLARS: 1
+          - DESERT_SPIKES: 1
+          - DESERT_SPIKES_GOLD: 1
+          - ROCKY_DESERT: 4
+        hot-desert-highlands:
+          - ARID_HIGHLANDS: 1
+          - BADLANDS_BUTTES: 1
+          - BADLANDS_MOUNTAINS: 1
+          - CRACKED_BADLANDS_PLATEAU: 1
+          - ERODED_BADLANDS_BUTTES: 1
+      
+        hot-steppe-flat:
+          - XERIC_SHRUBLAND: 1
+          - ARID_SPIKES: 1
+        hot-steppe:
+          - XERIC_SHRUBLAND: 1
+          - ARID_SPIKES: 1
+        hot-steppe-highlands:
+          - XERIC_MOUNTAINS: 1
+
+        cold-desert-flat:
+          - BWK: 1
+        cold-desert:
+          - BWK: 1
+        cold-desert-highlands:
+          - COLD_DESERT_HIGHLANDS: 1
+
+        cold-steppe-flat:
+          - BSK: 1
+        cold-steppe:
+          - BSK: 1
+        cold-steppe-highlands:
+          - COLD_DESERT_HIGHLANDS: 1
+
+        arid-coast-flat:
+          - BEACH: 1
+        arid-coast:
+          - SANDSTONE_ARCHIPELAGO: 1
+        arid-coast-highlands:
+          - TERRACOTTA_SEA_CAVES: 1
+
+        tropical-rainforest-flat:
+          - BAMBOO_JUNGLE: 1
+          - JUNGLE: 1
+          - ROCKY_JUNGLE: 1
+        tropical-rainforest:
+          - BAMBOO_JUNGLE: 1
+          - BAMBOO_PONDS: 1
+          - JUNGLE: 1
+          - ROCKY_JUNGLE: 1
+        tropical-rainforest-highlands:
+          - JUNGLE_MOUNTAINS: 1
+          - OVERGROWN_CLIFFS: 1
+
+        tropical-monsoon-flat:
+          - DRY_FOREST: 1
+          - MONSOON_FOREST: 1
+        tropical-monsoon:
+          - DRY_FOREST: 1
+          - MONSOON_FOREST: 1
+        tropical-monsoon-highlands:
+          - CERROS_DE_MAVECURE: 1
+
+        tropical-savanna-dry-flat:
+          - GRASS_SAVANNA: 1
+          - SAVANNA: 1
+        tropical-savanna-dry:
+          - GRASS_SAVANNA: 1
+          - SAVANNA: 1
+        tropical-savanna-dry-highlands:
+          - SAVANNA_OVERHANGS: 1
+
+        tropical-savanna-wet-flat:
+          - WET_SAVANNA: 1
+        tropical-savanna-wet:
+          - WET_SAVANNA: 1
+        tropical-savanna-wet-highlands:
+          - SAVANNA_OVERHANGS: 1
+
+        tropical-coast-flat:
+          - PALM_BEACH: 1
+          - MANGROVE_SWAMP: 1
+        tropical-coast: LUSH_SEA_CAVES
+        tropical-coast-highlands: LUSH_SEA_CAVES
+
+        hot-ocean: TROPICAL_OCEAN

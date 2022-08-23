@@ -32,3 +32,16 @@ stages:
         - hot-coast: *tropicalCold
         - hot-coast: *tropicalWarm
         - hot-coast: *tropicalHot
+      ocean:
+        - polar-ocean: *iceCap
+        - polar-ocean: *tundra
+        - boreal-ocean: *borealVeryCold
+        - boreal-ocean: *borealCold
+        - boreal-ocean: *borealWarm
+        - boreal-ocean: *borealHot
+        - temperate-ocean: *temperateCold
+        - temperate-ocean: *temperateWarm
+        - temperate-ocean: *temperateHot
+        - hot-ocean: *tropicalCold
+        - hot-ocean: *tropicalWarm
+        - hot-ocean: *tropicalHot

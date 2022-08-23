@@ -1,6 +1,6 @@
 biomes:
   type: PIPELINE
-  resolution: 1
+  resolution: 4
   blend:
     amplitude: 2
     sampler:
@@ -21,12 +21,6 @@ biomes:
       - << biome-providers/stages/koppen/climate/precipitation.yml:stages
       - << biome-providers/stages/koppen/climate/elevation.yml:stages
       - << biome-providers/stages/koppen/set_biomes_in_climates.yml:stages
-      
-      - type: REPLACE
-        sampler:
-          type: CONSTANT
-        from: ocean
-        to: K_OCEAN
       
       - type: FRACTAL_EXPAND
         sampler:

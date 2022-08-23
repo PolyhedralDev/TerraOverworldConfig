@@ -15,7 +15,10 @@ stages:
           expression: if(in < flatThreshold, -1, if(in < highThreshold, 0, 1))
 
     default-from: ice-cap
-    default-to: ice-cap #EF
+    default-to: #EF
+      - ice-cap-flat: 1
+      - ice-cap: 1
+      - ice-cap-highlands: 1
     to:
       tundra:
         - tundra-flat: 1 #ET: 1
