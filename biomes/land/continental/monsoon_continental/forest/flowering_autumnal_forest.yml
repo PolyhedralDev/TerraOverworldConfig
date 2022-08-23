@@ -1,34 +1,11 @@
 id: FLOWERING_AUTUMNAL_FOREST
 type: BIOME
-extends:
-  - ENVIRONMENT_LAND_CONTINENTAL_MONSOON
-  - EQ_MULTI_TERRACED_LAND
-  - CARVING_LAND
-  - BASE
+extends: AUTUMNAL_FOREST
 color: $biomes/colors.yml:FLOWERING_AUTUMNAL_FOREST
 
 tags:
   - LAND_CAVES
   - USE_RIVER
-
-minecraft:
-  colors:
-    grass: 0xf7863b
-    foliage: 0xff6a19
-    water: 0x1e97f2
-    water-fog: 0x1e97f2
-
-palette:
-  - GRASS: 319
-  - SAND: 64
-  - MUDDY_BEACH: 61
-  - << meta.yml:palette-bottom
-
-slant:
-  - threshold: 0.4
-    palette:
-      - GRANITE_SLANT: 319
-      - << meta.yml:palette-bottom
 
 features:
   flora:
