@@ -3,8 +3,8 @@ type: BIOME
 abstract: true
 
 variables: &variables
-  base: $meta.yml:terrain.base
-  scale: $meta.yml:terrain.scale
+  base: $customization.yml:terrain-base-y-level
+  scale: $customization.yml:terrain-height
   
   duneFactor: 0.07
   duneStart: 0

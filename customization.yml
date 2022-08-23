@@ -3,6 +3,16 @@ global-scale: 1
 # Default: 1
 
 # ---
+# Terrain
+# ---
+
+terrain-base-y-level: 65
+# Default: 65
+
+terrain-height: 240
+# Default: 240
+
+# ---
 # Continental
 # ---
 
