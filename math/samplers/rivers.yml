@@ -13,12 +13,10 @@ samplers:
     dimensions: 2
     type: EXPRESSION
     expression: |
-      (maskSmooth(1, 0, 0.3 + widthVariation(x, z) * 0.2,
-        terraceParabolic(
-          |riverNoise(x*riverFrequency, z*riverFrequency)|,
-          0.1, 0, 0, 1
-        )
-      )^2-1)*lerp(strengthVariation(x, z), 0.2, 0, 0.8, 1)+1
+      herp(|riverNoise(x*riverFrequency, z*riverFrequency)|^2,
+        0, -0.95,
+        0.4, 0
+      )*herp(strengthVariation(x, z), 0, 0, 0.2, 1)+1
     variables: *variables
     samplers:
       strengthVariation:
@@ -26,13 +24,8 @@ samplers:
         type: PROBABILITY
         sampler:
           type: OPEN_SIMPLEX_2
-          frequency: 0.005
+          frequency: 0.004
           salt: 2175
-      widthVariation:
-        dimensions: 2
-        type: OPEN_SIMPLEX_2
-        frequency: 0.005
-        salt: 7283
       riverNoise: &riverNoise
         dimensions: 2
         type: DOMAIN_WARP
