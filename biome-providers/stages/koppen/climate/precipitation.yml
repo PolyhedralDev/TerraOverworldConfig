@@ -7,25 +7,25 @@ stages:
     default-from: tropical-rainforest
     default-to:
       - hot-desert: 5
-      - hot-steppe: 2
+      - hot-steppe: 1
       - tropical-savanna-dry: 1
       - tropical-monsoon: 2
       - tropical-rainforest: 3
     to:
       tropical-monsoon:
         - hot-desert: 5
-        - hot-steppe: 2
+        - hot-steppe: 1
         - tropical-savanna-dry: 1
         - tropical-monsoon: 2
         - tropical-monsoon: 3
       tropical-savanna-wet:
         - hot-steppe: 5
-        - hot-steppe: 2
+        - hot-steppe: 1
         - tropical-savanna-wet: 1
         - tropical-savanna-wet: 2
         - tropical-savanna-wet: 3
       hot-coast:
-        - arid-coast: 6
+        - arid-coast: 5
         - temperate-coast: 1
         - tropical-coast: 1
         - tropical-coast: 2
