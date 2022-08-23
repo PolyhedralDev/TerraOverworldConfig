@@ -13,8 +13,8 @@ tags:
 
 minecraft:
   colors:
-    grass: 0xf7863b
-    foliage: 0xff6a19
+    grass: 0x8ea85e
+    foliage: 0xe98553
     water: 0x1e97f2
     water-fog: 0x1e97f2
 
