@@ -17,7 +17,7 @@ terrain:
     type: EXPRESSION
     expression: |
       terraceParalinear(
-        globalHeightmap(x, z) * scale,
+        elevation(x, z) * scale,
         40, 0.01, 0, 1
       ) +
       terraceOffset(x, z) * 5

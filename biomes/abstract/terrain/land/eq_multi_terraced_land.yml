@@ -28,7 +28,7 @@ terrain:
     expression: |
       scale * triTerrace(
         combine(
-          globalHeightmap(x, z),
+          elevation(x, z),
           detailZero, 0,
           detailFull, detail(x, z) * detailFactor
         ),

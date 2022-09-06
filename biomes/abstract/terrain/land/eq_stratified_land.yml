@@ -35,4 +35,4 @@ terrain:
           salt: 4912
         sampler:
           type: EXPRESSION
-          expression: globalHeightmap(x, z)
+          expression: elevation(x, z)

@@ -1,41 +1,28 @@
 samplers:
-  globalHeightmap:
+  rawElevation:
     dimensions: 2
     type: EXPRESSION
-    expression: herp(continents(x, z), -0.3, 0, 0.2, spline(generalHeight(x / elevationScale / globalScale, z / elevationScale / globalScale)))
-    functions:
-      spline:
-        arguments: [x]
-        expression: x^2
-      "<<":
-        - math/functions/interpolation.yml:functions
+    expression: ((noise(x / elevationScale / globalScale, z / elevationScale / globalScale)+1)/2)^3
     variables:
       globalScale: $customization.yml:global-scale
       elevationScale: $customization.yml:elevation-scale
     samplers:
-      continents: $math/samplers/continents.yml:samplers.continents
-      generalHeight:
+      noise:
         dimensions: 2
-        type: PROBABILITY
+        type: RIDGED
+        octaves: 6
+        gain: 0.4
+        lacunarity: 2.2
         sampler:
-          type: DOMAIN_WARP
-          amplitude: 300
-          sampler:
-            type: FBM
-            gain: 0.7
-            sampler:
-              type: OPEN_SIMPLEX_2
-              frequency: 0.0007
-          warp:
-            type: DOMAIN_WARP
-            amplitude: 20
-            sampler:
-              type: FBM
-              sampler:
-                type: OPEN_SIMPLEX_2
-                frequency: 0.0007
-            warp:
-              type: FBM
-              sampler:
-                type: OPEN_SIMPLEX_2
-                frequency: 0.007
+          type: OPEN_SIMPLEX_2
+          frequency: 0.0003
+
+  elevation:
+    dimensions: 2
+    type: EXPRESSION
+    expression: herp(continents(x, z), -0.3, 0, 0.2, rawElevation(x, z)) * (1-riverTerrainErosion(x, z))
+    functions: $math/functions/interpolation.yml:functions
+    samplers:
+      rawElevation: $math/samplers/terrain.yml:samplers.rawElevation
+      continents: $math/samplers/continents.yml:samplers.continents
+      riverTerrainErosion: $math/samplers/rivers.yml:samplers.riverTerrainErosion

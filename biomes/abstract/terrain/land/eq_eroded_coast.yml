@@ -17,7 +17,7 @@ terrain:
       erode(
         erosionBottom + bottomVariation(x, z) * 10,
         base,
-        globalHeightmap(x,z)*(1+variation(x,z)*0.2),
+        elevation(x,z)*(1+variation(x,z)*0.2),
         scale,
         y,
         1-|erosion(x, z)|
@@ -60,4 +60,4 @@ terrain:
     type: EXPRESSION
     variables: *variables
     samplers: *samplers
-    expression: globalHeightmap(x, z) * scale
+    expression: elevation(x, z) * scale

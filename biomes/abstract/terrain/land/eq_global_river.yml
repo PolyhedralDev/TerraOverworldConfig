@@ -15,7 +15,7 @@ terrain:
       -y + base -
       erode(
         base,
-        globalHeightmap(x, z),
+        elevation(x, z),
         scale,
         y,
         1 + erosion(x/3, y, z/3)^2,

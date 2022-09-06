@@ -46,7 +46,7 @@ terrain:
         terraceParalinear(
           combine(
             combine(
-              globalHeightmap(x, z),
+              elevation(x, z),
               detailStart, 0,
               detailEnd, detail(x, z) * detailFactor
             ),

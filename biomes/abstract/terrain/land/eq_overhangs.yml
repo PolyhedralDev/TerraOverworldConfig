@@ -25,5 +25,5 @@ terrain:
     type: EXPRESSION
     expression: |
       scale *
-      globalHeightmap(x, z)
+      elevation(x, z)
     variables: *variables
