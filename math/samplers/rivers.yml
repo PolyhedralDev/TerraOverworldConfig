@@ -8,39 +8,42 @@ variables: &variables
   riverMaxWidth: 20 * ${meta.yml:biome-distribution.global-scale} # Determines the width of rivers within riverThreshold.
   wetlandThreshold: 0.2 # Determines how much area within riverThreshold will be wetlands.
 
+  erosionEnd: 0.5
+  erosionStart: 0
+  erosionMax: 0.95
+  erosionMin: 0
+
+riverNoise: &riverNoise
+  dimensions: 2
+  type: DOMAIN_WARP
+  amplitude: 2
+  sampler:
+    type: OPEN_SIMPLEX_2
+  warp:
+    type: OPEN_SIMPLEX_2
+    frequency: 0.14
+
 samplers:
-  riverTerrainMask:
+  riverTerrainErosion:
     dimensions: 2
     type: EXPRESSION
     expression: |
       herp(|riverNoise(x*riverFrequency, z*riverFrequency)|^2,
-        0, -0.95,
-        0.4, 0
-      )*herp(strengthVariation(x, z), 0, 0, 0.2, 1)+1
+        erosionStart, erosionMax,
+        erosionEnd, erosionMin
+      ) * herp(erosionStrength(x, z), 0.2, 0, 0.8, 1)
     variables: *variables
+    functions: $math/functions/interpolation.yml:functions
     samplers:
-      strengthVariation:
+      erosionStrength:
         dimensions: 2
         type: PROBABILITY
         sampler:
           type: OPEN_SIMPLEX_2
-          frequency: 0.004
+          frequency: 0.002
           salt: 2175
-      riverNoise: &riverNoise
-        dimensions: 2
-        type: DOMAIN_WARP
-        amplitude: 2
-        sampler:
-          type: OPEN_SIMPLEX_2
-        warp:
-          type: OPEN_SIMPLEX_2
-          frequency: 0.14
-    functions:
-      "<<":
-        - math/functions/interpolation.yml:functions
-        - math/functions/maskSmooth.yml:functions
-        - math/functions/terrace.yml:functions
-      
+      riverNoise: *riverNoise
+
   riverBiomeMap:
     dimensions: 2
     type: EXPRESSION
