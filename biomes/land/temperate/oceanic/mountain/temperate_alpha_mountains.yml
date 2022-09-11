@@ -14,10 +14,20 @@ palette:
   - << meta.yml:palette-bottom
 
 slant:
+  - threshold: 0.5
+    palette:
+      - BLOCK:minecraft:andesite: 319
+      - << meta.yml:palette-bottom
   - threshold: 0.4
     palette:
-      - BLOCK:minecraft:stone: 319
+      - ROCKY_SLANT: 319
       - << meta.yml:palette-bottom
+  - threshold: -0.5
+    palette:
+      - BLOCK:minecraft:tuff: 319
+      - << meta.yml:palette-bottom
+
+slant-depth: 50
 
 features:
   flora:

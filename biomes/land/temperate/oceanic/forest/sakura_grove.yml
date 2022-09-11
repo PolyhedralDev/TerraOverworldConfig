@@ -7,6 +7,24 @@ minecraft:
   colors:
     foliage: 0xffb7c5
 
+slant:
+  - threshold: 0.55
+    palette:
+      - MOSS_STONE: 319
+      - << meta.yml:palette-bottom
+  - threshold: 0.5
+    palette:
+      - MOSSY_COBBLESTONE_STONE: 319
+      - << meta.yml:palette-bottom
+  - threshold: 0.45
+    palette:
+      - TUFF_STONE: 319
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - ROCKY_SLANT: 319
+      - << meta.yml:palette-bottom
+
 features:
   flora:
     - GRASS
