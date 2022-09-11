@@ -1,0 +1,50 @@
+id: SAKURA_TREES
+type: FEATURE
+
+distributor:
+  type: AND
+  distributors:
+    - type: PADDED_GRID
+      width: 5
+      padding: 3
+      salt: 5932
+    - type: SAMPLER
+      sampler:
+        type: PROBABILITY
+        sampler:
+          type: DOMAIN_WARP
+          amplitude: 6
+          warp:
+            type: WHITE_NOISE
+          sampler:
+            type: OPEN_SIMPLEX_2
+            frequency: 0.01
+            salt: 98342
+      threshold: 0.5
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: 64
+        max: 255
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:plantable-blocks
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:snow
+          - minecraft:air
+        offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: cherry_blossom_tree_procedural

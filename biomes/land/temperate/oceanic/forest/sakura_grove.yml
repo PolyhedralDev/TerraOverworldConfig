@@ -11,7 +11,7 @@ features:
   flora:
     - GRASS
   trees:
-    - DENSE_DARK_FOREST_TREES
+    - SAKURA_TREES
   landforms:
     - MOSSY_BOULDERS
     - SMALL_MOSSY_BOULDER_PATCHES
