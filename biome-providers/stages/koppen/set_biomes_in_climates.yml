@@ -220,9 +220,9 @@ stages:
           - COLD_DESERT_HIGHLANDS: 1
 
         cold-steppe-flat:
-          - BSK: 1
+          - COLD_STEPPE: 1
         cold-steppe:
-          - BSK: 1
+          - COLD_STEPPE: 1
         cold-steppe-highlands:
           - COLD_DESERT_HIGHLANDS: 1
 

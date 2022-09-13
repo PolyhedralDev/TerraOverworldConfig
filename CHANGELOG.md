@@ -41,7 +41,7 @@ generate in an area where it previously did not (resulting in a chunk border).
 
 ## [Unreleased]
 ### Added
-
+- Added cold steppe.
 
 ### Changed
 - Reworked terrain to use a global heightmap.
