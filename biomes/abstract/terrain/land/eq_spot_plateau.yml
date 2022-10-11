@@ -1,0 +1,96 @@
+id: EQ_SPOT_PLATEAU
+type: BIOME
+abstract: true
+
+vars: &variables
+  base: $customization.yml:terrain-base-y-level
+  scale: $customization.yml:terrain-height
+  "<<":
+    - math/samplers/spots.yml:variables
+
+terrain:
+  sampler:
+    type: EXPRESSION
+    expression: -y + base
+    variables: *variables
+  
+  sampler-2d:
+    type: EXPRESSION
+    variables: *variables
+    expression: |
+      scale * calcHeight(x, z,
+        /*distance*/      spotDistance(x, z) + erosion(x, z) * 15 + distanceWarp(x, z) * 50,
+        /*erosion*/       (volcanoErosion(x, z)+1)/2,
+        /*outsideHeight*/ elevation(x, z),
+        /*edge*/          lerp(spotEdgeRadiusPercent(x, z), 0, 0.6, 1, 0.7),
+        /*radius*/        spotRadius(x, z),
+        /*volcanoHeight*/ lerp(spotSizePercent(x, z) * (1 - spotEdgeRadiusPercent(x, z)),
+                            0, 0.5,
+                            1, 0.5
+                          ),
+        /*volcanoBase*/   spotBaseElevation(x, z)
+      )
+    samplers:
+      distanceWarp:
+        dimensions: 2
+        type: PROBABILITY
+        sampler:
+          type: FBM
+          sampler:
+            type: OPEN_SIMPLEX_2
+            frequency: 0.008
+            salt: 8952
+
+      erosion:
+        dimensions: 2
+        type: EXPRESSION
+        expression: |
+          noise(
+            spotDistance(x, z)                                       + spotSizePercent(x, z) * offsetAmplitude,
+            sin(spotAngle(x, z)) * spotRadius(x, z) * angleFrequency + spotSizePercent(x, z) * offsetAmplitude,
+            cos(spotAngle(x, z)) * spotRadius(x, z) * angleFrequency + spotSizePercent(x, z) * offsetAmplitude
+          )
+        variables:
+          angleFrequency: 1.5
+          offsetAmplitude: 10000
+        samplers:
+          noise:
+            dimensions: 3
+            type: PROBABILITY
+            sampler:
+              type: FBM
+              octaves: 3
+              sampler:
+                type: OPEN_SIMPLEX_2
+                frequency: 0.02
+
+    functions:
+      calcHeight:
+        arguments:
+          - x
+          - z
+          - distance
+          - erosion
+          - outsideHeight
+          - edge
+          - radius
+          - centerHeight
+          - centerBase
+        expression: |
+          max(
+            parabolicMap(distance,
+              radius * edge, centerBase + centerHeight * lerp(centerBase+centerHeight, 0.9, 1, 1, 0),
+              radius * edge * 1.1, outsideHeight
+            ),
+            terraceStrata(
+              parabolicMap(distance,
+                radius + 50, outsideHeight,
+                radius * edge, centerBase + centerHeight * lerp(centerBase+centerHeight, 0.9, 1, 1, 0) * 0.8
+              ),
+              0.15, 0, 0, 0.25
+            )
+          )
+        functions:
+          "<<":
+            - math/functions/interpolation.yml:functions
+            - math/functions/terrace.yml:functions

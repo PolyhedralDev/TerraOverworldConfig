@@ -1,0 +1,10 @@
+id: DESERT_PLATEAU
+type: BIOME
+extends:
+  - EQ_SPOT_PLATEAU
+  - CARVING_OCEAN
+  - ROCKY_DESERT
+  - BASE
+color: $biomes/colors.yml:DESERT_PLATEAU
+
+tags: []

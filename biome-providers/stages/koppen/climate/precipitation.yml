@@ -30,6 +30,24 @@ stages:
         - tropical-coast: 1
         - tropical-coast: 2
         - tropical-coast: 3
+      hot-plateau:
+        - desert-plateau: 5
+        - temperate-plateau: 1
+        - tropical-plateau: 1
+        - tropical-plateau: 2
+        - tropical-plateau: 3
+      hot-crater-lake:
+        - desert-crater-lake: 5
+        - temperate-crater-lake: 1
+        - tropical-crater-lake: 1
+        - tropical-crater-lake: 2
+        - tropical-crater-lake: 3
+      hot-extinct-volcano:
+        - desert-extinct-volcano: 5
+        - temperate-extinct-volcano: 1
+        - tropical-extinct-volcano: 1
+        - tropical-extinct-volcano: 2
+        - tropical-extinct-volcano: 3
   
       temperate-hot-summer:
         - cold-desert: 4
@@ -46,6 +64,22 @@ stages:
         - cold-steppe: 1
         - temperate-mediterranean-warm-summer: 1
         - temperate-cold-summer: 5
+
+      temperate-plateau:
+        - cold-desert-plateau: 4
+        - cold-desert-plateau: 1
+        - temperate-plateau: 1
+        - temperate-plateau: 5
+      temperate-crater-lake:
+        - cold-desert-crater-lake: 4
+        - cold-desert-crater-lake: 1
+        - temperate-crater-lake: 1
+        - temperate-crater-lake: 5
+      temperate-extinct-volcano:
+        - cold-desert-extinct-volcano: 4
+        - cold-desert-extinct-volcano: 1
+        - temperate-extinct-volcano: 1
+        - temperate-extinct-volcano: 5
   
       boreal-hot-summer:
         - cold-desert: 4

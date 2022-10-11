@@ -1,0 +1,10 @@
+id: BOREAL_PLATEAU
+type: BIOME
+extends:
+  - EQ_SPOT_PLATEAU
+  - CARVING_OCEAN
+  - TAIGA
+  - BASE
+color: $biomes/colors.yml:BOREAL_PLATEAU
+
+tags: []

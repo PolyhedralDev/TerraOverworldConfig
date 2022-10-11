@@ -28,6 +28,15 @@ stages:
         polar-coast-highlands:
           - SNOWY_SEA_CAVES: 1
   
+        polar-plateau:
+          - COLD_DESERT_PLATEAU: 1
+          
+        polar-crater-lake:
+          - TEMPERATE_CRATER_LAKE: 1
+          
+        polar-extinct-volcano:
+          - TEMPERATE_EXTINCT_VOLCANO: 1
+  
         polar-ocean:
           - FROZEN_OCEAN: 1
   
@@ -104,6 +113,15 @@ stages:
           - ROCKY_SEA_CAVES: 1
         boreal-coast-highlands:
           - ROCKY_SEA_CAVES: 1
+  
+        boreal-plateau:
+          - BOREAL_PLATEAU: 1
+        
+        boreal-crater-lake:
+          - TEMPERATE_CRATER_LAKE: 1
+        
+        boreal-extinct-volcano:
+          - TEMPERATE_EXTINCT_VOLCANO: 1
   
         boreal-ocean:
           - COLD_OCEAN: 1
@@ -184,6 +202,15 @@ stages:
         temperate-coast-highlands:
           - TEMPERATE_SEA_ARCHES: 1
 
+        temperate-plateau:
+          - TEMPERATE_PLATEAU: 1
+        
+        temperate-crater-lake:
+          - TEMPERATE_CRATER_LAKE: 1
+        
+        temperate-extinct-volcano:
+          - TEMPERATE_EXTINCT_VOLCANO: 1
+
         temperate-ocean:
           - OCEAN: 1
 
@@ -226,12 +253,30 @@ stages:
         cold-steppe-highlands:
           - COLD_DESERT_HIGHLANDS: 1
 
+        cold-desert-plateau:
+          - COLD_DESERT_PLATEAU: 1
+        
+        cold-desert-crater-lake:
+          - TEMPERATE_CRATER_LAKE: 1
+        
+        cold-desert-extinct-volcano:
+          - TEMPERATE_EXTINCT_VOLCANO: 1
+
         arid-coast-flat:
           - BEACH: 1
         arid-coast:
           - SANDSTONE_ARCHIPELAGO: 1
         arid-coast-highlands:
           - TERRACOTTA_SEA_CAVES: 1
+
+        desert-plateau:
+          - DESERT_PLATEAU: 1
+        
+        desert-crater-lake:
+          - TEMPERATE_CRATER_LAKE: 1
+        
+        desert-extinct-volcano:
+          - TEMPERATE_EXTINCT_VOLCANO: 1
 
         tropical-rainforest-flat:
           - BAMBOO_JUNGLE: 1
@@ -276,5 +321,14 @@ stages:
           - MANGROVE_SWAMP: 1
         tropical-coast: LUSH_SEA_CAVES
         tropical-coast-highlands: LUSH_SEA_CAVES
+
+        tropical-plateau:
+          - TROPICAL_PLATEAU: 1
+        
+        tropical-crater-lake:
+          - TEMPERATE_CRATER_LAKE: 1
+        
+        tropical-extinct-volcano:
+          - TEMPERATE_EXTINCT_VOLCANO: 1
 
         hot-ocean: TROPICAL_OCEAN

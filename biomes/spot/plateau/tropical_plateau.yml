@@ -1,0 +1,10 @@
+id: TROPICAL_PLATEAU
+type: BIOME
+extends:
+  - EQ_SPOT_PLATEAU
+  - CARVING_OCEAN
+  - JUNGLE
+  - BASE
+color: $biomes/colors.yml:TROPICAL_PLATEAU
+
+tags: []

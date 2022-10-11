@@ -1,0 +1,10 @@
+id: TEMPERATE_PLATEAU
+type: BIOME
+extends:
+  - EQ_SPOT_PLATEAU
+  - CARVING_OCEAN
+  - WOODED_BUTTES
+  - BASE
+color: $biomes/colors.yml:TEMPERATE_PLATEAU
+
+tags: []

@@ -3,56 +3,50 @@ type: PALETTE
 
 layers:
   - materials:
-      - minecraft:air: 5
-      - minecraft:smooth_basalt: 5
-    layers: 1
-  - materials:
-      - minecraft:air: 4
-      - minecraft:smooth_basalt: 5
-    layers: 1
-  - materials:
-      - minecraft:air: 3
-      - minecraft:smooth_basalt: 5
-    layers: 1
-  - materials:
+      - minecraft:tuff: 1
+      - minecraft:basalt: 2
+      - minecraft:smooth_basalt: 2
+      - minecraft:blackstone: 6
+      - minecraft:obsidian: 1
       - minecraft:air: 2
-      - minecraft:smooth_basalt: 5
+      - minecraft:air: 2
     layers: 1
   - materials:
-      - minecraft:air: 1
-      - minecraft:magma_block: 1
-      - minecraft:smooth_basalt: 4
-    layers: 1
-  - materials:
-      - minecraft:lava: 1
-      - minecraft:magma_block: 1
-      - minecraft:smooth_basalt: 4
-    layers: 5
-  - materials:
-      - minecraft:lava: 1
-      - minecraft:magma_block: 1
-      - minecraft:smooth_basalt: 7
-    layers: 5
+      - minecraft:tuff: 1
+      - minecraft:basalt: 2
+      - minecraft:smooth_basalt: 2
+      - minecraft:blackstone: 6
+      - minecraft:obsidian: 1
+      - minecraft:magma_block: 2
+      - minecraft:lava: 2
+    layers: 2
   - materials:
       - minecraft:smooth_basalt: 1
     layers: 2
+    sampler:
+      type: CONSTANT
   - materials:
       - minecraft:stone: 1
     layers: 1
+    sampler:
+      type: CONSTANT
 
 sampler:
-  dimensions: 2
-  type: DOMAIN_WARP
-  amplitude: 5
-  warp:
-    type: OPEN_SIMPLEX_2
-    frequency: 0.045
-  sampler:
-    type: EXPRESSION
-    expression: -noise(x,z)*2-1
-    samplers:
-      noise:
-        dimensions: 2
-        type: CELLULAR
-        return: Distance2Div
-        frequency: 0.015
+  type: EXPRESSION
+  expression: |
+    lerp(spotDistance(x, z),
+      spotRadius(x, z), -1,
+      spotRadius(x, z) * spotEdgeRadius(x, z), 1
+        + volcanoErosion(x, z) * 2
+        - parabolicMap(spotDistance(x, z),
+          spotRadius(x, z) * 0.6, 0,
+          spotRadius(x, z), fuzz(x, z) * fuzzAmplitude
+        )
+    )
+  variables:
+    fuzzAmplitude: 0.4
+  samplers:
+    fuzz:
+      dimensions: 2
+      type: GAUSSIAN
+      salt: 2841

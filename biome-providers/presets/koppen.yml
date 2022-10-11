@@ -16,6 +16,7 @@ biomes:
         ocean: 1
         land: 1
     stages:
+      - << biome-providers/stages/koppen/add_spots.yml:stages
       - << biome-providers/stages/koppen/add_coast.yml:stages
       - << biome-providers/stages/koppen/climate/temperature.yml:stages
       - << biome-providers/stages/koppen/climate/precipitation.yml:stages

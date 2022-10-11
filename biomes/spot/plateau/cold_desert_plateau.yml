@@ -1,0 +1,10 @@
+id: COLD_DESERT_PLATEAU
+type: BIOME
+extends:
+  - EQ_SPOT_PLATEAU
+  - CARVING_OCEAN
+  - SNOWY_MOUNTAINS
+  - BASE
+color: $biomes/colors.yml:COLD_DESERT_PLATEAU
+
+tags: []
