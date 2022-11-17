@@ -5,7 +5,7 @@ author: "Astrash, Sancires, Aureus"
 generator: NOISE_3D
 
 addons:
-  biome-provider-pipeline: "1.+"
+  biome-provider-pipeline-v2: "1.+"
   biome-provider-single: "1.+"
   biome-provider-extrusion: "1.+"
   chunk-generator-noise-3d: "1.+"
