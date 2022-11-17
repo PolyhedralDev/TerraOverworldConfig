@@ -8,6 +8,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:XERIC_MOUNTAINS
 
+vanilla: minecraft:desert
+
 tags:
   - LAND_CAVES
   - LAND

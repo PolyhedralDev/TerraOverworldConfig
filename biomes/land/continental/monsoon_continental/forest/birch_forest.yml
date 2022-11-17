@@ -11,6 +11,8 @@ tags:
   - LAND_CAVES
   - USE_RIVER
 
+vanilla: minecraft:birch_forest
+
 minecraft:
   colors:
     grass: 0x88bb67

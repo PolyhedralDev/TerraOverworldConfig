@@ -7,6 +7,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:JUNGLE
 
+vanilla: minecraft:jungle
+
 minecraft:
   colors:
     grass: 0x59c93c

@@ -5,6 +5,8 @@ extends:
   - OCEAN
 color: $biomes/colors.yml:DEEP_OCEAN
 
+vanilla: minecraft:deep_ocean
+
 minecraft:
   colors:
     grass: 0x8eb971

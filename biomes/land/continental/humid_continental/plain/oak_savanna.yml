@@ -11,6 +11,8 @@ tags:
   - LAND_CAVES
   - USE_RIVER_TEMPERATE_MARSH
 
+vanilla: minecraft:plains
+
 minecraft:
   colors:
     grass: 0x88be56

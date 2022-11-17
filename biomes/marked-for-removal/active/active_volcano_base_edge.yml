@@ -7,6 +7,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:ACTIVE_VOLCANO_BASE_EDGE
 
+vanilla: minecraft:the_void
+
 minecraft:
   colors:
     sky: 0x778d9d

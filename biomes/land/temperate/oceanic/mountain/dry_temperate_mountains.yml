@@ -7,6 +7,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:DRY_TEMPERATE_MOUNTAINS
 
+vanilla: minecraft:meadow
+
 palette:
   - GRASS: 319
   - SAND: 64

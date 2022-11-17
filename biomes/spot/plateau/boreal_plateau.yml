@@ -8,3 +8,5 @@ extends:
 color: $biomes/colors.yml:BOREAL_PLATEAU
 
 tags: []
+
+vanilla: minecraft:taiga

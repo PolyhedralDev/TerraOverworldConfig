@@ -11,6 +11,8 @@ tags:
   - LAND_CAVES
   - LAND
 
+vanilla: minecraft:windswept_hills
+
 minecraft:
   colors:
     grass: 0x8ab689

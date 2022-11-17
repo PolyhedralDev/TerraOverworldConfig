@@ -3,6 +3,8 @@ type: BIOME
 extends: TEMPERATE_MOUNTAINS
 color: $biomes/colors.yml:SAKURA_GROVE
 
+vanilla: minecraft:old_growth_birch_forest
+
 minecraft:
   colors:
     foliage: 0xffb7c5

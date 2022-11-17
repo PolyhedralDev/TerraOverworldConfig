@@ -5,6 +5,8 @@ extends:
   - BROADLEAF_FOREST
 color: $biomes/colors.yml:FLOWERING_FOREST
 
+vanilla: minecraft:flower_forest
+
 minecraft:
   colors:
     grass: 0x60bf4b

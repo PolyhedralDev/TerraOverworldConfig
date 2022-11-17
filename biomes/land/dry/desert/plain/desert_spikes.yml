@@ -8,6 +8,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:DESERT_SPIKES
 
+vanilla: minecraft:desert
+
 tags:
   - LAND_CAVES
   - USE_RIVER

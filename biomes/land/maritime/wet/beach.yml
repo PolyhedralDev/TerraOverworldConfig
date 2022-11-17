@@ -7,6 +7,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:BEACH
 
+vanilla: minecraft:beach
+
 tags:
   - LAND_CAVES
   - USE_RIVER_TEMPERATE_MARSH

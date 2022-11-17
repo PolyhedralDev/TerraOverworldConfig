@@ -4,3 +4,5 @@ extends:
   - EQ_VOLCANO_PIT_EDGE_LOW
   - CALDERA_VOLCANO_PIT
 color: $biomes/colors.yml:CALDERA_VOLCANO_PIT_EDGE
+
+vanilla: minecraft:the_void

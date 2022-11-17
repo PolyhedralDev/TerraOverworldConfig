@@ -6,6 +6,8 @@ extends:
   - ACTIVE_VOLCANO_PIT
 color: $biomes/colors.yml:ACTIVE_VOLCANO_PIT_EDGE
 
+vanilla: minecraft:the_void
+
 minecraft:
   colors:
     sky: 0x32444e

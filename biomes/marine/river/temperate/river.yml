@@ -8,6 +8,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:RIVER
 
+vanilla: minecraft:river
+
 palette:
   - GRASS: 319
   - MUDDY_BEACH: 64

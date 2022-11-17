@@ -8,3 +8,5 @@ extends:
 color: $biomes/colors.yml:TROPICAL_PLATEAU
 
 tags: []
+
+vanilla: minecraft:jungle

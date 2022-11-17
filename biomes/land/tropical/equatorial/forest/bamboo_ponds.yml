@@ -7,6 +7,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:BAMBOO_PONDS
 
+vanilla: minecraft:bamboo_jungle
+
 tags:
   - LAND_CAVES
   - USE_RIVER_TEMPERATE_SWAMP

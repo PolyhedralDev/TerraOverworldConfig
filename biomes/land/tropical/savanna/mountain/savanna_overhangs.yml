@@ -7,6 +7,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:SAVANNA_OVERHANGS
 
+vanilla: minecraft:savanna_plateau
+
 tags:
   - LAND_CAVES
   - USE_RIVER

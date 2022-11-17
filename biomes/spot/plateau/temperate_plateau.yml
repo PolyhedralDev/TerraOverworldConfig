@@ -8,3 +8,5 @@ extends:
 color: $biomes/colors.yml:TEMPERATE_PLATEAU
 
 tags: []
+
+vanilla: minecraft:plains

@@ -8,6 +8,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:ARID_SPIKES
 
+vanilla: minecraft:badlands
+
 tags:
   - LAND_CAVES
   - USE_RIVER

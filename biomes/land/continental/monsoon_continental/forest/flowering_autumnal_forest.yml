@@ -7,6 +7,8 @@ tags:
   - LAND_CAVES
   - USE_RIVER
 
+vanilla: minecraft:old_growth_birch_forest
+
 features:
   flora:
     - GRASS

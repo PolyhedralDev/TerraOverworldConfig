@@ -8,6 +8,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:BADLANDS_MOUNTAINS
 
+vanilla: minecraft:badlands
+
 palette:
   - RED_SAND: 319
   - SAND: 64

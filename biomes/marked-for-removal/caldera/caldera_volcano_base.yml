@@ -7,6 +7,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:CALDERA_VOLCANO_BASE
 
+vanilla: minecraft:the_void
+
 palette:
   - GRASS: 319
   - << meta.yml:palette-bottom

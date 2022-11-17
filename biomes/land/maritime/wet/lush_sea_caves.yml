@@ -7,6 +7,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:LUSH_SEA_CAVES
 
+vanilla: minecraft:beach
+
 tags:
   - USE_RIVER
 

@@ -7,6 +7,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:WOODED_BUTTES
 
+vanilla: minecraft:plains
+
 tags:
   - LAND_CAVES
   - USE_RIVER_TEMPERATE_MARSH

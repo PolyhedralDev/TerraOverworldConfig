@@ -5,3 +5,4 @@ terrain:
     type: CONSTANT
 palette:
   - BLOCK:minecraft:air: 319
+vanilla: minecraft:plains

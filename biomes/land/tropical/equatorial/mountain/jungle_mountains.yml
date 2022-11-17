@@ -7,6 +7,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:JUNGLE_MOUNTAINS
 
+vanilla: minecraft:jungle
+
 palette:
   - GRASS: 319
   - SAND: 63

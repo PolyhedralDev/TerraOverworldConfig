@@ -5,6 +5,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:LUSH_CAVES
 
+vanilla: minecraft:lush_caves
+
 minecraft:
   colors:
     sky: 0x81ca71

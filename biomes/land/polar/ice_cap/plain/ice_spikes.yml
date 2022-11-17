@@ -7,6 +7,8 @@ extends:
   - SNOWY_PLAINS
 color: $biomes/colors.yml:ICE_SPIKES
 
+vanilla: minecraft:ice_spikes
+
 tags:
   - LAND_CAVES
   - USE_FROZEN_RIVER_FROZEN_MARSH

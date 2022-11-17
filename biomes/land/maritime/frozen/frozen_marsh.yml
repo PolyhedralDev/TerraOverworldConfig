@@ -8,6 +8,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:FROZEN_MARSH
 
+vanilla: minecraft:frozen_river
+
 tags:
   - LAND_CAVES
   - USE_FROZEN_RIVER_FROZEN_MARSH

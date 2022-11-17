@@ -7,6 +7,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:MUSHROOM_FIELDS
 
+vanilla: minecraft:mushroom_fields
+
 palette:
   - MYCELIUM: 319
   - SAND: 62

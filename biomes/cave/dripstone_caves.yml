@@ -5,6 +5,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:DRIPSTONE_CAVES
 
+vanilla: minecraft:dripstone_caves
+
 minecraft:
   colors:
     fog: 0xa88328

@@ -11,6 +11,8 @@ tags:
   - LAND_CAVES
   - USE_RIVER
 
+vanilla: minecraft:savanna
+
 palette:
   - GRASS_VARIATION: 319
   - SAND: 64

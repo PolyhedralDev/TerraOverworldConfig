@@ -6,6 +6,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:ERUPTED_VOLCANO
 
+vanilla: minecraft:badlands
+
 minecraft:
   colors:
     sky: 0x84b3af

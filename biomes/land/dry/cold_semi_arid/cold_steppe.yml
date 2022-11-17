@@ -11,6 +11,8 @@ tags:
   - LAND_CAVES
   - USE_RIVER
 
+vanilla: minecraft:taiga
+
 palette:
   - PACKED_MUDDY_GRASS: 319
   - SAND: 64

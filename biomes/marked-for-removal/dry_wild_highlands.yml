@@ -6,6 +6,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:DRY_WILD_HIGHLANDS
 
+vanilla: minecraft:the_void
+
 palette:
   - GRASS: 319
   - SAND: 63

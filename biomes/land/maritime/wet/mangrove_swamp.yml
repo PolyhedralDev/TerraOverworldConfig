@@ -7,6 +7,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:MANGROVE_SWAMP
 
+vanilla: minecraft:mangrove_swamp
+
 tags:
   - USE_RIVER_COASTAL_TROPICAL_SWAMP
 

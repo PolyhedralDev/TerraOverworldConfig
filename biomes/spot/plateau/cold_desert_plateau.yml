@@ -8,3 +8,5 @@ extends:
 color: $biomes/colors.yml:COLD_DESERT_PLATEAU
 
 tags: []
+
+vanilla: minecraft:snowy_plains

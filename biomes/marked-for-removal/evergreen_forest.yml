@@ -3,6 +3,8 @@ type: BIOME
 extends: RAINFOREST
 color: $biomes/colors.yml:EVERGREEN_FOREST
 
+vanilla: minecraft:the_void
+
 tags:
   - LAND_CAVES
   - USE_RIVER

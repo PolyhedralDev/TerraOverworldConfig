@@ -7,6 +7,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:ERODED_BADLANDS_BUTTES
 
+vanilla: minecraft:eroded_badlands
+
 tags:
   - LAND_CAVES
   - USE_RIVER

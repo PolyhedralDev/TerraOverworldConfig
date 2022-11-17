@@ -8,6 +8,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:TROPICAL_OCEAN
 
+vanilla: warm_ocean
+
 minecraft:
   colors:
     grass: 0x8eb971

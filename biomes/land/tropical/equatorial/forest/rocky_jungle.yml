@@ -7,6 +7,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:ROCKY_JUNGLE
 
+vanilla: minecraft:jungle
+
 tags:
   - LAND_CAVES
   - USE_RIVER

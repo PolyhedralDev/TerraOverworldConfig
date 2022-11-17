@@ -7,6 +7,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:BAMBOO_JUNGLE_MOUNTAINS
 
+vanilla: minecraft:bamboo_jungle
+
 palette:
   - GRASS: 319
   - GRASS_PODZOL_MUDDY: 90

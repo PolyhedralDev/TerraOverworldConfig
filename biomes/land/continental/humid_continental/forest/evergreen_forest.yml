@@ -11,6 +11,8 @@ tags:
   - LAND_CAVES
   - USE_RIVER
 
+vanilla: minecraft:forest
+
 minecraft:
   colors:
     grass: 0x86b783

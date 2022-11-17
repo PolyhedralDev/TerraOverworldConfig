@@ -7,6 +7,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:ACTIVE_VOLCANO_BASE
 
+vanilla: minecraft:the_void
+
 palette:
   - SMOOTH_BASALT_STONE: 319
   - << meta.yml:palette-bottom

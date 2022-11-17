@@ -12,6 +12,8 @@ tags:
   - LAND_CAVES
   - USE_FROZEN_RIVER_FROZEN_MARSH
 
+vanilla: minecraft:snowy_plains
+
 ocean:
   palette: FROZEN_OCEAN
 

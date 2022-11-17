@@ -7,6 +7,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:HIGHLANDS
 
+vanilla: minecraft:windswept_hills
+
 palette:
   - GRASS: 319
   - SAND: 63

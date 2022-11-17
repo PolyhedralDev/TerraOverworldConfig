@@ -8,6 +8,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:SNOWY_SEA_CAVES
 
+vanilla: minecraft:snowy_beach
+
 tags:
   - LAND_CAVES
   - USE_FROZEN_RIVER

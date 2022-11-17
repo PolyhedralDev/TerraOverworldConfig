@@ -9,6 +9,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:ICEBERG_OCEAN
 
+vanilla: minecraft:deep_frozen_ocean
+
 ocean:
   palette: FROZEN_OCEAN
 

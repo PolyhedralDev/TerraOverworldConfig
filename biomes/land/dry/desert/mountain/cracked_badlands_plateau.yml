@@ -8,6 +8,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:CRACKED_BADLANDS_PLATEAU
 
+vanilla: minecraft:eroded_badlands
+
 palette:
   - RED_SAND: 319
   - SAND: 64
