@@ -2,14 +2,13 @@ id: ENVIRONMENT_LAND_MARITIME_WET
 type: BIOME
 abstract: true
 
-minecraft:
-  colors:
-    fog: 0xc0d8ff
-    water: 0x157CAB
-    water-fog: 0x157CAB
-    sky: 0x78a7ff
-    grass: 0x81bd59
-    foliage: 0x65ab2f
+colors:
+  fog: 0xc0d8ff
+  water: 0x157CAB
+  water-fog: 0x157CAB
+  sky: 0x78a7ff
+  grass: 0x81bd59
+  foliage: 0x65ab2f
 
   climate:
     precipitation: rain

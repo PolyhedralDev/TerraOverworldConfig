@@ -5,9 +5,8 @@ color: $biomes/colors.yml:EUCALYPTUS_FOREST
 
 vanilla: minecraft:the_void
 
-minecraft:
-  colors:
-    foliage: 0x4fb06d
+colors:
+  foliage: 0x4fb06d
 
 features:
   flora:

@@ -9,9 +9,8 @@ color: $biomes/colors.yml:PRISMATIC_SPRING
 
 vanilla: minecraft:taiga
 
-minecraft:
-  colors:
-    water: 0x23b4d3
+colors:
+  water: 0x23b4d3
 
 palette:
   - PRISMATIC_MICROBIAL_MAT: 319

@@ -12,12 +12,11 @@ tags:
   - LAND_CAVES
   - USE_RIVER
 
-minecraft:
-  colors:
-    grass: 0x80c465
-    foliage: 0x59a940
-    water: 0x0677ce
-    water-fog: 0x0677ce
+colors:
+  grass: 0x80c465
+  foliage: 0x59a940
+  water: 0x0677ce
+  water-fog: 0x0677ce
 
 palette:
   - GRASS_MOSSY: 319

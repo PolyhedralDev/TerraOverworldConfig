@@ -13,12 +13,11 @@ tags:
 
 vanilla: minecraft:forest
 
-minecraft:
-  colors:
-    grass: 0x79c05a
-    foliage: 0x59ae30
-    water: 0x1e97f2
-    water-fog: 0x1e97f2
+colors:
+  grass: 0x79c05a
+  foliage: 0x59ae30
+  water: 0x1e97f2
+  water-fog: 0x1e97f2
 
 palette:
   - GRASS: 319

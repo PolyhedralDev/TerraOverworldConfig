@@ -13,12 +13,11 @@ tags:
 
 vanilla: minecraft:meadow
 
-minecraft:
-  colors:
-    grass: 0x72b95d
-    foliage: 0x5dae53
-    water: 0x44aff5
-    water-fog: 0x44aff5
+colors:
+  grass: 0x72b95d
+  foliage: 0x5dae53
+  water: 0x44aff5
+  water-fog: 0x44aff5
 
 palette:
   - GRASS: 319

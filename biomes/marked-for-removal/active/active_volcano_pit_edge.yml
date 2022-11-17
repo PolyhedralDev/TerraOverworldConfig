@@ -8,7 +8,6 @@ color: $biomes/colors.yml:ACTIVE_VOLCANO_PIT_EDGE
 
 vanilla: minecraft:the_void
 
-minecraft:
-  colors:
-    sky: 0x32444e
-    fog: 0xe79760
+colors:
+  sky: 0x32444e
+  fog: 0xe79760

@@ -9,10 +9,9 @@ color: $biomes/colors.yml:DRY_FOREST
 
 vanilla: minecraft:plains
 
-minecraft:
-  colors:
-    grass: 0xcbd656
-    foliage: 0xa8c348
+colors:
+  grass: 0xcbd656
+  foliage: 0xa8c348
 
 tags:
   - LAND_CAVES

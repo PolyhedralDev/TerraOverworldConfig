@@ -13,12 +13,11 @@ tags:
 
 vanilla: minecraft:jungle
 
-minecraft:
-  colors:
-    grass: 0x7ac465
-    foliage: 0x5fa649
-    water: 0x637d72
-    water-fog: 0x637d72
+colors:
+  grass: 0x7ac465
+  foliage: 0x5fa649
+  water: 0x637d72
+  water-fog: 0x637d72
 
 palette:
   - GRASS: 319

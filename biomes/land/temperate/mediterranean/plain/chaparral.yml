@@ -41,9 +41,8 @@ features:
     - SPRUCE_BUSH_PATCHES
     - SUBTROPICAL_BUSHES
 
-minecraft:
-  colors:
-    grass: 0xb1d563
-    foliage: 0x4fb06d
-    water: 0x2C8b9c
-    water-fog: 0x2C8b9c
+colors:
+  grass: 0xb1d563
+  foliage: 0x4fb06d
+  water: 0x2C8b9c
+  water-fog: 0x2C8b9c

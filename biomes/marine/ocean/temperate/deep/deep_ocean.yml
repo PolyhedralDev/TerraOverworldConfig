@@ -7,9 +7,8 @@ color: $biomes/colors.yml:DEEP_OCEAN
 
 vanilla: minecraft:deep_ocean
 
-minecraft:
-  colors:
-    grass: 0x8eb971
-    foliage: 0x71a74d
-    water: 0x1787d4
-    water-fog: 0x1165b0
+colors:
+  grass: 0x8eb971
+  foliage: 0x71a74d
+  water: 0x1787d4
+  water-fog: 0x1165b0

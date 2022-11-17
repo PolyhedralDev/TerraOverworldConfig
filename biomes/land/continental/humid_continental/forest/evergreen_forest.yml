@@ -13,10 +13,9 @@ tags:
 
 vanilla: minecraft:forest
 
-minecraft:
-  colors:
-    grass: 0x86b783
-    foliage: 0x64a464
+colors:
+  grass: 0x86b783
+  foliage: 0x64a464
 
 palette:
   - GRASS: 319

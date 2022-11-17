@@ -7,9 +7,8 @@ extends:
   - MOUNTAINS
 color: $biomes/colors.yml:MOUNTAINS_RIVER
 
-minecraft:
-  colors:
-    grass: 0x8ab689
-    foliage: 0x6da36b
-    water: 0x007bf7
-    water-fog: 0x007bf7
+colors:
+  grass: 0x8ab689
+  foliage: 0x6da36b
+  water: 0x007bf7
+  water-fog: 0x007bf7

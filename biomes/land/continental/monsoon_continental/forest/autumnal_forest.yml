@@ -13,12 +13,11 @@ tags:
 
 vanilla: minecraft:birch_forest
 
-minecraft:
-  colors:
-    grass: 0x8ea85e
-    foliage: 0xe98553
-    water: 0x1e97f2
-    water-fog: 0x1e97f2
+colors:
+  grass: 0x8ea85e
+  foliage: 0xe98553
+  water: 0x1e97f2
+  water-fog: 0x1e97f2
 
 palette:
   - GRASS: 319

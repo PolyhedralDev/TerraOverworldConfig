@@ -7,14 +7,13 @@ color: $biomes/colors.yml:LUSH_CAVES
 
 vanilla: minecraft:lush_caves
 
-minecraft:
-  colors:
-    sky: 0x81ca71
-    fog: 0x477c1f
-    water: 0x14A2C5
-    water-fog: 0x14A2C5
-    grass: 0xa5c742 # Matched to moss block
-    foliage: 0xa5cd55 # Matched to azalea leaves
+colors:
+  sky: 0x81ca71
+  fog: 0x477c1f
+  water: 0x14A2C5
+  water-fog: 0x14A2C5
+  grass: 0xa5c742 # Matched to moss block
+  foliage: 0xa5cd55 # Matched to azalea leaves
 
   climate:
     precipitation: rain

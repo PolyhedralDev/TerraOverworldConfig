@@ -2,14 +2,13 @@ id: ENVIRONMENT_LAND_UNIQUE_MUSHROOM
 type: BIOME
 abstract: true
 
-minecraft:
-  colors:
-    fog: 0xc0d8ff
-    water: 0x8A8997
-    water-fog: 0x8A8997
-    sky: 0x77a8ff
-    grass: 0x55C93F
-    foliage: 0x2BBB0F
+colors:
+  fog: 0xc0d8ff
+  water: 0x8A8997
+  water-fog: 0x8A8997
+  sky: 0x77a8ff
+  grass: 0x55C93F
+  foliage: 0x2BBB0F
 
   climate:
     precipitation: rain

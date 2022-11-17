@@ -9,12 +9,11 @@ color: $biomes/colors.yml:SANDSTONE_ARCHIPELAGO
 
 vanilla: minecraft:beach
 
-minecraft:
-  colors:
-    grass: 0x30bb0b
-    foliage: 0x30bb0b
-    water: 0x32a598
-    water-fog: 0x32A598
+colors:
+  grass: 0x30bb0b
+  foliage: 0x30bb0b
+  water: 0x32a598
+  water-fog: 0x32A598
 
 tags:
   - LAND_CAVES

@@ -13,12 +13,11 @@ tags:
 
 vanilla: minecraft:plains
 
-minecraft:
-  colors:
-    grass: 0x91bd59
-    foliage: 0x77ab2f
-    water: 0x44aff5
-    water-fog: 0x44aff5
+colors:
+  grass: 0x91bd59
+  foliage: 0x77ab2f
+  water: 0x44aff5
+  water-fog: 0x44aff5
 
 palette:
   - GRASS: 319

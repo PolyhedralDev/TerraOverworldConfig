@@ -5,9 +5,8 @@ color: $biomes/colors.yml:SAKURA_GROVE
 
 vanilla: minecraft:old_growth_birch_forest
 
-minecraft:
-  colors:
-    foliage: 0xffb7c5
+colors:
+  foliage: 0xffb7c5
 
 slant:
   - threshold: 0.55

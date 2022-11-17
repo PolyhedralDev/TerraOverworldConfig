@@ -10,9 +10,8 @@ color: $biomes/colors.yml:COLD_OCEAN
 
 vanilla: minecraft:cold_ocean
 
-minecraft:
-  colors:
-    grass: 0x8eb971
-    foliage: 0x71a74d
-    water: 0x2080c9
-    water-fog: 0x14559b
+colors:
+  grass: 0x8eb971
+  foliage: 0x71a74d
+  water: 0x2080c9
+  water-fog: 0x14559b

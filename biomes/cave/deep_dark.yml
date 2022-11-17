@@ -7,14 +7,13 @@ color: $biomes/colors.yml:DEEP_DARK
 
 vanilla: minecraft:deep_dark
 
-minecraft:
-  colors:
-    fog: 0x000000
-    water: 0x102e38
-    water-fog: 0x171921
-    sky: 0x1c2742
-    grass: 0x163b46
-    foliage: 0x195a58
+colors:
+  fog: 0x000000
+  water: 0x102e38
+  water-fog: 0x171921
+  sky: 0x1c2742
+  grass: 0x163b46
+  foliage: 0x195a58
 
   climate:
     precipitation: rain

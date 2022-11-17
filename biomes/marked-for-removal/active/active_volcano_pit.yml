@@ -9,10 +9,9 @@ color: $biomes/colors.yml:ACTIVE_VOLCANO_PIT
 
 vanilla: minecraft:the_void
 
-minecraft:
-  colors:
-    sky: 0x154249
-    fog: 0xe7702d
+colors:
+  sky: 0x154249
+  fog: 0xe7702d
 
 palette:
   - LAVA_CRACKS: 319

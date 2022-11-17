@@ -2,14 +2,13 @@ id: ENVIRONMENT_LAND_POLAR_ICE_CAP
 type: BIOME
 abstract: true
 
-minecraft:
-  colors:
-    fog: 0xc0d8ff
-    water: 0x14559B
-    water-fog: 0x14559B
-    sky: 0x7fa1ff
-    grass: 0x80B497
-    foliage: 0x60A17B
+colors:
+  fog: 0xc0d8ff
+  water: 0x14559B
+  water-fog: 0x14559B
+  sky: 0x7fa1ff
+  grass: 0x80B497
+  foliage: 0x60A17B
 
   climate:
     precipitation: snow

@@ -7,14 +7,13 @@ color: $biomes/colors.yml:DRIPSTONE_CAVES
 
 vanilla: minecraft:dripstone_caves
 
-minecraft:
-  colors:
-    fog: 0xa88328
-    water: 0x6fcaba
-    water-fog: 0x90caba
-    sky: 0xf8ffba
-    grass: 0x3c783b
-    foliage: 0x3c783b
+colors:
+  fog: 0xa88328
+  water: 0x6fcaba
+  water-fog: 0x90caba
+  sky: 0xf8ffba
+  grass: 0x3c783b
+  foliage: 0x3c783b
 
   climate:
     precipitation: rain
