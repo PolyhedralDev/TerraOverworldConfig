@@ -1,4 +1,0 @@
-id: FLAT_FROZEN_COAST
-type: BIOME
-extends: KOPPEN_BIOME
-color: 0x00ffea

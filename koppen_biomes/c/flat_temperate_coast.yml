@@ -1,4 +1,0 @@
-id: FLAT_TEMPERATE_COAST
-type: BIOME
-extends: KOPPEN_BIOME
-color: 0xa2ff00

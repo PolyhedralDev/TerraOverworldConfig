@@ -1,4 +1,0 @@
-id: DWD
-type: BIOME
-extends: KOPPEN_BIOME
-color: 0x6c7aff

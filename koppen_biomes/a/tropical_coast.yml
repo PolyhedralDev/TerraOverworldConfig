@@ -1,4 +1,0 @@
-id: TROPICAL_COAST
-type: BIOME
-extends: KOPPEN_BIOME
-color: 0x98a9cf

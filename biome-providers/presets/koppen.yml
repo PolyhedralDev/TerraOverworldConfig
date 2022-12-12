@@ -22,6 +22,12 @@ biomes:
       - << biome-providers/stages/koppen/climate/precipitation.yml:stages
       - << biome-providers/stages/koppen/climate/elevation.yml:stages
       - << biome-providers/stages/koppen/set_biomes_in_climates.yml:stages
+
+      - type: REPLACE
+        from: todo
+        to: PLAINS
+        sampler:
+          type: CONSTANT
       
       - type: FRACTAL_EXPAND
         sampler:

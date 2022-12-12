@@ -240,18 +240,18 @@ stages:
           - XERIC_MOUNTAINS: 1
 
         cold-desert-flat:
-          - BWK: 1
+          - todo: 1
         cold-desert:
-          - BWK: 1
+          - todo: 1
         cold-desert-highlands:
-          - COLD_DESERT_HIGHLANDS: 1
+          - todo: 1
 
         cold-steppe-flat:
           - COLD_STEPPE: 1
         cold-steppe:
           - COLD_STEPPE: 1
         cold-steppe-highlands:
-          - COLD_DESERT_HIGHLANDS: 1
+          - todo: 1
 
         cold-desert-plateau:
           - COLD_DESERT_PLATEAU: 1

@@ -1,8 +1,0 @@
-id: KOPPEN_BIOME
-type: BIOME
-terrain:
-  sampler:
-    type: CONSTANT
-palette:
-  - BLOCK:minecraft:air: 319
-vanilla: minecraft:plains
