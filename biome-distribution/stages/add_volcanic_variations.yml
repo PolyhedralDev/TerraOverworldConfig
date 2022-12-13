@@ -17,4 +17,4 @@ stages:
       volcano-base:
         - ACTIVE_VOLCANO_BASE: *active-weight
         - CALDERA_VOLCANO_BASE: *caldera-weight
-    sampler: $biome-providers/stages/add_volcanic_zones.yml:variation-sampler
+    sampler: $biome-distribution/stages/add_volcanic_zones.yml:variation-sampler

@@ -15,7 +15,7 @@ specific to a different domain of configuration:
 - `biomes`
   Where all biome configs are defined.
 
-- `biome-providers`
+- `biome-distribution`
   Contains configuration files related *where* biomes generate.
 
 - `structures`
@@ -51,7 +51,7 @@ This pack comes with several biome distribution presets, which can be chosen
 within the [`pack.yml`](./pack.yml) file. If none of these presets do exactly
 what you want, you can further modify biome distribution presets with alternate
 sources and stages. Check out the
-[`biome-providers/presets/default.yml`](./biome-providers/presets/default.yml)
+[`biome-distribution/presets/default.yml`](./biome-distribution/presets/default.yml)
 config for these alternative sources and stages.
 
 ### Where can I learn more about configuration?

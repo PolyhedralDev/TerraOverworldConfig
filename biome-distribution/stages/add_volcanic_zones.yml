@@ -94,4 +94,4 @@ stages:
         - land: 6
         # Non-volcano area
         - land: *volcano-area-weight
-    sampler: $biome-providers/stages/add_volcanic_zones.yml:zone-sampler
+    sampler: $biome-distribution/stages/add_volcanic_zones.yml:zone-sampler

@@ -16,12 +16,12 @@ biomes:
         ocean: 1
         land: 1
     stages:
-      - << biome-providers/stages/koppen/add_spots.yml:stages
-      - << biome-providers/stages/koppen/add_coast.yml:stages
-      - << biome-providers/stages/koppen/climate/temperature.yml:stages
-      - << biome-providers/stages/koppen/climate/precipitation.yml:stages
-      - << biome-providers/stages/koppen/climate/elevation.yml:stages
-      - << biome-providers/stages/koppen/set_biomes_in_climates.yml:stages
+      - << biome-distribution/stages/koppen/add_spots.yml:stages
+      - << biome-distribution/stages/koppen/add_coast.yml:stages
+      - << biome-distribution/stages/koppen/climate/temperature.yml:stages
+      - << biome-distribution/stages/koppen/climate/precipitation.yml:stages
+      - << biome-distribution/stages/koppen/climate/elevation.yml:stages
+      - << biome-distribution/stages/koppen/set_biomes_in_climates.yml:stages
 
       - type: REPLACE
         from: todo
@@ -48,4 +48,4 @@ biomes:
         sampler:
           type: WHITE_NOISE
 
-      - << biome-providers/stages/add_rivers.yml:stages
+      - << biome-distribution/stages/add_rivers.yml:stages

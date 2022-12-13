@@ -1,5 +1,5 @@
 # The sampler that controls how rivers generate, you can find various presets
-# in the biome-providers/stages/river-samplers/ folder.
+# in the biome-distribution/stages/river-samplers/ folder.
 riverSampler: &riverSampler
   type: EXPRESSION
   expression: riverBiomeMap(x, z)

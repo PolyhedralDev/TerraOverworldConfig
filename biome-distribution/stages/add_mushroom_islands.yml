@@ -49,7 +49,7 @@ stages:
         - mushroom-coast: 5
         # Non-mushroom area
         - deep-ocean-border: *mushroom-area-weight
-    sampler: $biome-providers/stages/add_mushroom_islands.yml:zone-sampler
+    sampler: $biome-distribution/stages/add_mushroom_islands.yml:zone-sampler
   - type: REPLACE_LIST
     default-from: mushroom-land
     default-to:
@@ -60,4 +60,4 @@ stages:
       mushroom-coast:
         - MUSHROOM_COAST: 1
         - ROCKY_ARCHIPELAGO: 2
-    sampler: $biome-providers/stages/add_mushroom_islands.yml:variation-sampler
+    sampler: $biome-distribution/stages/add_mushroom_islands.yml:variation-sampler
