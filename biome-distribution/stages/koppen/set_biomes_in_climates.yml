@@ -3,7 +3,7 @@ stages:
     sampler:
       type: CELLULAR
       return: CellValue
-      frequency: 1 / 1000
+      frequency: 1 / 1000 / ${customization.yml:variation-scale} / ${customization.yml:global-scale}
     
     default-from: ice-cap-flat
     default-to:

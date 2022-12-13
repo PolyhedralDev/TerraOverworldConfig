@@ -18,4 +18,4 @@ source:
       octaves: 4
       sampler:
         type: CELLULAR
-        frequency: 1 / ${meta.yml:biome-distribution.continental-scale} / ${meta.yml:biome-distribution.global-scale}
+        frequency: 1 / ${customization.yml:continental-scale} / ${customization.yml:global-scale}

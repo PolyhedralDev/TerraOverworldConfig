@@ -3,9 +3,9 @@ variables: &variables
   wetlandValue: -0.4 # Value the sampler outputs for areas bordering rivers, used for wetland biomes.
   notRiverValue: -1 # Value the sampler outputs for areas where there is not a river.
   
-  riverFrequency: 1 / ${meta.yml:biome-distribution.river-spread-scale} / ${meta.yml:biome-distribution.global-scale}
+  riverFrequency: 1 / 20 / ${customization.yml:river-spread-scale} / ${customization.yml:global-scale}
   riverThreshold: 0.35 # Determines the area calculated as river, which also determines how far from rivers wetlands can be.
-  riverMaxWidth: 20 * ${meta.yml:biome-distribution.global-scale} # Determines the width of rivers within riverThreshold.
+  riverMaxWidth: ${customization.yml:river-max-width} * ${customization.yml:global-scale} # Determines the width of rivers within riverThreshold.
   wetlandThreshold: 0.2 # Determines how much area within riverThreshold will be wetlands.
 
   erosionEnd: 0.5
