@@ -1,4 +1,4 @@
-# Biome Providers
+# Biome Distribution
 
 This directory contains configuration files related to **biome distribution**. 
 For individual biome configuration, checkout the `biomes` directory instead.
