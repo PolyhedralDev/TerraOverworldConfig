@@ -2,12 +2,17 @@ samplers:
   continents: &continents
     dimensions: 2
     type: EXPRESSION
-    expression: -sampler(x / continentalScale / globalScale, z / continentalScale / globalScale) + continentalOffset
+    expression: |
+      max(
+        -sampler(x / continentalScale / globalScale, z / continentalScale / globalScale) + continentalOffset,
+        spawnIsland(x, z)
+      )
     variables:
       globalScale: $customization.yml:global-scale
       continentalScale: $customization.yml:continental-scale
       continentalOffset: $customization.yml:continental-offset
     samplers:
+      spawnIsland: $math/samplers/spawnIsland.yml:samplers.spawnIsland
       sampler:
         dimensions: 2
         type: RIDGED

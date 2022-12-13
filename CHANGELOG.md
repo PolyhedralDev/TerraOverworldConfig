@@ -42,6 +42,7 @@ generate in an area where it previously did not (resulting in a chunk border).
 ## [Unreleased]
 ### Added
 - Added cold steppe.
+- Added the spawn island, a flattened landmass at 0,0 that guarantees the world spawn is on land.
 
 ### Changed
 - Reworked terrain to use a global heightmap.

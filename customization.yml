@@ -13,6 +13,16 @@ terrain-height: 230
 # Default: 230
 
 # ---
+# Spawn Island
+# ---
+
+spawn-island-radius-inner: 150
+
+spawn-island-radius-outer: 200
+
+spawn-island-elevation-cap: 0.2
+
+# ---
 # Continental
 # ---
 

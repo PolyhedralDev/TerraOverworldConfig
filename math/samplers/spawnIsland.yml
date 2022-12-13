@@ -1,0 +1,20 @@
+samplers:
+  spawnIsland:
+    dimensions: 2
+    type: DOMAIN_WARP
+    amplitude: 100
+    warp:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.007
+    sampler:
+      type: EXPRESSION
+      expression: |
+        if(x < -outerRadius || x > outerRadius || z < -outerRadius || z > outerRadius,
+          -1,
+          herp(sqrt(x*x+z*z), innerRadius, 1, outerRadius, -1)
+        )
+      variables:
+        innerRadius: $customization.yml:spawn-island-radius-inner
+        outerRadius: $customization.yml:spawn-island-radius-outer 
+      functions: $math/functions/interpolation.yml:functions
+
