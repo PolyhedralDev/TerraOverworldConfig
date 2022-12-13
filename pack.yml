@@ -134,3 +134,6 @@ blend:
     amplitude: 2
     sampler:
       type: WHITE_NOISE
+
+slant:
+  calculation-method: DotProduct
