@@ -1,8 +1,8 @@
 biomes:
   type: EXTRUSION
-  extrusions:
-    - << biome-distribution/extrusions/add_cave_biomes.yml:extrusions
-    - << biome-distribution/extrusions/add_deep_dark.yml:extrusions
+  extrusions: [] # Disabled for now - seems to be an issue with 2d terrain samplers taking over surface terrain
+    # - << biome-distribution/extrusions/add_cave_biomes.yml:extrusions
+    # - << biome-distribution/extrusions/add_deep_dark.yml:extrusions
   provider:
     type: PIPELINE
     resolution: 4
