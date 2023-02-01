@@ -17,6 +17,12 @@ terrain-base-y-level: 65
 terrain-height: 230
 # Default: 230
 
+terrain-ocean-base-y-level: 60
+# Default 60
+
+terrain-ocean-depth: 60
+# Default: 60
+
 # ---
 # Spawn Island
 # ---

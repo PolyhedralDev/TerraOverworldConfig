@@ -38,3 +38,18 @@ samplers:
       spawnIsland: $math/samplers/spawnIsland.yml:samplers.spawnIsland
       riverTerrainErosion: $math/samplers/rivers.yml:samplers.riverTerrainErosion
 
+  oceanElevation:
+    dimensions: 2
+    type: EXPRESSION
+    expression: |
+      herp(continents(x, z),
+        continentZero, 0,
+        continentFull, -1+rawElevation(x, z)
+      )
+    functions: $math/functions/interpolation.yml:functions
+    variables:
+      continentZero: 0
+      continentFull: -0.8
+    samplers:
+      rawElevation: $math/samplers/terrain.yml:samplers.rawElevation
+      continents: $math/samplers/continents.yml:samplers.continents

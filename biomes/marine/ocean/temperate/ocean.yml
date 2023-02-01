@@ -3,7 +3,7 @@ type: BIOME
 extends:
   - PALETTE_OCEAN
   - ENVIRONMENT_MARINE_OCEAN
-  - EQ_OCEAN
+  - EQ_GLOBAL_OCEAN
   - CARVING_OCEAN
   - BASE
 color: $biomes/colors.yml:OCEAN
