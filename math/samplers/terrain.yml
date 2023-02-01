@@ -2,20 +2,22 @@ samplers:
   rawElevation:
     dimensions: 2
     type: EXPRESSION
-    expression: ((noise(x / elevationScale / globalScale, z / elevationScale / globalScale)+1)/2)^3
+    expression: noise(x / elevationScale / globalScale, z / elevationScale / globalScale)^3
     variables:
       globalScale: $customization.yml:global-scale
       elevationScale: $customization.yml:elevation-scale
     samplers:
       noise:
         dimensions: 2
-        type: RIDGED
-        octaves: 6
-        gain: 0.4
-        lacunarity: 2.2
+        type: PROBABILITY
         sampler:
-          type: OPEN_SIMPLEX_2
-          frequency: 0.0003
+          type: RIDGED
+          octaves: 6
+          gain: 0.4
+          lacunarity: 2.2
+          sampler:
+            type: OPEN_SIMPLEX_2
+            frequency: 0.0003
 
   elevation:
     dimensions: 2
