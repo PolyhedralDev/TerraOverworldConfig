@@ -2,6 +2,27 @@ stages:
   - type: REPLACE_LIST
     sampler:
       type: EXPRESSION
+      expression: if(oceanElevation(x, z) < deepOceanThreshold, -1, 1)
+      variables:
+        deepOceanThreshold: $customization.yml:ocean-deep-threshold
+    default-from: polar-ocean
+    default-to:
+      - polar-deep-ocean: 1
+      - polar-ocean: 1
+    to:
+      boreal-ocean:
+        - boreal-deep-ocean: 1
+        - boreal-ocean: 1
+      temperate-ocean:
+        - temperate-deep-ocean: 1
+        - temperate-ocean: 1
+      hot-ocean:
+        - hot-deep-ocean: 1
+        - hot-ocean: 1
+    
+  - type: REPLACE_LIST
+    sampler:
+      type: EXPRESSION
       expression: segment(elevation(x, z), flatlandsThreshold, highlandsThreshold)
       variables:
         flatlandsThreshold: $customization.yml:elevation-flatlands-threshold

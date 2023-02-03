@@ -20,8 +20,8 @@ terrain-height: 230
 terrain-ocean-base-y-level: 60
 # Default 60
 
-terrain-ocean-depth: 60
-# Default: 60
+terrain-ocean-depth: 100
+# Default: 100
 
 # ---
 # Spawn Island
@@ -139,6 +139,15 @@ cave-biome-scale: 1
 # Controls the scale of the placement of cave biomes, larger scale = bigger areas of
 # any given cave biome, smaller scale = smaller cave biomes.
 # Default: 1
+
+# ---
+# Oceans
+# ---
+
+ocean-deep-threshold: -0.8
+# Elevation at which deep oceans are placed. Higher number = larger area of deep ocean
+# and vice versa.
+# Default: -0.8
 
 # ---
 # Rivers

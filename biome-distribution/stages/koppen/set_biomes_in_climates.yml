@@ -39,6 +39,8 @@ stages:
   
         polar-ocean:
           - FROZEN_OCEAN: 1
+        polar-deep-ocean:
+          - FROZEN_DEEP_OCEAN: 1
   
         boreal-hot-summer-flat:
           - AUTUMNAL_FOREST: 1
@@ -125,6 +127,8 @@ stages:
   
         boreal-ocean:
           - COLD_OCEAN: 1
+        boreal-deep-ocean:
+          - COLD_DEEP_OCEAN: 1
   
         temperate-mediterranean-hot-summer-flat:
           - PALM_FOREST: 1
@@ -213,6 +217,8 @@ stages:
 
         temperate-ocean:
           - OCEAN: 1
+        temperate-deep-ocean:
+          - DEEP_OCEAN: 1
 
         hot-desert-flat:
           - DESERT: 5
@@ -332,3 +338,4 @@ stages:
           - TEMPERATE_EXTINCT_VOLCANO: 1
 
         hot-ocean: TROPICAL_OCEAN
+        hot-deep-ocean: TROPICAL_DEEP_OCEAN
