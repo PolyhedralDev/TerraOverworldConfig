@@ -3,10 +3,44 @@ type: BIOME
 extends:
   - EQ_SPOT_PLATEAU
   - CARVING_OCEAN
-  - TAIGA
   - BASE
 color: $biomes/colors.yml:BOREAL_PLATEAU
 
 tags: []
 
 vanilla: minecraft:taiga
+
+colors:
+  grass: 0x86b783
+  foliage: 0x68a464
+  water: 0x287082
+  water-fog: 0x287082
+
+palette:
+  - GRASS: 319
+  - SAND: 64
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.45
+    palette:
+      - COARSE_DIRT: 319
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:stone: 319
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - SWEET_BERRY_BUSH_PATCHES
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - ROSE_BUSH_PATCH
+    - PEONY_PATCH
+    - LILAC_PATCH
+    - LILY_OF_THE_VALLEY_PATCH
+    - GRASS
+    - FERNS
+  trees:
+    - SPRUCE_TREES

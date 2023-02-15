@@ -3,10 +3,39 @@ type: BIOME
 extends:
   - EQ_SPOT_PLATEAU
   - CARVING_OCEAN
-  - WOODED_BUTTES
   - BASE
 color: $biomes/colors.yml:TEMPERATE_PLATEAU
 
 tags: []
 
 vanilla: minecraft:plains
+
+palette:
+  - GRASS: 319
+  - SAND: 63
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.55
+    palette:
+      - MOSS_STONE: 319
+      - << meta.yml:palette-bottom
+  - threshold: 0.5
+    palette:
+      - MOSSY_COBBLESTONE_STONE: 319
+      - << meta.yml:palette-bottom
+  - threshold: 0.45
+    palette:
+      - TUFF_STONE: 319
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:stone: 319
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - WHITE_FLOWER_COVER
+    - TALL_GRASS
+  trees:
+    - SPARSE_TEMPERATE_TREE_PATCHES
