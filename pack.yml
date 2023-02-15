@@ -40,13 +40,10 @@ addons:
 # referenced file(s) below.
 
 # Default biome distribution
-#biomes: $biome-distribution/presets/default.yml:biomes
+biomes: $biome-distribution/presets/default.yml:biomes
 
 # Single biome - to change the single biome to use, check the configuration file.
 #biomes: $biome-distribution/presets/single.yml:biomes
-
-biomes: $biome-distribution/presets/koppen.yml:biomes
-
 
 # ---
 # Population stages

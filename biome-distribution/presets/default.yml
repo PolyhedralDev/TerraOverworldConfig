@@ -21,12 +21,12 @@ biomes:
           ocean: 1
           land: 1
       stages:
-        - << biome-distribution/stages/koppen/add_spots.yml:stages
-        - << biome-distribution/stages/koppen/add_coast.yml:stages
-        - << biome-distribution/stages/koppen/climate/temperature.yml:stages
-        - << biome-distribution/stages/koppen/climate/precipitation.yml:stages
-        - << biome-distribution/stages/koppen/climate/elevation.yml:stages
-        - << biome-distribution/stages/koppen/set_biomes_in_climates.yml:stages
+        - << biome-distribution/stages/add_spots.yml:stages
+        - << biome-distribution/stages/add_coast.yml:stages
+        - << biome-distribution/stages/climate/temperature.yml:stages
+        - << biome-distribution/stages/climate/precipitation.yml:stages
+        - << biome-distribution/stages/climate/elevation.yml:stages
+        - << biome-distribution/stages/set_biomes_in_climates.yml:stages
 
         - type: REPLACE
           from: todo
