@@ -4,15 +4,23 @@ samplers:
     type: EXPRESSION
     expression: |
       max(
-        -sampler(x / continentalScale / globalScale, z / continentalScale / globalScale) + continentalOffset,
-        spawnIsland(x, z)
+        max(
+          -sampler(x / continentalScale / globalScale, z / continentalScale / globalScale) + continentalOffset,
+          spawnIsland(x, z)
+        ),
+        // Set continentalness to spotContinentalFactor in center of spots, 0 on spot edges,
+        // and decrease cubically moving further outwards
+        spotContinentalFactor * (1-(spotDistance(x,z)/spotRadius(x,z))^3)
       )
     variables:
       globalScale: $customization.yml:global-scale
       continentalScale: $customization.yml:continental-scale
       continentalOffset: $customization.yml:continental-offset
+      spotContinentalFactor: 0.3
     samplers:
       spawnIsland: $math/samplers/spawnIsland.yml:samplers.spawnIsland
+      spotDistance: $math/samplers/spots.yml:samplers.spotDistance
+      spotRadius: $math/samplers/spots.yml:samplers.spotRadius
       sampler:
         dimensions: 2
         type: RIDGED
