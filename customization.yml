@@ -162,3 +162,19 @@ river-max-width: 20
 # Controls in blocks how wide rivers can get.
 # Default: 20
 
+# ---
+# Spot Biomes
+# ---
+
+# Spot biomes are special circular biomes scattered around the world.
+# Examples include volcanoes, prismatic springs, and crater lakes
+
+spot-spread: 2000
+# Roughly how many blocks apart each spot biome will be
+# Default: 2000
+
+spot-radius-min: 50
+# Default: 50
+
+spot-radius-max: 300
+# Default: 300

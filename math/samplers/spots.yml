@@ -1,10 +1,10 @@
 variables: &variables
-  spread: 2000
+  spread: $customization.yml:spot-spread
   
   biomeBorder: 10
 
-  minRadius: 50
-  maxRadius: 300
+  minRadius: $customization.yml:spot-radius-min
+  maxRadius: $customization.yml:spot-radius-max
   
   minHeight: 0.05
   maxHeight: 0.5
@@ -18,9 +18,9 @@ variables: &variables
 cellular: &cellular
   dimensions: 2
   type: CELLULAR
-  frequency: 1 / ${math/samplers/spots.yml:variables.spread}
+  frequency: 1 / ${customization.yml:spot-spread}
   salt: 3
-  jitter: 1-2*(${math/samplers/spots.yml:variables.maxRadius}/${math/samplers/spots.yml:variables.spread})
+  jitter: 1-2*(${customization.yml:spot-radius-max}/${customization.yml:spot-spread})
 
 samplers:
   spotDistance: # Returns block distance from closest spot center
