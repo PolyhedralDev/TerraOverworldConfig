@@ -20,8 +20,7 @@ colors:
   water-fog: 0x44aff5
 
 palette:
-  - BLOCK:minecraft:stone: 319
-  - SANDY_GRASS: 75
+  - SANDY_GRASS: 319
   - << meta.yml:palette-bottom
 
 features:
