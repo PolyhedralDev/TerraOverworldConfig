@@ -1,0 +1,64 @@
+id: EQ_TRAVERTINE_TERRACES
+type: BIOME
+abstract: true
+
+vars: &variables
+  base: $customization.yml:terrain-base-y-level
+  scale: $customization.yml:terrain-height
+
+terrain:
+  sampler:
+    type: EXPRESSION
+    expression: -y + base
+    variables: *variables
+  
+  sampler-2d:
+    type: DOMAIN_WARP
+    amplitude: 4
+    warp:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.06
+    sampler:
+      type: EXPRESSION
+      expression: |
+        scale * max(cell1(x, z), cell2(x, z)) - 5
+      variables: *variables
+      samplers:
+        cell1:
+          dimensions: 2
+          type: EXPRESSION
+          expression: lerp(-distance2div(x, z), 0.2, elevation(x, z), 0.4, lookup(x, z))
+          samplers:
+            lookup:
+              dimensions: 2
+              type: CELLULAR
+              return: NoiseLookup
+              frequency: 0.03
+              salt-lookup: false
+              lookup:
+                type: EXPRESSION
+                expression: elevation(x, z)
+            distance2div:
+              dimensions: 2
+              type: CELLULAR
+              return: Distance2Div
+              frequency: 0.03
+        cell2: # Identical to cell1, except with smaller cells
+          dimensions: 2
+          type: EXPRESSION
+          expression: lerp(-distance2div(x, z), 0.2, elevation(x, z), 0.4, lookup(x, z))
+          samplers:
+            lookup:
+              dimensions: 2
+              type: CELLULAR
+              return: NoiseLookup
+              frequency: 0.06
+              salt-lookup: false
+              lookup:
+                type: EXPRESSION
+                expression: elevation(x, z)
+            distance2div:
+              dimensions: 2
+              type: CELLULAR
+              return: Distance2Div
+              frequency: 0.06
