@@ -1,0 +1,55 @@
+samplers:
+  rawElevation:
+    dimensions: 2
+    type: EXPRESSION
+    expression: noise(x / elevationScale / globalScale, z / elevationScale / globalScale)^3
+    variables:
+      globalScale: $customization.yml:global-scale
+      elevationScale: $customization.yml:elevation-scale
+    samplers:
+      noise:
+        dimensions: 2
+        type: PROBABILITY
+        sampler:
+          type: RIDGED
+          octaves: 6
+          gain: 0.4
+          lacunarity: 2.2
+          sampler:
+            type: OPEN_SIMPLEX_2
+            frequency: 0.0003
+
+  elevation:
+    dimensions: 2
+    type: EXPRESSION
+    expression: |
+      herp(continents(x, z),
+        continentZero, 0,
+        continentFull, rawElevation(x, z) * lerp(spawnIsland(x, z), -1, 1, 0, spawnIslandElevationCap)
+      ) * (1-riverTerrainErosion(x, z))
+    functions: $math/functions/interpolation.yml:functions
+    variables:
+      continentZero: -0.3
+      continentFull: 0.2
+      spawnIslandElevationCap: $customization.yml:spawn-island-elevation-cap 
+    samplers:
+      rawElevation: $math/samplers/terrain.yml:samplers.rawElevation
+      continents: $math/samplers/continents.yml:samplers.continents
+      spawnIsland: $math/samplers/spawnIsland.yml:samplers.spawnIsland
+      riverTerrainErosion: $math/samplers/rivers.yml:samplers.riverTerrainErosion
+
+  oceanElevation:
+    dimensions: 2
+    type: EXPRESSION
+    expression: |
+      herp(continents(x, z),
+        continentZero, 0,
+        continentFull, -1+rawElevation(x, z)
+      )
+    functions: $math/functions/interpolation.yml:functions
+    variables:
+      continentZero: 0
+      continentFull: -0.8
+    samplers:
+      rawElevation: $math/samplers/terrain.yml:samplers.rawElevation
+      continents: $math/samplers/continents.yml:samplers.continents

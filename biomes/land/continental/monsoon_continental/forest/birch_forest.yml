@@ -1,0 +1,44 @@
+id: BIRCH_FOREST
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_CONTINENTAL_MONSOON
+  - EQ_MULTI_TERRACED_LAND
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:BIRCH_FOREST
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER
+
+vanilla: minecraft:birch_forest
+
+colors:
+  grass: 0x88bb67
+  foliage: 0x6ba941
+  water: 0x0677ce
+  water-fog: 0x0677ce
+
+palette:
+  - GRASS: 319
+  - SAND: 64
+  - MUDDY_BEACH: 61
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:stone: 319
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - GRASS
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - ROSE_BUSH_PATCH
+    - PEONY_PATCH
+    - LILAC_PATCH
+    - LILY_OF_THE_VALLEY_PATCH
+  trees:
+    - BIRCH_TREES

@@ -1,0 +1,16 @@
+id: ENVIRONMENT_MARINE_OCEAN
+type: BIOME
+abstract: true
+
+colors:
+  fog: 0xc0d8ff
+  water: 0x1787D4
+  water-fog: 0x1787D4
+  sky: 0x7ba4ff
+  grass: 0x8EB971
+  foliage: 0x71A74D
+
+  climate:
+    precipitation: rain
+    temperature: 0.5
+    downfall: 0.5

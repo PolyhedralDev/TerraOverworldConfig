@@ -1,0 +1,32 @@
+id: RIVER
+type: BIOME
+extends:
+  - RIVER_BASIC
+  - ENVIRONMENT_MARINE_RIVER
+  - EQ_GLOBAL_RIVER
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:RIVER
+
+vanilla: minecraft:river
+
+palette:
+  - GRASS: 319
+  - MUDDY_BEACH: 64
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:stone: 319
+      - << meta.yml:palette-bottom
+
+colors:
+  grass: 0x8eb971
+  foliage: 0x71a74d
+  water: 0x0084ff
+  water-fog: 0x0084ff
+
+features:
+  flora:
+    - SUGAR_CANE

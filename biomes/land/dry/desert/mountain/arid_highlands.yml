@@ -1,0 +1,31 @@
+id: ARID_HIGHLANDS
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_DRY_DESERT
+  - EQ_STRATIFIED_LAND
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:ARID_HIGHLANDS
+
+vanilla: minecraft:savanna
+
+palette:
+  - SAND: 319
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.45
+    palette:
+      - BLOCK:minecraft:smooth_sandstone: 319
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:sandstone: 319
+      - << meta.yml:palette-bottom
+
+features:
+  landforms:
+    - SMALL_SANDSTONE_BOULDER_PATCHES
+  flora:
+    - CACTUS_SPARSE
+    - DEAD_BUSHES

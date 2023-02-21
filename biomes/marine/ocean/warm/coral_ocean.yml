@@ -1,0 +1,14 @@
+id: CORAL_OCEAN
+type: BIOME
+extends: TROPICAL_OCEAN
+color: $biomes/colors.yml:CORAL_OCEAN
+
+vanilla: minecraft:warm_ocean
+
+features:
+  flora:
+    - CORAL_PLANTS
+    - CORAL_FANS
+  trees:
+    - DENDRIFORM_REEF
+    - BALL_REEF

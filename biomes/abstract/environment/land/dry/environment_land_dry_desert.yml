@@ -1,0 +1,15 @@
+id: ENVIRONMENT_LAND_DRY_DESERT
+type: BIOME
+abstract: true
+
+colors:
+  fog: 0xc0d8ff
+  water: 0x32A598
+  water-fog: 0x32A598
+  sky: 0x6eb1ff
+  grass: 0xBFB755
+  foliage: 0xAEA42A
+
+  climate:
+    temperature: 2.0
+    downfall: 0.0

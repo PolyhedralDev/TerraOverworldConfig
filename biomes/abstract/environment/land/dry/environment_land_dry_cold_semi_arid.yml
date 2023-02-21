@@ -1,0 +1,15 @@
+id: ENVIRONMENT_LAND_DRY_COLD_SEMI_ARID
+type: BIOME
+abstract: true
+
+colors:
+  fog: 0xc0d8ff
+  water: 0x2080C9
+  water-fog: 0x2080C9
+  sky: 0x839eff
+  grass: 0xffea93
+  foliage: 0xc19864
+
+  climate:
+    temperature: 0.25
+    downfall: 0.5

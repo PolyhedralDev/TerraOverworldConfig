@@ -1,0 +1,16 @@
+id: ENVIRONMENT_LAND_TEMPERATE_OCEANIC
+type: BIOME
+abstract: true
+
+colors:
+  fog: 0xc0d8ff
+  water: 0x1E97F2
+  water-fog: 0x1E97F2
+  sky: 0x78a7ff
+  grass: 0x91BD59
+  foliage: 0x59AE30
+
+  climate:
+    precipitation: rain
+    temperature: 0.8
+    downfall: 0.4

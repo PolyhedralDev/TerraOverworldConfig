@@ -1,0 +1,36 @@
+id: SAKURA_GROVE
+type: BIOME
+extends: TEMPERATE_MOUNTAINS
+color: $biomes/colors.yml:SAKURA_GROVE
+
+vanilla: minecraft:old_growth_birch_forest
+
+colors:
+  foliage: 0xffb7c5
+
+slant:
+  - threshold: 0.55
+    palette:
+      - MOSS_STONE: 319
+      - << meta.yml:palette-bottom
+  - threshold: 0.5
+    palette:
+      - MOSSY_COBBLESTONE_STONE: 319
+      - << meta.yml:palette-bottom
+  - threshold: 0.45
+    palette:
+      - TUFF_STONE: 319
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - ROCKY_SLANT: 319
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - GRASS
+  trees:
+    - SAKURA_TREES
+  landforms:
+    - MOSSY_BOULDERS
+    - SMALL_MOSSY_BOULDER_PATCHES

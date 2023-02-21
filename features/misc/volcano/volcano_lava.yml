@@ -1,0 +1,30 @@
+id: VOLCANO_LAVA
+type: FEATURE
+extends: VOLCANO_FLUID
+
+structures:
+  distribution:
+    type: EXPRESSION
+    expression: noise(x,z) + offset(x,z)/2
+    samplers:
+      offset:
+        dimensions: 2
+        type: OPEN_SIMPLEX_2
+        frequency: 0.01
+      noise:
+        dimensions: 2
+        type: LINEAR
+        min: -1
+        max: 0
+        sampler:
+          type: FBM
+          octaves: 2
+          lacunarity: 1.5
+          sampler:
+            type: CELLULAR
+            return: Distance2Div
+            frequency: 0.06
+  structures:
+    - BLOCK:minecraft:obsidian: 3
+    - BLOCK:minecraft:magma_block: 1
+    - BLOCK:minecraft:lava: 15

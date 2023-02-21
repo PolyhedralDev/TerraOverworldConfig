@@ -1,8 +1,0 @@
-id: SAVANNA
-type: BIOME
-extends: [ EQ_PLAIN_PEAKS, SAVANNA_HILLS ]
-color: $biomes/colors.yml:SAVANNA
-
-tags:
-  - LAND_CAVES
-  - USE_RIVER_TEMPERATE_MARSH

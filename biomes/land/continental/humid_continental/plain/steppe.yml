@@ -1,0 +1,42 @@
+id: STEPPE
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_CONTINENTAL_HUMID
+  - EQ_LAND
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:STEPPE
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER_TEMPERATE_MARSH
+
+vanilla: minecraft:plains
+
+colors:
+  grass: 0x9db55b
+  foliage: 0xa1ab2f
+  water: 0x44aff5
+  water-fog: 0x44aff5
+
+palette:
+  - GRASS_VARIATION: 319
+  - SAND: 64
+  - MUDDY_BEACH: 61
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:stone: 319
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - GRASS
+    - POPPY_PATCH
+    - OXEYE_DAISY_PATCH
+    - CORNFLOWER_PATCH
+    - ALLIUM_PATCH
+  trees:
+    - MIXED_BUSHES

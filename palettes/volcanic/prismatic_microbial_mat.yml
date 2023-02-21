@@ -1,0 +1,74 @@
+id: PRISMATIC_MICROBIAL_MAT
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:diorite: 1
+      - minecraft:calcite: 1
+      - minecraft:diorite: 1
+      - minecraft:calcite: 1
+      - minecraft:diorite: 1
+      - minecraft:andesite: 1
+      - minecraft:diorite: 1
+      - minecraft:andesite: 1
+      - minecraft:stone: 1
+      - minecraft:light_gray_terracotta: 1
+      - minecraft:stone: 1
+      - minecraft:light_gray_terracotta: 3
+      - minecraft:granite: 3
+      - minecraft:terracotta: 4
+      - minecraft:brown_terracotta: 1
+      - minecraft:terracotta: 1
+      - minecraft:brown_terracotta: 4
+      - minecraft:red_sand: 2
+      - minecraft:orange_terracotta: 10
+      - minecraft:red_sand: 2
+      - minecraft:orange_terracotta: 2
+      - minecraft:red_sand: 3
+      - minecraft:yellow_concrete: 16
+      - minecraft:lime_terracotta: 8
+      - minecraft:cyan_terracotta: 1
+    layers: 4
+  - materials:
+      - minecraft:stone: 1
+    layers: 1
+    sampler:
+      type: CONSTANT
+
+sampler:
+  type: EXPRESSION
+  expression: |
+    parabolicMap(spotDistance(x, z),
+      spotRadius(x, z), noise(x, z) - 1,
+      spotRadius(x, z) * spotEdgeRadius(x, z) * 0.8, 1
+    )
+  samplers:
+    noise:
+      dimensions: 2
+      type: DOMAIN_WARP
+      amplitude: 15
+      warp:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.015
+      sampler:
+        type: EXPRESSION
+        expression: |
+          noise(
+            spotDistance(x, z) * distanceFrequency + spotSizePercent(x, z) * offsetAmplitude,
+            sin(spotAngle(x, z)) * angleFrequency + spotSizePercent(x, z) * offsetAmplitude,
+            cos(spotAngle(x, z)) * angleFrequency + spotSizePercent(x, z) * offsetAmplitude
+          )
+        variables:
+          angleFrequency: 300
+          distanceFrequency: 0.4
+          offsetAmplitude: 10000 # Translates sample position per cell so the erosion pattern is unique for each volcano
+        samplers:
+          noise:
+            dimensions: 3
+            type: FBM
+            octaves: 3
+            gain: 0.4
+            lacunarity: 3
+            sampler:
+              type: OPEN_SIMPLEX_2
+              frequency: 0.006

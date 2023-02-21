@@ -1,11 +1,11 @@
 id: OVERWORLD
-version: 1.3.0
+version: 2.0.0
 author: "Astrash, Sancires, Aureus"
 
 generator: NOISE_3D
 
 addons:
-  biome-provider-pipeline: "1.+"
+  biome-provider-pipeline-v2: "1.+"
   biome-provider-single: "1.+"
   biome-provider-extrusion: "1.+"
   chunk-generator-noise-3d: "1.+"
@@ -40,12 +40,10 @@ addons:
 # referenced file(s) below.
 
 # Default biome distribution
-biomes: $biome-providers/presets/default.yml:biomes
+biomes: $biome-distribution/presets/default.yml:biomes
 
 # Single biome - to change the single biome to use, check the configuration file.
-#biomes: $biome-providers/presets/single.yml:biomes
-
-
+#biomes: $biome-distribution/presets/single.yml:biomes
 
 # ---
 # Population stages
@@ -114,12 +112,18 @@ stages:
 functions:
   "<<":
     - math/functions/terrace.yml:functions
-    - math/functions/lerp.yml:functions
+    - math/functions/interpolation.yml:functions
     - math/functions/maskSmooth.yml:functions
 
 samplers:
   "<<":
+    - math/samplers/terrain.yml:samplers
     - math/samplers/simplex.yml:samplers
+    - math/samplers/continents.yml:samplers
+    - math/samplers/precipitation.yml:samplers
+    - math/samplers/temperature.yml:samplers
+    - math/samplers/rivers.yml:samplers
+    - math/samplers/spots.yml:samplers
 
 blend:
   palette:
@@ -127,3 +131,6 @@ blend:
     amplitude: 2
     sampler:
       type: WHITE_NOISE
+
+slant:
+  calculation-method: DotProduct

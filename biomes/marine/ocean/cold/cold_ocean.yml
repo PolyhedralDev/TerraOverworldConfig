@@ -1,0 +1,17 @@
+id: COLD_OCEAN
+type: BIOME
+extends:
+  - PALETTE_OCEAN
+  - ENVIRONMENT_MARINE_OCEAN
+  - EQ_GLOBAL_OCEAN
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:COLD_OCEAN
+
+vanilla: minecraft:cold_ocean
+
+colors:
+  grass: 0x8eb971
+  foliage: 0x71a74d
+  water: 0x2080c9
+  water-fog: 0x14559b

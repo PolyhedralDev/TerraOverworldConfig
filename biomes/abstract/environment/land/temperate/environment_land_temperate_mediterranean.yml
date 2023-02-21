@@ -1,0 +1,16 @@
+id: ENVIRONMENT_LAND_TEMPERATE_MEDITERRANEAN
+type: BIOME
+abstract: true
+
+colors:
+  fog: 0xc0d8ff
+  water: 0x3c89c9
+  water-fog: 0x3c89c9
+  sky: 0x78a7ff
+  grass: 0x76ac1e
+  foliage: 0x4dac1e
+
+  climate:
+    precipitation: rain
+    temperature: 0.85
+    downfall: 0.4

@@ -1,0 +1,57 @@
+id: EQ_VOLCANO
+type: BIOME
+abstract: true
+
+vars: &variables
+  base: $customization.yml:terrain-base-y-level
+  scale: $customization.yml:terrain-height
+  "<<":
+    - math/samplers/spots.yml:variables
+
+terrain:
+  sampler:
+    type: EXPRESSION
+    expression: -y + base
+    variables: *variables
+  
+  sampler-2d:
+    type: EXPRESSION
+    variables: *variables
+    expression: |
+      scale * calcHeight(x, z,
+        /*distance*/      spotDistance(x, z),
+        /*erosion*/       (volcanoErosion(x, z)+1)/2,
+        /*outsideHeight*/ elevation(x, z),
+        /*edge*/          spotEdgeRadius(x, z),
+        /*radius*/        spotRadius(x, z),
+        /*centerDepth*/   volcanoCenterDepth(x, z),
+        /*volcanoHeight*/ lerp(spotSizePercent(x, z) * (1 - spotEdgeRadiusPercent(x, z)),
+                            0, minHeight,
+                            1, maxHeight
+                          ),
+        /*volcanoBase*/   spotBaseElevation(x, z)
+      )
+    functions:
+      calcHeight:
+        arguments:
+          - x
+          - z
+          - distance
+          - erosion
+          - outsideHeight
+          - edge
+          - radius
+          - centerDepth
+          - volcanoHeight
+          - volcanoBase
+        expression: |
+          parabolicMap(distance,
+            radius, outsideHeight,
+            radius * edge,
+              volcanoBase + volcanoHeight * (1 - erosion * lerp(distance, radius, 1, radius * edge, 0))
+              - parabolicMap(distance,
+                radius * edge / 3, centerDepth,
+                radius * edge, 0
+              )
+          )
+        functions: $math/functions/interpolation.yml:functions

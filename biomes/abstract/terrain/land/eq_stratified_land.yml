@@ -1,0 +1,38 @@
+id: EQ_STRATIFIED_LAND
+type: BIOME
+abstract: true
+
+variables: &variables
+  base: $customization.yml:terrain-base-y-level
+  scale: $customization.yml:terrain-height
+  
+
+terrain:
+  sampler:
+    type: EXPRESSION
+    expression: -y + base + 10
+    variables: *variables
+
+  sampler-2d:
+    type: EXPRESSION
+    expression: |
+      terraceStrata(
+        terraceStrata(
+          terraceStrata(
+            heightmap(x, z) * scale
+          ,50, 0, 0, 0.1)
+        ,30, 0, 0, 0.15)
+      ,15, 0, 0, 0.2)
+    variables: *variables
+    samplers:
+      heightmap:
+        dimensions: 2
+        type: DOMAIN_WARP
+        amplitude: 10
+        warp:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.03
+          salt: 4912
+        sampler:
+          type: EXPRESSION
+          expression: elevation(x, z)

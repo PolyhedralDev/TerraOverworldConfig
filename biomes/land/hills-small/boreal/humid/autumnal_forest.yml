@@ -1,8 +1,0 @@
-id: AUTUMNAL_FOREST
-type: BIOME
-extends: [ EQ_TERRACED_HILLS, AUTUMNAL_FOREST_HILLS ]
-color: $biomes/colors.yml:AUTUMNAL_FOREST
-
-tags:
-  - LAND_CAVES
-  - USE_RIVER_TEMPERATE_MARSH

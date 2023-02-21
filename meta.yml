@@ -1,4 +1,3 @@
-
 biome-distribution:
   # Biome distribution refers to the placement of biomes, this does *NOT*
   # include aspects like terrain height / shape within biomes, or anything
@@ -6,7 +5,7 @@ biome-distribution:
   
   # These parameters are designed to allow for easy modification of biome distribution,
   # and are injected into the various biome distribution configs via meta-configuration.
-  # You can find these configs in the biome-providers directory, most of which contain
+  # You can find these configs in the biome-distribution directory, most of which contain
   # additional more specific parameters.
   
   continental-scale: 100
@@ -50,7 +49,7 @@ biome-distribution:
   # any given cave biome, smaller scale = smaller cave biomes.
   # Default: 200
 
-  river-spread-scale: 10
+  river-spread-scale: 20
   # Controls how far / close apart rivers generally are, larger scale = further apart
   # rivers, smaller scale = closer packed together rivers.
   # Default: 10

@@ -1,0 +1,16 @@
+id: ENVIRONMENT_LAND_UNIQUE_VOLCANIC
+type: BIOME
+abstract: true
+
+colors:
+  fog: 0xc0d8ff
+  water: 0x0D67BB
+  water-fog: 0x0D67BB
+  sky: 0x78a7ff
+  grass: 0x93bf63
+  foliage: 0x93bf63
+
+  climate:
+    precipitation: rain
+    temperature: 0.9
+    downfall: 0.7

@@ -1,8 +1,0 @@
-id: EVERGREEN_FOREST
-type: BIOME
-extends: [ EQ_PLAIN, EVERGREEN_FOREST_HILLS ]
-color: $biomes/colors.yml:EVERGREEN_FOREST
-
-tags:
-  - LAND_CAVES
-  - USE_RIVER_TEMPERATE_SWAMP

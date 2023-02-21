@@ -1,0 +1,16 @@
+id: ENVIRONMENT_LAND_MARITIME_FROZEN
+type: BIOME
+abstract: true
+
+colors:
+  fog: 0xc0d8ff
+  water: 0x1463A5
+  water-fog: 0x1463A5
+  sky: 0x7fa1ff
+  grass: 0x80B497
+  foliage: 0x64A278
+
+  climate:
+    precipitation: snow
+    temperature: 0.05
+    downfall: 0.3

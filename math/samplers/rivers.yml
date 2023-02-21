@@ -1,0 +1,94 @@
+variables: &variables
+  riverValue: 1 # Value the sampler outputs where there should be a river.
+  wetlandValue: -0.4 # Value the sampler outputs for areas bordering rivers, used for wetland biomes.
+  notRiverValue: -1 # Value the sampler outputs for areas where there is not a river.
+  
+  riverFrequency: 1 / 20 / ${customization.yml:river-spread-scale} / ${customization.yml:global-scale}
+  riverThreshold: 0.35 # Determines the area calculated as river, which also determines how far from rivers wetlands can be.
+  riverMaxWidth: ${customization.yml:river-max-width} * ${customization.yml:global-scale} # Determines the width of rivers within riverThreshold.
+  wetlandThreshold: 0.2 # Determines how much area within riverThreshold will be wetlands.
+
+  erosionEnd: 0.5
+  erosionStart: 0
+  erosionMax: 0.95
+  erosionMin: 0
+
+riverNoise: &riverNoise
+  dimensions: 2
+  type: DOMAIN_WARP
+  amplitude: 2
+  sampler:
+    type: OPEN_SIMPLEX_2
+  warp:
+    type: OPEN_SIMPLEX_2
+    frequency: 0.14
+
+samplers:
+  riverTerrainErosion:
+    dimensions: 2
+    type: EXPRESSION
+    expression: |
+      herp(|riverNoise(x*riverFrequency, z*riverFrequency)|^2,
+        erosionStart, erosionMax,
+        erosionEnd, erosionMin
+      ) * herp(erosionStrength(x, z), 0.2, 0, 0.8, 1)
+    variables: *variables
+    functions: $math/functions/interpolation.yml:functions
+    samplers:
+      erosionStrength:
+        dimensions: 2
+        type: PROBABILITY
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.002
+          salt: 2175
+      riverNoise: *riverNoise
+
+  riverBiomeMap:
+    dimensions: 2
+    type: EXPRESSION
+    expression: |
+      if(
+        |riverNoise(x*riverFrequency, z*riverFrequency)|>riverThreshold,
+        notRiverValue,
+        if(
+          riverKerneled((x-riverMaxWidth)/riverMaxWidth, (z-riverMaxWidth)/riverMaxWidth)!=0,
+          riverValue,
+          if(
+            wetlandMask(x*riverFrequency,z*riverFrequency)<wetlandThreshold,
+            wetlandValue,
+            notRiverValue
+          )
+        )
+      )
+    variables: *variables
+    samplers:
+      wetlandMask:
+        dimensions: 2
+        type: PROBABILITY
+        sampler:
+          type: DOMAIN_WARP
+          amplitude: 2
+          warp:
+            type: OPEN_SIMPLEX_2
+            salt: 9123
+            frequency: 0.2
+          sampler:
+            type: OPEN_SIMPLEX_2
+            salt: 4812
+            frequency: 0.02
+      riverNoise: *riverNoise
+      riverKerneled:
+        dimensions: 2
+        type: KERNEL # Edge detection
+        kernel: [
+          [ 0,  1, 0 ],
+          [ 1, -4, 1 ],
+          [ 0,  1, 0 ]
+        ]
+        sampler:
+          type: EXPRESSION
+          expression: riverNoise(x*riverMaxWidth*riverFrequency, z*riverMaxWidth*riverFrequency)>0
+          variables: *variables
+          samplers:
+            riverNoise: *riverNoise

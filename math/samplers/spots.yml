@@ -1,0 +1,139 @@
+variables: &variables
+  spread: $customization.yml:spot-spread
+  
+  biomeBorder: 10
+
+  minRadius: $customization.yml:spot-radius-min
+  maxRadius: $customization.yml:spot-radius-max
+  
+  minHeight: 0.05
+  maxHeight: 0.5
+
+  spotMinEdgeRadius: 0.1
+  spotMaxEdgeRadius: 0.5
+
+  volcanoMinCenterDepth: 0.01
+  volcanoMaxCenterDepth: 0.3
+
+cellular: &cellular
+  dimensions: 2
+  type: CELLULAR
+  frequency: 1 / ${customization.yml:spot-spread}
+  salt: 3
+  jitter: 1-2*(${customization.yml:spot-radius-max}/${customization.yml:spot-spread})
+
+samplers:
+  spotDistance: # Returns block distance from closest spot center
+    dimensions: 2
+    type: DOMAIN_WARP
+    amplitude: 7
+    warp:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.015
+    sampler:
+      type: EXPRESSION
+      expression: (noise(x, z)+1)*spread
+      variables: *variables
+      samplers:
+        noise:
+          <<: *cellular
+          distance: Euclidean
+
+  spotSizePercent: # Returns a random value between 0 and 1 that determines the size of the spot
+    dimensions: 2
+    type: PROBABILITY
+    sampler:
+      <<: *cellular
+      return: CellValue
+
+  spotRadius: # Returns the radius of the spot in blocks
+    dimensions: 2
+    type: EXPRESSION
+    expression: lerp(spotSizePercent(x, z), 0, minRadius, 1, maxRadius)
+    functions: $math/functions/interpolation.yml:functions
+    variables: *variables
+    samplers:
+      spotSizePercent: $math/samplers/spots.yml:samplers.spotSizePercent
+
+  spotAngle:
+    <<: *cellular
+    return: Angle
+
+  spotBaseElevation: # Returns the elevation value at the center of the spot
+    <<: *cellular
+    return: NoiseLookup
+    salt-lookup: false
+    lookup:
+      type: EXPRESSION
+      expression: elevation(x, z)
+      samplers:
+        elevation: $math/samplers/terrain.yml:samplers.elevation
+  
+  # ---
+  # Volcano Samplers
+  # ---
+  
+  spotEdgeRadiusPercent:
+    <<: *cellular
+    return: NoiseLookup
+    lookup:
+      type: EXPRESSION
+      expression: quinticEaseInOut(noise(x, z)) # Use in/out easing to favour extreme values over middle values
+      samplers:
+        noise:
+          dimensions: 2
+          type: POSITIVE_WHITE_NOISE
+          salt: 5812
+      functions:
+        quinticEaseInOut:
+          arguments: [ x ]
+          expression: if(x<0.5,16*x^5,1-((-2*x+2)^5)/2)
+
+  spotEdgeRadius:
+    dimensions: 2
+    type: EXPRESSION
+    expression: lerp(spotEdgeRadiusPercent(x, z), 0, spotMinEdgeRadius, 1, spotMaxEdgeRadius)
+    functions: $math/functions/interpolation.yml:functions
+    variables: *variables
+    samplers:
+      spotEdgeRadiusPercent: $math/samplers/spots.yml:samplers.spotEdgeRadiusPercent
+
+  volcanoActivity:
+    <<: *cellular
+    return: NoiseLookup
+    lookup:
+      type: WHITE_NOISE
+      salt: 4128
+
+  volcanoCenterDepth:
+    dimensions: 2
+    type: EXPRESSION
+    expression: lerp(spotSizePercent(x, z), 0, volcanoMinCenterDepth, 1, volcanoMaxCenterDepth)
+    functions: $math/functions/interpolation.yml:functions
+    variables: *variables
+    samplers:
+      spotSizePercent: $math/samplers/spots.yml:samplers.spotSizePercent
+
+  volcanoErosion: # Creates streaks from the center of the volcano, emulating erosion
+    dimensions: 2
+    type: EXPRESSION
+    expression: |
+      noise(
+        spotDistance(x, z) + spotSizePercent(x, z) * offsetAmplitude,
+        sin(spotAngle(x, z)) * angleFrequency + spotSizePercent(x, z) * offsetAmplitude,
+        cos(spotAngle(x, z)) * angleFrequency + spotSizePercent(x, z) * offsetAmplitude
+      )
+    variables:
+      angleFrequency: 150
+      offsetAmplitude: 10000 # Translates sample position per cell so the erosion pattern is unique for each volcano
+    samplers:
+      spotDistance: $math/samplers/spots.yml:samplers.spotDistance
+      spotAngle: $math/samplers/spots.yml:samplers.spotAngle
+      spotSizePercent: $math/samplers/spots.yml:samplers.spotSizePercent
+      noise:
+        dimensions: 3
+        type: FBM
+        octaves: 3
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.033

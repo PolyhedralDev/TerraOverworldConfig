@@ -1,8 +1,0 @@
-id: GRASS_SAVANNA
-type: BIOME
-extends: [ EQ_PLAIN, GRASS_SAVANNA_HILLS ]
-color: $biomes/colors.yml:GRASS_SAVANNA
-
-tags:
-  - LAND_CAVES
-  - USE_RIVER_TEMPERATE_MARSH

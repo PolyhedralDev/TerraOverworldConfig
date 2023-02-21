@@ -1,8 +1,0 @@
-id: FOREST_FLATS
-type: BIOME
-extends: [ EQ_PLAIN_PEAKS, FOREST ]
-color: $biomes/colors.yml:FOREST_FLATS
-
-tags:
-  - LAND_CAVES
-  - USE_RIVER_TEMPERATE_MARSH

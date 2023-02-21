@@ -1,0 +1,28 @@
+id: FROZEN_RIVER
+type: BIOME
+extends:
+  - COLOR_FROZEN
+  - RIVER_FROZEN
+  - ENVIRONMENT_MARINE_RIVER_FROZEN
+  - EQ_GLOBAL_RIVER
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:FROZEN_RIVER
+
+vanilla: frozen_river
+
+ocean:
+  palette: FROZEN_OCEAN
+
+palette:
+  - SNOW: 319
+  - SAND: 61
+  - << meta.yml:palette-bottom
+
+features:
+  slabs:
+    - SNOW_LAYERS
+  preprocessors:
+    - ICE_COASTLINE
+  postprocessors:
+    - TREE_SNOW

@@ -1,0 +1,8 @@
+id: MUSHROOM_COAST
+type: BIOME
+extends:
+  - EQ_SEA_CAVES
+  - MUSHROOM_FIELDS
+color: $biomes/colors.yml:MUSHROOM_COAST
+
+vanilla: minecraft:mushroom_fields

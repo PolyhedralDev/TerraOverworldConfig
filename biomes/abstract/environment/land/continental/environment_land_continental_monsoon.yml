@@ -1,0 +1,16 @@
+id: ENVIRONMENT_LAND_CONTINENTAL_MONSOON
+type: BIOME
+abstract: true
+
+colors:
+  fog: 0xc0d8ff
+  water: 0x0677CE
+  water-fog: 0x0677CE
+  sky: 0x7aa5ff
+  grass: 0x88BB67
+  foliage: 0x6BA941
+
+  climate:
+    precipitation: rain
+    temperature: 0.6
+    downfall: 0.6

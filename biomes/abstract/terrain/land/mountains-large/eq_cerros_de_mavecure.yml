@@ -27,7 +27,7 @@ terrain:
         #expression: "max(simplex, cell)"
         expression: "lerp(max(min(cell, 100), 0), 0, simplex, 100, cell)"
         functions:
-          lerp: $math/functions/lerp.yml:functions.lerp
+          lerp: $math/functions/interpolation.yml:functions.lerp
     samplers:
       cells:
         dimensions: 2

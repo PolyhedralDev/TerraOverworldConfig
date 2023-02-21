@@ -1,0 +1,16 @@
+id: ENVIRONMENT_LAND_TROPICAL_EQUATORIAL
+type: BIOME
+abstract: true
+
+colors:
+  fog: 0xc0d8ff
+  water: 0x14A2C5
+  water-fog: 0x14A2C5
+  sky: 0x77a8ff
+  grass: 0x59C93C
+  foliage: 0x30BB0B
+
+  climate:
+    precipitation: rain
+    temperature: 1.0
+    downfall: 1.0
