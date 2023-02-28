@@ -2,7 +2,7 @@ id: ERUPTED_VOLCANO
 type: BIOME
 extends:
   - EQ_VOLCANO
-  - CARVING_OCEAN
+  - CARVING_NONE
   - BASE
 color: $biomes/colors.yml:ERUPTED_VOLCANO
 
