@@ -41,7 +41,7 @@ generate in an area where it previously did not (resulting in a chunk border).
 
 ## [Unreleased]
 ### Added
-- Re-added biome blending, which was previously removed by accident, resulting in blocky biome transitions (notably around beaches).
+
 
 ### Changed
 
@@ -51,6 +51,10 @@ generate in an area where it previously did not (resulting in a chunk border).
 
 ### Fixed
 
+
+## [v1.3.1]
+### Added
+- Re-added biome blending, which was previously removed by accident, resulting in blocky biome transitions (notably around beaches).
 
 ## [v1.3.0]
 ### Added
@@ -121,7 +125,8 @@ generate in an area where it previously did not (resulting in a chunk border).
 ### Added
 - Everything
 
-[Unreleased]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.0...HEAD
+[Unreleased]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.1...HEAD
+[v1.3.1]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.0...v1.3.1
 [v1.3.0]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.1.1...v1.2.0
 [1.1.1]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.1.0...v1.1.1
