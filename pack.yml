@@ -120,10 +120,3 @@ functions:
 samplers:
   "<<":
     - math/samplers/simplex.yml:samplers
-
-blend:
-  palette:
-    resolution: 2
-    amplitude: 2
-    sampler:
-      type: WHITE_NOISE

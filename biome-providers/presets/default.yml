@@ -8,8 +8,9 @@ biomes:
     resolution: 2
     initial-size: 10
     blend:
+      amplitude: 1.5
       sampler:
-        type: CONSTANT # handled by palette blending
+        type: WHITE_NOISE
     pipeline:
       # ---
       # Source
