@@ -41,7 +41,7 @@ generate in an area where it previously did not (resulting in a chunk border).
 
 ## [Unreleased]
 ### Added
-
+- Re-added biome blending, which was previously removed by accident, resulting in blocky biome transitions (notably around beaches).
 
 ### Changed
 
