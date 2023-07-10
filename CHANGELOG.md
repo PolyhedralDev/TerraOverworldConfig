@@ -52,6 +52,15 @@ generate in an area where it previously did not (resulting in a chunk border).
 ### Fixed
 
 
+## [v1.3.2]
+### Added
+- Cherry tree features.
+- Pink petal features.
+
+### Changed
+- Sakura Mountains now use Cherry tree features instead of Dark Oak.
+- Sakura Mountains generate pink petal patches.
+
 ## [v1.3.1]
 ### Added
 - Re-added biome blending, which was previously removed by accident, resulting in blocky biome transitions (notably around beaches).
