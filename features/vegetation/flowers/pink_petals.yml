@@ -1,0 +1,49 @@
+id: PINK_PETALS
+type: FEATURE
+
+distributor:
+  type: AND
+  distributors:
+    - type: SAMPLER
+      sampler:
+        type: POSITIVE_WHITE_NOISE
+        salt: 8172
+      threshold: 0.7
+    - type: SAMPLER
+      sampler:
+        type: PROBABILITY
+        sampler:
+          type: DOMAIN_WARP
+          amplitude: 5
+          warp:
+            type: GAUSSIAN
+          sampler:
+            type: OPEN_SIMPLEX_2
+      threshold: 0.5
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: 62
+        max: 319
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:plantable-blocks
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:snow
+          - minecraft:air
+        offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: pink_petals

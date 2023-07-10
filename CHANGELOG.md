@@ -41,10 +41,12 @@ generate in an area where it previously did not (resulting in a chunk border).
 
 ## [Unreleased]
 ### Added
-
+- Cherry tree features.
+- Pink petal features.
 
 ### Changed
-
+- Sakura Mountains now use Cherry tree features instead of Dark Oak.
+- Sakura Mountains generate pink petal patches.
 
 ### Removed
 
