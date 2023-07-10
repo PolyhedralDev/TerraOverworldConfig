@@ -41,18 +41,25 @@ generate in an area where it previously did not (resulting in a chunk border).
 
 ## [Unreleased]
 ### Added
-- Cherry tree features.
-- Pink petal features.
+
 
 ### Changed
-- Sakura Mountains now use Cherry tree features instead of Dark Oak.
-- Sakura Mountains generate pink petal patches.
+
 
 ### Removed
 
 
 ### Fixed
 
+
+## [v1.3.2]
+### Added
+- Cherry tree features.
+- Pink petal features.
+
+### Changed
+- Sakura Mountains now use Cherry tree features instead of Dark Oak.
+- Sakura Mountains generate pink petal patches.
 
 ## [v1.3.1]
 ### Added
@@ -127,7 +134,8 @@ generate in an area where it previously did not (resulting in a chunk border).
 ### Added
 - Everything
 
-[Unreleased]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.1...HEAD
+[Unreleased]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.2...HEAD
+[v1.3.2]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.1...v1.3.2
 [v1.3.1]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.0...v1.3.1
 [v1.3.0]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.1.1...v1.2.0
