@@ -33,7 +33,7 @@ terrain:
               dimensions: 2
               type: CELLULAR
               return: NoiseLookup
-              frequency: 0.03
+              frequency: 0.06
               salt-lookup: false
               lookup:
                 type: EXPRESSION
@@ -52,7 +52,7 @@ terrain:
               dimensions: 2
               type: CELLULAR
               return: NoiseLookup
-              frequency: 0.06
+              frequency: 0.09
               salt-lookup: false
               lookup:
                 type: EXPRESSION
