@@ -3,7 +3,7 @@ num goldenAngle = 2.39996;
 num pi = 3.14159;
 num twopi = 6.28318530718;
 
-num trunkHeight = 4+randomInt(4);
+num trunkHeight = 3+randomInt(2);
 str trunkBlock = "minecraft:cherry_log";
 
 num sideBranchInterval = 3+randomInt(2);
