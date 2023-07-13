@@ -20,7 +20,7 @@ colors:
   water-fog: 0x232317
 
 palette:
-  - BAMBOO_PONDS_WATER: 319
+  - GRASS_MUDDY: 319
   - SAND: 60
   - << meta.yml:palette-bottom
 
@@ -33,6 +33,8 @@ slant:
 slant-depth: 1
 
 features:
+  preprocessors:
+    - SWAMP_WATER
   flora:
     - GRASS
     - POPPY_PATCH
