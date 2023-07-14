@@ -50,6 +50,7 @@ generate in an area where it previously did not (resulting in a chunk border).
 
 
 ### Fixed
+- Fixed pink petal structure generating broken block IDs.
 
 
 ## [v1.3.2]
