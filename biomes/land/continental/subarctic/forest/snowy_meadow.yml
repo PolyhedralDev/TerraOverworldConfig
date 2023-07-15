@@ -19,7 +19,7 @@ ocean:
 
 palette:
   - GRASS_SNOW_MIX: $meta.yml:top-y
-  - SAND: 61
+  - SAND: $meta.yml:ocean-level
   - << meta.yml:palette-bottom
 
 slant:

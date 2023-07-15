@@ -14,7 +14,7 @@ tags:
 
 palette:
   - MOSS_STONE: $meta.yml:top-y
-  - SAND: 70
+  - SAND: ${meta.yml:ocean-level} + 9
   - << meta.yml:palette-bottom
 
 slant:
@@ -25,7 +25,7 @@ slant:
   - threshold: 0.4
     palette:
       - BLOCK:minecraft:stone: $meta.yml:top-y
-      - SAND: 62
+      - SAND: ${meta.yml:ocean-level} + 1
       - << meta.yml:palette-bottom
 
 features:

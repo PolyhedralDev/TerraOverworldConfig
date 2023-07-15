@@ -15,6 +15,6 @@ tags:
 
 palette:
   - SALT: $meta.yml:top-y
-  - CALCITE_DIORITE_MIX: 63
-  - SAND: 61
+  - CALCITE_DIORITE_MIX: ${meta.yml:ocean-level} + 2
+  - SAND: $meta.yml:ocean-level
   - << meta.yml:palette-bottom

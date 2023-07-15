@@ -11,7 +11,7 @@ vanilla: minecraft:the_void
 
 palette:
   - GRASS: $meta.yml:top-y
-  - SAND: 122
+  - SAND: ${meta.yml:ocean-level} + 61
   - << meta.yml:palette-bottom
 
 slant-depth: 10

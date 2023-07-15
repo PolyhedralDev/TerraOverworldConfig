@@ -21,5 +21,5 @@ colors:
 
 palette:
   - BLOCK:minecraft:stone: $meta.yml:top-y
-  - SHALE_BEACH: 75
+  - SHALE_BEACH: ${meta.yml:ocean-level} + 14
   - << meta.yml:palette-bottom

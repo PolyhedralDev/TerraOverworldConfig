@@ -17,12 +17,12 @@ slant:
   - threshold: 0.5
     palette:
       - BLOCK:minecraft:ice: $meta.yml:top-y
-      - SAND: 61
+      - SAND: $meta.yml:ocean-level
       - << meta.yml:palette-bottom
   - threshold: 0.4
     palette:
       - BLOCK:minecraft:packed_ice: $meta.yml:top-y
-      - SAND: 61
+      - SAND: $meta.yml:ocean-level
       - << meta.yml:palette-bottom
 
 slant-depth: 6

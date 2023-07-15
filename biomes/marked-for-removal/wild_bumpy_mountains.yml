@@ -18,8 +18,8 @@ colors:
 
 palette:
   - GRASS: $meta.yml:top-y
-  - SAND: 64
-  - MUDDY_BEACH: 61
+  - SAND: ${meta.yml:ocean-level} + 3
+  - MUDDY_BEACH: $meta.yml:ocean-level
   - << meta.yml:palette-bottom
 
 slant:

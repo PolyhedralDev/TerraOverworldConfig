@@ -11,19 +11,19 @@ vanilla: minecraft:mushroom_fields
 
 palette:
   - MYCELIUM: $meta.yml:top-y
-  - SAND: 62
+  - SAND: ${meta.yml:ocean-level} + 1
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 0.45
     palette:
       - BLOCK:minecraft:light_gray_terracotta: $meta.yml:top-y
-      - SAND: 62
+      - SAND: ${meta.yml:ocean-level} + 1
       - << meta.yml:palette-bottom
   - threshold: 0.4
     palette:
       - BLOCK:minecraft:stone: $meta.yml:top-y
-      - SAND: 62
+      - SAND: ${meta.yml:ocean-level} + 1
       - << meta.yml:palette-bottom
 
 features:

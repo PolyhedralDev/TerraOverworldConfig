@@ -21,7 +21,7 @@ colors:
 
 palette:
   - BLOCK:minecraft:stone: $meta.yml:top-y
-  - SHRUB_BEACH: 75
+  - SHRUB_BEACH: ${meta.yml:ocean-level} + 14
   - << meta.yml:palette-bottom
 
 features:

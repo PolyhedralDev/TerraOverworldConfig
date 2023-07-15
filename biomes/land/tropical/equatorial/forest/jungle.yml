@@ -21,8 +21,8 @@ tags:
 
 palette:
   - GRASS: $meta.yml:top-y
-  - GRASS_VARIATION: 62
-  - SAND: 61
+  - GRASS_VARIATION: ${meta.yml:ocean-level} + 1
+  - SAND: $meta.yml:ocean-level
   - << meta.yml:palette-bottom
 
 slant:

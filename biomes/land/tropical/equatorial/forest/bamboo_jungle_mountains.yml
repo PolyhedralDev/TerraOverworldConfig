@@ -11,8 +11,8 @@ vanilla: minecraft:bamboo_jungle
 
 palette:
   - GRASS: $meta.yml:top-y
-  - GRASS_PODZOL_MUDDY: 90
-  - SAND: 61
+  - GRASS_PODZOL_MUDDY: ${meta.yml:ocean-level} + 29
+  - SAND: $meta.yml:ocean-level
   - << meta.yml:palette-bottom
 
 slant:

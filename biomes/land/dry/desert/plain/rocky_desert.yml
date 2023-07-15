@@ -16,7 +16,6 @@ tags:
 
 palette:
   - SAND: $meta.yml:top-y
-  - SAND: 64
   - << meta.yml:palette-bottom
 
 slant:

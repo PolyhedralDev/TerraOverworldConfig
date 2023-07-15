@@ -15,8 +15,8 @@ colors:
 
 palette:
   - LAVA_CRACKS: $meta.yml:top-y
-  - LAVA_CRACKS_FILLED: 135
-  - SMOOTH_BASALT_STONE: 133
+  - LAVA_CRACKS_FILLED: ${meta.yml:ocean-level} + 74
+  - SMOOTH_BASALT_STONE: ${meta.yml:ocean-level} + 72
   - << meta.yml:palette-bottom
 
 slant:
@@ -27,7 +27,7 @@ slant:
 
 ocean:
   palette: LAVA_OBSIDIAN_OCEAN
-  level: 135
+  level: ${meta.yml:ocean-level} + 74
 
 features:
   preprocessors:

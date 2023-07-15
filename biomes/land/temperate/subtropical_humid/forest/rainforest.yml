@@ -21,9 +21,9 @@ colors:
 
 palette:
   - GRASS: $meta.yml:top-y
-  - GRASS_VARIATION: 96
-  - GRASS_MOSSY: 86
-  - SAND: 61
+  - GRASS_VARIATION: ${meta.yml:ocean-level} + 35
+  - GRASS_MOSSY: ${meta.yml:ocean-level} + 25
+  - SAND: $meta.yml:ocean-level
   - << meta.yml:palette-bottom
 
 slant:

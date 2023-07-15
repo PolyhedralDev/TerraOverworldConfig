@@ -12,7 +12,7 @@ vanilla: minecraft:plains
 
 palette:
   - GRASS: $meta.yml:top-y
-  - SAND: 63
+  - SAND: ${meta.yml:ocean-level} + 2
   - << meta.yml:palette-bottom
 
 slant:

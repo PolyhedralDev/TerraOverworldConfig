@@ -11,7 +11,7 @@ vanilla: minecraft:meadow
 
 palette:
   - GRASS: $meta.yml:top-y
-  - SAND: 64
+  - SAND: ${meta.yml:ocean-level} + 3
   - << meta.yml:palette-bottom
 
 slant:

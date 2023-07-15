@@ -20,8 +20,8 @@ colors:
 
 palette:
   - BLOCK:minecraft:stone: $meta.yml:top-y
-  - MUDDY_GRASS: 75
-  - MUD: 61
+  - MUDDY_GRASS: ${meta.yml:ocean-level} + 14
+  - MUD: $meta.yml:ocean-level
   - << meta.yml:palette-bottom
 
 slant:

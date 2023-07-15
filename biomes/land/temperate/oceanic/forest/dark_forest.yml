@@ -15,15 +15,15 @@ vanilla: minecraft:dark_forest
 
 palette:
   - GRASS: $meta.yml:top-y
-  - COARSE_DIRT: 62
-  - MUDDY_BEACH: 61
+  - COARSE_DIRT: ${meta.yml:ocean-level} + 1
+  - MUDDY_BEACH: $meta.yml:ocean-level
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 0.45
     palette:
       - COARSE_DIRT: $meta.yml:top-y
-      - SAND: 64
+      - SAND: ${meta.yml:ocean-level} + 3
       - << meta.yml:palette-bottom
   - threshold: 0.4
     palette:

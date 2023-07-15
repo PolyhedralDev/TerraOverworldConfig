@@ -16,7 +16,7 @@ ocean:
 
 palette:
   - SNOW: $meta.yml:top-y
-  - SAND: 61
+  - SAND: $meta.yml:ocean-level
   - << meta.yml:palette-bottom
 
 features:
