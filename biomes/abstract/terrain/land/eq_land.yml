@@ -17,6 +17,7 @@ vars: &variables
   terraceScaleVariation: 0.1
   terraceOffsetVariation: 1
   terraceDepthVariation: 1
+  terraceDepthStart: 0.1 # At what elevation should it start to be terraced
 
 terrain:
   sampler:
@@ -43,7 +44,7 @@ terrain:
     expression: |
       scale *
       (
-        terraceParalinear(
+        terrace(
           combine(
             combine(
               elevation(x, z),
@@ -56,7 +57,8 @@ terrain:
           terraceBaseScale + terraceScale(x, z) * terraceScaleVariation,
           terraceOffset(x, z) * terraceOffsetVariation,
           0,
-          (terraceDepth(x, z)^3) * terraceDepthVariation
+          (terraceDepth(x, z)^3) * terraceDepthVariation,
+          0, terraceDepthStart
         )
       )
     variables: *variables
@@ -101,6 +103,20 @@ terrain:
               distance: Euclidean
               frequency: 0.01
     functions:
+      terrace: # Terrace function but with depth masked by input value, so terracing doesn't cut down below ocean level
+        arguments:
+          - i  # Input
+          - sc # Scale
+          - o  # Offset
+          - g  # Gap
+          - d  # Terrace depth
+          - tz # Value of i where depth = 0
+          - tf # Value of i where depth = d
+        expression: terraceParalinear(i,sc,o,g,lerp(i,tz,0,tf,d))
+        functions:
+          "<<":
+            - math/functions/terrace.yml:functions
+            - math/functions/interpolation.yml:functions
       combine: # Stacks a layer of noise on top scaled according to the base noise
         arguments:
           - x
