@@ -66,18 +66,18 @@ stages:
         - temperate-cold-summer: 5
 
       temperate-plateau:
-        - cold-desert-plateau: 4
-        - cold-desert-plateau: 1
+        - temperate-plateau: 4
+        - temperate-plateau: 1
         - temperate-plateau: 1
         - temperate-plateau: 5
       temperate-crater-lake:
-        - cold-desert-crater-lake: 4
-        - cold-desert-crater-lake: 1
+        - temperate-crater-lake: 4
+        - temperate-crater-lake: 1
         - temperate-crater-lake: 1
         - temperate-crater-lake: 5
       temperate-extinct-volcano:
-        - cold-desert-extinct-volcano: 4
-        - cold-desert-extinct-volcano: 1
+        - temperate-extinct-volcano: 4
+        - temperate-extinct-volcano: 1
         - temperate-extinct-volcano: 1
         - temperate-extinct-volcano: 5
   
