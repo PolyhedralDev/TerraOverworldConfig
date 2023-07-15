@@ -18,3 +18,9 @@ palette:
   - CALCITE_DIORITE_MIX: ${meta.yml:ocean-level} + 2
   - SAND: $meta.yml:ocean-level
   - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
