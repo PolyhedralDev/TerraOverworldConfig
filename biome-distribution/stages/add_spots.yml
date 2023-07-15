@@ -31,7 +31,7 @@ stages:
     from: extinct-volcano
     to:
       - extinct-volcano: 4
-      - crater-lake: 1
+      # - crater-lake: 1 # Crater lakes are disabled until a good method of adding fluid is implemented
     sampler:
       type: EXPRESSION
       expression: spotEdgeRadiusPercent(x, z)*2-1
