@@ -84,6 +84,9 @@ biome-distribution:
   # Default: 1
 
 # Misc global config stuff
+top-y: 319
+
+ocean-level: 62
 
 strata: # Controls global Y level ranges of strata
   deepslate:

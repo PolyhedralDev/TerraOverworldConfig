@@ -9,7 +9,7 @@ slant-depth: 15
 
 ocean:
   palette: BLOCK:minecraft:water
-  level: 62
+  level: $meta.yml:ocean-level
 
 features:
   global-preprocessors:

@@ -20,9 +20,8 @@ colors:
   water-fog: 0x44aff5
 
 palette:
-  - GRASS: 319
-  - SAND: 64
-  - MUDDY_BEACH: 61
+  - GRASS: $meta.yml:top-y
+  - MUD: ${meta.yml:ocean-level} - 1
   - << meta.yml:palette-bottom
 
 slant:
