@@ -19,7 +19,7 @@ colors:
   water-fog: 0x4D7A60
 
 palette:
-  - BLOCK:minecraft:stone: 319
+  - BLOCK:minecraft:stone: $meta.yml:top-y
   - MUDDY_GRASS: 75
   - MUD: 61
   - << meta.yml:palette-bottom
@@ -27,7 +27,7 @@ palette:
 slant:
   - threshold: 0.4
     palette:
-      - BLOCK:minecraft:stone: 319
+      - BLOCK:minecraft:stone: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 features:

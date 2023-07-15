@@ -15,50 +15,50 @@ tags:
   - USE_RIVER
 
 palette:
-  - ARID: 319
+  - ARID: $meta.yml:top-y
   - SAND: 64
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 0.45
     palette:
-      - BLOCK:minecraft:smooth_red_sandstone: 319
+      - BLOCK:minecraft:smooth_red_sandstone: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.4
     palette:
-      - BLOCK:minecraft:orange_terracotta: 319
+      - BLOCK:minecraft:orange_terracotta: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.35
     palette:
-      - BLOCK:minecraft:terracotta: 319
+      - BLOCK:minecraft:terracotta: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.3
     palette:
-      - TERRACOTTA_STRATA: 319
+      - TERRACOTTA_STRATA: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.25
     palette:
-      - BLOCK:minecraft:granite: 319
+      - BLOCK:minecraft:granite: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.2
     palette:
-      - BLOCK:minecraft:stone: 319
+      - BLOCK:minecraft:stone: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.15
     palette:
-      - TERRACOTTA_STRATA: 319
+      - TERRACOTTA_STRATA: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.1
     palette:
-      - BLOCK:minecraft:granite: 319
+      - BLOCK:minecraft:granite: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.05
     palette:
-      - BLOCK:minecraft:stone: 319
+      - BLOCK:minecraft:stone: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0
     palette:
-      - BLOCK:minecraft:andesite: 319
+      - BLOCK:minecraft:andesite: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 features:

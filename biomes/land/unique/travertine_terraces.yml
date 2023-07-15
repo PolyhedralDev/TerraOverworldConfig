@@ -14,7 +14,7 @@ minecraft:
 vanilla: minecraft:river
 
 palette:
-    - BLOCK:minecraft:calcite: 319
+    - BLOCK:minecraft:calcite: $meta.yml:top-y
     - << meta.yml:palette-bottom
 
 features:

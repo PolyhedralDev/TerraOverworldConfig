@@ -13,19 +13,19 @@ colors:
 slant:
   - threshold: 0.55
     palette:
-      - MOSS_STONE: 319
+      - MOSS_STONE: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.5
     palette:
-      - MOSSY_COBBLESTONE_STONE: 319
+      - MOSSY_COBBLESTONE_STONE: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.45
     palette:
-      - TUFF_STONE: 319
+      - TUFF_STONE: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.4
     palette:
-      - ROCKY_SLANT: 319
+      - ROCKY_SLANT: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 features:

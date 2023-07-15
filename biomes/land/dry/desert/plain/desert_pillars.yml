@@ -15,7 +15,7 @@ tags:
   - USE_RIVER
 
 palette:
-  - SAND: 319
+  - SAND: $meta.yml:top-y
   - << meta.yml:palette-bottom
 
 slant-depth: 50
@@ -23,15 +23,15 @@ slant-depth: 50
 slant:
   - threshold: 0.5
     palette:
-      - DIORITE_SLANT: 319
+      - DIORITE_SLANT: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.45
     palette:
-      - GRANITE_SLANT: 319
+      - GRANITE_SLANT: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.4
     palette:
-      - TERRACOTTA_STRATA_VERTICAL: 319
+      - TERRACOTTA_STRATA_VERTICAL: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 features:

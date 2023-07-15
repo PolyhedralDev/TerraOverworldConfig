@@ -15,7 +15,7 @@ ocean:
   palette: FROZEN_OCEAN
 
 palette:
-  - SNOW: 319
+  - SNOW: $meta.yml:top-y
   - SAND: 61
   - << meta.yml:palette-bottom
 

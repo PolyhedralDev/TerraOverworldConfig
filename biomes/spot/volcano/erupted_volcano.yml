@@ -17,7 +17,7 @@ colors:
   water-fog: 0x848871
 
 palette:
-  - LAVA_CRACKS: 319
+  - LAVA_CRACKS: $meta.yml:top-y
   - << meta.yml:palette-bottom
 
 features:

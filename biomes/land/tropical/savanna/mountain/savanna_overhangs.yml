@@ -17,14 +17,14 @@ colors:
   grass: 0xa1c342
 
 palette:
-  - GRASS_VARIATION: 319
+  - GRASS_VARIATION: $meta.yml:top-y
   - SAND: 64
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 0.4
     palette:
-      - TERRACOTTA_SLANT: 319
+      - TERRACOTTA_SLANT: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 features:

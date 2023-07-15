@@ -20,13 +20,13 @@ colors:
   water-fog: 0x44aff5
 
 palette:
-  - SANDY_GRASS: 319
+  - SANDY_GRASS: $meta.yml:top-y
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 0.4
     palette:
-      - SANDSTONE_SLANT: 319
+      - SANDSTONE_SLANT: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 features:

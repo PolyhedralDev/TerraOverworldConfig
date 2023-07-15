@@ -20,14 +20,14 @@ colors:
   water-fog: 0x232317
 
 palette:
-  - GRASS_MUDDY: 319
+  - GRASS_MUDDY: $meta.yml:top-y
   - SAND: 60
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 0.4
     palette:
-      - GRASS_MUDDY: 319
+      - GRASS_MUDDY: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 slant-depth: 1

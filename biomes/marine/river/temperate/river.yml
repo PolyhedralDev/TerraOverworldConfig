@@ -11,14 +11,14 @@ color: $biomes/colors.yml:RIVER
 vanilla: minecraft:river
 
 palette:
-  - GRASS: 319
+  - GRASS: $meta.yml:top-y
   - MUDDY_BEACH: 64
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 0.4
     palette:
-      - BLOCK:minecraft:stone: 319
+      - BLOCK:minecraft:stone: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 colors:

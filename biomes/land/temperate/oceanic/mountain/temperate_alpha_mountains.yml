@@ -10,7 +10,7 @@ color: $biomes/colors.yml:TEMPERATE_ALPHA_MOUNTAINS
 vanilla: minecraft:windswept_hills
 
 palette:
-  - GRASS: 319
+  - GRASS: $meta.yml:top-y
   - SAND: 64
   - MUDDY_BEACH: 61
   - << meta.yml:palette-bottom
@@ -18,15 +18,15 @@ palette:
 slant:
   - threshold: 0.5
     palette:
-      - BLOCK:minecraft:andesite: 319
+      - BLOCK:minecraft:andesite: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.4
     palette:
-      - ROCKY_SLANT: 319
+      - ROCKY_SLANT: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: -0.5
     palette:
-      - BLOCK:minecraft:tuff: 319
+      - BLOCK:minecraft:tuff: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 slant-depth: 50

@@ -10,22 +10,22 @@ color: $biomes/colors.yml:CERROS_DE_MAVECURE
 vanilla: minecraft:jungle
 
 palette:
-  - GRASS: 319
+  - GRASS: $meta.yml:top-y
   - SAND: 64
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 0.5
     palette:
-      - BLOCK:minecraft:black_terracotta: 319
+      - BLOCK:minecraft:black_terracotta: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.45
     palette:
-      - BLOCK:minecraft:gray_terracotta: 319
+      - BLOCK:minecraft:gray_terracotta: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.4
     palette:
-      - BLOCK:minecraft:brown_terracotta: 319
+      - BLOCK:minecraft:brown_terracotta: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 slant-depth: 4

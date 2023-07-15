@@ -14,7 +14,7 @@ colors:
   fog: 0xe7ba88
 
 palette:
-  - LAVA_CRACKS_TUFF: 319
+  - LAVA_CRACKS_TUFF: $meta.yml:top-y
   - << meta.yml:palette-bottom
 
 features:

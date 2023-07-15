@@ -14,28 +14,28 @@ tags:
   - USE_RIVER
 
 palette:
-  - BLOCK:minecraft:terracotta: 319
+  - BLOCK:minecraft:terracotta: $meta.yml:top-y
   - SAND: 62
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 0.55
     palette:
-      - BLOCK:minecraft:granite: 319
+      - BLOCK:minecraft:granite: $meta.yml:top-y
       - SAND: 62
       - << meta.yml:palette-bottom
   - threshold: 0.5
     palette:
-      - BLOCK:minecraft:light_gray_terracotta: 319
+      - BLOCK:minecraft:light_gray_terracotta: $meta.yml:top-y
       - SAND: 62
       - << meta.yml:palette-bottom
   - threshold: 0.45
     palette:
-      - BLOCK:minecraft:dripstone_block: 319
+      - BLOCK:minecraft:dripstone_block: $meta.yml:top-y
       - SAND: 62
       - << meta.yml:palette-bottom
   - threshold: 0.4
     palette:
-      - BLOCK:minecraft:stone: 319
+      - BLOCK:minecraft:stone: $meta.yml:top-y
       - SAND: 62
       - << meta.yml:palette-bottom

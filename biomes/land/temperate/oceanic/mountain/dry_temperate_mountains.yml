@@ -10,14 +10,14 @@ color: $biomes/colors.yml:DRY_TEMPERATE_MOUNTAINS
 vanilla: minecraft:meadow
 
 palette:
-  - GRASS: 319
+  - GRASS: $meta.yml:top-y
   - SAND: 64
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 0.4
     palette:
-      - BLOCK:minecraft:stone: 319
+      - BLOCK:minecraft:stone: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 features:

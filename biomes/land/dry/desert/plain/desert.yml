@@ -15,7 +15,7 @@ tags:
   - USE_RIVER
 
 palette:
-  - SAND: 319
+  - SAND: $meta.yml:top-y
   - << meta.yml:palette-bottom
 
 features:

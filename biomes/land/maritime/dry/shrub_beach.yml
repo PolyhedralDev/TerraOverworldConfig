@@ -20,7 +20,7 @@ colors:
   water-fog: 0x44aff5
 
 palette:
-  - BLOCK:minecraft:stone: 319
+  - BLOCK:minecraft:stone: $meta.yml:top-y
   - SHRUB_BEACH: 75
   - << meta.yml:palette-bottom
 

@@ -21,7 +21,7 @@ colors:
     downfall: 1.0
 
 palette:
-  - DRIPSTONE_CAVES: 319
+  - DRIPSTONE_CAVES: $meta.yml:top-y
   - DRIPSTONE_CAVES_DEEPSLATE: $meta.yml:strata.deepslate.top
   - << meta.yml:palette-bedrock
 

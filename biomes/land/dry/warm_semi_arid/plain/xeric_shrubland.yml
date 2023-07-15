@@ -15,7 +15,7 @@ tags:
   - USE_RIVER
 
 palette:
-  - XERIC: 319
+  - XERIC: $meta.yml:top-y
   - SAND: 64
   - MUDDY_BEACH: 61
   - << meta.yml:palette-bottom
@@ -25,7 +25,7 @@ slant-depth: 5
 slant:
   - threshold: 0.4
     palette:
-      - XERIC_WHITE_TERRACOTTA: 319
+      - XERIC_WHITE_TERRACOTTA: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 features:

@@ -18,14 +18,14 @@ ocean:
   palette: FROZEN_OCEAN
 
 palette:
-  - GRASS_SNOW_MIX: 319
+  - GRASS_SNOW_MIX: $meta.yml:top-y
   - SAND: 61
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 0.4
     palette:
-      - BLOCK:minecraft:stone: 319
+      - BLOCK:minecraft:stone: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 features:
@@ -37,4 +37,3 @@ features:
     - TREE_SNOW
   flora:
     - TALL_GRASS
-

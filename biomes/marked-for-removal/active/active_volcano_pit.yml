@@ -14,7 +14,7 @@ colors:
   fog: 0xe7702d
 
 palette:
-  - LAVA_CRACKS: 319
+  - LAVA_CRACKS: $meta.yml:top-y
   - LAVA_CRACKS_FILLED: 135
   - SMOOTH_BASALT_STONE: 133
   - << meta.yml:palette-bottom
@@ -22,7 +22,7 @@ palette:
 slant:
   - threshold: 0.4
     palette:
-      - BLOCK:minecraft:smooth_basalt: 319
+      - BLOCK:minecraft:smooth_basalt: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 ocean:

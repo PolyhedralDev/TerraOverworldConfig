@@ -20,7 +20,7 @@ colors:
   water-fog: 0x1e97f2
 
 palette:
-  - BAMBOO_PONDS_WATER: 319
+  - BAMBOO_PONDS_WATER: $meta.yml:top-y
   - BAMBOO_PONDS: 70
   - SAND: 64
   - MUDDY_BEACH: 61
@@ -29,7 +29,7 @@ palette:
 slant:
   - threshold: 0.8
     palette:
-      - BAMBOO_PONDS: 319
+      - BAMBOO_PONDS: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 slant-depth: 1

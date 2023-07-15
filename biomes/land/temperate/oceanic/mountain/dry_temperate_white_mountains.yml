@@ -6,7 +6,7 @@ color: $biomes/colors.yml:DRY_TEMPERATE_WHITE_MOUNTAINS
 slant:
   - threshold: 0.4
     palette:
-      - DIORITE_SLANT: 319
+      - DIORITE_SLANT: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 features:

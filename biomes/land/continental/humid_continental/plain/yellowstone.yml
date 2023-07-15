@@ -20,7 +20,7 @@ colors:
   water-fog: 0x44aff5
 
 palette:
-  - YELLOWSTONE_WATER: 319
+  - YELLOWSTONE_WATER: $meta.yml:top-y
   - CALCITE: 72
   - SAND: 64
   - << meta.yml:palette-bottom
@@ -28,22 +28,22 @@ palette:
 slant:
   - threshold: 0.55
     palette:
-      - YELLOWSTONE: 319
+      - YELLOWSTONE: $meta.yml:top-y
       - CALCITE: 72
       - << meta.yml:palette-bottom
   - threshold: 0.5
     palette:
-      - YELLOWSTONE_RED_SAND: 319
+      - YELLOWSTONE_RED_SAND: $meta.yml:top-y
       - CALCITE: 72
       - << meta.yml:palette-bottom
   - threshold: 0.45
     palette:
-      - YELLOWSTONE_BASALT: 319
+      - YELLOWSTONE_BASALT: $meta.yml:top-y
       - CALCITE: 72
       - << meta.yml:palette-bottom
   - threshold: 0.4
     palette:
-      - BLOCK:minecraft:calcite: 319
+      - BLOCK:minecraft:calcite: $meta.yml:top-y
       - CALCITE: 64
       - << meta.yml:palette-bottom
 

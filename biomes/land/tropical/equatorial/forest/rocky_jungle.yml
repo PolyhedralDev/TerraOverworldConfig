@@ -14,7 +14,7 @@ tags:
   - USE_RIVER
 
 palette:
-  - GRASS: 319
+  - GRASS: $meta.yml:top-y
   - SAND: 64
   - MUDDY_BEACH: 61
   - << meta.yml:palette-bottom
@@ -24,23 +24,23 @@ slant-depth: 1
 slant:
   - threshold: 0.6
     palette:
-      - GRASS: 319
+      - GRASS: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.55
     palette:
-      - MOSS_STONE: 319
+      - MOSS_STONE: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.5
     palette:
-      - BLOCK:minecraft:mossy_cobblestone: 319
+      - BLOCK:minecraft:mossy_cobblestone: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.45
     palette:
-      - BLOCK:minecraft:cobblestone: 319
+      - BLOCK:minecraft:cobblestone: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.4
     palette:
-      - MOSS_STONE: 319
+      - MOSS_STONE: $meta.yml:top-y
       - << meta.yml:palette-bottom
       
 features:

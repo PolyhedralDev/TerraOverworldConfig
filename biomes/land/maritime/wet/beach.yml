@@ -20,13 +20,13 @@ colors:
   water-fog: 0x44aff5
 
 palette:
-  - SAND: 319
+  - SAND: $meta.yml:top-y
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 0.4
     palette:
-      - BLOCK:minecraft:stone: 319
+      - BLOCK:minecraft:stone: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 features:

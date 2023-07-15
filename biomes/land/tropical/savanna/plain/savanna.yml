@@ -20,7 +20,7 @@ tags:
   - USE_RIVER
 
 palette:
-  - GRASS_VARIATION: 319
+  - GRASS_VARIATION: $meta.yml:top-y
   - SAND: 64
   - MUDDY_BEACH: 61
   - << meta.yml:palette-bottom
@@ -28,7 +28,7 @@ palette:
 slant:
   - threshold: 0.4
     palette:
-      - TERRACOTTA_SLANT: 319
+      - TERRACOTTA_SLANT: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 features:

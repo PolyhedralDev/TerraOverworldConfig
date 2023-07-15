@@ -14,7 +14,7 @@ tags:
   - USE_RIVER
 
 palette:
-  - RED_SAND: 319
+  - RED_SAND: $meta.yml:top-y
   - ARID: 77
   - SAND: 64
   - << meta.yml:palette-bottom
@@ -24,15 +24,15 @@ slant-depth: 20
 slant:
   - threshold: 0.5
     palette:
-      - RED_SAND: 319
+      - RED_SAND: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.45
     palette:
-      - BLOCK:minecraft:terracotta: 319
+      - BLOCK:minecraft:terracotta: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.4
     palette:
-      - BADLANDS_STRATA: 319
+      - BADLANDS_STRATA: $meta.yml:top-y
       - TERRACOTTA_STRATA: 88
       - << meta.yml:palette-bottom
 

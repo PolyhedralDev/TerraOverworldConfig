@@ -10,7 +10,7 @@ color: $biomes/colors.yml:CALDERA_VOLCANO_BASE_EDGE
 vanilla: minecraft:the_void
 
 palette:
-  - GRASS: 319
+  - GRASS: $meta.yml:top-y
   - << meta.yml:palette-bottom
 
 slant-depth: 10
@@ -18,19 +18,19 @@ slant-depth: 10
 slant:
   - threshold: 0.55
     palette:
-      - MOSS_STONE: 319
+      - MOSS_STONE: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.5
     palette:
-      - BLOCK:minecraft:smooth_basalt: 319
+      - BLOCK:minecraft:smooth_basalt: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.45
     palette:
-      - BLOCK:minecraft:tuff: 319
+      - BLOCK:minecraft:tuff: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.4
     palette:
-      - BLOCK:minecraft:stone: 319
+      - BLOCK:minecraft:stone: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 features:

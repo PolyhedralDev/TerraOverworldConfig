@@ -13,7 +13,7 @@ colors:
   water: 0x23b4d3
 
 palette:
-  - PRISMATIC_MICROBIAL_MAT: 319
+  - PRISMATIC_MICROBIAL_MAT: $meta.yml:top-y
   - << meta.yml:palette-bottom
 
 features:

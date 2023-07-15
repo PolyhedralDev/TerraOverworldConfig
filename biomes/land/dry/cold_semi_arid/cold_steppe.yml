@@ -14,7 +14,7 @@ tags:
 vanilla: minecraft:taiga
 
 palette:
-  - PACKED_MUDDY_GRASS: 319
+  - PACKED_MUDDY_GRASS: $meta.yml:top-y
   - SAND: 64
   - MUDDY_BEACH: 61
   - << meta.yml:palette-bottom
@@ -24,11 +24,11 @@ slant-depth: 5
 slant:
   - threshold: 0.4
     palette:
-      - BLOCK:minecraft:packed_mud: 319
+      - BLOCK:minecraft:packed_mud: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.2
     palette:
-      - BLOCK:minecraft:stone: 319
+      - BLOCK:minecraft:stone: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 features:

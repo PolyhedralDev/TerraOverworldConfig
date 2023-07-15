@@ -20,7 +20,7 @@ colors:
   water-fog: 0x0677ce
 
 palette:
-  - GRASS: 319
+  - GRASS: $meta.yml:top-y
   - SAND: 64
   - MUDDY_BEACH: 61
   - << meta.yml:palette-bottom
@@ -28,7 +28,7 @@ palette:
 slant:
   - threshold: 0.4
     palette:
-      - BLOCK:minecraft:stone: 319
+      - BLOCK:minecraft:stone: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 features:

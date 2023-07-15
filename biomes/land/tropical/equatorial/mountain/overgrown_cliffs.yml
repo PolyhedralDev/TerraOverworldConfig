@@ -20,7 +20,7 @@ colors:
   water-fog: 0x1e97f2
 
 palette:
-  - GRASS: 319
+  - GRASS: $meta.yml:top-y
   - SAND: 64
   - MUDDY_BEACH: 61
   - << meta.yml:palette-bottom
@@ -28,27 +28,27 @@ palette:
 slant:
   - threshold: 0.6
     palette:
-      - MOSS_TUFF: 319
+      - MOSS_TUFF: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.3
     palette:
-      - MOSS_STONE: 319
+      - MOSS_STONE: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.2
     palette:
-      - BLOCK:minecraft:andesite: 319
+      - BLOCK:minecraft:andesite: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.1
     palette:
-      - BLOCK:minecraft:stone: 319
+      - BLOCK:minecraft:stone: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.05
     palette:
-      - BLOCK:minecraft:tuff: 319
+      - BLOCK:minecraft:tuff: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: -0.5
     palette:
-      - BLOCK:minecraft:deepslate: 319
+      - BLOCK:minecraft:deepslate: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 features:
@@ -69,4 +69,3 @@ features:
     - JUNGLE_TREES
     - JUNGLE_BUSHES
   
-

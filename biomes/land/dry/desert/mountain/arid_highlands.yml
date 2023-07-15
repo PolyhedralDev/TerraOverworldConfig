@@ -10,17 +10,17 @@ color: $biomes/colors.yml:ARID_HIGHLANDS
 vanilla: minecraft:savanna
 
 palette:
-  - SAND: 319
+  - SAND: $meta.yml:top-y
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 0.45
     palette:
-      - BLOCK:minecraft:smooth_sandstone: 319
+      - BLOCK:minecraft:smooth_sandstone: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.4
     palette:
-      - BLOCK:minecraft:sandstone: 319
+      - BLOCK:minecraft:sandstone: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 features:

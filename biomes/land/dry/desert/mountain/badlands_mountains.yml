@@ -11,14 +11,14 @@ color: $biomes/colors.yml:BADLANDS_MOUNTAINS
 vanilla: minecraft:badlands
 
 palette:
-  - RED_SAND: 319
+  - RED_SAND: $meta.yml:top-y
   - SAND: 64
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 0.4
     palette:
-      - BADLANDS_STRATA: 319
+      - BADLANDS_STRATA: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 features:

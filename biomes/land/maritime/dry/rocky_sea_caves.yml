@@ -14,14 +14,14 @@ tags:
   - USE_RIVER
 
 palette:
-  - BLOCK:minecraft:stone: 319
+  - BLOCK:minecraft:stone: $meta.yml:top-y
   - SAND: 62
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 0.4
     palette:
-      - BLOCK:minecraft:stone: 319
+      - BLOCK:minecraft:stone: $meta.yml:top-y
       - SAND: 62
       - << meta.yml:palette-bottom
 
