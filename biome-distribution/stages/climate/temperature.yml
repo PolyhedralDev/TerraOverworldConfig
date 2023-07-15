@@ -6,81 +6,81 @@ stages:
 
     default-from: land
     default-to:
-      - ice-cap:                 &iceCap         1
-      - tundra:                  &tundra         1
-      - boreal-very-cold-winter: &borealVeryCold 1
-      - boreal-cold-summer:      &borealCold     1
-      - boreal-warm-summer:      &borealWarm     1
-      - boreal-hot-summer:       &borealHot      1
-      - temperate-cold-summer:   &temperateCold  1
-      - temperate-warm-summer:   &temperateWarm  3
-      - temperate-hot-summer:    &temperateHot   2
-      - tropical-savanna-wet:    &tropicalCold   1
-      - tropical-monsoon:        &tropicalWarm   1
-      - tropical-rainforest:     &tropicalHot    4
+      - ice-cap:                     &iceCap         1
+      - tundra:                      &tundra         1
+      - boreal-very-cold-winter:     &borealVeryCold 1
+      - boreal-cold-summer:          &borealCold     1
+      - boreal-warm-summer:          &borealWarm     1
+      - boreal-hot-summer:           &borealHot      1
+      - temperate-cold-summer:       &temperateCold  1
+      - temperate-warm-summer:       &temperateWarm  3
+      - temperate-hot-summer:        &temperateHot   2
+      - tropical-savanna-wet:        &tropicalCold   1
+      - tropical-monsoon:            &tropicalWarm   1
+      - tropical-rainforest:         &tropicalHot    4
     to:
       coast:
-        - polar-coast: *iceCap
-        - polar-coast: *tundra
-        - boreal-coast: *borealVeryCold
-        - boreal-coast: *borealCold
-        - boreal-coast: *borealWarm
-        - boreal-coast: *borealHot
-        - temperate-coast: *temperateCold
-        - temperate-coast: *temperateWarm
-        - temperate-coast: *temperateHot
-        - hot-coast: *tropicalCold
-        - hot-coast: *tropicalWarm
-        - hot-coast: *tropicalHot
+        - polar-coast:               *iceCap
+        - polar-coast:               *tundra
+        - boreal-coast:              *borealVeryCold
+        - boreal-coast:              *borealCold
+        - boreal-coast:              *borealWarm
+        - boreal-coast:              *borealHot
+        - temperate-coast:           *temperateCold
+        - temperate-coast:           *temperateWarm
+        - temperate-coast:           *temperateHot
+        - hot-coast:                 *tropicalCold
+        - hot-coast:                 *tropicalWarm
+        - hot-coast:                 *tropicalHot
       ocean:
-        - polar-ocean: *iceCap
-        - polar-ocean: *tundra
-        - boreal-ocean: *borealVeryCold
-        - boreal-ocean: *borealCold
-        - boreal-ocean: *borealWarm
-        - boreal-ocean: *borealHot
-        - temperate-ocean: *temperateCold
-        - temperate-ocean: *temperateWarm
-        - temperate-ocean: *temperateHot
-        - hot-ocean: *tropicalCold
-        - hot-ocean: *tropicalWarm
-        - hot-ocean: *tropicalHot
+        - polar-ocean:               *iceCap
+        - polar-ocean:               *tundra
+        - boreal-ocean:              *borealVeryCold
+        - boreal-ocean:              *borealCold
+        - boreal-ocean:              *borealWarm
+        - boreal-ocean:              *borealHot
+        - temperate-ocean:           *temperateCold
+        - temperate-ocean:           *temperateWarm
+        - temperate-ocean:           *temperateHot
+        - hot-ocean:                 *tropicalCold
+        - hot-ocean:                 *tropicalWarm  
+        - hot-ocean:                 *tropicalHot
       plateau:
-        - polar-plateau: *iceCap
-        - polar-plateau: *tundra
-        - boreal-plateau: *borealVeryCold
-        - boreal-plateau: *borealCold
-        - boreal-plateau: *borealWarm
-        - boreal-plateau: *borealHot
-        - temperate-plateau: *temperateCold
-        - temperate-plateau: *temperateWarm
-        - temperate-plateau: *temperateHot
-        - hot-plateau: *tropicalCold
-        - hot-plateau: *tropicalWarm
-        - hot-plateau: *tropicalHot
+        - polar-plateau:             *iceCap
+        - polar-plateau:             *tundra
+        - boreal-plateau:            *borealVeryCold
+        - boreal-plateau:            *borealCold
+        - boreal-plateau:            *borealWarm
+        - boreal-plateau:            *borealHot
+        - temperate-plateau:         *temperateCold
+        - temperate-plateau:         *temperateWarm
+        - temperate-plateau:         *temperateHot
+        - hot-plateau:               *tropicalCold
+        - hot-plateau:               *tropicalWarm
+        - hot-plateau:               *tropicalHot
       crater-lake:
-        - polar-crater-lake: *iceCap
-        - polar-crater-lake: *tundra
-        - boreal-crater-lake: *borealVeryCold
-        - boreal-crater-lake: *borealCold
-        - boreal-crater-lake: *borealWarm
-        - boreal-crater-lake: *borealHot
-        - temperate-crater-lake: *temperateCold
-        - temperate-crater-lake: *temperateWarm
-        - temperate-crater-lake: *temperateHot
-        - hot-crater-lake: *tropicalCold
-        - hot-crater-lake: *tropicalWarm
-        - hot-crater-lake: *tropicalHot
+        - polar-crater-lake:         *iceCap
+        - polar-crater-lake:         *tundra
+        - boreal-crater-lake:        *borealVeryCold
+        - boreal-crater-lake:        *borealCold
+        - boreal-crater-lake:        *borealWarm
+        - boreal-crater-lake:        *borealHot
+        - temperate-crater-lake:     *temperateCold
+        - temperate-crater-lake:     *temperateWarm
+        - temperate-crater-lake:     *temperateHot
+        - hot-crater-lake:           *tropicalCold
+        - hot-crater-lake:           *tropicalWarm
+        - hot-crater-lake:           *tropicalHot
       extinct-volcano:
-        - polar-extinct-volcano: *iceCap
-        - polar-extinct-volcano: *tundra
-        - boreal-extinct-volcano: *borealVeryCold
-        - boreal-extinct-volcano: *borealCold
-        - boreal-extinct-volcano: *borealWarm
-        - boreal-extinct-volcano: *borealHot
+        - polar-extinct-volcano:     *iceCap
+        - polar-extinct-volcano:     *tundra
+        - boreal-extinct-volcano:    *borealVeryCold
+        - boreal-extinct-volcano:    *borealCold
+        - boreal-extinct-volcano:    *borealWarm
+        - boreal-extinct-volcano:    *borealHot
         - temperate-extinct-volcano: *temperateCold
         - temperate-extinct-volcano: *temperateWarm
         - temperate-extinct-volcano: *temperateHot
-        - hot-extinct-volcano: *tropicalCold
-        - hot-extinct-volcano: *tropicalWarm
-        - hot-extinct-volcano: *tropicalHot
+        - hot-extinct-volcano:       *tropicalCold
+        - hot-extinct-volcano:       *tropicalWarm
+        - hot-extinct-volcano:       *tropicalHot
