@@ -5,11 +5,13 @@ abstract: true
 variables: &variables
   base: $customization.yml:terrain-base-y-level
   scale: $customization.yml:terrain-height
+  
+  overhangStrength: 20
 
 terrain:
   sampler:
     type: EXPRESSION
-    expression: -y + base + overhangs(x, y*3, z) * 20
+    expression: -y + base + overhangs(x, y*3, z) * overhangStrength
     variables: *variables
     samplers:
       overhangs:

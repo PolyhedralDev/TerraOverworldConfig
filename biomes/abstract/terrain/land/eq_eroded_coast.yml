@@ -5,7 +5,8 @@ abstract: true
 variables: &variables
   base: $customization.yml:terrain-base-y-level
   scale: $customization.yml:terrain-height
-  erosionBottom: 50
+  erosionBottom: ${customization.yml:terrain-base-y-level} - 15
+  bottomVariation: 10
 
 terrain:
   sampler:
@@ -15,7 +16,7 @@ terrain:
     expression: |
       -y + base +
       erode(
-        erosionBottom + bottomVariation(x, z) * 10,
+        erosionBottom + bottom(x, z) * bottomVariation,
         base,
         elevation(x,z)*(1+variation(x,z)*0.2),
         scale,
@@ -35,7 +36,7 @@ terrain:
           type: OPEN_SIMPLEX_2
           frequency: 0.02
           salt: 2
-      bottomVariation:
+      bottom:
         dimensions: 2
         type: PROBABILITY
         sampler:

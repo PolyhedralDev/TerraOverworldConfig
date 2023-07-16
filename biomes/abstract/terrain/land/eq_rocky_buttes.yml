@@ -6,15 +6,15 @@ vars: &variables
   base: $customization.yml:terrain-base-y-level
   scale: $customization.yml:terrain-height
 
-  terraceHeight: 0.13 # Block height of terrace levels
-  terraceHeightVariation: 0 #0.02
+  terraceHeight: 0.13
+  terraceHeightVariation: 0 
   
   depositMaskLowerBound: 0.7
   depositMaskUpperBound: 1
   depositTerraceHeight: 0.015
 
   butteHeight: 0.45
-  butteBase: 0.12 # How many blocks above base buttes begin
+  butteBase: 0.12
   butteMaskFrequency: 1
   butteMaskLowerBound: 0.75
   butteMaskUpperBound: 0.85

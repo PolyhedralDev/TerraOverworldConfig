@@ -8,7 +8,7 @@ terrain:
   sampler:
     dimensions: 3
     type: LINEAR_HEIGHTMAP
-    base: 64
+    base: $customization.yml:terrain-base-y-level
   sampler-2d:
     dimensions: 2
     type: EXPRESSION

@@ -6,7 +6,7 @@ abstract: true
 # Perfectly flat terrain.
 
 vars: &variables
-  base: 64
+  base: $customization.yml:terrain-base-y-level
 
 terrain:
   sampler:

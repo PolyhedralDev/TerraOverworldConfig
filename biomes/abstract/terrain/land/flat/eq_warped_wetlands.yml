@@ -6,7 +6,7 @@ terrain:
   sampler:
     dimensions: 3
     type: LINEAR_HEIGHTMAP
-    base: 58
+    base: ${customization.yml:terrain-base-y-level} - 7
   
   sampler-2d:
     dimensions: 2

@@ -9,12 +9,12 @@ extends: NO_TERRAIN_2D
 original-noise: &originalNoise $biomes/abstract/terrain/land/mountains-large/eq_cracked_plateau.yml:terrain.sampler # Original noise to be turned into river
 
 vars: &variables
-  ceilingHeight:    90  # Base Y level of the ceiling
+  ceilingHeight:    ${meta.yml:ocean-level} + 28 # Base Y level of the ceiling
   ceilingVariation: 0   # How many blocks upwards ceiling height can vary
   originalStrength: 1   # How much the original noise contributes to ceiling shape
   ceilingSpikeVar:  18  # How many blocks down ceiling spikes will go
   
-  floorHeight:      45  # Base Y level of the floor
+  floorHeight:      ${meta.yml:ocean-level} + -17 # Base Y level of the floor
   floorVariation:   0   # How many blocks* upwards floor height can vary
   floorSpikeBias:   1   # How biased spikes are to going up or down, greater = more upwards
   floorStrength:    0.5 # Strength of negation above the floor, used for carving adjacent biomes

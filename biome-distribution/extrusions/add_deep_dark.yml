@@ -9,5 +9,5 @@ extrusions:
       - SELF: 4
       - DEEP_DARK: 1
     range:
-      min: -64
-      max: 0
+      min: $meta.yml:bottom-y
+      max: $meta.yml:deepslate-top

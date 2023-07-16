@@ -6,15 +6,15 @@ extends: NO_TERRAIN_2D
 # Generic river terrain.
 
 vars: &variables
-  base: 50
+  base: $customization.yml:terrain-base-y-level
   height: 4
   density: 2
 
   # Erosion - subtracts from surrounding terrain to make the rivers look eroded
   erosion: 300 # Strength of erosion
-  erosionYMax: 90 # The height that erosion is capped by
-  erosionYMid: 75 # The height that erosion is strongest
-  erosionYMin: 66 # The height that erosion starts
+  erosionYMax: ${customization.yml:terrain-base-y-level} + 25 # The height that erosion is capped by
+  erosionYMid: ${customization.yml:terrain-base-y-level} + 10 # The height that erosion is strongest
+  erosionYMin: ${customization.yml:terrain-base-y-level} + 1  # The height that erosion starts
 
 terrain:
   sampler:

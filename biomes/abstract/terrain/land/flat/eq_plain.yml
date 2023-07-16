@@ -5,7 +5,7 @@ abstract: true
 # Basic relatively flat terrain.
 
 vars: &variables
-  base: 64
+  base: $customization.yml:terrain-base-y-level
   height: 10
 
 terrain:

@@ -5,7 +5,7 @@ abstract: true
 # Flat terrain with large cracks
 
 vars: &variables
-  base: 64
+  base: $customization.yml:terrain-base-y-level
   crackFrequency: 1
   crackLowerThreshold: -0.2
   crackUpperThreshold: -0.1

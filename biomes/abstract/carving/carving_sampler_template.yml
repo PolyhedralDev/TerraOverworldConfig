@@ -34,7 +34,7 @@ variables:
   
   # Clamping variables
   
-  carvingMinHeight: -63 # Where all carving will cut off at the bottom of the world
+  carvingMinHeight: ${meta.yml:bottom-y} + 1 # Where all carving will cut off at the bottom of the world
   carvingMinTaper: 8 # How many blocks above the min height should all carving 'fade out'
   
   cheeseSurfaceBreak: -30 # How many blocks from the surface cheese carving will stop

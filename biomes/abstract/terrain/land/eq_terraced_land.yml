@@ -5,7 +5,9 @@ abstract: true
 variables: &variables
   base: $customization.yml:terrain-base-y-level
   scale: $customization.yml:terrain-height
-  
+
+  terraceScale: 40
+  terraceOffsetVariation: 5
 
 terrain:
   sampler:
@@ -18,9 +20,9 @@ terrain:
     expression: |
       terraceParalinear(
         elevation(x, z) * scale,
-        40, 0.01, 0, 1
+        terraceScale, 0.01, 0, 1
       ) +
-      terraceOffset(x, z) * 5
+      terraceOffset(x, z) * terraceOffsetVariation
     variables: *variables
     samplers:
       terraceOffset:

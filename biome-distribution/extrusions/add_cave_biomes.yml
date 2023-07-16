@@ -11,5 +11,5 @@ extrusions:
       - LUSH_CAVES: 1
       - DRIPSTONE_CAVES: 1
     range:
-      min: -16
-      max: 48
+      min: $meta.yml:deepslate-bottom
+      max: ${meta.yml:ocean-level} - 13

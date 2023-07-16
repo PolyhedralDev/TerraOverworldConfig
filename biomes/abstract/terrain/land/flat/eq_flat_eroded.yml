@@ -11,9 +11,9 @@ terrain:
       type: EXPRESSION
       variables:
         erosion: 100 # Strength of erosion
-        erosionYMax: 130 # The height that erosion is capped by
-        erosionYMid: 75 # The height that erosion is strongest
-        erosionYMin: 66 # The height that erosion starts
+        erosionYMax: ${customization.yml:terrain-base-y-level} + 65 # The height that erosion is capped by
+        erosionYMid: ${customization.yml:terrain-base-y-level} + 10 # The height that erosion is strongest
+        erosionYMin: ${customization.yml:terrain-base-y-level} # The height that erosion starts
       expression: |
         noise(x,y,z)
         // Erode

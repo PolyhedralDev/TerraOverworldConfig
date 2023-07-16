@@ -10,8 +10,8 @@ vars: &variables
   base: 64
 
   erosionStrength: 3
-  erosionTop: 64 + 70
-  erosionBottom: 80
+  erosionTop: ${meta.yml:ocean-level} + 70
+  erosionBottom: ${meta.yml:ocean-level} + 18
 
 terrain:
   sampler:
