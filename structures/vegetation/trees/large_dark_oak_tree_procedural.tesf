@@ -13,26 +13,25 @@ num sideBranchMinHeight = 2+randomInt(3);
 num sideBranchLengthMin = 4+randomInt(2);
 num sideBranchLengthVariation = 2;
 num sideBranchVerticalVariation = 0;
-num sideBranchVerticalDirection = 1+randomInt(randPrecision)/randPrecision/2;
-num sideBranchLeafRadiusMin = 5;
+num sideBranchVerticalDirection = 0.1+randomInt(randPrecision)/randPrecision*0.3;
+num sideBranchLeafRadiusMin = 2.5;
 num sideBranchLeafTranslate = 0;
 num sideBranchLeafTopFlatness = 2;
 num sideBranchLeafBottomFlatness = 3;
-num sideBranchLeafDensity = 0.4;
+num sideBranchLeafDensity = 1;
 str sideBranchLeafStructure = "dark_oak_leaves_clump";
 str sideBranchBlockX = "minecraft:dark_oak_log[axis=x]";
 str sideBranchBlockY = "minecraft:dark_oak_log[axis=y]";
 str sideBranchBlockZ = "minecraft:dark_oak_log[axis=z]";
 
-num topBranches = 4+randomInt(5);
-num topBranchLengthUpwardsMin = 16+randomInt(2);
-num topBranchLengthOutwardsMin = 9+randomInt(6);
-num topBranchVerticalDirection = 1;
-num topBranchLeafRadiusMin = 6;
+num topBranches = 17+randomInt(5);
+num topBranchLengthUpwardsMin = 9+randomInt(2);
+num topBranchLengthOutwardsMin = 4+randomInt(6);
+num topBranchLeafRadiusMin = 2.5;
 num topBranchLeafTranslate = 0;
 num topBranchLeafTopFlatness = 2;
 num topBranchLeafBottomFlatness = 3;
-num topBranchLeafDensity = 0.4;
+num topBranchLeafDensity = 1;
 str topBranchLeafStructure = "dark_oak_leaves_clump";
 str topBranchBlockX = "minecraft:dark_oak_log[axis=x]";
 str topBranchBlockY = "minecraft:dark_oak_log[axis=y]";
@@ -110,6 +109,7 @@ for (num i = 0; i < trunkHeight; i = i + 1) {
             }
 
             // Place leaf cluster
+            block(lox, loy, loz, branchBlock);
             num radiusSquared = pow(radius, 2);
             for (num cx = ceil(-radius); cx <= ceil(radius); cx = cx + 1) {
                 for (num cy = ceil(-radius/sideBranchLeafBottomFlatness); cy <= ceil(radius/sideBranchLeafTopFlatness); cy = cy + 1) {
@@ -161,9 +161,9 @@ for (num b = 1; b <= topBranches; b = b + 1) {
     num t = b/topBranches;
     num ti = 1-t;
     // Branch direction vector
-    num dx = sin(branchAngle) * t;
-    num dy = topBranchVerticalDirection;
-    num dz = cos(branchAngle) * t;
+    num dx = sin(branchAngle)*ti;
+    num dy = t;
+    num dz = cos(branchAngle)*ti;
     // Normalize vector
     num mag = sqrt(pow(dx,2)+pow(dy,2)+pow(dz,2));
     dx = dx/mag;
@@ -224,6 +224,7 @@ for (num b = 1; b <= topBranches; b = b + 1) {
         }
         
         // Place leaf cluster
+        block(lox, loy, loz, branchBlock);
         num radiusSquared = pow(radius, 2);
         for (num cx = ceil(-radius); cx <= ceil(radius); cx = cx + 1) {
             for (num cy = ceil(-radius/topBranchLeafBottomFlatness); cy <= ceil(radius/topBranchLeafTopFlatness); cy = cy + 1) {
