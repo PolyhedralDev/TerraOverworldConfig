@@ -1,4 +1,4 @@
-id: EQ_MANGROVE_SWAMP
+id: EQ_WARPED_WETLANDS
 type: BIOME
 abstract: true
 
@@ -6,13 +6,13 @@ terrain:
   sampler:
     dimensions: 3
     type: LINEAR_HEIGHTMAP
-    base: ${customization.yml:terrain-base-y-level} - 9
-
+    base: ${customization.yml:terrain-base-y-level} - 7
+  
   sampler-2d:
     dimensions: 2
     type: EXPRESSION
     variables:
-      height: 14
+      height: 7
     expression: (noise(x,z)+1)/2 * height
     samplers:
       noise:

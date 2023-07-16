@@ -25,13 +25,13 @@ terrain:
           dimensions: 3
           type: OPEN_SIMPLEX_2
           frequency: 0.03
-        noise: $biomes/abstract/terrain/land/flat/eq_flat.yml:terrain.sampler
+        noise: $biomes/abstract/terrain/land/legacy/eq_flat.yml:terrain.sampler
     right:
       type: CONSTANT
       value: 5
   sampler-2d:
     type: MUL
-    left: $biomes/abstract/terrain/land/flat/eq_flat.yml:terrain.sampler-2d
+    left: $biomes/abstract/terrain/land/legacy/eq_flat.yml:terrain.sampler-2d
     right:
       type: CONSTANT
       value: 5
