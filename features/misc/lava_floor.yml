@@ -7,8 +7,8 @@ distributor:
 locator:
   type: PATTERN
   range:
-    min: -64
-    max: -54
+    min: $meta.yml:strata.bedrock.bottom
+    max: ${meta.yml:strata.bedrock.bottom} + 10
   pattern:
     type: MATCH_AIR
     offset: 0

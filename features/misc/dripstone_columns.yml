@@ -12,8 +12,8 @@ locator:
   locators:
     - type: SURFACE
       range: &range
-        min: -50
-        max: 64
+        min: ${meta.yml:strata.bedrock.bottom} + 14
+        max: ${meta.yml:ocean-level} + 3
     - type: SAMPLER_3D
       sampler:
         type: EXPRESSION

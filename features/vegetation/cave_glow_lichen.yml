@@ -14,7 +14,7 @@ locator:
     # Random heights
     - type: RANDOM
       height: &range
-        min: -50
+        min: ${meta.yml:strata.bedrock.bottom} + 14
         max: 30
       amount: 1
       salt: 2913

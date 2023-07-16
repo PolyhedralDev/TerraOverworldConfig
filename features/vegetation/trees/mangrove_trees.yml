@@ -12,8 +12,8 @@ locator:
   locators:
     - type: PATTERN
       range: &range
-        min: 57
-        max: 65
+        min: ${meta.yml:ocean-level} - 4
+        max: ${meta.yml:ocean-level} + 4
       pattern:
         type: MATCH_SET
         blocks: $features/vegetation/meta.yml:plantable-blocks

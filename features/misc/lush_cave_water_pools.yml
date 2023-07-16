@@ -16,8 +16,8 @@ locator:
   locators:
     - type: PATTERN
       range: &range
-        min: -64
-        max: 64
+        min: $meta.yml:strata.bedrock.bottom
+        max: ${meta.yml:ocean-level} + 3
       pattern:
         type: AND
         patterns:

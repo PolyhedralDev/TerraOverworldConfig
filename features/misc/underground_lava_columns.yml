@@ -11,8 +11,8 @@ distributor:
 locator:
   type: PATTERN
   range:
-    min: -55
-    max: -53
+    min: ${meta.yml:strata.bedrock.bottom} + 9
+    max: ${meta.yml:strata.bedrock.bottom} + 11
   pattern:
     # Match air on top of lava
     type: AND

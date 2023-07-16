@@ -21,8 +21,8 @@ locator:
   locators:
     - type: PATTERN
       range: &range
-        min: -64
-        max: 48
+        min: $meta.yml:strata.bedrock.bottom
+        max: ${meta.yml:ocean-level} - 13
       pattern:
         type: MATCH_AIR
         offset: -1

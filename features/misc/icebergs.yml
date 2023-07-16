@@ -20,8 +20,8 @@ distributor:
 locator:
   type: PATTERN
   range:
-    min: 60
-    max: 65
+    min: ${meta.yml:ocean-level} - 1
+    max: ${meta.yml:ocean-level} + 4
   pattern:
     type: MATCH
     block: minecraft:water

@@ -16,8 +16,8 @@ locator:
     # Match air underground
     - type: PATTERN
       range: &range
-        min: -50
-        max: 0
+        min: ${meta.yml:strata.bedrock.bottom} + 14
+        max: ${meta.yml:strata.deepslate.top} - 7
       pattern:
         type: MATCH_AIR
         offset: 0

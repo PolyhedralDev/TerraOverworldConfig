@@ -13,8 +13,8 @@ locator:
   locators:
     - type: SAMPLER_3D
       range: &range
-        min: 70
-        max: 160
+        min: ${meta.yml:ocean-level} + 9
+        max: ${meta.yml:ocean-level} + 99
       sampler:
         type: ADD
         left:

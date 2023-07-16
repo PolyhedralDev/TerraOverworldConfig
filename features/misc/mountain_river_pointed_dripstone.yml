@@ -11,8 +11,8 @@ distributor:
 locator:
   type: PATTERN
   range:
-    min: 70
-    max: 90
+    min: ${meta.yml:ocean-level} + 9
+    max: ${meta.yml:ocean-level} + 29
   pattern:
     type: AND
     patterns:

@@ -21,8 +21,8 @@ distributor:
 locator:
   type: TOP
   range: &range
-    min: 64
-    max: 319
+    min: ${meta.yml:ocean-level} + 3
+    max: $meta.yml:top-y
 
 structures:
   distribution:

@@ -9,8 +9,8 @@ locator:
   locators:
     - type: PATTERN
       range: &range
-        min: 0
-        max: 63
+        min: ${meta.yml:strata.deepslate.top} - 7
+        max: ${meta.yml:ocean-level} + 2
       pattern:
         type: MATCH_AIR
         offset: 0

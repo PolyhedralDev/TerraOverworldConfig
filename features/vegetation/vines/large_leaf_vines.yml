@@ -18,8 +18,8 @@ locator:
     # Check if block is solid air
     - type: PATTERN
       range: &range
-        min: 90
-        max: 180
+        min: ${meta.yml:ocean-level} + 29
+        max: ${meta.yml:ocean-level} + 119
       pattern:
         type: MATCH_AIR
         offset: 0
