@@ -18,7 +18,7 @@ locator:
     # Check if block is solid air
     - type: PATTERN
       range: &range
-        min: $meta.yml:strata.bedrock.bottom
+        min: $meta.yml:bottom-y
         max: ${meta.yml:ocean-level} + 3
       pattern:
         type: MATCH_AIR

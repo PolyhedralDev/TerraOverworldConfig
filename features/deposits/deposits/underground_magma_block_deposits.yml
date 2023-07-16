@@ -13,8 +13,8 @@ locator:
   locators:
     - type: PATTERN
       range: &range
-        min: ${meta.yml:strata.bedrock.bottom} + 9
-        max: ${meta.yml:strata.bedrock.bottom} + 11
+        min: ${meta.yml:bottom-y} + 9
+        max: ${meta.yml:bottom-y} + 11
       pattern:
         type: AND
         patterns:

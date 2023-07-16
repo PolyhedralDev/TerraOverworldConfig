@@ -4,7 +4,7 @@ type: FEATURE
 anchors:
   # Where the vein generates
   - &range # Y min and max
-      min: ${meta.yml:strata.deepslate.top} - 7
+      min: ${meta.yml:deepslate-top} - 7
       max: ${meta.yml:ocean-level} + 3
   - &veinThreshold 0.05 # Rough % of the world the veins generate in
   - &veinFrequency 0.0025 # How frequent veins generate, determines the spread of where veins generate

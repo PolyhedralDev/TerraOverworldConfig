@@ -11,7 +11,7 @@ distributor:
 locator:
   type: PATTERN
   range:
-    min: ${meta.yml:strata.bedrock.bottom} + 16
+    min: ${meta.yml:bottom-y} + 16
     max: ${meta.yml:ocean-level} - 13
   pattern:
     type: AND

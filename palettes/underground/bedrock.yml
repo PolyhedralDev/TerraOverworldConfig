@@ -15,8 +15,8 @@ layers:
         -y + min + (offset(x,y,z)+1)/2*(max+1-min)
         ))
       variables:
-        min: $meta.yml:strata.bedrock.bottom
-        max: $meta.yml:strata.bedrock.top
+        min: $meta.yml:bottom-y
+        max: $meta.yml:bedrock-top
       samplers:
         offset:
           dimensions: 3

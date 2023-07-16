@@ -20,7 +20,7 @@ distributor:
 locator:
   type: SURFACE
   range:
-    min: ${meta.yml:strata.deepslate.top} - 23
+    min: ${meta.yml:deepslate-top} - 23
     max: ${meta.yml:ocean-level} - 14
 
 structures:

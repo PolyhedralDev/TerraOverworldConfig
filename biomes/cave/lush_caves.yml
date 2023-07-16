@@ -22,7 +22,7 @@ colors:
 
 palette:
   - LUSH_CAVES: $meta.yml:top-y
-  - LUSH_CAVES_DEEPSLATE: $meta.yml:strata.deepslate.top
+  - LUSH_CAVES_DEEPSLATE: $meta.yml:deepslate-top
   - << meta.yml:palette-bedrock
 
 tags:

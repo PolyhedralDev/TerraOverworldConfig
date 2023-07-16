@@ -22,7 +22,7 @@ colors:
 
 palette:
   - DRIPSTONE_CAVES: $meta.yml:top-y
-  - DRIPSTONE_CAVES_DEEPSLATE: $meta.yml:strata.deepslate.top
+  - DRIPSTONE_CAVES_DEEPSLATE: $meta.yml:deepslate-top
   - << meta.yml:palette-bedrock
 
 tags:

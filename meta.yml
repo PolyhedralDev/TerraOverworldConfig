@@ -84,24 +84,21 @@ biome-distribution:
   # Default: 1
 
 # Misc global config stuff
+
+# World Y levels
 top-y: 319
-
 ocean-level: 62
+deepslate-top: 7     # Y level where deepslate begins to replace stone
+deepslate-bottom: -7 # Y level where all stone is replaced by deepslate
+bedrock-top: -60     # Y level where deepslate starts to be replaced by bedrock
+bottom-y: -64
 
-strata: # Controls global Y level ranges of strata
-  deepslate:
-    top: 7 # Y level where deepslate begins to replace stone
-    bottom: -7 # Y level where all stone is replaced by deepslate
-  bedrock:
-    top: -60 # Y level where bedrock begins to replace deepslate
-    bottom: -64 # Y level where all deepslate is replaced by bedrock
-
-palette-bottom: # Added to the bottom of every palette
-  - DEEPSLATE: $meta.yml:strata.deepslate.top
-  - BEDROCK: $meta.yml:strata.bedrock.top
-  - BLOCK:minecraft:bedrock: $meta.yml:strata.bedrock.bottom
+palette-bottom: # Added to the bottom of every biome palette stack
+  - DEEPSLATE: $meta.yml:deepslate-top
+  - BEDROCK: $meta.yml:bedrock-top
+  - BLOCK:minecraft:bedrock: $meta.yml:bottom-y
   
-palette-bedrock: # Added to the bottom of palettes that use their own deepslate palette
-  - BEDROCK: $meta.yml:strata.bedrock.top
-  - BLOCK:minecraft:bedrock: $meta.yml:strata.bedrock.bottom
+palette-bedrock: # Added to the bottom of every biome palette stack that uses its own deepslate palette
+  - BEDROCK: $meta.yml:bedrock-top
+  - BLOCK:minecraft:bedrock: $meta.yml:bottom-y
   

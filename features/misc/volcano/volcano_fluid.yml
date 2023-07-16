@@ -15,7 +15,7 @@ locator:
   locators:
     - type: PATTERN
       range:
-        min: $meta.yml:strata.bedrock.bottom
+        min: $meta.yml:bottom-y
         max: $meta.yml:top-y
       pattern:
         type: MATCH_AIR

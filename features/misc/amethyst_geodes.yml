@@ -23,12 +23,12 @@ locator:
     - type: RANDOM
       amount: 1
       height:
-        min: ${meta.yml:strata.bedrock.bottom} + 22
+        min: ${meta.yml:bottom-y} + 22
         max: ${meta.yml:ocean-level} - 32
       salt: 5844
     - type: PATTERN
       range:
-        min: ${meta.yml:strata.bedrock.bottom} + 22
+        min: ${meta.yml:bottom-y} + 22
         max: ${meta.yml:ocean-level} - 32
       pattern:
         type: MATCH_SET
