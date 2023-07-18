@@ -25,13 +25,13 @@ samplers:
     expression: |
       herp(continents(x, z),
         continentZero, 0,
-        continentFull, rawElevation(x, z) * lerp(spawnIsland(x, z), -1, 1, 0, spawnIslandElevationCap)
-      ) * (1-riverTerrainErosion(x, z))
+        continentFull, rawElevation(x, z) * herp(spawnIsland(x, z), 1, spawnIslandElevationScale, -1, 1))
+      * (1-riverTerrainErosion(x, z))
     functions: $math/functions/interpolation.yml:functions
     variables:
       continentZero: -0.3
       continentFull: 0.2
-      spawnIslandElevationCap: $customization.yml:spawn-island-elevation-cap 
+      spawnIslandElevationScale: $customization.yml:spawn-island-elevation-scale
     samplers:
       rawElevation: $math/samplers/terrain.yml:samplers.rawElevation
       continents: $math/samplers/continents.yml:samplers.continents

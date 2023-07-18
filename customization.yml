@@ -27,11 +27,28 @@ terrain-ocean-depth: 100
 # Spawn Island
 # ---
 
-spawn-island-radius-inner: 150
+spawn-island-origin-x: 0
+# Default: 0
 
-spawn-island-radius-outer: 200
+spawn-island-origin-z: 0
+# Default: 0
 
-spawn-island-elevation-cap: 0.2
+spawn-island-radius-inner: 20
+# Radius from origin where continental value is set to 1, i.e inland.
+# Default: 20
+
+spawn-island-radius-middle: 125
+# Radius from origin where continental value is set to 0, i.e where the coast is.
+# Default: 125
+
+spawn-island-radius-outer: 400
+# Radius from origin where continental value is set to -1, i.e deep ocean.
+# Default: 400
+
+spawn-island-elevation-scale: 0.3
+# Scales elevation within the spawn island. E.g 0.3 means elevation is set to 30%
+# within the spawn island.
+# Default: 0.3
 
 # ---
 # Continental
@@ -46,7 +63,7 @@ continental-scale: 1
 continental-offset: 0.2
 # Default: 0.2
 
-continental-coast-width: 30
+continental-coast-width: 20
 # Default: 30
 
 continental-coast-threshold: 0.05
