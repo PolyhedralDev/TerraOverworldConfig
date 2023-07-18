@@ -9,9 +9,8 @@ samplers:
           spawnIsland(x, z)
         ),
         // Set continentalness to spotContinentalFactor in center of spots, 0 on spot edges,
-        // and decrease cubically moving further outwards
-        spotContinentalFactor * (1-(spotDistance(x,z)/spotRadius(x,z))^3)
-      )
+        // and decrease quadratically moving further outwards
+        spotContinentalFactor * (1-(spotDistance(x,z)/spotRadius(x,z))^2))
     variables:
       globalScale: $customization.yml:global-scale
       continentalScale: $customization.yml:continental-scale
@@ -23,14 +22,18 @@ samplers:
       spotRadius: $math/samplers/spots.yml:samplers.spotRadius
       sampler:
         dimensions: 2
-        type: RIDGED
-        lacunarity: 3
-        gain: 0.45
-        octaves: 4
+        type: TRANSLATE
+        x: 10000
+        z: 10000
         sampler:
-          type: OPEN_SIMPLEX_2
-          salt: 1
-          frequency: 1 / 5000
+          type: RIDGED
+          lacunarity: 3
+          gain: 0.45
+          octaves: 4
+          sampler:
+            type: OPEN_SIMPLEX_2
+            salt: 1
+            frequency: 1 / 5000
   
   continentBorder:
     dimensions: 2

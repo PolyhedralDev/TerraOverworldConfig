@@ -15,13 +15,17 @@ variables: &variables
 
 riverNoise: &riverNoise
   dimensions: 2
-  type: DOMAIN_WARP
-  amplitude: 2
+  type: TRANSLATE
+  x: 10000
+  z: 10000
   sampler:
-    type: OPEN_SIMPLEX_2
-  warp:
-    type: OPEN_SIMPLEX_2
-    frequency: 0.14
+    type: DOMAIN_WARP
+    amplitude: 2
+    sampler:
+      type: OPEN_SIMPLEX_2
+    warp:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.14
 
 samplers:
   riverTerrainErosion:

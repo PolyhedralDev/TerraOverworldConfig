@@ -11,13 +11,17 @@ samplers:
     samplers:
       sampler:
         dimensions: 2
-        type: FBM
-        gain: 0.4
-        octaves: 2
+        type: TRANSLATE
+        x: 10000
+        z: 10000
         sampler:
-          type: OPEN_SIMPLEX_2
-          salt: 3
-          frequency: 1 / 5000
+          type: FBM
+          gain: 0.4
+          octaves: 2
+          sampler:
+            type: OPEN_SIMPLEX_2
+            salt: 3
+            frequency: 1 / 5000
 
   temperature:
     dimensions: 2

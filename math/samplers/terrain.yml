@@ -9,15 +9,19 @@ samplers:
     samplers:
       noise:
         dimensions: 2
-        type: PROBABILITY
+        type: TRANSLATE
+        x: 10000
+        z: 10000
         sampler:
-          type: RIDGED
-          octaves: 6
-          gain: 0.4
-          lacunarity: 2.2
+          type: PROBABILITY
           sampler:
-            type: OPEN_SIMPLEX_2
-            frequency: 0.0003
+            type: RIDGED
+            octaves: 6
+            gain: 0.4
+            lacunarity: 2.2
+            sampler:
+              type: OPEN_SIMPLEX_2
+              frequency: 0.0003
 
   elevation:
     dimensions: 2

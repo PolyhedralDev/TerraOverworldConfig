@@ -11,12 +11,16 @@ samplers:
     samplers:
       sampler:
         dimensions: 2
-        type: FBM
-        octaves: 2
+        type: TRANSLATE
+        x: 10000
+        z: 10000
         sampler:
-          type: OPEN_SIMPLEX_2
-          salt: 4
-          frequency: 1 / 7500
+          type: FBM
+          octaves: 2
+          sampler:
+            type: OPEN_SIMPLEX_2
+            salt: 4
+            frequency: 1 / 7500
   
   precipitation:
     dimensions: 2
