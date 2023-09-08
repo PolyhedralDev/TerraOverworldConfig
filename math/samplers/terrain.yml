@@ -27,14 +27,17 @@ samplers:
     dimensions: 2
     type: EXPRESSION
     expression: |
-      herp(continents(x, z),
-        continentZero, 0,
-        continentFull, rawElevation(x, z) * herp(spawnIsland(x, z), 1, spawnIslandElevationScale, -1, 1))
-      * (1-riverTerrainErosion(x, z))
+      rawElevation(x, z)
+      * if(factorContinental, herp(continents(x, z), continentZero, 0, continentFull, 1), 1)
+      * if(factorSpawnIsland, herp(spawnIsland(x, z), 1, spawnIslandElevationScale, -1, 1), 1)
+      * if(factorRiver, (1-riverTerrainErosion(x, z)), 1)
     functions: $math/functions/interpolation.yml:functions
     variables:
-      continentZero: -0.3
-      continentFull: 0.2
+      continentZero: $customization.yml:terrain-continental-flat-threshold
+      continentFull: $customization.yml:terrain-continental-full-height-threshold
+      factorContinental: $customization.yml:terrain-factor-continental
+      factorRiver: $customization.yml:terrain-factor-rivers
+      factorSpawnIsland: $customization.yml:terrain-factor-spawn-island
       spawnIslandElevationScale: $customization.yml:spawn-island-elevation-scale
     samplers:
       rawElevation: $math/samplers/terrain.yml:samplers.rawElevation

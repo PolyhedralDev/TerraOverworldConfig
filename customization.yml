@@ -23,6 +23,32 @@ terrain-ocean-base-y-level: 60
 terrain-ocean-depth: 100
 # Default: 100
 
+terrain-factor-continental: 1
+# Determines if terrain height will be reduced closer to coasts. This
+# is used to prevent mountains forming right up against the ocean, and
+# gradually smooths the terrain into coasts. The continental values at which
+# terrain goes from 100% to flat can be customized with the options below.
+# 1 = true, 0 = false
+# Default: 1
+
+terrain-continental-full-height-threshold: 0.2
+# The continental value at which terrain height is 100%, only applicable if
+# the terrain-factor-continental option is enabled
+# Default: 0.2
+
+terrain-continental-flat-threshold: -0.3
+# The continental value at which terrain height will be flat, only applicable if
+# the terrain-factor-continental option is enabled
+# Default: -0.3
+
+terrain-factor-rivers: 0
+# Determines if river noise affects terrain, 1 = true, 0 = false
+# Default: 1
+
+terrain-factor-spawn-island: 0
+# Determines if spawn island noise affects terrain, 1 = true, 0 = false
+# Default: 1
+
 # ---
 # Spawn Island
 # ---
