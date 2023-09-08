@@ -30,20 +30,21 @@ addons:
 # Biome distribution
 # ---
 # Several preset biome providers are available to choose from below.
-# Choosing which one is in use is as simple as commenting the enabled one
-# (by adding a # at the start) and uncommenting the one you wish to use.
 
-# If you want to tweak biome distribution, there are some basic
-# parameters that can be found in the meta.yml config file.
-
-# You can also further configure the behaviour of each preset in the
-# referenced file(s) below.
+# To pick a different preset you can uncomment the line starting with 'biomes:'
+# under the preset name, and comment the old preset that was previously set.
+# (Not commenting the old one will result in an error!)
 
 # Default biome distribution
 biomes: $biome-distribution/presets/default.yml:biomes
 
-# Single biome - to change the single biome to use, check the configuration file.
+# Single biome - Generates a single biome, as well as other complementary biomes such as cave and river biomes
+#biomes: $biome-distribution/presets/single.yml:biomes
+preset-single-biome: PLAINS
+
+# Single debug - Used for debugging a singular biome, should not be used for regular world generation
 #biomes: $biome-distribution/presets/single_debug.yml:biomes
+preset-single-debug-biome: PLAINS
 
 # ---
 # Population stages
