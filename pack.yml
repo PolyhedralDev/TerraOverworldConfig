@@ -38,7 +38,8 @@ addons:
 # Default biome distribution
 biomes: $biome-distribution/presets/default.yml:biomes
 
-# Single biome - Generates a single biome, as well as other complementary biomes such as cave and river biomes
+# Single biome - Generates a single biome, as well as other complementary biomes such as cave and river biomes.
+#                It is recommended to disable 'terrain-factor-continental' in customization.yml when using this preset.
 #biomes: $biome-distribution/presets/single.yml:biomes
 preset-single-biome: PLAINS
 
