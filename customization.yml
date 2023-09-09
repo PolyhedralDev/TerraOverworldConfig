@@ -42,7 +42,8 @@ terrain-continental-flat-threshold: -0.3
 # Default: -0.3
 
 terrain-factor-rivers: 1
-# Determines if river noise affects terrain, 1 = true, 0 = false
+# Determines if terrain will gradually reduce closer to rivers.
+# 1 = true, 0 = false
 # Default: 1
 
 terrain-factor-spawn-island: 1
