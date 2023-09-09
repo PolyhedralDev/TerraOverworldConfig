@@ -41,11 +41,11 @@ terrain-continental-flat-threshold: -0.3
 # the terrain-factor-continental option is enabled
 # Default: -0.3
 
-terrain-factor-rivers: 0
+terrain-factor-rivers: 1
 # Determines if river noise affects terrain, 1 = true, 0 = false
 # Default: 1
 
-terrain-factor-spawn-island: 0
+terrain-factor-spawn-island: 1
 # Determines if spawn island noise affects terrain, 1 = true, 0 = false
 # Default: 1
 
