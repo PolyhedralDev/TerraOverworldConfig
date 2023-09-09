@@ -66,6 +66,13 @@ stages:
       - MANGROVE_SWAMP: 1
       - RIVER: 2
     sampler: *riverSampler
+  # Cold rivers
+  - type: REPLACE
+    from: USE_COLD_RIVER
+    to:
+      - SELF: 1
+      - COLD_RIVER: 1
+    sampler: *riverSampler
   # Frozen Rivers
   - type: REPLACE
     from: USE_FROZEN_RIVER

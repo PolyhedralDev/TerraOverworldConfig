@@ -9,7 +9,7 @@ color: $biomes/colors.yml:TAIGA
 
 tags:
   - LAND_CAVES
-  - USE_RIVER
+  - USE_COLD_RIVER
 
 vanilla: minecraft:taiga
 
