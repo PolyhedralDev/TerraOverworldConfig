@@ -235,7 +235,6 @@ stages:
           - BADLANDS_BUTTES: 1
           - BADLANDS_MOUNTAINS: 1
           - CRACKED_BADLANDS_PLATEAU: 1
-          - ERODED_BADLANDS_BUTTES: 1
       
         hot-steppe-flat:
           - XERIC_SHRUBLAND: 1
@@ -295,7 +294,6 @@ stages:
           - JUNGLE: 1
           - ROCKY_JUNGLE: 1
         tropical-rainforest-highlands:
-          - JUNGLE_MOUNTAINS: 1
           - OVERGROWN_CLIFFS: 1
 
         tropical-monsoon-flat:
@@ -305,7 +303,8 @@ stages:
           - DRY_FOREST: 1
           - MONSOON_FOREST: 1
         tropical-monsoon-highlands:
-          - CERROS_DE_MAVECURE: 1
+          - DRY_FOREST: 1
+          - MONSOON_FOREST: 1
 
         tropical-savanna-dry-flat:
           - GRASS_SAVANNA: 1
