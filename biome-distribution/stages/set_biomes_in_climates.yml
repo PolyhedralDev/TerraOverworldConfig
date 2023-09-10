@@ -154,6 +154,7 @@ stages:
 
         temperate-hot-summer-flat:
           - PLAINS: 1
+          - ALIEN_MARSH: 1
         temperate-hot-summer:
           - WOODED_BUTTES: 1
         temperate-hot-summer-highlands:
