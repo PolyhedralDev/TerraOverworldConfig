@@ -157,6 +157,7 @@ DEEP_OCEAN_TRENCH: 0x29458f
 # Boreal Aquatic Biomes (2)
 COLD_OCEAN: 0x2080c9
 COLD_DEEP_OCEAN: 0x3c5893
+COLD_RIVER: 0x2040c9
 
 # Polar Aquatic Biomes (3)
 FROZEN_RIVER: 0x9c9ff3
