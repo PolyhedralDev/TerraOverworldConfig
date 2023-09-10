@@ -1,6 +1,23 @@
 id: SAKURA_TREES
 type: FEATURE
 
+mask: &mask
+  sampler:
+    type: PROBABILITY
+    sampler:
+      type: DOMAIN_WARP
+      amplitude: 10
+      warp:
+        type: GAUSSIAN
+      sampler:
+        type: FBM
+        octaves: 2
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.01
+          salt: 98342
+  threshold: 0.4
+
 distributor:
   type: AND
   distributors:
@@ -9,18 +26,7 @@ distributor:
       padding: 5
       salt: 5932
     - type: SAMPLER
-      sampler:
-        type: PROBABILITY
-        sampler:
-          type: DOMAIN_WARP
-          amplitude: 6
-          warp:
-            type: WHITE_NOISE
-          sampler:
-            type: OPEN_SIMPLEX_2
-            frequency: 0.01
-            salt: 98342
-      threshold: 0.5
+      <<: *mask
 
 locator:
   type: AND

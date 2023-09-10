@@ -30,8 +30,8 @@ slant:
 
 features:
   flora:
-    - GRASS
     - PINK_PETALS
+    - GRASS
   trees:
     - SAKURA_TREES
   landforms:
