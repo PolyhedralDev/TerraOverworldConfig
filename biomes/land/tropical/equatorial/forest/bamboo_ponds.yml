@@ -2,7 +2,7 @@ id: BAMBOO_PONDS
 type: BIOME
 extends:
   - ENVIRONMENT_LAND_TROPICAL_EQUATORIAL
-  - EQ_LAND
+  - EQ_SWAMP
   - CARVING_OCEAN
   - BASE
 color: $biomes/colors.yml:BAMBOO_PONDS
