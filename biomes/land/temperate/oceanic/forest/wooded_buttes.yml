@@ -15,10 +15,16 @@ tags:
 
 palette:
   - GRASS: $meta.yml:top-y
-  - SAND: ${meta.yml:ocean-level} + 2
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
 
 slant:
+  - threshold: 0.8
+    palette:
+      - GRASS: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
   - threshold: 0.55
     palette:
       - MOSS_STONE: $meta.yml:top-y

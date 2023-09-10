@@ -15,19 +15,18 @@ ocean:
 
 palette:
   - SNOW: $meta.yml:top-y
-  - SAND: $meta.yml:ocean-level
+  - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 0.6
     palette:
       - SNOWY_SLANT: $meta.yml:top-y
-      - SAND: $meta.yml:ocean-level
+      - << meta.yml:palette-underwater
       - << meta.yml:palette-bottom
   - threshold: 0.3
     palette:
-      - BLOCK:minecraft:stone: $meta.yml:top-y
-      - SAND: $meta.yml:ocean-level
+      - << meta.yml:palette-slant-generic
       - << meta.yml:palette-bottom
 
 features:

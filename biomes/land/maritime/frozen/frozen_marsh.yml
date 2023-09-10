@@ -18,8 +18,8 @@ ocean:
   palette: FROZEN_OCEAN
 
 palette:
-  - GRASS_SNOW_MIX: $meta.yml:top-y
-  - SAND: $meta.yml:ocean-level
+  - GRASS: $meta.yml:top-y
+  - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
 
 slant:

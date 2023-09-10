@@ -7,6 +7,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:BAMBOO_PONDS
 
+# TODO - Fix this biome
+
 vanilla: minecraft:bamboo_jungle
 
 tags:
@@ -22,8 +24,8 @@ colors:
 palette:
   - BAMBOO_PONDS_WATER: $meta.yml:top-y
   - BAMBOO_PONDS: ${meta.yml:ocean-level} + 9
-  - SAND: ${meta.yml:ocean-level} + 3
-  - MUDDY_BEACH: $meta.yml:ocean-level
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
 
 slant:

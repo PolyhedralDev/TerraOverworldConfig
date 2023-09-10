@@ -19,13 +19,19 @@ ocean:
 
 palette:
   - GRASS_SNOW_MIX: $meta.yml:top-y
-  - SAND: ${meta.yml:ocean-level} + 3
+  - GRASS: ${meta.yml:ocean-level} + 1
+  - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
 
 slant:
+  - threshold: 0.8
+    palette:
+      - GRASS_SNOW_MIX: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
   - threshold: 0.4
     palette:
-      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - << meta.yml:palette-slant-generic
       - << meta.yml:palette-bottom
 
 features:

@@ -16,11 +16,11 @@ tags:
 palette:
   - SALT: $meta.yml:top-y
   - CALCITE_DIORITE_MIX: ${meta.yml:ocean-level} + 2
-  - SAND: $meta.yml:ocean-level
+  - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
 
 slant:
-  - threshold: 0.4
+  - threshold: 0
     palette:
       - BLOCK:minecraft:stone: $meta.yml:top-y
       - << meta.yml:palette-bottom

@@ -12,7 +12,7 @@ vanilla: minecraft:eroded_badlands
 
 palette:
   - RED_SAND: $meta.yml:top-y
-  - SAND: ${meta.yml:ocean-level} + 3
+  - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
 
 slant-depth: 50

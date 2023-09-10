@@ -21,10 +21,6 @@ palette:
 slant-depth: 50
 
 slant:
-  - threshold: 0.5
-    palette:
-      - DIORITE_SLANT: $meta.yml:top-y
-      - << meta.yml:palette-bottom
   - threshold: 0.45
     palette:
       - GRANITE_SLANT: $meta.yml:top-y

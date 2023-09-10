@@ -11,11 +11,16 @@ vanilla: minecraft:forest
 
 palette:
   - GRASS_MOSSY: $meta.yml:top-y
-  - SAND: ${meta.yml:ocean-level} + 3
-  - MUDDY_BEACH: $meta.yml:ocean-level
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
 
 slant:
+  - threshold: 0.8
+    palette:
+      - GRASS_MOSSY: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
   - threshold: 0.55
     palette:
       - MOSS_STONE: $meta.yml:top-y

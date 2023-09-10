@@ -7,6 +7,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:YELLOWSTONE
 
+# TODO - This biome needs fixing
+
 tags:
   - LAND_CAVES
   - USE_RIVER_TEMPERATE_MARSH
@@ -22,7 +24,8 @@ colors:
 palette:
   - YELLOWSTONE_WATER: $meta.yml:top-y
   - CALCITE: ${meta.yml:ocean-level} + 11
-  - SAND: ${meta.yml:ocean-level} + 3
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
 
 slant:

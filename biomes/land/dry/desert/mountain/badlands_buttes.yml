@@ -14,23 +14,26 @@ tags:
   - USE_RIVER
 
 palette:
-  - RED_SAND: $meta.yml:top-y
-  - ARID: ${meta.yml:ocean-level} + 16
-  - SAND: ${meta.yml:ocean-level} + 3
+  - ARID: $meta.yml:top-y
+  - << meta.yml:palette-ocean-level-sand
   - << meta.yml:palette-bottom
 
 slant-depth: 20
 
 slant:
-  - threshold: 0.5
+  - threshold: 0.8
+    palette:
+      - ARID: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.6
     palette:
       - RED_SAND: $meta.yml:top-y
       - << meta.yml:palette-bottom
-  - threshold: 0.45
+  - threshold: 0.5
     palette:
       - BLOCK:minecraft:terracotta: $meta.yml:top-y
       - << meta.yml:palette-bottom
-  - threshold: 0.4
+  - threshold: 0.1
     palette:
       - BADLANDS_STRATA: $meta.yml:top-y
       - TERRACOTTA_STRATA: ${meta.yml:ocean-level} + 27

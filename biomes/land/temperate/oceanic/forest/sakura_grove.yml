@@ -11,6 +11,11 @@ colors:
   water: 0x5DB7EF
 
 slant:
+  - threshold: 0.8
+    palette:
+      - GRASS: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
   - threshold: 0.55
     palette:
       - MOSS_STONE: $meta.yml:top-y

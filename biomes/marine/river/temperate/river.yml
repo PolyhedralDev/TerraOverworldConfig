@@ -16,7 +16,12 @@ palette:
   - << meta.yml:palette-bottom
 
 slant:
-  - threshold: 0.4
+  - threshold: 0.8
+    palette:
+      - GRASS: $meta.yml:top-y
+      - MUDDY_BEACH: ${meta.yml:ocean-level} - 1
+      - << meta.yml:palette-bottom
+  - threshold: 0.5
     palette:
       - BLOCK:minecraft:stone: $meta.yml:top-y
       - << meta.yml:palette-bottom

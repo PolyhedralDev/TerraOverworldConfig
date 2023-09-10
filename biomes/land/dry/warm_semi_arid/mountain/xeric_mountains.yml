@@ -15,25 +15,21 @@ tags:
   - LAND
 
 palette:
-  - XERIC_SANDSTONE: $meta.yml:top-y
-  - XERIC_SANDSTONE_HALF: ${meta.yml:ocean-level} + 39
-  - XERIC: ${meta.yml:ocean-level} + 31
-  - SAND: ${meta.yml:ocean-level} + 3
-  - MUDDY_BEACH: $meta.yml:ocean-level
+  - XERIC: $meta.yml:top-y
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
 
 slant:
-  - threshold: 0.45
+  - threshold: 0.8
     palette:
-      - XERIC_WHITE_TERRACOTTA: $meta.yml:top-y
+      - XERIC: $meta.yml:top-y
+      - << meta.yml:palette-underwater
       - << meta.yml:palette-bottom
   - threshold: 0.4
     palette:
-      - XERIC_LIGHT_GRAY_TERRACOTTA: $meta.yml:top-y
+      - XERIC_SLANT: $meta.yml:top-y
       - << meta.yml:palette-bottom
-
-slant-depth: 5
-
 
 features:
   flora:

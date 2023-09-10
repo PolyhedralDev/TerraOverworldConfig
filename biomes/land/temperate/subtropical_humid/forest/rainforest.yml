@@ -23,10 +23,18 @@ palette:
   - GRASS: $meta.yml:top-y
   - GRASS_VARIATION: ${meta.yml:ocean-level} + 35
   - GRASS_MOSSY: ${meta.yml:ocean-level} + 25
-  - SAND: $meta.yml:ocean-level
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
 
 slant:
+  - threshold: 0.8
+    palette:
+      - GRASS: $meta.yml:top-y
+      - GRASS_VARIATION: ${meta.yml:ocean-level} + 35
+      - GRASS_MOSSY: ${meta.yml:ocean-level} + 25
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
   - threshold: 0.5
     palette:
       - MOSS_STONE: $meta.yml:top-y

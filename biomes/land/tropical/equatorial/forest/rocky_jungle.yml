@@ -15,32 +15,33 @@ tags:
 
 palette:
   - GRASS: $meta.yml:top-y
-  - SAND: ${meta.yml:ocean-level} + 3
-  - MUDDY_BEACH: $meta.yml:ocean-level
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
 
-slant-depth: 1
+slant-depth: 5
 
 slant:
-  - threshold: 0.6
+  - threshold: 0.8
     palette:
       - GRASS: $meta.yml:top-y
+      - << meta.yml:palette-underwater
       - << meta.yml:palette-bottom
-  - threshold: 0.55
+  - threshold: 0.6
     palette:
       - MOSS_STONE: $meta.yml:top-y
-      - << meta.yml:palette-bottom
-  - threshold: 0.5
-    palette:
-      - BLOCK:minecraft:mossy_cobblestone: $meta.yml:top-y
-      - << meta.yml:palette-bottom
-  - threshold: 0.45
-    palette:
-      - BLOCK:minecraft:cobblestone: $meta.yml:top-y
       - << meta.yml:palette-bottom
   - threshold: 0.4
     palette:
-      - MOSS_STONE: $meta.yml:top-y
+      - BLOCK:minecraft:mossy_cobblestone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.35
+    palette:
+      - BLOCK:minecraft:tuff: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.1
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
       - << meta.yml:palette-bottom
       
 features:

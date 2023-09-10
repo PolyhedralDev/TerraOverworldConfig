@@ -93,6 +93,15 @@ deepslate-bottom: -7 # Y level where all stone is replaced by deepslate
 bedrock-top: -60     # Y level where deepslate starts to be replaced by bedrock
 bottom-y: -64
 
+palette-slant-generic:
+  - BLOCK:minecraft:stone: $meta.yml:top-y
+
+palette-ocean-level-sand:
+  - SAND: ${meta.yml:ocean-level} + 1
+
+palette-underwater:
+  - MUDDY_BEACH: ${meta.yml:ocean-level} - 1
+
 palette-bottom: # Added to the bottom of every biome palette stack
   - DEEPSLATE: $meta.yml:deepslate-top
   - BEDROCK: $meta.yml:bedrock-top
