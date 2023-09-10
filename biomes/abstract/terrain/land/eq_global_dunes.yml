@@ -6,7 +6,7 @@ variables: &variables
   base: $customization.yml:terrain-base-y-level
   scale: $customization.yml:terrain-height
   
-  duneFactor: 0.07
+  duneFactor: 0.03
   duneStart: 0
   duneEnd: 0.4
   mountainPeakStart: 0.5
