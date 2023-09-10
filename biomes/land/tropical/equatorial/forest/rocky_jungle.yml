@@ -2,7 +2,7 @@ id: ROCKY_JUNGLE
 type: BIOME
 extends:
   - ENVIRONMENT_LAND_TROPICAL_EQUATORIAL
-  - EQ_LAND
+  - EQ_ROCKY
   - CARVING_LAND
   - BASE
 color: $biomes/colors.yml:ROCKY_JUNGLE
