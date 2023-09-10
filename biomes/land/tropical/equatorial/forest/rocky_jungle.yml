@@ -54,6 +54,8 @@ features:
     - TALL_GRASS
     - SMALL_DRIPLEAF
     - BIG_DRIPLEAF
+  postprocessors:
+    - LARGE_LEAF_VINES
   trees:
     - JUNGLE_TREES
   landforms:

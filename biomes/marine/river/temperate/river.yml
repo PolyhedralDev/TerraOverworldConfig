@@ -35,3 +35,4 @@ colors:
 features:
   flora:
     - SUGAR_CANE
+    - GRASS

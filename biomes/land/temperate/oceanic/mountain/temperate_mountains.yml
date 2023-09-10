@@ -7,6 +7,9 @@ extends:
   - BASE
 color: $biomes/colors.yml:TEMPERATE_MOUNTAINS
 
+tags:
+  - USE_RIVER
+
 vanilla: minecraft:meadow
 
 palette:

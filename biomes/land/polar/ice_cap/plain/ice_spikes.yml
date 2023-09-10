@@ -31,4 +31,7 @@ features:
   preprocessors:
     - ICE_COASTLINE
   postprocessors:
+    - CEILING_ICICLES
     - TREE_SNOW
+  landforms:
+    - OVERHANG_STONE_COLUMNS

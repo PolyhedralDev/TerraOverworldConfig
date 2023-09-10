@@ -9,6 +9,10 @@ color: $biomes/colors.yml:MONSOON_FOREST
 
 vanilla: minecraft:forest
 
+tags:
+  - LAND_CAVES
+  - USE_RIVER
+
 palette:
   - GRASS_MOSSY: $meta.yml:top-y
   - << meta.yml:palette-ocean-level-sand

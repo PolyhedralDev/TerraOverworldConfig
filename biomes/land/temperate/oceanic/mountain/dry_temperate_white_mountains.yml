@@ -3,6 +3,10 @@ type: BIOME
 extends: DRY_TEMPERATE_MOUNTAINS
 color: $biomes/colors.yml:DRY_TEMPERATE_WHITE_MOUNTAINS
 
+colors:
+  grass: 0x8ace98
+  foliage: 0x59ba6c
+
 slant:
   - threshold: 0.8
     palette:

@@ -29,6 +29,9 @@ slant:
       - << meta.yml:palette-bottom
 
 features:
+  flora:
+    - FERNS
+    - GRASS
   landforms:
     - BOULDERS
     - SMALL_BOULDER_PATCHES

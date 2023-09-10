@@ -7,7 +7,7 @@ extends:
   - BASE
 color: $biomes/colors.yml:ARID_HIGHLANDS
 
-vanilla: minecraft:savanna
+vanilla: minecraft:desert
 
 palette:
   - SAND: $meta.yml:top-y
