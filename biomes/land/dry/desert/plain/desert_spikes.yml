@@ -3,7 +3,7 @@ type: BIOME
 extends:
   - COLOR_XERIC
   - ENVIRONMENT_LAND_DRY_DESERT
-  - EQ_ROCKY_BUTTES
+  - EQ_SPIKES
   - CARVING_LAND
   - BASE
 color: $biomes/colors.yml:DESERT_SPIKES

@@ -3,7 +3,7 @@ type: BIOME
 extends:
   - COLOR_FROZEN
   - ENVIRONMENT_LAND_POLAR_ICE_CAP
-  - EQ_MULTI_TERRACED_LAND
+  - EQ_SPIKES
   - SNOWY_PLAINS
 color: $biomes/colors.yml:ICE_SPIKES
 
