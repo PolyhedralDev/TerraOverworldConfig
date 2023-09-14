@@ -67,7 +67,7 @@ samplers:
       type: EXPRESSION
       expression: elevation(x, z)
       samplers:
-        elevation: $math/samplers/terrain.yml:samplers.elevation
+        elevation: $math/samplers/elevation.yml:samplers.elevation
   
   # ---
   # Volcano Samplers

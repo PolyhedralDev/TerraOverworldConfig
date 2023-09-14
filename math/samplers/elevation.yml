@@ -1,5 +1,5 @@
 samplers:
-  rawElevation:
+  rawElevation: &rawElevation
     dimensions: 2
     type: EXPRESSION
     expression: noise(x / elevationScale / globalScale, z / elevationScale / globalScale)^3
@@ -40,7 +40,7 @@ samplers:
       factorSpawnIsland: $customization.yml:elevation-factor-spawn-island
       spawnIslandScale: $customization.yml:elevation-spawn-island-scale
     samplers:
-      rawElevation: $math/samplers/terrain.yml:samplers.rawElevation
+      rawElevation: *rawElevation
       continents: $math/samplers/continents.yml:samplers.continents
       spawnIsland: $math/samplers/spawnIsland.yml:samplers.spawnIsland
       riverTerrainErosion: $math/samplers/rivers.yml:samplers.riverTerrainErosion
@@ -58,5 +58,5 @@ samplers:
       continentZero: 0
       continentFull: -0.8
     samplers:
-      rawElevation: $math/samplers/terrain.yml:samplers.rawElevation
+      rawElevation: *rawElevation
       continents: $math/samplers/continents.yml:samplers.continents

@@ -119,7 +119,7 @@ functions:
 
 samplers:
   "<<":
-    - math/samplers/terrain.yml:samplers
+    - math/samplers/elevation.yml:samplers
     - math/samplers/simplex.yml:samplers
     - math/samplers/continents.yml:samplers
     - math/samplers/precipitation.yml:samplers
