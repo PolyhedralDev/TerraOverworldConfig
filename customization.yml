@@ -77,6 +77,15 @@ elevation-scale: 1
 #        can check out the parameters under the 'Terrain' section.
 # Default: 1
 
+elevation-multiplier: 1
+# Multiplier on the elevation value
+# If set to 0, elevation will be the value set by 'elevation-offset' defined below
+# Default: 1
+
+elevation-offset: 0
+# Adds / subtracts from the elevation value
+# Default: 0
+
 elevation-highlands-threshold: 0.4
 # Default: 0.4
 
