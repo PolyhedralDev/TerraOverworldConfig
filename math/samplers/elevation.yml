@@ -1,11 +1,45 @@
 samplers:
+  rawFlatness: &rawFlatness
+    dimensions: 2
+    type: EXPRESSION
+    expression: noise(x / scale / globalScale, z / scale / globalScale)
+    variables:
+      globalScale: $customization.yml:global-scale
+      scale: $customization.yml:flatness-scale
+    samplers:
+      noise:
+        dimensions: 2
+        type: TRANSLATE
+        x: 10000
+        z: 10000
+        sampler:
+          type: PROBABILITY
+          sampler:
+            type: FBM
+            gain: 0.3
+            lacunarity: 2.3
+            sampler:
+              type: OPEN_SIMPLEX_2
+              frequency: 1 / 1000
+
+  flatness: &flatness
+    dimensions: 2
+    type: EXPRESSION
+    expression: herp(rawFlatness(x, z), threshold, 1, threshold + blend, 0)
+    functions: $math/functions/interpolation.yml:functions
+    variables:
+      threshold: $customization.yml:flatness-percent
+      blend: $customization.yml:flatness-blend
+    samplers:
+      rawFlatness: *rawFlatness
+
   rawElevation: &rawElevation
     dimensions: 2
     type: EXPRESSION
-    expression: (noise(x / elevationScale / globalScale, z / elevationScale / globalScale)^3) * multiplier + offset
+    expression: noise(x / scale / globalScale, z / scale / globalScale)^3 * multiplier + offset
     variables:
       globalScale: $customization.yml:global-scale
-      elevationScale: $customization.yml:elevation-scale
+      scale: $customization.yml:elevation-scale
       multiplier: $customization.yml:elevation-multiplier
       offset: $customization.yml:elevation-offset
     samplers:
@@ -23,13 +57,13 @@ samplers:
             lacunarity: 2.2
             sampler:
               type: OPEN_SIMPLEX_2
-              frequency: 0.0003
+              frequency: 1 / 1650
 
   elevation:
     dimensions: 2
     type: EXPRESSION
     expression: |
-      rawElevation(x, z)
+      rawElevation(x, z) * (1-flatness(x, z))
       * if(factorContinental, herp(continents(x, z), continentZero, 0, continentFull, 1), 1)
       * if(factorSpawnIsland, herp(spawnIsland(x, z), 1, spawnIslandScale, -1, 1), 1)
       * if(factorRiver, (1-riverTerrainErosion(x, z)), 1)
@@ -43,6 +77,7 @@ samplers:
       spawnIslandScale: $customization.yml:elevation-spawn-island-scale
     samplers:
       rawElevation: *rawElevation
+      flatness: *flatness
       continents: $math/samplers/continents.yml:samplers.continents
       spawnIsland: $math/samplers/spawnIsland.yml:samplers.spawnIsland
       riverTerrainErosion: $math/samplers/rivers.yml:samplers.riverTerrainErosion

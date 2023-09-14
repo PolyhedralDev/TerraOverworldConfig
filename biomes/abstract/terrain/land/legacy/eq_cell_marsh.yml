@@ -5,8 +5,6 @@ abstract: true
 vars: &variables
   base: $customization.yml:terrain-base-y-level
   height: $customization.yml:terrain-height
-  flatThreshold: $customization.yml:elevation-flatlands-threshold
-  easing: 0.075
   angleFrequency: 60
 
 terrain:
@@ -44,19 +42,15 @@ terrain:
       type: EXPRESSION
       variables: *variables
       expression: |
-        lerp(elevation(x, z),
-          flatThreshold, elevation(x, z) * height,
-          flatThreshold - easing,
-            herp(|-distance2div(x, z)-0.6|*2,
-              0.1, -10 * noise(
-                distance2div(x, z),
-                sin(angle(x, z)) * angleFrequency,
-                cos(angle(x, z)) * angleFrequency
-              ),
-              0.8, 0
-            )
-            + simplex(x/2, z/2) * 3
+        herp(|-distance2div(x, z)-0.6|*2,
+          0.1, -10 * noise(
+            distance2div(x, z),
+            sin(angle(x, z)) * angleFrequency,
+            cos(angle(x, z)) * angleFrequency
+          ),
+          0.8, 0
         )
+        + simplex(x/2, z/2) * 3
       samplers:
         distance2div:
           dimensions: 2

@@ -7,7 +7,6 @@ abstract: true
 vars: &variables
   base: $customization.yml:terrain-base-y-level
   height: $customization.yml:terrain-height
-  flatThreshold: $customization.yml:elevation-flatlands-threshold
   easing: 0.075
   crackFrequency: 1
   crackLowerThreshold: -0.2
@@ -26,11 +25,8 @@ terrain:
     type: EXPRESSION
     variables: *variables
     expression: |
-      lerp(elevation(x, z),
-        flatThreshold, elevation(x, z) * height,
-        flatThreshold - easing,
-            (simplex(x, z)+1)/6
-            + lerp(cracks(x*crackFrequency, z*crackFrequency),crackLowerThreshold,0,crackUpperThreshold,1) * crackHeight)
+      (simplex(x, z)+1)/6
+      + lerp(cracks(x*crackFrequency, z*crackFrequency),crackLowerThreshold,0,crackUpperThreshold,1) * crackHeight
     samplers:
       cracks:
         dimensions: 2

@@ -92,9 +92,6 @@ elevation-offset: 0
 elevation-highlands-threshold: 0.4
 # Default: 0.4
 
-elevation-flatlands-threshold: 0.1
-# Default: 0.1
-
 elevation-factor-continental: 1
 # Determines if terrain height will be reduced closer to coasts. This
 # is used to prevent mountains forming right up against the ocean, and
@@ -126,6 +123,19 @@ elevation-spawn-island-scale: 0.3
 # Scales elevation within the spawn island. E.g 0.3 means elevation is set to 30%
 # within the spawn island.
 # Default: 0.3
+
+# ---
+# Flatness
+# ---
+
+flatness-scale: 1
+# Default: 1
+
+flatness-percent: 0.25
+# Default: TODO
+
+flatness-blend: 0.35
+# Default: TODO
 
 # ---
 # Temperature

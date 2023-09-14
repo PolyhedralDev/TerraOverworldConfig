@@ -23,17 +23,9 @@ stages:
   - type: REPLACE_LIST
     sampler:
       type: EXPRESSION
-      expression: segment(elevation(x, z), flatlandsThreshold, highlandsThreshold)
+      expression: if(elevation(x, z) > highlandsThreshold, 1, if(flatness(x, z) >= 1, -1, 0))
       variables:
-        flatlandsThreshold: $customization.yml:elevation-flatlands-threshold
         highlandsThreshold: $customization.yml:elevation-highlands-threshold
-      functions:
-        segment:
-          arguments:
-            - in
-            - flatThreshold
-            - highThreshold
-          expression: if(in < flatThreshold, -1, if(in < highThreshold, 0, 1))
 
     default-from: ice-cap
     default-to: #EF
