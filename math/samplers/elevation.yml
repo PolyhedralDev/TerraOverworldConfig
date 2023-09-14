@@ -86,14 +86,13 @@ samplers:
     dimensions: 2
     type: EXPRESSION
     expression: |
-      herp(continents(x, z),
-        continentZero, 0,
-        continentFull, -1+rawElevation(x, z)
-      )
+      (-1+rawElevation(x, z))
+      * if(factorContinental, herp(continents(x, z), continentZero, 0, continentFull, 1), 1)
     functions: $math/functions/interpolation.yml:functions
     variables:
       continentZero: 0
       continentFull: -0.8
+      factorContinental: $customization.yml:elevation-factor-continental
     samplers:
       rawElevation: *rawElevation
       continents: $math/samplers/continents.yml:samplers.continents
