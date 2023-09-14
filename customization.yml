@@ -23,33 +23,6 @@ terrain-ocean-base-y-level: 60
 terrain-ocean-depth: 100
 # Default: 100
 
-terrain-factor-continental: 1
-# Determines if terrain height will be reduced closer to coasts. This
-# is used to prevent mountains forming right up against the ocean, and
-# gradually smooths the terrain into coasts. The continental values at which
-# terrain goes from 100% to flat can be customized with the options below.
-# 1 = true, 0 = false
-# Default: 1
-
-terrain-continental-full-height-threshold: 0.2
-# The continental value at which terrain height is 100%, only applicable if
-# the terrain-factor-continental option is enabled
-# Default: 0.2
-
-terrain-continental-flat-threshold: -0.3
-# The continental value at which terrain height will be flat, only applicable if
-# the terrain-factor-continental option is enabled
-# Default: -0.3
-
-terrain-factor-rivers: 1
-# Determines if terrain will gradually reduce closer to rivers.
-# 1 = true, 0 = false
-# Default: 1
-
-terrain-factor-spawn-island: 1
-# Determines if spawn island noise affects terrain, 1 = true, 0 = false
-# Default: 1
-
 # ---
 # Spawn Island
 # ---
@@ -71,11 +44,6 @@ spawn-island-radius-middle: 125
 spawn-island-radius-outer: 400
 # Radius from origin where continental value is set to -1, i.e deep ocean.
 # Default: 400
-
-spawn-island-elevation-scale: 0.3
-# Scales elevation within the spawn island. E.g 0.3 means elevation is set to 30%
-# within the spawn island.
-# Default: 0.3
 
 # ---
 # Continental
@@ -114,6 +82,38 @@ elevation-highlands-threshold: 0.4
 
 elevation-flatlands-threshold: 0.1
 # Default: 0.1
+
+elevation-factor-continental: 1
+# Determines if terrain height will be reduced closer to coasts. This
+# is used to prevent mountains forming right up against the ocean, and
+# gradually smooths the terrain into coasts. The continental values at which
+# terrain goes from 100% to flat can be customized with the options below.
+# 1 = true, 0 = false
+# Default: 1
+
+elevation-continental-full-height-threshold: 0.2
+# The continental value at which terrain height is 100%, only applicable if
+# the terrain-factor-continental option is enabled
+# Default: 0.2
+
+elevation-continental-flat-threshold: -0.3
+# The continental value at which terrain height will be flat, only applicable if
+# the terrain-factor-continental option is enabled
+# Default: -0.3
+
+elevation-factor-rivers: 1
+# Determines if terrain will gradually reduce closer to rivers.
+# 1 = true, 0 = false
+# Default: 1
+
+elevation-factor-spawn-island: 1
+# Determines if spawn island noise affects terrain, 1 = true, 0 = false
+# Default: 1
+
+elevation-spawn-island-scale: 0.3
+# Scales elevation within the spawn island. E.g 0.3 means elevation is set to 30%
+# within the spawn island.
+# Default: 0.3
 
 # ---
 # Temperature

@@ -15,9 +15,9 @@ samplers:
         sampler:
           type: PROBABILITY
           sampler:
-            type: RIDGED
+            type: FBM
             octaves: 6
-            gain: 0.4
+            gain: 0.5
             lacunarity: 2.2
             sampler:
               type: OPEN_SIMPLEX_2
@@ -29,16 +29,16 @@ samplers:
     expression: |
       rawElevation(x, z)
       * if(factorContinental, herp(continents(x, z), continentZero, 0, continentFull, 1), 1)
-      * if(factorSpawnIsland, herp(spawnIsland(x, z), 1, spawnIslandElevationScale, -1, 1), 1)
+      * if(factorSpawnIsland, herp(spawnIsland(x, z), 1, spawnIslandScale, -1, 1), 1)
       * if(factorRiver, (1-riverTerrainErosion(x, z)), 1)
     functions: $math/functions/interpolation.yml:functions
     variables:
-      continentZero: $customization.yml:terrain-continental-flat-threshold
-      continentFull: $customization.yml:terrain-continental-full-height-threshold
-      factorContinental: $customization.yml:terrain-factor-continental
-      factorRiver: $customization.yml:terrain-factor-rivers
-      factorSpawnIsland: $customization.yml:terrain-factor-spawn-island
-      spawnIslandElevationScale: $customization.yml:spawn-island-elevation-scale
+      continentZero: $customization.yml:elevation-continental-flat-threshold
+      continentFull: $customization.yml:elevation-continental-full-height-threshold
+      factorContinental: $customization.yml:elevation-factor-continental
+      factorRiver: $customization.yml:elevation-factor-rivers
+      factorSpawnIsland: $customization.yml:elevation-factor-spawn-island
+      spawnIslandScale: $customization.yml:elevation-spawn-island-scale
     samplers:
       rawElevation: $math/samplers/terrain.yml:samplers.rawElevation
       continents: $math/samplers/continents.yml:samplers.continents
