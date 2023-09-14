@@ -58,6 +58,9 @@ continental-scale: 1
 continental-offset: 0.2
 # Default: 0.2
 
+continental-spread: 1
+# Default: 1
+
 continental-coast-width: 20
 # Default: 30
 
