@@ -36,7 +36,7 @@ samplers:
   rawElevation: &rawElevation
     dimensions: 2
     type: EXPRESSION
-    expression: noise(x / scale / globalScale, z / scale / globalScale)^3 * multiplier + offset
+    expression: noise(x / scale / globalScale, z / scale / globalScale)^2 * multiplier + offset
     variables:
       globalScale: $customization.yml:global-scale
       scale: $customization.yml:elevation-scale
