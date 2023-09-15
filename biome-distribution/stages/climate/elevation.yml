@@ -23,125 +23,168 @@ stages:
   - type: REPLACE_LIST
     sampler:
       type: EXPRESSION
-      expression: if(elevation(x, z) > highlandsThreshold, 1, if(flatness(x, z) >= 1, -1, 0))
+      expression: segment(elevation(x, z), flatness(x, z), highlandsThreshold, lowlandsThreshold)
       variables:
         highlandsThreshold: $customization.yml:elevation-highlands-threshold
+        lowlandsThreshold: $customization.yml:elevation-lowlands-threshold
+      functions:
+        segment:
+          arguments:
+            - elevation
+            - flatness
+            - highlands
+            - lowlands
+          expression: if(elevation > highlands, 0.75, if(elevation > lowlands, 0.25, if(flatness < 1, -0.25, -0.75)))
 
+    # Weighted lists below are interpreted as:
+    # - <FLAT>: 1
+    # - <LOWLANDS>: 1
+    # - <MIDLANDS>: 1
+    # - <HIGHLANDS>: 1
+    
     default-from: ice-cap
-    default-to: #EF
+    default-to: 
       - ice-cap-flat: 1
+      - ice-cap: 1
       - ice-cap: 1
       - ice-cap-highlands: 1
     to:
       tundra:
-        - tundra-flat: 1 #ET: 1
-        - tundra: 1 # ET: 1
-        - tundra-highlands: 1 #TUNDRA_HIGHLANDS: 1
+        - tundra-flat: 1 
+        - tundra: 1 
+        - tundra: 1 
+        - tundra-highlands: 1 
       polar-coast:
-        - polar-coast-flat: 1 #FLAT_FROZEN_COAST: 1
-        - polar-coast: 1 #FROZEN_COAST: 1
-        - polar-coast-highlands: 1 #FROZEN_COAST: 1
+        - polar-coast-flat: 1 
+        - polar-coast-flat: 1 
+        - polar-coast: 1 
+        - polar-coast-highlands: 1 
 
       boreal-hot-summer:
-        - boreal-hot-summer-flat: 1 #DFA: 1
-        - boreal-hot-summer: 1 #DFA: 1
-        - boreal-hot-summer-highlands: 1 #BOREAL_HIGHLANDS: 1
+        - boreal-hot-summer-flat: 1 
+        - boreal-hot-summer: 1 
+        - boreal-hot-summer: 1 
+        - boreal-hot-summer-highlands: 1 
       boreal-warm-summer:
-        - boreal-warm-summer-flat: 1 #DFB: 1
-        - boreal-warm-summer: 1 #DFB: 1
-        - boreal-warm-summer-highlands: 1 #BOREAL_HIGHLANDS: 1
+        - boreal-warm-summer-flat: 1 
+        - boreal-warm-summer: 1 
+        - boreal-warm-summer: 1 
+        - boreal-warm-summer-highlands: 1 
       boreal-cold-summer:
-        - boreal-cold-summer-flat: 1 #DFC: 1
-        - boreal-cold-summer: 1 #DFC: 1
-        - boreal-cold-summer-highlands: 1 #BOREAL_HIGHLANDS: 1
+        - boreal-cold-summer-flat: 1 
+        - boreal-cold-summer: 1 
+        - boreal-cold-summer: 1 
+        - boreal-cold-summer-highlands: 1 
       boreal-very-cold-winter:
-        - boreal-very-cold-winter-flat: 1 #DFD: 1
-        - boreal-very-cold-winter: 1 #DFD: 1
-        - boreal-very-cold-winter-highlands: 1 #BOREAL_HIGHLANDS: 1
+        - boreal-very-cold-winter-flat: 1 
+        - boreal-very-cold-winter: 1 
+        - boreal-very-cold-winter: 1 
+        - boreal-very-cold-winter-highlands: 1 
       boreal-dry-winter-hot-summer:
-        - boreal-dry-winter-hot-summer-flat: 1 #DWA: 1
-        - boreal-dry-winter-hot-summer: 1 #DWA: 1
-        - boreal-dry-winter-hot-summer-highlands: 1 #DRY_BOREAL_HIGHLANDS: 1
+        - boreal-dry-winter-hot-summer-flat: 1 
+        - boreal-dry-winter-hot-summer: 1 
+        - boreal-dry-winter-hot-summer: 1 
+        - boreal-dry-winter-hot-summer-highlands: 1 
       boreal-dry-winter-warm-summer:
-        - boreal-dry-winter-warm-summer-flat: 1 #DWB: 1
-        - boreal-dry-winter-warm-summer: 1 #DWB: 1
-        - boreal-dry-winter-warm-summer-highlands: 1 #DRY_BOREAL_HIGHLANDS: 1
+        - boreal-dry-winter-warm-summer-flat: 1 
+        - boreal-dry-winter-warm-summer: 1 
+        - boreal-dry-winter-warm-summer: 1 
+        - boreal-dry-winter-warm-summer-highlands: 1 
       boreal-dry-winter-cold-summer:
-        - boreal-dry-winter-cold-summer-flat: 1 #DWC: 1
-        - boreal-dry-winter-cold-summer: 1 #DWC: 1
-        - boreal-dry-winter-cold-summer-highlands: 1 #DRY_BOREAL_HIGHLANDS: 1
+        - boreal-dry-winter-cold-summer-flat: 1 
+        - boreal-dry-winter-cold-summer: 1 
+        - boreal-dry-winter-cold-summer: 1 
+        - boreal-dry-winter-cold-summer-highlands: 1 
       boreal-dry-winter-very-cold-summer:
-        - boreal-dry-winter-very-cold-summer-flat: 1 #DWD: 1
-        - boreal-dry-winter-very-cold-summer: 1 #DWD: 1
-        - boreal-dry-winter-very-cold-summer-highlands: 1 #DRY_BOREAL_HIGHLANDS: 1
+        - boreal-dry-winter-very-cold-summer-flat: 1 
+        - boreal-dry-winter-very-cold-summer: 1 
+        - boreal-dry-winter-very-cold-summer: 1 
+        - boreal-dry-winter-very-cold-summer-highlands: 1 
       boreal-coast:
-        - boreal-coast-flat: 1 #FLAT_BOREAL_COAST: 1
-        - boreal-coast: 1 #BOREAL_COAST: 1
-        - boreal-coast-highlands: 1 #BOREAL_COAST: 1
+        - boreal-coast-flat: 1 
+        - boreal-coast-flat: 1 
+        - boreal-coast: 1 
+        - boreal-coast-highlands: 1 
 
       temperate-mediterranean-hot-summer:
-        - temperate-mediterranean-hot-summer-flat: 1 #CSA: 1
-        - temperate-mediterranean-hot-summer: 1 #CSA: 1
-        - temperate-mediterranean-hot-summer-highlands: 1 #MEDITERRANEAN_HIGHLANDS: 1
+        - temperate-mediterranean-hot-summer-flat: 1 
+        - temperate-mediterranean-hot-summer: 1 
+        - temperate-mediterranean-hot-summer: 1 
+        - temperate-mediterranean-hot-summer-highlands: 1 
       temperate-mediterranean-warm-summer:
-        - temperate-mediterranean-warm-summer-flat: 1 #CSB: 1
-        - temperate-mediterranean-warm-summer: 1 #CSB: 1
-        - temperate-mediterranean-warm-summer-highlands: 1 #MEDITERRANEAN_HIGHLANDS: 1
+        - temperate-mediterranean-warm-summer-flat: 1 
+        - temperate-mediterranean-warm-summer: 1 
+        - temperate-mediterranean-warm-summer: 1 
+        - temperate-mediterranean-warm-summer-highlands: 1 
       temperate-hot-summer:
-        - temperate-hot-summer-flat: 1 #CFA: 1
-        - temperate-hot-summer: 1 #CFA: 1
-        - temperate-hot-summer-highlands: 1 #TEMPERATE_HIGHLANDS: 1
+        - temperate-hot-summer-flat: 1 
+        - temperate-hot-summer: 1 
+        - temperate-hot-summer: 1 
+        - temperate-hot-summer-highlands: 1 
       temperate-warm-summer:
-        - temperate-warm-summer-flat: 1 #CFB: 1
-        - temperate-warm-summer: 1 #CFB: 1
-        - temperate-warm-summer-highlands: 1 #TEMPERATE_HIGHLANDS: 1
+        - temperate-warm-summer-flat: 1 
+        - temperate-warm-summer: 1 
+        - temperate-warm-summer: 1 
+        - temperate-warm-summer-highlands: 1 
       temperate-cold-summer:
-        - temperate-cold-summer-flat: 1 #CFC: 1
-        - temperate-cold-summer: 1 #CFC: 1
-        - temperate-cold-summer-highlands: 1 #TEMPERATE_HIGHLANDS: 1
+        - temperate-cold-summer-flat: 1 
+        - temperate-cold-summer: 1 
+        - temperate-cold-summer: 1 
+        - temperate-cold-summer-highlands: 1 
       temperate-coast:
-        - temperate-coast-flat: 1 #FLAT_TEMPERATE_COAST: 1
-        - temperate-coast: 1 #TEMPERATE_COAST: 1
-        - temperate-coast-highlands: 1 #TEMPERATE_COAST: 1
+        - temperate-coast-flat: 1 
+        - temperate-coast-flat: 1 
+        - temperate-coast: 1 
+        - temperate-coast-highlands: 1 
 
       hot-desert:
-        - hot-desert-flat: 1 #BWH: 1
-        - hot-desert: 1 #BWH: 1
-        - hot-desert-highlands: 1 #HOT_DESERT_HIGHLANDS: 1
+        - hot-desert-flat: 1 
+        - hot-desert: 1 
+        - hot-desert: 1 
+        - hot-desert-highlands: 1 
       hot-steppe:
-        - hot-steppe-flat: 1 #BSH: 1
-        - hot-steppe: 1 #BSH: 1
-        - hot-steppe-highlands: 1 #HOT_DESERT_HIGHLANDS: 1
+        - hot-steppe-flat: 1 
+        - hot-steppe: 1 
+        - hot-steppe: 1 
+        - hot-steppe-highlands: 1 
       cold-desert:
-        - cold-desert-flat: 1 #BWK: 1
-        - cold-desert: 1 #BWK: 1
-        - cold-desert-highlands: 1 #COLD_DESERT_HIGHLANDS: 1
+        - cold-desert-flat: 1 
+        - cold-desert: 1 
+        - cold-desert: 1 
+        - cold-desert-highlands: 1 
       cold-steppe:
-        - cold-steppe-flat: 1 #BSK: 1
-        - cold-steppe: 1 #BSK: 1
-        - cold-steppe-highlands: 1 #COLD_DESERT_HIGHLANDS: 1
+        - cold-steppe-flat: 1 
+        - cold-steppe: 1 
+        - cold-steppe: 1 
+        - cold-steppe-highlands: 1 
       arid-coast:
-        - arid-coast-flat: 1 #FLAT_ARID_COAST: 1
-        - arid-coast: 1 #ARID_COAST: 1
-        - arid-coast-highlands: 1 #ARID_COAST: 1
+        - arid-coast-flat: 1 
+        - arid-coast-flat: 1 
+        - arid-coast: 1 
+        - arid-coast-highlands: 1 
   
       tropical-rainforest:
-        - tropical-rainforest-flat: 1 #AF: 1
-        - tropical-rainforest: 1 #AF: 1
-        - tropical-rainforest-highlands: 1 #AF: 1
+        - tropical-rainforest-flat: 1 
+        - tropical-rainforest: 1 
+        - tropical-rainforest: 1 
+        - tropical-rainforest-highlands: 1 
       tropical-monsoon:
-        - tropical-monsoon-flat: 1 #AM: 1
-        - tropical-monsoon: 1 #AM: 1
-        - tropical-monsoon-highlands: 1 #AM: 1
+        - tropical-monsoon-flat: 1 
+        - tropical-monsoon: 1 
+        - tropical-monsoon: 1 
+        - tropical-monsoon-highlands: 1 
       tropical-savanna-dry:
-        - tropical-savanna-dry-flat: 1 #AW: 1
-        - tropical-savanna-dry: 1 #AW: 1
-        - tropical-savanna-dry-highlands: 1 #AW: 1
+        - tropical-savanna-dry-flat: 1 
+        - tropical-savanna-dry: 1 
+        - tropical-savanna-dry: 1 
+        - tropical-savanna-dry-highlands: 1 
       tropical-savanna-wet:
-        - tropical-savanna-wet-flat: 1 #AW: 1
-        - tropical-savanna-wet: 1 #AW: 1
-        - tropical-savanna-wet-highlands: 1 #AW: 1
+        - tropical-savanna-wet-flat: 1 
+        - tropical-savanna-wet: 1 
+        - tropical-savanna-wet: 1 
+        - tropical-savanna-wet-highlands: 1 
       tropical-coast:
-        - tropical-coast-flat: 1 #FLAT_TROPICAL_COAST: 1
-        - tropical-coast: 1 #TROPICAL_COAST: 1
-        - tropical-coast-highlands: 1 #TROPICAL_COAST: 1
+        - tropical-coast-flat: 1 
+        - tropical-coast-flat: 1 
+        - tropical-coast: 1 
+        - tropical-coast-highlands: 1 
