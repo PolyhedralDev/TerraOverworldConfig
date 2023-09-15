@@ -2,12 +2,12 @@ samplers:
   rawPrecipitation:
     dimensions: 2
     type: EXPRESSION
-    expression: sampler(x / precipitationScale / globalScale, z / precipitationScale / globalScale) * precipitationSpread + precipitationOffset
+    expression: sampler(x / scale / globalScale, z / scale / globalScale) * spread + offset
     variables:
       globalScale: $customization.yml:global-scale
-      precipitationScale: $customization.yml:precipitation-scale
-      precipitationOffset: $customization.yml:precipitation-offset
-      precipitationSpread: $customization.yml:precipitation-spread
+      scale: $customization.yml:precipitation-scale
+      offset: $customization.yml:precipitation-offset
+      spread: $customization.yml:precipitation-spread
     samplers:
       sampler:
         dimensions: 2
