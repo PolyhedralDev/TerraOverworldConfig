@@ -29,7 +29,7 @@ terrain:
       scale *
       combine(
         combine(
-          elevation(x, z),
+          elevationDetailed(x, z),
           mountainPeakStart, 0,
           mountainPeakEnd, mountainPeaks(x,z) * mountainPeakFactor
         ),

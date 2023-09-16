@@ -25,7 +25,5 @@ terrain:
 
   sampler-2d:
     type: EXPRESSION
-    expression: |
-      scale *
-      elevation(x, z)
+    expression: scale * elevationDetailed(x, z)
     variables: *variables

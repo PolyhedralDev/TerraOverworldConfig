@@ -5,19 +5,6 @@ abstract: true
 vars: &variables
   base: $customization.yml:terrain-base-y-level
   scale: $customization.yml:terrain-height
-  
-  detailFactor: 0.1
-  detailStart: 0
-  detailEnd: 0.5
-  mountainPeakStart: 0.5
-  mountainPeakEnd: 1
-  mountainPeakFactor: 0.2
-  
-  terraceBaseScale: 0.2
-  terraceScaleVariation: 0.1
-  terraceOffsetVariation: 1
-  terraceDepthVariation: 1
-  terraceDepthStart: 0.1 # At what elevation should it start to be terraced
 
 terrain:
   sampler:
@@ -41,90 +28,5 @@ terrain:
 
   sampler-2d:
     type: EXPRESSION
-    expression: |
-      scale *
-      (
-        terrace(
-          combine(
-            combine(
-              elevation(x, z),
-              detailStart, 0,
-              detailEnd, detail(x, z) * detailFactor
-            ),
-            mountainPeakStart, 0,
-            mountainPeakEnd, mountainPeaks(x,z) * mountainPeakFactor
-          ),
-          terraceBaseScale + terraceScale(x, z) * terraceScaleVariation,
-          terraceOffset(x, z) * terraceOffsetVariation,
-          0,
-          (terraceDepth(x, z)^3) * terraceDepthVariation,
-          0, terraceDepthStart
-        )
-      )
+    expression: scale * elevationDetailed(x, z)
     variables: *variables
-    samplers:
-      terraceScale:
-        dimensions: 2
-        type: OPEN_SIMPLEX_2
-        frequency: 0.002
-        salt: 1926
-      terraceDepth:
-        dimensions: 2
-        type: PROBABILITY
-        sampler:
-          type: OPEN_SIMPLEX_2
-          frequency: 0.001
-          salt: 5812
-      terraceOffset:
-        dimensions: 2
-        type: FBM
-        sampler:
-          type: OPEN_SIMPLEX_2
-          frequency: 0.001
-          salt: 8512
-      detail:
-        dimensions: 2
-        type: FBM
-        octaves: 4
-        lacunarity: 2
-        sampler:
-          type: OPEN_SIMPLEX_2
-          frequency: 0.008
-          salt: 5912
-      mountainPeaks:
-        dimensions: 2
-        type: FBM
-        octaves: 3
-        sampler:
-          type: EXPRESSION
-          expression: (lerp(sampler(x, z), -1, 1, 1, -1)^4)*2-1
-          samplers:
-            sampler:
-              dimensions: 2
-              type: CELLULAR
-              distance: Euclidean
-              frequency: 0.01
-    functions:
-      terrace: # Terrace function but with depth masked by input value, so terracing doesn't cut down below ocean level
-        arguments:
-          - i  # Input
-          - sc # Scale
-          - o  # Offset
-          - g  # Gap
-          - d  # Terrace depth
-          - tz # Value of i where depth = 0
-          - tf # Value of i where depth = d
-        expression: terraceParalinear(i,sc,o,g,lerp(i,tz,0,tf,d))
-        functions:
-          "<<":
-            - math/functions/terrace.yml:functions
-            - math/functions/interpolation.yml:functions
-      combine: # Stacks a layer of noise on top scaled according to the base noise
-        arguments:
-          - x
-          - at
-          - a
-          - bt
-          - b
-        expression: x+lerp(x,at,a,bt,b)
-        functions: $math/functions/interpolation.yml:functions

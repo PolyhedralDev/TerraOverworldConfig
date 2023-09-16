@@ -77,4 +77,4 @@ terrain:
     type: EXPRESSION
     variables: *variables
     samplers: *samplers
-    expression: elevation(x, z) * scale
+    expression: elevationDetailed(x, z) * scale

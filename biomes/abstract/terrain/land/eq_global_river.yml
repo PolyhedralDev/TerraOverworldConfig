@@ -21,7 +21,7 @@ terrain:
         1 + erosion(x/3, y, z/3)^2,
         100+ceilingVariation(x, z)*100
       )
-    samplers: &samplers
+    samplers:
       erosion:
         dimensions: 3
         type: FBM
@@ -54,4 +54,7 @@ terrain:
           )
         functions: $math/functions/interpolation.yml:functions
   
-  sampler-2d: $biomes/abstract/terrain/land/eq_land.yml:terrain.sampler-2d
+  sampler-2d:
+    type: EXPRESSION
+    expression: scale * elevationDetailed(x, z)
+    variables: *variables
