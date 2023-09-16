@@ -46,9 +46,9 @@ stages:
       XERIC_MOUNTAINS:
         - SELF: 1
         - XERIC_MOUNTAINS_RIVER: 1
-      BADLANDS_MOUNTAINS:
+      BADLANDS:
         - SELF: 1
-        - BADLANDS_MOUNTAINS_RIVER: 1
+        - BADLANDS_RIVER: 1
       DRY_TEMPERATE_MOUNTAINS:
         - SELF: 1
         - DRY_TEMPERATE_MOUNTAINS_RIVER: 1

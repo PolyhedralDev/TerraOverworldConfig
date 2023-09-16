@@ -226,16 +226,25 @@ stages:
           - DESERT: 5
           - SALT_FLATS: 1
         hot-desert:
-          - DESERT: 10
+          - ARID_SPIKES: 1
+          - BADLANDS: 1
+          - BADLANDS_BUTTES: 1
+          - RED_DESERT: 1
+          - DESERT: 1
           - DESERT_PILLARS: 1
           - DESERT_SPIKES: 1
           - DESERT_SPIKES_GOLD: 1
-          - ROCKY_DESERT: 4
+          - DESERT_TERRACES: 1
+          - ROCKY_DESERT: 1
         hot-desert-highlands:
-          - ARID_HIGHLANDS: 1
+          - ARID_SPIKES: 1
+          - BADLANDS: 1
           - BADLANDS_BUTTES: 1
-          - BADLANDS_MOUNTAINS: 1
-          - CRACKED_BADLANDS_PLATEAU: 1
+          - DESERT_PILLARS: 1
+          - DESERT_SPIKES: 1
+          - DESERT_SPIKES_GOLD: 1
+          - DESERT_TERRACES: 1
+          - ROCKY_DESERT: 1
       
         hot-steppe-flat:
           - XERIC_SHRUBLAND: 1

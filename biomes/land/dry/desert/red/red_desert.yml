@@ -1,0 +1,8 @@
+id: RED_DESERT
+type: BIOME
+extends: DESERT
+color: $biomes/colors.yml:RED_DESERT
+
+palette:
+  - RED_SAND: $meta.yml:top-y
+  - << meta.yml:palette-bottom

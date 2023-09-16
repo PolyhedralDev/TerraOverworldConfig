@@ -35,7 +35,7 @@ slant:
       - << meta.yml:palette-bottom
   - threshold: 0.1
     palette:
-      - BADLANDS_STRATA: $meta.yml:top-y
+      - BADLANDS_WAVY_STRATA: $meta.yml:top-y
       - TERRACOTTA_STRATA: ${meta.yml:ocean-level} + 27
       - << meta.yml:palette-bottom
 

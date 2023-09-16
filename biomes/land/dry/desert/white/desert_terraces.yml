@@ -1,13 +1,17 @@
-id: ARID_HIGHLANDS
+id: DESERT_TERRACES
 type: BIOME
 extends:
   - ENVIRONMENT_LAND_DRY_DESERT
   - EQ_STRATIFIED_LAND
   - CARVING_LAND
   - BASE
-color: $biomes/colors.yml:ARID_HIGHLANDS
+color: $biomes/colors.yml:DESERT_TERRACES
 
 vanilla: minecraft:desert
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER
 
 palette:
   - SAND: $meta.yml:top-y
