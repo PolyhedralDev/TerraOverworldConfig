@@ -60,7 +60,7 @@ terrain:
         expression: |
           -lerp3(y,
             base+height*scale, 0,
-            weightedAvg(base+height*scale, 1, base-depth, 4), erosion * (-y+base+height*scale) * lerp(height, 0.05, 0, 0.3, 4),
+            weightedAvg(base+height*scale, 1, base-depth, 2), erosion * (-y+base+height*scale) * lerp(height, 0.1, 0, 0.3, 4),
             base-depth, 0
           )
         functions: 
