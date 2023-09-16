@@ -157,6 +157,7 @@ stages:
           - ALIEN_MARSH: 1
         temperate-hot-summer:
           - WOODED_BUTTES: 1
+          - TEMPERATE_OVERPASS: 1
         temperate-hot-summer-highlands:
           - HIGHLANDS: 1
           - TEMPERATE_ALPHA_MOUNTAINS: 1
