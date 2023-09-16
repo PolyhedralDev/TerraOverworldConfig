@@ -1,10 +1,27 @@
-# The sampler that controls how rivers generate, you can find various presets
-# in the biome-distribution/stages/river-samplers/ folder.
 riverSampler: &riverSampler
   type: EXPRESSION
-  expression: riverBiomeMap(x, z)
-# To pick the preset, simply change the file reference above ^
-# You can further edit and customize the parameters of a river sampler preset within its own file.
+  expression: segment(riverBiomeMap(x, z), riverValue, borderValue, (elevation(x, z) < lowlandsThreshold) && (borderMask(x, z) < borderMaskThreshold))
+  variables:
+    riverValue: $math/samplers/rivers.yml:variables.riverValue
+    borderValue: $math/samplers/rivers.yml:variables.borderValue
+    borderMaskThreshold: 0.2
+    lowlandsThreshold: $customization.yml:elevation-lowlands-threshold
+  functions:
+    segment:
+      arguments:
+        - river
+        - riverValue
+        - borderValue
+        - borderPredicate
+      expression: if(river <= riverValue, 1, if((river <= borderValue) && borderPredicate, -0.4, -1))
+  samplers:
+    borderMask:
+      dimensions: 2
+      type: PROBABILITY
+      sampler:
+        type: OPEN_SIMPLEX_2
+        salt: 4812
+        frequency: 0.003
 
 # Tags are used by biomes to determine the kind of river to use, except for biomes with
 # their own specific river biome. These tags are formatted by the type of river, and optionally

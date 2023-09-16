@@ -1,12 +1,11 @@
 variables: &variables
-  riverValue: 1 # Value the sampler outputs where there should be a river.
-  wetlandValue: -0.4 # Value the sampler outputs for areas bordering rivers, used for wetland biomes.
-  notRiverValue: -1 # Value the sampler outputs for areas where there is not a river.
+  notRiverValue: 2 # Value the sampler outputs for areas where there is not a river.
+  borderValue: 1 # Value the sampler outputs for areas bordering rivers.
+  riverValue: 0 # Value the sampler outputs where there should be a river.
   
   riverFrequency: 1 / 40 / ${customization.yml:river-spread-scale} / ${customization.yml:global-scale}
-  riverThreshold: 0.35 # Determines the area calculated as river, which also determines how far from rivers wetlands can be.
+  riverThreshold: 0.35 # Determines the area calculated as river, which also determines how far away river borders will be.
   riverMaxWidth: ${customization.yml:river-max-width} * ${customization.yml:global-scale} # Determines the width of rivers within riverThreshold.
-  wetlandThreshold: 0.2 # Determines how much area within riverThreshold will be wetlands.
 
   erosionEnd: 0.5
   erosionStart: 0
@@ -52,35 +51,15 @@ samplers:
     dimensions: 2
     type: EXPRESSION
     expression: |
-      if(
-        |riverNoise(x*riverFrequency, z*riverFrequency)|>riverThreshold,
+      if(|riverNoise(x*riverFrequency, z*riverFrequency)|>riverThreshold,
         notRiverValue,
-        if(
-          riverKerneled((x-riverMaxWidth)/riverMaxWidth, (z-riverMaxWidth)/riverMaxWidth)!=0,
+        if(riverKerneled((x-riverMaxWidth)/riverMaxWidth, (z-riverMaxWidth)/riverMaxWidth)!=0,
           riverValue,
-          if(
-            wetlandMask(x*riverFrequency,z*riverFrequency)<wetlandThreshold,
-            wetlandValue,
-            notRiverValue
-          )
+          borderValue
         )
       )
     variables: *variables
     samplers:
-      wetlandMask:
-        dimensions: 2
-        type: PROBABILITY
-        sampler:
-          type: DOMAIN_WARP
-          amplitude: 2
-          warp:
-            type: OPEN_SIMPLEX_2
-            salt: 9123
-            frequency: 0.2
-          sampler:
-            type: OPEN_SIMPLEX_2
-            salt: 4812
-            frequency: 0.02
       riverNoise: *riverNoise
       riverKerneled:
         dimensions: 2
