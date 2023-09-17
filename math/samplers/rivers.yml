@@ -4,8 +4,9 @@ variables: &variables
   riverValue: 0 # Value the sampler outputs where there should be a river.
   
   riverFrequency: 1 / 40 / ${customization.yml:river-spread-scale} / ${customization.yml:global-scale}
-  riverThreshold: 0.35 # Determines the area calculated as river, which also determines how far away river borders will be.
-  riverMaxWidth: ${customization.yml:river-max-width} * ${customization.yml:global-scale} # Determines the width of rivers within riverThreshold.
+  riverThreshold: 0.3 # Determines the area calculated as river, which also determines how far away river borders will be.
+  riverMinWidth: ${customization.yml:river-min-width} * ${customization.yml:global-scale} # Determines the minimum width of rivers within riverThreshold.
+  riverMaxWidth: ${customization.yml:river-max-width} * ${customization.yml:global-scale} # Determines the maximum width of rivers within riverThreshold.
 
   erosionEnd: 0.5
   erosionStart: 0
@@ -51,27 +52,43 @@ samplers:
     dimensions: 2
     type: EXPRESSION
     expression: |
-      if(|riverNoise(x*riverFrequency, z*riverFrequency)|>riverThreshold,
-        notRiverValue,
-        if(riverKerneled((x-riverMaxWidth)/riverMaxWidth, (z-riverMaxWidth)/riverMaxWidth)!=0,
-          riverValue,
-          borderValue
-        )
+      riverBiomeMap(
+        x,
+        lerp(width(x*riverFrequency, z*riverFrequency), -0.75, riverMinWidth, 0.75, riverMaxWidth),
+        z
       )
     variables: *variables
+    functions: $math/functions/interpolation.yml:functions
     samplers:
-      riverNoise: *riverNoise
-      riverKerneled:
+      width:
         dimensions: 2
-        type: KERNEL # Edge detection
-        kernel: [
-          [ 0,  1, 0 ],
-          [ 1, -4, 1 ],
-          [ 0,  1, 0 ]
-        ]
-        sampler:
-          type: EXPRESSION
-          expression: riverNoise(x*riverMaxWidth*riverFrequency, z*riverMaxWidth*riverFrequency)>0
-          variables: *variables
-          samplers:
-            riverNoise: *riverNoise
+        type: OPEN_SIMPLEX_2
+        frequency: 0.05
+      riverBiomeMap:
+        dimensions: 3 # Y dimension is used as the width
+        type: EXPRESSION
+        expression: |
+          if(|riverNoise(x*riverFrequency, z*riverFrequency)|>riverThreshold,
+            notRiverValue,
+            if(riverKerneled((x-y)/y, y, (z-y)/y)!=0,
+              riverValue,
+              borderValue
+            )
+          )
+        variables: *variables
+        samplers:
+          riverNoise: *riverNoise
+          riverKerneled:
+            dimensions: 3
+            type: KERNEL # Edge detection
+            kernel: [
+              [ 0,  1, 0 ],
+              [ 1, -4, 1 ],
+              [ 0,  1, 0 ]
+            ]
+            sampler:
+              type: EXPRESSION
+              expression: riverNoise(x*y*riverFrequency, z*y*riverFrequency)>0
+              variables: *variables
+              samplers:
+                riverNoise: *riverNoise
