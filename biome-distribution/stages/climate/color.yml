@@ -1,0 +1,20 @@
+stages:
+  - type: REPLACE_LIST
+    sampler:
+      type: OPEN_SIMPLEX_2
+      salt: 6893
+      frequency: 1 / 1000 / ${customization.yml:variation-scale} / ${customization.yml:global-scale}
+    default-from: hot-desert-flat
+    default-to:
+      - hot-desert-flat-red: &red 3
+      - hot-desert-flat-orange: &orange 1
+      - hot-desert-flat-white: &white 3
+    to:
+      hot-desert:
+        - hot-desert-red: *red
+        - hot-desert-orange: *orange
+        - hot-desert-white: *white
+      hot-desert-highlands:
+        - hot-desert-highlands-red: *red
+        - hot-desert-highlands-orange: *orange
+        - hot-desert-highlands-white: *white

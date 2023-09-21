@@ -222,30 +222,46 @@ stages:
         temperate-deep-ocean:
           - DEEP_OCEAN: 1
 
-        hot-desert-flat:
-          - DESERT: 5
+        # Red hot desert
+        hot-desert-flat-red:
+          - RED_DESERT: 5
           - SALT_FLATS: 1
-        hot-desert:
+        hot-desert-red:
           - ARID_SPIKES: 1
           - BADLANDS: 1
           - BADLANDS_BUTTES: 1
           - RED_DESERT: 1
+        hot-desert-highlands-red:
+          - ARID_SPIKES: 1
+          - BADLANDS: 1
+          - BADLANDS_BUTTES: 1
+      
+        # Orange hot desert
+        hot-desert-flat-orange:
+          - ORANGE_DESERT: 5
+          - SALT_FLATS: 1
+        hot-desert-orange:
+            ORANGE_DESERT: 1
+        hot-desert-highlands-orange: todo
+
+        # White hot desert
+        hot-desert-flat-white:
+          - DESERT: 5
+          - SALT_FLATS: 1
+        hot-desert-white:
           - DESERT: 1
           - DESERT_PILLARS: 1
           - DESERT_SPIKES: 1
           - DESERT_SPIKES_GOLD: 1
           - DESERT_TERRACES: 1
           - ROCKY_DESERT: 1
-        hot-desert-highlands:
-          - ARID_SPIKES: 1
-          - BADLANDS: 1
-          - BADLANDS_BUTTES: 1
+        hot-desert-highlands-white:
           - DESERT_PILLARS: 1
           - DESERT_SPIKES: 1
           - DESERT_SPIKES_GOLD: 1
           - DESERT_TERRACES: 1
           - ROCKY_DESERT: 1
-      
+
         hot-steppe-flat:
           - XERIC_SHRUBLAND: 1
           - ARID_SPIKES: 1
