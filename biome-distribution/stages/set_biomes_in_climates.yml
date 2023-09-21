@@ -246,7 +246,8 @@ stages:
 
         # White hot desert
         hot-desert-flat-white:
-          - DESERT: 5
+          - DESERT: 4
+          - PEARLESCENT_DESERT: 1
           - SALT_FLATS: 1
         hot-desert-white:
           - DESERT: 1
@@ -255,12 +256,14 @@ stages:
           - DESERT_SPIKES_GOLD: 1
           - DESERT_TERRACES: 1
           - ROCKY_DESERT: 1
+          - PEARLESCENT_DESERT: 1
         hot-desert-highlands-white:
           - DESERT_PILLARS: 1
           - DESERT_SPIKES: 1
           - DESERT_SPIKES_GOLD: 1
           - DESERT_TERRACES: 1
           - ROCKY_DESERT: 1
+          - PEARLESCENT_DESERT: 1
 
         hot-steppe-flat:
           - XERIC_SHRUBLAND: 1
