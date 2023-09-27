@@ -11,7 +11,7 @@ vanilla: minecraft:badlands
 
 tags:
   - LAND_CAVES
-  - USE_RIVER
+  - USE_RED_DESERT_RIVER
 
 palette:
   - ARID: $meta.yml:top-y

@@ -3,6 +3,10 @@ type: BIOME
 extends: DESERT
 color: $biomes/colors.yml:RED_DESERT
 
+tags:
+  - LAND_CAVES
+  - USE_RIVER
+
 palette:
   - RED_SAND: $meta.yml:top-y
   - << meta.yml:palette-bottom

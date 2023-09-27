@@ -11,7 +11,7 @@ vanilla: minecraft:desert
 
 tags:
   - LAND_CAVES
-  - USE_RIVER
+  - USE_DESERT_RIVER
 
 palette:
   - SAND: $meta.yml:top-y
