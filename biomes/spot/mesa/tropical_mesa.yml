@@ -1,11 +1,11 @@
-id: TROPICAL_PLATEAU
+id: TROPICAL_MESA
 type: BIOME
 extends:
-  - EQ_SPOT_PLATEAU
+  - EQ_SPOT_MESA
   - CARVING_OCEAN
   - JUNGLE
   - BASE
-color: $biomes/colors.yml:TROPICAL_PLATEAU
+color: $biomes/colors.yml:TROPICAL_MESA
 
 tags: []
 

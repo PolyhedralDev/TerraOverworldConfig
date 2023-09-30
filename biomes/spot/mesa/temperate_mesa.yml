@@ -1,10 +1,10 @@
-id: TEMPERATE_PLATEAU
+id: TEMPERATE_MESA
 type: BIOME
 extends:
-  - EQ_SPOT_PLATEAU
+  - EQ_SPOT_MESA
   - CARVING_OCEAN
   - BASE
-color: $biomes/colors.yml:TEMPERATE_PLATEAU
+color: $biomes/colors.yml:TEMPERATE_MESA
 
 tags: []
 
@@ -12,7 +12,8 @@ vanilla: minecraft:plains
 
 palette:
   - GRASS: $meta.yml:top-y
-  - SAND: ${meta.yml:ocean-level} + 2
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
 
 slant:

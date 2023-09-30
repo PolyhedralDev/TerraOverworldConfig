@@ -13,7 +13,7 @@ stages:
     from: spot
     to:
       - volcano: 1
-      - plateau: 1
+      - mesa: 1
     sampler:
       type: EXPRESSION
       expression: spotSizePercent(x, z)*2-1

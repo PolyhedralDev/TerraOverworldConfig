@@ -1,11 +1,11 @@
-id: DESERT_PLATEAU
+id: DESERT_MESA
 type: BIOME
 extends:
-  - EQ_SPOT_PLATEAU
+  - EQ_SPOT_MESA
   - CARVING_OCEAN
   - ROCKY_DESERT
   - BASE
-color: $biomes/colors.yml:DESERT_PLATEAU
+color: $biomes/colors.yml:DESERT_MESA
 
 tags: []
 

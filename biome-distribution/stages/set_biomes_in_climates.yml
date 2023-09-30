@@ -28,8 +28,8 @@ stages:
         polar-coast-highlands:
           - SNOWY_SEA_CAVES: 1
   
-        polar-plateau:
-          - COLD_DESERT_PLATEAU: 1
+        polar-mesa:
+          - COLD_DESERT_MESA: 1
           
         polar-crater-lake:
           - TEMPERATE_CRATER_LAKE: 1
@@ -116,8 +116,8 @@ stages:
         boreal-coast-highlands:
           - ROCKY_SEA_CAVES: 1
   
-        boreal-plateau:
-          - BOREAL_PLATEAU: 1
+        boreal-mesa:
+          - BOREAL_MESA: 1
         
         boreal-crater-lake:
           - TEMPERATE_CRATER_LAKE: 1
@@ -208,8 +208,8 @@ stages:
         temperate-coast-highlands:
           - TEMPERATE_SEA_ARCHES: 1
 
-        temperate-plateau:
-          - TEMPERATE_PLATEAU: 1
+        temperate-mesa:
+          - TEMPERATE_MESA: 1
         
         temperate-crater-lake:
           - TEMPERATE_CRATER_LAKE: 1
@@ -288,8 +288,8 @@ stages:
         cold-steppe-highlands:
           - todo: 1
 
-        cold-desert-plateau:
-          - COLD_DESERT_PLATEAU: 1
+        cold-desert-mesa:
+          - COLD_DESERT_MESA: 1
         
         cold-desert-crater-lake:
           - TEMPERATE_CRATER_LAKE: 1
@@ -304,8 +304,8 @@ stages:
         arid-coast-highlands:
           - TERRACOTTA_SEA_CAVES: 1
 
-        desert-plateau:
-          - DESERT_PLATEAU: 1
+        desert-mesa:
+          - DESERT_MESA: 1
         
         desert-crater-lake:
           - TEMPERATE_CRATER_LAKE: 1
@@ -357,8 +357,8 @@ stages:
         tropical-coast: LUSH_SEA_CAVES
         tropical-coast-highlands: LUSH_SEA_CAVES
 
-        tropical-plateau:
-          - TROPICAL_PLATEAU: 1
+        tropical-mesa:
+          - TROPICAL_MESA: 1
         
         tropical-crater-lake:
           - TEMPERATE_CRATER_LAKE: 1

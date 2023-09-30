@@ -1,11 +1,11 @@
-id: COLD_DESERT_PLATEAU
+id: COLD_DESERT_MESA
 type: BIOME
 extends:
-  - EQ_SPOT_PLATEAU
+  - EQ_SPOT_MESA
   - CARVING_OCEAN
   - SNOWY_MOUNTAINS
   - BASE
-color: $biomes/colors.yml:COLD_DESERT_PLATEAU
+color: $biomes/colors.yml:COLD_DESERT_MESA
 
 tags: []
 

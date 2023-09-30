@@ -1,10 +1,10 @@
-id: BOREAL_PLATEAU
+id: BOREAL_MESA
 type: BIOME
 extends:
-  - EQ_SPOT_PLATEAU
+  - EQ_SPOT_MESA
   - CARVING_OCEAN
   - BASE
-color: $biomes/colors.yml:BOREAL_PLATEAU
+color: $biomes/colors.yml:BOREAL_MESA
 
 tags: []
 

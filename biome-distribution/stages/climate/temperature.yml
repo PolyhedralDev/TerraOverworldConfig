@@ -45,19 +45,19 @@ stages:
         - hot-ocean:                 *tropicalCold
         - hot-ocean:                 *tropicalWarm  
         - hot-ocean:                 *tropicalHot
-      plateau:
-        - polar-plateau:             *iceCap
-        - polar-plateau:             *tundra
-        - boreal-plateau:            *borealVeryCold
-        - boreal-plateau:            *borealCold
-        - boreal-plateau:            *borealWarm
-        - boreal-plateau:            *borealHot
-        - temperate-plateau:         *temperateCold
-        - temperate-plateau:         *temperateWarm
-        - temperate-plateau:         *temperateHot
-        - hot-plateau:               *tropicalCold
-        - hot-plateau:               *tropicalWarm
-        - hot-plateau:               *tropicalHot
+      mesa:
+        - polar-mesa:             *iceCap
+        - polar-mesa:             *tundra
+        - boreal-mesa:            *borealVeryCold
+        - boreal-mesa:            *borealCold
+        - boreal-mesa:            *borealWarm
+        - boreal-mesa:            *borealHot
+        - temperate-mesa:         *temperateCold
+        - temperate-mesa:         *temperateWarm
+        - temperate-mesa:         *temperateHot
+        - hot-mesa:               *tropicalCold
+        - hot-mesa:               *tropicalWarm
+        - hot-mesa:               *tropicalHot
       crater-lake:
         - polar-crater-lake:         *iceCap
         - polar-crater-lake:         *tundra

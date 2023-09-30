@@ -30,12 +30,12 @@ stages:
         - tropical-coast: 1
         - tropical-coast: 2
         - tropical-coast: 3
-      hot-plateau:
-        - desert-plateau: 5
-        - temperate-plateau: 1
-        - tropical-plateau: 1
-        - tropical-plateau: 2
-        - tropical-plateau: 3
+      hot-mesa:
+        - desert-mesa: 5
+        - temperate-mesa: 1
+        - tropical-mesa: 1
+        - tropical-mesa: 2
+        - tropical-mesa: 3
       hot-crater-lake:
         - desert-crater-lake: 5
         - temperate-crater-lake: 1
@@ -65,11 +65,11 @@ stages:
         - temperate-mediterranean-warm-summer: 1
         - temperate-cold-summer: 5
 
-      temperate-plateau:
-        - temperate-plateau: 4
-        - temperate-plateau: 1
-        - temperate-plateau: 1
-        - temperate-plateau: 5
+      temperate-mesa:
+        - temperate-mesa: 4
+        - temperate-mesa: 1
+        - temperate-mesa: 1
+        - temperate-mesa: 5
       temperate-crater-lake:
         - temperate-crater-lake: 4
         - temperate-crater-lake: 1
