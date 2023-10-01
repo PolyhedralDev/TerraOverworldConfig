@@ -1,0 +1,90 @@
+id: EQ_CRATERS
+type: BIOME
+abstract: true
+
+vars: &variables
+  base: $customization.yml:terrain-base-y-level
+  scale: $customization.yml:terrain-height
+
+  craterScale: 0.2
+
+  rimRadius: 0.1
+  rimHeight: 0.5
+  rimOutsideWidth: 0.05
+
+  erosionDepth: 0.5
+
+cellular: &cellular
+  type: CELLULAR
+  distance: Euclidean
+  frequency: 0.0025
+
+terrain:
+  sampler:
+    type: EXPRESSION
+    expression: -y + base
+    variables: *variables
+
+  sampler-2d:
+    type: EXPRESSION
+    expression: scale * (elevationDetailed(x, z) + craters(x, z) * craterScale)
+    variables: *variables
+    samplers:
+      craters:
+        dimensions: 2
+        type: DOMAIN_WARP
+        amplitude: 2.5
+        warp:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.03
+        sampler:
+          type: FBM
+          octaves: 4
+          lacunarity: 1.5
+          gain: 0.8
+          sampler:
+            type: EXPRESSION
+            expression: |
+              parabolicMap3(cellDist(x, z),
+                0, -1 + herp(cellDist(x, z),
+                  rimRadius * 0.2, 0,
+                  rimRadius, erosion(x, z) * erosionDepth
+                ),
+                rimRadius, rimHeight,
+                rimRadius + rimOutsideWidth, 0
+              )
+            variables: *variables
+            samplers:
+              cellDist:
+                dimensions: 2
+                type: PROBABILITY
+                sampler:
+                  <<: *cellular
+              erosion:
+                dimensions: 2
+                type: EXPRESSION
+                expression: |
+                  noise(
+                    cellDist(x, z) * distFrequency + cellValue(x, z) * offsetAmplitude,
+                    sin(cellAngle(x, z)) * angleFrequency + cellValue(x, z) * offsetAmplitude,
+                    cos(cellAngle(x, z)) * angleFrequency + cellValue(x, z) * offsetAmplitude
+                  )
+                variables:
+                  distFrequency: 200
+                  angleFrequency: 300
+                  offsetAmplitude: 10000 # Translates sample position per cell so the erosion pattern is unique for each cell
+                samplers:
+                  cellDist:
+                    dimensions: 2
+                    <<: *cellular
+                  cellAngle:
+                    dimensions: 2
+                    <<: *cellular
+                    return: Angle
+                  cellValue:
+                    dimensions: 2
+                    <<: *cellular
+                    return: CellValue
+                  noise:
+                    dimensions: 3
+                    type: OPEN_SIMPLEX_2
