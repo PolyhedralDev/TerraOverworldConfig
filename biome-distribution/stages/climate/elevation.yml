@@ -60,77 +60,77 @@ stages:
         - polar-coast: 1 
         - polar-coast-highlands: 1 
 
-      boreal-hot-summer:
-        - boreal-hot-summer-flat: 1 
-        - boreal-hot-summer: 1 
-        - boreal-hot-summer: 1 
-        - boreal-hot-summer-highlands: 1 
-      boreal-warm-summer:
-        - boreal-warm-summer-flat: 1 
-        - boreal-warm-summer: 1 
-        - boreal-warm-summer: 1 
-        - boreal-warm-summer-highlands: 1 
-      boreal-cold-summer:
-        - boreal-cold-summer-flat: 1 
-        - boreal-cold-summer: 1 
-        - boreal-cold-summer: 1 
-        - boreal-cold-summer-highlands: 1 
-      boreal-very-cold-winter:
-        - boreal-very-cold-winter-flat: 1 
-        - boreal-very-cold-winter: 1 
-        - boreal-very-cold-winter: 1 
-        - boreal-very-cold-winter-highlands: 1 
-      boreal-dry-winter-hot-summer:
-        - boreal-dry-winter-hot-summer-flat: 1 
-        - boreal-dry-winter-hot-summer: 1 
-        - boreal-dry-winter-hot-summer: 1 
-        - boreal-dry-winter-hot-summer-highlands: 1 
-      boreal-dry-winter-warm-summer:
-        - boreal-dry-winter-warm-summer-flat: 1 
-        - boreal-dry-winter-warm-summer: 1 
-        - boreal-dry-winter-warm-summer: 1 
-        - boreal-dry-winter-warm-summer-highlands: 1 
-      boreal-dry-winter-cold-summer:
-        - boreal-dry-winter-cold-summer-flat: 1 
-        - boreal-dry-winter-cold-summer: 1 
-        - boreal-dry-winter-cold-summer: 1 
-        - boreal-dry-winter-cold-summer-highlands: 1 
-      boreal-dry-winter-very-cold-summer:
-        - boreal-dry-winter-very-cold-summer-flat: 1 
-        - boreal-dry-winter-very-cold-summer: 1 
-        - boreal-dry-winter-very-cold-summer: 1 
-        - boreal-dry-winter-very-cold-summer-highlands: 1 
+      boreal-hot:
+        - boreal-hot-flat: 1 
+        - boreal-hot: 1 
+        - boreal-hot: 1 
+        - boreal-hot-highlands: 1 
+      boreal-warm:
+        - boreal-warm-flat: 1 
+        - boreal-warm: 1 
+        - boreal-warm: 1 
+        - boreal-warm-highlands: 1 
+      boreal-cold:
+        - boreal-cold-flat: 1 
+        - boreal-cold: 1 
+        - boreal-cold: 1 
+        - boreal-cold-highlands: 1 
+      boreal-snowy:
+        - boreal-snowy-flat: 1 
+        - boreal-snowy: 1 
+        - boreal-snowy: 1 
+        - boreal-snowy-highlands: 1 
+      boreal-hot-dry:
+        - boreal-hot-dry-flat: 1 
+        - boreal-hot-dry: 1 
+        - boreal-hot-dry: 1 
+        - boreal-hot-dry-highlands: 1 
+      boreal-warm-dry:
+        - boreal-warm-dry-flat: 1 
+        - boreal-warm-dry: 1 
+        - boreal-warm-dry: 1 
+        - boreal-warm-dry-highlands: 1 
+      boreal-cold-dry:
+        - boreal-cold-dry-flat: 1 
+        - boreal-cold-dry: 1 
+        - boreal-cold-dry: 1 
+        - boreal-cold-dry-highlands: 1 
+      boreal-snowy-dry:
+        - boreal-snowy-dry-flat: 1 
+        - boreal-snowy-dry: 1 
+        - boreal-snowy-dry: 1 
+        - boreal-snowy-dry-highlands: 1 
       boreal-coast:
         - boreal-coast-flat: 1 
         - boreal-coast-flat: 1 
         - boreal-coast: 1 
         - boreal-coast-highlands: 1 
 
-      temperate-mediterranean-hot-summer:
-        - temperate-mediterranean-hot-summer-flat: 1 
-        - temperate-mediterranean-hot-summer: 1 
-        - temperate-mediterranean-hot-summer: 1 
-        - temperate-mediterranean-hot-summer-highlands: 1 
-      temperate-mediterranean-warm-summer:
-        - temperate-mediterranean-warm-summer-flat: 1 
-        - temperate-mediterranean-warm-summer: 1 
-        - temperate-mediterranean-warm-summer: 1 
-        - temperate-mediterranean-warm-summer-highlands: 1 
-      temperate-hot-summer:
-        - temperate-hot-summer-flat: 1 
-        - temperate-hot-summer: 1 
-        - temperate-hot-summer: 1 
-        - temperate-hot-summer-highlands: 1 
-      temperate-warm-summer:
-        - temperate-warm-summer-flat: 1 
-        - temperate-warm-summer: 1 
-        - temperate-warm-summer: 1 
-        - temperate-warm-summer-highlands: 1 
-      temperate-cold-summer:
-        - temperate-cold-summer-flat: 1 
-        - temperate-cold-summer: 1 
-        - temperate-cold-summer: 1 
-        - temperate-cold-summer-highlands: 1 
+      temperate-hot-dry:
+        - temperate-hot-dry-flat: 1 
+        - temperate-hot-dry: 1 
+        - temperate-hot-dry: 1 
+        - temperate-hot-dry-highlands: 1 
+      temperate-warm-dry:
+        - temperate-warm-dry-flat: 1 
+        - temperate-warm-dry: 1 
+        - temperate-warm-dry: 1 
+        - temperate-warm-dry-highlands: 1 
+      temperate-hot:
+        - temperate-hot-flat: 1 
+        - temperate-hot: 1 
+        - temperate-hot: 1 
+        - temperate-hot-highlands: 1 
+      temperate-warm:
+        - temperate-warm-flat: 1 
+        - temperate-warm: 1 
+        - temperate-warm: 1 
+        - temperate-warm-highlands: 1 
+      temperate-cold:
+        - temperate-cold-flat: 1 
+        - temperate-cold: 1 
+        - temperate-cold: 1 
+        - temperate-cold-highlands: 1 
       temperate-coast:
         - temperate-coast-flat: 1 
         - temperate-coast-flat: 1 

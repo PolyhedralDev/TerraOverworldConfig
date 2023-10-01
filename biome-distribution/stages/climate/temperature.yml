@@ -8,13 +8,13 @@ stages:
     default-to:
       - ice-cap:                     &iceCap         1
       - tundra:                      &tundra         1
-      - boreal-very-cold-winter:     &borealVeryCold 1
-      - boreal-cold-summer:          &borealCold     1
-      - boreal-warm-summer:          &borealWarm     1
-      - boreal-hot-summer:           &borealHot      1
-      - temperate-cold-summer:       &temperateCold  1
-      - temperate-warm-summer:       &temperateWarm  3
-      - temperate-hot-summer:        &temperateHot   2
+      - boreal-snowy:                &borealSnowy 1
+      - boreal-cold:                 &borealCold     1
+      - boreal-warm:                 &borealWarm     1
+      - boreal-hot:                  &borealHot      1
+      - temperate-cold:              &temperateCold  1
+      - temperate-warm:              &temperateWarm  3
+      - temperate-hot:               &temperateHot   2
       - tropical-savanna-wet:        &tropicalCold   1
       - tropical-monsoon:            &tropicalWarm   1
       - tropical-rainforest:         &tropicalHot    4
@@ -22,7 +22,7 @@ stages:
       coast:
         - polar-coast:               *iceCap
         - polar-coast:               *tundra
-        - boreal-coast:              *borealVeryCold
+        - boreal-coast:              *borealSnowy
         - boreal-coast:              *borealCold
         - boreal-coast:              *borealWarm
         - boreal-coast:              *borealHot
@@ -35,7 +35,7 @@ stages:
       ocean:
         - polar-ocean:               *iceCap
         - polar-ocean:               *tundra
-        - boreal-ocean:              *borealVeryCold
+        - boreal-ocean:              *borealSnowy
         - boreal-ocean:              *borealCold
         - boreal-ocean:              *borealWarm
         - boreal-ocean:              *borealHot
@@ -46,22 +46,22 @@ stages:
         - hot-ocean:                 *tropicalWarm  
         - hot-ocean:                 *tropicalHot
       mesa:
-        - polar-mesa:             *iceCap
-        - polar-mesa:             *tundra
-        - boreal-mesa:            *borealVeryCold
-        - boreal-mesa:            *borealCold
-        - boreal-mesa:            *borealWarm
-        - boreal-mesa:            *borealHot
-        - temperate-mesa:         *temperateCold
-        - temperate-mesa:         *temperateWarm
-        - temperate-mesa:         *temperateHot
-        - hot-mesa:               *tropicalCold
-        - hot-mesa:               *tropicalWarm
-        - hot-mesa:               *tropicalHot
+        - polar-mesa:                *iceCap
+        - polar-mesa:                *tundra
+        - boreal-mesa:               *borealSnowy
+        - boreal-mesa:               *borealCold
+        - boreal-mesa:               *borealWarm
+        - boreal-mesa:               *borealHot
+        - temperate-mesa:            *temperateCold
+        - temperate-mesa:            *temperateWarm
+        - temperate-mesa:            *temperateHot
+        - hot-mesa:                  *tropicalCold
+        - hot-mesa:                  *tropicalWarm
+        - hot-mesa:                  *tropicalHot
       crater-lake:
         - polar-crater-lake:         *iceCap
         - polar-crater-lake:         *tundra
-        - boreal-crater-lake:        *borealVeryCold
+        - boreal-crater-lake:        *borealSnowy
         - boreal-crater-lake:        *borealCold
         - boreal-crater-lake:        *borealWarm
         - boreal-crater-lake:        *borealHot
@@ -74,7 +74,7 @@ stages:
       extinct-volcano:
         - polar-extinct-volcano:     *iceCap
         - polar-extinct-volcano:     *tundra
-        - boreal-extinct-volcano:    *borealVeryCold
+        - boreal-extinct-volcano:    *borealSnowy
         - boreal-extinct-volcano:    *borealCold
         - boreal-extinct-volcano:    *borealWarm
         - boreal-extinct-volcano:    *borealHot
