@@ -42,4 +42,4 @@ locator:
 structures:
   distribution:
     type: CONSTANT
-  structures: BLOCK:minecraft:water
+  structures: physics_water

@@ -20,5 +20,5 @@ palette:
 features:
   preprocessors:
     - TRAVERTINE_WATER
-#  postprocessors: # Disabled until block updates are possible
-#    - TRAVERTINE_WATERFALLS
+  postprocessors:
+    - TRAVERTINE_WATERFALLS
