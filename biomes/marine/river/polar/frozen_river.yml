@@ -9,7 +9,7 @@ extends:
   - BASE
 color: $biomes/colors.yml:FROZEN_RIVER
 
-vanilla: frozen_river
+vanilla: minecraft:frozen_river
 
 ocean:
   palette: FROZEN_OCEAN
