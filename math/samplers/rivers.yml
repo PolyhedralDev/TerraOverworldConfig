@@ -8,45 +8,55 @@ variables: &variables
   riverMinWidth: ${customization.yml:river-min-width} * ${customization.yml:global-scale} # Determines the minimum width of rivers within riverThreshold.
   riverMaxWidth: ${customization.yml:river-max-width} * ${customization.yml:global-scale} # Determines the maximum width of rivers within riverThreshold.
 
-  erosionEnd: 0.5
-  erosionStart: 0
+  erosionMaxDistance: 0.3
   erosionMax: 0.95
   erosionMin: 0
 
-riverNoise: &riverNoise
-  dimensions: 2
-  type: TRANSLATE
-  x: 10000
-  z: 10000
-  sampler:
-    type: DOMAIN_WARP
-    amplitude: 2
-    sampler:
-      type: OPEN_SIMPLEX_2
-    warp:
-      type: OPEN_SIMPLEX_2
-      frequency: 0.14
-
 samplers:
+  riverNoise: &riverNoise
+    dimensions: 2
+    type: TRANSLATE
+    x: 10000
+    z: 10000
+    sampler:
+      type: DOMAIN_WARP
+      amplitude: 3
+      warp:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.1
+      sampler:
+        type: OPEN_SIMPLEX_2
+
+  riverDistance: &riverDistance
+    dimensions: 2
+    type: EXPRESSION
+    expression: "|riverNoise(x*riverFrequency, z*riverFrequency)|"
+    variables: *variables
+    samplers:
+      riverNoise: *riverNoise
+
   riverTerrainErosion:
     dimensions: 2
     type: EXPRESSION
     expression: |
-      herp(|riverNoise(x*riverFrequency, z*riverFrequency)|^2,
-        erosionStart, erosionMax,
-        erosionEnd, erosionMin
-      ) * herp(erosionStrength(x, z), 0.2, 0, 0.8, 1)
+      parabolicMap(riverDistance(x, z) + parabolicMap(erosionStrength(x, z), 0.6, erosionMaxDistance, 0.4, 0),
+        0, erosionMax,
+        erosionMaxDistance, erosionMin
+      ) 
     variables: *variables
     functions: $math/functions/interpolation.yml:functions
     samplers:
+      riverDistance: *riverDistance
       erosionStrength:
         dimensions: 2
         type: PROBABILITY
         sampler:
-          type: OPEN_SIMPLEX_2
-          frequency: 0.002
-          salt: 2175
-      riverNoise: *riverNoise
+          type: FBM
+          octaves: 2
+          sampler:
+            type: OPEN_SIMPLEX_2
+            frequency: 1 / 1000
+            salt: 2175
 
   riverBiomeMap:
     dimensions: 2
@@ -68,7 +78,7 @@ samplers:
         dimensions: 3 # Y dimension is used as the width
         type: EXPRESSION
         expression: |
-          if(|riverNoise(x*riverFrequency, z*riverFrequency)|>riverThreshold,
+          if(riverDistance(x, z)>riverThreshold,
             notRiverValue,
             if(riverKerneled((x-y)/y, y, (z-y)/y)!=0,
               riverValue,
@@ -77,7 +87,7 @@ samplers:
           )
         variables: *variables
         samplers:
-          riverNoise: *riverNoise
+          riverDistance: *riverDistance
           riverKerneled:
             dimensions: 3
             type: KERNEL # Edge detection

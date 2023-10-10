@@ -6,6 +6,10 @@ variables: &variables
   base: $customization.yml:terrain-base-y-level
   scale: $customization.yml:terrain-height
 
+  depth: 0.11
+  ceilingBase: 0.1
+  ceilingHeight: 0.17
+
 terrain:
   sampler:
     type: EXPRESSION
@@ -17,12 +21,15 @@ terrain:
         base,
         elevation(x, z),
         scale,
-        y,
-        1 + erosion(x/3, y, z/3)^2,
-        100+ceilingVariation(x, z)*100
-      )
+        (y - base) / scale,
+        depth,
+        ceilingBase,
+        ceilingHeight,
+        ceilingSpikes(x, z) * -0.1,
+        herp(openings(x, z), 0.3, 0, 0.6, 1)
+      ) * (1 + erosionStrengthVariation(x/3, y, z/3)^2)
     samplers:
-      erosion:
+      erosionStrengthVariation: # Used to roughen up the walls
         dimensions: 3
         type: FBM
         octaves: 2
@@ -30,29 +37,38 @@ terrain:
           type: OPEN_SIMPLEX_2
           frequency: 0.03
           salt: 5
-      ceilingVariation:
+      openings:
         dimensions: 2
-        type: PROBABILITY
+        type: EXPRESSION_NORMALIZER
+        expression: "|in|"
         sampler:
           type: OPEN_SIMPLEX_2
-          frequency: 0.01
+          frequency: 1 / 1000
           salt: 9
+      ceilingSpikes:
+        dimensions: 2
+        type: CUBIC_SPLINE
+        points:
+          - { from: -1, to: 1, gradient: -2 }
+          - { from: -0.2, to: 0, gradient: 0 }
+        sampler:
+          type: CELLULAR
+          distance: Euclidean
+          frequency: 0.06
     functions:
       erode:
-        arguments: [ base, height, scale, y, strength, ceiling ]
+        arguments: [ base, elevation, scale, y, depth, ceilingBase, ceilingHeight, ceilingOffset, ceilingOpenings ]
         expression: |
-          lerp(y,
-            40,       // Bottom lower y level
-            0,        // Bottom lower strength
-            65,       // Bottom upper y level
-              lerp(y, // Bottom upper strength
-                lerp(height, 0, ceiling, 0.8, 80),                     // Top upper y level
-                0,                                                 // Top upper strength
-                lerp(height, 0, 80, 0.8, 65),                      // Top lower y level
-                lerp(height, 0.05, 0.15, 0.4, strength) * (-y+base+1*scale) // Top lower strength
+          herp(y,
+            -depth, 0,
+            0, herp(y - ceilingOffset - herp(elevation, 0.4, ceilingOpenings, 0.6, 0), 
+              ceilingBase, -y+base+elevation*scale,
+              ceilingBase + ceilingHeight, 0
             )
           )
-        functions: $math/functions/interpolation.yml:functions
+        functions: 
+          "<<":
+            - math/functions/interpolation.yml:functions
   
   sampler-2d:
     type: EXPRESSION

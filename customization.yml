@@ -92,8 +92,8 @@ elevation-offset: 0
 elevation-highlands-threshold: 0.4
 # Default: 0.4
 
-elevation-lowlands-threshold: 0.2
-# Default: 0.2
+elevation-lowlands-threshold: 0.1
+# Default: 0.1
 
 elevation-factor-continental: 1
 # Determines if terrain height will be reduced closer to coasts. This
