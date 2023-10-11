@@ -223,6 +223,7 @@ stages:
 
         temperate-shallow-ocean:
           - OCEAN: 1
+          - ROCKY_SHALLOW_OCEAN: 1
         temperate-ocean:
           - OCEAN: 1
         temperate-deep-ocean:
