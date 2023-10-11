@@ -37,6 +37,8 @@ stages:
         polar-extinct-volcano:
           - todo: 1
   
+        polar-shallow-ocean:
+          - FROZEN_OCEAN: 1
         polar-ocean:
           - FROZEN_OCEAN: 1
         polar-deep-ocean:
@@ -125,6 +127,8 @@ stages:
         boreal-extinct-volcano:
           - todo: 1
   
+        boreal-shallow-ocean:
+          - COLD_OCEAN: 1
         boreal-ocean:
           - COLD_OCEAN: 1
         boreal-deep-ocean:
@@ -217,6 +221,8 @@ stages:
         temperate-extinct-volcano:
           - TEMPERATE_EXTINCT_VOLCANO: 1
 
+        temperate-shallow-ocean:
+          - OCEAN: 1
         temperate-ocean:
           - OCEAN: 1
         temperate-deep-ocean:
@@ -369,5 +375,6 @@ stages:
         tropical-extinct-volcano:
           - todo: 1
 
+        hot-shallow-ocean: TROPICAL_OCEAN
         hot-ocean: TROPICAL_OCEAN
         hot-deep-ocean: TROPICAL_DEEP_OCEAN
