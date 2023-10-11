@@ -3,10 +3,10 @@ type: FEATURE
 
 anchors:
   - &structure GOLD_ORE
-  - &densityThreshold 1/256 * ${features/deposits/distribution.yml:gold.averageCountPerChunk} # Divide by 16^2 to get % per column
-  - &salt $features/deposits/distribution.yml:gold.salt
-  - &range $features/deposits/distribution.yml:gold.range
-  - &standard-deviation (${features/deposits/distribution.yml:gold.range.max}-${features/deposits/distribution.yml:gold.range.min})/6
+  - &densityThreshold 1/256 * ${features/geological/deposits/distribution.yml:gold.averageCountPerChunk} # Divide by 16^2 to get % per column
+  - &salt $features/geological/deposits/distribution.yml:gold.salt
+  - &range $features/geological/deposits/distribution.yml:gold.range
+  - &standard-deviation (${features/geological/deposits/distribution.yml:gold.range.max}-${features/geological/deposits/distribution.yml:gold.range.min})/6
                         # Divide distance from min to max by 6 to fit 3 standard deviations (~99.7% of results) within the range.
 distributor:
   type: SAMPLER

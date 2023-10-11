@@ -3,9 +3,9 @@ type: FEATURE
 
 anchors:
   - &structure BLUE_ICE_DEPOSIT
-  - &densityThreshold 1/256 * ${features/deposits/distribution.yml:blueice.averageCountPerChunk} # Divide by 16^2 to get % per column
-  - &salt $features/deposits/distribution.yml:blueice.salt
-  - &range $features/deposits/distribution.yml:blueice.range
+  - &densityThreshold 1/256 * ${features/geological/deposits/distribution.yml:blueice.averageCountPerChunk} # Divide by 16^2 to get % per column
+  - &salt $features/geological/deposits/distribution.yml:blueice.salt
+  - &range $features/geological/deposits/distribution.yml:blueice.range
 
 distributor:
   type: SAMPLER

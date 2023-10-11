@@ -6,10 +6,10 @@ anchors:
     DIAMOND_ORE_SMALL: 11
     DIAMOND_ORE: 9
     DIAMOND_ORE_LARGE: 4
-  - &densityThreshold 1/256 * ${features/deposits/distribution.yml:diamond.averageCountPerChunk} # Divide by 16^2 to get % per column
-  - &salt $features/deposits/distribution.yml:diamond.salt
-  - &range $features/deposits/distribution.yml:diamond.range
-  - &standard-deviation (${features/deposits/distribution.yml:diamond.range.max}-${features/deposits/distribution.yml:diamond.range.min})/6
+  - &densityThreshold 1/256 * ${features/geological/deposits/distribution.yml:diamond.averageCountPerChunk} # Divide by 16^2 to get % per column
+  - &salt $features/geological/deposits/distribution.yml:diamond.salt
+  - &range $features/geological/deposits/distribution.yml:diamond.range
+  - &standard-deviation (${features/geological/deposits/distribution.yml:diamond.range.max}-${features/geological/deposits/distribution.yml:diamond.range.min})/6
                         # Divide distance from min to max by 6 to fit 3 standard deviations (~99.7% of results) within the range.
 distributor:
   type: SAMPLER
