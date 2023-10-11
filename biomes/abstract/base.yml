@@ -20,4 +20,5 @@ features:
     - TEXTURED_STONE_SLANT
   underwater-flora:
     - KELP
+    - CLINGING_KELP
     - SEAGRASS

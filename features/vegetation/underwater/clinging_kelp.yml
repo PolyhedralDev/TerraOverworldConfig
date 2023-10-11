@@ -1,0 +1,43 @@
+id: CLINGING_KELP
+type: FEATURE
+
+distributor:
+  type: "YES"
+
+locator:
+  type: AND
+  locators:
+    - type: PATTERN
+      range: &range
+        min: ${meta.yml:deepslate-top} - 7
+        max: $meta.yml:ocean-level
+      pattern:
+        type: AND
+        patterns:
+          - type: MATCH
+            block: minecraft:water
+            offset: 0
+          - type: MATCH_SET
+            blocks: $features/vegetation/meta.yml:aquatic-plantable-blocks
+            offset: -1
+    - type: ADJACENT_PATTERN
+      range: *range
+      pattern:
+        type: AND
+        patterns:
+          - type: MATCH_SET
+            blocks: &stoneBlocks
+              - minecraft:stone
+              - minecraft:andesite
+              - minecraft:tuff
+            offset: 0
+          - type: MATCH_SET
+            blocks: *stoneBlocks
+            offset: 1
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures:
+    - kelp: 1
+    - kelp_low: 2
