@@ -13,9 +13,12 @@ vanilla: minecraft:ocean
 colors:
   grass: 0x8eb971
   foliage: 0x71a74d
-  water: 0x1787d4
+  water: 0x31adde
   water-fog: 0x1165b0
 
 features:
   landforms:
     - UNDERWATER_STONE_SPIKES
+    - RIVER_BOULDERS
+  postprocessors:
+    - COASTAL_WATER_POOLS

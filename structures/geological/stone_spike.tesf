@@ -19,7 +19,7 @@ for(num l = 0; l <= length; l = l + 1) {
     // Reduce radius inversely to length
     num r = max(radius * (1-t), 1);
 
-    if (t > 0.8) continue;
+    if (t > 0.7) continue;
 
     // Generate sphere at each point
     for(num x = -r; x <= r; x = x + 1) {
