@@ -43,4 +43,3 @@ for (num x = -radius-warp-xRand; x < radius+warp+xRand; x = x + 1) {
         }
     }
 }
-
