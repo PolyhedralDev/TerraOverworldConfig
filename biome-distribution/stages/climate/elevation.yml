@@ -14,6 +14,11 @@ stages:
             - deep
           expression: if(elevation > shallow, 1, if(elevation < deep, -1, 0))
 
+    # Weighted lists below are interpreted as:
+    # - <DEEP>: 1
+    # - <REGULAR>: 1
+    # - <SHALLOW>: 1
+
     default-from: polar-ocean
     default-to:
       - polar-deep-ocean: 1
@@ -72,6 +77,11 @@ stages:
         - polar-coast-flat: 1 
         - polar-coast: 1 
         - polar-coast-highlands: 1 
+      polar-shallow-ocean:
+        - polar-shallow-ocean: 1 
+        - polar-shallow-ocean: 1 
+        - polar-shallow-ocean-midlands: 1 
+        - polar-shallow-ocean-midlands: 1 
 
       boreal-hot:
         - boreal-hot-flat: 1 
@@ -118,6 +128,11 @@ stages:
         - boreal-coast-flat: 1 
         - boreal-coast: 1 
         - boreal-coast-highlands: 1 
+      boreal-shallow-ocean:
+        - boreal-shallow-ocean: 1
+        - boreal-shallow-ocean: 1
+        - boreal-shallow-ocean-midlands: 1
+        - boreal-shallow-ocean-midlands: 1
 
       temperate-hot-dry:
         - temperate-hot-dry-flat: 1 
@@ -149,6 +164,11 @@ stages:
         - temperate-coast-flat: 1 
         - temperate-coast: 1 
         - temperate-coast-highlands: 1 
+      temperate-shallow-ocean:
+        - temperate-shallow-ocean: 1 
+        - temperate-shallow-ocean: 1 
+        - temperate-shallow-ocean-midlands: 1 
+        - temperate-shallow-ocean-midlands: 1 
 
       hot-desert:
         - hot-desert-flat: 1 
@@ -201,3 +221,8 @@ stages:
         - tropical-coast-flat: 1 
         - tropical-coast: 1 
         - tropical-coast-highlands: 1 
+      hot-shallow-ocean:
+        - hot-shallow-ocean: 1 
+        - hot-shallow-ocean: 1 
+        - hot-shallow-ocean-midlands: 1 
+        - hot-shallow-ocean-midlands: 1 

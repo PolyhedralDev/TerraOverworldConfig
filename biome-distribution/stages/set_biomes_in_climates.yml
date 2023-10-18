@@ -39,6 +39,8 @@ stages:
   
         polar-shallow-ocean:
           - FROZEN_OCEAN: 1
+        polar-shallow-ocean-midlands:
+          - FROZEN_OCEAN: 1
         polar-ocean:
           - FROZEN_OCEAN: 1
         polar-deep-ocean:
@@ -128,6 +130,8 @@ stages:
           - todo: 1
   
         boreal-shallow-ocean:
+          - COLD_OCEAN: 1
+        boreal-shallow-ocean-midlands:
           - COLD_OCEAN: 1
         boreal-ocean:
           - COLD_OCEAN: 1
@@ -223,6 +227,7 @@ stages:
 
         temperate-shallow-ocean:
           - OCEAN: 1
+        temperate-shallow-ocean-midlands:
           - ROCKY_SHALLOW_OCEAN: 1
         temperate-ocean:
           - OCEAN: 1
@@ -377,5 +382,6 @@ stages:
           - todo: 1
 
         hot-shallow-ocean: TROPICAL_OCEAN
+        hot-shallow-ocean-midlands: TROPICAL_OCEAN
         hot-ocean: TROPICAL_OCEAN
         hot-deep-ocean: TROPICAL_DEEP_OCEAN
