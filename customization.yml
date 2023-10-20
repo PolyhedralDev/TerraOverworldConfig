@@ -213,7 +213,7 @@ cave-biome-scale: 1
 # Oceans
 # ---
 
-ocean-shallow-threshold: -0.1
+ocean-shallow-threshold: -0.15
 # Elevation above this threshold is set to generate as shallow ocean. Lower number = larger area of shallow ocean
 # and vice versa.
 # Default: -0.1

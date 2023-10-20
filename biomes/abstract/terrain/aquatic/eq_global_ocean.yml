@@ -11,7 +11,7 @@ vars: &variables
   detailEnd: -0.5
   detailFrequency: 0.5
   
-  shelfSize: 0.2
+  shelfSize: 0.25
   shelfStrength: 0.6
 
 terrain:
