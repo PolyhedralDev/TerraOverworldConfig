@@ -131,6 +131,7 @@ stages:
   
         boreal-shallow-ocean:
           - COLD_OCEAN: 1
+          - KELP_FOREST: 1
         boreal-shallow-ocean-midlands:
           - COLD_OCEAN: 1
         boreal-ocean:
@@ -227,6 +228,7 @@ stages:
 
         temperate-shallow-ocean:
           - OCEAN: 1
+          - KELP_FOREST: 1
         temperate-shallow-ocean-midlands:
           - ROCKY_SHALLOW_OCEAN: 1
         temperate-ocean:
