@@ -229,6 +229,7 @@ stages:
         temperate-shallow-ocean:
           - OCEAN: 1
           - KELP_FOREST: 1
+          - SEAGRASS_MEADOW: 1
         temperate-shallow-ocean-midlands:
           - ROCKY_SHALLOW_OCEAN: 1
         temperate-ocean:
@@ -383,7 +384,11 @@ stages:
         tropical-extinct-volcano:
           - todo: 1
 
-        hot-shallow-ocean: TROPICAL_OCEAN
-        hot-shallow-ocean-midlands: TROPICAL_OCEAN
+        hot-shallow-ocean: 
+          - TROPICAL_OCEAN: 1
+          - SEAGRASS_MEADOW: 1
+        hot-shallow-ocean-midlands:
+          - TROPICAL_OCEAN: 1
+          - SEAGRASS_MEADOW: 1
         hot-ocean: TROPICAL_OCEAN
         hot-deep-ocean: TROPICAL_DEEP_OCEAN
