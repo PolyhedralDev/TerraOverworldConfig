@@ -26,5 +26,5 @@ structures:
   distribution:
     type: WHITE_NOISE
   structures:
-    - BLOCK:minecraft:grass: 6
+    - BLOCK:minecraft:short_grass: 6
     - tall_grass: 1
