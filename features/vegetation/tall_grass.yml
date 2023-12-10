@@ -39,4 +39,4 @@ structures:
     type: WHITE_NOISE
   structures:
     - tall_grass: 8
-    - BLOCK:minecraft:grass: 1
+    - BLOCK:minecraft:short_grass: 1

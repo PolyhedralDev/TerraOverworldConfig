@@ -50,6 +50,7 @@ generate in an area where it previously did not (resulting in a chunk border).
 
 
 ### Fixed
+- Translated minecraft:grass to minecraft:short_grass.
 
 
 ## [v1.3.3]
