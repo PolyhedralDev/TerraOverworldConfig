@@ -50,8 +50,11 @@ generate in an area where it previously did not (resulting in a chunk border).
 
 
 ### Fixed
-- Translated minecraft:grass to minecraft:short_grass.
 
+
+## [v1.3.4]
+### Fixed
+- Translated minecraft:grass to minecraft:short_grass.
 
 ## [v1.3.3]
 ### Fixed
@@ -139,7 +142,8 @@ generate in an area where it previously did not (resulting in a chunk border).
 ### Added
 - Everything
 
-[Unreleased]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.3...HEAD
+[Unreleased]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.4...HEAD
+[v1.3.4]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.3...v1.3.4
 [v1.3.3]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.2...v1.3.3
 [v1.3.2]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.1...v1.3.2
 [v1.3.1]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.0...v1.3.1
