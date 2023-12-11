@@ -25,10 +25,6 @@ jobs:
 
     env:
       repo_url: ${{ github.server_url }}/${{ github.repository }}
-      changelog: CHANGELOG.md
-      release_changelog: RELEASE_CHANGELOG.md
-      start_regex: "^## \\[Unreleased\\]"
-      end_regex: "^## "
 
     steps:
       - name: Checkout repo

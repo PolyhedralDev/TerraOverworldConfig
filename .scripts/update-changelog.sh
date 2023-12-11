@@ -2,35 +2,44 @@
 
 # Moves unreleased section to a new version release section, and updates anchors at the bottom of the changelog
 
-echo "Updating $changelog for v$version:"
+source .scripts/lib.sh
+source .scripts/vars.sh
+ensure_env "version"
+ensure_env "previous_version"
+ensure_env "repo_url"
+ensure_file "$CHANGELOG"
+ensure_file "$RELEASE_CHANGELOG"
 
-echo '- Inserting release changelog'
-sed -i "/$start_regex/,/$end_regex/{//!d}" $changelog
-sed -i "/$start_regex/ {
-        a ### Added
-        a
-        a
-        a ### Changed
-        a
-        a
-        a ### Removed
-        a
-        a
-        a ### Fixed
-        a
-        a
-        a ## [v$version]
-        r $release_changelog
-        a
-    }" $changelog
+echo "Updating $CHANGELOG for v$version:"
+
+echo '- Clearing unreleased section'
+replace_in_file "$CHANGELOG" "$UNRELEASED_SECTION_START_REGEX" "$UNRELEASED_SECTION_END_REGEX" "\
+### Added
+
+
+### Changed
+
+
+### Removed
+
+
+### Fixed
+
+"
+
+echo "- Inserting new version section"
+append_after "$CHANGELOG" "$VERSIONS_SECTION_START_REGEX" "
+
+## [v$version]
+$(cat $RELEASE_CHANGELOG)"
 
 echo '- Adding new version anchor'
-sed -i "/^\[Unreleased]/a [v$version]: $repo_url/compare/v$previous_version...v$version" $changelog
+sed -i "/^\[Unreleased]/a [v$version]: $repo_url/compare/v$previous_version...v$version" $CHANGELOG
 
 echo '- Updating unreleased anchor'
-sed -i "s|^\[Unreleased\]: .*|[Unreleased]: $repo_url/compare/v$version...HEAD|" $changelog
+sed -i "s|^\[Unreleased\]: .*|[Unreleased]: $repo_url/compare/v$version...HEAD|" $CHANGELOG
 
 echo "v$version changelog:"
 echo '---'
-cat $release_changelog 
+cat $RELEASE_CHANGELOG 
 echo '---'
