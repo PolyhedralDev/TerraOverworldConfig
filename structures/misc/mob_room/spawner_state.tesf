@@ -1,0 +1,4 @@
+num random = randomInt(3);
+if (random == 0) state(0, 0, 0,"type=minecraft:zombie");
+if (random == 1) state(0, 0, 0,"type=minecraft:skeleton");
+if (random == 2) state(0, 0, 0,"type=minecraft:spider");
