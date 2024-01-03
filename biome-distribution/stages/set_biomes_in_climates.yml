@@ -259,8 +259,9 @@ stages:
           - ORANGE_DESERT: 5
           - SALT_FLATS: 1
         hot-desert-orange:
-            ORANGE_DESERT: 1
-        hot-desert-highlands-orange: todo
+          - ORANGE_DESERT: 1
+        hot-desert-highlands-orange: 
+          - ORANGE_DESERT: 1
 
         # White hot desert
         hot-desert-flat-white:
@@ -283,17 +284,39 @@ stages:
           - ROCKY_DESERT: 1
           - PEARLESCENT_DESERT: 1
 
-        hot-steppe-flat:
-          - XERIC_SHRUBLAND: 1
+        # Red hot steppe
+        hot-steppe-flat-red:
           - ARID_SPIKES: 1
-        hot-steppe:
-          - XERIC_SHRUBLAND: 1
+        hot-steppe-red:
           - ARID_SPIKES: 1
-        hot-steppe-highlands:
+        hot-steppe-highlands-red:
+          - ARID_SPIKES: 1
+
+        # Orange hot steppe
+        hot-steppe-flat-orange:
+          - ARID_SPIKES: 1
+        hot-steppe-orange:
+          - ARID_SPIKES: 1
+        hot-steppe-highlands-orange:
+          - ARID_SPIKES: 1
+
+        # White hot steppe
+        hot-steppe-flat-white:
+          - XERIC_SHRUBLAND: 1
+        hot-steppe-white:
+          - XERIC_SHRUBLAND: 1
+        hot-steppe-highlands-white:
           - XERIC_MOUNTAINS: 1
 
+        temperate-steppe-flat:
+          - PLAINS: 1
+        temperate-steppe:
+          - PLAINS: 1
+        temperate-steppe-highlands:
+          - PLAINS: 1
+
         cold-desert-flat:
-          - todo: 1
+          - SALT_FLATS: 1
         cold-desert:
           - todo: 1
         cold-desert-highlands:

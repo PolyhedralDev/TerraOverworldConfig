@@ -59,19 +59,19 @@ stages:
   
       temperate-hot:
         - hot-desert: *desert
-        - hot-steppe: *desertBorder
+        - temperate-steppe: *desertBorder
         - temperate-hot-dry: *semiArid
         - temperate-hot: *mildlyWet
         - temperate-hot: *veryWet
       temperate-warm:
         - hot-desert: *desert
-        - hot-steppe: *desertBorder
+        - temperate-steppe: *desertBorder
         - temperate-warm-dry: *semiArid
         - temperate-warm: *mildlyWet
         - temperate-warm: *veryWet
       temperate-cold:
         - hot-desert: *desert
-        - hot-steppe: *desertBorder
+        - temperate-steppe: *desertBorder
         - temperate-warm-dry: *semiArid
         - temperate-cold: *mildlyWet
         - temperate-cold: *veryWet
