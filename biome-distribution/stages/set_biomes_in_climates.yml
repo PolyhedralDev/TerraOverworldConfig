@@ -318,9 +318,11 @@ stages:
         cold-desert-flat:
           - SALT_FLATS: 1
         cold-desert:
-          - todo: 1
+          - SNOWY_DUNES: 1
+          - SNOWY_BADLANDS: 1
         cold-desert-highlands:
-          - todo: 1
+          - SNOWY_MOUNTAINS: 1
+          - SNOWY_BADLANDS: 1
 
         cold-steppe-flat:
           - COLD_STEPPE: 1
