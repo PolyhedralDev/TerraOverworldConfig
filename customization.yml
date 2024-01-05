@@ -103,10 +103,10 @@ elevation-factor-continental: 1
 # 1 = true, 0 = false
 # Default: 1
 
-elevation-continental-full-height-threshold: 0.2
+elevation-continental-full-height-threshold: 0.35
 # The continental value at which terrain height is 100%, only applicable if
 # the terrain-factor-continental option is enabled
-# Default: 0.2
+# Default: 0.35
 
 elevation-continental-flat-threshold: -0.3
 # The continental value at which terrain height will be flat, only applicable if
