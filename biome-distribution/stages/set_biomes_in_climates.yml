@@ -309,11 +309,11 @@ stages:
           - XERIC_MOUNTAINS: 1
 
         temperate-steppe-flat:
-          - PLAINS: 1
+          - COLD_STEPPE: 1
         temperate-steppe:
-          - PLAINS: 1
+          - COLD_STEPPE: 1
         temperate-steppe-highlands:
-          - PLAINS: 1
+          - COLD_STEPPE: 1
 
         cold-desert-flat:
           - SALT_FLATS: 1
@@ -329,7 +329,7 @@ stages:
         cold-steppe:
           - COLD_STEPPE: 1
         cold-steppe-highlands:
-          - todo: 1
+          - COLD_STEPPE: 1
 
         cold-desert-mesa:
           - COLD_DESERT_MESA: 1
