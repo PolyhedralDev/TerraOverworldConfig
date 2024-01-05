@@ -127,6 +127,13 @@ elevation-spawn-island-scale: 0.3
 # within the spawn island.
 # Default: 0.3
 
+elevation-fuzz: 0.25
+# Adds a slight bit of fuzziness to elevation, roughening terrain block countours
+# and steep hills that look overly smooth. Small 1 block divots tend to be produced
+# by this fuzzing. Recommended to be a small number between 0 and 0.5.
+# Setting to 0 removes any fuzzing.
+# Default: 0.25
+
 # ---
 # Flatness
 # ---

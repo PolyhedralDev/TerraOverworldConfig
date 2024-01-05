@@ -118,7 +118,18 @@ samplers:
       )
     variables: *variables
     samplers:
-      elevation: *elevation
+      elevation:
+        dimensions: 2
+        type: DOMAIN_WARP
+        sampler: *elevation
+        # Elevation is warped slightly by white noise, creating a small fuzzy
+        # or dithered look to break up perfectly smooth noise. Produces small
+        # 1 block divots in terrain, especially apparent on steeper terrain and
+        # countours which is good because these areas tend to look too perfect / artifical.
+        amplitude: $customization.yml:elevation-fuzz
+        warp:
+          type: WHITE_NOISE
+          salt: 2394
       terraceScale:
         dimensions: 2
         type: OPEN_SIMPLEX_2
