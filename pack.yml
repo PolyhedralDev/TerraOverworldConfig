@@ -17,6 +17,7 @@ addons:
   config-distributors: "1.+"
   config-locators: "1.+"
   config-feature: "1.+"
+  config-number-predicate: "1.+"
   structure-terrascript-loader: "1.+"
   structure-sponge-loader: "1.+"
   language-yaml: "1.+"
@@ -25,6 +26,7 @@ addons:
   palette-block-shortcut: "1.+"
   structure-block-shortcut: "1.+"
   terrascript-function-sampler: "1.+"
+  locator-slant-noise-3d: "1.+"
 
 # ---
 # Biome distribution
