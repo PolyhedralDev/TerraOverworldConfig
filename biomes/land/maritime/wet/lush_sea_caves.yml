@@ -22,7 +22,7 @@ slant:
     palette:
       - MOSS_STONE: $meta.yml:top-y
       - << meta.yml:palette-bottom
-  - threshold: 0.4
+  - threshold: 0.1
     palette:
       - BLOCK:minecraft:stone: $meta.yml:top-y
       - SAND: ${meta.yml:ocean-level} + 1
