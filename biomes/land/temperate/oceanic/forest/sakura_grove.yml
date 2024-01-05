@@ -1,6 +1,8 @@
 id: SAKURA_GROVE
 type: BIOME
-extends: TEMPERATE_MOUNTAINS
+extends:
+  - EQ_MULTI_TERRACED_LAND
+  - TEMPERATE_MOUNTAINS
 color: $biomes/colors.yml:SAKURA_GROVE
 
 vanilla: minecraft:old_growth_birch_forest
