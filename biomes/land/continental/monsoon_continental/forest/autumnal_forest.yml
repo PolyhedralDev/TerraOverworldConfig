@@ -15,7 +15,7 @@ vanilla: minecraft:birch_forest
 
 colors:
   grass: 0x8ea85e
-  foliage: 0xe98553
+  foliage: 0xff6a19
   water: 0x1e97f2
   water-fog: 0x1e97f2
 
