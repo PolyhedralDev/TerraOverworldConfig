@@ -101,7 +101,7 @@ stages:
   - id: trees
     type: FEATURE
     blend:
-      amplitude: 50
+      amplitude: 30
       sampler:
         type: GAUSSIAN
         salt: 2583
@@ -114,7 +114,7 @@ stages:
   - id: flora
     type: FEATURE
     blend:
-      amplitude: 50
+      amplitude: 30
       sampler:
         type: GAUSSIAN
         salt: 2934
