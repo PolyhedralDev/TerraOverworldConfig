@@ -147,6 +147,10 @@ flatness-percent: 0.25
 flatness-blend: 0.35
 # Default: TODO
 
+flatness-factor: 0.95
+# How much to flatten by. 1 = 100% flat, 0 = no flattening
+# Default: 0.95
+
 # ---
 # Temperature
 # ---
