@@ -39,7 +39,7 @@ samplers:
     dimensions: 2
     type: EXPRESSION
     expression: |
-      parabolicMap(riverDistance(x, z) + parabolicMap(erosionStrength(x, z), 0.6, erosionMaxDistance, 0.4, 0),
+      herp(riverDistance(x, z) + herp(erosionStrength(x, z), 0.6, erosionMaxDistance, 0.4, 0),
         0, erosionMax,
         erosionMaxDistance, erosionMin
       ) 
