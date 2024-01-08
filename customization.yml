@@ -103,10 +103,10 @@ elevation-factor-continental: 1
 # 1 = true, 0 = false
 # Default: 1
 
-elevation-continental-full-height-threshold: 0.2
+elevation-continental-full-height-threshold: 0.35
 # The continental value at which terrain height is 100%, only applicable if
 # the terrain-factor-continental option is enabled
-# Default: 0.2
+# Default: 0.35
 
 elevation-continental-flat-threshold: -0.3
 # The continental value at which terrain height will be flat, only applicable if
@@ -126,6 +126,13 @@ elevation-spawn-island-scale: 0.3
 # Scales elevation within the spawn island. E.g 0.3 means elevation is set to 30%
 # within the spawn island.
 # Default: 0.3
+
+elevation-fuzz: 0.25
+# Adds a slight bit of fuzziness to elevation, roughening terrain block countours
+# and steep hills that look overly smooth. Small 1 block divots tend to be produced
+# by this fuzzing. Recommended to be a small number between 0 and 0.5.
+# Setting to 0 removes any fuzzing.
+# Default: 0.25
 
 # ---
 # Flatness

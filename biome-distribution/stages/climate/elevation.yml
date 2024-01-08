@@ -185,6 +185,11 @@ stages:
         - cold-desert: 1 
         - cold-desert: 1 
         - cold-desert-highlands: 1 
+      temperate-steppe:
+        - temperate-steppe-flat: 1 
+        - temperate-steppe: 1 
+        - temperate-steppe: 1 
+        - temperate-steppe-highlands: 1 
       cold-steppe:
         - cold-steppe-flat: 1 
         - cold-steppe: 1 

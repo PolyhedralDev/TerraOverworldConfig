@@ -2,9 +2,6 @@ variables: &variables
   detailFactor: 0.1
   detailStart: 0
   detailEnd: 0.5
-  mountainPeakStart: 0.5
-  mountainPeakEnd: 1
-  mountainPeakFactor: 0.2
   
   terraceBaseScale: 0.2
   terraceScaleVariation: 0.1
@@ -50,7 +47,7 @@ samplers:
   rawElevation: &rawElevation
     dimensions: 2
     type: EXPRESSION
-    expression: noise(x / scale / globalScale, z / scale / globalScale)^2 * multiplier + offset
+    expression: noise(x / scale / globalScale, z / scale / globalScale) * multiplier + offset
     variables:
       globalScale: $customization.yml:global-scale
       scale: $customization.yml:elevation-scale
@@ -63,15 +60,59 @@ samplers:
         x: 10000
         z: 10000
         sampler:
-          type: PROBABILITY
-          sampler:
-            type: FBM
-            octaves: 6
-            gain: 0.5
-            lacunarity: 2.2
-            sampler:
-              type: OPEN_SIMPLEX_2
-              frequency: 1 / 1650
+          type: EXPRESSION
+          expression: |
+            combine(
+              hills(x, z) * hillMaxElevation,
+              parabolicMap(mountainMask(x, z), mountainZero, 0, mountainFull, mountains(x, z)),
+              mountainCap)
+          variables:
+            mountainZero: 0.4
+            mountainFull: 0.8
+            hillMaxElevation: 0.55
+            mountainCap: 0.7
+          functions: 
+            "<<": math/functions/interpolation.yml:functions
+            combine: # Stacks scaled mountain noise on top of hill noise
+              arguments:
+                - hills
+                - mountains
+                - mountainCap
+              expression: hills + mountains * min(1 - hills, mountainCap)
+
+          samplers:
+            mountainMask:
+              dimensions: 2
+              type: PROBABILITY
+              sampler:
+                type: OPEN_SIMPLEX_2
+                salt: 0694
+                frequency: 1 / 1200
+            mountains:
+              dimensions: 2
+              type: FBM
+              octaves: 3
+              gain: 0.25
+              lacunarity: 2.5
+              sampler:
+                type: EXPRESSION_NORMALIZER
+                expression: ((-in+1)/2)^3
+                sampler:
+                  type: CELLULAR
+                  distance: Euclidean
+                  frequency: 1 / 175
+            hills:
+              dimensions: 2
+              type: EXPRESSION_NORMALIZER
+              expression: ((in+1)/2)^2
+              sampler:
+                type: FBM
+                octaves: 6
+                gain: 0.5
+                lacunarity: 2.2
+                sampler:
+                  type: OPEN_SIMPLEX_2
+                  frequency: 1 / 1800
 
   elevation: &elevation
     dimensions: 2
@@ -102,13 +143,9 @@ samplers:
     expression: |
       terrace(
         combine(
-          combine(
-            elevation(x, z),
-            detailStart, 0,
-            detailEnd, detail(x, z) * detailFactor
-          ),
-          mountainPeakStart, 0,
-          mountainPeakEnd, mountainPeaks(x,z) * mountainPeakFactor
+          elevation(x, z),
+          detailStart, 0,
+          detailEnd, detail(x, z) * detailFactor
         ),
         terraceBaseScale + terraceScale(x, z) * terraceScaleVariation,
         terraceOffset(x, z) * terraceOffsetVariation,
@@ -118,7 +155,18 @@ samplers:
       )
     variables: *variables
     samplers:
-      elevation: *elevation
+      elevation:
+        dimensions: 2
+        type: DOMAIN_WARP
+        sampler: *elevation
+        # Elevation is warped slightly by white noise, creating a small fuzzy
+        # or dithered look to break up perfectly smooth noise. Produces small
+        # 1 block divots in terrain, especially apparent on steeper terrain and
+        # countours which is good because these areas tend to look too perfect / artifical.
+        amplitude: $customization.yml:elevation-fuzz
+        warp:
+          type: WHITE_NOISE
+          salt: 2394
       terraceScale:
         dimensions: 2
         type: OPEN_SIMPLEX_2
@@ -147,20 +195,7 @@ samplers:
           type: OPEN_SIMPLEX_2
           frequency: 0.008
           salt: 5912
-      mountainPeaks:
-        dimensions: 2
-        type: FBM
-        octaves: 3
-        sampler:
-          type: EXPRESSION
-          expression: (lerp(sampler(x, z), -1, 1, 1, -1)^4)*2-1
-          functions: $math/functions/interpolation.yml:functions
-          samplers:
-            sampler:
-              dimensions: 2
-              type: CELLULAR
-              distance: Euclidean
-              frequency: 0.01
+
     functions:
       terrace: # Terrace function but with depth masked by input value, so terracing doesn't cut down below ocean level
         arguments:

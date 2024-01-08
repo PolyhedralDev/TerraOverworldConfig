@@ -1,0 +1,14 @@
+id: BOULDER_SURFACE_LOCATOR
+type: FEATURE
+abstract: true
+
+locator:
+  type: AND
+  locators:
+    - type: SURFACE
+      range:
+        min: ${meta.yml:ocean-level} + 3
+        max: $meta.yml:top-y
+    - type: SLANT
+      condition: 0.75 < value && value < 0.95
+

@@ -37,45 +37,25 @@ locator:
       pattern:
         type: MATCH_AIR
         offset: 0
-    # Match either resting on top of stone, or hanging below stone
-    - type: OR
+    # Match hanging below stone
+    - type: AND
       locators:
-        - type: AND
-          locators:
-            - type: PATTERN
-              range: *range
-              pattern:
-                type: MATCH_SET
+        - type: PATTERN
+          range: *range
+          pattern:
+            type: MATCH_SET
+            blocks: *blocks
+            offset: -1
+        - type: ADJACENT_PATTERN
+          range: *range
+          pattern:
+            type: AND
+            patterns:
+              - type: MATCH_AIR
+                offset: -1
+              - type: MATCH_SET
                 blocks: *blocks
                 offset: 1
-            - type: ADJACENT_PATTERN
-              range: *range
-              pattern:
-                type: AND
-                patterns:
-                  - type: MATCH_AIR
-                    offset: 1
-                  - type: MATCH_SET
-                    blocks: *blocks
-                    offset: -1
-        - type: AND
-          locators:
-            - type: PATTERN
-              range: *range
-              pattern:
-                type: MATCH_SET
-                blocks: *blocks
-                offset: -1
-            - type: ADJACENT_PATTERN
-              range: *range
-              pattern:
-                type: AND
-                patterns:
-                  - type: MATCH_AIR
-                    offset: -1
-                  - type: MATCH_SET
-                    blocks: *blocks
-                    offset: 1
     
 structures:
   distribution:

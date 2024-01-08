@@ -17,6 +17,7 @@ addons:
   config-distributors: "1.+"
   config-locators: "1.+"
   config-feature: "1.+"
+  config-number-predicate: "1.+"
   structure-terrascript-loader: "1.+"
   structure-sponge-loader: "1.+"
   language-yaml: "1.+"
@@ -25,6 +26,7 @@ addons:
   palette-block-shortcut: "1.+"
   structure-block-shortcut: "1.+"
   terrascript-function-sampler: "1.+"
+  locator-slant-noise-3d: "1.+"
 
 # ---
 # Biome distribution
@@ -98,7 +100,12 @@ stages:
   # also treated as trees like ice spikes.
   - id: trees
     type: FEATURE
-    
+    blend:
+      amplitude: 50
+      sampler:
+        type: GAUSSIAN
+        salt: 2583
+ 
   # Used for small features placed underwater like sea-grass.
   - id: underwater-flora
     type: FEATURE
@@ -106,6 +113,11 @@ stages:
   # Used for small features placed on the surface like tall grass and vines.
   - id: flora
     type: FEATURE
+    blend:
+      amplitude: 50
+      sampler:
+        type: GAUSSIAN
+        salt: 2934
   
   # Used to generate features that must come after all other features, such as snow on trees.
   - id: postprocessors

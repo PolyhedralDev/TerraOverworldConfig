@@ -1,5 +1,6 @@
 id: SMALL_MOSSY_BOULDER_PATCHES
 type: FEATURE
+extends: BOULDER_SURFACE_LOCATOR
 
 distributor:
   type: AND
@@ -16,12 +17,6 @@ distributor:
           salt: 2159
           frequency: 0.01
       threshold: 0.2
-
-locator:
-  type: SURFACE
-  range:
-    min: ${meta.yml:ocean-level} + 3
-    max: $meta.yml:top-y
 
 structures:
   distribution:
