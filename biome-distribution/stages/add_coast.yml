@@ -13,3 +13,12 @@ stages:
     from: land
     replace: ocean
     to: coast
+  - type: REPLACE
+    from: coast
+    to:
+      land: 1
+      SELF: 1
+    sampler:
+      type: OPEN_SIMPLEX_2
+      frequency: 1 / 300 / ${customization.yml:global-scale}
+      salt: 1023
