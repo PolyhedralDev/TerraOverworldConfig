@@ -265,5 +265,5 @@ spot-spread: 2000
 spot-radius-min: 50
 # Default: 50
 
-spot-radius-max: 300
-# Default: 300
+spot-radius-max: 150
+# Default: 150
