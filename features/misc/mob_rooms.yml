@@ -1,0 +1,22 @@
+id: MOB_ROOMS
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 20
+  padding: 75
+  salt: 8669
+
+locator:
+  type: AND
+  locators:
+    - type: RANDOM
+      height: &range
+        min: 0
+        max: 1
+      amount: 1
+        
+structures:
+  distribution:
+    type: CONSTANT
+  structures: mob_room

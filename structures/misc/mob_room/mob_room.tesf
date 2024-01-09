@@ -1,0 +1,83 @@
+num searchRadius = 5;
+bool spawnable = true;
+
+for (num x = -searchRadius; x <= searchRadius; x = x + 1) {
+    for (num y = 0; y <= 100; y = y + 1) {
+        for (num z = -searchRadius; z <= searchRadius; z = z + 1) {
+            if (getBlock(x,y,z) == "minecraft:air" && 
+            getBlock(x,y+1,z) == "minecraft:air" && 
+            getBlock(x,y-1,z) != "minecraft:air") {
+                
+                spawnable = true;
+
+                if (spawnable == true && getBlock(1,0,0) != "minecraft:air") {
+                    for (num i = 1; i <= 13; i = i + 1) {
+                        if (spawnable == false) break;
+                        for (num j = -6; j <= 6; j = j + 1) {
+                        if (getBlock(i+x,y,j+z) == "minecraft:air") spawnable = false;
+                        if (getBlock(i+x,6+y,j+z) == "minecraft:air") spawnable = false;
+                        }
+                    }
+
+                    if (spawnable == true) {
+                        structure(7+x,y,z,"mob_room_east_sc","NONE");
+                        structure(7+x,3+y,z,"spawner_state","NONE");
+                        fail;
+                    }
+                    spawnable = true;
+                } 
+
+                if (spawnable == true && getBlock(-1,0,0) != "minecraft:air") {
+                    for (num i = 1; i <= 13; i = i + 1) {
+                        if (spawnable == false) break;
+                        for (num j = -6; j <= 6; j = j + 1) {
+                        if (getBlock(-i+x,y,-j+z) == "minecraft:air") spawnable = false;
+                        if (getBlock(-i+x,6+y,-j+z) == "minecraft:air") spawnable = false;
+                        }
+                    }
+
+                    if (spawnable == true) {
+                    structure(-7+x,y,z,"mob_room_west_sc","NONE");
+                    structure(-7+x,3+y,z,"spawner_state","NONE"); 
+                    fail;
+                    }
+                    spawnable = true;
+                }
+
+                if (spawnable == true && getBlock(0,0,1) != "minecraft:air") {
+                    for (num i = 1; i <= 13; i = i + 1) {
+                        if (spawnable == false) break;
+                        for (num j = -6; j <= 6; j = j + 1) {
+                        if (getBlock(j+x,y,i+z) == "minecraft:air") spawnable = false;
+                        if (getBlock(j+x,6+y,i+z) == "minecraft:air") spawnable = false;
+                        }
+                    }
+
+                    if (spawnable == true) {
+                    structure(x,y,7+z,"mob_room_south_sc","NONE");
+                    structure(x,3+y,7+z,"spawner_state","NONE");
+                    fail;
+                    }
+                    spawnable = true;
+                } 
+
+                if (spawnable == true && getBlock(0,0,-1) != "minecraft:air") {
+                    for (num i = 1; i <= 13; i = i + 1) {
+                        if (spawnable == false) break;
+                        for (num j = -6; j <= 6; j = j + 1) {
+                        if (getBlock(-j+x,y,-i+z) == "minecraft:air") spawnable = false;
+                        if (getBlock(-j+x,6+y,-i+z) == "minecraft:air") spawnable = false;
+                        }
+                    }
+
+                    if (spawnable == true) {
+                    structure(x,y,-7+z,"mob_room_north_sc","NONE");
+                    structure(x,3+y,-7+z,"spawner_state","NONE");
+                    fail;
+                    }
+                    spawnable = true;
+                }
+            }
+        }   
+    }
+}

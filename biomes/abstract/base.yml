@@ -22,3 +22,5 @@ features:
     - KELP
     - CLINGING_KELP
     - SEAGRASS
+  landforms:
+    - MOB_ROOMS
