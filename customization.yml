@@ -147,6 +147,10 @@ flatness-percent: 0.25
 flatness-blend: 0.35
 # Default: TODO
 
+flatness-factor: 0.95
+# How much to flatten by. 1 = 100% flat, 0 = no flattening
+# Default: 0.95
+
 # ---
 # Temperature
 # ---
@@ -261,5 +265,5 @@ spot-spread: 2000
 spot-radius-min: 50
 # Default: 50
 
-spot-radius-max: 300
-# Default: 300
+spot-radius-max: 150
+# Default: 150

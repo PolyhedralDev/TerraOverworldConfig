@@ -36,11 +36,12 @@ samplers:
   flatness: &flatness
     dimensions: 2
     type: EXPRESSION
-    expression: herp(rawFlatness(x, z), threshold, 1, threshold + blend, 0)
+    expression: herp(rawFlatness(x, z), threshold, factor, threshold + blend, 0)
     functions: $math/functions/interpolation.yml:functions
     variables:
       threshold: $customization.yml:flatness-percent
       blend: $customization.yml:flatness-blend
+      factor: $customization.yml:flatness-factor
     samplers:
       rawFlatness: *rawFlatness
 
