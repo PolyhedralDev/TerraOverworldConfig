@@ -122,10 +122,10 @@ elevation-factor-spawn-island: 1
 # Determines if spawn island noise affects terrain, 1 = true, 0 = false
 # Default: 1
 
-elevation-spawn-island-scale: 0.3
+elevation-spawn-island-scale: 0.2
 # Scales elevation within the spawn island. E.g 0.3 means elevation is set to 30%
 # within the spawn island.
-# Default: 0.3
+# Default: 0.2
 
 elevation-fuzz: 0.25
 # Adds a slight bit of fuzziness to elevation, roughening terrain block countours
