@@ -2,7 +2,7 @@ samplers:
   spawnIsland:
     dimensions: 2
     type: DOMAIN_WARP 
-    amplitude: 200
+    amplitude: 150
     warp:
       type: FBM
       octaves: 2
@@ -12,7 +12,7 @@ samplers:
         z: -5000
         sampler:
           type: OPEN_SIMPLEX_2
-          frequency: 0.005
+          frequency: 0.004
     sampler:
       type: EXPRESSION_NORMALIZER
       expression: | # Maps innerRadius to 1, middleRadius to 0, outerRadius to -1
