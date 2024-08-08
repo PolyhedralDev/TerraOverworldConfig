@@ -1,10 +1,10 @@
-id: JUNGLE_BUSHES
+id: DENSE_JUNGLE_BUSHES
 type: FEATURE
 
 distributor:
   type: PADDED_GRID
-  width: 12
-  padding: 7
+  width: 3
+  padding: 2
   salt: 9152
 
 locator:
