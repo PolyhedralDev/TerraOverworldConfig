@@ -66,5 +66,6 @@ features:
     - JUNGLE_TREES
     - JUNGLE_BUSHES
     - POTATO_PATCHES
+    - MELON_PATCHES
   landforms:
     - SMALL_MOSSY_BOULDER_PATCHES
