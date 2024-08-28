@@ -1,0 +1,30 @@
+id: SEA_GLACIER
+type: BIOME
+extends:
+  - EQ_SEA_GLACIER
+  - FROZEN_OCEAN
+color: $biomes/colors.yml:FROZEN_DEEP_OCEAN
+
+vanilla: minecraft:deep_frozen_ocean
+
+ocean:
+  palette: FROZEN_OCEAN
+
+palette:
+  - SEA_GLACIER: $meta.yml:top-y
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.8
+    palette:
+      - SEA_GLACIER: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+slant-depth: 15
+
+features:
+  slabs:
+    - SNOW_LAYERS
+  preprocessors:
+    - POWDER_SNOW_DEPOSITS
+    - ICE_COASTLINE
