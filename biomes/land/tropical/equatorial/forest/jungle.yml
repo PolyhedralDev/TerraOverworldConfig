@@ -64,7 +64,8 @@ features:
     - BIG_DRIPLEAF
   trees:
     - JUNGLE_TREES
-    - JUNGLE_BUSHES
+    - DENSE_JUNGLE_BUSHES
     - POTATO_PATCHES
+    - MELON_PATCHES
   landforms:
     - SMALL_MOSSY_BOULDER_PATCHES

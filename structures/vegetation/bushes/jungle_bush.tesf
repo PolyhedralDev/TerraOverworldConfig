@@ -1,12 +1,12 @@
 num randPrecision = 200;
-num radius = randomInt(randPrecision)/randPrecision*3 + 1;
+num radius = randomInt(randPrecision)/randPrecision*3 + 3;
 num radiusCeil = ceil(radius);
-num radiusSquared = pow(radius, 3);
+num radiusSquared = pow(radius, 2);
 
 block(0, 0, 0, "minecraft:jungle_log");
 
 for(num x = -radiusCeil; x <= radiusCeil; x = x + 1) {
-    for(num y = 0; y <= radiusCeil; y = y + 1) {
+    for(num y = -radiusCeil; y <= radiusCeil; y = y + 1) {
         for(num z = -radiusCeil; z <= radiusCeil; z = z + 1) {
             num distanceSquared = (pow(x,2) + pow(y*3,2) + pow(z,2));
             if (distanceSquared/radiusSquared < randomInt(randPrecision)/randPrecision) {
@@ -16,4 +16,4 @@ for(num x = -radiusCeil; x <= radiusCeil; x = x + 1) {
     }
 }
 
-block(0, 1, 0, "minecraft:jungle_leaves[distance=1,persistent=false]", false);
+block(0, 1, 0, "minecraft:oak_leaves[distance=1,persistent=false]", false);
