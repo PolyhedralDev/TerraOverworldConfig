@@ -1,0 +1,8 @@
+id: COLD_OCEAN_TRENCHES
+type: BIOME
+extends:
+  - COLD_OCEAN
+  - EQ_SUBMERGED_ERODED_COAST
+color: $biomes/colors.yml:COLD_OCEAN
+
+vanilla: minecraft:cold_ocean
