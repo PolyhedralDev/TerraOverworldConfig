@@ -9,6 +9,8 @@ features:
   flora:
     - CORAL_PLANTS
     - CORAL_FANS
+    - CORAL_WALL_FANS
+    - SEA_PICKLES
   trees:
     - DENDRIFORM_REEF
     - BALL_REEF

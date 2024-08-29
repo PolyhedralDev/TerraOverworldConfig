@@ -1,0 +1,52 @@
+setWaterlog(true);
+// Use random number to pick which coral to use
+num coralRand = randomInt(5);
+
+// If block is not in water, fail
+if (getBlock(0, 0, 0) != "minecraft:water") fail;
+
+str setBlock = "minecraft:seagrass";
+if(coralRand == 0) setBlock = "minecraft:brain_coral_wall_fan";
+else if(coralRand == 1) setBlock = "minecraft:bubble_coral_wall_fan";
+else if(coralRand == 2) setBlock = "minecraft:tube_coral_wall_fan";
+else if(coralRand == 3) setBlock = "minecraft:fire_coral_wall_fan";
+else if(coralRand == 4) setBlock = "minecraft:horn_coral_wall_fan";
+
+bool west = false;
+bool north = false;
+bool south = false;
+bool east = false;
+bool up = false;
+bool diown = false;
+
+num age = randomInt(3);
+
+if (getBlock(1,0,0) == "minecraft:stone" ||
+getBlock(1,0,0) == "minecraft:deepslate" ||
+getBlock(1,0,0) == "minecraft:gravel" ||
+getBlock(1,0,0) == "minecraft:andesite" ||
+getBlock(1,0,0) == "minecraft:sand" ||
+getBlock(1,0,0) == "minecraft:smooth_sandstone") block(0,0,0, setBlock+"[facing=west]", true);
+
+if (getBlock(-1,0,0) == "minecraft:stone" ||
+getBlock(-1,0,0) == "minecraft:deepslate" ||
+getBlock(-1,0,0) == "minecraft:gravel" ||
+getBlock(-1,0,0) == "minecraft:andesite" ||
+getBlock(-1,0,0) == "minecraft:sand" ||
+getBlock(-1,0,0) == "minecraft:smooth_sandstone") block(0,0,0, setBlock+"[facing=east]", true);
+
+if (getBlock(0,0,1) == "minecraft:stone" ||
+getBlock(0,0,1) == "minecraft:deepslate" ||
+getBlock(0,0,1) == "minecraft:gravel" ||
+getBlock(0,0,1) == "minecraft:andesite" ||
+getBlock(0,0,1) == "minecraft:sand" ||
+getBlock(0,0,1) == "minecraft:smooth_sandstone") block(0,0,0, setBlock+"[facing=north]", true);
+
+if (getBlock(0,0,-1) == "minecraft:stone" ||
+getBlock(0,0,-1) == "minecraft:deepslate" ||
+getBlock(0,0,-1) == "minecraft:gravel" ||
+getBlock(0,0,-1) == "minecraft:andesite" ||
+getBlock(0,0,-1) == "minecraft:sand" ||
+getBlock(0,0,-1) == "minecraft:smooth_sandstone") block(0,0,0, setBlock+"[facing=south]", true);
+
+
