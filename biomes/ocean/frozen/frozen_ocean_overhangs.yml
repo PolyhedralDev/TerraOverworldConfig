@@ -1,8 +1,8 @@
-id: FROZEN_OCEAN_TRENCHES
+id: FROZEN_OCEAN_OVERHANGS
 type: BIOME
 extends:
   - FROZEN_OCEAN
-  - EQ_SUBMERGED_ERODED_COAST
+  - EQ_SUBMERGED_OVERHANGS
 color: $biomes/colors.yml:FROZEN_OCEAN
 
 vanilla: minecraft:frozen_ocean

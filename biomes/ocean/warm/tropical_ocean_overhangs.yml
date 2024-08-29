@@ -1,8 +1,8 @@
-id: TROPICAL_OCEAN_TRENCHES
+id: TROPICAL_OCEAN_OVERHANGS
 type: BIOME
 extends:
   - TROPICAL_OCEAN
-  - EQ_SUBMERGED_ERODED_COAST
+  - EQ_SUBMERGED_OVERHANGS
 color: $biomes/colors.yml:TROPICAL_OCEAN
 
 vanilla: minecraft:warm_ocean

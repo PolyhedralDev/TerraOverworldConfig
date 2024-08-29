@@ -1,8 +1,8 @@
-id: OCEAN_TRENCHES
+id: OCEAN_OVERHANGS
 type: BIOME
 extends:
   - OCEAN
-  - EQ_SUBMERGED_ERODED_COAST
+  - EQ_SUBMERGED_OVERHANGS
 color: $biomes/colors.yml:OCEAN
 
 vanilla: minecraft:ocean

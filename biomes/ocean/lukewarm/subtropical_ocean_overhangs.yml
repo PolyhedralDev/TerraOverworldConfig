@@ -1,8 +1,8 @@
-id: SUBTROPICAL_OCEAN_TRENCHES
+id: SUBTROPICAL_OCEAN_OVERHANGS
 type: BIOME
 extends:
   - SUBTROPICAL_OCEAN
-  - EQ_SUBMERGED_ERODED_COAST
+  - EQ_SUBMERGED_OVERHANGS
 color: $biomes/colors.yml:SUBTROPICAL_OCEAN
 
 vanilla: minecraft:lukewarm_ocean

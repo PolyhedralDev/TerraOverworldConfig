@@ -42,9 +42,9 @@ stages:
           - FROZEN_OCEAN: 1
         polar-shallow-ocean-midlands:
           - FROZEN_OCEAN: 1
+          - FROZEN_OCEAN_OVERHANGS: 1
         polar-ocean:
           - FROZEN_OCEAN: 1
-          - FROZEN_OCEAN_TRENCHES: 1
           - FROZEN_OCEAN_SLOPES: 1
           - ICEBERG_OCEAN: 1
         polar-deep-ocean:
@@ -140,9 +140,9 @@ stages:
           - KELP_FOREST: 1
         boreal-shallow-ocean-midlands:
           - COLD_OCEAN: 1
+          - COLD_OCEAN_OVERHANGS: 1
         boreal-ocean:
           - COLD_OCEAN: 1
-          - COLD_OCEAN_TRENCHES: 1
           - COLD_OCEAN_SLOPES: 1
         boreal-deep-ocean:
           - COLD_DEEP_OCEAN: 1
@@ -240,9 +240,9 @@ stages:
           - SEAGRASS_MEADOW: 1
         temperate-shallow-ocean-midlands:
           - ROCKY_SHALLOW_OCEAN: 1
+          - OCEAN_OVERHANGS: 1
         temperate-ocean:
           - OCEAN: 1
-          - OCEAN_TRENCHES: 1
           - OCEAN_SLOPES: 1
         temperate-deep-ocean:
           - DEEP_OCEAN: 1
@@ -426,10 +426,10 @@ stages:
           - TROPICAL_OCEAN: 1
           - SEAGRASS_MEADOW: 1
           - CORAL_OCEAN: 1
+          - CORAL_OCEAN_OVERHANGS: 1
         hot-ocean:
           - TROPICAL_OCEAN: 1
-          - TROPICAL_OCEAN_TRENCHES: 1
+          - TROPICAL_OCEAN_OVERHANGS: 1
           - TROPICAL_OCEAN_SLOPES: 1
-          - CORAL_OCEAN_TRENCHES: 1
           - CORAL_OCEAN_SLOPES: 1
         hot-deep-ocean: TROPICAL_DEEP_OCEAN

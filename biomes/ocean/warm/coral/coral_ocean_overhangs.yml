@@ -1,8 +1,8 @@
-id: CORAL_OCEAN_TRENCHES
+id: CORAL_OCEAN_OVERHANGS
 type: BIOME
 extends:
   - CORAL_OCEAN
-  - EQ_SUBMERGED_ERODED_COAST
+  - EQ_SUBMERGED_OVERHANGS
 color: $biomes/colors.yml:CORAL_OCEAN
 
 vanilla: minecraft:warm_ocean
