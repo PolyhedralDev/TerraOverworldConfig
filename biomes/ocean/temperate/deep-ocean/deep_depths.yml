@@ -3,7 +3,7 @@ type: BIOME
 extends:
   - DEEP_OCEAN
   - BASE
-color: $biomes/colors.yml:DEEP_DARK
+color: $biomes/colors.yml:DEEP_DEPTHS
 
 vanilla: minecraft:deep_ocean
 

@@ -3,7 +3,7 @@ type: BIOME
 extends:
   - FROZEN_DEEP_OCEAN
   - BASE
-color: $biomes/colors.yml:DEEP_DARK
+color: $biomes/colors.yml:FROZEN_DEEP_DEPTHS
 
 vanilla: minecraft:deep_frozen_ocean
 

@@ -3,7 +3,7 @@ type: BIOME
 extends:
   - SUBTROPICAL_DEEP_OCEAN
   - BASE
-color: $biomes/colors.yml:DEEP_DARK
+color: $biomes/colors.yml:SUBTROPICAL_DEEP_DEPTHS
 
 vanilla: minecraft:deep_lukewarm_ocean
 
