@@ -3,9 +3,9 @@ type: BIOME
 abstract: true
 
 variables: &variables
-  base: ${customization.yml:terrain-ocean-base-y-level} - ${customization.yml:terrain-ocean-depth}/5
+  base: ${customization.yml:terrain-ocean-base-y-level} - 5
   scale: $customization.yml:terrain-ocean-depth
-  overhangStrength: 30
+  overhangStrength: 17
 
 terrain:
   sampler:
@@ -23,5 +23,5 @@ terrain:
           salt: 4957
   sampler-2d:
     type: EXPRESSION
-    expression: scale * elevationDetailed(x, z)
+    expression: scale * oceanElevation(x, z)
     variables: *variables
