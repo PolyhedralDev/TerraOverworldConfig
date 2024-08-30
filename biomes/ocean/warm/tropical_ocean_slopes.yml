@@ -3,6 +3,6 @@ type: BIOME
 extends:
   - TROPICAL_OCEAN
   - EQ_SUBMERGED_SPIKES
-color: $biomes/colors.yml:TROPICAL_OCEAN
+color: $biomes/colors.yml:TROPICAL_OCEAN_SLOPES
 
 vanilla: minecraft:warm_ocean

@@ -3,6 +3,6 @@ type: BIOME
 extends:
   - COLD_OCEAN
   - EQ_SUBMERGED_OVERHANGS
-color: $biomes/colors.yml:COLD_OCEAN
+color: $biomes/colors.yml:COLD_OCEAN_OVERHANGS
 
 vanilla: minecraft:cold_ocean

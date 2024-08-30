@@ -3,6 +3,6 @@ type: BIOME
 extends:
   - SUBTROPICAL_OCEAN
   - EQ_SUBMERGED_OVERHANGS
-color: $biomes/colors.yml:SUBTROPICAL_OCEAN
+color: $biomes/colors.yml:SUBTROPICAL_OCEAN_OVERHANGS
 
 vanilla: minecraft:lukewarm_ocean

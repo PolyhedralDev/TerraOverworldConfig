@@ -3,6 +3,6 @@ type: BIOME
 extends:
   - COLD_OCEAN
   - EQ_SUBMERGED_SPIKES
-color: $biomes/colors.yml:COLD_OCEAN
+color: $biomes/colors.yml:COLD_OCEAN_SLOPES
 
 vanilla: minecraft:cold_ocean
