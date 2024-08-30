@@ -1,4 +1,4 @@
-id: DARK_DEPTHS
+id: DEEP_DEPTHS
 type: BIOME
 extends:
   - DEEP_OCEAN

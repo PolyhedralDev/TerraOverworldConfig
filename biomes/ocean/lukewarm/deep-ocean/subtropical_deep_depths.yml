@@ -1,11 +1,11 @@
-id: TROPICAL_DARK_DEPTHS
+id: SUBTROPICAL_DEEP_DEPTHS
 type: BIOME
 extends:
-  - DEEP_OCEAN
+  - SUBTROPICAL_DEEP_OCEAN
   - BASE
 color: $biomes/colors.yml:DEEP_DARK
 
-vanilla: minecraft:warm_ocean
+vanilla: minecraft:deep_lukewarm_ocean
 
 features:
   preprocessors:

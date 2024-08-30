@@ -1,11 +1,11 @@
-id: COLD_DARK_DEPTHS
+id: FROZEN_DEEP_DEPTHS
 type: BIOME
 extends:
-  - COLD_DEEP_OCEAN
+  - FROZEN_DEEP_OCEAN
   - BASE
 color: $biomes/colors.yml:DEEP_DARK
 
-vanilla: minecraft:deep_cold_ocean
+vanilla: minecraft:deep_frozen_ocean
 
 features:
   preprocessors:
