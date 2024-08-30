@@ -49,7 +49,6 @@ stages:
           - ICEBERG_OCEAN: 1
         polar-deep-ocean:
           - FROZEN_DEEP_OCEAN: 1
-          - SEA_GLACIER: 1
 
   
         boreal-hot-flat:
