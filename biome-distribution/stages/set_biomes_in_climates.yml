@@ -49,6 +49,7 @@ stages:
           - ICEBERG_OCEAN: 1
         polar-deep-ocean:
           - FROZEN_DEEP_OCEAN: 1
+          - FROZEN_DEEP_OCEAN_VENTS: 1
           - FROZEN_DEEP_DEPTHS: 1
 
   
@@ -146,6 +147,7 @@ stages:
           - COLD_OCEAN_SLOPES: 1
         boreal-deep-ocean:
           - COLD_DEEP_OCEAN: 1
+          - COLD_DEEP_OCEAN_VENTS: 1
           - COLD_DEEP_DEPTHS: 1
 
         temperate-hot-dry-flat:
@@ -247,6 +249,7 @@ stages:
           - OCEAN_SLOPES: 1
         temperate-deep-ocean:
           - DEEP_OCEAN: 1
+          - DEEP_OCEAN_VENTS: 1
           - DEEP_DEPTHS: 1
 
         # Red hot desert
@@ -436,4 +439,5 @@ stages:
           - CORAL_OCEAN_SLOPES: 1
         hot-deep-ocean:
           - TROPICAL_DEEP_OCEAN: 1
+          - TROPICAL_DEEP_OCEAN_VENTS: 1
           - TROPICAL_DEEP_DEPTHS: 1
