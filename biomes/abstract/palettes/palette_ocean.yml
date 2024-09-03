@@ -4,6 +4,7 @@ abstract: true
 
 palette:
   - SAND: $meta.yml:top-y
+  - SAND_STONE_MIX: ${meta.yml:deepslate-top} + 10
   - << meta.yml:palette-bottom
 
 slant-depth: 4
