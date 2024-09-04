@@ -8,10 +8,12 @@ vanilla: minecraft:warm_ocean
 features:
   flora:
     - CORAL_PLANTS
-    - CORAL_FANS
-    - CORAL_WALL_FANS
     - SEA_PICKLES
+    - SPARSE_BIG_CORAL_PLANTS
   trees:
     - DENDRIFORM_REEF
     - BALL_REEF
     - PALM_TREES
+  postprocessors:
+    - CORAL_FANS
+    - CORAL_WALL_FANS
