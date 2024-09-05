@@ -10,6 +10,7 @@ color: $biomes/colors.yml:SNOWY_MEADOW
 
 tags:
   - LAND_CAVES
+  - ICE_CAVES
   - USE_FROZEN_RIVER_FROZEN_MARSH
 
 vanilla: minecraft:snowy_plains

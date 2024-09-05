@@ -11,6 +11,7 @@ vanilla: minecraft:ice_spikes
 
 tags:
   - LAND_CAVES
+  - ICE_CAVES
   - USE_FROZEN_RIVER_FROZEN_MARSH
 
 slant:
