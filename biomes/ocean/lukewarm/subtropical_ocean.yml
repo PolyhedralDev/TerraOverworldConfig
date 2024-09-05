@@ -19,3 +19,5 @@ colors:
 features:
   trees:
     - PALM_TREES
+  landforms:
+    - SPARSE_GIANT_CLAMS
