@@ -40,6 +40,7 @@ features:
     - SNOW_LAYERS
   trees:
     - SPARSE_SPRUCE_TREES
+    - SPARSE_FALLEN_SPRUCE_TREES
   preprocessors:
     - POWDER_SNOW_DEPOSITS
   postprocessors:

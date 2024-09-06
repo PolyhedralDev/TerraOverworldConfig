@@ -71,4 +71,5 @@ features:
   trees:
     - OAK_BUSHES
     - SPARSE_OAK_TREES
+    - SPARSE_FALLEN_OAK_TREES
     - DEAD_TREES_SPARSE

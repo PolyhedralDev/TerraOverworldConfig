@@ -47,3 +47,4 @@ features:
     - FERNS
   trees:
     - SPRUCE_TREE_PATCHES
+    - SPARSE_FALLEN_SPRUCE_TREES
