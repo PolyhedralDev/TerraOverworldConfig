@@ -42,6 +42,7 @@ features:
     - GRASS
   trees:
     - SAKURA_TREES
+    - SPARSE_FALLEN_CHERRY_TREES
   landforms:
     - MOSSY_BOULDERS
     - SMALL_MOSSY_BOULDER_PATCHES
