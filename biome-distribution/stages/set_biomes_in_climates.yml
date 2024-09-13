@@ -318,8 +318,10 @@ stages:
         # White hot steppe
         hot-steppe-flat-white:
           - XERIC_SHRUBLAND: 1
+          - TAR_PITS: 1
         hot-steppe-white:
           - XERIC_SHRUBLAND: 1
+          - TAR_PITS: 1
         hot-steppe-highlands-white:
           - XERIC_MOUNTAINS: 1
 
