@@ -121,7 +121,7 @@ samplers:
     expression: |
       rawElevation(x, z) * (1-flatness(x, z))
       * if(factorContinental, herp(continents(x, z), continentZero, 0, continentFull, 1), 1)
-      * if(factorSpawnIsland, herp(spawnIsland(x, z), 1, spawnIslandScale, -1, 1), 1)
+      * if(factorSpawnIsland, herp(spawnIsland(x, z), 0, spawnIslandScale, -1, 1), 1)
       * if(factorRiver, (1-riverTerrainErosion(x, z)), 1)
     functions: $math/functions/interpolation.yml:functions
     variables:

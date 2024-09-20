@@ -3,51 +3,46 @@ num goldenAngle = 2.39996;
 num pi = 3.14159;
 num twopi = 6.28318530718;
 
-num trunkHeight = 4+randomInt(20);
+num trunkHeight = 12+randomInt(15);
 str trunkBlock = "minecraft:jungle_log";
 str rootBlock = "minecraft:jungle_wood";
 
-num sideBranchInterval = 4+randomInt(2);
-num sideBranchMinHeight = 3+randomInt(3);
+num cocoaChance = 5;
+
+num sideBranchInterval = 2+randomInt(2);
+num sideBranchMinHeight = 1+randomInt(2);
 num sideBranchLengthMin = 4+randomInt(2);
 num sideBranchLengthVariation = 2;
 num sideBranchVerticalVariation = 0;
 num sideBranchVerticalDirection = 0.5+randomInt(randPrecision)/randPrecision/2;
-num sideBranchLeafRadiusMin = 6;
+num sideBranchLeafRadiusMin = 4;
 num sideBranchLeafTranslate = 0;
-num sideBranchLeafTopFlatness = 4;
-num sideBranchLeafBottomFlatness = 6;
-num sideBranchLeafDensity = 0.7;
+num sideBranchLeafTopFlatness = 2;
+num sideBranchLeafBottomFlatness = 3;
+num sideBranchLeafDensity = 0.75;
 str sideBranchLeafBlock = "minecraft:jungle_leaves[distance=1,persistent=false]";
 str sideBranchBlockX = "minecraft:jungle_log[axis=x]";
 str sideBranchBlockY = "minecraft:jungle_log[axis=y]";
 str sideBranchBlockZ = "minecraft:jungle_log[axis=z]";
 
-num topBranches = 2+randomInt(2);
-num topBranchLengthUpwardsMin = 7+randomInt(3);
-num topBranchLengthOutwardsMin = 4+randomInt(3);
-num topBranchVerticalDirection = 1;
-num topBranchLeafRadiusMin = 6;
+num topBranches = 8+randomInt(6);
+num topBranchLengthUpwardsMin = 3+randomInt(4);
+num topBranchLengthOutwardsMin = 6+randomInt(3);
+num topBranchLengthVariation = 5;
+num topBranchUpwardVariation = 5;
+num topBranchVerticalDirection = 0.7;
+num topBranchLeafRadiusMin = 4.1;
 num topBranchLeafTranslate = 0;
-num topBranchLeafTopFlatness = 4;
-num topBranchLeafBottomFlatness = 6;
-num topBranchLeafDensity = 0.7;
+num topBranchLeafTopFlatness = 2;
+num topBranchLeafBottomFlatness = 3;
+num topBranchLeafDensity = 0.75;
 str topBranchLeafBlock = "minecraft:jungle_leaves[distance=1,persistent=false]";
 str topBranchBlockX = "minecraft:jungle_log[axis=x]";
 str topBranchBlockY = "minecraft:jungle_log[axis=y]";
 str topBranchBlockZ = "minecraft:jungle_log[axis=z]";
 
-// cocoa
-num cocoaRoll = randomInt(10); // 1 in 10 chance
-if (cocoaRoll == 0) {
-structure(0, 1, 0, "cocoa_bean", "NONE");
-structure(0, 2, 0, "cocoa_bean", "NONE");
-structure(0, 3, 0, "cocoa_bean", "NONE");
-}
-
-
 // Generate roots at base of trunk
-num roots = 1+randomInt(3);
+num roots = 3+randomInt(3);
 num rootMaxDepth = 3;
 num rootHeight = 5;
 num rootLength = 2;
@@ -115,6 +110,9 @@ for (num i = 0; i < trunkHeight; i = i + 1) {
         }
     }
     block(0, i, 0, trunkBlock);
+    block(0, i, 1, trunkBlock);
+    block(1, i, 0, trunkBlock);
+    block(1, i, 1, trunkBlock);
 }
 
 for (num b = 1; b <= topBranches; b = b + 1) {
@@ -137,7 +135,7 @@ for (num b = 1; b <= topBranches; b = b + 1) {
     str branchBlock = topBranchBlockY;
     if (abs(dx) > max(abs(dy),abs(dz))) branchBlock = topBranchBlockX;
     else if (abs(dz) > max(abs(dy),abs(dx))) branchBlock = topBranchBlockZ;
-    num branchLength = topBranchLengthUpwardsMin*ti + topBranchLengthOutwardsMin*t;
+    num branchLength = ((topBranchLengthUpwardsMin+randomInt(topBranchUpwardVariation))*ti) + (topBranchLengthOutwardsMin+randomInt(topBranchLengthVariation))*t;
     // Generate branch
     for (num l = 0; l <= branchLength; l = l + 1) {
         block(l*dx+ox, l*dy+oy, l*dz+oz, branchBlock);
@@ -165,13 +163,32 @@ for (num b = 1; b <= topBranches; b = b + 1) {
     }
 }
 
-for (num v = 35; v > trunkHeight; v = v - 1) {
-    num rx = sin(randomInt(randPrecision)/randPrecision * twopi) * (randomInt(9) + 3);
-    num rz = cos(randomInt(randPrecision)/randPrecision * twopi) * (randomInt(9) + 3);
+
+for (num v = trunkHeight+topBranchLengthUpwardsMin; v > sideBranchMinHeight; v = v - 0.25) {
+    num rx = sin(randomInt(randPrecision)/randPrecision * twopi) * (randomInt(9) + 1);
+    num rz = cos(randomInt(randPrecision)/randPrecision * twopi) * (randomInt(9) + 1);
     structure(rx, v, rz, "place_vines", "NONE");
     structure(-rx, v, rz, "place_vines", "NONE");
     structure(rx, v, -rz, "place_vines", "NONE");
     structure(-rx, v, -rz, "place_vines", "NONE");
+
+    structure(rx, v, rz, "place_trunk_vines", "NONE");
+    structure(-rx, v, rz, "place_trunk_vines", "NONE");
+    structure(rx, v, -rz, "place_trunk_vines", "NONE");
+    structure(-rx, v, -rz, "place_trunk_vines", "NONE");
+
+    //cocoa
+    num cocoaRoll = randomInt(cocoaChance)*10;
+    if (cocoaRoll == 0) structure(rx, v, rz, "cocoa_bean", "NONE");
+
+    cocoaRoll = randomInt(cocoaChance);
+    if (cocoaRoll == 0) structure(-rx, v, rz, "cocoa_bean", "NONE");
+
+    cocoaRoll = randomInt(cocoaChance);
+    if (cocoaRoll == 0) structure(rx, v, -rz, "cocoa_bean", "NONE");
+
+    cocoaRoll = randomInt(cocoaChance);
+    if (cocoaRoll == 0) structure(-rx, v, -rz, "cocoa_bean", "NONE");
 }
 
 block(0, -1, 0, "minecraft:dirt");
