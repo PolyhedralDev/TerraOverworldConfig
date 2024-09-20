@@ -1,0 +1,8 @@
+id: OCEAN_SLOPES
+type: BIOME
+extends:
+  - OCEAN
+  - EQ_SUBMERGED_SPIKES
+color: $biomes/colors.yml:OCEAN_SLOPES
+
+vanilla: minecraft:ocean

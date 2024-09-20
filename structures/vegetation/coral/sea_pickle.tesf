@@ -1,0 +1,9 @@
+setWaterlog(true);
+// Use random number to determine the amount of seapickles
+num pickles = 1+randomInt(4);
+
+// If block is not in water, fail
+if (getBlock(0, 0, 0) != "minecraft:water") fail;
+
+// Place coral
+block(0, 0, 0, "minecraft:sea_pickle[pickles=" + pickles + "]");

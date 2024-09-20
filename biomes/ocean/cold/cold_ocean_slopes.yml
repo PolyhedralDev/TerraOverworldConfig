@@ -1,0 +1,8 @@
+id: COLD_OCEAN_SLOPES
+type: BIOME
+extends:
+  - COLD_OCEAN
+  - EQ_SUBMERGED_SPIKES
+color: $biomes/colors.yml:COLD_OCEAN_SLOPES
+
+vanilla: minecraft:cold_ocean

@@ -8,6 +8,7 @@ stages:
     default-from: ice-cap-flat
     default-to:
       - ICE_SPIKES: 1
+      - LAND_GLACIER: 1
     to:
         ice-cap:
           - SNOWY_MOUNTAINS: 1
@@ -41,10 +42,16 @@ stages:
           - FROZEN_OCEAN: 1
         polar-shallow-ocean-midlands:
           - FROZEN_OCEAN: 1
+          - FROZEN_OCEAN_OVERHANGS: 1
         polar-ocean:
           - FROZEN_OCEAN: 1
+          - FROZEN_OCEAN_SLOPES: 1
+          - ICEBERG_OCEAN: 1
         polar-deep-ocean:
           - FROZEN_DEEP_OCEAN: 1
+          - FROZEN_DEEP_OCEAN_VENTS: 1
+          - FROZEN_DEEP_DEPTHS: 1
+
   
         boreal-hot-flat:
           - AUTUMNAL_FOREST: 1
@@ -134,11 +141,15 @@ stages:
           - KELP_FOREST: 1
         boreal-shallow-ocean-midlands:
           - COLD_OCEAN: 1
+          - COLD_OCEAN_OVERHANGS: 1
         boreal-ocean:
           - COLD_OCEAN: 1
+          - COLD_OCEAN_SLOPES: 1
         boreal-deep-ocean:
           - COLD_DEEP_OCEAN: 1
-  
+          - COLD_DEEP_OCEAN_VENTS: 1
+          - COLD_DEEP_DEPTHS: 1
+
         temperate-hot-dry-flat:
           - PALM_FOREST: 1
           - CHAPARRAL: 1
@@ -232,10 +243,14 @@ stages:
           - SEAGRASS_MEADOW: 1
         temperate-shallow-ocean-midlands:
           - ROCKY_SHALLOW_OCEAN: 1
+          - OCEAN_OVERHANGS: 1
         temperate-ocean:
           - OCEAN: 1
+          - OCEAN_SLOPES: 1
         temperate-deep-ocean:
           - DEEP_OCEAN: 1
+          - DEEP_OCEAN_VENTS: 1
+          - DEEP_DEPTHS: 1
 
         # Red hot desert
         hot-desert-flat-red:
@@ -415,5 +430,14 @@ stages:
         hot-shallow-ocean-midlands:
           - TROPICAL_OCEAN: 1
           - SEAGRASS_MEADOW: 1
-        hot-ocean: TROPICAL_OCEAN
-        hot-deep-ocean: TROPICAL_DEEP_OCEAN
+          - CORAL_OCEAN: 1
+          - CORAL_OCEAN_OVERHANGS: 1
+        hot-ocean:
+          - TROPICAL_OCEAN: 1
+          - TROPICAL_OCEAN_OVERHANGS: 1
+          - TROPICAL_OCEAN_SLOPES: 1
+          - CORAL_OCEAN_SLOPES: 1
+        hot-deep-ocean:
+          - TROPICAL_DEEP_OCEAN: 1
+          - TROPICAL_DEEP_OCEAN_VENTS: 1
+          - TROPICAL_DEEP_DEPTHS: 1

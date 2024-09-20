@@ -15,3 +15,9 @@ colors:
   foliage: 0x71a74d
   water: 0x0d96db
   water-fog: 0x0a74c4
+
+features:
+  trees:
+    - PALM_TREES
+  landforms:
+    - SPARSE_GIANT_CLAMS

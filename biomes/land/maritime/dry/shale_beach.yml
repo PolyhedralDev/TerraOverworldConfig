@@ -23,3 +23,9 @@ palette:
   - BLOCK:minecraft:stone: $meta.yml:top-y
   - SHALE_BEACH: ${meta.yml:ocean-level} + 14
   - << meta.yml:palette-bottom
+
+features:
+  preprocessors:
+    - COASTAL_WATER_POOLS
+  flora:
+    - DEAD_CORAL

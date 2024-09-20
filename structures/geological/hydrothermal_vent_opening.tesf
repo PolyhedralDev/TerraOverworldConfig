@@ -1,0 +1,14 @@
+for (num y = 25; y > 0; y = y - 1) {
+
+   if (structure(0, y, 1, "is_rock", "NONE") &&
+      structure(0, y, -1, "is_rock", "NONE") &&
+      structure(1, y, 0, "is_rock", "NONE") &&
+      structure(-1, y, 0, "is_rock", "NONE")) {
+      block(0, y, 0, "minecraft:water", true);
+      block(0, y-1, 0, "minecraft:magma_block", true);
+      block(0, y-2, 0, "minecraft:campfire[lit=true,signal_fire=true]", true);
+      break;
+   }
+
+   if (structure(0, y, 0, "is_rock", "NONE")) block(0, y, 0, "minecraft:water", true);
+}
