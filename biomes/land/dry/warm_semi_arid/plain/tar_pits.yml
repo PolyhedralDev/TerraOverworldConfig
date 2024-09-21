@@ -16,10 +16,10 @@ colors:
 
 tags:
   - LAND_CAVES
-  - RIVERS
+  - USE_RIVER
 
 palette:
-  - MUDDY_GRASS: $meta.yml:top-y
+  - GRASS: $meta.yml:top-y
   - MUD: $meta.yml:ocean-level
   - << meta.yml:palette-bottom
 
@@ -28,7 +28,7 @@ slant-depth: 5
 slant:
   - threshold: 0.8
     palette:
-      - XERIC: $meta.yml:top-y
+      - XERIC_MUD: $meta.yml:top-y
       - MUD: $meta.yml:ocean-level
       - << meta.yml:palette-bottom
   - threshold: 0.4
