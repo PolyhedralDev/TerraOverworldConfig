@@ -6,7 +6,7 @@ extends:
   - EQ_BUTTES_ARCHIPELAGO
   - CARVING_LAND
   - BASE
-color: $biomes/colors.yml:XERIC_SHRUBLAND
+color: $biomes/colors.yml:TAR_PITS
 
 vanilla: minecraft:meadow
 
