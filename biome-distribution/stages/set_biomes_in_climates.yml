@@ -223,6 +223,7 @@ stages:
 
         temperate-coast-flat:
           - BEACH: 1
+          - SHRUB_BEACH: 1
         temperate-coast:
           - TEMPERATE_SEA_ARCHES: 1
         temperate-coast-highlands:
