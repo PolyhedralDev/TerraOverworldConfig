@@ -1,0 +1,31 @@
+id: LAND_GLACIER
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:gravel: 1
+      - minecraft:stone: 2
+      - minecraft:ice: 1
+      - minecraft:packed_ice: 2
+      - minecraft:blue_ice: 1
+      - minecraft:snow_block: 5
+    layers: 7
+  - materials:
+      - minecraft:packed_ice: 1
+      - minecraft:stone: 1
+      - minecraft:gravel: 1
+    layers: 2
+  - materials: minecraft:stone
+    layers: 1
+
+sampler:
+  type: DOMAIN_WARP
+  amplitude: 2
+  warp:
+    type: GAUSSIAN
+  sampler:
+    type: FBM
+    octaves: 3
+    sampler:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.015

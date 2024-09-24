@@ -7,6 +7,7 @@ if (blockID != "minecraft:stone" &&
     blockID != "minecraft:cobblestone" &&
     blockID != "minecraft:mossy_cobblestone" &&
     blockID != "minecraft:tuff" &&
+    blockID != "minecraft:basalt" &&
     blockID != "minecraft:coal_ore" &&
     blockID != "minecraft:iron_ore" &&
     blockID != "minecraft:copper_ore" &&

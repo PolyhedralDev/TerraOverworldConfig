@@ -10,7 +10,7 @@ for (num x = -searchRadius; x <= searchRadius; x = x + 1) {
                 
                 spawnable = true;
 
-                if (spawnable == true && getBlock(1,0,0) != "minecraft:air") {
+                if (spawnable == true && getBlock(1,0,0) != "minecraft:air" && getBlock(1,0,0) != "minecraft:water") {
                     for (num i = 1; i <= 13; i = i + 1) {
                         if (spawnable == false) break;
                         for (num j = -6; j <= 6; j = j + 1) {
@@ -27,7 +27,7 @@ for (num x = -searchRadius; x <= searchRadius; x = x + 1) {
                     spawnable = true;
                 } 
 
-                if (spawnable == true && getBlock(-1,0,0) != "minecraft:air") {
+                if (spawnable == true && getBlock(-1,0,0) != "minecraft:air" && getBlock(-1,0,0) != "minecraft:water") {
                     for (num i = 1; i <= 13; i = i + 1) {
                         if (spawnable == false) break;
                         for (num j = -6; j <= 6; j = j + 1) {
@@ -44,7 +44,7 @@ for (num x = -searchRadius; x <= searchRadius; x = x + 1) {
                     spawnable = true;
                 }
 
-                if (spawnable == true && getBlock(0,0,1) != "minecraft:air") {
+                if (spawnable == true && getBlock(0,0,1) != "minecraft:air" && getBlock(0,0,1) != "minecraft:water") {
                     for (num i = 1; i <= 13; i = i + 1) {
                         if (spawnable == false) break;
                         for (num j = -6; j <= 6; j = j + 1) {
@@ -61,7 +61,7 @@ for (num x = -searchRadius; x <= searchRadius; x = x + 1) {
                     spawnable = true;
                 } 
 
-                if (spawnable == true && getBlock(0,0,-1) != "minecraft:air") {
+                if (spawnable == true && getBlock(0,0,-1) != "minecraft:air" && getBlock(0,0,-1) != "minecraft:water") {
                     for (num i = 1; i <= 13; i = i + 1) {
                         if (spawnable == false) break;
                         for (num j = -6; j <= 6; j = j + 1) {

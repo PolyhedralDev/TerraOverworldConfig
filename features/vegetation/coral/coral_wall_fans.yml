@@ -1,0 +1,40 @@
+id: CORAL_WALL_FANS
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 5467
+  threshold: 0.8
+
+locator:
+  type: AND
+  locators:
+    - type: PATTERN
+      range: &range
+        min: ${meta.yml:deepslate-top} - 7
+        max: ${meta.yml:ocean-level} - 16
+      pattern:
+        type: MATCH
+        block: minecraft:water
+        offset: 0
+    - type: ADJACENT_PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SOLID
+        offset: 0
+
+structures:
+  distribution:
+    type: DOMAIN_WARP
+    amplitude: 3
+    warp:
+      type: GAUSSIAN
+    sampler:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.04
+    salt: 4201
+  structures:
+    - coral_wall_fans: 2
+    - blank: 6

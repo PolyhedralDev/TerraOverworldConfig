@@ -1,0 +1,8 @@
+id: SUBTROPICAL_OCEAN_SLOPES
+type: BIOME
+extends:
+  - SUBTROPICAL_OCEAN
+  - EQ_SUBMERGED_SPIKES
+color: $biomes/colors.yml:SUBTROPICAL_OCEAN_SLOPES
+
+vanilla: minecraft:lukewarm_ocean

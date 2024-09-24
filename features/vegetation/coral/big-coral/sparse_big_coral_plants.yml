@@ -1,0 +1,30 @@
+id: SPARSE_BIG_CORAL_PLANTS
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 56
+  padding: 6
+  salt: 4357
+
+locator:
+  type: PATTERN
+  range:
+    min: ${meta.yml:deepslate-top} - 7
+    max: ${meta.yml:ocean-level} - 20
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH
+        block: minecraft:water
+        offset: 0
+      - type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:aquatic-plantable-blocks
+        offset: -1
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures:
+    - coral_tube_procedural: 1
+    - coral_tree_procedural: 1
