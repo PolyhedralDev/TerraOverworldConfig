@@ -414,9 +414,9 @@ stages:
           - SAVANNA_OVERHANGS: 1
 
         tropical-coast-flat:
-          - PALM_BEACH: 1
-          - MANGROVE_SWAMP: 1
           - MUDDY_COASTS: 1
+          - MANGROVE_SWAMP: 1
+          - PALM_BEACH: 1
         tropical-coast: LUSH_SEA_CAVES
         tropical-coast-highlands: LUSH_SEA_CAVES
 
