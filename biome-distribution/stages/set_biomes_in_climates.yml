@@ -359,8 +359,8 @@ stages:
           - todo: 1
 
         arid-coast-flat:
-          - BEACH: 1
           - BLACK_SAND_BEACH: 1
+          - BEACH: 1
         arid-coast:
           - SANDSTONE_ARCHIPELAGO: 1
         arid-coast-highlands:
