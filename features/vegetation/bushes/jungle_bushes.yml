@@ -20,7 +20,7 @@ locator:
         type: OR
         patterns:
           - type: MATCH_SET
-            blocks: $features/vegetation/meta.yml:plantable-blocks
+            blocks: $features/vegetation/meta.yml:dry-plantable-blocks
             offset: -1
           - type: MATCH_SET
             blocks:

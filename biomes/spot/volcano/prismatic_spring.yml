@@ -21,3 +21,8 @@ features:
     - VOLCANO_WATER
   postprocessors:
     - PRISMATIC_SPRING_MAGMA
+  global-preprocessors:
+    - LAVA_FLOOR
+    - UNDERGROUND_LAVA_COLUMNS
+    - CAVE_GLOW_LICHEN
+    - TEXTURED_STONE_SLANT

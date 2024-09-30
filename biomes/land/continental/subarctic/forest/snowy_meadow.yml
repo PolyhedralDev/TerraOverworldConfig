@@ -10,6 +10,7 @@ color: $biomes/colors.yml:SNOWY_MEADOW
 
 tags:
   - LAND_CAVES
+  - ICE_CAVES
   - USE_FROZEN_RIVER_FROZEN_MARSH
 
 vanilla: minecraft:snowy_plains
@@ -39,6 +40,7 @@ features:
     - SNOW_LAYERS
   trees:
     - SPARSE_SPRUCE_TREES
+    - SPARSE_FALLEN_SPRUCE_TREES
   preprocessors:
     - POWDER_SNOW_DEPOSITS
   postprocessors:

@@ -12,6 +12,7 @@ vanilla: minecraft:snowy_beach
 
 tags:
   - LAND_CAVES
+  - ICE_CAVES
   - USE_FROZEN_RIVER
 
 ocean:

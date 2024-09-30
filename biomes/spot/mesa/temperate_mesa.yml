@@ -40,3 +40,4 @@ features:
     - TALL_GRASS
   trees:
     - SPARSE_TEMPERATE_TREE_PATCHES
+    - SPARSE_FALLEN_OAK_TREES

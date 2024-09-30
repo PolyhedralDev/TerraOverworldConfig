@@ -43,3 +43,4 @@ features:
     - DANDELION_PATCH
   trees:
     - ACACIA_TREES
+    - SPARSE_FALLEN_ACACIA_TREES

@@ -3,9 +3,9 @@ type: BIOME
 abstract: true
 
 variables: &variables
-  base: ${customization.yml:terrain-ocean-base-y-level} - 5
+  base: ${customization.yml:terrain-ocean-base-y-level} - 25
   scale: $customization.yml:terrain-ocean-depth
-  overhangStrength: 17
+  overhangStrength: 50
 
 terrain:
   sampler:

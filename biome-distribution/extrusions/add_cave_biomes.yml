@@ -13,3 +13,17 @@ extrusions:
     range:
       min: $meta.yml:deepslate-bottom
       max: ${meta.yml:ocean-level} - 13
+
+  - type: REPLACE
+    from: ICE_CAVES
+    sampler:
+      type: CELLULAR
+      return: CellValue
+      salt: 1252
+      frequency: 1 / 200 / ${customization.yml:cave-biome-scale} / ${customization.yml:global-scale}
+    to:
+      - SELF: 3
+      - ICE_CAVES: 7
+    range:
+      min: $meta.yml:deepslate-bottom
+      max: ${meta.yml:ocean-level} - 13

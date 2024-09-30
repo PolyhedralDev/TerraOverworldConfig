@@ -52,6 +52,7 @@ features:
     - LILY_OF_THE_VALLEY_PATCH
   trees:
     - TEMPERATE_TREES
+    - SPARSE_FALLEN_OAK_TREES
   landforms:
     - MOSSY_BOULDERS
     - SMALL_MOSSY_BOULDER_PATCHES
