@@ -18,6 +18,7 @@ dry-plantable-blocks:
 palm-tree-plantable-blocks:
   - minecraft:sand
   - minecraft:red_sand
+  - minecraft:grass_block
 
 aquatic-plantable-blocks:
   - minecraft:mud
