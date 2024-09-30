@@ -5,6 +5,7 @@ extends:
   - ENVIRONMENT_LAND_DRY_WARM_SEMI_ARID
   - EQ_STRATIFIED_LAND
   - CARVING_LAND
+  - ORES_EMERALD
   - BASE
 color: $biomes/colors.yml:XERIC_MOUNTAINS
 

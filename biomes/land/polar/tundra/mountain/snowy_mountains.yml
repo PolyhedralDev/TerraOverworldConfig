@@ -4,6 +4,7 @@ extends:
   - COLOR_FROZEN
   - ENVIRONMENT_LAND_POLAR_TUNDRA
   - EQ_LAND
+  - ORES_EMERALD
   - CARVING_LAND
   - BASE
 color: $biomes/colors.yml:SNOWY_MOUNTAINS

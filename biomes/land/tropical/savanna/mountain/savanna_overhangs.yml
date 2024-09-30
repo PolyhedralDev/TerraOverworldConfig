@@ -4,6 +4,7 @@ extends:
   - ENVIRONMENT_LAND_TROPICAL_SAVANNA
   - EQ_OVERHANGS
   - CARVING_LAND
+  - ORES_EMERALD
   - BASE
 color: $biomes/colors.yml:SAVANNA_OVERHANGS
 
