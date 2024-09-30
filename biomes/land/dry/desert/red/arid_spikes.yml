@@ -5,6 +5,7 @@ extends:
   - COLOR_XERIC
   - EQ_SPIKES
   - CARVING_LAND
+  - ORES_GOLD
   - BASE
 color: $biomes/colors.yml:ARID_SPIKES
 
