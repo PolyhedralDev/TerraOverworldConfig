@@ -6,7 +6,7 @@ extends:
   - EQ_GLOBAL_RIVER
   - CARVING_OCEAN
   - BASE
-color: $biomes/colors.yml:RIVER
+color: $biomes/colors.yml:TROPICAL_RIVER
 
 vanilla: minecraft:river
 
