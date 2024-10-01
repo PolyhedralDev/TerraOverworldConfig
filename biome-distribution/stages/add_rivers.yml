@@ -89,13 +89,20 @@ stages:
       - SWAMP: 1
       - RIVER: 2
     sampler: *riverSampler
-  # Regular coastal rivers with mangrove swamps
+  # Tropical rivers
+  - type: REPLACE
+    from: USE_TROPICAL_RIVER
+    to:
+      - SELF: 1
+      - TROPICAL_RIVER: 1
+    sampler: *riverSampler
+  # Tropical coastal rivers with mangrove swamps
   - type: REPLACE
     from: USE_RIVER_COASTAL_TROPICAL_SWAMP
     to:
       - SELF: 1
       - MANGROVE_SWAMP: 1
-      - RIVER: 2
+      - TROPICAL_RIVER: 2
     sampler: *riverSampler
   # Cold rivers
   - type: REPLACE
