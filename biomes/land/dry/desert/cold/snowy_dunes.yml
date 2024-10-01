@@ -11,7 +11,7 @@ vanilla: minecraft:snowy_plains
 
 tags:
   - LAND_CAVES
-  - USE_RIVER
+  - USE_DESERT_RIVER
 
 palette:
   - SNOW: $meta.yml:top-y
