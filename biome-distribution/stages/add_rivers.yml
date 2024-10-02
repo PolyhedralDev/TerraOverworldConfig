@@ -89,6 +89,13 @@ stages:
       - SWAMP: 1
       - RIVER: 2
     sampler: *riverSampler
+  # Warm rivers
+  - type: REPLACE
+    from: USE_LUKEWARM_RIVER
+    to:
+      - SELF: 1
+      - LUKEWARM_RIVER: 1
+    sampler: *riverSampler
   # Tropical rivers
   - type: REPLACE
     from: USE_TROPICAL_RIVER
