@@ -34,6 +34,15 @@ locator:
               offset: 0
           - type: MATCH_AIR
             offset: 1
+          - type: MATCH
+            block: minecraft:mud
+            offset: -1
+    - type: ADJACENT_PATTERN
+      range: *range
+      pattern:
+        type: MATCH
+        block: minecraft:mud
+        offset: 0
 
 structures:
   distribution:
