@@ -69,7 +69,6 @@ stages:
           - FLOWERING_AUTUMNAL_FOREST: 1
           - BIRCH_FOREST: 1
         boreal-warm:
-          - EVERGREEN_FOREST: 1
           - REDWOOD_FOREST: 1
           - TAIGA: 5
         boreal-warm-highlands:
