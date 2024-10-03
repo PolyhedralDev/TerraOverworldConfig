@@ -44,3 +44,4 @@ features:
   trees:
     - ACACIA_TREES
     - SPARSE_FALLEN_ACACIA_TREES
+    - SPARSE_BAOBAB_TREES
