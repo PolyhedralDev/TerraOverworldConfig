@@ -1,12 +1,12 @@
-id: COLD_RIVER
+id: TROPICAL_RIVER
 type: BIOME
 extends:
-  - RIVER_DRIPSTONE
-  - ENVIRONMENT_MARINE_RIVER_COLD
+  - RIVER_BASIC
+  - ENVIRONMENT_MARINE_RIVER_WARM
   - EQ_GLOBAL_RIVER
   - CARVING_OCEAN
   - BASE
-color: $biomes/colors.yml:COLD_RIVER
+color: $biomes/colors.yml:TROPICAL_RIVER
 
 vanilla: minecraft:river
 
@@ -27,14 +27,13 @@ slant:
       - << meta.yml:palette-bottom
 
 colors:
-  grass: 0x8ab689
-  foliage: 0x6da36b
-  water: 0x007bf7
-  water-fog: 0x007bf7
+  grass: 0x8eb971
+  foliage: 0x71a74d
+  water: 0x02b0e5
+  water-fog: 0x0686ca
 
 features:
   flora:
-    - FERNS
+    - SUGAR_CANE
     - GRASS
-  landforms:
-    - RIVER_BOULDERS
+    - SEA_PICKLES

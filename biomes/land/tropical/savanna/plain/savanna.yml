@@ -17,7 +17,7 @@ colors:
 
 tags:
   - LAND_CAVES
-  - USE_RIVER
+  - USE_LUKEWARM_RIVER
 
 palette:
   - GRASS_VARIATION: $meta.yml:top-y
@@ -44,3 +44,4 @@ features:
   trees:
     - ACACIA_TREES
     - SPARSE_FALLEN_ACACIA_TREES
+    - SPARSE_BAOBAB_TREES

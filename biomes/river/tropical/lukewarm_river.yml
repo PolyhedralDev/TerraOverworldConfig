@@ -1,12 +1,12 @@
-id: COLD_RIVER
+id: LUKEWARM_RIVER
 type: BIOME
 extends:
-  - RIVER_DRIPSTONE
-  - ENVIRONMENT_MARINE_RIVER_COLD
+  - RIVER_BASIC
+  - ENVIRONMENT_MARINE_RIVER_LUKEWARM
   - EQ_GLOBAL_RIVER
   - CARVING_OCEAN
   - BASE
-color: $biomes/colors.yml:COLD_RIVER
+color: $biomes/colors.yml:LUKEWARM_RIVER
 
 vanilla: minecraft:river
 
@@ -26,15 +26,7 @@ slant:
       - BLOCK:minecraft:stone: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
-colors:
-  grass: 0x8ab689
-  foliage: 0x6da36b
-  water: 0x007bf7
-  water-fog: 0x007bf7
-
 features:
   flora:
-    - FERNS
+    - SUGAR_CANE
     - GRASS
-  landforms:
-    - RIVER_BOULDERS
