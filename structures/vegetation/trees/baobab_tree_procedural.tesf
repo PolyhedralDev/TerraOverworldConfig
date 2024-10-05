@@ -54,7 +54,7 @@ for(num h = 0; h <= length; h = h + 1) {
         for(num y = -r; y <= r; y = y + 1) {
             for(num z = -r; z <= r; z = z + 1) {
                 if (pow(x,2)+pow(y,2)+pow(z,2) < pow(r,2)) {
-                    block(x, h + y - trunkRadius, z, trunkBlock, false);
+                    block(x, h + y - trunkRadius, z, trunkBlock, true);
                 }
             }
         }
