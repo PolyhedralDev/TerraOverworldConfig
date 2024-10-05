@@ -5,7 +5,7 @@ num pi = 3.14159;
 str trunkBlock = "minecraft:stripped_acacia_log";
 
 num trunkRadius = (5+randomInt(4))+(randomInt(10)/10);
-num length = 15+randomInt(35);
+num length = 15+randomInt(15);
 
 num topBranches = 8+randomInt(3);
 num topBranchLengthUpwardsMin = 7+randomInt(3);
@@ -54,7 +54,7 @@ for(num h = 0; h <= length; h = h + 1) {
         for(num y = -r; y <= r; y = y + 1) {
             for(num z = -r; z <= r; z = z + 1) {
                 if (pow(x,2)+pow(y,2)+pow(z,2) < pow(r,2)) {
-                    block(x, h + y - trunkRadius, z, trunkBlock, false);
+                    block(x, h + y - trunkRadius, z, trunkBlock, true);
                 }
             }
         }
@@ -101,7 +101,6 @@ for(num h = 0; h <= length; h = h + 1) {
                         num distanceSquared = pow(cx,2)+pow(cy*squashFactor,2)+pow(cz,2);
                         if (distanceSquared < radiusSquared && randomInt(randPrecision)/randPrecision < sideBranchLeafDensity) {
                             structure(lox+cx, loy+cy, loz+cz, sideBranchLeafStructure, "NONE", "CW_90", "CCW_90", "CW_180");
-                            structure(lox+cx, loy+cy, loz+cz, "place_apple", "NONE", "CW_90", "CCW_90", "CW_180");
                         }
                     }
                 }
@@ -151,7 +150,6 @@ for (num b = 1; b <= topBranches; b = b + 1) {
                 num distanceSquared = pow(cx,2)+pow(cy*squashFactor,2)+pow(cz,2);
                 if (distanceSquared < radiusSquared && randomInt(randPrecision)/randPrecision < topBranchLeafDensity) {
                     structure(lox+cx, loy+cy, loz+cz, topBranchLeafStructure, "NONE", "CW_90", "CCW_90", "CW_180");
-                    structure(lox+cx, loy+cy, loz+cz, "place_apple", "NONE", "CW_90", "CCW_90", "CW_180");
                 }
             }
         }
