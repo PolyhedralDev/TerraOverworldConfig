@@ -10,7 +10,7 @@ color: $biomes/colors.yml:MUDDY_COASTS
 vanilla: minecraft:beach
 
 colors:
-  grass: 0x06402b
+  grass: 0x06400f
   foliage: 0x8DB127
   water: 0x5b756f
   water-fog: 0x5b756f
