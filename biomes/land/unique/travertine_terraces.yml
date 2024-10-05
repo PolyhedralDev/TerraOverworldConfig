@@ -7,9 +7,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:TRAVERTINE_TERRACES
 
-minecraft:
-  colors:
-    water: 0x76ddff
+colors:
+  water: 0x76ddff
 
 vanilla: minecraft:river
 
