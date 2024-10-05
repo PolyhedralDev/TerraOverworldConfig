@@ -1,5 +1,5 @@
 num age = randomInt(3);
-str face = "";
+str face = "west";
 
 if (getBlock(-1,0,0) == "minecraft:jungle_log" || getBlock(-1,0,0) == "minecraft:jungle_wood") {
     face = "west";
