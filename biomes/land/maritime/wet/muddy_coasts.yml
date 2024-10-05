@@ -1,0 +1,38 @@
+id: MUDDY_COASTS
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_MARITIME_WET
+  - EQ_FLAT_BUMPY
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:MARSH
+
+vanilla: minecraft:beach
+
+colors:
+  grass: 0x06402b
+  foliage: 0x8DB127
+  water: 0x5b756f
+  water-fog: 0x5b756f
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER_TEMPERATE_MARSH
+
+palette:
+  - GRASS: $meta.yml:top-y
+  - MUD: ${meta.yml:ocean-level} + 11
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.4
+    palette:
+      - << meta.yml:palette-slant-generic
+      - << meta.yml:palette-bottom
+
+features:
+  preprocessors:
+    - MUD_WATER
+  flora:
+    - TALL_GRASS
+    - SUGAR_CANE

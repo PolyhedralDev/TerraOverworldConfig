@@ -4,6 +4,7 @@ extends:
   - ENVIRONMENT_LAND_TROPICAL_SAVANNA
   - EQ_OVERHANGS
   - CARVING_LAND
+  - ORES_EMERALD
   - BASE
 color: $biomes/colors.yml:SAVANNA_OVERHANGS
 
@@ -11,7 +12,7 @@ vanilla: minecraft:savanna_plateau
 
 tags:
   - LAND_CAVES
-  - USE_RIVER
+  - USE_LUKEWARM_RIVER
 
 colors:
   grass: 0xa1c342
@@ -40,3 +41,4 @@ features:
     - DANDELION_PATCH
   trees:
     - ACACIA_TREES
+    - SPARSE_FALLEN_ACACIA_TREES

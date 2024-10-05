@@ -37,3 +37,4 @@ features:
     - DANDELION_PATCH
   trees:
     - SPARSE_OAK_TREES
+    - SPARSE_FALLEN_OAK_TREES

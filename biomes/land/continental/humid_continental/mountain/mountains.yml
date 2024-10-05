@@ -4,6 +4,7 @@ extends:
   - ENVIRONMENT_LAND_CONTINENTAL_HUMID
   - EQ_LAND
   - CARVING_LAND
+  - ORES_EMERALD
   - BASE
 color: $biomes/colors.yml:MOUNTAINS
 
@@ -47,3 +48,4 @@ features:
     - FERNS
   trees:
     - SPRUCE_TREE_PATCHES
+    - SPARSE_FALLEN_SPRUCE_TREES

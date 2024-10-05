@@ -17,7 +17,7 @@ colors:
 
 tags:
   - LAND_CAVES
-  - USE_RIVER
+  - USE_TROPICAL_RIVER
 
 palette:
   - GRASS: $meta.yml:top-y
@@ -67,6 +67,7 @@ features:
     - JUNGLE_BUSHES
     - POTATO_PATCHES
     - BAMBOO_PATCHES
+    - SPARSE_FALLEN_JUNGLE_TREES
   landforms:
     - MOSSY_BOULDERS
     - SMALL_MOSSY_BOULDER_PATCHES

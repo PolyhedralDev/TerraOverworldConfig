@@ -12,7 +12,7 @@ vanilla: minecraft:desert
 
 tags:
   - LAND_CAVES
-  - USE_RIVER
+  - USE_DESERT_RIVER
 
 palette:
   - XERIC: $meta.yml:top-y
@@ -45,3 +45,5 @@ features:
     - SPARSE_OAK_TREES
     - MESQUITE_TREES
     - DEAD_TREES_SPARSE
+    - SPARSE_FALLEN_OAK_TREES
+    - SPARSE_FALLEN_DARK_OAK_TREES

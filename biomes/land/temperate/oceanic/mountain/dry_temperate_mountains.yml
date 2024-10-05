@@ -4,6 +4,7 @@ extends:
   - ENVIRONMENT_LAND_TEMPERATE_OCEANIC
   - EQ_MULTI_TERRACED_LAND
   - CARVING_LAND
+  - ORES_EMERALD
   - BASE
 color: $biomes/colors.yml:DRY_TEMPERATE_MOUNTAINS
 
@@ -32,6 +33,7 @@ features:
   trees:
     - OAK_BUSH_PATCHES
     - SPARSE_OAK_TREES
+    - SPARSE_FALLEN_OAK_TREES
   landforms:
     - BOULDERS
     - SMALL_BOULDER_PATCHES

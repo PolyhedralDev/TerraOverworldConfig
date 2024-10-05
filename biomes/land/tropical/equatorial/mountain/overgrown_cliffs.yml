@@ -4,6 +4,7 @@ extends:
   - ENVIRONMENT_LAND_TROPICAL_EQUATORIAL
   - EQ_GLOBAL_ERODED_PILLARS
   - CARVING_OCEAN
+  - ORES_EMERALD
   - BASE
 color: $biomes/colors.yml:OVERGROWN_CLIFFS
 
@@ -73,4 +74,5 @@ features:
   trees:
     - JUNGLE_TREES
     - JUNGLE_BUSHES
+    - SPARSE_FALLEN_JUNGLE_TREES
   

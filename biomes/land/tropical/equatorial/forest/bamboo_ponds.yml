@@ -7,8 +7,6 @@ extends:
   - BASE
 color: $biomes/colors.yml:BAMBOO_PONDS
 
-# TODO - Fix this biome
-
 vanilla: minecraft:bamboo_jungle
 
 tags:
@@ -22,16 +20,24 @@ colors:
   water-fog: 0x1e97f2
 
 palette:
-  - BAMBOO_PONDS_WATER: $meta.yml:top-y
-  - BAMBOO_PONDS: ${meta.yml:ocean-level} + 9
+  - BAMBOO_PONDS: $meta.yml:top-y
   - << meta.yml:palette-ocean-level-sand
   - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
 
 slant:
-  - threshold: 0.8
+  - threshold: 1
+    palette:
+      - BAMBOO_PONDS_WATER: $meta.yml:top-y
+      - BAMBOO_PONDS: ${meta.yml:ocean-level} + 5
+      - << meta.yml:palette-ocean-level-sand
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.995
     palette:
       - BAMBOO_PONDS: $meta.yml:top-y
+      - << meta.yml:palette-ocean-level-sand
+      - << meta.yml:palette-underwater
       - << meta.yml:palette-bottom
 
 slant-depth: 1
@@ -48,3 +54,5 @@ features:
     - BAMBOO_PATCHES
     - OAK_BUSHES
     - SUBTROPICAL_BUSHES
+  postprocessors:
+    - FLOW_STILL_WATER

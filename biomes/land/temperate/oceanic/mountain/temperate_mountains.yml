@@ -4,6 +4,7 @@ extends:
   - ENVIRONMENT_LAND_TEMPERATE_OCEANIC
   - EQ_LAND
   - CARVING_LAND
+  - ORES_EMERALD
   - BASE
 color: $biomes/colors.yml:TEMPERATE_MOUNTAINS
 
@@ -46,3 +47,4 @@ features:
     - GRASS
   trees:
     - SPARSE_TEMPERATE_TREE_PATCHES
+    - SPARSE_FALLEN_OAK_TREES

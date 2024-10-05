@@ -15,7 +15,7 @@ colors:
 
 tags:
   - LAND_CAVES
-  - USE_RIVER
+  - USE_LUKEWARM_RIVER
 
 palette:
   - GRASS: $meta.yml:top-y
@@ -54,6 +54,7 @@ features:
     - TALL_GRASS
   trees:
     - JUNGLE_TREES
+    - SPARSE_FALLEN_JUNGLE_TREES
   landforms:
     - SMALL_MOSSY_BOULDER_PATCHES
   

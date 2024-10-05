@@ -11,6 +11,7 @@ vanilla: minecraft:frozen_peaks
 
 tags:
   - LAND_CAVES
+  - ICE_CAVES
 
 ocean:
   palette: FROZEN_OCEAN

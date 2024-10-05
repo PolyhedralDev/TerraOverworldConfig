@@ -1,0 +1,32 @@
+id: LUKEWARM_RIVER
+type: BIOME
+extends:
+  - RIVER_BASIC
+  - ENVIRONMENT_MARINE_RIVER_LUKEWARM
+  - EQ_GLOBAL_RIVER
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:LUKEWARM_RIVER
+
+vanilla: minecraft:river
+
+palette:
+  - GRASS: $meta.yml:top-y
+  - MUDDY_BEACH: ${meta.yml:ocean-level} + 3
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.8
+    palette:
+      - GRASS: $meta.yml:top-y
+      - MUDDY_BEACH: ${meta.yml:ocean-level} - 1
+      - << meta.yml:palette-bottom
+  - threshold: 0.5
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - SUGAR_CANE
+    - GRASS
