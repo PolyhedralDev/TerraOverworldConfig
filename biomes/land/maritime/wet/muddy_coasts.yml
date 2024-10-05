@@ -2,7 +2,7 @@ id: MUDDY_COASTS
 type: BIOME
 extends:
   - ENVIRONMENT_LAND_MARITIME_WET
-  - EQ_FLAT_BUMPY
+  - EQ_LAND_SHORE_BUMPY
   - CARVING_OCEAN
   - BASE
 color: $biomes/colors.yml:MUDDY_COASTS
@@ -20,8 +20,7 @@ tags:
   - USE_RIVER_TEMPERATE_MARSH
 
 palette:
-  - GRASS: $meta.yml:top-y
-  - MUD: ${meta.yml:ocean-level} + 11
+  - MUD: $meta.yml:top-y
   - << meta.yml:palette-bottom
 
 slant:
