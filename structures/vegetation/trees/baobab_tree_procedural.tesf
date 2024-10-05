@@ -5,7 +5,7 @@ num pi = 3.14159;
 str trunkBlock = "minecraft:stripped_acacia_log";
 
 num trunkRadius = (5+randomInt(4))+(randomInt(10)/10);
-num length = 15+randomInt(35);
+num length = 15+randomInt(15);
 
 num topBranches = 8+randomInt(3);
 num topBranchLengthUpwardsMin = 7+randomInt(3);
