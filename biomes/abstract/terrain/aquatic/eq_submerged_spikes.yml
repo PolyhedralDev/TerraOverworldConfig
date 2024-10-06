@@ -39,7 +39,7 @@ terrain:
         x+y*spikeSlantStrength*spikeDirection(x, z),
         z+y*spikeSlantStrength*spikeDirection(x, z+1000)
       )
-      * herp(oceanElevation(x, z), 0, 1, elevationCutoff, 0)
+      * herp(y, base, 1, base - scale * elevationCutoff, 0)
     samplers:
       spikeDirection: # Determines the direction large spikes slant towards
         dimensions: 2
