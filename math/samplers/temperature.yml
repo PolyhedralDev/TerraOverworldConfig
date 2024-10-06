@@ -6,8 +6,8 @@ samplers:
     variables:
       globalScale: $customization.yml:global-scale
       temperatureScale: $customization.yml:temperature-scale
-      temperatureOffset: $customization.yml:temperature-offset
-      temperatureSpread: $customization.yml:temperature-spread
+      temperatureOffset: (${customization.yml:temperature-max}+${customization.yml:temperature-min})/2
+      temperatureSpread: (${customization.yml:temperature-max}-${customization.yml:temperature-min})/2
     samplers:
       sampler:
         dimensions: 2
