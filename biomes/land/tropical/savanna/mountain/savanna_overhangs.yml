@@ -12,6 +12,7 @@ vanilla: minecraft:savanna_plateau
 
 tags:
   - LAND_CAVES
+  - ANCIENT_CAVES
   - USE_LUKEWARM_RIVER
 
 colors:

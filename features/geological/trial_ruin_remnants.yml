@@ -1,0 +1,25 @@
+id: TRIAL_RUIN_REMNANTS
+type: FEATURE
+
+distributor:
+  type: "YES"
+
+locator:
+  type: PATTERN
+  range:
+    min: $meta.yml:bottom-y
+    max: ${meta.yml:ocean-level}
+  pattern:
+    type: OR
+    patterns:
+      - type: MATCH
+        block: minecraft:suspicious_sand
+        offset: 0
+      - type: MATCH
+        block: minecraft:suspicious_gravel
+        offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: trial_ruin_remnant
