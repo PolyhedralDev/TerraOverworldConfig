@@ -106,6 +106,13 @@ coal-uniform:
     min: 136
     max: 319
 
+coal-high:
+  averageCountPerChunk: 10
+  salt: 6473
+  range:
+    min: -64
+    max: 7
+
 gold:
   averageCountPerChunk: 4
   salt: 5912
@@ -208,3 +215,17 @@ blueice:
   range:
     min: 40
     max: 65
+
+suspicious-sand:
+  averageCountPerChunk: 5
+  salt: 5467
+  range:
+    min: 0
+    max: 40
+
+suspicious-gravel:
+  averageCountPerChunk: 5
+  salt: 6473
+  range:
+    min: 0
+    max: 40
