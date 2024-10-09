@@ -3,7 +3,7 @@ type: BIOME
 extends:
   - EQ_DEEP_OCEAN_TRENCH
   - DEEP_OCEAN
-color: $biomes/colors.yml:DEEP_OCEAN
+color: $biomes/colors.yml:DEEP_OCEAN_VENTS
 
 vanilla: minecraft:deep_ocean
 
