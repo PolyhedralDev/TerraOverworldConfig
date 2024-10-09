@@ -3,7 +3,7 @@ type: FEATURE
 
 distributor:
   type: PADDED_GRID
-  width: 60
+  width: 100
   padding: 45
   salt: 4357
 
