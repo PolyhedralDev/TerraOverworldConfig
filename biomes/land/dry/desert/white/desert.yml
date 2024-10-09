@@ -28,3 +28,6 @@ features:
   flora:
     - CACTUS_SPARSE
     - DEAD_BUSHES
+  landforms:
+    - MOB_ROOMS
+    - DESERT_WELLS
