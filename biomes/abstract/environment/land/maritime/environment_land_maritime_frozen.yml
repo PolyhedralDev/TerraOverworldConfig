@@ -10,7 +10,7 @@ colors:
   grass: 0x80B497
   foliage: 0x64A278
 
-  climate:
-    precipitation: snow
-    temperature: 0.05
-    downfall: 0.3
+climate:
+  precipitation: true
+  temperature: 0.05
+  downfall: 0.3
