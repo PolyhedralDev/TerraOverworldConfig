@@ -11,6 +11,7 @@ palette:
   - RED_SAND: $meta.yml:top-y
   - << meta.yml:palette-bottom
 
-landforms:
-  - RED_DESERT_WELLS
-  - MOB_ROOMS
+features:
+  landforms:
+    - RED_DESERT_WELLS
+    - MOB_ROOMS
