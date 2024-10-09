@@ -1,7 +1,8 @@
 #!/bin/bash
 
+source .scripts/vars.sh
+
 # Search HEAD diff for a change in the pack version
-PACK_MANIFEST=pack.yml
 version_diff=$(git diff HEAD^ HEAD "$PACK_MANIFEST" | grep '^+version: ')
 previous_version_diff=$(git diff HEAD^ HEAD "$PACK_MANIFEST" | grep '^-version: ')
 

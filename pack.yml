@@ -139,12 +139,5 @@ samplers:
     - math/samplers/rivers.yml:samplers
     - math/samplers/spots.yml:samplers
 
-blend:
-  palette:
-    resolution: 2
-    amplitude: 2
-    sampler:
-      type: WHITE_NOISE
-
 slant:
   calculation-method: DotProduct

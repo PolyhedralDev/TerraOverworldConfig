@@ -53,6 +53,31 @@ generate in an area where it previously did not (resulting in a chunk border).
 
 ### Fixed
 
+<!--
+DO NOT MODIFY TEXT BELOW, CI automatically manages new version sections for each
+new release. Add any new change logs to the [Unreleased] section above instead.
+-->
+
+## [v1.3.4]
+### Fixed
+- Translated minecraft:grass to minecraft:short_grass.
+
+## [v1.3.3]
+### Fixed
+- Fixed pink petal structure generating broken block IDs.
+
+## [v1.3.2]
+### Added
+- Cherry tree features.
+- Pink petal features.
+
+### Changed
+- Sakura Mountains now use Cherry tree features instead of Dark Oak.
+- Sakura Mountains generate pink petal patches.
+
+## [v1.3.1]
+### Added
+- Re-added biome blending, which was previously removed by accident, resulting in blocky biome transitions (notably around beaches).
 
 ## [v1.3.0]
 ### Added
@@ -123,7 +148,11 @@ generate in an area where it previously did not (resulting in a chunk border).
 ### Added
 - Everything
 
-[Unreleased]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.0...HEAD
+[Unreleased]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.4...HEAD
+[v1.3.4]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.3...v1.3.4
+[v1.3.3]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.2...v1.3.3
+[v1.3.2]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.1...v1.3.2
+[v1.3.1]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.0...v1.3.1
 [v1.3.0]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.1.1...v1.2.0
 [1.1.1]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.1.0...v1.1.1
