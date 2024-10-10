@@ -5,7 +5,7 @@ variables: &variables
   
   terraceBaseScale: 0.2
   terraceScaleVariation: 0.1
-  terraceOffsetVariation: 1
+  terraceOffsetVariation: 0.25
   terraceDepthVariation: 1
   terraceDepthStart: 0.1 # At what elevation should it start to be terraced
 
@@ -68,10 +68,10 @@ samplers:
               parabolicMap(mountainMask(x, z), mountainZero, 0, mountainFull, mountains(x, z)),
               mountainCap)
           variables:
-            mountainZero: 0.4
-            mountainFull: 0.8
-            hillMaxElevation: 0.55
-            mountainCap: 0.7
+            mountainZero: 0.3
+            mountainFull: 0.6
+            hillMaxElevation: 0.3
+            mountainCap: 0.9
           functions: 
             "<<": math/functions/interpolation.yml:functions
             combine: # Stacks scaled mountain noise on top of hill noise
@@ -88,20 +88,25 @@ samplers:
               sampler:
                 type: OPEN_SIMPLEX_2
                 salt: 0694
-                frequency: 1 / 1200
+                frequency: 1 / 1500
             mountains:
               dimensions: 2
-              type: FBM
-              octaves: 3
-              gain: 0.25
-              lacunarity: 2.5
+              type: EXPRESSION_NORMALIZER
+              expression: ((-in+1)/2)^2
               sampler:
-                type: EXPRESSION_NORMALIZER
-                expression: ((-in+1)/2)^3
+                type: PSEUDOEROSION
+                erosion-frequency: 0.01
+                lacunarity: 1.5
+                branch-strength: 1
+                octaves: 3
+                strength: 0.15
+                gain: 0.3
                 sampler:
-                  type: CELLULAR
-                  distance: Euclidean
-                  frequency: 1 / 175
+                  type: FBM
+                  octaves: 3
+                  sampler:
+                    type: OPEN_SIMPLEX_2
+                    frequency: 1 / 900
             hills:
               dimensions: 2
               type: EXPRESSION_NORMALIZER
@@ -109,11 +114,9 @@ samplers:
               sampler:
                 type: FBM
                 octaves: 6
-                gain: 0.5
-                lacunarity: 2.2
                 sampler:
                   type: OPEN_SIMPLEX_2
-                  frequency: 1 / 1800
+                  frequency: 1 / 2000
 
   elevation: &elevation
     dimensions: 2
