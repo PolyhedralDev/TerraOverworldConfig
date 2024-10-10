@@ -128,6 +128,7 @@ functions:
     - math/functions/terrace.yml:functions
     - math/functions/interpolation.yml:functions
     - math/functions/maskSmooth.yml:functions
+    - math/functions/shelf.yml:functions
 
 samplers:
   "<<":
