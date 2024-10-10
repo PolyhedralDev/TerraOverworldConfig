@@ -208,8 +208,8 @@ temperature-scale: 1
 # hot and cold biomes generating further apart - and vice versa when decreasing it.
 # Default: 1
 
-temperature-min: 1
-# Default: 1
+temperature-min: -1
+# Default: -1
 
 temperature-max: 1
 # Default: 1
