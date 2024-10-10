@@ -1,12 +1,28 @@
 id: DRIPSTONE_CAVES
 type: BIOME
-extends: [ CAVE, BASE ]
-vanilla: minecraft:dripstone_caves
+extends:
+  - CAVE
+  - BASE
 color: $biomes/colors.yml:DRIPSTONE_CAVES
 
+vanilla: minecraft:dripstone_caves
+
+colors:
+  fog: 0xa88328
+  water: 0x6fcaba
+  water-fog: 0x90caba
+  sky: 0xf8ffba
+  grass: 0x3c783b
+  foliage: 0x3c783b
+
+  climate:
+    precipitation: true
+    temperature: 1.0
+    downfall: 1.0
+
 palette:
-  - DRIPSTONE_CAVES: 319
-  - DRIPSTONE_CAVES_DEEPSLATE: $meta.yml:strata.deepslate.top
+  - DRIPSTONE_CAVES: $meta.yml:top-y
+  - DRIPSTONE_CAVES_DEEPSLATE: $meta.yml:deepslate-top
   - << meta.yml:palette-bedrock
 
 tags:

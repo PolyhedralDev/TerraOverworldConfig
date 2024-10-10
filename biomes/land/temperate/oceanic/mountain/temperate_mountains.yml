@@ -1,0 +1,50 @@
+id: TEMPERATE_MOUNTAINS
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_TEMPERATE_OCEANIC
+  - EQ_LAND
+  - CARVING_LAND
+  - ORES_EMERALD
+  - BASE
+color: $biomes/colors.yml:TEMPERATE_MOUNTAINS
+
+tags:
+  - USE_RIVER
+
+vanilla: minecraft:meadow
+
+palette:
+  - GRASS: $meta.yml:top-y
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.8
+    palette:
+      - GRASS: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.35
+    palette:
+      - MOSS_STONE: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.3
+    palette:
+      - MOSSY_COBBLESTONE_STONE: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.25
+    palette:
+      - TUFF_STONE: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.2
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - GRASS
+  trees:
+    - SPARSE_TEMPERATE_TREE_PATCHES
+    - SPARSE_FALLEN_OAK_TREES

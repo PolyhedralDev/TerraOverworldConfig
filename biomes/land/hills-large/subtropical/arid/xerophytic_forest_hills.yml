@@ -1,8 +1,0 @@
-id: XEROPHYTIC_FOREST_HILLS
-type: BIOME
-extends: [ EQ_HILLS, DRY_ROCKY_BUMPY_MOUNTAINS ]
-color: $biomes/colors.yml:XEROPHYTIC_FOREST_HILLS
-
-tags:
-  - LAND_CAVES
-  - USE_RIVER

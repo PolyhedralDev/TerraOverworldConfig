@@ -1,25 +1,16 @@
 num age = randomInt(3);
-num dir = randomInt(4);
-num x = 0;
-num z = 0;
 str face = "west";
 
-if (dir == 0) {
+if (getBlock(-1,0,0) == "minecraft:jungle_log" || getBlock(-1,0,0) == "minecraft:jungle_wood") {
     face = "west";
-    x = 1;
-    z = 0;
-} else if (dir == 1) {
+} else if (getBlock(0,0,-1) == "minecraft:jungle_log" || getBlock(0,0,-1) == "minecraft:jungle_wood") {
     face = "north";
-    x = 0;
-    z = 1;
-} else if (dir == 2) {
-    face = "east"; 
-    x = -1;
-    z = 0;
-} else if (dir == 3) {
+} else if (getBlock(1,0,0) == "minecraft:jungle_log" || getBlock(1,0,0) == "minecraft:jungle_wood") {
+    face = "east";
+} else if (getBlock(0,0,1) == "minecraft:jungle_log" || getBlock(0,0,1) == "minecraft:jungle_wood") {
     face = "south";
-    x = 0;
-    z = -1;
-}
+} else fail;
 
-block(x, 0, z, "minecraft:cocoa[age=" + age + ",facing=" + face + "]");
+if (getBlock(0,0,0) == "minecraft:air" || getBlock(0,0,0) == "minecraft:vine") {
+    block(0, 0, 0, "minecraft:cocoa[age=" + age + ",facing=" + face + "]", true);
+}

@@ -1,0 +1,159 @@
+num randPrecision = 100;
+num goldenAngle = 2.39996;
+num pi = 3.14159;
+
+num amount = 1;
+num radius = 1.75;
+num yTranslate = 2;
+
+num teethWidth = 50;
+num teethRadius = 1;
+
+str mainBlock = "minecraft:gray_concrete";
+str altBlock = "minecraft:cyan_terracotta";
+
+num pearlChance = 50; // out of 100
+
+if (getBlock(5,yTranslate,0) != "minecraft:water" ||
+getBlock(-5,yTranslate,0) != "minecraft:water" ||
+getBlock(0,yTranslate,5) != "minecraft:water" ||
+getBlock(0,yTranslate,-5) != "minecraft:water")  fail;
+
+
+str pearlBlock = "minecraft:pearlescent_froglight";
+for (num a = 0; a < amount; a = a + 1) {
+
+    num length = 1;
+
+    num droop = 0.01;
+    num verticalDirection = 2+randomInt(randPrecision)/randPrecision;
+    num angle = randomInt(randPrecision)/randPrecision*2*pi;
+
+    // Branch direction vector
+    num dx = sin(angle);
+    num dy = verticalDirection;
+    num dz = cos(angle);
+    // Normalize vector
+    num mag = sqrt(pow(dx,2)+pow(dy,2)+pow(dz,2));
+    dx = dx/mag;
+    dy = dy/mag;
+    dz = dz/mag;
+
+    num pearlRoll = randomInt(100);
+    num blockRandom = randomInt(4);
+    if (blockRandom == 0) pearlBlock = "minecraft:pearlescent_froglight";
+    if (blockRandom == 1) pearlBlock = "minecraft:verdant_froglight";
+    if (blockRandom == 2) pearlBlock = "minecraft:ochre_froglight";
+    if (blockRandom == 3) pearlBlock = "minecraft:quartz_block";
+
+
+    for (num l = 0; l <= length; l = l + 0.1) {
+
+        num r = (radius/length * -l/2) + radius;
+
+        num cx = l*dx;
+        num cy = l*dy;
+        num cz = l*dz;
+
+        for(num x = -r; x <= r; x = x + 1) {
+            for(num y = -r; y <= r; y = y + 1) {
+                for(num z = -r; z <= r; z = z + 1) {
+                    if (pow(x,2)+pow(y,2)+pow(z,2)<pow(r,2)) {
+                        if (randomInt(2) == 0) {
+                            block(cx + x, cy + y + yTranslate, cz + z, altBlock, true);
+                            block(cx + x, cy + y + yTranslate -1 , cz + z, mainBlock, true);
+                        } else {
+                           block(cx + x, cy + y + yTranslate, cz + z, mainBlock, true);
+                        }
+                    }
+                }
+            }
+        }
+
+        // Point vector down more
+        dy = dy - droop;
+        // Normalize vector
+        mag = sqrt(pow2(dx)+pow2(dy)+pow2(dz));
+        dx = dx/mag;
+        dy = dy/mag;
+        dz = dz/mag;
+    }
+
+    num cx = length*dx;
+    num cy = length*dy;
+    num cz = length*dz;
+
+    num buffer = randomInt(3);
+
+    for (num ta = -teethWidth/2; ta < teethWidth/2; ta = ta + 1) {
+
+    num teethLength = 11;
+
+    if (ta < (-teethWidth/2)+3) teethLength = 5;
+    if (ta > (teethWidth/2)-3) teethLength = 5;
+
+    num yDir = 1;
+    if (randomInt(2) == 0) yDir = -1;
+
+    droop = 0.02;
+    verticalDirection = 2+randomInt(randPrecision)/randPrecision+buffer;
+    angle = angle;
+
+    dx = dx-0.5;
+    dz = dz-0.5;
+
+    // Branch direction vector
+    dx = sin(angle);
+    dy = verticalDirection;
+    dz = cos(angle);
+
+    // Normalize vector
+    mag = sqrt(pow(dx,2)+pow(dy,2)+pow(dz,2));
+    dx = dx/mag;
+    dy = dy/mag;
+    dz = dz/mag;
+
+    for (num tl = 0; tl <= teethLength; tl = tl + 0.1) {
+
+        num r = (teethRadius/teethLength * -tl/2) + teethRadius;
+
+        num tx = tl*dx;
+        num ty = yDir*(tl*dy);
+        num tz = tl*dz;
+
+        for(num x = -r; x <= r; x = x + 1) {
+            for(num y = -r; y <= r; y = y + 1) {
+                for(num z = -r; z <= r; z = z + 1) {
+                    if (pow(x,2)+pow(y,2)+pow(z,2)<pow(r,2)) {
+                        if (tl/teethLength < 0.7) {
+                            if (randomInt(2) == 0) {
+                                block(cx + tx + x, cy + ty + y + yTranslate, cz + tz + z, altBlock, true);
+                                block(cx + tx + x, cy + ty + y + yTranslate -1 , cz + tz + z, mainBlock, true);
+                            } else {
+                                block(cx + tx + x, cy + ty + y + yTranslate, cz + tz + z, mainBlock, true);
+                            }
+                        } else block(cx + tx + x, cy + ty + y + yTranslate, cz + tz + z, "minecraft:light_gray_concrete", true);
+                    }
+
+                    if (tl == teethLength && ta == 0
+                    && pearlRoll < pearlChance) block((cx + tx)/4 + x, y - 1 + yTranslate, (cz + tz)/4 + z, pearlBlock, true);
+                }
+            }
+        }
+
+        // Point vector down more
+        dy = dy - droop;
+        // Normalize vector
+        mag = sqrt(pow2(dx)+pow2(dy)+pow2(dz));
+        dx = dx/mag;
+        dy = dy/mag;
+        dz = dz/mag;
+    }
+
+    angle = angle + 0.05;
+}
+
+    angle = angle + goldenAngle;
+}
+
+

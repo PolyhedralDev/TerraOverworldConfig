@@ -1,0 +1,36 @@
+id: BASALT_TUFF_MIX
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:deepslate: 1
+      - minecraft:basalt: 2
+      - minecraft:tuff: 1
+    layers: 2
+    sampler:
+      dimensions: 2
+      type: DOMAIN_WARP
+      amplitude: 4
+      warp:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.1
+      sampler:
+        type: CELLULAR
+        return: CellValue
+        frequency: 0.8
+  - materials:
+      - minecraft:deepslate: 1
+      - minecraft:basalt: 2
+      - minecraft:tuff: 1
+    layers: 1
+    sampler:
+      dimensions: 2
+      type: DOMAIN_WARP
+      amplitude: 4
+      warp:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.1
+      sampler:
+        type: CELLULAR
+        return: CellValue
+        frequency: 0.8 

@@ -1,0 +1,37 @@
+id: SPARSE_BAOBAB_TREES
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 40
+  padding: 70
+  salt: 4317
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: ${meta.yml:ocean-level} + 3
+        max: $meta.yml:top-y
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:dry-plantable-blocks
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:snow
+          - minecraft:air
+        offset: 0
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures:
+    - baobab_tree_procedural: 1
+    - blank: 2

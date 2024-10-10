@@ -1,0 +1,29 @@
+id: UNDERGROUND_LAVA_COLUMNS
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 6012
+  threshold: 0.5/256
+
+locator:
+  type: PATTERN
+  range:
+    min: ${meta.yml:bottom-y} + 9
+    max: ${meta.yml:bottom-y} + 11
+  pattern:
+    # Match air on top of lava
+    type: AND
+    patterns:
+      - type: MATCH
+        block: minecraft:lava
+        offset: -1
+      - type: MATCH_AIR
+        offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: lava_column

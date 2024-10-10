@@ -4,11 +4,11 @@ type: PALETTE
 layers:
   - materials:
       - minecraft:mud: 1
-      - minecraft:sand: 2
+      - minecraft:sand: 3
     layers: 1
   - materials:
       - minecraft:dirt: 1
-      - minecraft:sand: 2
+      - minecraft:sand: 3
     layers: 4
   - materials:
       - minecraft:stone: 1
@@ -16,12 +16,19 @@ layers:
 
 sampler:
   type: DOMAIN_WARP
-  amplitude: 2
+  amplitude: 0.5
   warp:
-    type: GAUSSIAN
+    type: WHITE_NOISE
   sampler:
-    type: FBM
-    octaves: 3
-    sampler:
+    type: DOMAIN_WARP
+    amplitude: 150
+    warp:
       type: OPEN_SIMPLEX_2
-      frequency: 0.015
+      frequency: 0.018
+    sampler:
+      type: FBM
+      octaves: 2
+      sampler:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.008
+        salt: 5792

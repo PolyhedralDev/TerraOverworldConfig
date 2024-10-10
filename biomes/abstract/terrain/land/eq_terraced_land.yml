@@ -1,0 +1,39 @@
+id: EQ_TERRACED_LAND
+type: BIOME
+abstract: true
+
+variables: &variables
+  base: $customization.yml:terrain-base-y-level
+  scale: $customization.yml:terrain-height
+
+  terraceScale: 40
+  terraceOffsetVariation: 5
+
+terrain:
+  sampler:
+    type: EXPRESSION
+    expression: -y + base
+    variables: *variables
+
+  sampler-2d:
+    type: EXPRESSION
+    expression: |
+      terraceParalinear(
+        elevation(x, z) * scale,
+        terraceScale, 0.01, 0, 1
+      ) +
+      terraceOffset(x, z) * terraceOffsetVariation
+    variables: *variables
+    samplers:
+      terraceOffset:
+        dimensions: 2
+        type: FBM
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.01
+          salt: 12832
+      terraceScale:
+        dimensions: 2
+        type: OPEN_SIMPLEX_2
+        frequency: 0.002
+        salt: 51923

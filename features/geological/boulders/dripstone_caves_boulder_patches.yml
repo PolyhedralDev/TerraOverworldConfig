@@ -1,0 +1,29 @@
+id: DRIPSTONE_CAVES_BOULDER_PATCHES
+type: FEATURE
+
+distributor:
+  type: AND
+  distributors:
+    - type: PADDED_GRID
+      width: 5
+      padding: 1
+      salt: 1123
+    - type: SAMPLER
+      sampler:
+        type: PROBABILITY
+        sampler:
+          type: OPEN_SIMPLEX_2
+          salt: 9963
+          frequency: 0.01
+      threshold: 0.2
+
+locator:
+  type: SURFACE
+  range:
+    min: ${meta.yml:deepslate-top} - 23
+    max: ${meta.yml:ocean-level} - 14
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: dripstone_caves_boulder

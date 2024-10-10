@@ -1,0 +1,51 @@
+id: AUTUMNAL_FOREST
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_CONTINENTAL_MONSOON
+  - EQ_MULTI_TERRACED_LAND
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:AUTUMNAL_FOREST
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER
+
+vanilla: minecraft:birch_forest
+
+colors:
+  grass: 0x8ea85e
+  foliage: 0xff6a19
+  water: 0x1e97f2
+  water-fog: 0x1e97f2
+
+palette:
+  - GRASS: $meta.yml:top-y
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.8
+    palette:
+      - GRASS: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - GRANITE_SLANT: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - GRASS
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - ROSE_BUSH_PATCH
+    - PEONY_PATCH
+    - LILAC_PATCH
+    - LILY_OF_THE_VALLEY_PATCH
+    - PUMPKIN_PATCHES
+  trees:
+    - SEASONAL_TREES
+    - SPARSE_FALLEN_BIRCH_TREES

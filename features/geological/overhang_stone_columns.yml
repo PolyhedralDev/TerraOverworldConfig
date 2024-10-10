@@ -1,0 +1,36 @@
+id: OVERHANG_STONE_COLUMNS
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 10
+  padding: 2
+  salt: 9096
+
+locator:
+  type: AND
+  locators:
+    - type: PATTERN
+      range:
+        min: ${meta.yml:ocean-level} + 3
+        max: ${meta.yml:ocean-level} + 120
+      pattern:
+        type: AND
+        patterns:
+          - type: MATCH_AIR
+            offset: 0
+          - type: MATCH_SOLID
+            offset: 1
+    # - type: SAMPLER_3D
+    #   sampler:
+    #     type: EXPRESSION
+    #     expression: -random(x,y,z)+0.25
+    #     samplers:
+    #       random:
+    #         dimensions: 3
+    #         type: POSITIVE_WHITE_NOISE
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: stone_column

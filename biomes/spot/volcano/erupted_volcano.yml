@@ -1,0 +1,26 @@
+id: ERUPTED_VOLCANO
+type: BIOME
+extends:
+  - EQ_VOLCANO
+  - CARVING_NONE
+  - BASE
+color: $biomes/colors.yml:ERUPTED_VOLCANO
+
+vanilla: minecraft:badlands
+
+colors:
+  sky: 0x84b3af
+  fog: 0x76828b
+  grass: 0x6c8b67
+  foliage: 0x6d7850
+  water: 0x77976e
+  water-fog: 0x848871
+
+palette:
+  - LAVA_CRACKS: $meta.yml:top-y
+  - << meta.yml:palette-bottom
+
+features:
+  preprocessors:
+    - SMOOTH_LAVA
+    - VOLCANO_LAVA

@@ -1,0 +1,49 @@
+id: BADLANDS_BUTTES
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_DRY_DESERT
+  - EQ_ROCKY_BUTTES
+  - CARVING_LAND
+  - ORES_GOLD
+  - BASE
+color: $biomes/colors.yml:BADLANDS_BUTTES
+
+vanilla: minecraft:badlands
+
+tags:
+  - LAND_CAVES
+  - USE_RED_DESERT_RIVER
+
+palette:
+  - ARID: $meta.yml:top-y
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-bottom
+
+slant-depth: 20
+
+slant:
+  - threshold: 0.8
+    palette:
+      - ARID: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.6
+    palette:
+      - RED_SAND: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.5
+    palette:
+      - BLOCK:minecraft:terracotta: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.1
+    palette:
+      - BADLANDS_WAVY_STRATA: $meta.yml:top-y
+      - TERRACOTTA_STRATA: ${meta.yml:ocean-level} + 27
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - CACTUS_SPARSE
+    - GRASS_SPARSE
+  trees:
+    - OAK_BUSH_PATCHES
+    - DEAD_TREES_SPARSE

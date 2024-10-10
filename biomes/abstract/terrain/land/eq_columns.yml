@@ -1,0 +1,44 @@
+id: EQ_COLUMNS
+type: BIOME
+abstract: true
+
+vars: &variables
+  base: $customization.yml:terrain-base-y-level
+  scale: $customization.yml:terrain-height
+
+cellular: &cellular
+  dimensions: 2
+  type: CELLULAR
+  frequency: 0.13
+
+terrain:
+  sampler:
+    type: EXPRESSION
+    expression: -y + base
+    variables: *variables
+
+  sampler-2d:
+    type: EXPRESSION
+    expression: scale * if(mask(x, z), cellLookup(x, z), elevationDetailed(x, z))
+    variables: *variables
+    samplers:
+      mask:
+        dimensions: 2
+        <<: *cellular
+        return: NoiseLookup
+        lookup:
+          type: EXPRESSION
+          expression: min(-noise(x, z), -noise(x*2, z*2)) > 0.25
+          samplers:
+            noise:
+              dimensions: 2
+              type: CELLULAR
+              return: Distance2Div
+              frequency: 0.01
+              salt: 1284
+      cellLookup:
+        <<: *cellular
+        return: NoiseLookup
+        lookup:
+          type: EXPRESSION
+          expression: elevationDetailed(x, z)

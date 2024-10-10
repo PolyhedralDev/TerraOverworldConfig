@@ -1,0 +1,233 @@
+stages:
+  - type: REPLACE_LIST
+    sampler:
+      type: EXPRESSION
+      expression: segment(oceanElevation(x, z), shallowThreshold, deepThreshold)
+      variables:
+        shallowThreshold: $customization.yml:ocean-shallow-threshold
+        deepThreshold: $customization.yml:ocean-deep-threshold
+      functions:
+        segment:
+          arguments:
+            - elevation
+            - shallow
+            - deep
+          expression: if(elevation > shallow, 1, if(elevation < deep, -1, 0))
+
+    # Weighted lists below are interpreted as:
+    # - <DEEP>: 1
+    # - <REGULAR>: 1
+    # - <SHALLOW>: 1
+
+    default-from: polar-ocean
+    default-to:
+      - polar-deep-ocean: 1
+      - polar-ocean: 1
+      - polar-shallow-ocean: 1
+    to:
+      boreal-ocean:
+        - boreal-deep-ocean: 1
+        - boreal-ocean: 1
+        - boreal-shallow-ocean: 1
+      temperate-ocean:
+        - temperate-deep-ocean: 1
+        - temperate-ocean: 1
+        - temperate-shallow-ocean: 1
+      hot-ocean:
+        - hot-deep-ocean: 1
+        - hot-ocean: 1
+        - hot-shallow-ocean: 1
+    
+  - type: REPLACE_LIST
+    sampler:
+      type: EXPRESSION
+      expression: segment(elevation(x, z), flatness(x, z), highlandsThreshold, lowlandsThreshold)
+      variables:
+        highlandsThreshold: $customization.yml:elevation-highlands-threshold
+        lowlandsThreshold: $customization.yml:elevation-lowlands-threshold
+      functions:
+        segment:
+          arguments:
+            - elevation
+            - flatness
+            - highlands
+            - lowlands
+          expression: if(elevation > highlands, 0.75, if(elevation > lowlands, 0.25, if(flatness < 1, -0.25, -0.75)))
+
+    # Weighted lists below are interpreted as:
+    # - <FLAT>: 1
+    # - <LOWLANDS>: 1
+    # - <MIDLANDS>: 1
+    # - <HIGHLANDS>: 1
+    
+    default-from: ice-cap
+    default-to: 
+      - ice-cap-flat: 1
+      - ice-cap: 1
+      - ice-cap: 1
+      - ice-cap-highlands: 1
+    to:
+      tundra:
+        - tundra-flat: 1 
+        - tundra: 1 
+        - tundra: 1 
+        - tundra-highlands: 1 
+      polar-coast:
+        - polar-coast-flat: 1 
+        - polar-coast-flat: 1 
+        - polar-coast: 1 
+        - polar-coast-highlands: 1 
+      polar-shallow-ocean:
+        - polar-shallow-ocean: 1 
+        - polar-shallow-ocean: 1 
+        - polar-shallow-ocean-midlands: 1 
+        - polar-shallow-ocean-midlands: 1 
+
+      boreal-hot:
+        - boreal-hot-flat: 1 
+        - boreal-hot: 1 
+        - boreal-hot: 1 
+        - boreal-hot-highlands: 1 
+      boreal-warm:
+        - boreal-warm-flat: 1 
+        - boreal-warm: 1 
+        - boreal-warm: 1 
+        - boreal-warm-highlands: 1 
+      boreal-cold:
+        - boreal-cold-flat: 1 
+        - boreal-cold: 1 
+        - boreal-cold: 1 
+        - boreal-cold-highlands: 1 
+      boreal-snowy:
+        - boreal-snowy-flat: 1 
+        - boreal-snowy: 1 
+        - boreal-snowy: 1 
+        - boreal-snowy-highlands: 1 
+      boreal-hot-dry:
+        - boreal-hot-dry-flat: 1 
+        - boreal-hot-dry: 1 
+        - boreal-hot-dry: 1 
+        - boreal-hot-dry-highlands: 1 
+      boreal-warm-dry:
+        - boreal-warm-dry-flat: 1 
+        - boreal-warm-dry: 1 
+        - boreal-warm-dry: 1 
+        - boreal-warm-dry-highlands: 1 
+      boreal-cold-dry:
+        - boreal-cold-dry-flat: 1 
+        - boreal-cold-dry: 1 
+        - boreal-cold-dry: 1 
+        - boreal-cold-dry-highlands: 1 
+      boreal-snowy-dry:
+        - boreal-snowy-dry-flat: 1 
+        - boreal-snowy-dry: 1 
+        - boreal-snowy-dry: 1 
+        - boreal-snowy-dry-highlands: 1 
+      boreal-coast:
+        - boreal-coast-flat: 1 
+        - boreal-coast-flat: 1 
+        - boreal-coast: 1 
+        - boreal-coast-highlands: 1 
+      boreal-shallow-ocean:
+        - boreal-shallow-ocean: 1
+        - boreal-shallow-ocean: 1
+        - boreal-shallow-ocean-midlands: 1
+        - boreal-shallow-ocean-midlands: 1
+
+      temperate-hot-dry:
+        - temperate-hot-dry-flat: 1 
+        - temperate-hot-dry: 1 
+        - temperate-hot-dry: 1 
+        - temperate-hot-dry-highlands: 1 
+      temperate-warm-dry:
+        - temperate-warm-dry-flat: 1 
+        - temperate-warm-dry: 1 
+        - temperate-warm-dry: 1 
+        - temperate-warm-dry-highlands: 1 
+      temperate-hot:
+        - temperate-hot-flat: 1 
+        - temperate-hot: 1 
+        - temperate-hot: 1 
+        - temperate-hot-highlands: 1 
+      temperate-warm:
+        - temperate-warm-flat: 1 
+        - temperate-warm: 1 
+        - temperate-warm: 1 
+        - temperate-warm-highlands: 1 
+      temperate-cold:
+        - temperate-cold-flat: 1 
+        - temperate-cold: 1 
+        - temperate-cold: 1 
+        - temperate-cold-highlands: 1 
+      temperate-coast:
+        - temperate-coast-flat: 1 
+        - temperate-coast-flat: 1 
+        - temperate-coast: 1 
+        - temperate-coast-highlands: 1 
+      temperate-shallow-ocean:
+        - temperate-shallow-ocean: 1 
+        - temperate-shallow-ocean: 1 
+        - temperate-shallow-ocean-midlands: 1 
+        - temperate-shallow-ocean-midlands: 1 
+
+      hot-desert:
+        - hot-desert-flat: 1 
+        - hot-desert: 1 
+        - hot-desert: 1 
+        - hot-desert-highlands: 1 
+      hot-steppe:
+        - hot-steppe-flat: 1 
+        - hot-steppe: 1 
+        - hot-steppe: 1 
+        - hot-steppe-highlands: 1 
+      cold-desert:
+        - cold-desert-flat: 1 
+        - cold-desert: 1 
+        - cold-desert: 1 
+        - cold-desert-highlands: 1 
+      temperate-steppe:
+        - temperate-steppe-flat: 1 
+        - temperate-steppe: 1 
+        - temperate-steppe: 1 
+        - temperate-steppe-highlands: 1 
+      cold-steppe:
+        - cold-steppe-flat: 1 
+        - cold-steppe: 1 
+        - cold-steppe: 1 
+        - cold-steppe-highlands: 1 
+      arid-coast:
+        - arid-coast-flat: 1 
+        - arid-coast-flat: 1 
+        - arid-coast: 1 
+        - arid-coast-highlands: 1 
+  
+      tropical-rainforest:
+        - tropical-rainforest-flat: 1 
+        - tropical-rainforest: 1 
+        - tropical-rainforest: 1 
+        - tropical-rainforest-highlands: 1 
+      tropical-monsoon:
+        - tropical-monsoon-flat: 1 
+        - tropical-monsoon: 1 
+        - tropical-monsoon: 1 
+        - tropical-monsoon-highlands: 1 
+      tropical-savanna-dry:
+        - tropical-savanna-dry-flat: 1 
+        - tropical-savanna-dry: 1 
+        - tropical-savanna-dry: 1 
+        - tropical-savanna-dry-highlands: 1 
+      tropical-savanna-wet:
+        - tropical-savanna-wet-flat: 1 
+        - tropical-savanna-wet: 1 
+        - tropical-savanna-wet: 1 
+        - tropical-savanna-wet-highlands: 1 
+      tropical-coast:
+        - tropical-coast-flat: 1 
+        - tropical-coast-flat: 1 
+        - tropical-coast: 1 
+        - tropical-coast-highlands: 1 
+      hot-shallow-ocean:
+        - hot-shallow-ocean: 1 
+        - hot-shallow-ocean: 1 
+        - hot-shallow-ocean-midlands: 1 
+        - hot-shallow-ocean-midlands: 1 

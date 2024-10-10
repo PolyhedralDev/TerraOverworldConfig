@@ -1,0 +1,340 @@
+# This file provides various general options for configuring this config pack.
+# The options are specific to this config pack (and are not general to Terra as a whole!)
+#
+# Other config files reference reference these options via the metaconfiguration system,
+# See http://terra.polydev.org/config/development/meta-configuration.html for further
+# explanation of how this works.
+
+global-scale: 1
+# Modifies the scale of all biome distribution, you can use this parameter 
+# to if you want just about every biome to be larger or smaller.
+# By doubling the scale, you double the length & width of everything,
+# e.g. if you have a biome that is 300 blocks wide with a scale of 1, and
+# increase that scale to 2, that biome will generate 600 blocks wide.
+# This value only applies to horizontal scale, NOT vertical scale.
+# Default: 1
+
+# ---
+# Terrain
+# ---
+
+# Options that are focused on controlling terrain shaping.
+# All the terrain options below are primarily used by biome terrain parameters
+# implemented by abstract biome configs found in the biomes/abstract/terrain directory.
+
+terrain-base-y-level: 65
+# The base terrain y level. Generally the lowest y level for terrain, this is just a
+# guide and some configs will lower terrain below this point (however not by much).
+# Default: 65
+
+terrain-height: 230
+# Number of blocks above the base terrain level that terrain can go do, similarly to
+# terrain-base-y-level this number is also a guide and some configs will produce terrain
+# above this number (however not by much). Note that the sum of terrain-height and 
+# terrain-base-y-level should no exceed the world height, otherwise you may see terrain
+# clipping.
+# Default: 230
+
+terrain-ocean-base-y-level: 60
+# The base ocean terrain y level, generally the highest level for terrain for ocean biomes.
+# Default 60
+
+terrain-ocean-depth: 100
+# The number of blocks below terain-ocean-base-y-level that ocean terrain will go. Note
+# that this number subtracted from terrain-ocean-base-y-level should not be lower than
+# the lower bound of the world height range, otherwise you might end up with void holes in
+# the world.
+# Default: 100
+
+# ---
+# Continental
+# ---
+
+# Options that affects the 'continental value', a random number calculated for each xz position
+# that describes if the position is land / coastal / ocean. A continental value of
+# 1 means 100% inland, 0 means the coast, and -1 means 100% ocean.
+# These options are primarily used in the math/samplers/continents.yml config file.
+
+continental-offset: 0.2
+# Controls the land / ocean ratio.
+# - A value of 0 results in equal land and ocean
+# - A value of 1 results in 100% land
+# - A value of -1 results in 100% ocean
+# - Any number in between these values can be used for controlling the
+#   exact ratio you want.
+#
+# Dividing your desired land percentage by 50 then subtracting 1 will give
+# you the equivalent continental-offset, i.e. land% / 50 - 1 = offset
+#
+# Default: 0.2
+
+continental-spread: 1
+# Controls how much variation there is in the continental value from
+# the continental-offset.
+#
+# The range of the continental value is equal to:
+#   [continental-offset - continental-spread, continental-offset + continental-spread]
+#
+# For example, with offset of 0 and spread of 1, the continental value would vary
+# between -1 and 1.
+#
+# Default: 1
+
+continental-scale: 1
+# Controls the scale of land / coastal / oceanic distribution. Increasing
+# this produces larger landmasses and larger oceans, and vice-versa when
+# decreasing it. This does not control the ratio of land / ocean, for that
+# you should change continental-offset instead.
+# Default: 1
+
+continental-coast-width: 20
+# Determines the width of costal biomes in blocks.
+# Default: 30
+
+continental-coast-threshold: 0.05
+# Determines how far from a continental value of 0 is considered for calculating 
+# areas as coastal or not. This is more of a technical performance value and should only
+# need to be increased in small increments experimentally if you are trying to increase
+# continental-coast-width and or decrease continental-scale and do not see coastal biomes
+# as wide as you are expecting.
+#
+# Increasing this value beyond what is needed to encompass the full potential coastal area
+# will not affect generation, however may incur small performance penalties.
+#
+# Default: 0.05
+
+# ---
+# Elevation
+# ---
+
+# Options that control the elevation / height map.
+# An elevation value of 0 corresponds to the lowest elevation, while a value of 1
+# correspons to the highest elevation.
+# These options are primarily used in the math/samplers/elevation.yml config file.
+
+elevation-scale: 1
+# Controls the scale of the elevation noise map. A larger scale results in larger distances
+# between aspects like mountain ranges and flat areas. If you want more gradual changes in
+# elevation, you can increase this. Conversely, if you want more sudden changes in elevation,
+# you can decrease this.
+# Note - This does not affect how tall the terrain is in individual biomes, for that you
+#        can check out the parameters under the 'Terrain' section.
+# Default: 1
+
+elevation-multiplier: 1
+# Multiplier on the elevation value.
+# If set to 0, elevation will be the value set by 'elevation-offset' defined below
+# Default: 1
+
+elevation-offset: 0
+# Adds / subtracts from the raw elevation value.
+# Default: 0
+
+elevation-highlands-threshold: 0.4
+# Areas with an elevation value greater than this will be considered highlands in
+# biome distribution.
+# Default: 0.4
+
+elevation-lowlands-threshold: 0.1
+# Areas with an elevation value lower than this will be considered lowlands in
+# biome distribution.
+# Default: 0.1
+
+elevation-factor-continental: 1
+# Determines if terrain height will be reduced closer to coasts. This
+# is used to prevent mountains forming right up against the ocean, and
+# gradually smooths the terrain into coasts. The continental values at which
+# terrain goes from 100% to flat can be customized with the options below.
+# 1 = true, 0 = false
+# Default: 1
+
+elevation-continental-full-height-threshold: 0.35
+# The continental value at which terrain height is 100%, only applicable if
+# the terrain-factor-continental option is enabled
+# Default: 0.35
+
+elevation-continental-flat-threshold: -0.3
+# The continental value at which terrain height will be flat, only applicable if
+# the terrain-factor-continental option is enabled
+# Default: -0.3
+
+elevation-factor-rivers: 1
+# Determines if terrain will gradually reduce closer to rivers.
+# 1 = true, 0 = false
+# Default: 1
+
+elevation-factor-spawn-island: 1
+# Determines if spawn island noise affects terrain, 1 = true, 0 = false
+# Default: 1
+
+elevation-spawn-island-scale: 0.2
+# Scales elevation within the spawn island. E.g 0.3 means elevation is set to 30%
+# within the spawn island.
+# Default: 0.2
+
+elevation-fuzz: 0.25
+# Adds a slight bit of fuzziness to elevation, roughening terrain block countours
+# and steep hills that look overly smooth. Small 1 block divots tend to be produced
+# by this fuzzing. Recommended to be a small number between 0 and 0.5.
+# Setting to 0 removes any fuzzing.
+# Default: 0.25
+
+# ---
+# Flatness
+# ---
+
+flatness-scale: 1
+# Default: 1
+
+flatness-percent: 0.25
+# Default: TODO
+
+flatness-blend: 0.35
+# Default: TODO
+
+flatness-factor: 0.95
+# How much to flatten by. 1 = 100% flat, 0 = no flattening
+# Default: 0.95
+
+# ---
+# Temperature
+# ---
+
+temperature-scale: 1
+# Controls the scale of temperature zones. Most biomes are placed according to
+# a temperature map so hot biomes can't generate next to cold biomes, as well as
+# allowing for biomes of similar temperatures to generate together. Increasing this
+# will increase the distance between temperature changes, which results in things like
+# hot and cold biomes generating further apart - and vice versa when decreasing it.
+# Default: 1
+
+temperature-min: -1
+# Default: -1
+
+temperature-max: 1
+# Default: 1
+
+temperature-altitude-lapse-rate: 0.8
+# How fast temperature drops with altitude
+# Default: 1.3
+
+temperature-altitude-lapse-start: 0.2
+# The altitude temperature should begin to drop at
+# Default: 0.2
+
+# ---
+# Precipitation
+# ---
+
+precipitation-scale: 1
+# Controls the scale of precipitation zones. Same idea as temperature zones, where
+# humid biomes generate away from arid biomes, and biomes of similar precipitation
+# generate together.
+# Default: 1
+
+precipitation-min: -1
+# Default -1
+
+precipitation-max: 1
+# Default: 1
+
+precipitation-ocean-threshold: -1
+# Default -1
+
+precipitation-land-threshold: 0.4
+# Default: 0.4
+
+# ---
+# Variation
+# ---
+
+variation-scale: 1
+# Controls scale of biome variations within each climate zone.
+# Decreasing this will result in more smaller biomes to generate in any given
+# climate, while increasing it will result in larger climate variations.
+# Default: 1
+
+# ---
+# Caves
+# ---
+
+cave-biome-scale: 1
+# Controls the scale of the placement of cave biomes, larger scale = bigger areas of
+# any given cave biome, smaller scale = smaller cave biomes.
+# Default: 1
+
+# ---
+# Oceans
+# ---
+
+ocean-shallow-threshold: -0.15
+# Elevation above this threshold is set to generate as shallow ocean. Lower number = larger area of shallow ocean
+# and vice versa.
+# Default: -0.1
+
+ocean-deep-threshold: -0.8
+# Elevation at which deep oceans are placed. Higher number = larger area of deep ocean
+# and vice versa.
+# Default: -0.8
+
+# ---
+# Rivers
+# ---
+
+river-spread-scale: 1
+# Controls how far / close apart rivers generally are, larger scale = further apart
+# rivers, smaller scale = closer packed together rivers.
+# Default: 1
+
+river-min-width: 13
+# Controls in blocks the minimum width of rivers.
+# Default: 13
+
+river-max-width: 30
+# Controls in blocks the maximum width of rivers.
+# Default: 30
+
+# ---
+# Spawn Island
+# ---
+
+# Options for the spawn island, a feature that ensures that the area near spawn is land,
+# so players do not spawn in the ocean.
+
+spawn-island-origin-x: 0
+# The x coordinate of the center of the spawn island.
+# Default: 0
+
+spawn-island-origin-z: 0
+# The y coordinate of the center of the spawn island.
+# Default: 0
+
+spawn-island-radius-inner: 20
+# Radius in blocks from origin where the continental value is set to 1, i.e inland.
+# Default: 20
+
+spawn-island-radius-middle: 125
+# Radius in blocks from origin where the continental value is set to 0, i.e where
+# the coast of the spawn island is is.
+# Default: 125
+
+spawn-island-radius-outer: 400
+# Radius in blocks from origin where continental value is set to -1, i.e deep ocean.
+# Default: 400
+
+# ---
+# Spot Biomes
+# ---
+
+# Spot biomes are special circular biomes scattered around the world.
+# Examples include volcanoes, prismatic springs, and crater lakes
+
+spot-spread: 2000
+# Roughly how many blocks apart each spot biome will be
+# Default: 2000
+
+spot-radius-min: 50
+# Default: 50
+
+spot-radius-max: 150
+# Default: 150

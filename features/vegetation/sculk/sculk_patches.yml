@@ -11,8 +11,8 @@ locator:
   locators:
     - type: PATTERN
       range: &range
-        min: -50
-        max: 0
+        min: ${meta.yml:bottom-y} + 14
+        max: ${meta.yml:deepslate-top} - 7
       pattern:
         type: AND
         patterns:

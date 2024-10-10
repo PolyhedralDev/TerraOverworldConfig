@@ -1,0 +1,102 @@
+id: EQ_SUBMERGED_SPIKES
+type: BIOME
+abstract: true
+
+variables: &variables
+  # Terms:
+  # - Big spikes    - Largest spikes protruding from ground
+  # - Little spikes - Smaller ancillary spikes surrounding bigger spikes
+  # - Platform      - Slab of terrain surrounding the large & little spikes
+
+  base: $customization.yml:terrain-ocean-base-y-level
+  scale: $customization.yml:terrain-ocean-depth
+
+  spikeSlantStrength: 1
+  spikeCap: 1 # Cuts off the tips of spikes to mitigate floating terrain, 1 = no cap
+
+  bigSpikeHeight: 0.35
+  bigSpikeMaskNone: 0.65
+  bigSpikeMaskFull: 1
+
+  littleSpikeHeight: 0.17
+  littleSpikeMaskNone: 0.4
+  littleSpikeMaskFull: 0.8
+
+  platformHeight: 0.04
+  platformMaskNone: 0.3
+  platformMaskFull: 0.35
+
+  elevationCutoff: 0.9
+
+  shelfSize: 0.25
+  shelfStrength: 0.6
+
+terrain:
+  sampler:
+    dimensions: 3
+    type: EXPRESSION
+    variables: *variables
+    expression: |
+      -y + base
+      + scale * spikes(
+        x+y*spikeSlantStrength*spikeDirection(x, z),
+        z+y*spikeSlantStrength*spikeDirection(x, z+1000)
+      )
+      * herp(y, base, 1, base - scale * elevationCutoff, 0)
+    samplers:
+      spikeDirection: # Determines the direction large spikes slant towards
+        dimensions: 2
+        type: OPEN_SIMPLEX_2
+        frequency: 0.0005
+      spikes: # Height map for spikes
+        dimensions: 2
+        type: EXPRESSION
+        expression: |
+          max(
+            maskSmooth(
+              bigSpikeHeight * min(spikeCap,(-spike(x, z))^2),
+              bigSpikeMaskNone, bigSpikeMaskFull, mask(x, z)
+            )
+            + maskSmooth(
+              littleSpikeHeight * min(spikeCap,(-spike(x*2, z*2))^2),
+              littleSpikeMaskNone, littleSpikeMaskFull, mask(x, z)
+            ),
+            maskSmooth(
+              platformHeight * (platform(x, z)+1)/2,
+              platformMaskNone, platformMaskFull, mask(x, z)
+            )
+          )
+        variables: *variables
+        samplers:
+          mask: # Masks the spikes so they only appear in patches
+            dimensions: 2
+            type: PROBABILITY
+            sampler:
+              type: FBM
+              octaves: 2
+              sampler:
+                type: OPEN_SIMPLEX_2
+                frequency: 0.006
+          spike: # Height map for big & little spikes
+            dimensions: 2
+            type: LINEAR
+            min: -1
+            max: 0.2
+            sampler:
+              type: CELLULAR
+              frequency: 0.03
+              salt: 1
+          platform: # Height map for platform
+            dimensions: 2
+            type: LINEAR
+            min: -1
+            max: 0.2
+            sampler:
+              type: CELLULAR
+              return: CellValue
+              frequency: 0.035
+              salt: 2
+  sampler-2d:
+    type: EXPRESSION
+    expression: scale * shelf(oceanElevation(x, z), 0, shelfSize, -shelfStrength)
+    variables: *variables

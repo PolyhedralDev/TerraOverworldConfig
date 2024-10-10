@@ -1,0 +1,19 @@
+id: LAVA_FLOOR
+type: FEATURE
+
+distributor:
+  type: "YES"
+
+locator:
+  type: PATTERN
+  range:
+    min: $meta.yml:bottom-y
+    max: ${meta.yml:bottom-y} + 10
+  pattern:
+    type: MATCH_AIR
+    offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: BLOCK:minecraft:lava

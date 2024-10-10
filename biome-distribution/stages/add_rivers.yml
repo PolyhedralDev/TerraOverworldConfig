@@ -1,0 +1,135 @@
+riverSampler: &riverSampler
+  type: EXPRESSION
+  expression: segment(riverBiomeMap(x, z), riverValue, borderValue, (elevation(x, z) < lowlandsThreshold) && (borderMask(x, z) < borderMaskThreshold))
+  variables:
+    riverValue: $math/samplers/rivers.yml:variables.riverValue
+    borderValue: $math/samplers/rivers.yml:variables.borderValue
+    borderMaskThreshold: 0.2
+    lowlandsThreshold: $customization.yml:elevation-lowlands-threshold
+  functions:
+    segment:
+      arguments:
+        - river
+        - riverValue
+        - borderValue
+        - borderPredicate
+      expression: if(river <= riverValue, 1, if((river <= borderValue) && borderPredicate, -0.4, -1))
+  samplers:
+    borderMask:
+      dimensions: 2
+      type: PROBABILITY
+      sampler:
+        type: OPEN_SIMPLEX_2
+        salt: 4812
+        frequency: 0.003
+
+# Tags are used by biomes to determine the kind of river to use, except for biomes with
+# their own specific river biome. These tags are formatted by the type of river, and optionally
+# the type of river wetlands surrounding the river, e.g USE_FROZEN_RIVER_FROZEN_MARSH would mean
+# the biome will use a frozen river with frozen marshes surrounding it.
+
+stages:
+  # Regular rivers
+  - type: REPLACE_LIST
+    default-from: USE_RIVER
+    default-to:
+      - SELF: 1
+      - RIVER: 1
+    to:
+      # Biome specific rivers
+      TEMPERATE_MOUNTAINS:
+        - SELF: 1
+        - TEMPERATE_MOUNTAINS_RIVER: 1
+      MOUNTAINS:
+        - SELF: 1
+        - MOUNTAINS_RIVER: 1
+      XERIC_MOUNTAINS:
+        - SELF: 1
+        - XERIC_MOUNTAINS_RIVER: 1
+      BADLANDS:
+        - SELF: 1
+        - BADLANDS_RIVER: 1
+      DRY_TEMPERATE_MOUNTAINS:
+        - SELF: 1
+        - DRY_TEMPERATE_MOUNTAINS_RIVER: 1
+      DRY_TEMPERATE_WHITE_MOUNTAINS:
+        - SELF: 1
+        - DRY_TEMPERATE_WHITE_MOUNTAINS_RIVER: 1
+      SNOWY_MOUNTAINS:
+        - SELF: 1
+        - SNOWY_MOUNTAINS_RIVER: 1
+    sampler: *riverSampler
+  # Desert rivers
+  - type: REPLACE
+    from: USE_DESERT_RIVER
+    to:
+      - SELF: 1
+      - DESERT_RIVER: 1
+    sampler: *riverSampler
+  # Red desert rivers
+  - type: REPLACE
+    from: USE_RED_DESERT_RIVER
+    to:
+      - SELF: 1
+      - RED_DESERT_RIVER: 1
+    sampler: *riverSampler
+  # Regular rivers with temperate marshes
+  - type: REPLACE
+    from: USE_RIVER_TEMPERATE_MARSH
+    to:
+      - SELF: 1
+      - MARSH: 1
+      - RIVER: 2
+    sampler: *riverSampler
+  # Regular rivers with bordering swamps
+  - type: REPLACE
+    from: USE_RIVER_TEMPERATE_SWAMP
+    to:
+      - SELF: 1
+      - SWAMP: 1
+      - RIVER: 2
+    sampler: *riverSampler
+  # Warm rivers
+  - type: REPLACE
+    from: USE_LUKEWARM_RIVER
+    to:
+      - SELF: 1
+      - LUKEWARM_RIVER: 1
+    sampler: *riverSampler
+  # Tropical rivers
+  - type: REPLACE
+    from: USE_TROPICAL_RIVER
+    to:
+      - SELF: 1
+      - TROPICAL_RIVER: 1
+    sampler: *riverSampler
+  # Tropical coastal rivers with mangrove swamps
+  - type: REPLACE
+    from: USE_RIVER_COASTAL_TROPICAL_SWAMP
+    to:
+      - SELF: 1
+      - MANGROVE_SWAMP: 1
+      - TROPICAL_RIVER: 2
+    sampler: *riverSampler
+  # Cold rivers
+  - type: REPLACE
+    from: USE_COLD_RIVER
+    to:
+      - SELF: 1
+      - COLD_RIVER: 1
+    sampler: *riverSampler
+  # Frozen Rivers
+  - type: REPLACE
+    from: USE_FROZEN_RIVER
+    to:
+      - SELF: 1
+      - FROZEN_RIVER: 1
+    sampler: *riverSampler
+  # Frozen rivers with frozen marshes
+  - type: REPLACE
+    from: USE_FROZEN_RIVER_FROZEN_MARSH
+    to:
+      - SELF: 1
+      - FROZEN_MARSH: 1
+      - FROZEN_RIVER: 2
+    sampler: *riverSampler

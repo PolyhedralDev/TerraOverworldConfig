@@ -1,0 +1,42 @@
+id: DENSE_JUNGLE_BUSHES
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 3
+  padding: 2
+  salt: 9152
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: ${meta.yml:ocean-level} + 1
+        max: $meta.yml:top-y
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: OR
+        patterns:
+          - type: MATCH_SET
+            blocks: $features/vegetation/meta.yml:dry-plantable-blocks
+            offset: -1
+          - type: MATCH_SET
+            blocks:
+              - minecraft:sand
+              - minecraft:red_sand
+            offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:snow
+          - minecraft:air
+        offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: jungle_bush

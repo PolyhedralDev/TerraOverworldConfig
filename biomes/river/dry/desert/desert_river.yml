@@ -1,0 +1,7 @@
+id: DESERT_RIVER
+type: BIOME
+extends:
+  - EQ_GLOBAL_RIVER
+  - CARVING_OCEAN
+  - DESERT
+color: $biomes/colors.yml:DESERT_RIVER

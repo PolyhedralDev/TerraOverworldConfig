@@ -1,0 +1,48 @@
+id: SWAMP
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_MARITIME_WET
+  - EQ_SWAMP
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:SWAMP
+
+vanilla: minecraft:swamp
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER_TEMPERATE_SWAMP
+
+colors:
+  grass: 0x4C763C
+  foliage: 0x6A7039
+  water: 0x4C6559
+  water-fog: 0x232317
+
+palette:
+  - GRASS_MUDDY: $meta.yml:top-y
+  - SAND: ${meta.yml:ocean-level} - 1
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.4
+    palette:
+      - GRASS_MUDDY: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+slant-depth: 1
+
+features:
+  preprocessors:
+    - SWAMP_WATER
+  flora:
+    - GRASS
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - BLUE_ORCHID_PATCH
+    - LILY_PADS
+    - SUGAR_CANE
+  trees:
+    - OAK_BUSHES
+    - SWAMP_TREES
+    - DEAD_SWAMP_TREES

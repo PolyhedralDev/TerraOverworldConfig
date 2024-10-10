@@ -1,0 +1,8 @@
+id: OCEAN_OVERHANGS
+type: BIOME
+extends:
+  - OCEAN
+  - EQ_SUBMERGED_OVERHANGS
+color: $biomes/colors.yml:OCEAN_OVERHANGS
+
+vanilla: minecraft:ocean

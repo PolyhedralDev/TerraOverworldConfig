@@ -1,0 +1,31 @@
+id: BADLANDS_WAVY_STRATA
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:brown_terracotta: 1
+      - minecraft:pink_terracotta: 1
+      - minecraft:terracotta: 2
+      - minecraft:light_gray_terracotta: 1
+      - minecraft:white_terracotta: 2
+      - minecraft:orange_terracotta: 1
+      - minecraft:terracotta: 2
+      - minecraft:yellow_terracotta: 2
+    layers: 1
+
+sampler:
+  dimensions: 3
+  type: EXPRESSION
+  expression: noise(y+offset(x,z)*10,0)
+  samplers:
+    noise:
+      dimensions: 2
+      type: VALUE
+      frequency: 0.2
+    offset:
+      dimensions: 2
+      type: FBM
+      octaves: 2
+      sampler:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.005

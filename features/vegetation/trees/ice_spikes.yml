@@ -12,8 +12,8 @@ locator:
   locators:
     - type: TOP
       range: &range
-        min: 60
-        max: 255
+        min: ${meta.yml:ocean-level} - 1
+        max: $meta.yml:top-y
     - type: PATTERN
       range: *range
       pattern:

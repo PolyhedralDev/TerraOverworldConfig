@@ -1,0 +1,16 @@
+id: FROZEN_DEEP_DEPTHS
+type: BIOME
+extends:
+  - FROZEN_DEEP_OCEAN
+  - BASE
+color: $biomes/colors.yml:FROZEN_DEEP_DEPTHS
+
+vanilla: minecraft:deep_frozen_ocean
+
+features:
+  preprocessors:
+    - UNDERWATER_SCULK_WEBS
+    - UNDERWATER_SCULK_PATCHES
+    - UNDERWATER_SCULK_TENDRIL
+  flora:
+    - UNDERWATER_SCULK_FLORA

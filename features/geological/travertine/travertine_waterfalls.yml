@@ -1,0 +1,45 @@
+id: TRAVERTINE_WATERFALLS
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: PROBABILITY
+    sampler:
+      type: CELLULAR
+      frequency: 0.125
+  threshold: 0.03
+
+locator:
+  type: AND
+  locators:
+    - type: PATTERN
+      range: &range
+        min: ${meta.yml:ocean-level} + 2
+        max: $meta.yml:top-y
+      pattern:
+        type: AND
+        patterns:
+          - type: MATCH
+            block: minecraft:calcite
+            offset: 0
+          - type: MATCH_AIR
+            offset: 1
+    - type: AND
+      locators:
+        - type: ADJACENT_PATTERN
+          range: *range
+          pattern:
+            type: MATCH
+            block: minecraft:water
+            offset: 0
+        - type: ADJACENT_PATTERN
+          range: *range
+          pattern:
+            type: MATCH_AIR
+            offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: physics_water

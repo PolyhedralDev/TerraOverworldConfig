@@ -1,0 +1,48 @@
+id: SAVANNA
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_TROPICAL_SAVANNA
+  - EQ_LAND
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:SAVANNA
+
+vanilla: minecraft:savanna
+
+colors:
+  grass: 0xb5cc47
+  foliage: 0xaea42a
+  water: 0x2C8b9c
+  water-fog: 0x2C8b9c
+
+tags:
+  - LAND_CAVES
+  - ANCIENT_CAVES
+  - USE_LUKEWARM_RIVER
+
+palette:
+  - GRASS_VARIATION: $meta.yml:top-y
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.8
+    palette:
+      - GRASS_VARIATION: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - TERRACOTTA_SLANT: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - GRASS
+    - POPPY_PATCH
+    - DANDELION_PATCH
+  trees:
+    - ACACIA_TREES
+    - SPARSE_FALLEN_ACACIA_TREES
+    - SPARSE_BAOBAB_TREES

@@ -1,0 +1,24 @@
+id: MOSSY_BOULDERS
+type: FEATURE
+extends: BOULDER_SURFACE_LOCATOR
+
+distributor:
+  type: AND
+  distributors:
+    - type: PADDED_GRID
+      width: 8
+      padding: 5
+      salt: 5123
+    - type: SAMPLER
+      sampler:
+        type: PROBABILITY
+        sampler:
+          type: OPEN_SIMPLEX_2
+          salt: 1929
+          frequency: 0.01
+      threshold: 0.2
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: boulder_textured

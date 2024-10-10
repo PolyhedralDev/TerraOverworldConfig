@@ -1,0 +1,51 @@
+id: MOUNTAINS
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_CONTINENTAL_HUMID
+  - EQ_LAND
+  - CARVING_LAND
+  - ORES_EMERALD
+  - BASE
+color: $biomes/colors.yml:MOUNTAINS
+
+tags:
+  - LAND_CAVES
+  - LAND
+
+vanilla: minecraft:windswept_hills
+
+colors:
+  grass: 0x8ab689
+  foliage: 0x6da36b
+  water: 0x007bf7
+  water-fog: 0x007bf7
+
+palette:
+  - GRASS: $meta.yml:top-y
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.8
+    palette:
+      - GRASS: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - << meta.yml:palette-slant-generic
+      - << meta.yml:palette-bottom
+
+features:
+  landforms:
+    - BOULDERS
+    - SMALL_BOULDER_PATCHES
+  flora:
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - GRASS
+    - FERNS
+  trees:
+    - SPRUCE_TREE_PATCHES
+    - SPARSE_FALLEN_SPRUCE_TREES

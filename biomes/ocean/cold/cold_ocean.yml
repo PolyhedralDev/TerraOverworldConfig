@@ -1,0 +1,11 @@
+id: COLD_OCEAN
+type: BIOME
+extends:
+  - PALETTE_OCEAN
+  - ENVIRONMENT_MARINE_OCEAN_COLD
+  - EQ_GLOBAL_OCEAN
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:COLD_OCEAN
+
+vanilla: minecraft:ocean

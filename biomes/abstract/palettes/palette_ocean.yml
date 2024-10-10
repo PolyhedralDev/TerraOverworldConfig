@@ -3,14 +3,15 @@ type: BIOME
 abstract: true
 
 palette:
-  - SAND: 319
+  - SAND: $meta.yml:top-y
+  - SAND_STONE_MIX: ${meta.yml:deepslate-top} + 10
   - << meta.yml:palette-bottom
 
 slant-depth: 4
 
 slant:
-  - threshold: 2.5
+  - threshold: 0.4
     palette:
-      - BLOCK:minecraft:stone: 319
+      - BLOCK:minecraft:stone: $meta.yml:top-y
       - GRAVEL: 61
       - << meta.yml:palette-bottom

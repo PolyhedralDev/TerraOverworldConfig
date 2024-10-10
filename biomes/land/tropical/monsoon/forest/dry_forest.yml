@@ -1,0 +1,60 @@
+id: DRY_FOREST
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_TROPICAL_MONSOON
+  - EQ_LAND
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:DRY_FOREST
+
+vanilla: minecraft:plains
+
+colors:
+  grass: 0xcbd656
+  foliage: 0xa8c348
+
+tags:
+  - LAND_CAVES
+  - USE_LUKEWARM_RIVER
+
+palette:
+  - GRASS: $meta.yml:top-y
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant-depth: 1
+
+slant:
+  - threshold: 0.8
+    palette:
+      - GRASS: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.5
+    palette:
+      - BLOCK:minecraft:mossy_cobblestone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.45
+    palette:
+      - BLOCK:minecraft:cobblestone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+      
+features:
+  flora:
+    - GRASS
+    - OAK_BUSHES
+    - FERNS
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - TALL_GRASS
+  trees:
+    - JUNGLE_TREES
+    - SPARSE_FALLEN_JUNGLE_TREES
+  landforms:
+    - SMALL_MOSSY_BOULDER_PATCHES
+  

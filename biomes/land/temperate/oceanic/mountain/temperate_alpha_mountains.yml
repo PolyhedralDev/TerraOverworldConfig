@@ -1,0 +1,42 @@
+id: TEMPERATE_ALPHA_MOUNTAINS
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_TEMPERATE_OCEANIC
+  - EQ_GLOBAL_ERODED_PILLARS
+  - CARVING_LAND
+  - ORES_EMERALD
+  - BASE
+color: $biomes/colors.yml:TEMPERATE_ALPHA_MOUNTAINS
+
+vanilla: minecraft:windswept_hills
+
+palette:
+  - GRASS: $meta.yml:top-y
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.8
+    palette:
+      - GRASS: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.5
+    palette:
+      - BLOCK:minecraft:andesite: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - ROCKY_SLANT: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: -0.5
+    palette:
+      - BLOCK:minecraft:tuff: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+slant-depth: 50
+
+features:
+  flora:
+    - GRASS

@@ -1,0 +1,57 @@
+id: DRIPSTONE_CAVE_POOLS
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: PROBABILITY
+    sampler:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.03
+      salt: 4293
+  threshold: 0.5
+
+locator:
+  type: AND
+  locators:
+    - type: PATTERN
+      range: &range
+        min: ${meta.yml:bottom-y} + 14
+        max: ${meta.yml:ocean-level} + 3
+      pattern:
+        type: AND
+        patterns:
+          - type: MATCH_AIR
+            offset: 1
+          - type: MATCH
+            block: minecraft:light_gray_terracotta
+            offset: 0
+          - type: MATCH_SOLID
+            offset: -1
+    - type: ADJACENT_PATTERN
+      range: *range
+      match-all: true
+      pattern:
+        type: OR
+        patterns:
+          - type: MATCH
+            block: minecraft:light_gray_terracotta
+            offset: 0
+          - type: MATCH
+            block: minecraft:water
+            offset: 0
+          - type: MATCH
+            block: minecraft:lava
+            offset: 0
+
+structures:
+  distribution:
+    dimensions: 2
+    type: OPEN_SIMPLEX_2
+    salt: 4219
+    frequency: 0.01
+  structures:
+    - BLOCK:minecraft:water: 15
+    - blank: 1
+    - BLOCK:minecraft:lava: 5
+  

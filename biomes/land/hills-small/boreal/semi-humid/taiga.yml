@@ -1,8 +1,0 @@
-id: TAIGA
-type: BIOME
-extends: [ EQ_TERRACED_HILLS, TAIGA_HILLS ]
-color: $biomes/colors.yml:TAIGA
-
-features:
-  trees:
-    - SPRUCE_TREE_PATCHES

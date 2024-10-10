@@ -1,0 +1,24 @@
+stages:
+  - type: REPLACE
+    from: ocean
+    sampler:
+      type: EXPRESSION
+      expression: continentBorder(x, z)
+    to:
+      SELF: 1
+      coast: 1
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: land
+    replace: ocean
+    to: coast
+  - type: REPLACE
+    from: coast
+    to:
+      land: 1
+      SELF: 1
+    sampler:
+      type: OPEN_SIMPLEX_2
+      frequency: 1 / 300 / ${customization.yml:global-scale}
+      salt: 1023

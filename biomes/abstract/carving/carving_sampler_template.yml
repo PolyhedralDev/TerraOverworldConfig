@@ -1,0 +1,136 @@
+# Template for carving samplers
+# This template should be used via metaconfiguration like so:
+
+# dimensions: 3
+# type: EXPRESSION
+# expression: $biomes/abstract/carving/carving_sampler_template.yml:expression
+# samplers: $biomes/abstract/carving/carving_sampler_template.yml:samplers
+# variables:
+#   "<<":
+#     - biomes/abstract/carving/carving_sampler_template.yml:variables
+#   # Variable Overrides:
+#   <variable name>: <value>
+#   <variable name>: <value>
+
+variables:
+  # These serve as default values that each usage of this template can override for specific adjustments
+  
+  carvingThreshold: 0.55 # Higher = less carving
+  carvingCap: 1 # Caps the amount of base carving
+  
+  cheeseStrength: 0.7 # Higher = larger cheese caves
+  cheeseHorizontalFrequency: 1.5
+  cheeseVerticalFrequency: 3
+  
+  # Higher = larger spaghetti caves
+  spaghettiAStrength: 0.58
+  spaghettiBStrength: 0.57
+  
+  pillarStrength: 0.5
+  pillarRadius: 0.02
+  
+  megaCaveStrength: 0.3
+  megaCaveSize: 0.3
+  
+  # Clamping variables
+  
+  carvingMinHeight: ${meta.yml:bottom-y} + 1 # Where all carving will cut off at the bottom of the world
+  carvingMinTaper: 8 # How many blocks above the min height should all carving 'fade out'
+  
+  cheeseSurfaceBreak: -30 # How many blocks from the surface cheese carving will stop
+  cheeseSurfaceBreakTaper: 20 # How many blocks from surface break should cheese carving taper out
+  
+  spaghettiSurfaceBreak: -10 # How many blocks from the surface spaghetti carving will stop
+  spaghettiSurfaceBreakTaper: 40 # How many blocks from surface break should spaghetti carving taper out
+  
+  # carvingMaxMode: !!!Must be set in carving configs that use this template!!!
+  #                 - 1 = cap carving by land elevation
+  #                 - 2 = cap carving by ocean depth
+  #                 - Anything else sets to cap by the constant carvingMaxHeight instead
+  carvingMaxHeight: -64
+  
+  # Terrain variables for clamping max y, shouldn't be overridden
+  terrainBase: $customization.yml:terrain-base-y-level
+  terrainScale: $customization.yml:terrain-height
+  oceanBase: $customization.yml:terrain-ocean-base-y-level
+  oceanDepth: $customization.yml:terrain-ocean-depth
+  
+expression: | # If > 0 then carve
+  -carvingThreshold
+  + if(y<carvingMinHeight,0, // Skip unnecessary calculations if y value is below min height
+    maskSmooth(
+      min(carvingCap,
+        max(
+          // Spaghetti Caves
+          maskSmooth(
+            // Combine two layers 'A' and 'B' of 'spaghetti noise' (the sum of two ridged 3D noise functions)
+            max(
+              spaghettiAStrength * ((-(|simplex3(x,y+0000,z)|+|simplex3(x,y+1000,z)|)/2)+1),
+              spaghettiBStrength * ((-(|simplex3(x,y+2000,z)|+|simplex3(x,y+3000,z)|)/2)+1)
+            ),
+            // Spaghetti mask
+            // These could probably be deduplicated to prevent repeat calculations by using a wrapper function, but this will work for now.
+            if(carvingMaxMode=1,elevation(x, z)*terrainScale+terrainBase,if(carvingMaxMode=2,oceanElevation(x, z)*oceanDepth+oceanBase,carvingMaxHeight)) + spaghettiSurfaceBreakTaper,
+            if(carvingMaxMode=1,elevation(x, z)*terrainScale+terrainBase,if(carvingMaxMode=2,oceanElevation(x, z)*oceanDepth+oceanBase,carvingMaxHeight)),
+            y - spaghettiSurfaceBreak
+          ),
+  
+          // Cheese caves
+          maskSmooth(
+            cheeseStrength * (simplex3(
+              x * cheeseHorizontalFrequency,
+              (y + simplex2(x, z) * 5) * cheeseVerticalFrequency,
+              z * cheeseHorizontalFrequency
+            )+1)/2
+  
+            // Mega caves
+            +lerp(megaCaves(x, y, z), 1-megaCaveSize, 0, 1, megaCaveStrength)
+  
+            // Pillars
+            -lerp(cavePillars(x, z),-1+pillarRadius,0,-1,1) * pillarStrength,
+  
+            // Cheese mask
+            if(carvingMaxMode=1,elevation(x, z)*terrainScale+terrainBase,if(carvingMaxMode=2,oceanElevation(x, z)*oceanDepth+oceanBase,carvingMaxHeight)) + cheeseSurfaceBreakTaper,
+            if(carvingMaxMode=1,elevation(x, z)*terrainScale+terrainBase,if(carvingMaxMode=2,oceanElevation(x, z)*oceanDepth+oceanBase,carvingMaxHeight)),
+            y - cheeseSurfaceBreak
+          )
+        )
+      ),
+      // Bottom of world mask
+      carvingMinHeight, carvingMinHeight + carvingMinTaper, y
+    )
+  )
+
+samplers:
+  # Basic 2D fractal simplex noise
+  simplex2:
+    dimensions: 2
+    type: LINEAR
+    min: -0.9
+    max: 0.9
+    sampler:
+      type: FBM
+      octaves: 4
+      sampler:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.0075
+  
+  # Basic 3D fractal simplex noise
+  simplex3:
+    dimensions: 3
+    type: FBM
+    octaves: 2
+    sampler:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.0075
+
+  cavePillars:
+    dimensions: 2
+    type: CELLULAR
+    frequency: 0.05
+  
+  megaCaves:
+    dimensions: 3
+    type: OPEN_SIMPLEX_2
+    salt: 777
+    frequency: 0.003

@@ -11,8 +11,8 @@ distributor:
 locator:
   type: PATTERN
   range:
-    min: 60
-    max: 319
+    min: ${meta.yml:ocean-level} - 1
+    max: $meta.yml:top-y
   pattern:
     type: OR
     patterns:

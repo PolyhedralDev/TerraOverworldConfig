@@ -1,0 +1,19 @@
+id: FLOWERING_AUTUMNAL_FOREST
+type: BIOME
+extends: AUTUMNAL_FOREST
+color: $biomes/colors.yml:FLOWERING_AUTUMNAL_FOREST
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER
+
+vanilla: minecraft:old_growth_birch_forest
+
+features:
+  flora:
+    - GRASS
+    - MIXED_FLOWER_COVER
+    - PUMPKIN_PATCHES
+  trees:
+    - SEASONAL_TREES
+    - SPARSE_FALLEN_BIRCH_TREES

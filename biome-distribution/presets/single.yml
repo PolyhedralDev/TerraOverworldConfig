@@ -1,0 +1,21 @@
+biomes:
+  type: EXTRUSION
+  extrusions:
+    - << biome-distribution/extrusions/add_cave_biomes.yml:extrusions
+    - << biome-distribution/extrusions/add_deep_dark.yml:extrusions
+  provider:
+    type: PIPELINE
+    resolution: 4
+    blend:
+      amplitude: 2
+      sampler:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.1
+    pipeline:
+      source:
+        type: SAMPLER
+        biomes: $pack.yml:preset-single-biome
+        sampler:
+          type: CONSTANT
+      stages:
+        - << biome-distribution/stages/add_rivers.yml:stages

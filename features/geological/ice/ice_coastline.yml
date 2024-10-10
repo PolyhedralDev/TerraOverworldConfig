@@ -1,0 +1,24 @@
+id: ICE_COASTLINE
+type: FEATURE
+
+distributor:
+  type: "YES"
+
+locator:
+  type: PATTERN
+  range:
+    min: ${meta.yml:ocean-level} + 1
+    max: ${meta.yml:ocean-level} + 2
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH_SOLID
+        offset: -1
+      - type: MATCH
+        block: minecraft:water
+        offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: BLOCK:minecraft:ice

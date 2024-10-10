@@ -1,4 +1,0 @@
-stages:
-  - type: FRACTAL_EXPAND
-    sampler:
-      type: WHITE_NOISE

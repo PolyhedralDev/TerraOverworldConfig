@@ -1,0 +1,3 @@
+biomes:
+  type: SINGLE
+  biome: $pack.yml:preset-single-debug-biome

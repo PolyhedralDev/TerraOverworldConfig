@@ -1,0 +1,16 @@
+id: SLABS
+type: FEATURE
+abstract: true
+
+distributor:
+  type: "YES"
+
+locator:
+  type: SURFACE
+  range:
+    min: ${meta.yml:ocean-level} + 1
+    max: $meta.yml:top-y
+
+structures:
+  distribution:
+    type: CONSTANT
