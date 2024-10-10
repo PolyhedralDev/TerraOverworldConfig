@@ -20,7 +20,7 @@ getBlock(0,yTranslate,5) != "minecraft:water" ||
 getBlock(0,yTranslate,-5) != "minecraft:water")  fail;
 
 
-str pearlBlock = "";
+str pearlBlock = "minecraft:pearlescent_froglight";
 for (num a = 0; a < amount; a = a + 1) {
 
     num length = 1;

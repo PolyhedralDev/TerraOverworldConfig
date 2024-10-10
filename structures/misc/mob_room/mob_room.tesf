@@ -1,4 +1,4 @@
-num searchRadius = 5;
+num searchRadius = 3;
 bool spawnable = true;
 
 for (num x = -searchRadius; x <= searchRadius; x = x + 1) {

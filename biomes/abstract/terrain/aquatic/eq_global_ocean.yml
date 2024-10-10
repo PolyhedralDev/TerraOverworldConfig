@@ -42,20 +42,6 @@ terrain:
           - b
         expression: x+lerp(x,at,a,bt,b)
         functions: $math/functions/interpolation.yml:functions
-      shelf: # Similar to terrace function, except it only uses one 'terrace' to produce a shelf
-        arguments:
-          - x
-          - shelfOffset
-          - shelfWidth
-          - shelfDepth
-        expression: shelfDepth * shelfWidth * profile(clamp((x/shelfWidth)+1-shelfOffset)) + x
-        functions:
-          clamp:
-            arguments: [x]
-            expression: if(0 <= x && x < 1, x, 0)
-          profile:
-            arguments: [x]
-            expression: "|x - 0.5| - 0.5"
   
     samplers:
       warpedOceanElevation:

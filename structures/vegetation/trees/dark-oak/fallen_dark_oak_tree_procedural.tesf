@@ -17,7 +17,7 @@ str sideBranchBlockZ = "minecraft:dark_oak_log[axis=z]";
 block(0,0,0, "minecraft:dark_oak_log", false);
 
 num yTranslate = 5;
-str setBlock = "";
+str setBlock = "dark_oak_wood";
 for(num l = buffer; l <= buffer+length; l = l + 1) {
 
     if (abs(dx) > max(abs(dy),abs(dz))) setBlock = sideBranchBlockX;

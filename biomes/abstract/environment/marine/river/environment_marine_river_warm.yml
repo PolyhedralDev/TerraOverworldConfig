@@ -3,13 +3,14 @@ type: BIOME
 abstract: true
 
 colors:
-  fog: 0xfffce1
+  fog: 0xc0d8ff
   water: 0x32A598
   water-fog: 0x32A598
-  sky: 0xc5ffff
+  sky: 0x7ba4ff
   grass: 0xbdd394
   foliage: 0x8cbb5e
 
-  climate:
-    temperature: 1.5
-    downfall: 0.1
+climate:
+  precipitation: false
+  temperature: 1.5
+  downfall: 0.1

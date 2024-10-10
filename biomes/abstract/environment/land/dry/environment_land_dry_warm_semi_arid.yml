@@ -10,6 +10,7 @@ colors:
   grass: 0xbdd394
   foliage: 0x8cbb5e
 
-  climate:
-    temperature: 1.5
-    downfall: 0.1
+climate:
+  precipitation: false
+  temperature: 1.5
+  downfall: 0.1

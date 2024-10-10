@@ -10,8 +10,8 @@ colors:
   grass: 0x80B497
   foliage: 0x60A17B
 
-  climate:
-    precipitation: snow
-    temperature: -0.5
-    temperature-modifier: FROZEN
-    downfall: 0.1
+climate:
+  precipitation: true
+  temperature: -0.5
+  temperature-modifier: FROZEN
+  downfall: 0.1

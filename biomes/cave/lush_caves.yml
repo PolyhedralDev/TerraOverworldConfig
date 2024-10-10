@@ -16,7 +16,7 @@ colors:
   foliage: 0xa5cd55 # Matched to azalea leaves
 
   climate:
-    precipitation: rain
+    precipitation: true
     temperature: 1.0
     downfall: 1.0
 

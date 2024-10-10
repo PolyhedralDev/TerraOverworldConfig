@@ -208,12 +208,10 @@ temperature-scale: 1
 # hot and cold biomes generating further apart - and vice versa when decreasing it.
 # Default: 1
 
-temperature-offset: 0
-# Offsets how hot / cold temperature is
-# Default: 0
+temperature-min: -1
+# Default: -1
 
-temperature-spread: 1
-# How spread out the temperature difference is
+temperature-max: 1
 # Default: 1
 
 temperature-altitude-lapse-rate: 0.8
@@ -234,10 +232,10 @@ precipitation-scale: 1
 # generate together.
 # Default: 1
 
-precipitation-offset: 0
-# Default 0
+precipitation-min: -1
+# Default -1
 
-precipitation-spread: 1
+precipitation-max: 1
 # Default: 1
 
 precipitation-ocean-threshold: -1

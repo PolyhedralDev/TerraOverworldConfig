@@ -1,0 +1,22 @@
+id: ANCIENT_CAVES
+type: BIOME
+extends:
+  - CAVE
+  - BASE
+color: $biomes/colors.yml:ANCIENT_CAVES
+
+vanilla: minecraft:dripstone_caves
+
+palette:
+  - ANCIENT_CAVES: $meta.yml:top-y
+  - ANCIENT_CAVES_DEEPSLATE: $meta.yml:deepslate-top
+  - << meta.yml:palette-bedrock
+
+features:
+  flora:
+    - ANCIENT_FLOWER_COVER
+  preprocessors:
+    - SUSPICIOUS_SAND_DEPOSITS
+    - SUSPICIOUS_GRAVEL_DEPOSITS
+  postprocessors:
+    - TRIAL_RUIN_REMNANTS

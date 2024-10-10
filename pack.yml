@@ -128,6 +128,7 @@ functions:
     - math/functions/terrace.yml:functions
     - math/functions/interpolation.yml:functions
     - math/functions/maskSmooth.yml:functions
+    - math/functions/shelf.yml:functions
 
 samplers:
   "<<":
@@ -138,13 +139,6 @@ samplers:
     - math/samplers/temperature.yml:samplers
     - math/samplers/rivers.yml:samplers
     - math/samplers/spots.yml:samplers
-
-blend:
-  palette:
-    resolution: 2
-    amplitude: 2
-    sampler:
-      type: WHITE_NOISE
 
 slant:
   calculation-method: DotProduct

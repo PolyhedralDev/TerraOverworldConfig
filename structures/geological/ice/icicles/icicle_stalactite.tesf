@@ -17,7 +17,7 @@ dz = dz/mag;
 
 if (getBlock(0, -length, 0) != "minecraft:air") fail;
 
-str setBlock = "";
+str setBlock = "minecraft:packed_ice";
 for(num l = 0; l <= length; l = l + 1) {
 
     // Reduce radius inversely to length

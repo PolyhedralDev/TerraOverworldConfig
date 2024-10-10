@@ -15,7 +15,7 @@ if (false) {
 }
 
 if (randomInt(3) == 0) squish = squish - 0.1;
-str setBlock = "";
+str setBlock = "minecraft:deepslate";
 for (num x = (-radius-warp)*3; x < (radius+warp)*3; x = x + 1) {
     for (num y = (-radius-warp)/squish; y < (radius+warp)/squish; y = y + 1) {
         for (num z = (-radius-warp)*3; z < (radius+warp)*3; z = z + 1) {

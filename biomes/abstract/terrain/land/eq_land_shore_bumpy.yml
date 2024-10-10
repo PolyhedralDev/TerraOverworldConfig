@@ -1,0 +1,18 @@
+id: EQ_LAND_SHORE_BUMPY
+type: BIOME
+abstract: true
+
+vars: &variables
+  base: $customization.yml:terrain-base-y-level
+  scale: $customization.yml:terrain-height
+
+terrain:
+  sampler:
+    type: EXPRESSION
+    expression: -y + base + simplex(x*20, z*20)
+    variables: *variables
+
+  sampler-2d:
+    type: EXPRESSION
+    expression: scale * elevationDetailed(x, z)
+    variables: *variables

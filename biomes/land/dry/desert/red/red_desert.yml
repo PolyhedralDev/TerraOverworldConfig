@@ -10,3 +10,8 @@ tags:
 palette:
   - RED_SAND: $meta.yml:top-y
   - << meta.yml:palette-bottom
+
+features:
+  landforms:
+    - RED_DESERT_WELLS
+    - MOB_ROOMS

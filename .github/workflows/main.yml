@@ -25,10 +25,6 @@ jobs:
 
     env:
       repo_url: ${{ github.server_url }}/${{ github.repository }}
-      changelog: CHANGELOG.md
-      release_changelog: RELEASE_CHANGELOG.md
-      start_regex: "^## \\[Unreleased\\]"
-      end_regex: "^## "
 
     steps:
       - name: Checkout repo
@@ -44,11 +40,11 @@ jobs:
 
       - name: Grab release changelog
         if: env.version-bumped == 'true'
-        run: sh ./.scripts/grab-release-changelog.sh
+        run: sh ./.scripts/changelog/extract-release-changelog.sh
 
       - name: Update changelog
         if: env.version-bumped == 'true'
-        run: sh ./.scripts/update-changelog.sh
+        run: sh ./.scripts/changelog/update-changelog.sh
 
       - name: Push changelog
         if: env.version-bumped == 'true'
