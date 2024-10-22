@@ -2,3 +2,17 @@ num height = randomInt(4) + 1;
 for(num i = 0; i < height; i = i + 1) {
     block(0, i, 0, "minecraft:cactus", false);
 }
+
+if (randomInt(3) == 0) {
+
+    str face = "west";
+    num amount = 1+randomInt(4);
+
+    num random = randomInt(4);
+    if (random == 1) face = "north";
+    if (random == 2) face = "south";
+    if (random == 3) face = "west";
+    if (random == 4) face = "east";
+
+    block(0, height, 0, "minecraft:pink_petals[facing=" + face + ",flower_amount=" + amount + "]");
+}
