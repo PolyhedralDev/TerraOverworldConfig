@@ -31,3 +31,4 @@ features:
   landforms:
     - MOB_ROOMS
     - DESERT_WELLS
+    - FOSSILS
