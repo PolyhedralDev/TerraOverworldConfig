@@ -12,7 +12,7 @@ palette:
   - << meta.yml:palette-bottom
 
 features:
-  landforms:
-    - RED_DESERT_WELLS
+  structures:
     - MOB_ROOMS
+    - RED_DESERT_WELLS
     - FOSSILS
