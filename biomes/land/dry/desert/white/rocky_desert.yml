@@ -43,3 +43,7 @@ features:
   landforms:
     - GRANITE_BOULDERS
     - SMALL_GRANITE_BOULDER_PATCHES
+  structures:
+    - MOB_ROOMS
+    - DESERT_WELLS
+    - FOSSILS
