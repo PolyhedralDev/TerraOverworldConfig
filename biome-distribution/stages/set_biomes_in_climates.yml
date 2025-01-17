@@ -84,7 +84,8 @@ stages:
         boreal-snowy-flat:
           - SNOWY_MEADOW: 1
         boreal-snowy:
-          - SNOWY_MEADOW: 1
+          - SNOWY_TAIGA: 1
+          - SNOWY_BIRCH_FOREST: 1
         boreal-snowy-highlands:
           - SNOWY_MOUNTAINS: 1
         

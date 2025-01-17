@@ -109,7 +109,11 @@ stages:
       sampler:
         type: GAUSSIAN
         salt: 2583
- 
+
+  # Used to generate features that must come after trees and before flora such as snow forest layers
+  - id: processors
+    type: FEATURE
+
   # Used for small features placed underwater like sea-grass.
   - id: underwater-flora
     type: FEATURE

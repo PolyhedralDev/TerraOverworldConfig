@@ -1,0 +1,37 @@
+id: BARREN_BIRCH_TREES
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 6
+  padding: 2
+  salt: 7234
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: ${meta.yml:ocean-level} + 3
+        max: ${meta.yml:ocean-level} + 69
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:plantable-blocks
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:snow
+          - minecraft:air
+        offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures:
+    - barren_large_birch_tree_procedural: 1
+  
