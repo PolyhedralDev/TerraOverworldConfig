@@ -44,3 +44,6 @@ features:
     - DEAD_BUSHES
   trees:
     - MANGROVE_TREES
+  structures:
+    - MOB_ROOMS
+    - FOSSILS

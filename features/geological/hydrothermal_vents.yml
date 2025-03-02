@@ -15,7 +15,11 @@ locator:
   pattern:
     type: AND
     patterns:
-      - type: MATCH_SOLID
+      - type: MATCH_SET
+        blocks:
+          - minecraft:deepslate
+          - minecraft:tuff
+          - minecraft:basalt
         offset: -1
       - type: MATCH
         block: minecraft:water

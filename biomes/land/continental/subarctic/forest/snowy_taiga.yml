@@ -1,0 +1,55 @@
+id: SNOWY_TAIGA
+type: BIOME
+extends:
+  - COLOR_FROZEN
+  - ENVIRONMENT_LAND_CONTINENTAL_SUBARCTIC
+  - EQ_LAND
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:SNOWY_TAIGA
+
+tags:
+  - LAND_CAVES
+  - ICE_CAVES
+  - USE_FROZEN_RIVER_FROZEN_MARSH
+
+vanilla: minecraft:taiga
+
+ocean:
+  palette: FROZEN_OCEAN
+
+palette:
+  - GRASS: $meta.yml:top-y
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  landforms:
+    - BOULDERS
+    - SMALL_BOULDER_PATCHES
+  flora:
+    - SWEET_BERRY_BUSH_PATCHES
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - ROSE_BUSH_PATCH
+    - PEONY_PATCH
+    - LILAC_PATCH
+    - LILY_OF_THE_VALLEY_PATCH
+    - GRASS
+    - FERNS
+  trees:
+    - SPRUCE_TREES
+    - SPARSE_FALLEN_SPRUCE_TREES
+  processors:
+    - SNOW_FOREST_LAYERS
+  preprocessors:
+    - POWDER_SNOW_DEPOSITS
+    - ICE_COASTLINE
+  postprocessors:
+    - TREE_SNOW

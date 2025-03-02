@@ -1,4 +1,4 @@
-id: TREE_SNOW
+id: SNOW_FOREST_LAYERS
 type: FEATURE
 
 distributor:
@@ -15,15 +15,10 @@ locator:
       - type: MATCH_AIR
         offset: 0
       - type: MATCH_SET
-        blocks:
-          - minecraft:oak_leaves
-          - minecraft:spruce_leaves
-          - minecraft:birch_leaves
-          - minecraft:birch_log
-          - minecraft:birch_wood
+        blocks: $features/vegetation/meta.yml:plantable-blocks
         offset: -1
 
 structures:
   distribution:
     type: CONSTANT
-  structures: BLOCK:minecraft:snow
+  structures: snow_forest_layers

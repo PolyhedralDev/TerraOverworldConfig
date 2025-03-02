@@ -69,6 +69,10 @@ stages:
   # Misc features that are treated as small modifications to the initial chunk generation.
   - id: preprocessors
     type: FEATURE
+
+  # Used for structures like mob rooms, desert wells, and fossils.
+  - id: structures
+    type: FEATURE
   
   # Used for things like boulders and features that act like a part of the terrain.
   - id: landforms
@@ -105,7 +109,11 @@ stages:
       sampler:
         type: GAUSSIAN
         salt: 2583
- 
+
+  # Used to generate features that must come after trees and before flora such as snow forest layers
+  - id: processors
+    type: FEATURE
+
   # Used for small features placed underwater like sea-grass.
   - id: underwater-flora
     type: FEATURE
