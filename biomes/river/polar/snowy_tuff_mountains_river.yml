@@ -5,4 +5,4 @@ extends:
   - EQ_GLOBAL_RIVER
   - CARVING_OCEAN
   - SNOWY_TUFF_MOUNTAINS
-color: $biomes/colors.yml:SNOWY_MOUNTAINS_RIVER
+color: $biomes/colors.yml:SNOWY_TUFF_MOUNTAINS_RIVER
