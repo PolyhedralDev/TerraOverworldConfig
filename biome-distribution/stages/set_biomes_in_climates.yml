@@ -11,16 +11,16 @@ stages:
       - LAND_GLACIER: 1
     to:
         ice-cap:
-          - SNOWY_MOUNTAINS: 1
+          - SNOWY_TUFF_MOUNTAINS: 1
         ice-cap-highlands:
-          - SNOWY_MOUNTAINS: 1
+          - SNOWY_BLACKSTONE_MOUNTAINS: 1
         
         tundra-flat:
           - TUNDRA: 1
         tundra:
           - TUNDRA: 1
         tundra-highlands:
-          - SNOWY_MOUNTAINS: 1
+          - SNOWY_TUFF_MOUNTAINS: 1
         
         polar-coast-flat:
           - FROZEN_BEACH: 1
