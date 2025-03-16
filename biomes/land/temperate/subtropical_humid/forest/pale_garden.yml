@@ -42,7 +42,6 @@ slant:
 features:
   flora:
     - GRASS
-    - PALE_HANGING_MOSS
     - PALE_MOSS_CARPET
     - EYEBLOSSOM_PATCH
     - GLOW_LICHEN_TENDRIL
