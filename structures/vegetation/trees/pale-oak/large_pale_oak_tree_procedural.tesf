@@ -1,6 +1,7 @@
 num randPrecision = 100;
 num goldenAngle = 2.39996;
 num pi = 3.14159;
+num twopi = 6.28318530718;
 
 num trunkHeight = 4+randomInt(10);
 str trunkBlock = "minecraft:pale_oak_log";
@@ -245,5 +246,14 @@ for (num b = 1; b <= topBranches; b = b + 1) {
 // Generate creaking heart along lower trunk
 num creakingHeartRoll = randomInt(10);
 if (creakingHeartRoll == 0) structure(0, creakingHeartHeight, 0, "creaking_heart", "NONE");
+
+for (num v = 25; v > (trunkHeight-10); v = v - 0.25) {
+    num rx = sin(randomInt(100)/100 * twopi) * (randomInt(5) + 2);
+    num rz = cos(randomInt(100)/100 * twopi) * (randomInt(5) + 2);
+    structure(rx, v, rz, "pale_hanging_moss", "NONE");
+    structure(-rx, v, rz, "pale_hanging_moss", "NONE");
+    structure(rx, v, -rz, "pale_hanging_moss", "NONE");
+    structure(-rx, v, -rz, "pale_hanging_moss", "NONE");
+}
 
 block(0, -1, 0, "minecraft:dirt");
