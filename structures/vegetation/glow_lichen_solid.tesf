@@ -11,4 +11,4 @@ if (structure(-1, 0, 0, "is_pale_oak_trunk", "NONE")) blockID = blockID + "west=
 else blockID = blockID + "west=false,";
 if (structure(1, 0, 0, "is_pale_oak_trunk", "NONE")) blockID = blockID + "east=true]";
 else blockID = blockID + "east=false]";
-if (blockID != "minecraft:sculk_vein[up=false,down=false,north=false,east=false,south=false,west=false]") block(0, 0, 0, blockID, false);
+if (blockID != "minecraft:glow_lichen[up=false,down=false,north=false,east=false,south=false,west=false]") block(0, 0, 0, blockID, false);
