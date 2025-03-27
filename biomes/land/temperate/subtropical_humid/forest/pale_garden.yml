@@ -9,6 +9,7 @@ color: $biomes/colors.yml:PALE_GARDEN
 
 tags:
   - LAND_CAVES
+  - RESIN_ROOTS
   - USE_RIVER_TEMPERATE_MARSH
 
 vanilla: minecraft:pale_garden
@@ -44,6 +45,8 @@ features:
     - GRASS
     - PALE_MOSS_CARPET
     - EYEBLOSSOM_PATCH
-    - GLOW_LICHEN_TENDRIL
+    - CAVE_GLOW_LICHEN
+  landforms:
+    - GREAT_WILLOW_TREES
   trees:
     - DENSE_PALE_FOREST_TREES

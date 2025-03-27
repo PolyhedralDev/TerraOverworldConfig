@@ -1,0 +1,43 @@
+id: RESIN_ROOTS
+type: BIOME
+extends:
+  - CAVE
+  - BASE
+color: $biomes/colors.yml:RESIN_ROOTS
+
+vanilla: minecraft:dripstone_caves
+
+colors:
+  fog: 0x817770
+  water: 0x76889D
+  water-fog: 0x556980
+  sky: 0xb9b9b9
+  grass: 0x778272
+  foliage: 0x878D76
+
+  climate:
+    precipitation: true
+    temperature: 1.0
+    downfall: 1.0
+
+palette:
+  - RESIN_ROOTS: $meta.yml:top-y
+  - RESIN_ROOTS_DEEPSLATE: $meta.yml:deepslate-top
+  - << meta.yml:palette-bedrock
+
+tags:
+  - USE_RIVER_TEMPERATE_MARSH
+
+features:
+  flora:
+    - PALE_OAK_VINES_UNDERGROUND
+    - GRASS_CAVES
+    - PALE_MOSS_CARPET_CAVES
+    - EYEBLOSSOM_PATCH_CAVES
+    - CAVE_GLOW_LICHEN
+    - PALE_HANGING_MOSS_CAVES
+  landforms:
+    - GREAT_WILLOW_TREES
+  postprocessors:
+    - CREAKING_HEARTS_CAVES
+
