@@ -2,7 +2,7 @@ id: PALE_GARDEN
 type: BIOME
 extends:
   - ENVIRONMENT_LAND_TEMPERATE_SUBTROPICAL_HUMID
-  - EQ_PLAIN_PEAKS
+  - EQ_LAND
   - CARVING_LAND
   - BASE
 color: $biomes/colors.yml:PALE_GARDEN
