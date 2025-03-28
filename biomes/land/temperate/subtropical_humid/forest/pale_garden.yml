@@ -10,7 +10,7 @@ color: $biomes/colors.yml:PALE_GARDEN
 tags:
   - LAND_CAVES
   - RESIN_ROOTS
-  - USE_RIVER_TEMPERATE_MARSH
+  - USE_RIVER
 
 vanilla: minecraft:pale_garden
 
