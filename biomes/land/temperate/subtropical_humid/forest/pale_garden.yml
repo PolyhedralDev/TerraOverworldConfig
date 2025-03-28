@@ -46,7 +46,5 @@ features:
     - PALE_MOSS_CARPET
     - EYEBLOSSOM_PATCH
     - CAVE_GLOW_LICHEN
-  landforms:
-    - GREAT_WILLOW_TREES
   trees:
     - DENSE_PALE_FOREST_TREES
