@@ -52,5 +52,5 @@ structures:
       return: Distance2Div
       frequency: 0.1
   structures:
-    - blank: 4
+    - blank: 70
     - glow_lichen_solid: 1
