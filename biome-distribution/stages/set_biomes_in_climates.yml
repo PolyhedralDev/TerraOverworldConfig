@@ -195,7 +195,7 @@ stages:
           - RAINFOREST: 1
           - BROADLEAF_FOREST: 1
           - DARK_FOREST: 1
-          - PALE_GARDEN: 1
+          - PALE_GARDEN: 10
           - SAKURA_GROVE: 1
           - WOODED_BUTTES: 1
         temperate-warm-highlands:
@@ -215,7 +215,7 @@ stages:
           - RAINFOREST: 1
           - BROADLEAF_FOREST: 1
           - DARK_FOREST: 1
-          - PALE_GARDEN: 1
+          - PALE_GARDEN: 10
           - SAKURA_GROVE: 1
           - WOODED_BUTTES: 1
         temperate-cold-highlands:
