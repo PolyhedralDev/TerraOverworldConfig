@@ -94,5 +94,6 @@ structures:
   distribution:
     type: WHITE_NOISE
   structures:
-    - BLOCK:minecraft:pale_oak_wood: 2
-    - resin_clump: 1
+    - BLOCK:minecraft:pale_oak_wood: 20
+    - resin_clump: 10
+    - pale_oak_tendril: 1
