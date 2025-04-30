@@ -12,7 +12,5 @@ if (loc == 2 ||
 
 str blockAbove = getBlock(x, 1, z);
 str blockBelow = getBlock(x, -1, z);
-if (blockAbove == "minecraft:pale_oak_wood") block(x, 1, z, "minecraft:pale_oak_log");
-if (blockBelow == "minecraft:pale_oak_wood") block(x, -1, z, "minecraft:pale_oak_log");
 
 block(x, 0, z, blockID, true, true);
