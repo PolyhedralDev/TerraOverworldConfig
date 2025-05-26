@@ -10,4 +10,4 @@ palette:
 features:
   structures:
     - MOB_ROOMS
-    - FOSSILS
+    - SPARSE_FOSSILS
