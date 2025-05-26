@@ -35,7 +35,7 @@ for (num h = 0; h <= maxTunnelHeight; h = h + 1) {
         airHeight = 0;
     }
     if (airHeight > airGap) {
-        if (structure(0, surfaceHeight-1, 0, "is_great_willow_plantable", "NONE")) {
+        if (structure(0, surfaceHeight-1, 0, "is_weeping_willow_plantable", "NONE")) {
             foundSpot = true;
             break;
         }
@@ -44,7 +44,7 @@ for (num h = 0; h <= maxTunnelHeight; h = h + 1) {
 if (!foundSpot || !hasUndergroundSpace) fail;
 
 // Place tree at the top of the tunnel
-structure(0, surfaceHeight, 0, "great_willow_tree", "NONE", "CW_90", "CCW_90", "CW_180");
+structure(0, surfaceHeight, 0, "weeping_willow_tree", "NONE", "CW_90", "CCW_90", "CW_180");
 
 // Tunnel placement
 

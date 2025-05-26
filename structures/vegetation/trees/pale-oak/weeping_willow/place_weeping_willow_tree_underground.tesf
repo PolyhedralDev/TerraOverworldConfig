@@ -13,4 +13,4 @@ num offsetX = -chunkX+7+randomInt(2);
 num offsetZ = -chunkZ+7+randomInt(2);
 
 // Place structure in the center of the chunk
-structure(offsetX, 0, offsetZ, "great_willow_tree_tunnel", "NONE");
+structure(offsetX, 0, offsetZ, "weeping_willow_tree_tunnel", "NONE");

@@ -35,7 +35,7 @@ features:
     - EYEBLOSSOM_PATCH_CAVES
     - PALE_HANGING_MOSS_CAVES
   landforms:
-    - GREAT_WILLOW_TREES
+    - WEEPING_WILLOW_TREES
   trees:
     - PALE_OAK_VINES_UNDERGROUND
   postprocessors:

@@ -1,4 +1,4 @@
-id: GREAT_WILLOW_TREES
+id: WEEPING_WILLOW_TREES
 type: FEATURE
 
 distributor:
@@ -18,4 +18,4 @@ locator:
 structures:
   distribution:
     type: CONSTANT
-  structures: place_great_willow_tree_underground
+  structures: place_weeping_willow_tree_underground
