@@ -338,11 +338,23 @@ stages:
           - XERIC_MOUNTAINS: 1
 
         temperate-steppe-flat:
-          - COLD_STEPPE: 1
+          - SUNFLOWER_PRAIRIE: 1
+          - PRAIRIE: 2
+          - PLAINS: 3
+          - OAK_SAVANNA: 1
+          - STEPPE: 1
         temperate-steppe:
-          - COLD_STEPPE: 1
+          - SUNFLOWER_PRAIRIE: 1
+          - PRAIRIE: 2
+          - PLAINS: 3
+          - OAK_SAVANNA: 1
+          - STEPPE: 1
         temperate-steppe-highlands:
-          - COLD_STEPPE: 1
+          - SUNFLOWER_PRAIRIE: 1
+          - PRAIRIE: 2
+          - PLAINS: 3
+          - OAK_SAVANNA: 1
+          - STEPPE: 1
 
         cold-desert-flat:
           - SALT_FLATS: 1
