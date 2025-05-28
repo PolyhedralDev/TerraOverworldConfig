@@ -1,0 +1,35 @@
+id: UNDERGROUND_MAGMA_BLOCK_DEPOSITS
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 2137
+  threshold: 0.5
+
+locator:
+  type: AND
+  locators:
+    - type: PATTERN
+      range: &range
+        min: ${meta.yml:bottom-y} + 9
+        max: ${meta.yml:bottom-y} + 11
+      pattern:
+        type: AND
+        patterns:
+          - type: MATCH_AIR
+            offset: 1
+          - type: MATCH_SOLID
+            offset: 0
+    - type: ADJACENT_PATTERN
+      range: *range
+      pattern:
+        type: MATCH
+        block: minecraft:lava
+        offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: MAGMA_BLOCK_DEPOSIT

@@ -1,0 +1,7 @@
+id: BADLANDS_RIVER
+type: BIOME
+extends:
+  - EQ_GLOBAL_RIVER
+  - CARVING_OCEAN
+  - BADLANDS
+color: $biomes/colors.yml:BADLANDS_RIVER

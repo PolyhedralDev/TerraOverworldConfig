@@ -1,0 +1,54 @@
+id: CHAPARRAL
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_TEMPERATE_MEDITERRANEAN
+  - EQ_LAND
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:CHAPARRAL
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER
+
+vanilla: minecraft:savanna
+
+palette:
+  - GRASS_VARIATION: $meta.yml:top-y
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.8
+    palette:
+      - GRASS_VARIATION: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.5
+    palette:
+      - COARSE_DIRT: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.3
+    palette:
+      - << meta.yml:palette-slant-generic
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - GRASS
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - FERNS
+  trees:
+    - SPARSE_TEMPERATE_TREE_PATCHES
+    - SPARSE_FALLEN_OAK_TREES
+    - SPRUCE_BUSH_PATCHES
+    - SUBTROPICAL_BUSHES
+
+colors:
+  grass: 0xb1d563
+  foliage: 0x4fb06d
+  water: 0x2C8b9c
+  water-fog: 0x2C8b9c

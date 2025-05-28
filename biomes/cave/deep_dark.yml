@@ -1,11 +1,27 @@
 id: DEEP_DARK
 type: BIOME
-extends: [ CAVE, BASE ]
-vanilla: minecraft:deep_dark
+extends:
+  - CAVE
+  - BASE
 color: $biomes/colors.yml:DEEP_DARK
 
+vanilla: minecraft:deep_dark
+
+colors:
+  fog: 0x000000
+  water: 0x102e38
+  water-fog: 0x171921
+  sky: 0x1c2742
+  grass: 0x163b46
+  foliage: 0x195a58
+
+  climate:
+    precipitation: true
+    temperature: 1.0
+    downfall: 1.0
+
 palette:
-  - BLOCK:minecraft:stone: 319
+  - BLOCK:minecraft:stone: $meta.yml:top-y
   - << meta.yml:palette-bottom
 
 features:

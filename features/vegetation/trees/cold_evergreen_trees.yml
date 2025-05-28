@@ -1,0 +1,44 @@
+id: COLD_EVERGREEN_TREES
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 10
+  padding: 3
+  salt: 9591
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: ${meta.yml:ocean-level} + 3
+        max: $meta.yml:top-y
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:dry-plantable-blocks
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:snow
+          - minecraft:air
+        offset: 0
+
+structures:
+  distribution:
+    type: CELLULAR
+    return: CellValue
+    frequency: 0.03
+  structures:
+    - oak_tree_procedural: 12
+    - large_oak_tree_procedural: 1
+    - birch_tree_procedural: 4
+    - large_birch_tree_procedural: 1
+    - large_thin_birch_tree_procedural: 1
+    - large_oak_tree_procedural_2: 1
+    - spruce_tree_procedural: 10

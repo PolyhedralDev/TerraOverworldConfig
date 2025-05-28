@@ -1,0 +1,16 @@
+stages:
+  - type: REPLACE_LIST
+    sampler:
+      type: CELLULAR
+      return: CellValue
+      frequency: 1 / 100 / ${customization.yml:variation-scale} / ${customization.yml:global-scale}
+    default-from: tropical-rainforest
+    default-to: &travertineList
+      - SELF: 10
+      - TRAVERTINE_TERRACES: 1
+    to:
+      tropical-rainforest-highlands: *travertineList
+      tropical-monsoon: *travertineList
+      tropical-monsoon-highlands: *travertineList
+      tropical-savanna-wet: *travertineList
+      tropical-savanna-wet-highlands: *travertineList

@@ -7,32 +7,23 @@ distributor:
     - type: SAMPLER
       sampler:
         type: POSITIVE_WHITE_NOISE
-        salt: 8172
-      threshold: 0.7
+      threshold: 0.75
     - type: SAMPLER
-      sampler:
-        type: PROBABILITY
-        sampler:
-          type: DOMAIN_WARP
-          amplitude: 5
-          warp:
-            type: GAUSSIAN
-          sampler:
-            type: OPEN_SIMPLEX_2
-      threshold: 0.5
+      sampler: $features/vegetation/trees/sakura_trees.yml:mask.sampler
+      threshold: $features/vegetation/trees/sakura_trees.yml:mask.threshold
 
 locator:
   type: AND
   locators:
     - type: TOP
       range: &range
-        min: 62
-        max: 319
+        min: ${meta.yml:ocean-level} + 1
+        max: $meta.yml:top-y
     - type: PATTERN
       range: *range
       pattern:
         type: MATCH_SET
-        blocks: $features/vegetation/meta.yml:plantable-blocks
+        blocks: $features/vegetation/meta.yml:dry-plantable-blocks
         offset: -1
     - type: PATTERN
       range: *range
@@ -44,6 +35,18 @@ locator:
         offset: 0
 
 structures:
-  distribution:
-    type: CONSTANT
-  structures: pink_petals
+  distribution: 
+    type: EXPRESSION
+    expression: sampler(x, z) # Using this to ensure 2D sampler is used
+    samplers:
+      sampler:
+        dimensions: 2
+        type: LINEAR
+        min: 0
+        max: $features/vegetation/trees/sakura_trees.yml:mask.threshold
+        sampler: $features/vegetation/trees/sakura_trees.yml:mask.sampler
+  structures: 
+    - pink_petals_4: 1
+    - pink_petals_3: 1
+    - pink_petals_2: 1
+    - pink_petals_1: 1

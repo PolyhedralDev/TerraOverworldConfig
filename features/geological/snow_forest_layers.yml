@@ -1,0 +1,24 @@
+id: SNOW_FOREST_LAYERS
+type: FEATURE
+
+distributor:
+  type: "YES"
+
+locator:
+  type: PATTERN
+  range:
+    min: ${meta.yml:ocean-level} + 1
+    max: $meta.yml:top-y
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH_AIR
+        offset: 0
+      - type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:plantable-blocks
+        offset: -1
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: snow_forest_layers

@@ -1,0 +1,78 @@
+id: OVERGROWN_CLIFFS
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_TROPICAL_EQUATORIAL
+  - EQ_GLOBAL_ERODED_PILLARS
+  - CARVING_OCEAN
+  - ORES_EMERALD
+  - BASE
+color: $biomes/colors.yml:OVERGROWN_CLIFFS
+
+vanilla: minecraft:jungle
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER
+
+colors:
+  grass: 0x3abf13
+  foliage: 0x00aa17
+  water: 0x1e97f2
+  water-fog: 0x1e97f2
+
+palette:
+  - GRASS: $meta.yml:top-y
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.8
+    palette:
+      - GRASS: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.6
+    palette:
+      - MOSS_TUFF: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.3
+    palette:
+      - MOSS_STONE: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.2
+    palette:
+      - BLOCK:minecraft:andesite: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.1
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.05
+    palette:
+      - BLOCK:minecraft:tuff: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: -0.5
+    palette:
+      - BLOCK:minecraft:deepslate: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - GRASS
+    - CROSSING_VINES
+    - LARGE_LEAF_VINES
+    - LARGE_CEILING_VINES
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - ROSE_BUSH_PATCH
+    - PEONY_PATCH
+    - LILAC_PATCH
+    - LILY_OF_THE_VALLEY_PATCH
+    - SMALL_DRIPLEAF
+    - BIG_DRIPLEAF
+  trees:
+    - JUNGLE_TREES
+    - JUNGLE_BUSHES
+    - SPARSE_FALLEN_JUNGLE_TREES
+  

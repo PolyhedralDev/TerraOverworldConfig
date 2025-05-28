@@ -1,0 +1,48 @@
+id: XERIC_MOUNTAINS
+type: BIOME
+extends:
+  - COLOR_XERIC
+  - ENVIRONMENT_LAND_DRY_WARM_SEMI_ARID
+  - EQ_STRATIFIED_LAND
+  - CARVING_LAND
+  - ORES_EMERALD
+  - BASE
+color: $biomes/colors.yml:XERIC_MOUNTAINS
+
+vanilla: minecraft:desert
+
+tags:
+  - LAND_CAVES
+  - LAND
+
+palette:
+  - XERIC: $meta.yml:top-y
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.8
+    palette:
+      - XERIC: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - XERIC_SLANT: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - GRASS
+    - DEAD_BUSHES
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - CACTUS_SPARSE
+  trees:
+    - OAK_BUSHES
+    - SPARSE_OAK_TREES
+    - SPARSE_FALLEN_OAK_TREES
+    - SPARSE_FALLEN_DARK_OAK_TREES
+    - MESQUITE_TREES
+    - DEAD_TREES_SPARSE

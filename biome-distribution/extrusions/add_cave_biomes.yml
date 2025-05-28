@@ -1,0 +1,57 @@
+extrusions:
+  - type: REPLACE
+    from: LAND_CAVES
+    sampler:
+      type: CELLULAR
+      return: CellValue
+      salt: 1252
+      frequency: 1 / 200 / ${customization.yml:cave-biome-scale} / ${customization.yml:global-scale}
+    to:
+      - SELF: 6
+      - LUSH_CAVES: 1
+      - DRIPSTONE_CAVES: 1
+    range:
+      min: $meta.yml:deepslate-bottom
+      max: ${meta.yml:ocean-level} - 13
+
+  - type: REPLACE
+    from: ICE_CAVES
+    sampler:
+      type: CELLULAR
+      return: CellValue
+      salt: 1252
+      frequency: 1 / 200 / ${customization.yml:cave-biome-scale} / ${customization.yml:global-scale}
+    to:
+      - SELF: 3
+      - ICE_CAVES: 7
+    range:
+      min: $meta.yml:deepslate-bottom
+      max: ${meta.yml:ocean-level} - 13
+
+  - type: REPLACE
+    from: ANCIENT_CAVES
+    sampler:
+      type: CELLULAR
+      return: CellValue
+      salt: 6457
+      frequency: 1 / 200 / ${customization.yml:cave-biome-scale} / ${customization.yml:global-scale}
+    to:
+      - SELF: 3
+      - ANCIENT_CAVES: 1
+    range:
+      min: $meta.yml:bottom-y
+      max: $meta.yml:deepslate-top
+
+  - type: REPLACE
+    from: RESIN_ROOTS
+    sampler:
+      type: CELLULAR
+      return: CellValue
+      salt: 8756
+      frequency: 1 / 200 / ${customization.yml:cave-biome-scale} / ${customization.yml:global-scale}
+    to:
+      - SELF: 3
+      - RESIN_ROOTS: 1
+    range:
+      min: $meta.yml:deepslate-bottom
+      max: ${meta.yml:ocean-level} - 13

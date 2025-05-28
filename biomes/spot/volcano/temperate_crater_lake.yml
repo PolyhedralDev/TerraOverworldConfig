@@ -1,0 +1,12 @@
+id: TEMPERATE_CRATER_LAKE
+type: BIOME
+extends:
+  - CARVING_NONE
+  - TEMPERATE_EXTINCT_VOLCANO
+color: $biomes/colors.yml:TEMPERATE_CRATER_LAKE
+
+vanilla: minecraft:plains
+
+features:
+  preprocessors:
+    - VOLCANO_WATER

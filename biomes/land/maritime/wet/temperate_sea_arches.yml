@@ -1,0 +1,30 @@
+id: TEMPERATE_SEA_ARCHES
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_MARITIME_WET
+  - EQ_ERODED_COAST
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:TEMPERATE_SEA_ARCHES
+
+vanilla: minecraft:beach
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER
+
+palette:
+  - GRASS: $meta.yml:top-y
+  - SAND: $meta.yml:ocean-level
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - SAND: ${meta.yml:ocean-level} + 1
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - GRASS

@@ -1,0 +1,35 @@
+id: ANCIENT_FLOWER_COVER
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 5462
+  threshold: 0.7
+
+locator:
+  type: AND
+  locators:
+    - type: SURFACE
+      range: &range
+        min: $meta.yml:bottom-y
+        max: ${meta.yml:ocean-level} - 10
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:dry-plantable-blocks
+        offset: -1
+
+structures:
+  distribution:
+    type: FBM
+    octaves: 2
+    sampler:
+      type: WHITE_NOISE
+      seed: 4356
+  structures:
+    - BLOCK:minecraft:torchflower: 1
+    - pitcher_plant: 1
+    - blank: 6

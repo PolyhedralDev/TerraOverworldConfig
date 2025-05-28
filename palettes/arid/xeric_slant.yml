@@ -1,0 +1,27 @@
+id: XERIC_SLANT
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:coarse_dirt: 5
+      - minecraft:dirt: 5
+      - minecraft:packed_mud: 5
+      - minecraft:granite: 3
+      - minecraft:light_gray_terracotta: 3
+      - minecraft:white_terracotta: 10
+    layers: 1
+    sampler:
+      type: EXPRESSION
+      expression: noise(x, y*3, z)*2+1
+      samplers:
+        yOffset:
+          dimensions: 2
+          type: OPEN_SIMPLEX_2
+          salt: 2189
+          frequency: 0.002
+        noise:
+          dimensions: 3
+          type: CELLULAR
+          return: Distance2Div
+          jitter: 0.3
+          frequency: 0.05

@@ -1,0 +1,29 @@
+id: TREE_SNOW
+type: FEATURE
+
+distributor:
+  type: "YES"
+
+locator:
+  type: PATTERN
+  range:
+    min: ${meta.yml:ocean-level} + 1
+    max: $meta.yml:top-y
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH_AIR
+        offset: 0
+      - type: MATCH_SET
+        blocks:
+          - minecraft:oak_leaves
+          - minecraft:spruce_leaves
+          - minecraft:birch_leaves
+          - minecraft:birch_log
+          - minecraft:birch_wood
+        offset: -1
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: BLOCK:minecraft:snow

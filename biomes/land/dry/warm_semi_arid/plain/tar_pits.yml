@@ -1,0 +1,49 @@
+id: TAR_PITS
+type: BIOME
+extends:
+  - COLOR_XERIC
+  - ENVIRONMENT_LAND_DRY_WARM_SEMI_ARID
+  - EQ_BUTTES_ARCHIPELAGO
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:TAR_PITS
+
+vanilla: minecraft:meadow
+
+colors:
+  water: 0x525457
+  water-fog: 0x525457
+
+tags:
+  - LAND_CAVES
+  - USE_DESERT_RIVER
+
+palette:
+  - GRASS: $meta.yml:top-y
+  - MUD: $meta.yml:ocean-level
+  - << meta.yml:palette-bottom
+
+slant-depth: 5
+
+slant:
+  - threshold: 0.8
+    palette:
+      - XERIC_MUD: $meta.yml:top-y
+      - MUD: $meta.yml:ocean-level
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - XERIC_SLANT: $meta.yml:top-y
+      - MUD: $meta.yml:ocean-level
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - GRASS
+    - DEAD_BUSHES
+    - POPPY_PATCH
+    - DANDELION_PATCH
+  trees:
+    - PALM_TREES
+    - MESQUITE_TREES
+    - SPARSE_FALLEN_JUNGLE_TREES

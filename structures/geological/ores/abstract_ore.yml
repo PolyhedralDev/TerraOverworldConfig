@@ -1,0 +1,7 @@
+id: ABSTRACT_ORE
+type: ORE
+abstract: true
+
+replace:
+  - minecraft:stone
+  - minecraft:deepslate

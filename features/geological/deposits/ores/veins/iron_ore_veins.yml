@@ -1,0 +1,87 @@
+id: IRON_ORE_VEINS
+type: FEATURE
+
+anchors:
+  # Where the vein generates
+  - &range # Y min and max
+      min: ${meta.yml:bottom-y} + 14
+      max: ${meta.yml:deepslate-top} - 7
+  - &veinThreshold 0.05 # Rough % of the world the veins generate in
+  - &veinFrequency 0.0025 # How frequent veins generate, determines the spread of where veins generate
+  - &salt 6546 # Seed for placement of veins, should be different for every vein
+
+  # How the 'webbing' in the vein generates
+  # - First walls are generated using noise
+  # - Then holes are punched in the walls to make them look like webs
+  - &wallSalt 6010
+  - &wallFrequency 0.015
+  - &wallThickness 0.08
+  
+  - &webSalt 1923
+  - &webFrequency 0.04
+  - &webThickness 0.18
+  
+  - &replace # A list of blocks to replace
+    - minecraft:deepslate
+  - &blocks # What the webbing is composed of (weighted list of structures)
+    - blank: 75
+    - BLOCK:minecraft:tuff: 125
+    - BLOCK:minecraft:deepslate_iron_ore: 48
+    - BLOCK:minecraft:raw_iron_block: 2
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: PROBABILITY
+    sampler:
+      type: OPEN_SIMPLEX_2
+      salt: *salt
+      frequency: *veinFrequency
+  threshold: *veinThreshold
+
+locator:
+  type: AND
+  locators:
+    - type: PATTERN
+      pattern:
+        type: MATCH_SET
+        blocks: *replace
+        offset: 0
+      range: *range
+
+    # Match ridged simplex to create 'walls'
+    - type: SAMPLER_3D
+      range: *range
+      sampler:
+        type: EXPRESSION
+        expression: "|webWalls(x,y,z)|<wallThickness"
+        variables:
+          wallThickness: *wallThickness
+        samplers:
+          webWalls:
+            dimensions: 3
+            type: OPEN_SIMPLEX_2
+            frequency: *wallFrequency
+            salt: *wallSalt
+  
+    # Punch holes into walls using cellular
+    - type: SAMPLER_3D
+      range: *range
+      sampler:
+        type: EXPRESSION
+        expression: webPunchouts(x,y,z)>-webThickness
+        variables:
+          webThickness: *webThickness
+        samplers:
+          webPunchouts:
+            dimensions: 3
+            type: CELLULAR
+            distance: Euclidean
+            return: Distance2Div
+            frequency: *webFrequency
+            salt: *webSalt
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures: *blocks

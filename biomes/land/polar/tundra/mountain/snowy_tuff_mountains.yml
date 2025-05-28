@@ -1,0 +1,37 @@
+id: SNOWY_TUFF_MOUNTAINS
+type: BIOME
+extends:
+  - COLOR_FROZEN
+  - ENVIRONMENT_LAND_POLAR_TUNDRA
+  - EQ_LAND
+  - ORES_EMERALD
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:SNOWY_TUFF_MOUNTAINS
+
+vanilla: minecraft:frozen_peaks
+
+ocean:
+  palette: FROZEN_OCEAN
+
+palette:
+  - SNOW: $meta.yml:top-y
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.6
+    palette:
+      - TUFF_DEEPSLATE_MIX: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+
+features:
+  slabs:
+    - STONE_SLABS
+    - SNOW_LAYERS
+  preprocessors:
+    - POWDER_SNOW_DEPOSITS
+    - ICE_COASTLINE
+  postprocessors:
+    - TREE_SNOW

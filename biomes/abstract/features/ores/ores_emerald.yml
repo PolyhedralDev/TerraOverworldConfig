@@ -1,0 +1,23 @@
+id: ORES_EMERALD
+type: BIOME
+abstract: true
+
+features:
+  ores:
+    - DIAMOND_ORE
+    - LAPIS_ORE
+    - LAPIS_ORE_UNIFORM
+    - GOLD_ORE
+    - GOLD_ORE_UNIFORM
+    - IRON_ORE
+    - IRON_ORE_HIGH
+    - IRON_ORE_UNIFORM
+    - COAL_ORE
+    - COAL_ORE_UNIFORM
+    - COPPER_ORE
+    - REDSTONE_ORE
+    - REDSTONE_ORE_UNIFORM
+    - AMETHYST_GEODES
+    - IRON_ORE_VEINS
+    - COPPER_ORE_VEINS
+    - EMERALD_ORE

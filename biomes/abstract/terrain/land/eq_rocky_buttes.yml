@@ -1,0 +1,112 @@
+id: EQ_ROCKY_BUTTES
+type: BIOME
+abstract: true
+
+vars: &variables
+  base: $customization.yml:terrain-base-y-level
+  scale: $customization.yml:terrain-height
+
+  terraceHeight: 0.13
+  terraceHeightVariation: 0 
+  
+  depositMaskLowerBound: 0.7
+  depositMaskUpperBound: 1
+  depositTerraceHeight: 0.015
+
+  butteHeight: 0.45
+  butteBase: 0.12
+  butteMaskFrequency: 1
+  butteMaskLowerBound: 0.75
+  butteMaskUpperBound: 0.85
+
+cell-base: &cellBase
+  dimensions: 2
+  type: CELLULAR
+  frequency: 0.012
+
+terrain:
+  sampler:
+    dimensions: 3
+    type: EXPRESSION
+    variables: *variables
+    expression: -y + base
+
+  sampler-2d:
+    dimensions: 2
+    type: EXPRESSION
+    variables: *variables
+    expression: |
+      scale * (
+        herp(cellDistance(x, z) + lerp(cellMask(x, z), 0.7, 0, 1, 1),
+          -0.2, elevation(x, z),
+          -0.75, cellLookup(x, z)+0.02
+        )
+        + max(
+          terraceStrata(
+            herp(|butteMask(x*butteMaskFrequency, z*butteMaskFrequency)|,
+              depositMaskLowerBound, 0,
+              depositMaskUpperBound, butteBase
+            ),
+            depositTerraceHeight, 0, 0, lerp(simplex(x*3,z*3),0.2,0,0.3,0.5)
+          ),
+          terraceStrata(
+            herp(|butteMask(x*butteMaskFrequency, z*butteMaskFrequency)|,
+              butteMaskLowerBound, 0,
+              butteMaskUpperBound, (buttes(x, z)+1)/2 * butteHeight
+            ),
+            terraceHeight, terraceVariation(x, z) * terraceHeightVariation, 0, 0.5
+          )
+        )
+      )
+  
+      
+    samplers:
+      terraceVariation:
+        dimensions: 2
+        type: OPEN_SIMPLEX_2
+        frequency: 0.001
+      butteMask:
+        dimensions: 2
+        type: DOMAIN_WARP
+        amplitude: 2
+        warp:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.03
+          salt: 6
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.003
+          salt: 5
+      buttes:
+        dimensions: 2
+        type: FBM
+        octaves: 3
+        sampler:
+          type: LINEAR
+          min: -1
+          max: -0.2
+          sampler:
+            type: CELLULAR
+            frequency: 0.02
+      cellMask:
+        dimensions: 2
+        type: PROBABILITY
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.005
+      cellLookup:
+        <<: *cellBase
+        return: NoiseLookup
+        salt-lookup: false
+        lookup:
+          type: EXPRESSION
+          expression: elevation(x, z)
+      cellDistance:
+        dimensions: 2
+        type: FBM
+        octaves: 4
+        lacunarity: 2.4
+        gain: 0.4
+        sampler:
+          <<: *cellBase
+          return: Distance2Div

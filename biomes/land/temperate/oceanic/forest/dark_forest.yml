@@ -1,0 +1,42 @@
+id: DARK_FOREST
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_TEMPERATE_OCEANIC
+  - EQ_MULTI_TERRACED_LAND
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:DARK_FOREST
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER_TEMPERATE_MARSH
+
+vanilla: minecraft:dark_forest
+
+palette:
+  - GRASS: $meta.yml:top-y
+  - COARSE_DIRT: ${meta.yml:ocean-level} + 1
+  - MUDDY_BEACH: $meta.yml:ocean-level
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.45
+    palette:
+      - COARSE_DIRT: $meta.yml:top-y
+      - SAND: ${meta.yml:ocean-level} + 3
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - GRASS
+  trees:
+    - SPARSE_LARGE_MUSHROOMS
+    - DENSE_DARK_FOREST_TREES
+    - SPARSE_FALLEN_DARK_OAK_TREES
+  landforms:
+    - MOSSY_BOULDERS
+    - SMALL_MOSSY_BOULDER_PATCHES

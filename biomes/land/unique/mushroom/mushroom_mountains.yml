@@ -1,0 +1,6 @@
+id: MUSHROOM_MOUNTAINS
+type: BIOME
+extends:
+  - EQ_ERODED_MOUNTAINS
+  - MUSHROOM_FIELDS
+color: $biomes/colors.yml:MUSHROOM_MOUNTAINS

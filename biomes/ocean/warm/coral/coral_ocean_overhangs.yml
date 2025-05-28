@@ -1,0 +1,8 @@
+id: CORAL_OCEAN_OVERHANGS
+type: BIOME
+extends:
+  - CORAL_OCEAN
+  - EQ_SUBMERGED_OVERHANGS
+color: $biomes/colors.yml:CORAL_OCEAN_OVERHANGS
+
+vanilla: minecraft:warm_ocean

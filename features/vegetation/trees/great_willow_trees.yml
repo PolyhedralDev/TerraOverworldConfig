@@ -1,0 +1,21 @@
+id: WEEPING_WILLOW_TREES
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 30
+  padding: 80
+  salt: 3246
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range:
+        min: ${meta.yml:deepslate-top} - 7
+        max: ${meta.yml:ocean-level} - 11
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: place_weeping_willow_tree_underground

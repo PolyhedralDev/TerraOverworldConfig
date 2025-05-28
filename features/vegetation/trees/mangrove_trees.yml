@@ -8,25 +8,35 @@ distributor:
   salt: 7718
 
 locator:
-  type: AND
+  type: OR
   locators:
+    # Match air with mud below
     - type: PATTERN
-      range: &range
-        min: 57
-        max: 65
+      range:
+        min: ${meta.yml:ocean-level} + 1
+        max: ${meta.yml:ocean-level} + 4
       pattern:
-        type: MATCH_SET
-        blocks: $features/vegetation/meta.yml:plantable-blocks
-        offset: -1
+        type: AND
+        patterns:
+          - type: MATCH_AIR
+            offset: 0
+          - type: MATCH
+            block: minecraft:mud
+            offset: -1
+    # Match water with any plantable block below
     - type: PATTERN
-      range: *range
+      range:
+        min: ${meta.yml:ocean-level} - 4
+        max: ${meta.yml:ocean-level} + 1
       pattern:
-        type: MATCH_SET
-        blocks:
-          - minecraft:snow
-          - minecraft:air
-          - minecraft:water
-        offset: 0
+        type: AND
+        patterns:
+          - type: MATCH
+            block: minecraft:water
+            offset: 0
+          - type: MATCH_SET
+            blocks: $features/vegetation/meta.yml:aquatic-plantable-blocks
+            offset: -1
 
 structures:
   distribution:

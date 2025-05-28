@@ -1,0 +1,36 @@
+id: RED_WHITE_SAND_MIX
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:sand: 1
+      - minecraft:red_sand: 1
+    layers: 2
+  - materials:
+      - minecraft:sandstone: 1
+      - minecraft:red_sandstone: 1
+    layers: 2
+  - materials:
+      - minecraft:stone: 1
+    layers: 1
+    sampler:
+      type: CONSTANT
+
+sampler:
+  type: DOMAIN_WARP
+  amplitude: 0.5
+  warp:
+    type: GAUSSIAN
+  sampler:
+    type: DOMAIN_WARP
+    amplitude: 30
+    warp:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.01
+    sampler:
+      type: FBM
+      octaves: 3
+      sampler:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.02
+        salt: 8632

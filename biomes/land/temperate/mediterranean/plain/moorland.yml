@@ -1,0 +1,50 @@
+id: MOORLAND
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_TEMPERATE_MEDITERRANEAN
+  - EQ_LAND
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:MOORLAND
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER
+
+vanilla: minecraft:savanna
+
+colors:
+  grass: 0xb9d277
+  foliage: 0xcce66e
+  water: 0x2590a8
+  water-fog: 0x2590a8
+
+palette:
+  - GRASS_VARIATION: $meta.yml:top-y
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.8
+    palette:
+      - GRASS_VARIATION: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.45
+    palette:
+      - COARSE_DIRT: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - << meta.yml:palette-slant-generic
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - GRASS
+    - TALL_GRASS
+    - DEAD_BUSHES
+  trees:
+    - OAK_BUSHES

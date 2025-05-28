@@ -1,12 +1,28 @@
 id: LUSH_CAVES
 type: BIOME
-extends: [ CAVE, BASE ]
-vanilla: minecraft:lush_caves
+extends:
+  - CAVE
+  - BASE
 color: $biomes/colors.yml:LUSH_CAVES
 
+vanilla: minecraft:lush_caves
+
+colors:
+  sky: 0x81ca71
+  fog: 0x477c1f
+  water: 0x14A2C5
+  water-fog: 0x14A2C5
+  grass: 0xa5c742 # Matched to moss block
+  foliage: 0xa5cd55 # Matched to azalea leaves
+
+  climate:
+    precipitation: true
+    temperature: 1.0
+    downfall: 1.0
+
 palette:
-  - LUSH_CAVES: 319
-  - LUSH_CAVES_DEEPSLATE: $meta.yml:strata.deepslate.top
+  - LUSH_CAVES: $meta.yml:top-y
+  - LUSH_CAVES_DEEPSLATE: $meta.yml:deepslate-top
   - << meta.yml:palette-bedrock
 
 tags:

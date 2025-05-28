@@ -1,0 +1,46 @@
+id: HIGHLANDS
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_TEMPERATE_OCEANIC
+  - EQ_LAND
+  - CARVING_LAND
+  - ORES_EMERALD
+  - BASE
+color: $biomes/colors.yml:HIGHLANDS
+
+vanilla: minecraft:windswept_hills
+
+palette:
+  - GRASS: $meta.yml:top-y
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.8
+    palette:
+      - GRASS: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.5
+    palette:
+      - MOSS_STONE: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.45
+    palette:
+      - MOSSY_COBBLESTONE_STONE: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:andesite: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  landforms:
+    - SMALL_MOSSY_BOULDER_PATCHES
+  flora:
+    - GRASS
+    - DANDELION_PATCH
+    - SWEET_BERRY_BUSH_PATCHES
+  trees:
+    - OAK_BUSH_PATCHES

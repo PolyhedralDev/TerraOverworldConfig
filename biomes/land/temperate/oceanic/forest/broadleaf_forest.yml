@@ -1,0 +1,58 @@
+id: BROADLEAF_FOREST
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_TEMPERATE_OCEANIC
+  - EQ_MULTI_TERRACED_LAND
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:BROADLEAF_FOREST
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER
+
+vanilla: minecraft:forest
+
+colors:
+  grass: 0x79c05a
+  foliage: 0x59ae30
+  water: 0x1e97f2
+  water-fog: 0x1e97f2
+
+palette:
+  - GRASS: $meta.yml:top-y
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.8
+    palette:
+      - GRASS: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - COARSE_DIRT: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.3
+    palette:
+      - << meta.yml:palette-slant-generic
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - GRASS
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - ROSE_BUSH_PATCH
+    - PEONY_PATCH
+    - LILAC_PATCH
+    - LILY_OF_THE_VALLEY_PATCH
+  trees:
+    - TEMPERATE_TREES
+    - SPARSE_FALLEN_OAK_TREES
+  landforms:
+    - MOSSY_BOULDERS
+    - SMALL_MOSSY_BOULDER_PATCHES

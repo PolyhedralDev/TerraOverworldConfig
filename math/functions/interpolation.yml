@@ -1,0 +1,69 @@
+functions:
+  lerp: &lerp
+    # Linear interpolation between two values
+    arguments:
+      - t
+      - at # Value of t where output = a
+      - a
+      - bt # Value of t where output = b
+      - b
+      # Values of t between at and bt will be interpolated
+    expression: |
+      if(at<bt,
+        if(t<=at,a,if(t>=bt,b,a*(t-bt)/(at-bt)+b*(t-at)/(bt-at))),
+        if(t>=at,a,if(t<=bt,b,a*(t-bt)/(at-bt)+b*(t-at)/(bt-at)))
+      )
+
+  lerp3: 
+    # Linear interpolation between three values
+    arguments:
+      - t
+      - at # Value of t where output = a
+      - a
+      - bt # Value of t where output = b
+      - b
+      - ct # Value of t where output = c
+      - c
+    expression: lerp(t, at, a, bt, lerp(t, bt, b, ct, c))
+    functions: 
+      lerp: *lerp
+  
+  herp:
+    # Hermite interpolation between two values
+    arguments:
+      - t
+      - at # Value of t where output = a
+      - a
+      - bt # Value of t where output = b
+      - b
+      # Values of t between at and bt will be interpolated
+    expression: |
+      if(at<bt,
+        if(t<=at,a,if(t>=bt,b, hermite((t-bt)/(at-bt))*(a-b)+b )),
+        if(t>=at,a,if(t<=bt,b, hermite((t-bt)/(at-bt))*(a-b)+b ))
+      )
+    functions:
+      hermite:
+        arguments:
+          - x
+        expression: 3*x^2-2*x^3
+  
+  parabolicMap:
+    # Hermite interpolation between two values
+    arguments:
+      - t
+      - bt # Value of t where output = b
+      - b
+      - at # Value of t where output = a
+      - a
+      # Values of t between at and bt will be interpolated
+    expression: |
+      if(at<bt,
+        if(t<=at,a,if(t>=bt,b, interpolation((t-bt)/(at-bt))*(a-b)+b )),
+        if(t>=at,a,if(t<=bt,b, interpolation((t-bt)/(at-bt))*(a-b)+b ))
+      )
+    functions:
+      interpolation:
+        arguments:
+          - x
+        expression: x^2

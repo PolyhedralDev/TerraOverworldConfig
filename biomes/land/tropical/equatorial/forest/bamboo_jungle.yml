@@ -1,0 +1,73 @@
+id: BAMBOO_JUNGLE
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_TROPICAL_EQUATORIAL
+  - EQ_MULTI_TERRACED_LAND
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:BAMBOO_JUNGLE
+
+vanilla: minecraft:bamboo_jungle
+
+colors:
+  grass: 0x59c93c
+  foliage: 0x30bb0b
+  water: 0x14a2c5
+  water-fog: 0x14a2c5
+
+tags:
+  - LAND_CAVES
+  - USE_TROPICAL_RIVER
+
+palette:
+  - GRASS: $meta.yml:top-y
+  - GRASS_PODZOL_MUDDY: ${meta.yml:ocean-level} + 24
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.8
+    palette:
+      - GRASS: $meta.yml:top-y
+      - GRASS_PODZOL_MUDDY: ${meta.yml:ocean-level} + 24
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.55
+    palette:
+      - MOSS_STONE: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.5
+    palette:
+      - MOSSY_COBBLESTONE_STONE: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.45
+    palette:
+      - TUFF_STONE: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - GRASS
+    - LARGE_LEAF_VINES
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - ROSE_BUSH_PATCH
+    - PEONY_PATCH
+    - LILAC_PATCH
+    - LILY_OF_THE_VALLEY_PATCH
+    - SMALL_DRIPLEAF
+    - BIG_DRIPLEAF
+  trees:
+    - JUNGLE_TREES
+    - JUNGLE_BUSHES
+    - POTATO_PATCHES
+    - BAMBOO_PATCHES
+    - SPARSE_FALLEN_JUNGLE_TREES
+  landforms:
+    - MOSSY_BOULDERS
+    - SMALL_MOSSY_BOULDER_PATCHES

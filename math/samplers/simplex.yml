@@ -13,3 +13,6 @@ samplers:
     sampler:
       type: OPEN_SIMPLEX_2
       frequency: 0.0075
+  positiveWhiteNoise:
+    dimensions: 2
+    type: POSITIVE_WHITE_NOISE

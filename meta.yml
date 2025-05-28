@@ -1,4 +1,3 @@
-
 biome-distribution:
   # Biome distribution refers to the placement of biomes, this does *NOT*
   # include aspects like terrain height / shape within biomes, or anything
@@ -6,7 +5,7 @@ biome-distribution:
   
   # These parameters are designed to allow for easy modification of biome distribution,
   # and are injected into the various biome distribution configs via meta-configuration.
-  # You can find these configs in the biome-providers directory, most of which contain
+  # You can find these configs in the biome-distribution directory, most of which contain
   # additional more specific parameters.
   
   continental-scale: 100
@@ -50,7 +49,7 @@ biome-distribution:
   # any given cave biome, smaller scale = smaller cave biomes.
   # Default: 200
 
-  river-spread-scale: 10
+  river-spread-scale: 20
   # Controls how far / close apart rivers generally are, larger scale = further apart
   # rivers, smaller scale = closer packed together rivers.
   # Default: 10
@@ -86,20 +85,29 @@ biome-distribution:
 
 # Misc global config stuff
 
-strata: # Controls global Y level ranges of strata
-  deepslate:
-    top: 7 # Y level where deepslate begins to replace stone
-    bottom: -7 # Y level where all stone is replaced by deepslate
-  bedrock:
-    top: -60 # Y level where bedrock begins to replace deepslate
-    bottom: -64 # Y level where all deepslate is replaced by bedrock
+# World Y levels
+top-y: 319
+ocean-level: 62
+deepslate-top: 7     # Y level where deepslate begins to replace stone
+deepslate-bottom: -7 # Y level where all stone is replaced by deepslate
+bedrock-top: -60     # Y level where deepslate starts to be replaced by bedrock
+bottom-y: -64
 
-palette-bottom: # Added to the bottom of every palette
-  - DEEPSLATE: $meta.yml:strata.deepslate.top
-  - BEDROCK: $meta.yml:strata.bedrock.top
-  - BLOCK:minecraft:bedrock: $meta.yml:strata.bedrock.bottom
+palette-slant-generic:
+  - BLOCK:minecraft:stone: $meta.yml:top-y
+
+palette-ocean-level-sand:
+  - SAND: ${meta.yml:ocean-level} + 1
+
+palette-underwater:
+  - MUDDY_BEACH: ${meta.yml:ocean-level} - 1
+
+palette-bottom: # Added to the bottom of every biome palette stack
+  - DEEPSLATE: $meta.yml:deepslate-top
+  - BEDROCK: $meta.yml:bedrock-top
+  - BLOCK:minecraft:bedrock: $meta.yml:bottom-y
   
-palette-bedrock: # Added to the bottom of palettes that use their own deepslate palette
-  - BEDROCK: $meta.yml:strata.bedrock.top
-  - BLOCK:minecraft:bedrock: $meta.yml:strata.bedrock.bottom
+palette-bedrock: # Added to the bottom of every biome palette stack that uses its own deepslate palette
+  - BEDROCK: $meta.yml:bedrock-top
+  - BLOCK:minecraft:bedrock: $meta.yml:bottom-y
   

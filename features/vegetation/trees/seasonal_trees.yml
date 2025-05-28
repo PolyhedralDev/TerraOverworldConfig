@@ -3,8 +3,8 @@ type: FEATURE
 
 distributor:
   type: PADDED_GRID
-  width: 6
-  padding: 2
+  width: 8
+  padding: 3
   salt: 7234
 
 locator:
@@ -12,13 +12,13 @@ locator:
   locators:
     - type: TOP
       range: &range
-        min: 64
-        max: 255
+        min: ${meta.yml:ocean-level} + 3
+        max: $meta.yml:top-y
     - type: PATTERN
       range: *range
       pattern:
         type: MATCH_SET
-        blocks: $features/vegetation/meta.yml:plantable-blocks
+        blocks: $features/vegetation/meta.yml:dry-plantable-blocks
         offset: -1
     - type: PATTERN
       range: *range

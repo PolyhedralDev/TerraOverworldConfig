@@ -1,0 +1,97 @@
+id: EQ_GLOBAL_DUNES
+type: BIOME
+abstract: true
+
+variables: &variables
+  base: $customization.yml:terrain-base-y-level
+  scale: $customization.yml:terrain-height
+  
+  duneFactor: 0.03
+  duneStart: 0
+  duneEnd: 0.4
+  mountainPeakStart: 0.5
+  mountainPeakEnd: 0.8
+  mountainPeakFactor: 0.1
+  
+  duneSpacing: 7 # Higher number = more spacing between dunes
+  duneFrequency: 0.3 # Overall dune frequency
+  duneRotationRange: pi/3 # How much dune cells are randomly rotated, 0 = anisotrophic, pi = isotrophic
+
+terrain:
+  sampler:
+    type: EXPRESSION
+    expression: -y + base
+    variables: *variables
+  
+  sampler-2d:
+    type: EXPRESSION
+    expression: |
+      scale *
+      combine(
+        combine(
+          elevationDetailed(x, z),
+          mountainPeakStart, 0,
+          mountainPeakEnd, mountainPeaks(x,z) * mountainPeakFactor
+        ),
+        duneStart, dunes(x*duneFrequency,z*duneFrequency) * duneFactor,
+        duneEnd, 0
+      )
+    variables: *variables
+    samplers:
+      dunes: # Dune height map [0, 1]
+        dimensions: 2
+        type: DOMAIN_WARP
+        amplitude: 5
+        warp:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.04
+        sampler:
+          type: DOMAIN_WARP
+          amplitude: 15
+          warp:
+            type: OPEN_SIMPLEX_2
+            frequency: 0.02
+            salt: 1
+          sampler: # Absolute sine wave domain rotated via CELL_VALUE, cell edges are hidden by DISTANCE_2_DIV
+            type: EXPRESSION
+            variables: *variables
+            expression: |
+              -mask(x, z) * (-|sin((
+                 x*sin(rotation(x,z)*duneRotationRange)
+                +z*cos(rotation(x,z)*duneRotationRange))/duneSpacing)|+1)
+            samplers:
+              height: &cell
+                dimensions: 2
+                type: CELLULAR
+                frequency: 0.01
+              rotation:
+                <<: *cell
+                return: CellValue
+              mask:
+                <<: *cell
+                return: Distance2Div
+      mountainPeaks:
+        dimensions: 2
+        type: DOMAIN_WARP
+        amplitude: 5
+        warp:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.03
+          salt: 812
+        sampler:
+          type: RIDGED
+          octaves: 2
+          sampler:
+            type: OPEN_SIMPLEX_2
+            frequency: 0.005
+            salt: 7129
+    functions:
+      combine:
+        arguments:
+          - x
+          - at
+          - a
+          - bt
+          - b
+        expression: x+lerp(x,at,a,bt,b)
+        functions: $math/functions/interpolation.yml:functions

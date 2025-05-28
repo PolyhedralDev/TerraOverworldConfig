@@ -1,0 +1,30 @@
+id: ROCKY_SEA_CAVES
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_MARITIME_DRY
+  - EQ_ERODED_COAST
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:ROCKY_SEA_CAVES
+
+vanilla: minecraft:stony_shore
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER
+
+palette:
+  - BLOCK:minecraft:stone: $meta.yml:top-y
+  - SAND: ${meta.yml:ocean-level} + 1
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - SAND: ${meta.yml:ocean-level} + 1
+      - << meta.yml:palette-bottom
+
+features:
+  slabs:
+    - STONE_SLABS

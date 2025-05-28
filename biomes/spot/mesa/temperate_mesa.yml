@@ -1,0 +1,43 @@
+id: TEMPERATE_MESA
+type: BIOME
+extends:
+  - EQ_SPOT_MESA
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:TEMPERATE_MESA
+
+tags: []
+
+vanilla: minecraft:plains
+
+palette:
+  - GRASS: $meta.yml:top-y
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.55
+    palette:
+      - MOSS_STONE: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.5
+    palette:
+      - MOSSY_COBBLESTONE_STONE: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.45
+    palette:
+      - TUFF_STONE: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - ROCKY_SLANT: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - WHITE_FLOWER_COVER
+    - TALL_GRASS
+  trees:
+    - SPARSE_TEMPERATE_TREE_PATCHES
+    - SPARSE_FALLEN_OAK_TREES

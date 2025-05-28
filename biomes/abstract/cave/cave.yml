@@ -1,7 +1,7 @@
 id: CAVE
 abstract: true
 type: BIOME
-extends: [ CARVING_LAND ]
+extends: CARVING_LAND
 
 carving:
   update-palette: true

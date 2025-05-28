@@ -1,0 +1,8 @@
+id: TROPICAL_OCEAN_OVERHANGS
+type: BIOME
+extends:
+  - TROPICAL_OCEAN
+  - EQ_SUBMERGED_OVERHANGS
+color: $biomes/colors.yml:TROPICAL_OCEAN_OVERHANGS
+
+vanilla: minecraft:warm_ocean

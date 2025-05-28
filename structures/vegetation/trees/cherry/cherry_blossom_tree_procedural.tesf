@@ -1,0 +1,142 @@
+num randPrecision = 100;
+num goldenAngle = 2.39996;
+num pi = 3.14159;
+num twopi = 6.28318530718;
+
+num trunkHeight = 3+randomInt(2);
+str trunkBlock = "minecraft:cherry_log";
+
+num sideBranchInterval = 3+randomInt(2);
+num sideBranchMinHeight = 2+randomInt(3);
+num sideBranchLengthMin = 3;
+num sideBranchLengthVariation = 2;
+num sideBranchVerticalVariation = 0;
+num sideBranchVerticalDirection = 1+randomInt(randPrecision)/randPrecision/2;
+num sideBranchLeafRadiusMin = 2;
+num sideBranchLeafTranslate = 0;
+num sideBranchLeafTopFlatness = 2;
+num sideBranchLeafBottomFlatness = 4;
+num sideBranchLeafDensity = 0.6;
+str sideBranchLeafStructure = "cherry_leaves_clump";
+str sideBranchBlockX = "minecraft:cherry_log[axis=x]";
+str sideBranchBlockY = "minecraft:cherry_log[axis=y]";
+str sideBranchBlockZ = "minecraft:cherry_log[axis=z]";
+
+num topBranches = 10+randomInt(3);
+num topBranchLengthUpwardsMin = 7+randomInt(3);
+num topBranchLengthOutwardsMin = 4+randomInt(3);
+num topBranchVerticalDirection = 0.4;
+num topBranchLeafRadiusMin = 2;
+num topBranchLeafTranslate = 0;
+num topBranchLeafTopFlatness = 1.5;
+num topBranchLeafBottomFlatness = 1;
+num topBranchLeafDensity = 0.6;
+str topBranchLeafStructure = "cherry_leaves_clump";
+str topBranchBlockX = "minecraft:cherry_log[axis=x]";
+str topBranchBlockY = "minecraft:cherry_log[axis=y]";
+str topBranchBlockZ = "minecraft:cherry_log[axis=z]";
+
+num branchAngle = randomInt(randPrecision)/randPrecision*2*pi;
+for (num i = 0; i < trunkHeight; i = i + 1) {
+    if (i > sideBranchMinHeight) {
+        if (i % sideBranchInterval == 0) {
+            // Branch direction vector
+            num dx = sin(branchAngle);
+            num dy = sideBranchVerticalDirection + randomInt(randPrecision)/randPrecision*sideBranchVerticalVariation;
+            num dz = cos(branchAngle);
+            // Normalize vector
+            num mag = sqrt(pow(dx,2)+pow(dy,2)+pow(dz,2));
+            dx = dx/mag;
+            dy = dy/mag;
+            dz = dz/mag;
+            // Branch origin
+            num ox = 0;
+            num oy = i;
+            num oz = 0;
+            // Set branch block based on largest unsigned vector component
+            str branchBlock = sideBranchBlockY;
+            if (abs(dx) > max(abs(dy),abs(dz))) branchBlock = sideBranchBlockX;
+            else if (abs(dz) > max(abs(dy),abs(dx))) branchBlock = sideBranchBlockZ;
+            num branchLength = sideBranchLengthMin + randomInt(randPrecision)/randPrecision*sideBranchLengthVariation;
+            // Generate branch
+            for (num l = 1; l <= branchLength; l = l + 1) {
+                block(l*dx+ox, l*dy+oy, l*dz+oz, branchBlock);
+            }
+            // Rotate angle of next branch
+            branchAngle = branchAngle + goldenAngle;
+            // Generate leaf cluster at the end of the branch
+            num radius = sideBranchLeafRadiusMin;
+            num radiusSquared = pow(radius, 2);
+            // Leaf cluster origin (end of branch)
+            num lox = ox+branchLength*dx;
+            num loy = oy+branchLength*dy + sideBranchLeafTranslate;
+            num loz = oz+branchLength*dz;
+            for (num cx = ceil(-radius); cx <= ceil(radius); cx = cx + 1) {
+                for (num cy = ceil(-radius/sideBranchLeafBottomFlatness); cy <= ceil(radius/sideBranchLeafTopFlatness); cy = cy + 1) {
+                    for (num cz = ceil(-radius); cz <= ceil(radius); cz = cz + 1) {
+                        num squashFactor = sideBranchLeafBottomFlatness;
+                        if (cy > 0) squashFactor = sideBranchLeafTopFlatness;
+                        num distanceSquared = pow(cx,2)+pow(cy*squashFactor,2)+pow(cz,2);
+                        if (distanceSquared<radiusSquared && randomInt(randPrecision) / randPrecision < sideBranchLeafDensity) {
+                            structure(lox+cx, loy+cy, loz+cz, sideBranchLeafStructure, "NONE", "CW_90", "CCW_90", "CW_180");
+                        }
+                    }
+                }
+            }
+        }
+    }
+    block(0, i, 0, trunkBlock);
+}
+
+for (num b = 1; b <= topBranches; b = b + 1) {
+    num t = b/topBranches;
+    num ti = 1-t;
+    // Branch direction vector
+    num dx = sin(branchAngle) * t;
+    num dy = topBranchVerticalDirection;
+    num dz = cos(branchAngle) * t;
+    // Normalize vector
+    num mag = sqrt(pow(dx,2)+pow(dy,2)+pow(dz,2));
+    dx = dx/mag;
+    dy = dy/mag;
+    dz = dz/mag;
+    // Branch origin
+    num ox = 0;
+    num oy = trunkHeight;
+    num oz = 0;
+    // Set branch block based on largest unsigned vector component
+    str branchBlock = topBranchBlockY;
+    if (abs(dx) > max(abs(dy),abs(dz))) branchBlock = topBranchBlockX;
+    else if (abs(dz) > max(abs(dy),abs(dx))) branchBlock = topBranchBlockZ;
+    num branchLength = topBranchLengthUpwardsMin*ti + topBranchLengthOutwardsMin*t;
+    // Generate branch
+    for (num l = 0; l <= branchLength; l = l + 1) {
+        block(l*dx+ox, l*dy+oy, l*dz+oz, branchBlock);
+    }
+    // Rotate angle of next branch
+    branchAngle = branchAngle + goldenAngle;
+    // Generate leaf cluster at the end of the branch
+    num radius = topBranchLeafRadiusMin;
+    num radiusSquared = pow(radius, 2);
+    // Leaf cluster origin (end of branch)
+    num lox = ox+branchLength*dx;
+    num loy = oy+branchLength*dy + topBranchLeafTranslate;
+    num loz = oz+branchLength*dz;
+    for (num cx = ceil(-radius); cx <= ceil(radius); cx = cx + 1) {
+        for (num cy = ceil(-radius/topBranchLeafBottomFlatness); cy <= ceil(radius/topBranchLeafTopFlatness); cy = cy + 1) {
+            for (num cz = ceil(-radius); cz <= ceil(radius); cz = cz + 1) {
+                num squashFactor = topBranchLeafBottomFlatness;
+                if (cy > 0) squashFactor = topBranchLeafTopFlatness;
+                num distanceSquared = pow(cx,2)+pow(cy*squashFactor,2)+pow(cz,2);
+                if (distanceSquared < radiusSquared && randomInt(randPrecision)/randPrecision < topBranchLeafDensity) {
+                    structure(lox+cx, loy+cy, loz+cz, topBranchLeafStructure, "NONE", "CW_90", "CCW_90", "CW_180");
+                }
+            }
+        }
+    }
+}
+
+num beeNestRoll = randomInt(30); // 1 in 30 chance
+if (beeNestRoll == 0) {
+    structure(0, sideBranchMinHeight-1, 0, "bee_nest", "NONE");
+}

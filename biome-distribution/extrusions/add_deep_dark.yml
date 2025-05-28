@@ -1,0 +1,13 @@
+extrusions:
+  - type: REPLACE
+    from: LAND_CAVES
+    sampler:
+      type: OPEN_SIMPLEX_2
+      salt: 9238
+      frequency: 1 / 40 / ${customization.yml:variation-scale} / ${customization.yml:global-scale}
+    to:
+      - SELF: 4
+      - DEEP_DARK: 1
+    range:
+      min: $meta.yml:bottom-y
+      max: $meta.yml:deepslate-top

@@ -1,0 +1,6 @@
+id: VOLCANO_WATER
+type: FEATURE
+extends: VOLCANO_FLUID
+
+structures:
+  structures: BLOCK:minecraft:water

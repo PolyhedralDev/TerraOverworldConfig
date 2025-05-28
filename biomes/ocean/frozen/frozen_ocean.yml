@@ -1,0 +1,14 @@
+id: FROZEN_OCEAN
+type: BIOME
+extends:
+  - PALETTE_OCEAN
+  - ENVIRONMENT_MARINE_OCEAN_FROZEN
+  - EQ_GLOBAL_OCEAN
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:FROZEN_OCEAN
+
+vanilla: minecraft:frozen_ocean
+
+ocean:
+  palette: FROZEN_OCEAN

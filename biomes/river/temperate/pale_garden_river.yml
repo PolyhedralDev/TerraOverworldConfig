@@ -1,0 +1,10 @@
+id: PALE_GARDEN_RIVER
+type: BIOME
+extends:
+  - RIVER_BASIC
+  - EQ_GLOBAL_RIVER
+  - CARVING_OCEAN
+  - PALE_GARDEN
+color: $biomes/colors.yml:PALE_GARDEN_RIVER
+
+vanilla: minecraft:river

@@ -1,0 +1,26 @@
+id: SUBTROPICAL_DEEP_OCEAN_VENTS
+type: BIOME
+extends:
+  - EQ_DEEP_OCEAN_TRENCH
+  - SUBTROPICAL_DEEP_OCEAN
+color: $biomes/colors.yml:SUBTROPICAL_DEEP_OCEAN_VENTS
+
+vanilla: minecraft:deep_lukewarm_ocean
+
+palette:
+  - SAND: $meta.yml:top-y
+  - BASALT_TUFF_MIX: $meta.yml:deepslate-bottom
+  - BEDROCK: $meta.yml:bedrock-top
+  - BLOCK:minecraft:bedrock: $meta.yml:bottom-y
+
+slant:
+  - threshold: 0.4
+    palette:
+      - SAND: $meta.yml:top-y
+      - BASALT_TUFF_MIX: $meta.yml:deepslate-bottom
+      - BEDROCK: $meta.yml:bedrock-top
+      - BLOCK:minecraft:bedrock: $meta.yml:bottom-y
+
+features:
+  landforms:
+    - HYDROTHERMAL_VENTS

@@ -1,0 +1,41 @@
+id: FOSSILS
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 13
+  padding: 7
+  salt: 7642
+
+locator:
+  type: AND
+  locators:
+    - type: RANDOM
+      amount: 1
+      height: &range
+        min: ${meta.yml:bottom-y} + 10
+        max: $meta.yml:deepslate-top
+      salt: 3247
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SOLID
+        offset: 0
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SOLID
+        offset: 3
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SOLID
+        offset: -3
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures:
+    - bare_fossil_skull: 1
+    - bare_fossil_ribcage_procedural: 4
+    - blank: 1

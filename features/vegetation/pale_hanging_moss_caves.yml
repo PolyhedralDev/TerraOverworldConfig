@@ -1,0 +1,27 @@
+id: PALE_HANGING_MOSS_CAVES
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 4357
+  threshold: 0.025
+
+locator:
+  type: PATTERN
+  range:
+    min: ${meta.yml:bottom-y} + 14
+    max: ${meta.yml:ocean-level} + 3
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH_AIR
+        offset: 0
+      - type: MATCH_SOLID
+        offset: 1
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: pale_hanging_moss_caves

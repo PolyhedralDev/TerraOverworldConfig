@@ -1,0 +1,40 @@
+id: RIVER_BOULDERS
+type: FEATURE
+
+distributor:
+  type: AND
+  distributors:
+    - type: PADDED_GRID
+      width: 4
+      padding: 1
+      salt: 6943
+    - type: SAMPLER
+      sampler:
+        type: PROBABILITY
+        sampler:
+          type: OPEN_SIMPLEX_2
+          salt: 5832
+          frequency: 0.01
+      threshold: 0.3
+
+locator:
+  type: PATTERN
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH_SET
+        blocks:
+          - minecraft:water
+          - minecraft:air
+        offset: 0
+      - type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:aquatic-plantable-blocks
+        offset: -1
+  range:
+    min: ${meta.yml:ocean-level} - 8
+    max: $meta.yml:ocean-level
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: river_boulder 

@@ -1,0 +1,28 @@
+id: PRISMATIC_SPRING
+type: BIOME
+extends:
+  - EQ_VOLCANO
+  - ENVIRONMENT_LAND_CONTINENTAL_HUMID
+  - CARVING_NONE
+  - BASE
+color: $biomes/colors.yml:PRISMATIC_SPRING
+
+vanilla: minecraft:taiga
+
+colors:
+  water: 0x23b4d3
+
+palette:
+  - PRISMATIC_MICROBIAL_MAT: $meta.yml:top-y
+  - << meta.yml:palette-bottom
+
+features:
+  preprocessors:
+    - VOLCANO_WATER
+  postprocessors:
+    - PRISMATIC_SPRING_MAGMA
+  global-preprocessors:
+    - LAVA_FLOOR
+    - UNDERGROUND_LAVA_COLUMNS
+    - CAVE_GLOW_LICHEN
+    - TEXTURED_STONE_SLANT

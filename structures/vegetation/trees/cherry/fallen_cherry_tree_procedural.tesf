@@ -1,0 +1,43 @@
+num randPrecision = 100;
+
+num length = 10+randomInt(4);
+num trunkRadius = 1;
+
+num buffer = 5;
+
+// Direction vector
+num dx = (randomInt(randPrecision)/randPrecision-0.5)*1.5;
+num dy = 0;
+num dz = (randomInt(randPrecision)/randPrecision-0.5)*1.5;
+
+str sideBranchBlockX = "minecraft:cherry_log[axis=x]";
+str sideBranchBlockY = "minecraft:cherry_log[axis=y]";
+str sideBranchBlockZ = "minecraft:cherry_log[axis=z]";
+
+block(0,0,0, "minecraft:cherry_log", false);
+
+num yTranslate = 5;
+str setBlock = "minecraft:cherry_wood";
+for(num l = buffer; l <= buffer+length; l = l + 1) {
+
+    if (abs(dx) > max(abs(dy),abs(dz))) setBlock = sideBranchBlockX;
+    else if (abs(dz) > max(abs(dy),abs(dx))) setBlock = sideBranchBlockZ;
+
+    yTranslate = 5;
+    while (check(l*dx, yTranslate-1, l*dz) != "LAND") {
+        yTranslate = yTranslate-1;
+    }
+    if (getBlock(l*dx, yTranslate-1, l*dz) == "minecraft:cherry_log") continue;
+
+    num r = trunkRadius;
+    // Generate sphere at each point
+    for(num x = -r; x <= r; x = x + 1) {
+        for(num y = -r; y <= r; y = y + 1) {
+            for(num z = -r; z <= r; z = z + 1) {
+                if (pow(x,2)+pow(y,2)+pow(z,2) < pow(r,2)) {
+                   block(l*dx + x, yTranslate, l*dz + z, setBlock, true);
+                }
+            }
+        }
+    }
+}
