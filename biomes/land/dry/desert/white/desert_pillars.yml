@@ -34,6 +34,7 @@ features:
   flora:
     - CACTUS_SPARSE
     - DEAD_BUSHES
+    - DRY_GRASS
   structures:
     - MOB_ROOMS
     - DESERT_WELLS

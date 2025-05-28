@@ -40,6 +40,7 @@ features:
   flora:
     - CACTUS_SPARSE
     - DEAD_BUSHES
+    - DRY_GRASS
   landforms:
     - GRANITE_BOULDERS
     - SMALL_GRANITE_BOULDER_PATCHES

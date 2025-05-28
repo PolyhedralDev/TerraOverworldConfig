@@ -11,3 +11,5 @@ features:
   structures:
     - MOB_ROOMS
     - FOSSILS
+  flora:
+    - DRY_GRASS

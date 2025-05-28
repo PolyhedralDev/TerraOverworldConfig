@@ -59,6 +59,8 @@ features:
     - LILY_OF_THE_VALLEY_PATCH
     - FERNS
     - BEETROOT_PATCHES
+    - WILDFLOWERS
+    - BUSH
   trees:
     - DENSE_TEMPERATE_TREE_PATCHES
     - OAK_BUSHES
