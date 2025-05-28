@@ -89,7 +89,7 @@ continental-scale: 1
 
 continental-coast-width: 20
 # Determines the width of costal biomes in blocks.
-# Default: 30
+# Default: 20
 
 continental-coast-threshold: 0.05
 # Determines how far from a continental value of 0 is considered for calculating 
