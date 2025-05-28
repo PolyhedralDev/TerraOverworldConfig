@@ -1,12 +1,12 @@
-id: EUCALYPTUS_TREES
+id: MONSOON_TREES
 type: FEATURE
 
 distributor:
   type: AND
   distributors:
     - type: PADDED_GRID
-      width: 6
-      padding: 6
+      width: 8
+      padding: 3
       salt: 1991
     - type: SAMPLER
       sampler:
@@ -42,4 +42,7 @@ structures:
   distribution:
     type: WHITE_NOISE
     seed: 3666
-  structures: eucalyptus_tree_procedural
+  structures:
+    - eucalyptus_tree_procedural: 2
+    - palm_tree_procedural: 1
+    - large_jungle_tree_procedural: 1
