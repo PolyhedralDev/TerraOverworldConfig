@@ -34,5 +34,6 @@ structures:
     type: WHITE_NOISE
     salt: 3023
   structures:
-    - spruce_tree_procedural: 2
+    - spruce_tree_procedural: 3
+    - pine_tree_procedural: 1
     - tall_spruce_tree_procedural: 1
