@@ -54,29 +54,29 @@ stages:
 
   
         boreal-hot-flat:
-          - AUTUMNAL_FOREST: 1
-          - FLOWERING_AUTUMNAL_FOREST: 1
+          - ASPEN_FOREST: 1
           - BIRCH_FOREST: 1
         boreal-hot:
-          - AUTUMNAL_FOREST: 1
-          - FLOWERING_AUTUMNAL_FOREST: 1
+          - ASPEN_FOREST: 1
           - BIRCH_FOREST: 1
         boreal-hot-highlands:
           - MOUNTAINS: 1
         
         boreal-warm-flat:
-          - AUTUMNAL_FOREST: 1
-          - FLOWERING_AUTUMNAL_FOREST: 1
+          - ASPEN_FOREST: 1
           - BIRCH_FOREST: 1
         boreal-warm:
           - REDWOOD_FOREST: 1
-          - TAIGA: 5
+          - TAIGA_CLEARING: 1
+          - TAIGA: 3
         boreal-warm-highlands:
           - MOUNTAINS: 1
 
         boreal-cold-flat:
           - TAIGA: 1
+          - TAIGA_CLEARING: 1
         boreal-cold:
+          - TAIGA_CLEARING: 1
           - TAIGA: 1
         boreal-cold-highlands:
           - MOUNTAINS: 1
@@ -90,8 +90,7 @@ stages:
           - SNOWY_MOUNTAINS: 1
         
         boreal-hot-dry-flat:
-          - AUTUMNAL_FOREST: 1
-          - FLOWERING_AUTUMNAL_FOREST: 1
+          - ASPEN_FOREST: 1
           - BIRCH_FOREST: 1
         boreal-hot-dry:
           - TAIGA: 1
@@ -100,6 +99,7 @@ stages:
 
         boreal-warm-dry-flat:
           - TAIGA: 1
+          - TAIGA_CLEARING: 1
         boreal-warm-dry:
           - TAIGA: 1
         boreal-warm-dry-highlands:
@@ -107,6 +107,7 @@ stages:
 
         boreal-cold-dry-flat:
           - TAIGA: 1
+          - TAIGA_CLEARING: 1
         boreal-cold-dry:
           - TAIGA: 1
         boreal-cold-dry-highlands:
