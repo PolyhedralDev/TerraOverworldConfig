@@ -55,16 +55,19 @@ stages:
   
         boreal-hot-flat:
           - ASPEN_FOREST: 1
-          - BIRCH_FOREST: 1
+          - BIRCH_FOREST: 2
+          - MAPLE_GROVE: 1
         boreal-hot:
           - ASPEN_FOREST: 1
+          - MAPLE_GROVE: 1
           - BIRCH_FOREST: 1
         boreal-hot-highlands:
           - MOUNTAINS: 1
         
         boreal-warm-flat:
           - ASPEN_FOREST: 1
-          - BIRCH_FOREST: 1
+          - BIRCH_FOREST: 2
+          - MAPLE_GROVE: 1
         boreal-warm:
           - REDWOOD_FOREST: 1
           - TAIGA_CLEARING: 1
@@ -91,7 +94,8 @@ stages:
         
         boreal-hot-dry-flat:
           - ASPEN_FOREST: 1
-          - BIRCH_FOREST: 1
+          - BIRCH_FOREST: 2
+          - MAPLE_GROVE: 1
         boreal-hot-dry:
           - TAIGA: 1
         boreal-hot-dry-highlands:
@@ -123,6 +127,7 @@ stages:
         boreal-coast-flat:
           - ROCKY_ARCHIPELAGO: 5
           - SHALE_BEACH: 1
+          - COASTAL_PINE_BARRENS: 1
         boreal-coast:
           - ROCKY_SEA_CAVES: 1
         boreal-coast-highlands:
@@ -225,8 +230,9 @@ stages:
           - TEMPERATE_MOUNTAINS: 1
 
         temperate-coast-flat:
-          - BEACH: 1
-          - SHRUB_BEACH: 1
+          - BEACH: 2
+          - SHRUB_BEACH: 2
+          - COASTAL_PINE_BARRENS: 1
         temperate-coast:
           - TEMPERATE_SEA_ARCHES: 1
         temperate-coast-highlands:
