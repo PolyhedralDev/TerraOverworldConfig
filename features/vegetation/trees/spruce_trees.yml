@@ -31,5 +31,8 @@ locator:
 
 structures:
   distribution:
-    type: CONSTANT
-  structures: spruce_tree_procedural
+    type: WHITE_NOISE
+    salt: 3023
+  structures:
+    - spruce_tree_procedural: 2
+    - tall_spruce_tree_procedural: 1
