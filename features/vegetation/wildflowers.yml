@@ -7,13 +7,13 @@ distributor:
     - type: SAMPLER
       sampler:
         type: POSITIVE_WHITE_NOISE
-      threshold: 0.75
+      threshold: 0.6
     - type: SAMPLER
       sampler:
         type: PROBABILITY
         sampler:
           type: DOMAIN_WARP
-          amplitude: 10
+          amplitude: 5
           warp:
             type: GAUSSIAN
           sampler:
@@ -21,9 +21,9 @@ distributor:
             octaves: 2
             sampler:
               type: OPEN_SIMPLEX_2
-              frequency: 1
-              salt: 546453
-      threshold: 0.9
+              frequency: 10
+              salt: 10933
+      threshold: 0.8
 
 locator:
   type: AND
@@ -51,18 +51,18 @@ structures:
   distribution:
     type: EXPRESSION
     expression: sampler(x, z) # Using this to ensure 2D sampler is used
-    threshold: 0.9
+    threshold: 0.8
     samplers:
       sampler:
         dimensions: 2
         type: LINEAR
-        min: 0.5
-        max: 1
+        min: 0.1
+        max: 0.6
         sampler:
           type: PROBABILITY
           sampler:
             type: DOMAIN_WARP
-            amplitude: 10
+            amplitude: 3
             warp:
               type: GAUSSIAN
             sampler:
@@ -71,7 +71,7 @@ structures:
               sampler:
                 type: OPEN_SIMPLEX_2
                 frequency: 10
-                salt: 54
+                salt: 24365
   structures:
     - wildflowers4: 1
     - wildflowers3: 1
