@@ -1,15 +1,16 @@
 id: PALE_GARDEN
 type: BIOME
 extends:
-#  - ENVIRONMENT_LAND_TEMPERATE_SUBTROPICAL_HUMID
-  - EQ_LAND
+  - ENVIRONMENT_LAND_TEMPERATE_SUBTROPICAL_HUMID
+  - EQ_MULTI_TERRACED_LAND
   - CARVING_LAND
   - BASE
 color: $biomes/colors.yml:PALE_GARDEN
 
 tags:
   - LAND_CAVES
-  - USE_RIVER_TEMPERATE_MARSH
+  - RESIN_ROOTS
+  - USE_PALE_GARDEN_RIVER
 
 vanilla: minecraft:pale_garden
 
@@ -22,23 +23,28 @@ colors:
   foliage: 0x878D76
 
 palette:
-  - GRASS_MOSSY_PALE: 319
+  - GRASS_MOSSY_PALE: $meta.yml:top-y
+  - COARSE_DIRT: $meta.yml:ocean-level
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
+
 slant:
-  - threshold: 0.4
+  - threshold: 0.3
     palette:
-      - GRASS_MOSSY_PALE: 319
+      - COARSE_DIRT: $meta.yml:top-y
+      - SAND: ${meta.yml:ocean-level} + 2
       - << meta.yml:palette-bottom
-  - threshold: 0.5
+  - threshold: 0.35
     palette:
-      - GRASS_MOSSY_PALE: 319
+      - BLOCK:minecraft:stone: $meta.yml:top-y
       - << meta.yml:palette-bottom
+
 features:
   flora:
     - GRASS
-    - PALE_HANGING_MOSS
     - PALE_MOSS_CARPET
     - EYEBLOSSOM_PATCH
-    - GLOW_LICHEN_TENDRIL
+    - CAVE_GLOW_LICHEN
   trees:
     - DENSE_PALE_FOREST_TREES
