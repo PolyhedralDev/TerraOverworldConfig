@@ -7,7 +7,7 @@ extends:
   - BASE
 color: $biomes/colors.yml:MONSOON_FOREST
 
-vanilla: minecraft:forest
+vanilla: minecraft:sparse_jungle
 
 tags:
   - LAND_CAVES
@@ -48,7 +48,6 @@ features:
     - LARGE_LEAF_VINES
     - POPPY_PATCH
     - DANDELION_PATCH
-    - ROSE_BUSH_PATCH
     - PEONY_PATCH
     - LILAC_PATCH
     - LILY_OF_THE_VALLEY_PATCH
@@ -56,10 +55,10 @@ features:
     - BIG_DRIPLEAF
     - WILDFLOWERS
     - BUSH
+    - BAMBOO_PATCHES
   trees:
-    - DENSE_TEMPERATE_TREE_PATCHES
-    - OAK_BUSHES
+    - MONSOON_TREES
     - SUBTROPICAL_BUSHES
-    - SPARSE_FALLEN_OAK_TREES
+    - SPARSE_FALLEN_JUNGLE_TREES
   landforms:
     - SMALL_MOSSY_BOULDER_PATCHES

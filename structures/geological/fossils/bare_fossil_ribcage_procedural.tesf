@@ -4,9 +4,9 @@ num pi = 3.14159;
 
 num spineLength = 10+randomInt(10);
 
-str spineBlock = "fossil_block_x";
-str ribBlock = "fossil_block_z";
-str ribBlockY = "fossil_block_y";
+str spineBlock = "minecraft:bone_block[axis=x]";
+str ribBlock = "minecraft:bone_block[axis=z]";
+str ribBlockY = "minecraft:bone_block[axis=y]";
 
 num ribInterval = 2+randomInt(4);
 num ribLengthBase = 10;
@@ -18,10 +18,11 @@ num ribDroop = 0.1 +((randomInt(10)/1000));
 num ribLengthPeak = 5;
 
 bool rotate = false;
+
 if (randomInt(2) == 0) {
     rotate = true;
-    spineBlock = "fossil_block_z";
-    ribBlock = "fossil_block_x";
+    spineBlock = "minecraft:bone_block[axis=z]";
+    ribBlock = "minecraft:bone_block[axis=x]";
 }
 
 num xl = 0;
@@ -31,9 +32,16 @@ num zl = 0;
 if (randomInt(2) == 0) yDir = -1;
 for (num l = -3; l < spineLength; l = l + 1) {
 
-    if (rotate == false) xl = l;
-    if (rotate == true) zl = l;
-    structure(xl, 0, zl, spineBlock, "NONE");
+    if (rotate == false) {
+        xl = l;
+        if (getBlock(spineLength/2, 0, zl) == "minecraft:air") fail;
+    }
+    if (rotate == true) {
+        zl = l;
+        if (getBlock(xl, 0, spineLength/2) == "minecraft:air") fail;
+    }
+
+    block(xl, 0, zl, spineBlock, true);
 
     num ribVerticalDirectionVariation = 0;
     ribVerticalDirectionVariation = ribVerticalDirectionVariation + ((randomInt(10)/1000)*6);
@@ -89,8 +97,8 @@ for (num l = -3; l < spineLength; l = l + 1) {
                             if (pow(x,2)+pow(y,2)+pow(z,2) < pow(r,2)) {
 
                                 if (i < 4) {
-                                    structure(xl + (xDir*(cx+x)), (cy+y)*yDir, zl + (zDir*(cz+z)), ribBlock, "NONE");
-                                } else structure(xl + (xDir*(cx+x)), (cy+y)*yDir, zl + (zDir*(cz+z)), ribBlockY, "NONE");
+                                    block(xl + (xDir*(cx+x)), (cy+y)*yDir, zl + (zDir*(cz+z)), ribBlock, true);
+                                } else block(xl + (xDir*(cx+x)), (cy+y)*yDir, zl + (zDir*(cz+z)), ribBlockY, true);
                             }
                         }
                     }

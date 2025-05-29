@@ -13,3 +13,4 @@ features:
     - FOSSILS
   flora:
     - DRY_GRASS
+    - SPARSE_FOSSILS
