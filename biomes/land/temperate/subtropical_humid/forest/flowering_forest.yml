@@ -18,3 +18,5 @@ features:
     - GRASS
     - MIXED_FLOWER_COVER
     - BEETROOT_PATCHES
+    - BUSH
+    - WILDFLOWERS

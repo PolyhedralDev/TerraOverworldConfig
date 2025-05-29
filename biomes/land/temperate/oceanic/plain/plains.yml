@@ -35,6 +35,7 @@ features:
     - GRASS
     - POPPY_PATCH
     - DANDELION_PATCH
+    - BUSH
   trees:
     - SPARSE_OAK_TREES
     - SPARSE_FALLEN_OAK_TREES
