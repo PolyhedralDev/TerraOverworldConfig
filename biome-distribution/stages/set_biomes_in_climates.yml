@@ -157,24 +157,20 @@ stages:
           - COLD_DEEP_DEPTHS: 1
 
         temperate-hot-dry-flat:
-          - PALM_FOREST: 1
           - CHAPARRAL: 1
           - MOORLAND: 1
         temperate-hot-dry:
           - CHAPARRAL: 1
-          - PALM_FOREST: 1
           - MOORLAND: 1
         temperate-hot-dry-highlands:
           - DRY_TEMPERATE_MOUNTAINS: 1
           - DRY_TEMPERATE_WHITE_MOUNTAINS: 1
 
         temperate-warm-dry-flat:
-          - PALM_FOREST: 1
           - CHAPARRAL: 1
           - MOORLAND: 1
         temperate-warm-dry:
           - CHAPARRAL: 1
-          - PALM_FOREST: 1
           - MOORLAND: 1
         temperate-warm-dry-highlands:
           - DRY_TEMPERATE_MOUNTAINS: 1
