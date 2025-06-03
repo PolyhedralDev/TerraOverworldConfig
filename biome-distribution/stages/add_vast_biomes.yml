@@ -1,0 +1,16 @@
+stages:
+  - type: REPLACE
+    from: temperate-warm
+    to:
+      - SELF: 1
+      - PALE_GARDEN: 1
+    sampler:
+      type: DOMAIN_WARP
+      amplitude: 5
+      warp:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.1
+      sampler:
+        type: DISTANCE
+        normalize: true
+        radius: 10000

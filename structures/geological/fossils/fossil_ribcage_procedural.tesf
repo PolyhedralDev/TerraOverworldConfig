@@ -25,7 +25,10 @@ if (randomInt(2) == 0) {
 }
 
 num xl = 0;
+num yDir = 1;
 num zl = 0;
+
+if (randomInt(2) == 0) yDir = -1;
 for (num l = -3; l < spineLength; l = l + 1) {
 
     if (rotate == false) xl = l;
@@ -86,8 +89,8 @@ for (num l = -3; l < spineLength; l = l + 1) {
                             if (pow(x,2)+pow(y,2)+pow(z,2) < pow(r,2)) {
 
                                 if (i < 4) {
-                                    structure(xl + (xDir*(cx+x)), cy+y, zl + (zDir*(cz+z)), ribBlock, "NONE");
-                                } else structure(xl + (xDir*(cx+x)), cy+y, zl + (zDir*(cz+z)), ribBlockY, "NONE");
+                                    structure(xl + (xDir*(cx+x)), (cy+y)*yDir, zl + (zDir*(cz+z)), ribBlock, "NONE");
+                                } else structure(xl + (xDir*(cx+x)), (cy+y)*yDir, zl + (zDir*(cz+z)), ribBlockY, "NONE");
                             }
                         }
                     }

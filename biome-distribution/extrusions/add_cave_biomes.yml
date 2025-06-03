@@ -41,3 +41,17 @@ extrusions:
     range:
       min: $meta.yml:bottom-y
       max: $meta.yml:deepslate-top
+
+  - type: REPLACE
+    from: RESIN_ROOTS
+    sampler:
+      type: CELLULAR
+      return: CellValue
+      salt: 8756
+      frequency: 1 / 200 / ${customization.yml:cave-biome-scale} / ${customization.yml:global-scale}
+    to:
+      - SELF: 3
+      - RESIN_ROOTS: 1
+    range:
+      min: $meta.yml:deepslate-bottom
+      max: ${meta.yml:ocean-level} - 13

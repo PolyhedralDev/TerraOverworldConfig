@@ -46,4 +46,4 @@ features:
     - MANGROVE_TREES
   structures:
     - MOB_ROOMS
-    - FOSSILS
+    - SPARSE_FOSSILS

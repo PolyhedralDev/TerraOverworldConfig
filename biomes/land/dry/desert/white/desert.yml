@@ -31,4 +31,4 @@ features:
   structures:
     - MOB_ROOMS
     - DESERT_WELLS
-    - FOSSILS
+    - SPARSE_FOSSILS

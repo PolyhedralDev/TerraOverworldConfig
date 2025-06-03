@@ -20,3 +20,6 @@ features:
     - SUSPICIOUS_GRAVEL_DEPOSITS
   postprocessors:
     - TRIAL_RUIN_REMNANTS
+  landforms:
+    - GREAT_BAOBAB_TREES
+    - FOSSILS

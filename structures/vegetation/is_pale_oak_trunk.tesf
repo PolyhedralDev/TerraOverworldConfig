@@ -1,0 +1,5 @@
+str blockID = getBlock(0, 0, 0);
+if (blockID != "minecraft:pale_oak_log" &&
+    blockID != "minecraft:pale_oak_wood") {
+    fail;
+}
