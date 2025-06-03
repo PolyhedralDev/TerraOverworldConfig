@@ -67,6 +67,10 @@ stages:
   # Misc features that are treated as small modifications to the initial chunk generation.
   - id: preprocessors
     type: FEATURE
+
+  # Used for structures like mob rooms, desert wells, and fossils.
+  - id: structures
+    type: FEATURE
   
   # Used for things like boulders and features that act like a part of the terrain.
   - id: landforms
