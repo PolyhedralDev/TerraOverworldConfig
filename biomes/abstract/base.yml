@@ -21,3 +21,5 @@ features:
   underwater-flora:
     - KELP
     - SEAGRASS
+  structures:
+    - MOB_ROOMS
