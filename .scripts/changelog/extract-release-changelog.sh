@@ -2,8 +2,8 @@
 
 # Grabs the unreleased section from the changelog, and cleans it up for publication
 
-source .scripts/lib.sh
-source .scripts/vars.sh
+source ../lib.sh
+source ../vars.sh
 ensure_file "$CHANGELOG"
 
 # Copy unreleased changelog to temporary file
