@@ -7,7 +7,7 @@ distributor:
     - type: SAMPLER
       sampler:
         type: POSITIVE_WHITE_NOISE
-        salt: 7381
+        salt: 6792
       threshold: 0.7
     - type: SAMPLER
       sampler:
