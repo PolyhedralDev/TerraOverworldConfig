@@ -10,4 +10,7 @@ palette:
 features:
   structures:
     - MOB_ROOMS
+    - FOSSILS
+  flora:
+    - DRY_GRASS
     - SPARSE_FOSSILS

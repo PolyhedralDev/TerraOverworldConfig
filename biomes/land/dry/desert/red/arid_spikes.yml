@@ -69,6 +69,7 @@ features:
     - POPPY_PATCH
     - DANDELION_PATCH
     - CACTUS_SPARSE
+    - DRY_GRASS
   trees:
     - OAK_BUSHES
     - SPARSE_OAK_TREES

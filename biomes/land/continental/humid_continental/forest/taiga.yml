@@ -55,6 +55,7 @@ features:
     - LILY_OF_THE_VALLEY_PATCH
     - GRASS
     - FERNS
+    - BUSH
   trees:
     - SPRUCE_TREES
     - SPARSE_FALLEN_SPRUCE_TREES

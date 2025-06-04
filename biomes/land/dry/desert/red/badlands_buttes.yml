@@ -44,6 +44,7 @@ features:
   flora:
     - CACTUS_SPARSE
     - GRASS_SPARSE
+    - DRY_GRASS
   trees:
     - OAK_BUSH_PATCHES
     - DEAD_TREES_SPARSE

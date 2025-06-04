@@ -52,6 +52,7 @@ features:
     - POPPY_PATCH
     - DANDELION_PATCH
     - TALL_GRASS
+    - LEAF_LITTER
   trees:
     - JUNGLE_TREES
     - PALM_TREES

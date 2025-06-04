@@ -1,0 +1,27 @@
+id: FIREFLY_BUSH
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 10
+  padding: 0
+  salt: 1510
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: ${meta.yml:ocean-level}
+        max: ${meta.yml:ocean-level} + 5
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:dry-plantable-blocks
+        offset: -1
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: firefly_bush
