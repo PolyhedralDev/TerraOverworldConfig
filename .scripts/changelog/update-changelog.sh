@@ -2,8 +2,8 @@
 
 # Moves unreleased section to a new version release section, and updates anchors at the bottom of the changelog
 
-source .scripts/lib.sh
-source .scripts/vars.sh
+source ../lib.sh
+source ../vars.sh
 ensure_env "version"
 ensure_env "previous_version"
 ensure_env "repo_url"
