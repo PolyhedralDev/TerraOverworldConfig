@@ -32,6 +32,7 @@ features:
     - SMALL_MOSSY_BOULDER_PATCHES
   flora:
     - GRASS
+    - BUSHES
     - DANDELION_PATCH
     - SWEET_BERRY_BUSH_PATCHES
   trees:

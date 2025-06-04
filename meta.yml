@@ -15,7 +15,7 @@ biome-distribution:
   # decreasing it.
   # Default: 100
 
-  temperature-scale: 60
+  temperature-scale: 75
   # Controls the scale of temperature zones. Most biomes are placed according to
   # a temperature map so hot biomes can't generate next to cold biomes, as well as
   # allowing for biomes of similar temperatures to generate together. Increasing this
@@ -23,13 +23,13 @@ biome-distribution:
   # hot and cold biomes generating further apart - and vice versa when decreasing it.
   # Default: 60
 
-  precipitation-scale: 50
+  precipitation-scale: 75
   # Controls the scale of precipitation zones. Same idea as temperature zones, where
   # humid biomes generate away from arid biomes, and biomes of similar precipitation
   # generate together.
   # Default: 50
   
-  elevation-scale: 35
+  elevation-scale: 80
   # Controls the scale of elevation zones. Most land biomes belong to
   # an elevation zone, in addition to temperature and precipitation. How far apart / close
   # together these elevation zones are is determined by this parameter. If you want more
@@ -50,29 +50,29 @@ biome-distribution:
   # any given cave biome, smaller scale = smaller cave biomes.
   # Default: 200
 
-  river-spread-scale: 10
+  river-spread-scale: 8
   # Controls how far / close apart rivers generally are, larger scale = further apart
   # rivers, smaller scale = closer packed together rivers.
   # Default: 10
 
-  volcano-spread: 150
+  volcano-spread: 300
   # Controls how far / close together volcanoes are, larger scale = volcanoes that generate
   # further apart, smaller scale = more packed together volcanoes.
   # Default: 150
 
-  volcano-radius: 5
+  volcano-radius: 4
   # Controls the radius of all volcanoes, decreasing this too much can result in some
   # glitchy generation for volcanoes filled with fluids above sea level, so keep this in mind
   # if you want smaller volcanoes!
   # Default: 5
 
-  mushroom-island-spread: 110
+  mushroom-island-spread: 300
   # Controls the distance between mushroom islands (which only generate on deep oceans).
   # Increasing this will spread mushroom islands out more, which effectively makes them more
   # rare, decreasing will make islands closer and therefore more common.
   # Default: 110
   
-  mushroom-island-radius: 4
+  mushroom-island-radius: 3
   # How large any given mushroom island will be.
   # Default: 4
   

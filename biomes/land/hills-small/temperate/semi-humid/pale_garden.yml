@@ -1,15 +1,15 @@
-id: DARK_FOREST
+id: PALE_GARDEN
 type: BIOME
-extends: [ EQ_TERRACED_HILLS, CARVING_LAND, BASE ]
-vanilla: minecraft:dark_forest
-color: $biomes/colors.yml:DARK_FOREST
+extends: [ EQ_PLAIN_PEAKS, CARVING_LAND, BASE ]
+vanilla: minecraft:pale_garden
+color: $biomes/colors.yml:PALE_GARDEN
 
 tags:
   - LAND_CAVES
   - USE_RIVER_TEMPERATE_MARSH
 
 palette:
-  - GRASS: 319
+  - GRASS_MOSSY_PALE: 319
   - COARSE_DIRT: 62
   - MUDDY_BEACH: 61
   - << meta.yml:palette-bottom
@@ -28,10 +28,9 @@ slant:
 features:
   flora:
     - GRASS
-    - LEAF_LITTER
+    - PALE_HANGING_MOSS
+    - PALE_MOSS_CARPET
+    - EYEBLOSSOM_PATCH
+    - GLOW_LICHEN_TENDRIL
   trees:
-    - SPARSE_LARGE_MUSHROOMS
-    - DENSE_DARK_FOREST_TREES
-  landforms:
-    - MOSSY_BOULDERS
-    - SMALL_MOSSY_BOULDER_PATCHES
+    - DENSE_PALE_FOREST_TREES

@@ -33,6 +33,7 @@ slant:
 features:
   flora:
     - GRASS_SPARSE
+    - LEAF_LITTER
     - FERNS
     - DEAD_BUSHES
   trees:

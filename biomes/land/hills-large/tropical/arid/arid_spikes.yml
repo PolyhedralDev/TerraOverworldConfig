@@ -59,7 +59,7 @@ features:
   preprocessors:
     - DEL_FLOATING_BLOCKS
   flora:
-    - GRASS
+    - DRY_GRASS
     - POPPY_PATCH
     - DANDELION_PATCH
     - CACTUS_SPARSE

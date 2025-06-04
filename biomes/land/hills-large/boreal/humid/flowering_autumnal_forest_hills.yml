@@ -29,6 +29,8 @@ slant:
 features:
   flora:
     - GRASS
+    - WILDFLOWERS
+    - LEAF_LITTER
     - MIXED_FLOWER_COVER
     - PUMPKIN_PATCHES
   trees:
