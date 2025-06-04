@@ -50,6 +50,8 @@ features:
     - PEONY_PATCH
     - LILAC_PATCH
     - LILY_OF_THE_VALLEY_PATCH
+    - WILDFLOWERS
+    - BUSH
   trees:
     - TEMPERATE_TREES
     - SPARSE_FALLEN_OAK_TREES

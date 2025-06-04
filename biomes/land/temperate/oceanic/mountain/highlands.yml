@@ -42,5 +42,6 @@ features:
     - GRASS
     - DANDELION_PATCH
     - SWEET_BERRY_BUSH_PATCHES
+    - WILDFLOWERS
   trees:
     - OAK_BUSH_PATCHES

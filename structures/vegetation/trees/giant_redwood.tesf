@@ -7,7 +7,7 @@ num trunkStartRadius = 2.5;
 num trunkMidRadius = 1.5;
 num trunkMidPoint = 0.1+randomInt(randPrecision)/randPrecision*0.2;
 num trunkEndRadius = 1.1;
-str trunkBlock = "minecraft:spruce_wood";
+str trunkBlock = "minecraft:stripped_acacia_wood";
 
 num sideBranchInterval = 1+randomInt(2);
 num sideBranchMinHeight = trunkHeight*(0.3+randomInt(randPrecision)/randPrecision/3);
@@ -18,10 +18,10 @@ num sideBranchLeafRadiusMin = 3;
 num sideBranchLeafTranslate = 0;
 num sideBranchLeafTopFlatness = 2;
 num sideBranchLeafBottomFlatness = 2;
-str sideBranchLeafBlock = "minecraft:spruce_leaves[distance=1,persistent=false]";
-str sideBranchBlockX = "minecraft:spruce_wood[axis=x]";
-str sideBranchBlockY = "minecraft:spruce_wood[axis=y]";
-str sideBranchBlockZ = "minecraft:spruce_wood[axis=z]";
+str sideBranchLeafBlock = "minecraft:mangrove_leaves[distance=1,persistent=false]";
+str sideBranchBlockX = "minecraft:stripped_acacia_wood[axis=x]";
+str sideBranchBlockY = "minecraft:stripped_acacia_wood[axis=y]";
+str sideBranchBlockZ = "minecraft:stripped_acacia_wood[axis=z]";
 
 num t = 0;
 num currentRadius = trunkStartRadius;
