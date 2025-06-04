@@ -139,8 +139,9 @@ stages:
         # -------------
         # Small Hills Temperate Semi-Humid
         # -------------
-        - DARK_FOREST: 1
-        - FOREST: 3
+        - DARK_FOREST: 2
+        - PALE_GARDEN: 1
+        - FOREST: 4
         # -------------
         # Small Hills Temperate Semi-Arid
         # -------------
@@ -203,6 +204,7 @@ stages:
         # Large Hills Temperate Semi-Humid
         # -------------
         - DARK_FOREST_HILLS: 3
+        - PALE_GARDEN: 1
         - forest-hills-variants: 6
         # -------------
         # Large Hills Temperate Semi-Arid

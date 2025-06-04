@@ -32,6 +32,7 @@ slant-depth: 5
 features:
   flora:
     - GRASS
+    - LEAF_LITTER
     - DEAD_BUSHES
     - POPPY_PATCH
     - DANDELION_PATCH

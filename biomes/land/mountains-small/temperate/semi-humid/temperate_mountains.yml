@@ -30,5 +30,6 @@ slant:
 features:
   flora:
     - GRASS
+    - BUSHES
   trees:
     - SPARSE_TEMPERATE_TREE_PATCHES

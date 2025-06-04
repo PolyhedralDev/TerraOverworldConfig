@@ -29,6 +29,8 @@ slant:
 features:
   flora:
     - GRASS
+    - BUSHES
+    - WILDFLOWERS
     - POPPY_PATCH
     - DANDELION_PATCH
     - ROSE_BUSH_PATCH

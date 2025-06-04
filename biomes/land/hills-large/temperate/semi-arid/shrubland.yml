@@ -23,6 +23,7 @@ palette:
 features:
   flora:
     - GRASS
+    - BUSHES
     - TALL_GRASS
     - POPPY_PATCH
     - DANDELION_PATCH

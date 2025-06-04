@@ -23,6 +23,7 @@ palette:
 features:
   flora:
     - GRASS
+    - BUSHES
     - POPPY_PATCH
     - OXEYE_DAISY_PATCH
     - CORNFLOWER_PATCH
