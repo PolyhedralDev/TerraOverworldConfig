@@ -41,15 +41,12 @@ generate in an area where it previously did not (resulting in a chunk border).
 
 ## [Unreleased]
 ### Added
-
+- Added Spring to Life features
+- Added Pale Garden
+- Added Mob Rooms
 
 ### Changed
-
-
-### Removed
-
-
-### Fixed
+- Improved Shrub Beach
 
 <!--
 DO NOT MODIFY TEXT BELOW, CI automatically manages new version sections for each
