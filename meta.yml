@@ -15,7 +15,7 @@ biome-distribution:
   # decreasing it.
   # Default: 100
 
-  temperature-scale: 100
+  temperature-scale: 75
   # Controls the scale of temperature zones. Most biomes are placed according to
   # a temperature map so hot biomes can't generate next to cold biomes, as well as
   # allowing for biomes of similar temperatures to generate together. Increasing this
@@ -23,7 +23,7 @@ biome-distribution:
   # hot and cold biomes generating further apart - and vice versa when decreasing it.
   # Default: 60
 
-  precipitation-scale: 80
+  precipitation-scale: 75
   # Controls the scale of precipitation zones. Same idea as temperature zones, where
   # humid biomes generate away from arid biomes, and biomes of similar precipitation
   # generate together.
