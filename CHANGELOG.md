@@ -41,17 +41,30 @@ generate in an area where it previously did not (resulting in a chunk border).
 
 ## [Unreleased]
 ### Added
+
+
+### Changed
+
+
+### Removed
+
+
+### Fixed
+
+
+<!--
+DO NOT MODIFY TEXT BELOW, CI automatically manages new version sections for each
+new release. Add any new change logs to the [Unreleased] section above instead.
+-->
+
+## [v1.5.1]
+### Added
 - Added Spring to Life features
 - Added Pale Garden
 - Added Mob Rooms
 
 ### Changed
 - Improved Shrub Beach
-
-<!--
-DO NOT MODIFY TEXT BELOW, CI automatically manages new version sections for each
-new release. Add any new change logs to the [Unreleased] section above instead.
--->
 
 ## [v1.3.4]
 ### Fixed
@@ -143,7 +156,8 @@ new release. Add any new change logs to the [Unreleased] section above instead.
 ### Added
 - Everything
 
-[Unreleased]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.4...HEAD
+[Unreleased]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.5.1...HEAD
+[v1.5.1]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.5.0...v1.5.1
 [v1.3.4]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.3...v1.3.4
 [v1.3.3]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.2...v1.3.3
 [v1.3.2]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.1...v1.3.2
