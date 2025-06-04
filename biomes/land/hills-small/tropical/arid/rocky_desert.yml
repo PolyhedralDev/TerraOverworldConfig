@@ -33,7 +33,7 @@ slant:
 
 features:
   flora:
-    - CACTUS_SPARSE
+    - DRY_GRASS
     - DEAD_BUSHES
   landforms:
     - GRANITE_BOULDERS
