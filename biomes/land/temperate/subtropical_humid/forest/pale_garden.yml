@@ -48,5 +48,6 @@ features:
     - CAVE_GLOW_LICHEN
   trees:
     - DENSE_PALE_FOREST_TREES
+    - DENSE_FALLEN_PALE_OAK_TREES
   landforms:
     - PALE_MOSSY_BOULDERS

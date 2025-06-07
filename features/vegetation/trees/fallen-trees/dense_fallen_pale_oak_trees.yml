@@ -1,17 +1,16 @@
-id: PALE_MOSS_CARPET
+id: DENSE_FALLEN_PALE_OAK_TREES
 type: FEATURE
 
 distributor:
-  type: SAMPLER
-  sampler:
-    type: POSITIVE_WHITE_NOISE
-    seed: 6129
-  threshold: 0.2
+  type: PADDED_GRID
+  width: 17
+  padding: 7
+  salt: 4532
 
 locator:
   type: AND
   locators:
-    - type: SURFACE
+    - type: TOP
       range: &range
         min: ${meta.yml:ocean-level} + 1
         max: $meta.yml:top-y
@@ -19,11 +18,13 @@ locator:
       range: *range
       pattern:
         type: MATCH_SET
-        blocks:
-          - minecraft:pale_moss_block
-          - minecraft:pale_oak_wood
-          - minecraft:pale_oak_log
-          - minecraft:grass_block
+        blocks: $features/vegetation/meta.yml:plantable-blocks
+        offset: -1
+    - type: ADJACENT_PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:plantable-blocks
         offset: -1
     - type: PATTERN
       range: *range
@@ -36,5 +37,7 @@ locator:
 
 structures:
   distribution:
-    type: CONSTANT
-  structures: pale_moss_carpet
+    type: WHITE_NOISE
+  structures:
+    - blank: 1
+    - fallen_pale_oak_tree_procedural: 1
