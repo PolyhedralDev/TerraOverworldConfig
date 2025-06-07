@@ -4,7 +4,7 @@ extends: BOULDER_SURFACE_LOCATOR
 
 distributor:
   type: PADDED_GRID
-  width: 19
+  width: 27
   padding: 11
   salt: 4532
 
