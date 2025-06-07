@@ -23,6 +23,12 @@ locator:
     - type: PATTERN
       range: *range
       pattern:
+        type: MATCH
+        block: minecraft:dirt
+        offset: -2
+    - type: PATTERN
+      range: *range
+      pattern:
         type: MATCH_SET
         blocks:
           - minecraft:snow
