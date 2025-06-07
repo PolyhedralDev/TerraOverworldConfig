@@ -8,7 +8,6 @@ num trunkRadius = 1.5;
 
 num buffer = 7;
 
-num vineChance = 5;
 num mushroomChance = 5;
 num eyeChance = 3;
 
@@ -100,11 +99,5 @@ for(num l = buffer; l <= length; l = l + 1) {
         block(l*dx, yTranslate + 1, l*dz , "minecraft:closed_eyeblossom", false);
         block(l*dx, yTranslate, l*dz , "minecraft:pale_moss_block", true);
     }
-    num xOffset = 1;
-    if (randomInt(2) == 0) xOffset = -1;
 
-    num zOffset = 1;
-    if (randomInt(2) == 0) zOffset = -1;
-
-    if (randomInt(vineChance*100) == 0) structure(l*dx + xOffset, yTranslate, l*dz + zOffset, "vine_block", "NONE");
 }
