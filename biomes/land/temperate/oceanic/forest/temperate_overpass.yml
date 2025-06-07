@@ -44,6 +44,7 @@ slant:
 features:
   flora:
     - TALL_GRASS
+    - BUSH
   trees:
     - SPARSE_TEMPERATE_TREE_PATCHES
     - SPARSE_FALLEN_OAK_TREES

@@ -1,0 +1,79 @@
+id: WILDFLOWERS
+type: FEATURE
+
+distributor:
+  type: AND
+  distributors:
+    - type: SAMPLER
+      sampler:
+        type: POSITIVE_WHITE_NOISE
+      threshold: 0.6
+    - type: SAMPLER
+      sampler:
+        type: PROBABILITY
+        sampler:
+          type: DOMAIN_WARP
+          amplitude: 5
+          warp:
+            type: GAUSSIAN
+          sampler:
+            type: FBM
+            octaves: 2
+            sampler:
+              type: OPEN_SIMPLEX_2
+              frequency: 10
+              salt: 10933
+      threshold: 0.8
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: ${meta.yml:ocean-level} + 1
+        max: $meta.yml:top-y
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:dry-plantable-blocks
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:snow
+          - minecraft:air
+        offset: 0
+
+structures:
+  distribution:
+    type: EXPRESSION
+    expression: sampler(x, z) # Using this to ensure 2D sampler is used
+    threshold: 0.8
+    samplers:
+      sampler:
+        dimensions: 2
+        type: LINEAR
+        min: 0.1
+        max: 0.6
+        sampler:
+          type: PROBABILITY
+          sampler:
+            type: DOMAIN_WARP
+            amplitude: 3
+            warp:
+              type: GAUSSIAN
+            sampler:
+              type: FBM
+              octaves: 2
+              sampler:
+                type: OPEN_SIMPLEX_2
+                frequency: 10
+                salt: 24365
+  structures:
+    - wildflowers4: 1
+    - wildflowers3: 1
+    - wildflowers2: 2
+    - wildflowers1: 2

@@ -13,6 +13,9 @@ tags:
 
 vanilla: minecraft:taiga
 
+colors:
+  foliage: 0x68a464
+
 palette:
   - PACKED_MUDDY_GRASS: $meta.yml:top-y
   - << meta.yml:palette-ocean-level-sand

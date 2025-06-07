@@ -6,3 +6,6 @@ extends:
   - CARVING_OCEAN
   - TEMPERATE_MOUNTAINS
 color: $biomes/colors.yml:TEMPERATE_MOUNTAINS_RIVER
+features:
+  flora:
+    - FIREFLY_BUSH

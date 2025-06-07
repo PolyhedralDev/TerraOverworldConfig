@@ -15,4 +15,7 @@ features:
   structures:
     - MOB_ROOMS
     - RED_DESERT_WELLS
+    - FOSSILS
+  flora:
+    - DRY_GRASS
     - SPARSE_FOSSILS
