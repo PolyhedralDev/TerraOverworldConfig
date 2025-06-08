@@ -74,5 +74,5 @@ features:
   trees:
     - JUNGLE_TREES
     - JUNGLE_BUSHES
-    - SPARSE_FALLEN_JUNGLE_TREES
+    - DENSE_FALLEN_JUNGLE_TREES
   

@@ -1,9 +1,9 @@
-id: SPARSE_FALLEN_JUNGLE_TREES
+id: DENSE_FALLEN_JUNGLE_TREES
 type: FEATURE
 
 distributor:
   type: PADDED_GRID
-  width: 48
+  width: 37
   padding: 7
   salt: 4536
 
@@ -33,5 +33,6 @@ structures:
   distribution:
     type: WHITE_NOISE
   structures:
-    - blank: 1
+    - blank: 2
+    - fallen_medium_jungle_tree_procedural: 1
     - fallen_large_jungle_tree_procedural: 1

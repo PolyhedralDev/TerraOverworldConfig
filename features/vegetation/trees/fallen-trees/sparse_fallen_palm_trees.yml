@@ -1,11 +1,11 @@
-id: SPARSE_FALLEN_JUNGLE_TREES
+id: SPARSE_FALLEN_PALM_TREES
 type: FEATURE
 
 distributor:
   type: PADDED_GRID
-  width: 48
+  width: 68
   padding: 7
-  salt: 4536
+  salt: 2347
 
 locator:
   type: AND
@@ -34,4 +34,4 @@ structures:
     type: WHITE_NOISE
   structures:
     - blank: 1
-    - fallen_large_jungle_tree_procedural: 1
+    - fallen_palm_tree_procedural: 1

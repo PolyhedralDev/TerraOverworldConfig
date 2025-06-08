@@ -56,7 +56,7 @@ features:
   trees:
     - JUNGLE_TREES
     - PALM_TREES
-    - SPARSE_FALLEN_JUNGLE_TREES
+    - DENSE_FALLEN_JUNGLE_TREES
   landforms:
     - SMALL_MOSSY_BOULDER_PATCHES
   
