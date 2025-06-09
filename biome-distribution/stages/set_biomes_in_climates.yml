@@ -177,7 +177,7 @@ stages:
           - DRY_TEMPERATE_WHITE_MOUNTAINS: 1
 
         temperate-hot-flat:
-          - PLAINS: 1
+          - TEMPERATE_GRASSLAND: 1
           - ALIEN_MARSH: 1
         temperate-hot:
           - WOODED_BUTTES: 1
@@ -336,13 +336,13 @@ stages:
         temperate-steppe-flat:
           - SUNFLOWER_PRAIRIE: 1
           - PRAIRIE: 2
-          - PLAINS: 3
+          - TEMPERATE_GRASSLAND: 3
           - OAK_SAVANNA: 1
           - STEPPE: 1
         temperate-steppe:
           - SUNFLOWER_PRAIRIE: 1
           - PRAIRIE: 2
-          - PLAINS: 2
+          - TEMPERATE_GRASSLAND: 2
           - OAK_SAVANNA: 2
           - STEPPE: 1
         temperate-steppe-highlands:
