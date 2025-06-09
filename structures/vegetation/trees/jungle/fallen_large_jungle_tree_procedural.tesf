@@ -89,6 +89,9 @@ for(num l = buffer; l <= length; l = l + 1) {
     if (randomInt(2) == 0) zOffset = -1;
     if (randomInt(4) == 0) xOffset = xOffset*2;
 
-    if (randomInt(vineChance) == 0) structure(l*dx + xOffset, yTranslate, l*dz + zOffset, "vine_block", "NONE");
+    if (randomInt(vineChance) == 0) {
+        structure(l*dx + xOffset, yTranslate, l*dz + zOffset, "vine_block", "NONE");
+        structure(l*dx + xOffset, yTranslate - 1, l*dz + zOffset, "vine_block", "NONE");
+    }
 
 }
