@@ -4,16 +4,16 @@ type: PALETTE
 layers:
   - materials:
       - minecraft:stone: 1
-      - minecraft:terracotta: 2
-      - minecraft:sand: 2
-      - minecraft:gravel: 2
-      - minecraft:coarse_dirt: 2
+      - minecraft:terracotta: 8
+      - minecraft:sand: 8
+      - minecraft:gravel: 6
+      - minecraft:coarse_dirt: 6
     layers: 3
   - materials:
       - minecraft:stone: 1
-      - minecraft:terracotta: 2
-      - minecraft:sandstone: 2
-      - minecraft:coarse_dirt: 2
+      - minecraft:terracotta: 8
+      - minecraft:sandstone: 8
+      - minecraft:coarse_dirt: 6
     layers: 1
 
 sampler:

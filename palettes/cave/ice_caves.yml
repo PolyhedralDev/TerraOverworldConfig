@@ -3,10 +3,14 @@ type: PALETTE
 
 layers:
   - materials:
-      - minecraft:stone: 12
-      - minecraft:packed_ice: 2
-      - minecraft:blue_ice: 1
-      - minecraft:snow_block: 3
+      - minecraft:stone: 1
+      - minecraft:packed_ice: 8
+      - minecraft:blue_ice: 3
+      - minecraft:snow_block: 8
+    layers: 2
+  - materials:
+      - minecraft:stone: 1
+      - minecraft:snow_block: 8
     layers: 1
 
 sampler:
@@ -19,4 +23,4 @@ sampler:
   sampler:
     type: CELLULAR
     return: CellValue
-    frequency: 0.8
+    frequency: 0.08
