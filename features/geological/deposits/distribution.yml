@@ -220,12 +220,12 @@ suspicious-sand:
   averageCountPerChunk: 5
   salt: 5467
   range:
-    min: 0
-    max: 40
+    min: -64
+    max: -7
 
 suspicious-gravel:
   averageCountPerChunk: 5
   salt: 6473
   range:
-    min: 0
-    max: 40
+    min: -64
+    max: -7
