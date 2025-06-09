@@ -36,6 +36,7 @@ features:
     - MANGROVE_SEAGRASS
   flora:
     - GRASS
+    - FIREFLY_BUSH
     - POPPY_PATCH
     - DANDELION_PATCH
     - BLUE_ORCHID_PATCH

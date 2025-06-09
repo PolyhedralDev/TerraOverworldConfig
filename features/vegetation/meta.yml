@@ -39,6 +39,17 @@ sugarcane-plantable-blocks:
   - minecraft:pale_moss_block
   - minecraft:rooted_dirt
 
+dry-grass-plantable-blocks:
+  - minecraft:mud
+  - minecraft:sand
+  - minecraft:red_sand
+  - minecraft:grass_block
+  - minecraft:podzol
+  - minecraft:dirt
+  - minecraft:coarse_dirt
+  - minecraft:moss_block
+  - minecraft:rooted_dirt
+
 dripleaf-plantable-blocks:
   - minecraft:mud
   - minecraft:clay
