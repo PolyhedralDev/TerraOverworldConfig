@@ -1,11 +1,11 @@
-id: SPARSE_FALLEN_DARK_OAK_TREES
+id: SPARSE_FALLEN_LARGE_DARK_OAK_TREES
 type: FEATURE
 
 distributor:
   type: PADDED_GRID
-  width: 107
+  width: 67
   padding: 7
-  salt: 1645
+  salt: 4371
 
 locator:
   type: AND
@@ -33,6 +33,5 @@ structures:
   distribution:
     type: WHITE_NOISE
   structures:
-    - blank: 3
-    - fallen_dark_oak_tree_procedural: 2
+    - blank: 1
     - fallen_large_dark_oak_tree_procedural: 1

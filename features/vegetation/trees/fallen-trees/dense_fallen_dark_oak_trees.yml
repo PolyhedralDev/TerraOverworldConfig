@@ -1,11 +1,11 @@
-id: DARK_OAK_TREES
+id: DENSE_FALLEN_DARK_OAK_TREES
 type: FEATURE
 
 distributor:
   type: PADDED_GRID
-  width: 30
-  padding: 3
-  salt: 9591
+  width: 17
+  padding: 7
+  salt: 1645
 
 locator:
   type: AND
@@ -31,7 +31,8 @@ locator:
 
 structures:
   distribution:
-    type: CONSTANT
+    type: WHITE_NOISE
   structures:
-    - large_dark_oak_tree_procedural: 3
-    - dark_oak_tree_procedural: 1
+    - blank: 2
+    - fallen_dark_oak_tree_procedural: 1
+    - fallen_large_dark_oak_tree_procedural: 1

@@ -6,6 +6,7 @@ num trunkRadius = 1;
 num buffer = 5;
 
 num mushroomChance = 8;
+num vineChance = 2;
 
 // Direction vector
 num dx = (randomInt(randPrecision)/randPrecision-0.5)*1.5;
@@ -46,5 +47,15 @@ for(num l = buffer; l <= buffer+length; l = l + 1) {
     str mushroomBlock = "minecraft:red_mushroom";
     if (randomInt(2) == 0) mushroomBlock = "minecraft:brown_mushroom";
     if (randomInt(mushroomChance) == 0) block(l*dx, yTranslate + 1, l*dz, mushroomBlock, false);
+
+    num xOffset = 1;
+    if (randomInt(2) == 0) xOffset = -1;
+    if (randomInt(4) == 0) xOffset = xOffset*2;
+
+    num zOffset = 1;
+    if (randomInt(2) == 0) zOffset = -1;
+    if (randomInt(4) == 0) xOffset = xOffset*2;
+
+    if (randomInt(vineChance) == 0) structure(l*dx + xOffset, yTranslate, l*dz + zOffset, "vine_block", "NONE");
 
 }
