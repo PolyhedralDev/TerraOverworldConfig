@@ -1,23 +1,7 @@
-id: REDWOOD_FOREST
+id: OLD_GROWTH_SEQUOIA_FOREST
 type: BIOME
-extends:
-  - ENVIRONMENT_LAND_CONTINENTAL_HUMID
-  - EQ_MULTI_TERRACED_LAND
-  - CARVING_LAND
-  - BASE
-color: $biomes/colors.yml:REDWOOD_FOREST
-
-tags:
-  - LAND_CAVES
-  - USE_COLD_RIVER
-
-vanilla: minecraft:old_growth_pine_taiga
-
-colors:
-  grass: 0x86B770
-  foliage: 0x86BC70
-  water: 0x287082
-  water-fog: 0x287082
+extends: SEQUOIA_FOREST
+color: $biomes/colors.yml:OLD_GROWTH_SEQUOIA_FOREST
 
 palette:
   - GRASS_PODZOL: $meta.yml:top-y
@@ -40,21 +24,15 @@ slant:
     palette:
       - << meta.yml:palette-slant-generic
       - << meta.yml:palette-bottom
-
 features:
   landforms:
-    - BOULDERS
+    - MOSSY_BOULDERS
     - SMALL_BOULDER_PATCHES
   flora:
     - SWEET_BERRY_BUSH_PATCHES
-    - POPPY_PATCH
-    - DANDELION_PATCH
-    - ROSE_BUSH_PATCH
-    - PEONY_PATCH
-    - LILAC_PATCH
-    - LILY_OF_THE_VALLEY_PATCH
-    - GRASS
-    - FERNS
+    - FERNS_DENSE
     - BUSH
+    - LEAF_LITTER
   trees:
-    - GIANT_REDWOODS
+    - SEQUOIA_FOREST_TREES
+    - OLD_GROWTH_SEQUOIA_FOREST_TREES

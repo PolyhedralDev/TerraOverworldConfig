@@ -75,9 +75,10 @@ stages:
           - BIRCH_FOREST: 2
           - MAPLE_GROVE: 1
         boreal-warm:
-          - REDWOOD_FOREST: 1
-          - TAIGA_CLEARING: 1
-          - TAIGA: 3
+          - SEQUOIA_FOREST: 3
+          - OLD_GROWTH_SEQUOIA_FOREST: 1
+          - TAIGA_CLEARING: 3
+          - TAIGA: 9
         boreal-warm-highlands:
           - MOUNTAINS: 1
 
