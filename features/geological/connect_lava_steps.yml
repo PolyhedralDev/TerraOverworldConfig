@@ -17,7 +17,7 @@ distributor:
           octaves: 2
           sampler:
             type: OPEN_SIMPLEX_2
-            salt: 9123
+            salt: 9124
             frequency: 0.01
       threshold: 0.3
 
