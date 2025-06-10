@@ -2,25 +2,11 @@ id: DENSE_DRY_GRASS
 type: FEATURE
 
 distributor:
-  type: AND
-  distributors:
-    - type: SAMPLER
-      sampler:
-        type: POSITIVE_WHITE_NOISE
-        salt: 4356
-      threshold: 0.125
-    - type: SAMPLER
-      sampler:
-        type: PROBABILITY
-        sampler:
-          type: DOMAIN_WARP
-          amplitude: 5
-          warp:
-            type: GAUSSIAN
-          sampler:
-            type: OPEN_SIMPLEX_2
-            salt: 9420
-      threshold: 0.1
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 7123
+  threshold: 0.8
 
 locator:
   type: AND

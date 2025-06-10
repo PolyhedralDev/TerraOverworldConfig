@@ -5,6 +5,3 @@ extends:
   - CARVING_OCEAN
   - BADLANDS
 color: $biomes/colors.yml:BADLANDS_RIVER
-features:
-  flora:
-    - FIREFLY_BUSH

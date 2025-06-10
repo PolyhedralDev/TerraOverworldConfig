@@ -5,6 +5,3 @@ extends:
   - CARVING_OCEAN
   - DESERT
 color: $biomes/colors.yml:DESERT_RIVER
-features:
-  flora:
-    - FIREFLY_BUSH
