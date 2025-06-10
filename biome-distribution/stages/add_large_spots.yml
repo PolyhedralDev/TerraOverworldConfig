@@ -19,6 +19,7 @@ stages:
       expression: if(largeSpotDistance(x, z) < largeSpotRadius(x, z) + largeBiomeBorder, 1, -1)
       variables: $math/samplers/spots.yml:variables
 
+  # These two lists must stay aligned, or a pale garden will not have consistency across land and ocean
   - type: REPLACE
     from: land-large-spot
     to:

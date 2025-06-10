@@ -23,11 +23,11 @@ biomes:
       stages:
         - << biome-distribution/stages/add_spots.yml:stages
         - << biome-distribution/stages/add_large_spots.yml:stages
-        - << biome-distribution/stages/add_islands.yml:stages
         - << biome-distribution/stages/add_coast.yml:stages
         - << biome-distribution/stages/climate/temperature.yml:stages
         - << biome-distribution/stages/climate/precipitation.yml:stages
         - << biome-distribution/stages/climate/elevation.yml:stages
+        - << biome-distribution/stages/add_islands.yml:stages
         - << biome-distribution/stages/add_island_coast.yml:stages
         - << biome-distribution/stages/climate/color.yml:stages
         - << biome-distribution/stages/add_travertine_terraces.yml:stages
