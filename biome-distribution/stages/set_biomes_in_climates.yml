@@ -202,11 +202,11 @@ stages:
         temperate-hot-flat:
           - MOORLAND: 1
           - ALIEN_MARSH: 1
-          - RAINFOREST: 1
+          - TEMPERATE_RAINFOREST: 1
         temperate-hot:
           - WOODED_BUTTES: 1
           - TEMPERATE_OVERPASS: 1
-          - RAINFOREST: 1
+          - TEMPERATE_RAINFOREST: 1
         temperate-hot-highlands:
           - HIGHLANDS: 1
           - TEMPERATE_ALPHA_MOUNTAINS: 1
