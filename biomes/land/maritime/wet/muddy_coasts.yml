@@ -10,17 +10,17 @@ color: $biomes/colors.yml:MUDDY_COASTS
 vanilla: minecraft:beach
 
 colors:
-  grass: 0x06400f
+  grass: 0x464a26
   foliage: 0x8DB127
-  water: 0x5b756f
-  water-fog: 0x5b756f
+  water: 0x5b646f
+  water-fog: 0x5b646f
 
 tags:
   - LAND_CAVES
   - USE_RIVER_TEMPERATE_MARSH
 
 palette:
-  - MUD: $meta.yml:top-y
+  - MUDDY_GRASS_DIRT: $meta.yml:top-y
   - << meta.yml:palette-bottom
 
 slant:
@@ -33,5 +33,8 @@ features:
   preprocessors:
     - MUD_WATER
   flora:
-    - TALL_GRASS
+    - GRASS_DRY
     - SUGAR_CANE
+  processors:
+    - TALL_DRY_GRASS_MUD
+    - TALL_DRY_GRASS
