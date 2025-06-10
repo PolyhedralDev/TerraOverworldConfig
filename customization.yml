@@ -80,7 +80,7 @@ continental-spread: 1
 #
 # Default: 1
 
-continental-scale: 1
+continental-scale: 2
 # Controls the scale of land / coastal / oceanic distribution. Increasing
 # this produces larger landmasses and larger oceans, and vice-versa when
 # decreasing it. This does not control the ratio of land / ocean, for that
@@ -339,7 +339,7 @@ spot-radius-min: 50
 spot-radius-max: 150
 # Default: 150
 
-large-spot-spread: 3000
+large-spot-spread: 5000
 # Roughly how many blocks apart each spot biome will be
 # Default: 2000
 

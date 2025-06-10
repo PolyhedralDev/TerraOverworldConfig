@@ -1,0 +1,85 @@
+stages:
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: land
+    replace: boreal-ocean
+    to: boreal-shallow-ocean
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: land
+    replace: temperate-ocean
+    to: temperate-shallow-ocean
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: land
+    replace: hot-ocean
+    to: hot-shallow-ocean
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: land
+    replace: polar-ocean
+    to: polar-shallow-ocean
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: land
+    replace: boreal-ocean
+    to: boreal-shallow-ocean
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: land
+    replace: temperate-ocean
+    to: temperate-shallow-ocean
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: land
+    replace: hot-ocean
+    to: hot-shallow-ocean
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: coast
+    replace: boreal-ocean
+    to: boreal-shallow-ocean
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: coast
+    replace: temperate-ocean
+    to: temperate-shallow-ocean
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: coast
+    replace: hot-ocean
+    to: hot-shallow-ocean
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: coast
+    replace: polar-ocean
+    to: polar-shallow-ocean
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: coast
+    replace: boreal-ocean
+    to: boreal-shallow-ocean
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: coast
+    replace: temperate-ocean
+    to: temperate-shallow-ocean
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: coast
+    replace: hot-ocean
+    to: hot-shallow-ocean

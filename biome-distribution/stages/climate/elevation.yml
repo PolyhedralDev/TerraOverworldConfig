@@ -40,22 +40,22 @@ stages:
 
       polar-island:
         - island: 1
-        - polar-ocean: 1
+        - island: 1
         - polar-shallow-ocean: 1
 
       boreal-island:
         - island: 1
-        - boreal-ocean: 1
+        - island: 1
         - boreal-shallow-ocean: 1
 
       temperate-island:
         - island: 1
-        - temperate-ocean: 1
+        - island: 1
         - temperate-shallow-ocean: 1
 
       hot-island:
         - island: 1
-        - hot-ocean: 1
+        - island: 1
         - hot-shallow-ocean: 1
 
     
