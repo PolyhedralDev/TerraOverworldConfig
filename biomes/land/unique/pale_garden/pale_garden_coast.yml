@@ -1,4 +1,4 @@
-id: MUSHROOM_COAST
+id: PALE_GARDEN_COAST
 type: BIOME
 extends:
   - EQ_FLAT_ERODED
