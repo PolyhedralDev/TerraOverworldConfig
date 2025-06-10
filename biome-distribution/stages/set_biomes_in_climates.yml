@@ -54,6 +54,9 @@ stages:
 
   
         boreal-hot-flat:
+          - STEPPE: 2
+          - PRAIRIE: 2
+          - SUNFLOWER_PRAIRIE: 1
           - ASPEN_FOREST: 1
           - BIRCH_FOREST: 2
           - MAPLE_GROVE: 1
@@ -65,13 +68,17 @@ stages:
           - MOUNTAINS: 1
         
         boreal-warm-flat:
+          - STEPPE: 1
+          - PRAIRIE: 2
+          - SUNFLOWER_PRAIRIE: 1
           - ASPEN_FOREST: 1
           - BIRCH_FOREST: 2
           - MAPLE_GROVE: 1
         boreal-warm:
-          - REDWOOD_FOREST: 1
-          - TAIGA_CLEARING: 1
-          - TAIGA: 3
+          - SEQUOIA_FOREST: 3
+          - OLD_GROWTH_SEQUOIA_FOREST: 1
+          - TAIGA_CLEARING: 3
+          - TAIGA: 9
         boreal-warm-highlands:
           - MOUNTAINS: 1
 
@@ -157,6 +164,7 @@ stages:
           - COLD_DEEP_DEPTHS: 1
 
         temperate-hot-dry-flat:
+          - STEPPE: 1
           - CHAPARRAL: 1
           - MOORLAND: 1
         temperate-hot-dry:
@@ -167,6 +175,7 @@ stages:
           - DRY_TEMPERATE_WHITE_MOUNTAINS: 1
 
         temperate-warm-dry-flat:
+          - STEPPE: 1
           - CHAPARRAL: 1
           - MOORLAND: 1
         temperate-warm-dry:
@@ -177,11 +186,14 @@ stages:
           - DRY_TEMPERATE_WHITE_MOUNTAINS: 1
 
         temperate-hot-flat:
-          - PLAINS: 1
+          - TEMPERATE_GRASSLAND: 2
+          - OAK_SAVANNA: 2
           - ALIEN_MARSH: 1
+          - RAINFOREST: 1
         temperate-hot:
           - WOODED_BUTTES: 1
           - TEMPERATE_OVERPASS: 1
+          - RAINFOREST: 1
         temperate-hot-highlands:
           - HIGHLANDS: 1
           - TEMPERATE_ALPHA_MOUNTAINS: 1
@@ -189,14 +201,12 @@ stages:
 
         temperate-warm-flat:
           - FLOWERING_FOREST: 2
-          - RAINFOREST: 2
           - BROADLEAF_FOREST: 3
           - DARK_FOREST: 2
           - SAKURA_GROVE: 1
           - WOODED_BUTTES: 2
         temperate-warm:
           - FLOWERING_FOREST: 1
-          - RAINFOREST: 1
           - BROADLEAF_FOREST: 1
           - DARK_FOREST: 1
           - PALE_GARDEN: 1
@@ -208,15 +218,15 @@ stages:
           - TEMPERATE_MOUNTAINS: 1
 
         temperate-cold-flat:
-          - FLOWERING_FOREST: 1
-          - RAINFOREST: 1
-          - BROADLEAF_FOREST: 1
-          - DARK_FOREST: 1
-          - SAKURA_GROVE: 1
-          - WOODED_BUTTES: 1
+          - FLOWERING_FOREST: 2
+          - PRAIRIE: 3
+          - SUNFLOWER_PRAIRIE: 1
+          - BROADLEAF_FOREST: 2
+          - DARK_FOREST: 2
+          - SAKURA_GROVE: 2
+          - WOODED_BUTTES: 2
         temperate-cold:
           - FLOWERING_FOREST: 1
-          - RAINFOREST: 1
           - BROADLEAF_FOREST: 1
           - DARK_FOREST: 1
           - PALE_GARDEN: 1
@@ -336,13 +346,13 @@ stages:
         temperate-steppe-flat:
           - SUNFLOWER_PRAIRIE: 1
           - PRAIRIE: 2
-          - PLAINS: 3
+          - TEMPERATE_GRASSLAND: 3
           - OAK_SAVANNA: 1
           - STEPPE: 1
         temperate-steppe:
           - SUNFLOWER_PRAIRIE: 1
           - PRAIRIE: 2
-          - PLAINS: 2
+          - TEMPERATE_GRASSLAND: 2
           - OAK_SAVANNA: 2
           - STEPPE: 1
         temperate-steppe-highlands:

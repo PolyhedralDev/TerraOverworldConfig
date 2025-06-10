@@ -33,7 +33,7 @@ biomes:
 
         - type: REPLACE
           from: todo
-          to: PLAINS
+          to: TEMPERATE_GRASSLAND
           sampler:
             type: CONSTANT
         

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source .scripts/vars.sh
+source ./.scripts/vars.sh
 
 # Search HEAD diff for a change in the pack version
 version_diff=$(git diff HEAD^ HEAD "$PACK_MANIFEST" | grep '^+version: ')

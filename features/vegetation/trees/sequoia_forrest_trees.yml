@@ -1,10 +1,10 @@
-id: GIANT_REDWOODS
+id: SEQUOIA_FOREST_TREES
 type: FEATURE
 
 distributor:
   type: PADDED_GRID
   width: 8
-  padding: 4
+  padding: 5
   salt: 2314
 
 locator:
@@ -33,4 +33,7 @@ locator:
 structures:
   distribution:
     type: WHITE_NOISE
-  structures: giant_redwood
+    salt: 9125
+  structures:
+    - sequoia_tree_procedural: 25
+    - giant_sequoia_tree_procedural: 1

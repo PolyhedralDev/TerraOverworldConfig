@@ -33,6 +33,7 @@ slant:
 features:
   flora:
     - TALL_GRASS
+    - DENSE_DRY_GRASS
     - POPPY_PATCH
     - DANDELION_PATCH
     - OXEYE_DAISY_PATCH
