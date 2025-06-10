@@ -11,8 +11,8 @@ num dz = (randomInt(11)-5)/15;
 
 // Generate trunk
 for (num unused = 0; y < height; y = y + 1) {
-    block(x, y, z, "minecraft:stripped_oak_wood");
-    block(x, y+1, z, "minecraft:stripped_oak_wood");
+    block(x, y, z, "minecraft:stripped_jungle_wood");
+    block(x, y+1, z, "minecraft:stripped_jungle_wood");
     x = x + dx;
     z = z + dz;
 }
