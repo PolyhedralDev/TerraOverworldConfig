@@ -59,11 +59,13 @@ stages:
           - SUNFLOWER_PRAIRIE: 1
           - ASPEN_FOREST: 1
           - BIRCH_FOREST: 2
-          - MAPLE_GROVE: 1
+          - maple-groves: 1
+          - LUSH_TAIGA: 1
         boreal-hot:
           - ASPEN_FOREST: 1
-          - MAPLE_GROVE: 1
-          - BIRCH_FOREST: 1
+          - maple-groves: 1
+          - BIRCH_FOREST: 2
+          - LUSH_TAIGA: 2
         boreal-hot-highlands:
           - MOUNTAINS: 1
         
@@ -73,7 +75,8 @@ stages:
           - SUNFLOWER_PRAIRIE: 1
           - ASPEN_FOREST: 1
           - BIRCH_FOREST: 2
-          - MAPLE_GROVE: 1
+          - maple-groves: 1
+          - LUSH_TAIGA: 2
         boreal-warm:
           - SEQUOIA_FOREST: 3
           - OLD_GROWTH_SEQUOIA_FOREST: 1
@@ -83,11 +86,13 @@ stages:
           - MOUNTAINS: 1
 
         boreal-cold-flat:
-          - TAIGA: 1
+          - TAIGA: 2
+          - maple-groves: 1
           - TAIGA_CLEARING: 1
         boreal-cold:
           - TAIGA_CLEARING: 1
-          - TAIGA: 1
+          - TAIGA: 2
+          - maple-groves: 1
         boreal-cold-highlands:
           - MOUNTAINS: 1
       
@@ -102,25 +107,30 @@ stages:
         boreal-hot-dry-flat:
           - ASPEN_FOREST: 1
           - BIRCH_FOREST: 2
-          - MAPLE_GROVE: 1
+          - maple-groves: 1
         boreal-hot-dry:
-          - TAIGA: 1
+          - maple-groves: 1
+          - TAIGA: 2
         boreal-hot-dry-highlands:
           - MOUNTAINS: 1
 
         boreal-warm-dry-flat:
           - TAIGA: 1
+          - LUSH_TAIGA: 1
           - TAIGA_CLEARING: 1
         boreal-warm-dry:
           - TAIGA: 1
+          - LUSH_TAIGA: 1
         boreal-warm-dry-highlands:
           - MOUNTAINS: 1
 
         boreal-cold-dry-flat:
-          - TAIGA: 1
+          - TAIGA: 2
           - TAIGA_CLEARING: 1
+          - maple-groves: 1
         boreal-cold-dry:
-          - TAIGA: 1
+          - TAIGA: 2
+          - maple-groves: 1
         boreal-cold-dry-highlands:
           - SNOWY_MOUNTAINS: 1
 

@@ -1,0 +1,25 @@
+//Trunk
+num trunkHeight = 6 + randomInt(6); //Height of the tree/trunk; 14-20
+
+for (num trunkY = 0; trunkY < trunkHeight; trunkY = trunkY + 1) {
+	block(0, trunkY, 0, "minecraft:spruce_log", true);
+}
+
+//Leaves
+num leafLayerNum = trunkHeight - randomInt(3); //Amount of leaf layers in tree
+num maxLeafRadius = randomInt(1) + 3; //Bottom leaf radius; 4-5
+
+for(num layerNum = 0; layerNum < leafLayerNum; layerNum = layerNum + 1) {
+	num radiusMultiplier = layerNum + 1;
+	num radiusIncrement = (maxLeafRadius - 1) / leafLayerNum;
+	num leafRadius = radiusIncrement * radiusMultiplier;
+	
+	for (num leafX = 0; leafX < leafRadius; leafX = leafX + 1) {
+		for (num leafZ = 0; leafZ < pow((pow(leafRadius, 2) - pow(leafX, 2)), 1/2); leafZ = leafZ + 1) {
+			block(leafX, trunkHeight + 1 - layerNum, leafZ, "minecraft:acacia_leaves[distance=1,persistent=false]", false);
+			block(-(leafX), trunkHeight + 1 - layerNum, -(leafZ), "minecraft:acacia_leaves[distance=1,persistent=false]", false);
+			block(-(leafZ), trunkHeight + 1 - layerNum, leafX, "minecraft:acacia_leaves[distance=1,persistent=false]", false);
+			block(leafZ, trunkHeight + 1 - layerNum, -(leafX), "minecraft:acacia_leaves[distance=1,persistent=false]", false);
+		}
+	}
+}
