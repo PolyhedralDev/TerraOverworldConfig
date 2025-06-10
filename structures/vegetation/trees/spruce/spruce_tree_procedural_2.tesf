@@ -1,0 +1,82 @@
+num randPrecision = 100;
+num goldenAngle = 2.39996;
+num pi = 3.14159;
+
+str trunkBlock = "minecraft:dark_oak_log";
+str setBlock = "trunkBlock";
+
+num trunkRadius = 1.5;
+num height = 40+randomInt(10);
+
+num sideBranchInterval = 5;
+num sideBranchMinHeight = 10;
+
+num length = 10+randomInt(6);
+num radius = 3.5;
+
+// Direction vector
+num dx = (randomInt(randPrecision)/randPrecision-0.5)*1.5;
+num dy = -0.5;
+num dz = (randomInt(randPrecision)/randPrecision-0.5)*1.5;
+
+num mag = sqrt(pow(dx,2)+pow(dy,2)+pow(dz,2));
+dx = dx/mag;
+dy = dy/mag;
+dz = dz/mag;
+
+num branchAngle = randomInt(randPrecision)/randPrecision*2*pi;
+
+// tree trunk
+for(num h = 0; h <= height; h = h + 1) {
+    // Reduce radius inversely to height
+    num r = (trunkRadius/height * -h/2) + trunkRadius;
+
+    // Generate sphere at each point
+    for(num x = -r; x <= r; x = x + 1) {
+        for(num y = -r; y <= r; y = y + 1) {
+            for(num z = -r; z <= r; z = z + 1) {
+                if (pow(x,2)+pow(y,2)+pow(z,2) < pow(r,2)) {
+                    setBlock = trunkBlock;
+                    if (randomInt(4) == 0) setBlock = "minecraft:spruce_log";
+                    block(x, h + y - trunkRadius, z, setBlock, true);
+                }
+            }
+        }
+    }
+
+    if (h > sideBranchMinHeight) {
+        if (h % sideBranchInterval == 0) {
+
+            for (num n = 0; n < 10; n = n + 1) {
+                for(num l = 0; l <= length; l = l + 1) {
+
+                    // Reduce radius inversely to length
+                    num lr = (radius/length * -l - (h/35)) + radius;
+
+                    // Generate sphere at each point
+                    for(num lx = -lr; lx <= lr; lx = lx + 1) {
+                        for(num ly = -lr; ly <= lr; ly = ly + 1) {
+                            for(num lz = -lr; lz <= lr; lz = lz + 1) {
+                                if (pow(lx,2)+pow(ly,2)+pow(lz,2) < pow(lr,2)) {
+                                    block(l*dx + lx, l*dy + ly - radius + h, l*dz + lz, "minecraft:dark_oak_leaves[persistent=true,distance=1]", false);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                length = 10+randomInt(6);
+                radius = 3.5-(h/45);
+
+                dx = (randomInt(randPrecision)/randPrecision-0.5)*1.5;
+                dy = -0.5;
+                dz = (randomInt(randPrecision)/randPrecision-0.5)*1.5;
+
+                mag = sqrt(pow(dx,2)+pow(dy,2)+pow(dz,2));
+                dx = dx/mag;
+                dy = dy/mag;
+                dz = dz/mag;
+            }
+        }
+    }
+}
