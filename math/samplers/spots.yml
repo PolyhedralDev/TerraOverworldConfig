@@ -3,6 +3,8 @@ variables: &variables
   
   biomeBorder: 10
 
+  largeBiomeBorder: 100
+
   minRadius: $customization.yml:spot-radius-min
   maxRadius: $customization.yml:spot-radius-max
   
@@ -12,6 +14,8 @@ variables: &variables
   spotMinEdgeRadius: 0.1
   spotMaxEdgeRadius: 0.5
 
+  largeMinRadius: $customization.yml:large-spot-radius-min
+  largeMaxRadius: $customization.yml:large-spot-radius-max
   volcanoMinCenterDepth: 0.01
   volcanoMaxCenterDepth: 0.3
 
@@ -21,6 +25,13 @@ cellular: &cellular
   frequency: 1 / ${customization.yml:spot-spread}
   salt: 3
   jitter: 1-2*(${customization.yml:spot-radius-max}/${customization.yml:spot-spread})
+
+largeCellular: &largeCellular
+  dimensions: 2
+  type: CELLULAR
+  frequency: 1 / ${customization.yml:large-spot-spread}
+  salt: 1236
+  jitter: 1-2*(${customization.yml:large-spot-radius-max}/${customization.yml:large-spot-spread})
 
 samplers:
   spotDistance: # Returns block distance from closest spot center
@@ -68,7 +79,52 @@ samplers:
       expression: elevation(x, z)
       samplers:
         elevation: $math/samplers/elevation.yml:samplers.elevation
-  
+
+  largeSpotDistance: # Returns block distance from closest large spot center
+    dimensions: 2
+    type: DOMAIN_WARP
+    amplitude: 7
+    warp:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.010
+    sampler:
+      type: EXPRESSION
+      expression: (noise(x, z)+1)*spread
+      variables: *variables
+      samplers:
+        noise:
+          <<: *largeCellular
+          distance: Euclidean
+
+  largeSpotSizePercent: # Returns a random value between 0 and 1 that determines the size of the large spot
+    dimensions: 2
+    type: PROBABILITY
+    sampler:
+      <<: *largeCellular
+      return: CellValue
+
+  largeSpotRadius: # Returns the radius of the large spot in blocks
+    dimensions: 2
+    type: EXPRESSION
+    expression: lerp(spotSizePercent(x, z), 0, minRadius, 1, maxRadius)
+    functions: $math/functions/interpolation.yml:functions
+    variables: *variables
+    samplers:
+      spotSizePercent: $math/samplers/spots.yml:samplers.largeSpotSizePercent
+
+  largeSpotAngle:
+    <<: *largeCellular
+    return: Angle
+
+  largeSpotBaseElevation: # Returns the elevation value at the center of the large spot
+    <<: *largeCellular
+    return: NoiseLookup
+    salt-lookup: false
+    lookup:
+      type: EXPRESSION
+      expression: elevation(x, z)
+      samplers:
+        elevation: $math/samplers/elevation.yml:samplers.elevation
   # ---
   # Volcano Samplers
   # ---

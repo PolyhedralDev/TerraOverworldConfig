@@ -1,0 +1,25 @@
+stages:
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: hot-ocean
+    replace: mushroom
+    to: MUSHROOM_COAST
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: temperate-ocean
+    replace: mushroom
+    to: MUSHROOM_COAST
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: boreal-ocean
+    replace: mushroom
+    to: MUSHROOM_COAST
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: polar-ocean
+    replace: mushroom
+    to: MUSHROOM_COAST

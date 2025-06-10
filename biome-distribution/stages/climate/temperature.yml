@@ -84,3 +84,16 @@ stages:
         - hot-extinct-volcano:       *tropicalCold
         - hot-extinct-volcano:       *tropicalWarm
         - hot-extinct-volcano:       *tropicalHot
+      island:
+        - polar-island:            *iceCap
+        - polar-island:            *tundra
+        - boreal-island:           *borealSnowy
+        - boreal-island:           *borealCold
+        - boreal-island:           *borealWarm
+        - boreal-island:           *borealHot
+        - temperate-island:        *temperateCold
+        - temperate-island:        *temperateWarm
+        - temperate-island:        *temperateHot
+        - hot-island:              *tropicalCold
+        - hot-island:              *tropicalWarm
+        - hot-island:              *tropicalHot

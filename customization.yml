@@ -338,3 +338,13 @@ spot-radius-min: 50
 
 spot-radius-max: 150
 # Default: 150
+
+large-spot-spread: 3000
+# Roughly how many blocks apart each spot biome will be
+# Default: 2000
+
+large-spot-radius-min: 500
+# Default: 50
+
+large-spot-radius-max: 1500
+# Default: 150

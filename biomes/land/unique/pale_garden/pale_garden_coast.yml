@@ -1,0 +1,9 @@
+id: MUSHROOM_COAST
+type: BIOME
+extends:
+  - EQ_FLAT_ERODED
+  - CARVING_OCEAN
+  - PALE_GARDEN
+color: $biomes/colors.yml:PALE_GARDEN_COAST
+
+vanilla: minecraft:pale_garden

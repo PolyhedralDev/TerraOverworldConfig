@@ -1,0 +1,38 @@
+stages:
+  - type: REPLACE
+    from: land
+    to:
+      - SELF: 1
+      - land-large-spot: 1
+    sampler:
+      type: EXPRESSION
+      expression: if(largeSpotDistance(x, z) < largeSpotRadius(x, z) + largeBiomeBorder, 1, -1)
+      variables: $math/samplers/spots.yml:variables
+
+  - type: REPLACE
+    from: ocean
+    to:
+      - SELF: 1
+      - ocean-large-spot: 1
+    sampler:
+      type: EXPRESSION
+      expression: if(largeSpotDistance(x, z) < largeSpotRadius(x, z) + largeBiomeBorder, 1, -1)
+      variables: $math/samplers/spots.yml:variables
+
+  - type: REPLACE
+    from: land-large-spot
+    to:
+      - PALE_GARDEN: 1
+      - land: 1
+    sampler:
+      type: EXPRESSION
+      expression: largeSpotSizePercent(x, z)*2-1
+
+  - type: REPLACE
+    from: ocean-large-spot
+    to:
+      - PALE_GARDEN: 1
+      - island: 1
+    sampler:
+      type: EXPRESSION
+      expression: largeSpotSizePercent(x, z)*2-1

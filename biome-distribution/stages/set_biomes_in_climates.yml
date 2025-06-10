@@ -209,7 +209,6 @@ stages:
           - FLOWERING_FOREST: 1
           - BROADLEAF_FOREST: 1
           - DARK_FOREST: 1
-          - PALE_GARDEN: 1
           - SAKURA_GROVE: 1
           - WOODED_BUTTES: 1
         temperate-warm-highlands:
@@ -229,7 +228,6 @@ stages:
           - FLOWERING_FOREST: 1
           - BROADLEAF_FOREST: 1
           - DARK_FOREST: 1
-          - PALE_GARDEN: 1
           - SAKURA_GROVE: 1
           - WOODED_BUTTES: 1
         temperate-cold-highlands:
@@ -471,3 +469,6 @@ stages:
           - TROPICAL_DEEP_OCEAN: 1
           - TROPICAL_DEEP_OCEAN_VENTS: 1
           - TROPICAL_DEEP_DEPTHS: 1
+
+        mushroom:
+          - MUSHROOM_FIELDS: 1

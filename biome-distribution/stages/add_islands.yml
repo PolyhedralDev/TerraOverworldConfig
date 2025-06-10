@@ -1,0 +1,8 @@
+stages:
+  - type: REPLACE
+    from: island
+    to:
+      - mushroom: 1
+    sampler:
+      type: EXPRESSION
+      expression: largeSpotSizePercent(x, z)*2-1
