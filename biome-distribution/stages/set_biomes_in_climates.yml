@@ -105,30 +105,35 @@ stages:
           - SNOWY_MOUNTAINS: 1
         
         boreal-hot-dry-flat:
+          - BOREAL_SHRUBLAND: 1
           - ASPEN_FOREST: 1
           - BIRCH_FOREST: 2
           - maple-groves: 1
         boreal-hot-dry:
+          - BOREAL_SHRUBLAND: 1
           - maple-groves: 1
           - TAIGA: 2
         boreal-hot-dry-highlands:
           - MOUNTAINS: 1
 
         boreal-warm-dry-flat:
-          - TAIGA: 1
+          - BOREAL_SHRUBLAND: 1
+          - TAIGA: 2
           - PINE_CANOPY: 1
-          - TAIGA_CLEARING: 1
+          - TAIGA_CLEARING: 2
         boreal-warm-dry:
-          - TAIGA: 1
+          - TAIGA: 2
           - PINE_CANOPY: 1
         boreal-warm-dry-highlands:
           - MOUNTAINS: 1
 
         boreal-cold-dry-flat:
+          - BOREAL_SHRUBLAND: 1
           - TAIGA: 2
           - TAIGA_CLEARING: 1
           - maple-groves: 1
         boreal-cold-dry:
+          - BOREAL_SHRUBLAND: 1
           - TAIGA: 2
           - maple-groves: 1
         boreal-cold-dry-highlands:
@@ -195,8 +200,7 @@ stages:
           - DRY_TEMPERATE_WHITE_MOUNTAINS: 1
 
         temperate-hot-flat:
-          - TEMPERATE_GRASSLAND: 2
-          - OAK_SAVANNA: 2
+          - MOORLAND: 1
           - ALIEN_MARSH: 1
           - RAINFOREST: 1
         temperate-hot:
