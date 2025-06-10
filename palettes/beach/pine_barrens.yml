@@ -1,14 +1,13 @@
-id: COASTAL_PINE_BARRENS
+id: PINE_BARRENS
 type: PALETTE
 
 layers:
   - materials:
-      - minecraft:coarse_dirt: 5
-      - minecraft:packed_mud: 2
-      - minecraft:red_sand: 2
+      - minecraft:coarse_dirt: 6
+      - minecraft:grass_block: 3
     layers: 1
   - materials:
-      - minecraft:sand: 8
+      - minecraft:red_sand: 8
       - minecraft:clay: 2
       - minecraft:dirt: 3
     layers: 4

@@ -1,11 +1,11 @@
-id: LUSH_TAIGA
+id: PINE_CANOPY
 type: BIOME
 extends:
   - ENVIRONMENT_LAND_CONTINENTAL_HUMID
   - EQ_LAND
   - CARVING_LAND
   - BASE
-color: $biomes/colors.yml:LUSH_TAIGA
+color: $biomes/colors.yml:PINE_CANOPY
 
 tags:
   - LAND_CAVES
@@ -58,3 +58,4 @@ features:
     - SPARSE_FALLEN_SPRUCE_TREES
     - MIXED_BUSHES
     - SPARSE_SPRUCE_TREES
+    - PINE_TREES

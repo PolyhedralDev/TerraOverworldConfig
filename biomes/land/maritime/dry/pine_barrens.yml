@@ -1,11 +1,11 @@
-id: COASTAL_PINE_BARRENS
+id: PINE_BARRENS
 type: BIOME
 extends:
   - ENVIRONMENT_LAND_MARITIME_DRY
   - EQ_FLAT_ERODED
   - CARVING_OCEAN
   - BASE
-color: $biomes/colors.yml:COASTAL_PINE_BARRENS
+color: $biomes/colors.yml:PINE_BARRENS
 
 vanilla: minecraft:beach
 
@@ -21,7 +21,7 @@ colors:
 
 palette:
   - BLOCK:minecraft:stone: $meta.yml:top-y
-  - COASTAL_PINE_BARRENS: ${meta.yml:ocean-level} + 14
+  - PINE_BARRENS: ${meta.yml:ocean-level} + 14
   - << meta.yml:palette-bottom
 
 features:
@@ -31,4 +31,5 @@ features:
     - TALL_GRASS
     - CACTUS_SPARSE
   trees:
-    - SPRUCE_TREES
+    - TALL_PINE_TREES
+    - MIXED_BUSHES

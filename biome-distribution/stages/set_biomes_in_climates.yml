@@ -60,12 +60,12 @@ stages:
           - ASPEN_FOREST: 1
           - BIRCH_FOREST: 2
           - maple-groves: 1
-          - LUSH_TAIGA: 1
+          - PINE_CANOPY: 1
         boreal-hot:
           - ASPEN_FOREST: 1
           - maple-groves: 1
           - BIRCH_FOREST: 2
-          - LUSH_TAIGA: 2
+          - PINE_CANOPY: 2
         boreal-hot-highlands:
           - MOUNTAINS: 1
         
@@ -76,7 +76,7 @@ stages:
           - ASPEN_FOREST: 1
           - BIRCH_FOREST: 2
           - maple-groves: 1
-          - LUSH_TAIGA: 2
+          - PINE_CANOPY: 2
         boreal-warm:
           - SEQUOIA_FOREST: 3
           - OLD_GROWTH_SEQUOIA_FOREST: 1
@@ -116,11 +116,11 @@ stages:
 
         boreal-warm-dry-flat:
           - TAIGA: 1
-          - LUSH_TAIGA: 1
+          - PINE_CANOPY: 1
           - TAIGA_CLEARING: 1
         boreal-warm-dry:
           - TAIGA: 1
-          - LUSH_TAIGA: 1
+          - PINE_CANOPY: 1
         boreal-warm-dry-highlands:
           - MOUNTAINS: 1
 
@@ -144,7 +144,7 @@ stages:
         boreal-coast-flat:
           - ROCKY_ARCHIPELAGO: 5
           - SHALE_BEACH: 1
-          - COASTAL_PINE_BARRENS: 1
+          - PINE_BARRENS: 1
         boreal-coast:
           - ROCKY_SEA_CAVES: 1
         boreal-coast-highlands:
@@ -247,7 +247,7 @@ stages:
         temperate-coast-flat:
           - BEACH: 2
           - SHRUB_BEACH: 2
-          - COASTAL_PINE_BARRENS: 1
+          - PINE_BARRENS: 1
         temperate-coast:
           - TEMPERATE_SEA_ARCHES: 1
         temperate-coast-highlands:

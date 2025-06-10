@@ -3,7 +3,7 @@ num goldenAngle = 2.39996;
 num pi = 3.14159;
 
 num trunkHeight = 4+randomInt(20);
-str trunkBlock = "minecraft:oak_log";
+str trunkBlock = "minecraft:pale_oak_log";
 
 num sideBranchInterval = 4+randomInt(2);
 num sideBranchMinHeight = 2+randomInt(2);
@@ -16,10 +16,10 @@ num sideBranchLeafTranslate = 0;
 num sideBranchLeafTopFlatness = 2;
 num sideBranchLeafBottomFlatness = 3;
 num sideBranchLeafDensity = 0.6;
-str sideBranchLeafBlock = "minecraft:spruce_leaves[distance=1,persistent=false]";
-str sideBranchBlockX = "minecraft:oak_log[axis=x]";
-str sideBranchBlockY = "minecraft:oak_log[axis=y]";
-str sideBranchBlockZ = "minecraft:oak_log[axis=z]";
+str sideBranchLeafBlock = "minecraft:birch_leaves[distance=1,persistent=false]";
+str sideBranchBlockX = "minecraft:pale_oak_log[axis=x]";
+str sideBranchBlockY = "minecraft:pale_oak_log[axis=y]";
+str sideBranchBlockZ = "minecraft:pale_oak_log[axis=z]";
 
 num topBranches = 2+randomInt(2);
 num topBranchLengthUpwardsMin = 6+randomInt(2);
@@ -30,10 +30,10 @@ num topBranchLeafTranslate = 0;
 num topBranchLeafTopFlatness = 2;
 num topBranchLeafBottomFlatness = 3;
 num topBranchLeafDensity = 0.6;
-str topBranchLeafBlock = "minecraft:spruce_leaves[distance=1,persistent=false]";
-str topBranchBlockX = "minecraft:oak_log[axis=x]";
-str topBranchBlockY = "minecraft:oak_log[axis=y]";
-str topBranchBlockZ = "minecraft:oak_log[axis=z]";
+str topBranchLeafBlock = "minecraft:birch_leaves[distance=1,persistent=false]";
+str topBranchBlockX = "minecraft:pale_oak_log[axis=x]";
+str topBranchBlockY = "minecraft:pale_oak_log[axis=y]";
+str topBranchBlockZ = "minecraft:pale_oak_log[axis=z]";
 
 num branchAngle = randomInt(randPrecision)/randPrecision*2*pi;
 for (num i = 0; i < trunkHeight; i = i + 1) {

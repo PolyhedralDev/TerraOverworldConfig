@@ -1,19 +1,19 @@
-id: DENSE_FIR_TREES
+id: PINE_TREES
 type: FEATURE
 
 distributor:
   type: AND
   distributors:
     - type: PADDED_GRID
-      width: 6
-      padding: 2
-      salt: 9591
+      width: 10
+      padding: 3
+      salt: 3233
     - type: SAMPLER
       sampler:
         type: PROBABILITY
         sampler:
           type: OPEN_SIMPLEX_2
-          salt: 6912
+          salt: 7181
       threshold: 0.75
 
 locator:
@@ -41,8 +41,6 @@ locator:
 structures:
   distribution:
     type: WHITE_NOISE
-    salt: 3048
+    seed: 3123
   structures:
-    - douglas_fir_procedural: 1
-    - douglas_fir_procedural_2: 1
-    - douglas_fir_procedural_3: 1
+    - pine_tree: 1
