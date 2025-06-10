@@ -1,0 +1,54 @@
+id: TALL_DRY_GRASS
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 4568
+  threshold: 0.4
+
+locator:
+  type: AND
+  locators:
+    - type: SURFACE
+      range: &range
+        min: ${meta.yml:ocean-level} + 1
+        max: $meta.yml:top-y
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:dry-plantable-blocks
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH
+        block: minecraft:air
+        offset: 0
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH
+        block: minecraft:air
+        offset: 1
+
+structures:
+  distribution:
+    type: DOMAIN_WARP
+    amplitude: 2
+    warp:
+      type: GAUSSIAN
+    sampler:
+      type: FBM
+      octaves: 2
+      sampler:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.01
+        salt: 5467
+  structures:
+    - blank: 3
+    - BLOCK:minecraft:short_dry_grass: 1
+    - BLOCK:minecraft:tall_dry_grass: 2
+    - blank: 3

@@ -1,0 +1,30 @@
+id: MUDDY_GRASS_DIRT
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:grass_block: 3
+      - minecraft:mud: 1
+      - minecraft:grass_block: 3
+    layers: 1
+  - materials:
+      - minecraft:dirt: 2
+      - minecraft:mud: 1
+      - minecraft:dirt: 2
+    layers: 1
+  - materials:
+      - minecraft:stone: 1
+    layers: 1
+
+sampler:
+  type: DOMAIN_WARP
+  amplitude: 2
+  warp:
+    type: GAUSSIAN
+  sampler:
+    type: FBM
+    octaves: 2
+    sampler:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.01
+      salt: 5467
