@@ -30,10 +30,10 @@ num topBranchLeafTranslate = 0;
 num topBranchLeafTopFlatness = 2;
 num topBranchLeafBottomFlatness = 3;
 num topBranchLeafDensity = 0.6;
-str topBranchLeafBlock = "minecraft:oak_leaves[distance=1,persistent=false]";
-str topBranchBlockX = "minecraft:birch_log[axis=x]";
-str topBranchBlockY = "minecraft:birch_log[axis=y]";
-str topBranchBlockZ = "minecraft:birch_log[axis=z]";
+str topBranchLeafBlock = "minecraft:acacia_leaves[distance=1,persistent=false]";
+str topBranchBlockX = "minecraft:stripped_pale_oak_log[axis=x]";
+str topBranchBlockY = "minecraft:stripped_pale_oak_log[axis=y]";
+str topBranchBlockZ = "minecraft:stripped_pale_oak_log[axis=z]";
 
 num branchAngle = randomInt(randPrecision)/randPrecision*2*pi;
 for (num i = 0; i < trunkHeight; i = i + 1) {

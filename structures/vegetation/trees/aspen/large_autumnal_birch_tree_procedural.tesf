@@ -16,10 +16,10 @@ num sideBranchLeafTranslate = 0;
 num sideBranchLeafTopFlatness = 0.5;
 num sideBranchLeafBottomFlatness = 2;
 num sideBranchLeafDensity = 0.5;
-str sideBranchLeafBlock = "minecraft:oak_leaves[distance=1,persistent=false]";
-str sideBranchBlockX = "minecraft:birch_log[axis=x]";
-str sideBranchBlockY = "minecraft:birch_log[axis=y]";
-str sideBranchBlockZ = "minecraft:birch_log[axis=z]";
+str sideBranchLeafBlock = "minecraft:acacia_leaves[distance=1,persistent=false]";
+str sideBranchBlockX = "minecraft:stripped_pale_oak_log[axis=x]";
+str sideBranchBlockY = "minecraft:stripped_pale_oak_log[axis=y]";
+str sideBranchBlockZ = "minecraft:stripped_pale_oak_log[axis=z]";
 
 num topBranches = 2+randomInt(2);
 num topBranchLengthUpwardsMin = 7+randomInt(3);

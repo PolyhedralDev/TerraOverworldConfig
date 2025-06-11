@@ -1,12 +1,12 @@
 // Free to modify variables
-num leafRadius = 2.5 + randomInt(4);
+num leafRadius = 2 + randomInt(4);
 num trunkHeight = 7 + randomInt(5);
 num leafTopHeight = trunkHeight * 1.5;
 num leafBottomHeight = 3 + randomInt(2);
-str trunkBlockX = "minecraft:birch_log[axis=x]";
-str trunkBlockY = "minecraft:birch_log[axis=y]";
-str trunkBlockZ = "minecraft:birch_log[axis=z]";
-str leafBlock   = "minecraft:oak_leaves[distance=1,persistent=false]";
+str trunkBlockX = "minecraft:stripped_pale_oak_log[axis=x]";
+str trunkBlockY = "minecraft:stripped_pale_oak_log[axis=y]";
+str trunkBlockZ = "minecraft:stripped_pale_oak_log[axis=z]";
+str leafBlock   = "minecraft:acacia_leaves[distance=1,persistent=false]";
 
 // Tree gen logic
 num leafMidPointRatio = 0.4;
