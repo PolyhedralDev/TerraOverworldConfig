@@ -94,6 +94,7 @@ stages:
         boreal-cold:
           - TAIGA_CLEARING: 1
           - TAIGA: 2
+          - FIR_FIELDS: 1
           - maple-groves: 1
         boreal-cold-highlands:
           - MOUNTAINS: 1
@@ -129,6 +130,7 @@ stages:
         boreal-warm-dry:
           - TAIGA: 2
           - PINE_CANOPY: 1
+          - FIR_FIELDS: 1
         boreal-warm-dry-highlands:
           - MOUNTAINS: 1
 
@@ -142,6 +144,7 @@ stages:
           - BOREAL_SHRUBLAND: 1
           - TAIGA: 2
           - maple-groves: 1
+          - FIR_FIELDS: 1
         boreal-cold-dry-highlands:
           - SNOWY_MOUNTAINS: 1
 
@@ -365,16 +368,19 @@ stages:
           - SUNFLOWER_PRAIRIE: 1
           - PRAIRIE: 2
           - TEMPERATE_GRASSLAND: 3
+          - ROCKY_GRASSLAND: 1
           - OAK_SAVANNA: 1
           - STEPPE: 1
         temperate-steppe:
           - SUNFLOWER_PRAIRIE: 1
           - PRAIRIE: 2
           - TEMPERATE_GRASSLAND: 2
+          - ROCKY_GRASSLAND: 2
           - OAK_SAVANNA: 2
           - STEPPE: 1
         temperate-steppe-highlands:
           - STEPPE: 1
+          - ROCKY_GRASSLAND: 1
 
         cold-desert-flat:
           - SALT_FLATS: 1
