@@ -1,4 +1,4 @@
-id: DENSE_FIR_TREES
+id: DENSE_FIR_TREE_PATCHES
 type: FEATURE
 
 distributor:
@@ -27,7 +27,7 @@ locator:
       range: *range
       pattern:
         type: MATCH_SET
-        blocks: $features/vegetation/meta.yml:dry-plantable-blocks
+        blocks: $features/vegetation/meta.yml:plantable-blocks
         offset: -1
     - type: PATTERN
       range: *range

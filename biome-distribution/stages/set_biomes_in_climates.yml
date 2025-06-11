@@ -74,6 +74,7 @@ stages:
           - PRAIRIE: 2
           - SUNFLOWER_PRAIRIE: 1
           - ASPEN_FOREST: 1
+          - FIR_FIELDS: 1
           - BIRCH_FOREST: 2
           - maple-groves: 1
           - PINE_CANOPY: 2
@@ -89,6 +90,7 @@ stages:
           - TAIGA: 2
           - maple-groves: 1
           - TAIGA_CLEARING: 1
+          - FIR_FIELDS: 1
         boreal-cold:
           - TAIGA_CLEARING: 1
           - TAIGA: 2
@@ -105,6 +107,8 @@ stages:
           - SNOWY_MOUNTAINS: 1
         
         boreal-hot-dry-flat:
+          - PRAIRIE: 1
+          - STEPPE: 1
           - BOREAL_SHRUBLAND: 1
           - ASPEN_FOREST: 1
           - BIRCH_FOREST: 2
@@ -117,10 +121,11 @@ stages:
           - MOUNTAINS: 1
 
         boreal-warm-dry-flat:
-          - BOREAL_SHRUBLAND: 1
+          - BOREAL_SHRUBLAND: 3
           - TAIGA: 2
           - PINE_CANOPY: 1
           - TAIGA_CLEARING: 2
+          - FIR_FIELDS: 2
         boreal-warm-dry:
           - TAIGA: 2
           - PINE_CANOPY: 1
@@ -128,9 +133,10 @@ stages:
           - MOUNTAINS: 1
 
         boreal-cold-dry-flat:
-          - BOREAL_SHRUBLAND: 1
+          - BOREAL_SHRUBLAND: 3
           - TAIGA: 2
-          - TAIGA_CLEARING: 1
+          - TAIGA_CLEARING: 2
+          - FIR_FIELDS: 2
           - maple-groves: 1
         boreal-cold-dry:
           - BOREAL_SHRUBLAND: 1
@@ -218,6 +224,7 @@ stages:
           - DARK_FOREST: 2
           - SAKURA_GROVE: 1
           - WOODED_BUTTES: 2
+          - ROCKY_GRASSLAND: 1
         temperate-warm:
           - FLOWERING_FOREST: 1
           - BROADLEAF_FOREST: 1
@@ -232,6 +239,7 @@ stages:
         temperate-cold-flat:
           - FLOWERING_FOREST: 2
           - PRAIRIE: 3
+          - ROCKY_GRASSLAND: 1
           - SUNFLOWER_PRAIRIE: 1
           - BROADLEAF_FOREST: 2
           - DARK_FOREST: 2

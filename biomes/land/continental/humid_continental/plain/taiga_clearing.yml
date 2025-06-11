@@ -57,3 +57,4 @@ features:
     - FERNS
   trees:
     - SPARSE_FALLEN_SPRUCE_TREES
+    - SPARSE_SMALL_FIR_TREES
