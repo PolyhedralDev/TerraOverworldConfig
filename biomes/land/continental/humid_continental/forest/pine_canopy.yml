@@ -54,7 +54,6 @@ features:
     - GRASS
     - FERNS_DENSE
   trees:
-    - DENSE_FIR_TREES
     - SPARSE_FALLEN_SPRUCE_TREES
     - MIXED_BUSHES
     - SPARSE_SPRUCE_TREES

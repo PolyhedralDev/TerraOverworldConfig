@@ -36,5 +36,5 @@ structures:
   structures:
     - spruce_tree_procedural: 7
     - spruce_tree_procedural_2: 1
-    - pine_tree_procedural: 3
+    - tall_thin_pine_tree_procedural: 3
     - tall_spruce_tree_procedural: 3

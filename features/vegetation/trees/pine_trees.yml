@@ -43,4 +43,5 @@ structures:
     type: WHITE_NOISE
     seed: 3123
   structures:
-    - pine_tree: 1
+    - tall_thin_pine_tree_procedural: 2
+    - large_pine_tree_procedural: 1

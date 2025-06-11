@@ -41,4 +41,4 @@ locator:
 structures:
   distribution:
     type: CONSTANT
-  structures: pine_tree_procedural
+  structures: tall_thin_pine_tree_procedural
