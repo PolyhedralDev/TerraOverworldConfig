@@ -10,7 +10,7 @@ num trunkEndRadius = 1.1;
 str trunkBlock = "minecraft:stripped_acacia_wood";
 
 num sideBranchInterval = 1+randomInt(2);
-num sideBranchMinHeight = trunkHeight*(trunkMidPoint-((randomInt(randPrecision)/randPrecision)*0.5));
+num sideBranchMinHeight = trunkHeight*(trunkMidPoint-((randomInt(randPrecision)/randPrecision)*0.3));
 num sideBranchLength = (trunkHeight - sideBranchMinHeight)/(4+randomInt(2));
 num sideBranchVerticalVariation = 0;
 num sideBranchVerticalDirection = randomInt(randPrecision)/randPrecision-0.5;
