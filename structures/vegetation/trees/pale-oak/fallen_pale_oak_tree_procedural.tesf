@@ -60,8 +60,7 @@ for (num h = 0; h < 3; h = h + 1) {
 if (check((length/2)*dx, scanOffset, (length/2)*dz) == "LAND") fail;
 if (getBlock((length/2)*dx, scanOffset, (length/2)*dz) != "minecraft:air") fail;
 
-length = length+buffer;
-for(num l = buffer; l <= length; l = l + 1) {
+for(num l = buffer; l <= buffer+length; l = l + 1) {
 
     str setBlock = woodBlockX;
     if (abs(dx) > max(abs(dy),abs(dz))) setBlock = woodBlockX;
