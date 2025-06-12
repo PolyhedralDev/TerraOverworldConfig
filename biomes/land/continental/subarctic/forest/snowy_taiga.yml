@@ -46,6 +46,7 @@ features:
   trees:
     - SPRUCE_TREES
     - SPARSE_FALLEN_SPRUCE_TREES
+    - SPARSE_FALLEN_THIN_PINE_TREES
   processors:
     - SNOW_FOREST_LAYERS
   preprocessors:

@@ -54,4 +54,5 @@ features:
     - BUSH
   trees:
     - SPRUCE_TREES
+    - SPARSE_FALLEN_THIN_PINE_TREES
     - DENSE_FIR_TREE_PATCHES
