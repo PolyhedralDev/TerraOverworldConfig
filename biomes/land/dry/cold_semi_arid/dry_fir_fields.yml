@@ -1,4 +1,4 @@
-id: COLD_STEPPE
+id: DRY_FIR_FIELDS
 type: BIOME
 extends:
   - ENVIRONMENT_LAND_DRY_COLD_SEMI_ARID
@@ -17,7 +17,7 @@ colors:
   foliage: 0x68a464
 
 palette:
-  - PACKED_MUDDY_GRASS: $meta.yml:top-y
+  - STONY_GRASS: $meta.yml:top-y
   - << meta.yml:palette-ocean-level-sand
   - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
@@ -43,4 +43,5 @@ features:
   flora:
     - GRASS
     - DRY_GRASS
-    - SMALL_GRANITE_BOULDER_PATCHES
+  trees:
+    - DENSE_FIR_TREE_PATCHES

@@ -14,7 +14,7 @@ tags:
 vanilla: minecraft:plains
 
 colors:
-  grass: 0x91bd59
+  grass: 0xA0C06C
   foliage: 0x77ab2f
   water: 0x44aff5
   water-fog: 0x44aff5
@@ -25,7 +25,7 @@ palette:
   - << meta.yml:palette-bottom
 
 slant:
-  - threshold: 0.4
+  - threshold: 0.8
     palette:
       - BLOCK:minecraft:stone: $meta.yml:top-y
       - << meta.yml:palette-bottom
@@ -36,6 +36,7 @@ features:
     - BOULDERS
   flora:
     - GRASS
+    - DRY_GRASS
     - POPPY_PATCH
     - DANDELION_PATCH
     - BUSH
@@ -44,3 +45,4 @@ features:
     - SPARSE_TALL_PINE_TREES
     - SPARSE_FALLEN_OAK_TREES
     - SPARSE_FALLEN_THIN_PINE_TREES
+    - SPARSE_SMALL_FIR_TREES

@@ -4,7 +4,7 @@ num pi = 3.14159;
 
 str trunkBlock = "minecraft:spruce_log";
 str branchBlock = "minecraft:spruce_wood";
-str leafBlock = "minecraft:dark_oak_leaves[persistent=false,distance=1]";
+str leafBlock = "minecraft:spruce_leaves[persistent=false,distance=1]";
 
 num trunkRadius = 1.5;
 num trunkHeight = 40+randomInt(10);
