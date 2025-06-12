@@ -79,10 +79,10 @@ stages:
           - maple-groves: 1
           - PINE_CANOPY: 2
         boreal-warm:
-          - SEQUOIA_FOREST: 3
+          - SEQUOIA_FOREST: 5
           - OLD_GROWTH_SEQUOIA_FOREST: 1
-          - TAIGA_CLEARING: 3
-          - TAIGA: 9
+          - TAIGA_CLEARING: 5
+          - TAIGA: 11
         boreal-warm-highlands:
           - MOUNTAINS: 1
 
