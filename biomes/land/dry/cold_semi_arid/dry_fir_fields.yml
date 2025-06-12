@@ -44,4 +44,4 @@ features:
     - GRASS
     - DRY_GRASS
   trees:
-    - SPARSE_FIR_TREES
+    - DENSE_FIR_TREE_PATCHES
