@@ -4,8 +4,8 @@ num pi = 3.14159;
 
 num length = 14+randomInt(4);
 num trunkRadius = 1.5;
-
 num buffer = 7;
+num scanOffset = 5;
 
 num mushroomChance = 8;
 num vineChance = 2;
@@ -47,23 +47,23 @@ for (num h = 0; h < 3; h = h + 1) {
     block(0,h,1, woodBlockY, true);
 }
 
-num yTranslate = 8;
-str setBlock = woodBlockY;
-length = length+buffer;
+if (check((length/2)*dx, scanOffset, (length/2)*dz) == "LAND") fail;
+if (getBlock((length/2)*dx, scanOffset, (length/2)*dz) != "minecraft:air") fail;
 
+length = length+buffer;
 for(num l = buffer; l <= length; l = l + 1) {
 
+    str setBlock = woodBlockX;
     if (abs(dx) > max(abs(dy),abs(dz))) setBlock = woodBlockX;
     else if (abs(dz) > max(abs(dy),abs(dx))) setBlock = woodBlockZ;
 
-    yTranslate = 5;
+    num yTranslate = scanOffset;
     while (check(l*dx, yTranslate-1, l*dz) != "LAND" &&
     check(l*dx+1, yTranslate-1, l*dz) != "LAND" &&
     check(l*dx+1, yTranslate-1, l*dz+1) != "LAND" &&
-    check(l*dx, yTranslate-1, l*dz+1) != "LAND") {
-        yTranslate = yTranslate-1;
-    }
-    if (getBlock(l*dx, yTranslate-1, l*dz) == "minecraft:dark_oak_oak_log") continue;
+    check(l*dx, yTranslate-1, l*dz+1) != "LAND") yTranslate = yTranslate-1;
+
+    if (getBlock(l*dx, yTranslate-1, l*dz) == woodBlockX) continue;
 
     num r = trunkRadius;
     // Generate sphere at each point

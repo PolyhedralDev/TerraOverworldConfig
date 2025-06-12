@@ -4,8 +4,8 @@ num pi = 3.14159;
 
 num length = 12+randomInt(4);
 num trunkRadius = 1;
-
 num buffer = 7;
+num scanOffset = 5;
 
 num mushroomChance = 8;
 num vineChance = 4;
@@ -42,18 +42,16 @@ block(0,0,0, woodBlockY, true);
 block(0,1,0, woodBlockY, true);
 block(0,2,0, woodBlockY, true);
 
-num yTranslate = 5;
-str setBlock = "minecraft:jungle_wood";
 for(num l = buffer; l <= buffer+length; l = l + 1) {
 
+    str setBlock = woodBlockX;
     if (abs(dx) > max(abs(dy),abs(dz))) setBlock = woodBlockX;
     else if (abs(dz) > max(abs(dy),abs(dx))) setBlock = woodBlockZ;
 
-    yTranslate = 5;
-    while (check(l*dx, yTranslate-1, l*dz) != "LAND") {
-        yTranslate = yTranslate-1;
-    }
-    if (getBlock(l*dx, yTranslate-1, l*dz) == "minecraft:jungle_log") continue;
+    num yTranslate = scanOffset;
+    while (check(l*dx, yTranslate-1, l*dz) != "LAND") yTranslate = yTranslate-1;
+
+    if (getBlock(l*dx, yTranslate-1, l*dz) == woodBlockX) continue;
 
     num r = trunkRadius;
     // Generate sphere at each point

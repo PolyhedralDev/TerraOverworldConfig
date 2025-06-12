@@ -2,8 +2,8 @@ num randPrecision = 100;
 
 num length = 10+randomInt(4);
 num trunkRadius = 1;
-
 num buffer = 5;
+num scanOffset = 5;
 
 num mushroomChance = 8;
 num vineChance = 2;
@@ -17,20 +17,18 @@ str woodBlockX = "minecraft:oak_log[axis=x]";
 str woodBlockY = "minecraft:oak_log[axis=y]";
 str woodBlockZ = "minecraft:oak_log[axis=z]";
 
-block(0,0,0, "minecraft:oak_log", false);
+block(0,0,0, woodBlockY, false);
 
-num yTranslate = 5;
-str setBlock = "minecraft:oak_wood";
 for(num l = buffer; l <= buffer+length; l = l + 1) {
 
+    str setBlock = woodBlockX;
     if (abs(dx) > max(abs(dy),abs(dz))) setBlock = woodBlockX;
     else if (abs(dz) > max(abs(dy),abs(dx))) setBlock = woodBlockZ;
 
-    yTranslate = 5;
-    while (check(l*dx, yTranslate-1, l*dz) != "LAND") {
-        yTranslate = yTranslate-1;
-    }
-    if (getBlock(l*dx, yTranslate-1, l*dz) == "minecraft:oak_log") continue;
+    num yTranslate = scanOffset;
+    while (check(l*dx, yTranslate-1, l*dz) != "LAND") yTranslate = yTranslate-1;
+
+    if (getBlock(l*dx, yTranslate-1, l*dz) == woodBlockX) continue;
 
     num r = trunkRadius;
     // Generate sphere at each point

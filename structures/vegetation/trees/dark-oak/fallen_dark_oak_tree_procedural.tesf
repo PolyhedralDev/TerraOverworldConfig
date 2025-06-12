@@ -2,35 +2,32 @@ num randPrecision = 100;
 
 num length = 10+randomInt(4);
 num trunkRadius = 1;
-
 num buffer = 5;
+num scanOffset = 5;
 
 num mushroomChance = 8;
-num vineChance = 2;
 
 // Direction vector
 num dx = (randomInt(randPrecision)/randPrecision-0.5)*1.5;
 num dy = 0;
 num dz = (randomInt(randPrecision)/randPrecision-0.5)*1.5;
 
-str woodBlockX = "minecraft:dark_oak_log[axis=x]";
-str woodBlockY = "minecraft:dark_oak_log[axis=y]";
-str woodBlockZ = "minecraft:dark_oak_log[axis=z]";
+str woodBlockX = "minecraft:birch_log[axis=x]";
+str woodBlockY = "minecraft:birch_log[axis=y]";
+str woodBlockZ = "minecraft:birch_log[axis=z]";
 
-block(0,0,0, "minecraft:dark_oak_log", false);
+block(0, 0, 0, woodBlockY, false);
 
-num yTranslate = 5;
-str setBlock = "dark_oak_wood";
 for(num l = buffer; l <= buffer+length; l = l + 1) {
 
+    str setBlock = woodBlockX;
     if (abs(dx) > max(abs(dy),abs(dz))) setBlock = woodBlockX;
     else if (abs(dz) > max(abs(dy),abs(dx))) setBlock = woodBlockZ;
 
-    yTranslate = 5;
-    while (check(l*dx, yTranslate-1, l*dz) != "LAND") {
-        yTranslate = yTranslate-1;
-    }
-    if (getBlock(l*dx, yTranslate-1, l*dz) == "minecraft:dark_oak_log") continue;
+    num yTranslate = scanOffset;
+    while (check(l*dx, yTranslate-1, l*dz) != "LAND") yTranslate = yTranslate-1;
+
+    if (getBlock(l*dx, yTranslate-1, l*dz) == woodBlockY) continue;
 
     num r = trunkRadius;
     // Generate sphere at each point
@@ -47,15 +44,5 @@ for(num l = buffer; l <= buffer+length; l = l + 1) {
     str mushroomBlock = "minecraft:red_mushroom";
     if (randomInt(2) == 0) mushroomBlock = "minecraft:brown_mushroom";
     if (randomInt(mushroomChance) == 0) block(l*dx, yTranslate + 1, l*dz, mushroomBlock, false);
-
-    num xOffset = 1;
-    if (randomInt(2) == 0) xOffset = -1;
-    if (randomInt(4) == 0) xOffset = xOffset*2;
-
-    num zOffset = 1;
-    if (randomInt(2) == 0) zOffset = -1;
-    if (randomInt(4) == 0) xOffset = xOffset*2;
-
-    if (randomInt(vineChance) == 0) structure(l*dx + xOffset, yTranslate, l*dz + zOffset, "vine_block", "NONE");
 
 }
