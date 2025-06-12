@@ -431,10 +431,10 @@ stages:
         tropical-rainforest:
           - BAMBOO_JUNGLE: 1
           - BAMBOO_PONDS: 1
+          - OVERGROWN_CLIFFS: 1
+        tropical-rainforest-highlands:
           - JUNGLE: 1
           - ROCKY_JUNGLE: 1
-        tropical-rainforest-highlands:
-          - OVERGROWN_CLIFFS: 1
 
         tropical-monsoon-flat:
           - DRY_FOREST: 1
