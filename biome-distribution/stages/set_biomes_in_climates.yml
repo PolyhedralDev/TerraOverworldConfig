@@ -396,8 +396,10 @@ stages:
 
         cold-steppe-flat:
           - COLD_STEPPE: 1
+          - DRY_FIR_FIELDS: 1
         cold-steppe:
-          - COLD_STEPPE: 1
+          - COLD_STEPPE: 2
+          - DRY_FIR_FIELDS: 1
         cold-steppe-highlands:
           - COLD_STEPPE: 1
 
