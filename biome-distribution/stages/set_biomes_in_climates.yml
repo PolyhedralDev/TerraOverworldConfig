@@ -479,6 +479,7 @@ stages:
           - todo: 1
 
         hot-shallow-ocean:
+          - SHALLOW_CORAL_OCEAN: 1
           - SEAGRASS_MEADOW: 1
         hot-shallow-ocean-midlands:
           - TROPICAL_OCEAN: 1

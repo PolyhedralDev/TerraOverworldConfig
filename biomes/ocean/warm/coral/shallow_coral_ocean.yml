@@ -1,0 +1,17 @@
+id: SHALLOW_CORAL_OCEAN
+type: BIOME
+extends: TROPICAL_OCEAN
+color: $biomes/colors.yml:SHALLOW_CORAL_OCEAN
+
+vanilla: minecraft:warm_ocean
+
+features:
+  flora:
+    - CORAL_PLANTS
+    - SEA_PICKLES
+  trees:
+    - BALL_REEF
+    - PALM_TREES
+  postprocessors:
+    - CORAL_FANS
+    - CORAL_WALL_FANS
