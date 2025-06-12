@@ -18,7 +18,7 @@ num sideBranchLeafRadiusMin = 4;
 num sideBranchLeafTranslate = 0;
 num sideBranchLeafTopFlatness = 2;
 num sideBranchLeafBottomFlatness = 2;
-str sideBranchLeafBlock = "minecraft:mangrove_leaves[distance=1,persistent=false]";
+str sideBranchLeafBlock = "minecraft:birch_leaves[distance=1,persistent=false]";
 str sideBranchBlockX = "minecraft:stripped_acacia_wood[axis=x]";
 str sideBranchBlockY = "minecraft:stripped_acacia_wood[axis=y]";
 str sideBranchBlockZ = "minecraft:stripped_acacia_wood[axis=z]";
