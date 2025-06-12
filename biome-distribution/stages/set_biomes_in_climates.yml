@@ -83,6 +83,7 @@ stages:
           - OLD_GROWTH_SEQUOIA_FOREST: 1
           - TAIGA_CLEARING: 5
           - TAIGA: 11
+          - FIR_FIELDS: 3
         boreal-warm-highlands:
           - MOUNTAINS: 1
 
@@ -114,10 +115,12 @@ stages:
           - ASPEN_FOREST: 1
           - BIRCH_FOREST: 2
           - maple-groves: 1
+          - FIR_FIELDS: 1
         boreal-hot-dry:
           - BOREAL_SHRUBLAND: 1
           - maple-groves: 1
           - TAIGA: 2
+          - FIR_FIELDS: 1
         boreal-hot-dry-highlands:
           - MOUNTAINS: 1
 
@@ -222,11 +225,11 @@ stages:
           - TEMPERATE_MOUNTAINS: 1
 
         temperate-warm-flat:
-          - FLOWERING_FOREST: 2
-          - BROADLEAF_FOREST: 3
-          - DARK_FOREST: 2
+          - FLOWERING_FOREST: 1
+          - BROADLEAF_FOREST: 2
+          - DARK_FOREST: 1
           - SAKURA_GROVE: 1
-          - WOODED_BUTTES: 2
+          - WOODED_BUTTES: 1
           - ROCKY_GRASSLAND: 1
         temperate-warm:
           - FLOWERING_FOREST: 1
@@ -240,7 +243,6 @@ stages:
           - TEMPERATE_MOUNTAINS: 1
 
         temperate-cold-flat:
-          - FLOWERING_FOREST: 2
           - PRAIRIE: 3
           - ROCKY_GRASSLAND: 1
           - SUNFLOWER_PRAIRIE: 1
@@ -249,6 +251,7 @@ stages:
           - SAKURA_GROVE: 2
           - WOODED_BUTTES: 2
         temperate-cold:
+          - ROCKY_GRASSLAND: 1
           - FLOWERING_FOREST: 1
           - BROADLEAF_FOREST: 1
           - DARK_FOREST: 1
