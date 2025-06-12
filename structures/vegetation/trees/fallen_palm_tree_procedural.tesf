@@ -12,9 +12,9 @@ num dx = (randomInt(randPrecision)/randPrecision-0.5)*1.5;
 num dy = 0;
 num dz = (randomInt(randPrecision)/randPrecision-0.5)*1.5;
 
-str woodBlockX = "minecraft:jungle_log[axis=x]";
-str woodBlockY = "minecraft:jungle_log[axis=y]";
-str woodBlockZ = "minecraft:jungle_log[axis=z]";
+str woodBlockX = "minecraft:stripped_jungle_log[axis=x]";
+str woodBlockY = "minecraft:stripped_jungle_log[axis=y]";
+str woodBlockZ = "minecraft:stripped_jungle_log[axis=z]";
 
 block(0,0,0, "minecraft:stripped_jungle_log", false);
 
