@@ -11,7 +11,7 @@ tags:
   - LAND_CAVES
   - USE_COLD_RIVER
 
-vanilla: minecraft:taiga
+vanilla: minecraft:old_growth_pine_taiga
 
 colors:
   grass: 0x88C15D
