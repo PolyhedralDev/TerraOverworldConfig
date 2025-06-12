@@ -13,7 +13,7 @@ tags:
   - ICE_CAVES
   - USE_FROZEN_RIVER_FROZEN_MARSH
 
-vanilla: minecraft:taiga
+vanilla: minecraft:snowy_taiga
 
 ocean:
   palette: FROZEN_OCEAN
