@@ -370,14 +370,11 @@ stages:
           - XERIC_MOUNTAINS: 1
 
         temperate-steppe-flat:
-          - ROCKY_GRASSLAND: 1
-          - STEPPE: 1
+          - XERIC_SHRUBLAND: 1
         temperate-steppe:
-          - ROCKY_GRASSLAND: 2
-          - STEPPE: 1
+          - XERIC_SHRUBLAND: 1
         temperate-steppe-highlands:
-          - STEPPE: 1
-          - ROCKY_GRASSLAND: 1
+          - XERIC_MOUNTAINS: 1
 
         cold-desert-flat:
           - SALT_FLATS: 1
