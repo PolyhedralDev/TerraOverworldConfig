@@ -22,9 +22,3 @@ stages:
       type: OPEN_SIMPLEX_2
       frequency: 1 / 300 / ${customization.yml:global-scale}
       salt: 1023
-  - type: BORDER
-    sampler:
-      type: CONSTANT
-    from: PALE_GARDEN
-    replace: ocean
-    to: PALE_GARDEN_COAST

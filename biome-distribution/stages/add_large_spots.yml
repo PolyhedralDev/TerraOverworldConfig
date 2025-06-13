@@ -1,39 +1,29 @@
 stages:
-  - type: REPLACE
+  - type: REPLACE_LIST
+    sampler:
+      type: EXPRESSION
+      expression: if(largeSpotDistance(x, z) < largeSpotRadius(x, z) + largeBiomeBorder, 1, -1)
+      variables: $math/samplers/spots.yml:variables
     from: land
-    to:
+    default-from: land
+    default-to:
       - SELF: 1
       - land-large-spot: 1
+    to:
+      ocean:
+        - SELF: 1
+        - ocean-large-spot: 1
+
+  # These lists must stay aligned, or a pale garden will not have consistency across land and ocean
+  - type: REPLACE_LIST
     sampler:
       type: EXPRESSION
-      expression: if(largeSpotDistance(x, z) < largeSpotRadius(x, z) + largeBiomeBorder, 1, -1)
-      variables: $math/samplers/spots.yml:variables
-
-  - type: REPLACE
-    from: ocean
-    to:
-      - SELF: 1
-      - ocean-large-spot: 1
-    sampler:
-      type: EXPRESSION
-      expression: if(largeSpotDistance(x, z) < largeSpotRadius(x, z) + largeBiomeBorder, 1, -1)
-      variables: $math/samplers/spots.yml:variables
-
-  # These two lists must stay aligned, or a pale garden will not have consistency across land and ocean
-  - type: REPLACE
-    from: land-large-spot
-    to:
-      - PALE_GARDEN: 1
+      expression: largeSpotSizePercent(x, z)*2-1
+    default-from: land-large-spot
+    default-to:
       - land: 1
-    sampler:
-      type: EXPRESSION
-      expression: largeSpotSizePercent(x, z)*2-1
-
-  - type: REPLACE
-    from: ocean-large-spot
+      - vast-forest: 1
     to:
-      - PALE_GARDEN: 1
-      - island: 1
-    sampler:
-      type: EXPRESSION
-      expression: largeSpotSizePercent(x, z)*2-1
+      ocean-large-spot:
+        - island: 1
+        - ocean: 1

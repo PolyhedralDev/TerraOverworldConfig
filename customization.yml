@@ -55,7 +55,7 @@ terrain-ocean-depth: 100
 # 1 means 100% inland, 0 means the coast, and -1 means 100% ocean.
 # These options are primarily used in the math/samplers/continents.yml config file.
 
-continental-offset: 0.2
+continental-offset: 0
 # Controls the land / ocean ratio.
 # - A value of 0 results in equal land and ocean
 # - A value of 1 results in 100% land
@@ -329,9 +329,9 @@ spawn-island-radius-outer: 400
 # Spot biomes are special circular biomes scattered around the world.
 # Examples include volcanoes, prismatic springs, and crater lakes
 
-spot-spread: 2000
+spot-spread: 2050
 # Roughly how many blocks apart each spot biome will be
-# Default: 2000
+# Default: 2220
 
 spot-radius-min: 50
 # Default: 50
@@ -339,12 +339,12 @@ spot-radius-min: 50
 spot-radius-max: 150
 # Default: 150
 
-large-spot-spread: 5000
+large-spot-spread: 2150
 # Roughly how many blocks apart each spot biome will be
 # Default: 2000
 
-large-spot-radius-min: 500
-# Default: 50
+large-spot-radius-min: 750
+# Default: 750
 
 large-spot-radius-max: 1500
-# Default: 150
+# Default: 2000

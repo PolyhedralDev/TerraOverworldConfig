@@ -1,0 +1,49 @@
+stages:
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: island-coast
+    replace: polar-deep-ocean
+    to: island-polar-shallow-ocean
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: island-coast
+    replace: polar-ocean
+    to: island-polar-shallow-ocean
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: island-coast
+    replace: boreal-deep-ocean
+    to: island-boreal-shallow-ocean
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: island-coast
+    replace: boreal-ocean
+    to: island-boreal-shallow-ocean
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: island-coast
+    replace: temperate-deep-ocean
+    to: island-temperate-shallow-ocean
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: island-coast
+    replace: temperate-ocean
+    to: island-temperate-shallow-ocean
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: island-coast
+    replace: hot-deep-ocean
+    to: island-hot-shallow-ocean
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: island-coast
+    replace: hot-ocean
+    to: island-hot-shallow-ocean

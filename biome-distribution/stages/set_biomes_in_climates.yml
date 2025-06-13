@@ -505,3 +505,28 @@ stages:
 
         mushroom:
           - MUSHROOM_FIELDS: 1
+        mushroom-coast:
+          - MUSHROOM_COAST: 1
+
+        polar-vast-forest:
+          - POLAR_PALE_GARDEN: 1
+        polar-vast-forest-coast:
+          - POLAR_PALE_GARDEN_COAST: 1
+        boreal-vast-forest:
+          - PALE_GARDEN: 1
+        boreal-vast-forest-coast:
+          - PALE_GARDEN_COAST: 1
+        temperate-vast-forest:
+          - PALE_GARDEN: 1
+        temperate-vast-forest-coast:
+          - PALE_GARDEN_COAST: 1
+
+
+        island-polar-shallow-ocean:
+          - FROZEN_ISLAND_SHALLOWS: 1
+        island-boreal-shallow-ocean:
+          - COLD_ISLAND_SHALLOWS: 1
+        island-temperate-shallow-ocean:
+          - ISLAND_SHALLOWS: 1
+        island-hot-shallow-ocean:
+          - TROPICAL_ISLAND_SHALLOWS: 1

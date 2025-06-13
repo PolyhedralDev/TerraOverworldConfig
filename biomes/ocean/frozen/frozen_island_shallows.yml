@@ -1,0 +1,5 @@
+id: FROZEN_ISLAND_SHALLOWS
+type: BIOME
+extends:
+  - COLD_OCEAN
+  - EQ_SHALLOW_OCEAN

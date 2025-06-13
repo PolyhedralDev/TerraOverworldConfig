@@ -32,7 +32,6 @@ slant:
   - threshold: 0.3
     palette:
       - COARSE_DIRT: $meta.yml:top-y
-      - SAND: ${meta.yml:ocean-level} + 2
       - << meta.yml:palette-bottom
   - threshold: 0.35
     palette:
