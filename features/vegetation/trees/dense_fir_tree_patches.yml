@@ -22,7 +22,7 @@ locator:
     - type: TOP
       range: &range
         min: ${meta.yml:ocean-level} + 3
-        max: ${meta.yml:ocean-level} + 119
+        max: ${meta.yml:ocean-level} + 200
     - type: PATTERN
       range: *range
       pattern:

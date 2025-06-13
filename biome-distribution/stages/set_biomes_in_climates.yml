@@ -107,6 +107,7 @@ stages:
           - SNOWY_BIRCH_FOREST: 1
         boreal-snowy-highlands:
           - SNOWY_MOUNTAINS: 1
+          - MONTANE_FOREST: 1
         
         boreal-hot-dry-flat:
           - PRAIRIE: 1
@@ -150,13 +151,14 @@ stages:
           - FIR_FIELDS: 1
         boreal-cold-dry-highlands:
           - SNOWY_MOUNTAINS: 1
-
+          - MONTANE_FOREST: 1
         boreal-snowy-dry-flat:
           - SNOWY_MEADOW: 1
         boreal-snowy-dry:
           - SNOWY_MEADOW: 1
         boreal-snowy-dry-highlands:
           - SNOWY_MOUNTAINS: 1
+          - MONTANE_FOREST: 1
 
         boreal-coast-flat:
           - ROCKY_ARCHIPELAGO: 5
