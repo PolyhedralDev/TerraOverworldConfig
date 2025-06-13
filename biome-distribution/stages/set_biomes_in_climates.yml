@@ -370,18 +370,10 @@ stages:
           - XERIC_MOUNTAINS: 1
 
         temperate-steppe-flat:
-          - SUNFLOWER_PRAIRIE: 1
-          - PRAIRIE: 2
-          - TEMPERATE_GRASSLAND: 3
           - ROCKY_GRASSLAND: 1
-          - OAK_SAVANNA: 1
           - STEPPE: 1
         temperate-steppe:
-          - SUNFLOWER_PRAIRIE: 1
-          - PRAIRIE: 2
-          - TEMPERATE_GRASSLAND: 2
           - ROCKY_GRASSLAND: 2
-          - OAK_SAVANNA: 2
           - STEPPE: 1
         temperate-steppe-highlands:
           - STEPPE: 1
