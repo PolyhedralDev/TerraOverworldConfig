@@ -345,19 +345,19 @@ stages:
 
         # Red hot steppe
         hot-steppe-flat-red:
-          - ARID_SPIKES: 1
+          - XERIC_SHRUBLAND: 1
         hot-steppe-red:
-          - ARID_SPIKES: 1
+          - XERIC_SHRUBLAND: 1
         hot-steppe-highlands-red:
-          - ARID_SPIKES: 1
+          - XERIC_MOUNTAINS: 1
 
         # Orange hot steppe
         hot-steppe-flat-orange:
-          - ARID_SPIKES: 1
+          - XERIC_SHRUBLAND: 1
         hot-steppe-orange:
-          - ARID_SPIKES: 1
+          - XERIC_SHRUBLAND: 1
         hot-steppe-highlands-orange:
-          - ARID_SPIKES: 1
+          - XERIC_MOUNTAINS: 1
 
         # White hot steppe
         hot-steppe-flat-white:
