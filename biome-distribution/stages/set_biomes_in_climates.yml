@@ -345,19 +345,19 @@ stages:
 
         # Red hot steppe
         hot-steppe-flat-red:
-          - ARID_SPIKES: 1
+          - XERIC_SHRUBLAND: 1
         hot-steppe-red:
-          - ARID_SPIKES: 1
+          - XERIC_SHRUBLAND: 1
         hot-steppe-highlands-red:
-          - ARID_SPIKES: 1
+          - XERIC_MOUNTAINS: 1
 
         # Orange hot steppe
         hot-steppe-flat-orange:
-          - ARID_SPIKES: 1
+          - XERIC_SHRUBLAND: 1
         hot-steppe-orange:
-          - ARID_SPIKES: 1
+          - XERIC_SHRUBLAND: 1
         hot-steppe-highlands-orange:
-          - ARID_SPIKES: 1
+          - XERIC_MOUNTAINS: 1
 
         # White hot steppe
         hot-steppe-flat-white:
@@ -370,22 +370,11 @@ stages:
           - XERIC_MOUNTAINS: 1
 
         temperate-steppe-flat:
-          - SUNFLOWER_PRAIRIE: 1
-          - PRAIRIE: 2
-          - TEMPERATE_GRASSLAND: 3
-          - ROCKY_GRASSLAND: 1
-          - OAK_SAVANNA: 1
-          - STEPPE: 1
+          - XERIC_SHRUBLAND: 1
         temperate-steppe:
-          - SUNFLOWER_PRAIRIE: 1
-          - PRAIRIE: 2
-          - TEMPERATE_GRASSLAND: 2
-          - ROCKY_GRASSLAND: 2
-          - OAK_SAVANNA: 2
-          - STEPPE: 1
+          - XERIC_SHRUBLAND: 1
         temperate-steppe-highlands:
-          - STEPPE: 1
-          - ROCKY_GRASSLAND: 1
+          - XERIC_MOUNTAINS: 1
 
         cold-desert-flat:
           - SALT_FLATS: 1
