@@ -64,6 +64,9 @@ stages:
       SNOWY_BLACKSTONE_MOUNTAINS:
         - SELF: 1
         - SNOWY_BLACKSTONE_MOUNTAINS_RIVER: 1
+      TRAVERTINE_TERRACES:
+        - SELF: 1
+        - TRAVERTINE_TERRACES_RIVER: 1
     sampler: *riverSampler
   # Desert rivers
   - type: REPLACE
