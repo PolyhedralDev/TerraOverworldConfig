@@ -8,6 +8,7 @@ color: $biomes/colors.yml:SAKURA_GROVE
 vanilla: minecraft:old_growth_birch_forest
 
 tags:
+  - USE_RIVER
   - DEEP_DARK
 
 colors:
