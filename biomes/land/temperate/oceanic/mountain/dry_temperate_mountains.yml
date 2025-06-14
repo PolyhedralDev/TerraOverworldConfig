@@ -10,6 +10,9 @@ color: $biomes/colors.yml:DRY_TEMPERATE_MOUNTAINS
 
 vanilla: minecraft:meadow
 
+tags:
+  - DEEP_DARK
+
 palette:
   - GRASS: $meta.yml:top-y
   - << meta.yml:palette-ocean-level-sand

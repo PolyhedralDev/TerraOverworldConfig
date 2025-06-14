@@ -11,6 +11,9 @@ color: $biomes/colors.yml:SNOWY_MOUNTAINS
 
 vanilla: minecraft:frozen_peaks
 
+tags:
+  - DEEP_DARK
+
 ocean:
   palette: FROZEN_OCEAN
 

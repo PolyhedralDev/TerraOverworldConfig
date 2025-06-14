@@ -7,6 +7,9 @@ color: $biomes/colors.yml:SAKURA_GROVE
 
 vanilla: minecraft:old_growth_birch_forest
 
+tags:
+  - DEEP_DARK
+
 colors:
   foliage: 0x5AC67B
   grass: 0xb6db61

@@ -13,6 +13,7 @@ vanilla: minecraft:jungle
 tags:
   - LAND_CAVES
   - USE_RIVER
+  - DEEP_DARK
 
 colors:
   grass: 0x3abf13

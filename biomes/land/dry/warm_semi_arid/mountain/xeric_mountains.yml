@@ -12,8 +12,7 @@ color: $biomes/colors.yml:XERIC_MOUNTAINS
 vanilla: minecraft:desert
 
 tags:
-  - LAND_CAVES
-  - LAND
+  - DEEP_DARK
 
 palette:
   - XERIC: $meta.yml:top-y
