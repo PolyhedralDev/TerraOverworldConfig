@@ -117,6 +117,16 @@ stages:
   # Used for small features placed underwater like sea-grass.
   - id: underwater-flora
     type: FEATURE
+
+  - id: sculk
+    type: FEATURE
+    blend:
+      amplitude: 60
+      sampler:
+        type: CELLULAR
+        return: CellValue
+        frequency: 0.9
+        salt: 5367
     
   # Used for small features placed on the surface like tall grass and vines.
   - id: flora
