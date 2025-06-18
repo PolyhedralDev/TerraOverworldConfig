@@ -40,17 +40,8 @@ generate in an area where it previously did not (resulting in a chunk border).
 ---
 
 ## [Unreleased]
-### Added
-
-
-### Changed
-
-
-### Removed
-
-
 ### Fixed
-
+- Fixed creaking heart block ID on 1.21.5
 
 <!--
 DO NOT MODIFY TEXT BELOW, CI automatically manages new version sections for each
