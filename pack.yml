@@ -43,11 +43,11 @@ biomes: $biome-distribution/presets/default.yml:biomes
 # Single biome - Generates a single biome, as well as other complementary biomes such as cave and river biomes.
 #                It is recommended to disable 'terrain-factor-continental' in customization.yml when using this preset.
 #biomes: $biome-distribution/presets/single.yml:biomes
-preset-single-biome: PLAINS
+preset-single-biome: TEMPERATE_GRASSLAND
 
 # Single debug - Used for debugging a singular biome, should not be used for regular world generation
 #biomes: $biome-distribution/presets/single_debug.yml:biomes
-preset-single-debug-biome: PLAINS
+preset-single-debug-biome: TEMPERATE_GRASSLAND
 
 # ---
 # Population stages

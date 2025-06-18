@@ -54,33 +54,49 @@ stages:
 
   
         boreal-hot-flat:
+          - STEPPE: 2
+          - PRAIRIE: 2
+          - SUNFLOWER_PRAIRIE: 1
           - ASPEN_FOREST: 1
           - BIRCH_FOREST: 2
-          - MAPLE_GROVE: 1
+          - maple-groves: 1
+          - PINE_CANOPY: 1
         boreal-hot:
           - ASPEN_FOREST: 1
-          - MAPLE_GROVE: 1
-          - BIRCH_FOREST: 1
+          - maple-groves: 1
+          - BIRCH_FOREST: 2
+          - PINE_CANOPY: 2
         boreal-hot-highlands:
           - MOUNTAINS: 1
         
         boreal-warm-flat:
+          - STEPPE: 1
+          - PRAIRIE: 2
+          - SUNFLOWER_PRAIRIE: 1
           - ASPEN_FOREST: 1
+          - FIR_FIELDS: 1
           - BIRCH_FOREST: 2
-          - MAPLE_GROVE: 1
+          - maple-groves: 1
+          - PINE_CANOPY: 2
         boreal-warm:
-          - REDWOOD_FOREST: 1
-          - TAIGA_CLEARING: 1
-          - TAIGA: 3
+          - SEQUOIA_FOREST: 5
+          - OLD_GROWTH_SEQUOIA_FOREST: 1
+          - TAIGA_CLEARING: 5
+          - TAIGA: 11
+          - FIR_FIELDS: 3
         boreal-warm-highlands:
           - MOUNTAINS: 1
 
         boreal-cold-flat:
-          - TAIGA: 1
+          - TAIGA: 2
+          - maple-groves: 1
           - TAIGA_CLEARING: 1
+          - FIR_FIELDS: 1
         boreal-cold:
           - TAIGA_CLEARING: 1
-          - TAIGA: 1
+          - TAIGA: 2
+          - FIR_FIELDS: 1
+          - maple-groves: 1
         boreal-cold-highlands:
           - MOUNTAINS: 1
       
@@ -91,43 +107,63 @@ stages:
           - SNOWY_BIRCH_FOREST: 1
         boreal-snowy-highlands:
           - SNOWY_MOUNTAINS: 1
+          - MONTANE_FOREST: 1
         
         boreal-hot-dry-flat:
+          - PRAIRIE: 1
+          - STEPPE: 1
+          - BOREAL_SHRUBLAND: 1
           - ASPEN_FOREST: 1
           - BIRCH_FOREST: 2
-          - MAPLE_GROVE: 1
+          - maple-groves: 1
+          - FIR_FIELDS: 1
         boreal-hot-dry:
-          - TAIGA: 1
+          - BOREAL_SHRUBLAND: 1
+          - maple-groves: 1
+          - TAIGA: 2
+          - FIR_FIELDS: 1
         boreal-hot-dry-highlands:
           - MOUNTAINS: 1
 
         boreal-warm-dry-flat:
-          - TAIGA: 1
-          - TAIGA_CLEARING: 1
+          - BOREAL_SHRUBLAND: 3
+          - TAIGA: 2
+          - PINE_CANOPY: 1
+          - TAIGA_CLEARING: 2
+          - FIR_FIELDS: 2
         boreal-warm-dry:
-          - TAIGA: 1
+          - TAIGA: 2
+          - PINE_CANOPY: 1
+          - FIR_FIELDS: 1
         boreal-warm-dry-highlands:
           - MOUNTAINS: 1
 
         boreal-cold-dry-flat:
-          - TAIGA: 1
-          - TAIGA_CLEARING: 1
+          - BOREAL_SHRUBLAND: 3
+          - TAIGA: 2
+          - TAIGA_CLEARING: 2
+          - FIR_FIELDS: 2
+          - maple-groves: 1
         boreal-cold-dry:
-          - TAIGA: 1
+          - BOREAL_SHRUBLAND: 1
+          - TAIGA: 2
+          - maple-groves: 1
+          - FIR_FIELDS: 1
         boreal-cold-dry-highlands:
           - SNOWY_MOUNTAINS: 1
-
+          - MONTANE_FOREST: 1
         boreal-snowy-dry-flat:
           - SNOWY_MEADOW: 1
         boreal-snowy-dry:
           - SNOWY_MEADOW: 1
         boreal-snowy-dry-highlands:
           - SNOWY_MOUNTAINS: 1
+          - MONTANE_FOREST: 1
 
         boreal-coast-flat:
           - ROCKY_ARCHIPELAGO: 5
           - SHALE_BEACH: 1
-          - COASTAL_PINE_BARRENS: 1
+          - PINE_BARRENS: 1
         boreal-coast:
           - ROCKY_SEA_CAVES: 1
         boreal-coast-highlands:
@@ -143,7 +179,6 @@ stages:
           - todo: 1
   
         boreal-shallow-ocean:
-          - COLD_OCEAN: 1
           - KELP_FOREST: 1
         boreal-shallow-ocean-midlands:
           - COLD_OCEAN: 1
@@ -157,6 +192,7 @@ stages:
           - COLD_DEEP_DEPTHS: 1
 
         temperate-hot-dry-flat:
+          - STEPPE: 1
           - CHAPARRAL: 1
           - MOORLAND: 1
         temperate-hot-dry:
@@ -167,6 +203,7 @@ stages:
           - DRY_TEMPERATE_WHITE_MOUNTAINS: 1
 
         temperate-warm-dry-flat:
+          - STEPPE: 1
           - CHAPARRAL: 1
           - MOORLAND: 1
         temperate-warm-dry:
@@ -177,29 +214,29 @@ stages:
           - DRY_TEMPERATE_WHITE_MOUNTAINS: 1
 
         temperate-hot-flat:
-          - PLAINS: 1
+          - MOORLAND: 1
           - ALIEN_MARSH: 1
+          - TEMPERATE_RAINFOREST: 1
         temperate-hot:
           - WOODED_BUTTES: 1
           - TEMPERATE_OVERPASS: 1
+          - TEMPERATE_RAINFOREST: 1
         temperate-hot-highlands:
           - HIGHLANDS: 1
           - TEMPERATE_ALPHA_MOUNTAINS: 1
           - TEMPERATE_MOUNTAINS: 1
 
         temperate-warm-flat:
-          - FLOWERING_FOREST: 2
-          - RAINFOREST: 2
-          - BROADLEAF_FOREST: 3
-          - DARK_FOREST: 2
+          - FLOWERING_FOREST: 1
+          - BROADLEAF_FOREST: 2
+          - DARK_FOREST: 1
           - SAKURA_GROVE: 1
-          - WOODED_BUTTES: 2
+          - WOODED_BUTTES: 1
+          - ROCKY_GRASSLAND: 1
         temperate-warm:
           - FLOWERING_FOREST: 1
-          - RAINFOREST: 1
           - BROADLEAF_FOREST: 1
           - DARK_FOREST: 1
-          - PALE_GARDEN: 1
           - SAKURA_GROVE: 1
           - WOODED_BUTTES: 1
         temperate-warm-highlands:
@@ -208,18 +245,18 @@ stages:
           - TEMPERATE_MOUNTAINS: 1
 
         temperate-cold-flat:
-          - FLOWERING_FOREST: 1
-          - RAINFOREST: 1
-          - BROADLEAF_FOREST: 1
-          - DARK_FOREST: 1
-          - SAKURA_GROVE: 1
-          - WOODED_BUTTES: 1
+          - PRAIRIE: 3
+          - ROCKY_GRASSLAND: 1
+          - SUNFLOWER_PRAIRIE: 1
+          - BROADLEAF_FOREST: 2
+          - DARK_FOREST: 2
+          - SAKURA_GROVE: 2
+          - WOODED_BUTTES: 2
         temperate-cold:
+          - ROCKY_GRASSLAND: 1
           - FLOWERING_FOREST: 1
-          - RAINFOREST: 1
           - BROADLEAF_FOREST: 1
           - DARK_FOREST: 1
-          - PALE_GARDEN: 1
           - SAKURA_GROVE: 1
           - WOODED_BUTTES: 1
         temperate-cold-highlands:
@@ -230,7 +267,7 @@ stages:
         temperate-coast-flat:
           - BEACH: 2
           - SHRUB_BEACH: 2
-          - COASTAL_PINE_BARRENS: 1
+          - PINE_BARRENS: 1
         temperate-coast:
           - TEMPERATE_SEA_ARCHES: 1
         temperate-coast-highlands:
@@ -246,7 +283,6 @@ stages:
           - TEMPERATE_EXTINCT_VOLCANO: 1
 
         temperate-shallow-ocean:
-          - OCEAN: 1
           - KELP_FOREST: 1
           - SEAGRASS_MEADOW: 1
         temperate-shallow-ocean-midlands:
@@ -309,19 +345,19 @@ stages:
 
         # Red hot steppe
         hot-steppe-flat-red:
-          - ARID_SPIKES: 1
+          - XERIC_SHRUBLAND: 1
         hot-steppe-red:
-          - ARID_SPIKES: 1
+          - XERIC_SHRUBLAND: 1
         hot-steppe-highlands-red:
-          - ARID_SPIKES: 1
+          - XERIC_MOUNTAINS: 1
 
         # Orange hot steppe
         hot-steppe-flat-orange:
-          - ARID_SPIKES: 1
+          - XERIC_SHRUBLAND: 1
         hot-steppe-orange:
-          - ARID_SPIKES: 1
+          - XERIC_SHRUBLAND: 1
         hot-steppe-highlands-orange:
-          - ARID_SPIKES: 1
+          - XERIC_MOUNTAINS: 1
 
         # White hot steppe
         hot-steppe-flat-white:
@@ -334,19 +370,11 @@ stages:
           - XERIC_MOUNTAINS: 1
 
         temperate-steppe-flat:
-          - SUNFLOWER_PRAIRIE: 1
-          - PRAIRIE: 2
-          - PLAINS: 3
-          - OAK_SAVANNA: 1
-          - STEPPE: 1
+          - XERIC_SHRUBLAND: 1
         temperate-steppe:
-          - SUNFLOWER_PRAIRIE: 1
-          - PRAIRIE: 2
-          - PLAINS: 2
-          - OAK_SAVANNA: 2
-          - STEPPE: 1
+          - XERIC_SHRUBLAND: 1
         temperate-steppe-highlands:
-          - STEPPE: 1
+          - XERIC_MOUNTAINS: 1
 
         cold-desert-flat:
           - SALT_FLATS: 1
@@ -359,8 +387,10 @@ stages:
 
         cold-steppe-flat:
           - COLD_STEPPE: 1
+          - DRY_FIR_FIELDS: 1
         cold-steppe:
-          - COLD_STEPPE: 1
+          - COLD_STEPPE: 2
+          - DRY_FIR_FIELDS: 1
         cold-steppe-highlands:
           - COLD_STEPPE: 1
 
@@ -397,10 +427,10 @@ stages:
         tropical-rainforest:
           - BAMBOO_JUNGLE: 1
           - BAMBOO_PONDS: 1
+          - OVERGROWN_CLIFFS: 1
+        tropical-rainforest-highlands:
           - JUNGLE: 1
           - ROCKY_JUNGLE: 1
-        tropical-rainforest-highlands:
-          - OVERGROWN_CLIFFS: 1
 
         tropical-monsoon-flat:
           - DRY_FOREST: 1
@@ -444,8 +474,8 @@ stages:
         tropical-extinct-volcano:
           - todo: 1
 
-        hot-shallow-ocean: 
-          - TROPICAL_OCEAN: 1
+        hot-shallow-ocean:
+          - SHALLOW_CORAL_OCEAN: 1
           - SEAGRASS_MEADOW: 1
         hot-shallow-ocean-midlands:
           - TROPICAL_OCEAN: 1
@@ -461,3 +491,31 @@ stages:
           - TROPICAL_DEEP_OCEAN: 1
           - TROPICAL_DEEP_OCEAN_VENTS: 1
           - TROPICAL_DEEP_DEPTHS: 1
+
+        mushroom:
+          - MUSHROOM_FIELDS: 1
+        mushroom-coast:
+          - MUSHROOM_COAST: 1
+
+        polar-vast-forest:
+          - POLAR_PALE_GARDEN: 1
+        polar-vast-forest-coast:
+          - POLAR_PALE_GARDEN_COAST: 1
+        boreal-vast-forest:
+          - PALE_GARDEN: 1
+        boreal-vast-forest-coast:
+          - PALE_GARDEN_COAST: 1
+        temperate-vast-forest:
+          - PALE_GARDEN: 1
+        temperate-vast-forest-coast:
+          - PALE_GARDEN_COAST: 1
+
+
+        island-polar-shallow-ocean:
+          - FROZEN_ISLAND_SHALLOWS: 1
+        island-boreal-shallow-ocean:
+          - COLD_ISLAND_SHALLOWS: 1
+        island-temperate-shallow-ocean:
+          - ISLAND_SHALLOWS: 1
+        island-hot-shallow-ocean:
+          - TROPICAL_ISLAND_SHALLOWS: 1

@@ -1,0 +1,10 @@
+stages:
+  - type: REPLACE
+    from: maple-groves
+    sampler:
+      type: WHITE_NOISE
+      salt: 30402
+    to:
+      - MAPLE_GROVE: 2
+      - RED_MAPLE_GROVE: 1
+      - YELLOW_MAPLE_GROVE: 2

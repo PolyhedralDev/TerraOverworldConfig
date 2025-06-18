@@ -12,8 +12,7 @@ color: $biomes/colors.yml:XERIC_MOUNTAINS
 vanilla: minecraft:desert
 
 tags:
-  - LAND_CAVES
-  - LAND
+  - DEEP_DARK
 
 palette:
   - XERIC: $meta.yml:top-y
@@ -35,6 +34,7 @@ slant:
 features:
   flora:
     - GRASS
+    - LEAF_LITTER
     - DEAD_BUSHES
     - POPPY_PATCH
     - DANDELION_PATCH
@@ -43,6 +43,6 @@ features:
     - OAK_BUSHES
     - SPARSE_OAK_TREES
     - SPARSE_FALLEN_OAK_TREES
-    - SPARSE_FALLEN_DARK_OAK_TREES
+    - SPARSE_FALLEN_NORMAL_DARK_OAK_TREES
     - MESQUITE_TREES
     - DEAD_TREES_SPARSE

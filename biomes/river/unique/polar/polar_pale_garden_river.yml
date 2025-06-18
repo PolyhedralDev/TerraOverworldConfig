@@ -1,0 +1,32 @@
+id: POLAR_PALE_GARDEN_RIVER
+type: BIOME
+extends:
+  - COLOR_FROZEN
+  - RIVER_FROZEN
+  - ENVIRONMENT_MARINE_RIVER_FROZEN
+  - EQ_GLOBAL_RIVER
+  - CARVING_OCEAN
+  - PALE_GARDEN
+color: $biomes/colors.yml:POLAR_PALE_GARDEN_RIVER
+
+vanilla: minecraft:frozen_river
+
+features:
+  flora:
+    - GRASS
+    - PALE_MOSS_CARPET
+    - EYEBLOSSOM_PATCH
+    - CAVE_GLOW_LICHEN
+  trees:
+    - DENSE_PALE_FOREST_TREES
+    - DENSE_FALLEN_PALE_OAK_TREES
+    - PALE_OAK_BUSHES
+  landforms:
+    - PALE_MOSSY_BOULDERS
+  processors:
+    - SNOW_FOREST_LAYERS
+  preprocessors:
+    - POWDER_SNOW_DEPOSITS
+    - ICE_COASTLINE
+  postprocessors:
+    - TREE_SNOW

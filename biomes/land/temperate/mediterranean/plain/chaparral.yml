@@ -38,6 +38,7 @@ slant:
 features:
   flora:
     - GRASS
+    - DRY_GRASS
     - POPPY_PATCH
     - DANDELION_PATCH
     - FERNS
@@ -46,6 +47,7 @@ features:
     - SPARSE_FALLEN_OAK_TREES
     - SPRUCE_BUSH_PATCHES
     - SUBTROPICAL_BUSHES
+    - SPARSE_SMALL_FIR_TREES
 
 colors:
   grass: 0xb1d563

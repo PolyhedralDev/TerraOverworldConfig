@@ -3,9 +3,9 @@ type: FEATURE
 
 distributor:
   type: PADDED_GRID
-  width: 68
+  width: 107
   padding: 7
-  salt: 54688
+  salt: 1645
 
 locator:
   type: AND
@@ -33,5 +33,6 @@ structures:
   distribution:
     type: WHITE_NOISE
   structures:
-    - blank: 1
-    - fallen_dark_oak_tree_procedural: 1
+    - blank: 3
+    - fallen_dark_oak_tree_procedural: 2
+    - fallen_large_dark_oak_tree_procedural: 1

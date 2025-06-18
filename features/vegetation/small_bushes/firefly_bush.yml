@@ -2,10 +2,11 @@ id: FIREFLY_BUSH
 type: FEATURE
 
 distributor:
-  type: PADDED_GRID
-  width: 10
-  padding: 0
-  salt: 1510
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 6304
+  threshold: 0.025
 
 locator:
   type: AND

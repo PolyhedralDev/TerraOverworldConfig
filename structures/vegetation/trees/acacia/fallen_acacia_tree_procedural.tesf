@@ -2,32 +2,32 @@ num randPrecision = 100;
 
 num length = 10+randomInt(4);
 num trunkRadius = 1;
-
 num buffer = 5;
+num scanOffset = 5;
+
+num mushroomChance = 8;
 
 // Direction vector
 num dx = (randomInt(randPrecision)/randPrecision-0.5)*1.5;
 num dy = 0;
 num dz = (randomInt(randPrecision)/randPrecision-0.5)*1.5;
 
-str sideBranchBlockX = "minecraft:acacia_log[axis=x]";
-str sideBranchBlockY = "minecraft:acacia_log[axis=y]";
-str sideBranchBlockZ = "minecraft:acacia_log[axis=z]";
+str woodBlockX = "minecraft:acacia_log[axis=x]";
+str woodBlockY = "minecraft:acacia_log[axis=y]";
+str woodBlockZ = "minecraft:acacia_log[axis=z]";
 
-block(0,0,0, "minecraft:acacia_log", false);
+block(0, 0, 0, woodBlockY, false);
 
-num yTranslate = 5;
-str setBlock = "minecraft:acacia_wood";
 for(num l = buffer; l <= buffer+length; l = l + 1) {
 
-    if (abs(dx) > max(abs(dy),abs(dz))) setBlock = sideBranchBlockX;
-    else if (abs(dz) > max(abs(dy),abs(dx))) setBlock = sideBranchBlockZ;
+    str setBlock = woodBlockX;
+    if (abs(dx) > max(abs(dy),abs(dz))) setBlock = woodBlockX;
+    else if (abs(dz) > max(abs(dy),abs(dx))) setBlock = woodBlockZ;
 
-    yTranslate = 5;
-    while (check(l*dx, yTranslate-1, l*dz) != "LAND") {
-        yTranslate = yTranslate-1;
-    }
-    if (getBlock(l*dx, yTranslate-1, l*dz) == "minecraft:acacia_log") continue;
+    num yTranslate = scanOffset;
+    while (check(l*dx, yTranslate-1, l*dz) != "LAND") yTranslate = yTranslate-1;
+
+    if (getBlock(l*dx, yTranslate-1, l*dz) == woodBlockY) continue;
 
     num r = trunkRadius;
     // Generate sphere at each point
@@ -40,4 +40,9 @@ for(num l = buffer; l <= buffer+length; l = l + 1) {
             }
         }
     }
+
+    str mushroomBlock = "minecraft:red_mushroom";
+    if (randomInt(2) == 0) mushroomBlock = "minecraft:brown_mushroom";
+    if (randomInt(mushroomChance) == 0) block(l*dx, yTranslate + 1, l*dz, mushroomBlock, false);
+
 }

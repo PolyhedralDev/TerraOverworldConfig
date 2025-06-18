@@ -64,6 +64,9 @@ stages:
       SNOWY_BLACKSTONE_MOUNTAINS:
         - SELF: 1
         - SNOWY_BLACKSTONE_MOUNTAINS_RIVER: 1
+      TRAVERTINE_TERRACES:
+        - SELF: 1
+        - TRAVERTINE_TERRACES_RIVER: 1
     sampler: *riverSampler
   # Desert rivers
   - type: REPLACE
@@ -93,6 +96,19 @@ stages:
     to:
       - SELF: 1
       - PALE_GARDEN_RIVER: 1
+    sampler: *riverSampler
+  # Pale Garden rivers
+  - type: REPLACE
+    from: USE_POLAR_PALE_GARDEN_RIVER
+    to:
+      - SELF: 1
+      - POLAR_PALE_GARDEN_RIVER: 1
+    sampler: *riverSampler
+  - type: REPLACE
+    from: USE_MUSHROOM_RIVER
+    to:
+      - SELF: 1
+      - MUSHROOM_RIVER: 1
     sampler: *riverSampler
   # Regular rivers with bordering swamps
   - type: REPLACE

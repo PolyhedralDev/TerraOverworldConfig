@@ -1,0 +1,47 @@
+id: PINE_TREES
+type: FEATURE
+
+distributor:
+  type: AND
+  distributors:
+    - type: PADDED_GRID
+      width: 10
+      padding: 3
+      salt: 3233
+    - type: SAMPLER
+      sampler:
+        type: PROBABILITY
+        sampler:
+          type: OPEN_SIMPLEX_2
+          salt: 7181
+      threshold: 0.75
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: ${meta.yml:ocean-level} + 3
+        max: ${meta.yml:ocean-level} + 119
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:dry-plantable-blocks
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:snow
+          - minecraft:air
+        offset: 0
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+    seed: 3123
+  structures:
+    - tall_thin_pine_tree_procedural: 2
+    - large_pine_tree_procedural: 1

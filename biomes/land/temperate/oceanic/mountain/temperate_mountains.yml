@@ -10,6 +10,7 @@ color: $biomes/colors.yml:TEMPERATE_MOUNTAINS
 
 tags:
   - USE_RIVER
+  - DEEP_DARK
 
 vanilla: minecraft:meadow
 

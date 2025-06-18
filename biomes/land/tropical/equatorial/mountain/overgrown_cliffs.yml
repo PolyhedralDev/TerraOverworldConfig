@@ -12,7 +12,8 @@ vanilla: minecraft:jungle
 
 tags:
   - LAND_CAVES
-  - USE_RIVER
+  - USE_TROPICAL_RIVER
+  - DEEP_DARK
 
 colors:
   grass: 0x3abf13
@@ -74,5 +75,5 @@ features:
   trees:
     - JUNGLE_TREES
     - JUNGLE_BUSHES
-    - SPARSE_FALLEN_JUNGLE_TREES
+    - DENSE_FALLEN_JUNGLE_TREES
   

@@ -33,18 +33,18 @@ jobs:
           fetch-depth: '2'
 
       - name: Check for version bump
-        run: sh ./.scripts/check-version-bump.sh
+        run: bash ./.scripts/check-version-bump.sh
 
       - name: Create artifacts
-        run: sh ./.scripts/pack.sh
+        run: bash ./.scripts/pack.sh
 
       - name: Grab release changelog
         if: env.version-bumped == 'true'
-        run: sh ./.scripts/changelog/extract-release-changelog.sh
+        run: bash ./.scripts/changelog/extract-release-changelog.sh
 
       - name: Update changelog
         if: env.version-bumped == 'true'
-        run: sh ./.scripts/changelog/update-changelog.sh
+        run: bash ./.scripts/changelog/update-changelog.sh
 
       - name: Push changelog
         if: env.version-bumped == 'true'
@@ -92,7 +92,7 @@ jobs:
         run: bash ./.scripts/create-biomes-wiki-page.sh
     
       - name: Upload Documentation to Wiki
-        run: sh ./.scripts/upload-to-wiki.sh
+        run: bash ./.scripts/upload-to-wiki.sh
         env:
           LOGIN_NAME: Polyhedral-Bot
           LOGIN_EMAIL: polybot@protonmail.com

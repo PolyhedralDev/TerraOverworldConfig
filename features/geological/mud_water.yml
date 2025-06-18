@@ -9,7 +9,7 @@ distributor:
       type: OPEN_SIMPLEX_2
       frequency: 0.3
       salt: 4357
-  threshold: 0.65
+  threshold: 0.35
 
 locator:
   type: AND

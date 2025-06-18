@@ -42,3 +42,5 @@ slant:
 features:
   flora:
     - GRASS
+    - DRY_GRASS
+    - SMALL_GRANITE_BOULDER_PATCHES

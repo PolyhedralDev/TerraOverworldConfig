@@ -1,7 +1,8 @@
 id: MUSHROOM_COAST
 type: BIOME
 extends:
-  - EQ_SEA_CAVES
+  - EQ_FLAT_ERODED
+  - CARVING_OCEAN
   - MUSHROOM_FIELDS
 color: $biomes/colors.yml:MUSHROOM_COAST
 

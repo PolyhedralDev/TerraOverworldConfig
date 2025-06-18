@@ -1,0 +1,47 @@
+id: SPARSE_DARK_OAK_TREE_PATCHES
+type: FEATURE
+
+distributor:
+  type: AND
+  distributors:
+    - type: PADDED_GRID
+      width: 8
+      padding: 3
+      salt: 5363
+    - type: SAMPLER
+      sampler:
+        type: PROBABILITY
+        sampler:
+          type: OPEN_SIMPLEX_2
+          salt: 5368
+          frequency: 0.01
+      threshold: 0.2
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: ${meta.yml:ocean-level} + 3
+        max: $meta.yml:top-y
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:dry-plantable-blocks
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:snow
+          - minecraft:air
+        offset: 0
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures:
+    - large_dark_oak_tree_procedural: 1
+    - dark_oak_tree_procedural: 5

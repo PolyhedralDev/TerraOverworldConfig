@@ -1,0 +1,52 @@
+id: DRY_GRASS
+type: FEATURE
+
+distributor:
+  type: AND
+  distributors:
+    - type: SAMPLER
+      sampler:
+        type: POSITIVE_WHITE_NOISE
+        salt: 4355
+      threshold: 0.05
+    - type: SAMPLER
+      sampler:
+        type: PROBABILITY
+        sampler:
+          type: DOMAIN_WARP
+          amplitude: 5
+          warp:
+            type: GAUSSIAN
+          sampler:
+            type: OPEN_SIMPLEX_2
+            salt: 9419
+      threshold: 0.1
+
+locator:
+  type: AND
+  locators:
+    - type: SURFACE
+      range: &range
+        min: ${meta.yml:ocean-level} + 1
+        max: $meta.yml:top-y
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:dry-grass-plantable-blocks
+        offset: -1
+
+structures:
+  distribution:
+    type: DOMAIN_WARP
+    amplitude: 4
+    warp:
+      type: GAUSSIAN
+    sampler:
+      type: CELLULAR
+      return: CellValue
+      frequency: 0.06
+      seed: 9235
+  structures:
+    - BLOCK:minecraft:short_dry_grass: 2
+    - BLOCK:minecraft:tall_dry_grass: 1

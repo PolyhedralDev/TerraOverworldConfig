@@ -9,8 +9,7 @@ extends:
 color: $biomes/colors.yml:MOUNTAINS
 
 tags:
-  - LAND_CAVES
-  - LAND
+  - DEEP_DARK
 
 vanilla: minecraft:windswept_hills
 

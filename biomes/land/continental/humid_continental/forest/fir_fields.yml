@@ -1,0 +1,58 @@
+id: FIR_FIELDS
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_CONTINENTAL_HUMID
+  - EQ_LAND
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:FIR_FIELDS
+
+tags:
+  - LAND_CAVES
+  - USE_COLD_RIVER
+
+vanilla: minecraft:taiga
+
+colors:
+  grass: 0x6db869
+  foliage: 0x70c975
+  water: 0x287082
+  water-fog: 0x287082
+
+palette:
+  - GRASS_MOSSY: $meta.yml:top-y
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.8
+    palette:
+      - GRASS: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.45
+    palette:
+      - COARSE_DIRT: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - << meta.yml:palette-slant-generic
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - ROSE_BUSH_PATCH
+    - OXEYE_DAISY_PATCH
+    - LILAC_PATCH
+    - ROSE_BUSH_PATCH
+    - GRASS
+    - FERNS
+    - BUSH
+  trees:
+    - SPRUCE_TREES
+    - SPARSE_FALLEN_THIN_PINE_TREES
+    - DENSE_FIR_TREE_PATCHES

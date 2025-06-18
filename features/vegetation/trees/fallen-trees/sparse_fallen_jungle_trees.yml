@@ -3,9 +3,9 @@ type: FEATURE
 
 distributor:
   type: PADDED_GRID
-  width: 68
+  width: 48
   padding: 7
-  salt: 2347
+  salt: 4536
 
 locator:
   type: AND
@@ -34,4 +34,4 @@ structures:
     type: WHITE_NOISE
   structures:
     - blank: 1
-    - fallen_jungle_tree_procedural: 1
+    - fallen_large_jungle_tree_procedural: 1

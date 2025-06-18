@@ -22,6 +22,7 @@ locator:
         blocks:
           - minecraft:pale_moss_block
           - minecraft:pale_oak_wood
+          - minecraft:pale_oak_log
           - minecraft:grass_block
         offset: -1
     - type: PATTERN

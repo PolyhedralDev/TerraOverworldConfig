@@ -8,7 +8,7 @@ stages:
     default-to:
       - ice-cap:                     &iceCap         1
       - tundra:                      &tundra         1
-      - boreal-snowy:                &borealSnowy 1
+      - boreal-snowy:                &borealSnowy    1
       - boreal-cold:                 &borealCold     1
       - boreal-warm:                 &borealWarm     1
       - boreal-hot:                  &borealHot      1
@@ -84,3 +84,29 @@ stages:
         - hot-extinct-volcano:       *tropicalCold
         - hot-extinct-volcano:       *tropicalWarm
         - hot-extinct-volcano:       *tropicalHot
+      island:
+        - polar-island:            *iceCap
+        - polar-island:            *tundra
+        - boreal-island:           *borealSnowy
+        - boreal-island:           *borealCold
+        - boreal-island:           *borealWarm
+        - boreal-island:           *borealHot
+        - temperate-island:        *temperateCold
+        - temperate-island:        *temperateWarm
+        - temperate-island:        *temperateHot
+        - hot-island:              *tropicalCold
+        - hot-island:              *tropicalWarm
+        - hot-island:              *tropicalHot
+      vast-forest:
+        - polar-vast-forest:                 *iceCap
+        - polar-vast-forest:                  *tundra
+        - polar-vast-forest:            *borealSnowy
+        - boreal-vast-forest:             *borealCold
+        - boreal-vast-forest:             *borealWarm
+        - boreal-vast-forest:              *borealHot
+        - temperate-vast-forest:   *temperateCold
+        - temperate-vast-forest:   *temperateWarm
+        - temperate-vast-forest:   *temperateHot
+        - tropical-savanna-wet:    *tropicalCold
+        - tropical-monsoon:        *tropicalWarm
+        - tropical-rainforest:     *tropicalHot

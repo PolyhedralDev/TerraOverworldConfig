@@ -3,13 +3,13 @@ type: PALETTE
 
 layers:
   - materials:
-      - minecraft:stone: 2
-      - minecraft:pale_moss_block: 4
-      - minecraft:pale_oak_wood: 3
+      - minecraft:stone: 1
+      - minecraft:pale_moss_block: 8
+      - minecraft:pale_oak_wood: 7
     layers: 2
   - materials:
-      - minecraft:stone: 5
-      - minecraft:pale_moss_block: 4
+      - minecraft:stone: 1
+      - minecraft:pale_moss_block: 8
     layers: 1
 
 

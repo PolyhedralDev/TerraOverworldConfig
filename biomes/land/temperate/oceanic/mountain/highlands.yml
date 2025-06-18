@@ -10,6 +10,9 @@ color: $biomes/colors.yml:HIGHLANDS
 
 vanilla: minecraft:windswept_hills
 
+tags:
+  - DEEP_DARK
+
 palette:
   - GRASS: $meta.yml:top-y
   - << meta.yml:palette-ocean-level-sand
