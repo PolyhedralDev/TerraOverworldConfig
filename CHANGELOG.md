@@ -40,13 +40,26 @@ generate in an area where it previously did not (resulting in a chunk border).
 ---
 
 ## [Unreleased]
+### Added
+
+
+### Changed
+
+
+### Removed
+
+
 ### Fixed
-- Fixed creaking heart block ID on 1.21.5
+
 
 <!--
 DO NOT MODIFY TEXT BELOW, CI automatically manages new version sections for each
 new release. Add any new change logs to the [Unreleased] section above instead.
 -->
+
+## [v1.5.2]
+### Fixed
+- Fixed creaking heart block ID on 1.21.5
 
 ## [v1.5.1]
 ### Added
@@ -147,7 +160,8 @@ new release. Add any new change logs to the [Unreleased] section above instead.
 ### Added
 - Everything
 
-[Unreleased]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.5.1...HEAD
+[Unreleased]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.5.2...HEAD
+[v1.5.2]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.5.1...v1.5.2
 [v1.5.1]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.5.0...v1.5.1
 [v1.3.4]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.3...v1.3.4
 [v1.3.3]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.2...v1.3.3
