@@ -369,10 +369,13 @@ stages:
         hot-steppe-highlands-white:
           - XERIC_MOUNTAINS: 1
 
+        # Temperate - Desert border
         temperate-steppe-flat:
           - XERIC_SHRUBLAND: 1
+          - DRYBRUSH: 1
         temperate-steppe:
           - XERIC_SHRUBLAND: 1
+          - DRYBRUSH: 1
         temperate-steppe-highlands:
           - XERIC_MOUNTAINS: 1
 

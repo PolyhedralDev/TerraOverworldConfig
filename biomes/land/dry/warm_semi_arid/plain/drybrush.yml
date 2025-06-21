@@ -1,0 +1,48 @@
+id: DRYBRUSH
+type: BIOME
+extends:
+  - COLOR_XERIC
+  - ENVIRONMENT_LAND_DRY_WARM_SEMI_ARID
+  - EQ_LAND
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:DRYBRUSH
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER
+
+vanilla: minecraft:savanna
+
+palette:
+  - STONY_GRASS: $meta.yml:top-y
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant-depth: 5
+
+slant:
+  - threshold: 0.8
+    palette:
+      - XERIC: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:packed_mud: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.2
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  landforms:
+    - BOULDERS
+    - SMALL_BOULDER_PATCHES
+  flora:
+    - GRASS
+    - DENSE_DRY_GRASS
+  trees:
+    - SPARSE_SMALL_FIR_TREES
