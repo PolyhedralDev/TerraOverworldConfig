@@ -1,11 +1,11 @@
-id: BAMBOO_PONDS
+id: TROPICAL_FLOODPLAIN
 type: BIOME
 extends:
   - ENVIRONMENT_LAND_TROPICAL_EQUATORIAL
   - EQ_SWAMP
   - CARVING_OCEAN
   - BASE
-color: $biomes/colors.yml:BAMBOO_PONDS
+color: $biomes/colors.yml:TROPICAL_FLOODPLAIN
 
 vanilla: minecraft:bamboo_jungle
 
@@ -51,8 +51,9 @@ features:
     - SMALL_DRIPLEAF
     - BIG_DRIPLEAF_PONDS
   trees:
-    - BAMBOO_PATCHES
-    - OAK_BUSHES
     - SUBTROPICAL_BUSHES
+    - PALM_TREES
+    - SPARSE_FALLEN_PALM_TREES
+    - ACACIA_TREES
   postprocessors:
     - FLOW_STILL_WATER
