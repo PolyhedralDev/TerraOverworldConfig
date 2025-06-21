@@ -9,8 +9,7 @@ vanilla: minecraft:warm_ocean
 
 features:
   preprocessors:
-    - UNDERWATER_SCULK_WEBS
     - UNDERWATER_SCULK_PATCHES
     - UNDERWATER_SCULK_TENDRIL
-  flora:
-    - UNDERWATER_SCULK_FLORA
+  trees:
+    - UNDERWATER_SCULK_UPWARD_TENDRIL
