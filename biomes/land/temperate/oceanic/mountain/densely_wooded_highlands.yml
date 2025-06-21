@@ -48,5 +48,4 @@ features:
     - WILDFLOWERS
   trees:
     - OAK_BUSH_PATCHES
-    - DENSE_FIR_TREE_PATCHES
-    - SPARSE_SPRUCE_TREES
+    - SPRUCE_TREES

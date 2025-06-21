@@ -15,7 +15,7 @@ tags:
 vanilla: minecraft:savanna
 
 palette:
-  - STONY_GRASS: $meta.yml:top-y
+  - SANDY_GRASS: $meta.yml:top-y
   - << meta.yml:palette-ocean-level-sand
   - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
@@ -46,3 +46,4 @@ features:
     - DENSE_DRY_GRASS
   trees:
     - SPARSE_SMALL_FIR_TREES
+    - SPARSE_SPRUCE_TREES
