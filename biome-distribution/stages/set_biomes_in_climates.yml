@@ -223,7 +223,7 @@ stages:
           - TEMPERATE_RAINFOREST: 1
         temperate-hot-highlands:
           - HIGHLANDS: 1
-          - DENSELY_WOODED_HIGLANDS: 1
+          - DENSELY_WOODED_HIGHLANDS: 1
           - TEMPERATE_ALPHA_MOUNTAINS: 1
           - TEMPERATE_MOUNTAINS: 1
 
@@ -242,7 +242,7 @@ stages:
           - WOODED_BUTTES: 1
         temperate-warm-highlands:
           - HIGHLANDS: 1
-          - DENSELY_WOODED_HIGLANDS: 1
+          - DENSELY_WOODED_HIGHLANDS: 1
           - TEMPERATE_ALPHA_MOUNTAINS: 1
           - TEMPERATE_MOUNTAINS: 1
 
@@ -263,7 +263,7 @@ stages:
           - WOODED_BUTTES: 1
         temperate-cold-highlands:
           - HIGHLANDS: 1
-          - DENSELY_WOODED_HIGLANDS: 1
+          - DENSELY_WOODED_HIGHLANDS: 1
           - TEMPERATE_ALPHA_MOUNTAINS: 1
           - TEMPERATE_MOUNTAINS: 1
 
