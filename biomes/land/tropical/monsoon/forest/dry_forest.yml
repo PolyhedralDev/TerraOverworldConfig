@@ -10,8 +10,8 @@ color: $biomes/colors.yml:DRY_FOREST
 vanilla: minecraft:plains
 
 colors:
-  grass: 0xD3CA98
-  foliage: 0xC6D398
+  grass: 0xCCBE8B
+  foliage: 0x688566
 
 tags:
   - LAND_CAVES
@@ -48,16 +48,16 @@ features:
   flora:
     - GRASS
     - DENSE_DRY_GRASS
-    - OAK_BUSHES
+    - SUBTROPICAL_BUSHES
     - FERNS
     - POPPY_PATCH
     - DANDELION_PATCH
     - TALL_GRASS
-    - LEAF_LITTER
   trees:
-    - JUNGLE_TREES
+    - MESQUITE_TREES
     - PALM_TREES
-    - DENSE_FALLEN_JUNGLE_TREES
+    - SPARSE_FALLEN_PALM_TREES
+    - SPARSE_ACACIA_TREES
   landforms:
     - SMALL_MOSSY_BOULDER_PATCHES
   
