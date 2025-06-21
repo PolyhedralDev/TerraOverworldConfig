@@ -15,10 +15,10 @@ colors:
   grass: 0x3c783b
   foliage: 0x3c783b
 
-  climate:
-    precipitation: true
-    temperature: 1.0
-    downfall: 1.0
+climate:
+  precipitation: true
+  temperature: 1.0
+  downfall: 1.0
 
 palette:
   - DRIPSTONE_CAVES: $meta.yml:top-y
