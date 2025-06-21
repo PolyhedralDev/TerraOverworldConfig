@@ -1,7 +1,7 @@
 id: TROPICAL_DEEP_DEPTHS
 type: BIOME
 extends:
-  - DEEP_OCEAN
+  - TROPICAL_DEEP_OCEAN
   - BASE
 color: $biomes/colors.yml:TROPICAL_DEEP_DEPTHS
 
