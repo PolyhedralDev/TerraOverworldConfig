@@ -1,0 +1,58 @@
+id: HORNITOS
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 11
+  padding: 31
+  salt: 6489
+
+locator:
+  type: AND
+  locators:
+    - type: PATTERN
+      range: &range
+        min: ${meta.yml:ocean-level} - 15
+        max: $meta.yml:top-y
+      pattern:
+        type: MATCH_SOLID
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:snow
+          - minecraft:air
+          - minecraft:water
+        offset: 0
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:air
+          - minecraft:water
+        offset: 3
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:air
+          - minecraft:water
+        offset: 6
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:air
+          - minecraft:water
+        offset: 9
+
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: hornito
