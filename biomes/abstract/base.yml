@@ -19,6 +19,7 @@ features:
     - CAVE_GLOW_LICHEN
     - TEXTURED_STONE_SLANT
     - SPARSE_HORNITOS
+    - UNDERGROUND_LAVA_LAKES
   underwater-flora:
     - KELP
     - CLINGING_KELP
