@@ -14,47 +14,47 @@
 
 variables:
   # These serve as default values that each usage of this template can override for specific adjustments
-  
+
   carvingThreshold: 0.55 # Higher = less carving
   carvingCap: 1 # Caps the amount of base carving
-  
-  cheeseStrength: 0.7 # Higher = larger cheese caves
+
+  cheeseStrength: 0.8 # Higher = larger cheese caves
   cheeseHorizontalFrequency: 1.5
   cheeseVerticalFrequency: 3
-  
+
   # Higher = larger spaghetti caves
-  spaghettiAStrength: 0.58
+  spaghettiAStrength: 0.59
   spaghettiBStrength: 0.57
-  
+
   pillarStrength: 0.5
   pillarRadius: 0.02
-  
+
   megaCaveStrength: 0.3
   megaCaveSize: 0.3
-  
+
   # Clamping variables
-  
+
   carvingMinHeight: ${meta.yml:bottom-y} + 1 # Where all carving will cut off at the bottom of the world
   carvingMinTaper: 8 # How many blocks above the min height should all carving 'fade out'
-  
-  cheeseSurfaceBreak: -30 # How many blocks from the surface cheese carving will stop
-  cheeseSurfaceBreakTaper: 20 # How many blocks from surface break should cheese carving taper out
-  
-  spaghettiSurfaceBreak: -10 # How many blocks from the surface spaghetti carving will stop
-  spaghettiSurfaceBreakTaper: 40 # How many blocks from surface break should spaghetti carving taper out
-  
+
+  cheeseSurfaceBreak: -40 # How many blocks from the surface cheese carving will stop
+  cheeseSurfaceBreakTaper: 30 # How many blocks from surface break should cheese carving taper out
+
+  spaghettiSurfaceBreak: -20 # How many blocks from the surface spaghetti carving will stop
+  spaghettiSurfaceBreakTaper: 50 # How many blocks from surface break should spaghetti carving taper out
+
   # carvingMaxMode: !!!Must be set in carving configs that use this template!!!
   #                 - 1 = cap carving by land elevation
   #                 - 2 = cap carving by ocean depth
   #                 - Anything else sets to cap by the constant carvingMaxHeight instead
   carvingMaxHeight: -64
-  
+
   # Terrain variables for clamping max y, shouldn't be overridden
   terrainBase: $customization.yml:terrain-base-y-level
   terrainScale: $customization.yml:terrain-height
   oceanBase: $customization.yml:terrain-ocean-base-y-level
   oceanDepth: $customization.yml:terrain-ocean-depth
-  
+
 expression: | # If > 0 then carve
   -carvingThreshold
   + if(y<carvingMinHeight,0, // Skip unnecessary calculations if y value is below min height
@@ -114,7 +114,7 @@ samplers:
       sampler:
         type: OPEN_SIMPLEX_2
         frequency: 0.0075
-  
+
   # Basic 3D fractal simplex noise
   simplex3:
     dimensions: 3
@@ -128,7 +128,7 @@ samplers:
     dimensions: 2
     type: CELLULAR
     frequency: 0.05
-  
+
   megaCaves:
     dimensions: 3
     type: OPEN_SIMPLEX_2

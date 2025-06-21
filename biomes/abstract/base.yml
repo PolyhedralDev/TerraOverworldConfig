@@ -20,6 +20,7 @@ features:
     - TEXTURED_STONE_SLANT
     - SPARSE_HORNITOS
     - UNDERGROUND_LAVA_LAKES
+    - CAVE_TUNNELS
   underwater-flora:
     - KELP
     - CLINGING_KELP
