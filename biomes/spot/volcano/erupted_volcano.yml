@@ -24,3 +24,5 @@ features:
   preprocessors:
     - SMOOTH_LAVA
     - VOLCANO_LAVA
+  landforms:
+    - HORNITOS

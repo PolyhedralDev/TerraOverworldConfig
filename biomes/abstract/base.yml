@@ -18,6 +18,7 @@ features:
     - CONTAIN_FLOATING_WATER
     - CAVE_GLOW_LICHEN
     - TEXTURED_STONE_SLANT
+    - SPARSE_HORNITOS
   underwater-flora:
     - KELP
     - CLINGING_KELP
