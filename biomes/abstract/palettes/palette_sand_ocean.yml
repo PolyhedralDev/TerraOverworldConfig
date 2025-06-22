@@ -11,3 +11,4 @@ slant:
     palette:
       - BLOCK:minecraft:stone: $meta.yml:top-y
       - SAND_OCEAN: $meta.yml:ocean-level
+      - << meta.yml:palette-bedrock
