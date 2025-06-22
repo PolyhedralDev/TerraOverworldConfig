@@ -10,4 +10,4 @@ slant:
   - threshold: 0.4
     palette:
       - BLOCK:minecraft:stone: $meta.yml:top-y
-      - GRAVEL_OCEAN: $meta.yml:deepslate-top
+      - GRAVEL_OCEAN: $meta.yml:ocean-level
