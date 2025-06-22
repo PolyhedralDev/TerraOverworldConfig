@@ -13,12 +13,6 @@ tags:
   - LAND_CAVES
   - USE_RIVER_TEMPERATE_SWAMP
 
-colors:
-  grass: 0x3abf13
-  foliage: 0x00aa17
-  water: 0x1e97f2
-  water-fog: 0x1e97f2
-
 palette:
   - BAMBOO_PONDS: $meta.yml:top-y
   - << meta.yml:palette-ocean-level-sand
@@ -50,10 +44,12 @@ features:
     - LILY_PADS
     - SMALL_DRIPLEAF
     - BIG_DRIPLEAF_PONDS
+    - MOSS_CARPET
   trees:
     - SUBTROPICAL_BUSHES
     - PALM_TREES
     - SPARSE_FALLEN_PALM_TREES
     - ACACIA_TREES
+    - SWAMP_TREES
   postprocessors:
     - FLOW_STILL_WATER
