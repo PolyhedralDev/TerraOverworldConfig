@@ -1,11 +1,8 @@
 id: ROCKY_SHALLOW_OCEAN
 type: BIOME
 extends:
-  - PALETTE_OCEAN
-  - ENVIRONMENT_MARINE_OCEAN
+  - OCEAN
   - EQ_GLOBAL_OCEAN
-  - CARVING_OCEAN
-  - BASE
 color: $biomes/colors.yml:ROCKY_SHALLOW_OCEAN
 
 vanilla: minecraft:ocean

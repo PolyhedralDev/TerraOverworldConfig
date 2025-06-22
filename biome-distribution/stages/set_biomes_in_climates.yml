@@ -179,7 +179,7 @@ stages:
           - todo: 1
   
         boreal-shallow-ocean:
-          - KELP_FOREST: 1
+          - KELP_FOREST_GRAVEL: 1
         boreal-shallow-ocean-midlands:
           - COLD_OCEAN: 1
           - COLD_OCEAN_OVERHANGS: 1

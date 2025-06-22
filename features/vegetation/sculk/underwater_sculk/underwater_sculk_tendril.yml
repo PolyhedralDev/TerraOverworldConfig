@@ -53,6 +53,5 @@ structures:
       frequency: 0.04
   structures:
     - blank: 20
-    - place_adjacent_sculk_veins: 15
-    - BLOCK:minecraft:sculk: 17
-    - sculk_tendril: 1
+    - place_adjacent_water_sculk_veins: 15
+    - small_sculk_upward_tendril: 17

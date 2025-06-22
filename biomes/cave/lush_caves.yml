@@ -15,10 +15,10 @@ colors:
   grass: 0xa5c742 # Matched to moss block
   foliage: 0xa5cd55 # Matched to azalea leaves
 
-  climate:
-    precipitation: true
-    temperature: 1.0
-    downfall: 1.0
+climate:
+  precipitation: true
+  temperature: 1.0
+  downfall: 1.0
 
 palette:
   - LUSH_CAVES: $meta.yml:top-y

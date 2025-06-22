@@ -1,12 +1,12 @@
-id: SEAGRASS_MEADOW
+id: KELP_FOREST_GRAVEL
 type: BIOME
 extends:
-  - PALETTE_SAND_OCEAN
+  - PALETTE_GRAVEL_OCEAN
   - ENVIRONMENT_MARINE_OCEAN
   - EQ_GLOBAL_OCEAN
   - CARVING_OCEAN
   - BASE
-color: $biomes/colors.yml:SEAGRASS_MEADOW
+color: $biomes/colors.yml:KELP_FOREST_GRAVEL
 
 vanilla: minecraft:ocean
 
@@ -18,4 +18,5 @@ colors:
 
 features:
   underwater-flora:
-    - DENSE_SEAGRASS
+    - DENSE_KELP
+    - SEAGRASS
