@@ -5,7 +5,7 @@ extends:
   - TEMPERATE_MOUNTAINS
 color: $biomes/colors.yml:SAKURA_GROVE
 
-vanilla: minecraft:old_growth_birch_forest
+vanilla: minecraft:cherry_grove
 
 tags:
   - USE_RIVER
