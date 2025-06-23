@@ -46,7 +46,6 @@ features:
     - GRASS
     - PEONY_PATCH
     - ALLIUM_PATCH
-    - BAMBOO_PATCHES
   trees:
     - SAKURA_TREES
     - SPARSE_FALLEN_CHERRY_TREES
