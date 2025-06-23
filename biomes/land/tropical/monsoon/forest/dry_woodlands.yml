@@ -20,7 +20,7 @@ tags:
   - USE_LUKEWARM_RIVER
 
 palette:
-  - GRASS: $meta.yml:top-y
+  - SANDY_GRASS: $meta.yml:top-y
   - << meta.yml:palette-ocean-level-sand
   - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
