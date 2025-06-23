@@ -30,7 +30,7 @@ slant-depth: 1
 slant:
   - threshold: 0.8
     palette:
-      - GRASS: $meta.yml:top-y
+      - SANDY_GRASS: $meta.yml:top-y
       - << meta.yml:palette-underwater
       - << meta.yml:palette-bottom
   - threshold: 0.5
