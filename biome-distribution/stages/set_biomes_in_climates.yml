@@ -364,18 +364,23 @@ stages:
         # Orange hot steppe
         hot-steppe-flat-orange:
           - XERIC_SHRUBLAND: 1
+          - PALM_FOREST: 1
         hot-steppe-orange:
           - XERIC_SHRUBLAND: 1
+          - PALM_FOREST: 1
         hot-steppe-highlands-orange:
           - XERIC_MOUNTAINS: 1
+          - PALM_FOREST: 1
 
         # White hot steppe
         hot-steppe-flat-white:
           - XERIC_SHRUBLAND: 1
           - TAR_PITS: 1
+          - PALM_FOREST: 1
         hot-steppe-white:
           - XERIC_SHRUBLAND: 1
           - TAR_PITS: 1
+          - PALM_FOREST: 1
         hot-steppe-highlands-white:
           - XERIC_MOUNTAINS: 1
 
