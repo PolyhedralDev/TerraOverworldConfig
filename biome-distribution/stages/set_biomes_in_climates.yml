@@ -433,6 +433,7 @@ stages:
           - BAMBOO_JUNGLE: 1
           - TROPICAL_FLOODPLAIN: 1
           - OVERGROWN_CLIFFS: 1
+          - CLOUD_FOREST: 1
         tropical-rainforest-highlands:
           - JUNGLE: 1
           - ROCKY_JUNGLE: 1
@@ -443,6 +444,8 @@ stages:
         tropical-monsoon:
           - DRY_WOODLANDS: 1
           - MONSOON_FOREST: 1
+          - OVERGROWN_CLIFFS: 1
+          - CLOUD_FOREST: 1
         tropical-monsoon-highlands:
           - DRY_WOODLANDS: 1
           - MONSOON_FOREST: 1
