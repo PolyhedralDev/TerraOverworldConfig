@@ -11,11 +11,15 @@ locator:
   type: PATTERN
   range:
     min: $meta.yml:bottom-y
-    max: ${meta.yml:deepslate-top} - 7
+    max: ${meta.yml:ocean-level} - 30
   pattern:
     type: AND
     patterns:
-      - type: MATCH_SOLID
+      - type: MATCH_SET
+        blocks:
+          - minecraft:deepslate
+          - minecraft:basalt
+          - minecraft:tuff
         offset: -1
       - type: MATCH
         block: minecraft:water
