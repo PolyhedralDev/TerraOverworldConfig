@@ -10,6 +10,9 @@ color: $biomes/colors.yml:TROPICAL_OCEAN
 
 vanilla: minecraft:warm_ocean
 
+tags:
+  - USE_TROPICAL_TRENCH
+
 features:
   trees:
     - PALM_TREES

@@ -61,3 +61,4 @@ biomes:
             type: WHITE_NOISE
 
         - << biome-distribution/stages/add_rivers.yml:stages
+        - << biome-distribution/stages/add_trenches.yml:stages

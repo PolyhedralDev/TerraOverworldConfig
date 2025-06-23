@@ -10,6 +10,9 @@ color: $biomes/colors.yml:KELP_FOREST_GRAVEL
 
 vanilla: minecraft:ocean
 
+tags:
+  - USE_TRENCH
+
 colors:
   grass: 0x8eb971
   foliage: 0x71a74d

@@ -1,0 +1,79 @@
+id: EQ_OCEAN_TRENCH
+type: BIOME
+abstract: true
+
+variables: &variables
+  base: $customization.yml:terrain-ocean-base-y-level
+  scale: $customization.yml:terrain-ocean-depth
+
+  depth: 1.31
+  ceilingBase: 1.3
+  ceilingHeight: 1.37
+
+  shelfSize: 0.25
+  shelfStrength: 0.6
+
+terrain:
+  sampler:
+    type: EXPRESSION
+    dimensions: 3
+    variables: *variables
+    expression: |
+      -y + base -
+      erode(
+        base,
+        elevation(x, z),
+        scale,
+        (y - base) / scale,
+        depth,
+        ceilingBase,
+        ceilingHeight,
+        ceilingSpikes(x, z) * -0.1,
+        herp(openings(x, z), 0.3, 0, 0.6, 1)
+      ) * (1 + erosionStrengthVariation(x/3, y, z/3)^2)
+    samplers:
+      erosionStrengthVariation: # Used to roughen up the walls
+        dimensions: 3
+        type: FBM
+        octaves: 2
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.03
+          salt: 5
+      openings:
+        dimensions: 2
+        type: EXPRESSION_NORMALIZER
+        expression: "|in|"
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 1 / 1000
+          salt: 9
+      ceilingSpikes:
+        dimensions: 2
+        type: CUBIC_SPLINE
+        points:
+          - { from: -1, to: 1, gradient: -2 }
+          - { from: -0.2, to: 0, gradient: 0 }
+        sampler:
+          type: CELLULAR
+          distance: Euclidean
+          frequency: 0.06
+    functions:
+      erode:
+        arguments: [ base, elevation, scale, y, depth, ceilingBase, ceilingHeight, ceilingOffset, ceilingOpenings ]
+        expression: |
+          herp(y,
+            -depth, 0,
+            0, herp(y - ceilingOffset - herp(elevation, 0.4, ceilingOpenings, 0.6, 0), 
+              ceilingBase, -y+base+elevation*scale,
+              ceilingBase + ceilingHeight, 0
+            )
+          )
+        functions:
+          "<<":
+            - math/functions/interpolation.yml:functions
+
+  sampler-2d:
+    type: EXPRESSION
+    expression: scale * shelf(oceanElevation(x, z), 0, shelfSize, -shelfStrength)
+    variables: *variables

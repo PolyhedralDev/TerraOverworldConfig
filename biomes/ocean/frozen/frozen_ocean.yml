@@ -10,5 +10,8 @@ color: $biomes/colors.yml:FROZEN_OCEAN
 
 vanilla: minecraft:frozen_ocean
 
+tags:
+  - USE_FROZEN_TRENCH
+
 ocean:
   palette: FROZEN_OCEAN

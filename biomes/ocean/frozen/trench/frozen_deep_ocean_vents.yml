@@ -1,11 +1,11 @@
-id: SUBTROPICAL_DEEP_OCEAN_VENTS
+id: FROZEN_DEEP_OCEAN_VENTS
 type: BIOME
 extends:
-  - EQ_DEEP_OCEAN_TRENCH
-  - SUBTROPICAL_DEEP_OCEAN
-color: $biomes/colors.yml:SUBTROPICAL_DEEP_OCEAN_VENTS
+  - EQ_OCEAN_TRENCH
+  - FROZEN_DEEP_OCEAN
+color: $biomes/colors.yml:FROZEN_DEEP_OCEAN_VENTS
 
-vanilla: minecraft:deep_lukewarm_ocean
+vanilla: minecraft:deep_frozen_ocean
 
 palette:
   - SAND: $meta.yml:top-y
