@@ -34,3 +34,5 @@ features:
   flora:
     - GRASS
     - SMALL_DRIPLEAF
+  trees:
+    - DENSE_AZALEA_TREE_PATCHES
