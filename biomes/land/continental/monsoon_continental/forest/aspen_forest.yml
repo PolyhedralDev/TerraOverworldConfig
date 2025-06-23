@@ -33,7 +33,7 @@ slant:
       - << meta.yml:palette-bottom
   - threshold: 0.4
     palette:
-      - GRANITE_SLANT: $meta.yml:top-y
+      - CALCITE_SLANT: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 features:
