@@ -1,0 +1,71 @@
+id: TROPICAL_RAINFOREST
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_TROPICAL_EQUATORIAL
+  - EQ_LAND
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:JUNGLE
+
+vanilla: minecraft:jungle
+
+colors:
+  grass: 0x69a842
+  foliage: 0x90db40
+  water: 0x14a2c5
+  water-fog: 0x14a2c5
+
+tags:
+  - LAND_CAVES
+  - USE_TROPICAL_RIVER
+
+palette:
+  - GRASS: $meta.yml:top-y
+  - SANDY_GRASS: ${meta.yml:ocean-level} + 4
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.8
+    palette:
+      - GRASS: $meta.yml:top-y
+      - SANDY_GRASS: ${meta.yml:ocean-level} + 4
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.55
+    palette:
+      - MOSS_STONE: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.5
+    palette:
+      - MOSSY_COBBLESTONE_STONE: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.45
+    palette:
+      - TUFF_STONE: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - TALL_GRASS
+    - MOSS_CARPET
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - ROSE_BUSH_PATCH
+    - PEONY_PATCH
+    - LILAC_PATCH
+    - LILY_OF_THE_VALLEY_PATCH
+  trees:
+    - SPARSE_JUNGLE_TREES
+    - SPARSE_SMALL_OAK_TREES
+    - SUBTROPICAL_BUSHES
+    - POTATO_PATCHES
+    - MELON_PATCHES
+    - SPARSE_FALLEN_JUNGLE_TREES
+  landforms:
+    - SMALL_MOSSY_BOULDER_PATCHES

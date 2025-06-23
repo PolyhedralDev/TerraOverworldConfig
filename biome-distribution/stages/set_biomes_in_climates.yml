@@ -437,15 +437,18 @@ stages:
           - BAMBOO_JUNGLE: 1
           - JUNGLE: 1
           - ROCKY_JUNGLE: 1
+          - TROPICAL_RAINFOREST: 1
         tropical-rainforest:
           - BAMBOO_JUNGLE: 1
           - TROPICAL_FLOODPLAIN: 1
           - OVERGROWN_CLIFFS: 1
           - CLOUD_FOREST: 1
+          - TROPICAL_RAINFOREST: 1
         tropical-rainforest-highlands:
           - JUNGLE: 1
           - ROCKY_JUNGLE: 1
           - CLOUD_FOREST: 1
+          - TROPICAL_RAINFOREST: 1
 
         tropical-monsoon-flat:
           - DRY_WOODLANDS: 1
@@ -458,6 +461,7 @@ stages:
         tropical-monsoon-highlands:
           - DRY_WOODLANDS: 1
           - MONSOON_FOREST: 1
+          - TROPICAL_RAINFOREST: 1
 
         tropical-savanna-dry-flat:
           - GRASS_SAVANNA: 1
