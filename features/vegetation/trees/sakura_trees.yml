@@ -52,5 +52,8 @@ locator:
 
 structures:
   distribution:
-    type: CONSTANT
-  structures: cherry_blossom_tree_procedural
+    type: WHITE_NOISE
+    salt: 2818
+  structures:
+    - cherry_blossom_tree_procedural: 12
+    - large_cherry_blossom_tree_procedural: 2
