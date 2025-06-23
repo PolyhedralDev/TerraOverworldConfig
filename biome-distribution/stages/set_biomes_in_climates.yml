@@ -215,10 +215,14 @@ stages:
           - MOORLAND: 1
           - ALIEN_MARSH: 1
           - TEMPERATE_RAINFOREST: 1
+          - ROCKY_GRASSLAND: 1
+          - OAK_FOREST: 1
         temperate-hot:
           - WOODED_BUTTES: 1
           - TEMPERATE_OVERPASS: 1
           - TEMPERATE_RAINFOREST: 1
+          - AZALEA_FOREST: 1
+          - OAK_FOREST: 1
         temperate-hot-highlands:
           - HIGHLANDS: 1
           - DENSELY_WOODED_HIGHLANDS: 1
@@ -433,13 +437,11 @@ stages:
           - BAMBOO_JUNGLE: 1
           - JUNGLE: 1
           - ROCKY_JUNGLE: 1
-          - JUNGLE_CLEARING: 1
         tropical-rainforest:
           - BAMBOO_JUNGLE: 1
           - TROPICAL_FLOODPLAIN: 1
           - OVERGROWN_CLIFFS: 1
           - CLOUD_FOREST: 1
-          - JUNGLE_CLEARING: 1
         tropical-rainforest-highlands:
           - JUNGLE: 1
           - ROCKY_JUNGLE: 1
