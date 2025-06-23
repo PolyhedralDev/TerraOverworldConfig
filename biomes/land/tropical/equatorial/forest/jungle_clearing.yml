@@ -20,8 +20,7 @@ tags:
   - USE_TROPICAL_RIVER
 
 palette:
-  - GRASS: $meta.yml:top-y
-  - GRASS_VARIATION: ${meta.yml:ocean-level} + 4
+  - STONY_GRASS: $meta.yml:top-y
   - << meta.yml:palette-ocean-level-sand
   - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
@@ -62,7 +61,7 @@ features:
     - SMALL_DRIPLEAF
     - BIG_DRIPLEAF
   trees:
-    - DENSE_JUNGLE_BUSHES
+    - JUNGLE_BUSHES
     - POTATO_PATCHES
     - MELON_PATCHES
     - SPARSE_FALLEN_JUNGLE_TREES
