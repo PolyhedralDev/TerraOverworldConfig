@@ -23,6 +23,11 @@ trenchSampler: &trenchSampler
         salt: 4812
         frequency: 0.003
 
+variationSampler: &variationSampler
+  type: CELLULAR
+  return: CellValue
+  frequency: 1 / 100 / ${customization.yml:variation-scale} / ${customization.yml:global-scale}
+
 # Tags are used by biomes to determine the kind of trench to use, except for biomes with
 # their own specific trench biome.
 
@@ -84,3 +89,23 @@ stages:
       - SELF: 1
       - CORAL_OCEAN_TRENCH: 1
     sampler: *trenchSampler
+
+  - type: REPLACE_LIST
+    default-from: OCEAN_TRENCH
+    default-to:
+      - SELF: 2
+      - DEEP_OCEAN_VENTS: 1
+    to:
+      COLD_OCEAN_TRENCH:
+        - SELF: 2
+        - COLD_DEEP_OCEAN_VENTS: 1
+      FROZEN_OCEAN_TRENCH:
+        - SELF: 2
+        - FROZEN_DEEP_OCEAN_VENTS: 1
+      SUBTROPICAL_OCEAN_TRENCH:
+      - SELF: 2
+      - SUBTROPICAL_DEEP_OCEAN_VENTS: 1
+      TROPICAL_OCEAN_TRENCH:
+      - SELF: 2
+      - TROPICAL_DEEP_OCEAN_VENTS: 1
+    sampler: *variationSampler
