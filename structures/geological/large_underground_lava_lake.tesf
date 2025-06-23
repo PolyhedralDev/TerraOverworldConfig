@@ -9,7 +9,11 @@ num yTranslate = 0;
 if (!structure(radius, -radius/squish, 0, "is_rock", "NONE") ||
     !structure(-radius, -radius/squish, 0, "is_rock", "NONE") ||
     !structure(0, -radius/squish, radius, "is_rock", "NONE") ||
-    !structure(0, -radius/squish, -radius, "is_rock", "NONE")
+    !structure(0, -radius/squish, -radius, "is_rock", "NONE") ||
+    getBlock(radius, radius/squish, 0) == "minecraft:water" ||
+    getBlock(-radius, radius/squish, 0) == "minecraft:water" ||
+    getBlock(0, radius/squish, radius) == "minecraft:water" ||
+    getBlock(0, radius/squish, -radius) == "minecraft:water"
     ) fail;
 
 for (num x = -radius-warp; x < radius+warp; x = x + 1) {
