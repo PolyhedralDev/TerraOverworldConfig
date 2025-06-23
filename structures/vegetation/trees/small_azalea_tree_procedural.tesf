@@ -1,7 +1,7 @@
 // Free to modify variables
 num leafRadius = 3 + randomInt(3);
 num trunkHeight = 3 + randomInt(5);
-num leafTopHeight = trunkHeight * 1.2;
+num leafTopHeight = trunkHeight * 1.4;
 num leafBottomHeight = 1 + randomInt(2);
 str trunkBlockX = "minecraft:stripped_oak_log[axis=x]";
 str trunkBlockY = "minecraft:stripped_oak_log[axis=y]";
