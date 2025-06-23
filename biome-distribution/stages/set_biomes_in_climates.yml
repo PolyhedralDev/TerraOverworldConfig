@@ -226,6 +226,7 @@ stages:
           - DENSELY_WOODED_HIGHLANDS: 1
           - TEMPERATE_ALPHA_MOUNTAINS: 1
           - TEMPERATE_MOUNTAINS: 1
+          - TEMPERATE_MONTANE_RAINFOREST: 3
 
         temperate-warm-flat:
           - FLOWERING_FOREST: 1
@@ -245,6 +246,7 @@ stages:
           - DENSELY_WOODED_HIGHLANDS: 1
           - TEMPERATE_ALPHA_MOUNTAINS: 1
           - TEMPERATE_MOUNTAINS: 1
+          - TEMPERATE_MONTANE_RAINFOREST: 3
 
         temperate-cold-flat:
           - PRAIRIE: 3
@@ -439,13 +441,13 @@ stages:
           - ROCKY_JUNGLE: 1
 
         tropical-monsoon-flat:
-          - DRY_FOREST: 1
+          - DRY_WOODLANDS: 1
           - MONSOON_FOREST: 1
         tropical-monsoon:
-          - DRY_FOREST: 1
+          - DRY_WOODLANDS: 1
           - MONSOON_FOREST: 1
         tropical-monsoon-highlands:
-          - DRY_FOREST: 1
+          - DRY_WOODLANDS: 1
           - MONSOON_FOREST: 1
 
         tropical-savanna-dry-flat:

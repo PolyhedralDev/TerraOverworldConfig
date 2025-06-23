@@ -1,17 +1,19 @@
-id: DRY_FOREST
+id: DRY_WOODLANDS
 type: BIOME
 extends:
   - ENVIRONMENT_LAND_TROPICAL_MONSOON
   - EQ_LAND
   - CARVING_LAND
   - BASE
-color: $biomes/colors.yml:DRY_FOREST
+color: $biomes/colors.yml:DRY_WOODLANDS
 
 vanilla: minecraft:plains
 
 colors:
-  grass: 0xCCBE8B
-  foliage: 0x688566
+  grass: 0xafcc47
+  foliage: 0x9ec25f
+  water: 0x2C8b9c
+  water-fog: 0x2C8b9c
 
 tags:
   - LAND_CAVES
@@ -53,11 +55,9 @@ features:
     - POPPY_PATCH
     - DANDELION_PATCH
     - TALL_GRASS
+    - MELON_PATCHES
   trees:
-    - MESQUITE_TREES
-    - PALM_TREES
-    - SPARSE_FALLEN_PALM_TREES
-    - SPARSE_ACACIA_TREES
+    - AZALEA_TREE_MIX
   landforms:
     - SMALL_MOSSY_BOULDER_PATCHES
   

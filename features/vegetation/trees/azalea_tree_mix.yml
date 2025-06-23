@@ -1,0 +1,40 @@
+id: AZALEA_TREE_MIX
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 10
+  padding: 3
+  salt: 9591
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: ${meta.yml:ocean-level} + 3
+        max: $meta.yml:top-y
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:dry-plantable-blocks
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:snow
+          - minecraft:air
+        offset: 0
+
+structures:
+  distribution:
+    type: CELLULAR
+    return: CellValue
+    frequency: 0.03
+  structures:
+    - azalea_tree_procedural: 2
+    - large_dry_tree_procedural: 1
+    - large_flat_dry_tree_procedural: 1
