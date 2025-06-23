@@ -1,0 +1,8 @@
+id: FROZEN_OCEAN_TRENCH
+type: BIOME
+extends:
+  - EQ_OCEAN_TRENCH
+  - FROZEN_DEEP_OCEAN
+color: $biomes/colors.yml:FROZEN_OCEAN_TRENCH
+
+vanilla: minecraft:frozen_ocean

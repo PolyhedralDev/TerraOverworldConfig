@@ -1,11 +1,11 @@
-id: TROPICAL_DEEP_OCEAN_VENTS
+id: COLD_DEEP_OCEAN_VENTS
 type: BIOME
 extends:
-  - EQ_DEEP_OCEAN_TRENCH
-  - TROPICAL_DEEP_OCEAN
-color: $biomes/colors.yml:TROPICAL_DEEP_OCEAN_VENTS
+  - EQ_OCEAN_TRENCH
+  - COLD_DEEP_OCEAN
+color: $biomes/colors.yml:COLD_DEEP_OCEAN_VENTS
 
-vanilla: minecraft:warm_ocean
+vanilla: minecraft:deep_cold_ocean
 
 palette:
   - SAND: $meta.yml:top-y

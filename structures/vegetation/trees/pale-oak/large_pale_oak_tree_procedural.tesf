@@ -19,7 +19,7 @@ num sideBranchLeafRadiusMin = 4;
 num sideBranchLeafTranslate = 0;
 num sideBranchLeafTopFlatness = 1;
 num sideBranchLeafBottomFlatness = 3;
-num sideBranchLeafDensity = 0.75;
+num sideBranchLeafDensity = 0.85;
 str sideBranchLeafStructure = "pale_oak_leaves_clump";
 str sideBranchBlockX = "minecraft:pale_oak_log[axis=x]";
 str sideBranchBlockY = "minecraft:pale_oak_log[axis=y]";
@@ -29,15 +29,17 @@ num topBranches = 6+randomInt(5);
 num topBranchLengthUpwardsMin = 10+randomInt(2);
 num topBranchLengthOutwardsMin = 6+randomInt(6);
 num topBranchVerticalDirection = 1;
-num topBranchLeafRadiusMin = 3.5;
+num topBranchLeafRadiusMin = 3.25;
 num topBranchLeafTranslate = -1;
 num topBranchLeafTopFlatness = 1;
 num topBranchLeafBottomFlatness = 2;
-num topBranchLeafDensity = 0.75;
+num topBranchLeafDensity = 0.95;
 str topBranchLeafStructure = "pale_oak_leaves_clump";
 str topBranchBlockX = "minecraft:pale_oak_log[axis=x]";
 str topBranchBlockY = "minecraft:pale_oak_log[axis=y]";
 str topBranchBlockZ = "minecraft:pale_oak_log[axis=z]";
+
+num leafBranchInterval = 2;
 
 num creakingHeartHeight = 1+randomInt(4);
 
@@ -196,6 +198,7 @@ for (num b = 1; b <= topBranches; b = b + 1) {
             break;
         }
         block(bx, by, bz, branchBlock);
+        if (l % leafBranchInterval == 0) block(bx +(1 -randomInt(2)), by +1, bz +(1 -randomInt(2)), branchBlock);
     }
     // Rotate angle of next branch
     branchAngle = branchAngle + goldenAngle;

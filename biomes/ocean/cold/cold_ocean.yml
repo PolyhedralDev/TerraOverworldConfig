@@ -9,3 +9,6 @@ extends:
 color: $biomes/colors.yml:COLD_OCEAN
 
 vanilla: minecraft:ocean
+
+tags:
+  - USE_COLD_TRENCH

@@ -10,6 +10,9 @@ color: $biomes/colors.yml:SUBTROPICAL_OCEAN
 
 vanilla: minecraft:lukewarm_ocean
 
+tags:
+  - USE_SUBTROPICAL_TRENCH
+
 features:
   trees:
     - PALM_TREES

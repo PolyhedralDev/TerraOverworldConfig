@@ -1,0 +1,14 @@
+id: PALETTE_OCEAN
+type: BIOME
+abstract: true
+
+palette:
+  - SAND_GRAVEL_OCEAN: $meta.yml:top-y
+  - << meta.yml:palette-bedrock
+
+slant:
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - SAND_GRAVEL_OCEAN: $meta.yml:ocean-level
+      - << meta.yml:palette-bedrock

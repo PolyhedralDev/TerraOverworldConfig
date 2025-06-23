@@ -8,6 +8,9 @@ extends:
   - BASE
 color: $biomes/colors.yml:KELP_FOREST
 
+tags:
+  - USE_TRENCH
+
 vanilla: minecraft:ocean
 
 colors:
