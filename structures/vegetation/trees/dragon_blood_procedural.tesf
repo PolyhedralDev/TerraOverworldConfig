@@ -1,0 +1,79 @@
+if (recursions() > 1) fail;
+
+num randPrecision = 100;
+
+num trunkHeight = 8+randomInt(2);
+num stemStartRadius = 1;
+num stemEndRadius = 3.5;
+
+num stemCollarThreshold = 1 - randomInt(randPrecision)/randPrecision/2;
+num stemCollarThickness = 3;
+
+num radius = trunkHeight/2.3;
+num innerRadius = radius-3;
+num midRadius = radius-2.5;
+num warpTop = 0.25;
+num domeDepth = (((randomInt(randPrecision)/randPrecision) * 0.5) + 0.5)*2;
+num squish = 3.5 - domeDepth;
+num branchHeight = 3+round(domeDepth);
+num radiusHorizontal = round(radius + radius*warpTop);
+
+str outerBlock = "minecraft:moss_block";
+str innerBlock = "minecraft:mangrove_roots";
+str spotBlock = "minecraft:pale_moss_block";
+str stemBlock = "minecraft:oak_log";
+
+num t = 0;
+num it = 1;
+num currentRadius = stemStartRadius;
+num currentRadiusSquared = pow2(currentRadius);
+num distanceSquared = 0;
+for (num i = 0; i < trunkHeight; i = i + 1) {
+    num distanceFromTop = trunkHeight - i;
+    if (distanceFromTop <= branchHeight && distanceFromTop > 2) {
+        t = i/(trunkHeight-2);
+        it = 1-t;
+        currentRadius = stemStartRadius * it + stemEndRadius * t;
+        if (t > stemCollarThreshold) currentRadius = currentRadius + stemCollarThickness * it;
+        currentRadiusSquared = pow2(currentRadius);
+        for (num x = round(-currentRadius); x < round(currentRadius); x = x + 1) {
+            for (num z = round(-currentRadius); z < round(currentRadius); z = z + 1) {
+                distanceSquared = pow2(x)+pow2(z);
+                if (distanceSquared < currentRadiusSquared) {
+                    block(x, i, z, innerBlock);
+
+                }
+            }
+        }
+    }
+    else {
+        block(0, i, 0, stemBlock);
+    }
+}
+
+num radiusSquared = pow2(radius);
+num innerRadiusSquared = pow2(innerRadius);
+num midRadiusSquared = pow2(midRadius);
+
+num ox = 0;
+num oy = trunkHeight-radius/squish;
+num oz = 0;
+
+for (num x = -radiusHorizontal; x < radiusHorizontal; x = x + 1) {
+    for (num y = 0; y < radius / squish; y = y + 1) {
+        for (num z = -radiusHorizontal; z < radiusHorizontal; z = z + 1) {
+            distanceSquared = pow2(x)+pow2(y*squish)+pow2(z);
+            if (distanceSquared < radiusSquared && distanceSquared > innerRadiusSquared) {
+                if (distanceSquared > midRadiusSquared) {
+                    if (randomInt(40) == 0) {
+                        block(ox+x, oy+y, oz+z, spotBlock);
+                    } else {
+                        block(ox+x, oy+y, oz+z, outerBlock);
+                    }
+                } else {
+                    block(ox+x, oy+y, oz+z, innerBlock);
+                }
+            }
+        }
+    }
+}
