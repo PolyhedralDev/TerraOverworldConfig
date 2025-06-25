@@ -82,6 +82,8 @@ sculk-plantable-blocks:
   - minecraft:dark_oak_log
   - minecraft:dark_oak_planks
   - minecraft:dark_oak_fence
+  - minecraft:sand
+  - minecraft:gravel
 
 tree-blocks:
     - minecraft:oak_log

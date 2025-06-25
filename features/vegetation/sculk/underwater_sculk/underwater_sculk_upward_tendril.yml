@@ -1,0 +1,44 @@
+id: UNDERWATER_SCULK_UPWARD_TENDRIL
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 7
+  padding: 3
+  salt: 4657
+
+locator:
+  type: AND
+  locators:
+    # Check if block can be replaced with sculk
+    - type: PATTERN
+      range: &range
+        min: $meta.yml:bottom-y
+        max: ${meta.yml:deepslate-top} - 7
+      pattern:
+        type: MATCH
+        block: minecraft:sculk
+        offset: 0
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH
+        block: minecraft:sculk
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH
+        block: minecraft:sculk
+        offset: -2
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH
+        block: minecraft:water
+        offset: 1
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: sculk_upward_tendril

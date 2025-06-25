@@ -1,0 +1,142 @@
+// Features can only generate within a 3x3 chunk area, so
+// generating exactly in the chunk center minimizes stuff
+// getting cut off causing the game to complain in console.
+
+// Get local coordinates within chunk
+num chunkX = originX() % 16;
+num chunkZ = originZ() % 16;
+if (chunkX < 0) chunkX = chunkX + 16;
+if (chunkZ < 0) chunkZ = chunkZ + 16;
+
+// Calculate the offset from the center of the chunk (randomized around 2x2 center)
+num offsetX = -chunkX+7+randomInt(2);
+num offsetZ = -chunkZ+7+randomInt(2);
+
+// First search upwards for an area with enough air space to place the tree
+
+// Search variables
+num maxTunnelHeight = 150;
+num airGap = 10; // How much air must be above the base of the tree
+num undergroundGap = 3; // Determines how much air must be below the tunnel exit
+
+// Search tracking variables
+bool foundSpot = false;
+bool hasUndergroundSpace = true;
+num airHeight = 0; // Keeps track of how much air is below
+num surfaceHeight = 0; // Set to y level of surface if found
+num undergroundHeight = 0; // Set to the y level of tunnel exit
+
+// Run search
+for (num h = 0; h <= maxTunnelHeight; h = h + 1) {
+    str blockID = getBlock(0, h, 0);
+    if (blockID == "minecraft:air") {
+        // Hit air
+        if (airHeight == 0) {
+            airHeight = 1;
+            surfaceHeight = h;
+        }
+        else airHeight = airHeight + 1;
+    } else {
+        // Hit solid block
+        if (undergroundHeight == 0) {
+            // Hit first solid block
+            if (h < undergroundGap) {
+                hasUndergroundSpace = false;
+                break;
+            }
+            undergroundHeight = h;
+        }
+        airHeight = 0;
+    }
+    if (airHeight > airGap) {
+        if (structure(0, surfaceHeight-1, 0, "is_cave_spawnable", "NONE")) {
+            foundSpot = true;
+            break;
+        }
+    }
+}
+if (!foundSpot || !hasUndergroundSpace) fail;
+
+// Tunnel placement
+
+// Tunnel variables
+num randPrecision = 100;
+str tunnelBlock = "minecraft:stone";
+num trunkRadius = 4;
+num helixFrequency = 8+randomInt(3);
+num helixAmplitude = 4;
+num helixJitter = 0.5;
+num helixLerpMin = 0.4;
+num helixLerpMax = 0.6;
+
+bool placeInAir = false;
+for (num trunkLevel = undergroundHeight; trunkLevel <= surfaceHeight-4; trunkLevel = trunkLevel + 1) {
+
+    num t = (trunkLevel-undergroundHeight)/(surfaceHeight-undergroundHeight);
+    num it = 1-t;
+    num amp = max(0,min(1,min(t/helixLerpMin,(t-1)/(-1+helixLerpMax))));
+    num inverseAmp = 1-amp;
+
+    num xOffset = sin(t*helixFrequency)*amp*helixAmplitude;
+    num zOffset = cos(t*helixFrequency)*amp*helixAmplitude;
+    num rootedNoiseThreshold = it;
+
+    num trunkLevelRadius = trunkRadius+amp*(2+randomInt(randPrecision)/randPrecision*helixJitter);
+    num trunkLevelRadiusSquared = pow2(trunkLevelRadius);
+    num trunkLevelRadiusInnerSquared = pow2(trunkLevelRadius-1-amp*2);
+
+    // Determines if all of the blocks in the current layer within the radius are solid.
+    bool allSolid = true;
+
+    // Place a layer of the tunnel
+    for (num x = round(-trunkLevelRadius); x < round(trunkLevelRadius); x = x + 1) {
+        for (num z = round(-trunkLevelRadius); z < round(trunkLevelRadius); z = z + 1) {
+            num distanceSquared = pow2(x)+pow2(z);
+            if (distanceSquared < trunkLevelRadiusSquared) {
+                if (distanceSquared < (trunkLevelRadiusInnerSquared-1)) {
+                    // Inside
+                    block(x+xOffset+offsetX, trunkLevel, z+zOffset+offsetZ, "minecraft:air");
+                    block(x+xOffset+offsetX, trunkLevel-1, z+zOffset+offsetZ, "minecraft:air");
+                } else {
+                    // Border
+                    if (getBlock(x+xOffset+offsetX, trunkLevel, z+zOffset+offsetZ) == "minecraft:air") {
+                        if (!placeInAir) continue;
+                        allSolid = false;
+                    }
+
+                    block(x+xOffset+offsetX, trunkLevel, z+zOffset+offsetZ, tunnelBlock);
+                }
+            }
+        }
+    }
+    if (allSolid) placeInAir = true;
+}
+
+num radius = 5+randomInt(randPrecision)/randPrecision;
+num warp = 4;
+num warpFreq = 6;
+num squish = 1+randomInt(randPrecision)/randPrecision;
+num radiusSquared = pow(radius,2);
+num yTranslate = -3;
+
+for (num x = -radius-warp; x < radius+warp; x = x + 1) {
+    for (num y = (-radius-warp)/squish; y < (radius+warp)/squish; y = y + 1) {
+        for (num z = -radius-warp; z < radius+warp; z = z + 1) {
+            num warpX = warp * sampler("simplex3",
+                                warpFreq*(x+originX()),
+                                warpFreq*(y+originY()+1000),
+                                warpFreq*(z+originZ()));
+            num warpY = warp * sampler("simplex3",
+                                warpFreq*(x+originX()),
+                                warpFreq*(y+originY()+2000),
+                                warpFreq*(z+originZ()));
+            num warpZ = warp * sampler("simplex3",
+                                warpFreq*(x+originX()),
+                                warpFreq*(y+originY()+3000),
+                                warpFreq*(z+originZ()));
+            if (pow(x+warpX,2)+pow((y+warpY)*squish,2)+pow(z+warpZ,2) < radiusSquared) {
+                block(x+offsetX, y+yTranslate+surfaceHeight, z+offsetZ,"minecraft:air");
+            }
+        }
+    }
+}

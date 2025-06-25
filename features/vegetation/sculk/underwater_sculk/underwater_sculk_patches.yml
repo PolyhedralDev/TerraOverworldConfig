@@ -14,14 +14,9 @@ locator:
         min: ${meta.yml:bottom-y} + 14
         max: ${meta.yml:deepslate-top} - 7
       pattern:
-        type: AND
-        patterns:
-          - type: MATCH_SET
-            blocks: $features/vegetation/meta.yml:sculk-plantable-blocks
-            offset: 0
-          - type: MATCH
-            block: minecraft:water
-            offset: 1
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:sculk-plantable-blocks
+        offset: 0
     - type: ADJACENT_PATTERN
       range: *range
       pattern:
@@ -33,6 +28,26 @@ locator:
       pattern:
         type: MATCH_SOLID
         offset: -1
+    - type: OR
+      locators:
+        - type: PATTERN
+          range: *range
+          pattern:
+            type: MATCH
+            block: minecraft:water
+            offset: 1
+        - type: PATTERN
+          range: *range
+          pattern:
+            type: MATCH
+            block: minecraft:water
+            offset: 2
+        - type: PATTERN
+          range: *range
+          pattern:
+            type: MATCH
+            block: minecraft:water
+            offset: 3
 
 structures:
   distribution:
@@ -42,4 +57,4 @@ structures:
   structures: 
     - blank: 9
     - place_adjacent_water_sculk_veins: 1
-    - BLOCK:minecraft:sculk: 4
+    - small_sculk_upward_tendril: 4

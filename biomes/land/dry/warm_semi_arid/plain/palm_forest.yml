@@ -1,24 +1,21 @@
-id: DRY_FOREST
+id: PALM_FOREST
 type: BIOME
 extends:
-  - ENVIRONMENT_LAND_TROPICAL_MONSOON
-  - EQ_LAND
+  - COLOR_XERIC
+  - ENVIRONMENT_LAND_DRY_WARM_SEMI_ARID
+  - EQ_BUTTES
   - CARVING_LAND
   - BASE
-color: $biomes/colors.yml:DRY_FOREST
+color: $biomes/colors.yml:DRY_WOODLANDS
 
-vanilla: minecraft:plains
-
-colors:
-  grass: 0xD3CA98
-  foliage: 0xC6D398
+vanilla: minecraft:savanna
 
 tags:
   - LAND_CAVES
   - USE_LUKEWARM_RIVER
 
 palette:
-  - GRASS: $meta.yml:top-y
+  - SANDY_GRASS: $meta.yml:top-y
   - << meta.yml:palette-ocean-level-sand
   - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
@@ -28,7 +25,7 @@ slant-depth: 1
 slant:
   - threshold: 0.8
     palette:
-      - GRASS: $meta.yml:top-y
+      - SANDY_GRASS: $meta.yml:top-y
       - << meta.yml:palette-underwater
       - << meta.yml:palette-bottom
   - threshold: 0.5
@@ -48,16 +45,13 @@ features:
   flora:
     - GRASS
     - DENSE_DRY_GRASS
-    - OAK_BUSHES
     - FERNS
     - POPPY_PATCH
     - DANDELION_PATCH
-    - TALL_GRASS
-    - LEAF_LITTER
+    - ALLIUM_PATCH
   trees:
-    - JUNGLE_TREES
-    - PALM_TREES
-    - DENSE_FALLEN_JUNGLE_TREES
+    - DENSE_PALM_TREES
+    - DEAD_TREES_SPARSE
   landforms:
-    - SMALL_MOSSY_BOULDER_PATCHES
+    - SMALL_GRANITE_BOULDER_PATCHES
   

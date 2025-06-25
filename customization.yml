@@ -295,6 +295,23 @@ river-max-width: 30
 # Default: 30
 
 # ---
+# Trenches
+# ---
+
+trench-spread-scale: 1
+# Controls how far / close apart trenches generally are, larger scale = further apart
+# trenches, smaller scale = closer packed together trenches.
+# Default: 1
+
+trench-min-width: 8
+# Controls in blocks the minimum width of trenches.
+# Default: 8
+
+trench-max-width: 13
+# Controls in blocks the maximum width of trenches.
+# Default: 13
+
+# ---
 # Spawn Island
 # ---
 

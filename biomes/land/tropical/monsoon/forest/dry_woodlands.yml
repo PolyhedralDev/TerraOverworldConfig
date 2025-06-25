@@ -1,0 +1,63 @@
+id: DRY_WOODLANDS
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_TROPICAL_MONSOON
+  - EQ_LAND
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:DRY_WOODLANDS
+
+vanilla: minecraft:plains
+
+colors:
+  grass: 0xafcc47
+  foliage: 0x9ec25f
+  water: 0x2C8b9c
+  water-fog: 0x2C8b9c
+
+tags:
+  - LAND_CAVES
+  - USE_LUKEWARM_RIVER
+
+palette:
+  - GRASS: $meta.yml:top-y
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant-depth: 1
+
+slant:
+  - threshold: 0.8
+    palette:
+      - SANDY_GRASS: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.5
+    palette:
+      - BLOCK:minecraft:mossy_cobblestone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.45
+    palette:
+      - BLOCK:minecraft:cobblestone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+      
+features:
+  flora:
+    - GRASS
+    - DENSE_DRY_GRASS
+    - SUBTROPICAL_BUSHES
+    - FERNS
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - TALL_GRASS
+    - MELON_PATCHES
+  trees:
+    - AZALEA_TREE_MIX
+  landforms:
+    - SMALL_MOSSY_BOULDER_PATCHES
+  

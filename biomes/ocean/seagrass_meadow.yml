@@ -1,7 +1,7 @@
 id: SEAGRASS_MEADOW
 type: BIOME
 extends:
-  - PALETTE_OCEAN
+  - PALETTE_SAND_OCEAN
   - ENVIRONMENT_MARINE_OCEAN
   - EQ_GLOBAL_OCEAN
   - CARVING_OCEAN
@@ -9,6 +9,9 @@ extends:
 color: $biomes/colors.yml:SEAGRASS_MEADOW
 
 vanilla: minecraft:ocean
+
+tags:
+  - USE_TRENCH
 
 colors:
   grass: 0x8eb971

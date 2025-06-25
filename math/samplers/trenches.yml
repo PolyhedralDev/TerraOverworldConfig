@@ -1,0 +1,106 @@
+variables: &variables
+  notTrenchValue: 2 # Value the sampler outputs for areas where there is not a trench.
+  borderValue: 1 # Value the sampler outputs for areas bordering trenches.
+  trenchValue: 0 # Value the sampler outputs where there should be a trench.
+  
+  trenchFrequency: 1 / 40 / ${customization.yml:trench-spread-scale} / ${customization.yml:global-scale}
+  trenchThreshold: 0.3 # Determines the area calculated as trench, which also determines how far away trench borders will be.
+  trenchMinWidth: ${customization.yml:trench-min-width} * ${customization.yml:global-scale} # Determines the minimum width of trenches within trenchThreshold.
+  trenchMaxWidth: ${customization.yml:trench-max-width} * ${customization.yml:global-scale} # Determines the maximum width of trenches within trenchThreshold.
+
+  erosionMaxDistance: 0.3
+  erosionMax: 0.95
+  erosionMin: 0
+
+samplers:
+  trenchNoise: &trenchNoise
+    dimensions: 2
+    type: TRANSLATE
+    x: -10000
+    z: -10000
+    sampler:
+      type: DOMAIN_WARP
+      amplitude: 3
+      warp:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.1
+      sampler:
+        type: OPEN_SIMPLEX_2
+        salt: 4357
+
+  trenchDistance: &trenchDistance
+    dimensions: 2
+    type: EXPRESSION
+    expression: "|trenchNoise(x*trenchFrequency, z*trenchFrequency)|"
+    variables: *variables
+    samplers:
+      trenchNoise: *trenchNoise
+
+  trenchTerrainErosion:
+    dimensions: 2
+    type: EXPRESSION
+    expression: |
+      herp(trenchDistance(x, z) + herp(erosionStrength(x, z), 0.6, erosionMaxDistance, 0.4, 0),
+        0, erosionMax,
+        erosionMaxDistance, erosionMin
+      ) 
+    variables: *variables
+    functions: $math/functions/interpolation.yml:functions
+    samplers:
+      trenchDistance: *trenchDistance
+      erosionStrength:
+        dimensions: 2
+        type: PROBABILITY
+        sampler:
+          type: FBM
+          octaves: 2
+          sampler:
+            type: OPEN_SIMPLEX_2
+            frequency: 1 / 1000
+            salt: 7634
+
+  trenchBiomeMap:
+    dimensions: 2
+    type: EXPRESSION
+    expression: |
+      trenchBiomeMap(
+        x,
+        lerp(width(x*trenchFrequency, z*trenchFrequency), -0.75, trenchMinWidth, 0.75, trenchMaxWidth),
+        z
+      )
+    variables: *variables
+    functions: $math/functions/interpolation.yml:functions
+    samplers:
+      width:
+        dimensions: 2
+        type: OPEN_SIMPLEX_2
+        frequency: 0.05
+        salt: 5346
+      trenchBiomeMap:
+        dimensions: 3 # Y dimension is used as the width
+        type: EXPRESSION
+        expression: |
+          if(trenchDistance(x, z)>trenchThreshold,
+            notTrenchValue,
+            if(trenchKerneled((x-y)/y, y, (z-y)/y)!=0,
+              trenchValue,
+              borderValue
+            )
+          )
+        variables: *variables
+        samplers:
+          trenchDistance: *trenchDistance
+          trenchKerneled:
+            dimensions: 3
+            type: KERNEL # Edge detection
+            kernel: [
+              [ 0,  1, 0 ],
+              [ 1, -4, 1 ],
+              [ 0,  1, 0 ]
+            ]
+            sampler:
+              type: EXPRESSION
+              expression: trenchNoise(x*y*trenchFrequency, z*y*trenchFrequency)>0
+              variables: *variables
+              samplers:
+                trenchNoise: *trenchNoise

@@ -5,7 +5,7 @@ extends:
   - TEMPERATE_MOUNTAINS
 color: $biomes/colors.yml:SAKURA_GROVE
 
-vanilla: minecraft:old_growth_birch_forest
+vanilla: minecraft:cherry_grove
 
 tags:
   - USE_RIVER
@@ -44,6 +44,8 @@ features:
   flora:
     - PINK_PETALS
     - GRASS
+    - PEONY_PATCH
+    - ALLIUM_PATCH
   trees:
     - SAKURA_TREES
     - SPARSE_FALLEN_CHERRY_TREES

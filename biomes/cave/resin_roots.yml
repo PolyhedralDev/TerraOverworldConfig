@@ -15,10 +15,10 @@ colors:
   grass: 0x778272
   foliage: 0x878D76
 
-  climate:
-    precipitation: true
-    temperature: 1.0
-    downfall: 1.0
+climate:
+  precipitation: true
+  temperature: 1.0
+  downfall: 1.0
 
 palette:
   - RESIN_ROOTS: $meta.yml:top-y

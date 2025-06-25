@@ -35,7 +35,6 @@ structures:
     type: WHITE_NOISE
     salt: 7848
   structures:
-    - douglas_fir_procedural: 1
     - douglas_fir_procedural_2: 1
     - douglas_fir_procedural_3: 1
     - douglas_fir_procedural_4: 1

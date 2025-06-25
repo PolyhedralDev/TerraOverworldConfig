@@ -1,0 +1,25 @@
+id: KELP_FOREST_GRAVEL
+type: BIOME
+extends:
+  - PALETTE_GRAVEL_OCEAN
+  - ENVIRONMENT_MARINE_OCEAN
+  - EQ_GLOBAL_OCEAN
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:KELP_FOREST_GRAVEL
+
+vanilla: minecraft:ocean
+
+tags:
+  - USE_TRENCH
+
+colors:
+  grass: 0x8eb971
+  foliage: 0x71a74d
+  water: 0x1787d4
+  water-fog: 0x1165b0
+
+features:
+  underwater-flora:
+    - DENSE_KELP
+    - SEAGRASS

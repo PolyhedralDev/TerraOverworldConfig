@@ -1,0 +1,8 @@
+id: COLD_OCEAN_TRENCH
+type: BIOME
+extends:
+  - EQ_OCEAN_TRENCH
+  - COLD_DEEP_OCEAN
+color: $biomes/colors.yml:COLD_OCEAN_TRENCH
+
+vanilla: minecraft:ocean

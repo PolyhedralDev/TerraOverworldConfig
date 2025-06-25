@@ -1,0 +1,9 @@
+id: SUBTROPICAL_DEEP_DEPTHS_TRENCH
+type: BIOME
+extends:
+  - EQ_OCEAN_TRENCH
+  - SUBTROPICAL_DEEP_DEPTHS
+  - BASE
+color: $biomes/colors.yml:SUBTROPICAL_DEEP_DEPTHS_TRENCH
+
+vanilla: minecraft:deep_cold_ocean

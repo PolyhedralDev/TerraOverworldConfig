@@ -49,7 +49,6 @@ stages:
           - ICEBERG_OCEAN: 1
         polar-deep-ocean:
           - FROZEN_DEEP_OCEAN: 1
-          - FROZEN_DEEP_OCEAN_VENTS: 1
           - FROZEN_DEEP_DEPTHS: 1
 
   
@@ -179,7 +178,7 @@ stages:
           - todo: 1
   
         boreal-shallow-ocean:
-          - KELP_FOREST: 1
+          - KELP_FOREST_GRAVEL: 1
         boreal-shallow-ocean-midlands:
           - COLD_OCEAN: 1
           - COLD_OCEAN_OVERHANGS: 1
@@ -188,7 +187,6 @@ stages:
           - COLD_OCEAN_SLOPES: 1
         boreal-deep-ocean:
           - COLD_DEEP_OCEAN: 1
-          - COLD_DEEP_OCEAN_VENTS: 1
           - COLD_DEEP_DEPTHS: 1
 
         temperate-hot-dry-flat:
@@ -217,14 +215,20 @@ stages:
           - MOORLAND: 1
           - ALIEN_MARSH: 1
           - TEMPERATE_RAINFOREST: 1
+          - ROCKY_GRASSLAND: 1
+          - OAK_FOREST: 1
         temperate-hot:
           - WOODED_BUTTES: 1
           - TEMPERATE_OVERPASS: 1
           - TEMPERATE_RAINFOREST: 1
+          - AZALEA_FOREST: 1
+          - OAK_FOREST: 1
         temperate-hot-highlands:
           - HIGHLANDS: 1
+          - DENSELY_WOODED_HIGHLANDS: 1
           - TEMPERATE_ALPHA_MOUNTAINS: 1
           - TEMPERATE_MOUNTAINS: 1
+          - TEMPERATE_MONTANE_RAINFOREST: 3
 
         temperate-warm-flat:
           - FLOWERING_FOREST: 1
@@ -233,7 +237,9 @@ stages:
           - SAKURA_GROVE: 1
           - WOODED_BUTTES: 1
           - ROCKY_GRASSLAND: 1
+          - OAK_FOREST: 1
         temperate-warm:
+          - OAK_FOREST: 1
           - FLOWERING_FOREST: 1
           - BROADLEAF_FOREST: 1
           - DARK_FOREST: 1
@@ -241,11 +247,14 @@ stages:
           - WOODED_BUTTES: 1
         temperate-warm-highlands:
           - HIGHLANDS: 1
+          - DENSELY_WOODED_HIGHLANDS: 1
           - TEMPERATE_ALPHA_MOUNTAINS: 1
           - TEMPERATE_MOUNTAINS: 1
+          - TEMPERATE_MONTANE_RAINFOREST: 3
 
         temperate-cold-flat:
           - PRAIRIE: 3
+          - OAK_FOREST: 1
           - ROCKY_GRASSLAND: 1
           - SUNFLOWER_PRAIRIE: 1
           - BROADLEAF_FOREST: 2
@@ -253,6 +262,7 @@ stages:
           - SAKURA_GROVE: 2
           - WOODED_BUTTES: 2
         temperate-cold:
+          - OAK_FOREST: 1
           - ROCKY_GRASSLAND: 1
           - FLOWERING_FOREST: 1
           - BROADLEAF_FOREST: 1
@@ -261,6 +271,7 @@ stages:
           - WOODED_BUTTES: 1
         temperate-cold-highlands:
           - HIGHLANDS: 1
+          - DENSELY_WOODED_HIGHLANDS: 1
           - TEMPERATE_ALPHA_MOUNTAINS: 1
           - TEMPERATE_MOUNTAINS: 1
 
@@ -293,7 +304,6 @@ stages:
           - OCEAN_SLOPES: 1
         temperate-deep-ocean:
           - DEEP_OCEAN: 1
-          - DEEP_OCEAN_VENTS: 1
           - DEEP_DEPTHS: 1
 
         # Red hot desert
@@ -354,25 +364,33 @@ stages:
         # Orange hot steppe
         hot-steppe-flat-orange:
           - XERIC_SHRUBLAND: 1
+          - PALM_FOREST: 1
         hot-steppe-orange:
           - XERIC_SHRUBLAND: 1
+          - PALM_FOREST: 1
         hot-steppe-highlands-orange:
           - XERIC_MOUNTAINS: 1
+          - PALM_FOREST: 1
 
         # White hot steppe
         hot-steppe-flat-white:
           - XERIC_SHRUBLAND: 1
           - TAR_PITS: 1
+          - PALM_FOREST: 1
         hot-steppe-white:
           - XERIC_SHRUBLAND: 1
           - TAR_PITS: 1
+          - PALM_FOREST: 1
         hot-steppe-highlands-white:
           - XERIC_MOUNTAINS: 1
 
+        # Temperate - Desert border
         temperate-steppe-flat:
           - XERIC_SHRUBLAND: 1
+          - DRYBRUSH: 1
         temperate-steppe:
           - XERIC_SHRUBLAND: 1
+          - DRYBRUSH: 1
         temperate-steppe-highlands:
           - XERIC_MOUNTAINS: 1
 
@@ -424,23 +442,31 @@ stages:
           - BAMBOO_JUNGLE: 1
           - JUNGLE: 1
           - ROCKY_JUNGLE: 1
+          - TROPICAL_RAINFOREST: 1
         tropical-rainforest:
           - BAMBOO_JUNGLE: 1
-          - BAMBOO_PONDS: 1
+          - TROPICAL_FLOODPLAIN: 1
           - OVERGROWN_CLIFFS: 1
+          - CLOUD_FOREST: 1
+          - TROPICAL_RAINFOREST: 1
         tropical-rainforest-highlands:
           - JUNGLE: 1
           - ROCKY_JUNGLE: 1
+          - CLOUD_FOREST: 1
+          - TROPICAL_RAINFOREST: 1
 
         tropical-monsoon-flat:
-          - DRY_FOREST: 1
+          - DRY_WOODLANDS: 1
           - MONSOON_FOREST: 1
         tropical-monsoon:
-          - DRY_FOREST: 1
+          - DRY_WOODLANDS: 1
           - MONSOON_FOREST: 1
+          - OVERGROWN_CLIFFS: 1
+          - CLOUD_FOREST: 1
         tropical-monsoon-highlands:
-          - DRY_FOREST: 1
+          - DRY_WOODLANDS: 1
           - MONSOON_FOREST: 1
+          - TROPICAL_RAINFOREST: 1
 
         tropical-savanna-dry-flat:
           - GRASS_SAVANNA: 1
@@ -489,7 +515,6 @@ stages:
           - CORAL_OCEAN_SLOPES: 1
         hot-deep-ocean:
           - TROPICAL_DEEP_OCEAN: 1
-          - TROPICAL_DEEP_OCEAN_VENTS: 1
           - TROPICAL_DEEP_DEPTHS: 1
 
         mushroom:

@@ -1,0 +1,22 @@
+id: TROPICAL_DEEP_OCEAN_VENTS
+type: BIOME
+extends:
+  - EQ_OCEAN_TRENCH
+  - TROPICAL_DEEP_OCEAN
+color: $biomes/colors.yml:TROPICAL_DEEP_OCEAN_VENTS
+
+vanilla: minecraft:warm_ocean
+
+palette:
+  - BASALT_TUFF_OCEAN: $meta.yml:top-y
+  - << meta.yml:palette-bedrock
+
+slant:
+  - threshold: 0.4
+    palette:
+      - BASALT_TUFF_OCEAN: $meta.yml:top-y
+      - << meta.yml:palette-bedrock
+
+features:
+  landforms:
+    - HYDROTHERMAL_VENTS
