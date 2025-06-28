@@ -22,3 +22,5 @@ colors:
 features:
   underwater-flora:
     - DENSE_SEAGRASS
+  landforms:
+    - SPARSE_OCEAN_BOULDERS

@@ -27,6 +27,14 @@ aquatic-plantable-blocks:
   - minecraft:sand
   - minecraft:gravel
 
+seagrass-plantable-blocks:
+  - minecraft:mud
+  - minecraft:sand
+  - minecraft:gravel
+  - minecraft:deepslate
+  - minecraft:basalt
+  - minecraft:tuff
+
 sugarcane-plantable-blocks:
   - minecraft:mud
   - minecraft:sand

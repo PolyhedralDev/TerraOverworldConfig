@@ -1,0 +1,32 @@
+id: SPARSE_OCEAN_BOULDERS
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 34
+  padding: 49
+  salt: 5367
+
+
+locator:
+  type: AND
+  locators:
+    - type: PATTERN
+      range: &range
+        min: $meta.yml:bottom-y
+        max: $meta.yml:ocean-level
+      pattern:
+        type: MATCH_SOLID
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:water
+        offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: dark_ocean_boulder

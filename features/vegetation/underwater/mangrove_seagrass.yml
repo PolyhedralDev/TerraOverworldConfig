@@ -20,7 +20,7 @@ locator:
         block: minecraft:water
         offset: 0
       - type: MATCH_SET
-        blocks: $features/vegetation/meta.yml:aquatic-plantable-blocks
+        blocks: $features/vegetation/meta.yml:seagrass-plantable-blocks
         offset: -1
 
 structures:

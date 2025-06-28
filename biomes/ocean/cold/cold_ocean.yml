@@ -12,3 +12,7 @@ vanilla: minecraft:ocean
 
 tags:
   - USE_COLD_TRENCH
+
+features:
+  landforms:
+    - OCEAN_BOULDERS
