@@ -12,7 +12,7 @@ locator:
   locators:
     - type: PATTERN
       range: &range
-        min: ${meta.yml:ocean-level} - 15
+        min: ${meta.yml:deepslate-top} - 7
         max: $meta.yml:top-y
       pattern:
         type: MATCH_SOLID
@@ -50,6 +50,14 @@ locator:
           - minecraft:air
           - minecraft:water
         offset: 9
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:air
+          - minecraft:water
+        offset: 12
 
 
 structures:

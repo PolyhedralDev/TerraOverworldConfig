@@ -23,3 +23,5 @@ features:
   underwater-flora:
     - DENSE_KELP
     - SEAGRASS
+  landforms:
+    - SPARSE_OCEAN_BOULDERS

@@ -9,7 +9,13 @@ vanilla: minecraft:deep_frozen_ocean
 
 features:
   preprocessors:
+    - SCULK_WEBS
+    - SCULK_PATCHES
+    - SCULK_TENDRIL
+  processors:
     - UNDERWATER_SCULK_PATCHES
     - UNDERWATER_SCULK_TENDRIL
-  trees:
+  landforms:
     - UNDERWATER_SCULK_UPWARD_TENDRIL
+  flora:
+    - SCULK_FLORA
