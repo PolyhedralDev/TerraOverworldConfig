@@ -2,7 +2,7 @@ num randPrecision = 100;
 num goldenAngle = 2.39996;
 num pi = 3.14159;
 
-num length = 14+randomInt(4);
+num length = 12+randomInt(4);
 num trunkRadius = 1.5;
 num buffer = 7;
 num scanOffset = 5;
