@@ -14,7 +14,7 @@ num diskInterval = 3+randomInt(3);
 bool addDisks = false;
 if (randomInt(2) == 0) addDisks = true;
 
-num radius = stemHeight/2;
+num radius = stemHeight/2.5;
 num innerRadius = radius-3;
 num midRadius = radius-2;
 num warpTop = 0.5;
