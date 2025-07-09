@@ -1,6 +1,6 @@
 num randPrecision = 100;
 
-num length = 10+randomInt(4);
+num length = 8+randomInt(4);
 num trunkRadius = 1;
 num buffer = 5;
 num scanOffset = 5;

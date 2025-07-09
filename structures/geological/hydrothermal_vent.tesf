@@ -66,4 +66,17 @@ for (num x = (-radius-warp)*3; x < (radius+warp)*3; x = x + 1) {
     }
 }
 
-structure(0,0,0, "hydrothermal_vent_opening", "NONE");
+for (num h = 25; h > 0; h = h - 1) {
+
+    if (structure(0, h, 1, "is_rock", "NONE") &&
+        structure(0, h, -1, "is_rock", "NONE") &&
+        structure(1, h, 0, "is_rock", "NONE") &&
+        structure(-1, h, 0, "is_rock", "NONE")) {
+        block(0, h, 0, "minecraft:water", true);
+        block(0, h-1, 0, "minecraft:magma_block", true);
+        block(0, h-2, 0, "minecraft:campfire[lit=true,signal_fire=true]", true);
+        break;
+    }
+
+    if (structure(0, h, 0, "is_rock", "NONE")) block(0, h, 0, "minecraft:water", true);
+}

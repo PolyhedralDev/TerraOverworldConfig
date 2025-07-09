@@ -1,0 +1,68 @@
+id: EQ_GLOBAL_ERODED
+type: BIOME
+abstract: true
+
+vars: &variables
+  base: $customization.yml:terrain-base-y-level
+  scale: $customization.yml:terrain-height
+  
+  pillarHeight: 0.35
+  pillarPlatformHeight: 0.05
+  pillarWarpStrength: 45
+  pillarYMin: 50
+
+terrain:
+  sampler:
+    dimensions: 3
+    type: EXPRESSION
+    variables: *variables
+    expression: |
+      -y + base
+      + if(y<pillarYMin||y>base+scale,0, // Skip unnecessary calculations
+        herp(elevation(x, z),
+          0.8, 0,
+          0.6, scale * max(
+            // Pillar 'platform'
+            herp(pillarMask(x, z),
+              0.4, 0,
+              0.5, pillarPlatformHeight - elevation(x, z) / 2
+            ),
+      
+            // Pillars
+            herp(pillarMask(
+                x+pillarWarp(x,y/2,z)*pillarWarpStrength,
+                z+pillarWarp(x,y/2,z+1000)*pillarWarpStrength),
+              0.5, 0,
+              0.7, pillarHeight
+            )
+          )
+        )
+      )
+    samplers:
+      pillarMask:
+        dimensions: 2
+        type: EXPRESSION
+        expression: (-noise(x, z)+1)/2
+        samplers:
+          noise:
+            dimensions: 2
+            type: RIDGED
+            gain: 0.7
+            sampler:
+              type: OPEN_SIMPLEX_2
+              frequency: 0.0025
+      pillarWarp:
+        dimensions: 3
+        type: FBM
+        octaves: 3
+        lacunarity: 2.2
+        gain: 0.4
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.01
+
+  sampler-2d:
+    dimensions: 2
+    type: EXPRESSION
+    variables: *variables
+    expression: scale * elevationDetailed(x, z)

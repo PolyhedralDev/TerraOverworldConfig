@@ -20,44 +20,31 @@ locator:
     - type: PATTERN
       range: *range
       pattern:
-        type: MATCH_SET
-        blocks:
-          - minecraft:snow
-          - minecraft:air
-          - minecraft:water
-        offset: 0
-    - type: PATTERN
-      range: *range
-      pattern:
-        type: MATCH_SET
-        blocks:
-          - minecraft:air
-          - minecraft:water
-        offset: 3
-    - type: PATTERN
-      range: *range
-      pattern:
-        type: MATCH_SET
-        blocks:
-          - minecraft:air
-          - minecraft:water
-        offset: 6
-    - type: PATTERN
-      range: *range
-      pattern:
-        type: MATCH_SET
-        blocks:
-          - minecraft:air
-          - minecraft:water
-        offset: 9
-    - type: PATTERN
-      range: *range
-      pattern:
-        type: MATCH_SET
-        blocks:
-          - minecraft:air
-          - minecraft:water
-        offset: 12
+        type: AND
+        patterns:
+          - type: MATCH_SET
+            blocks: &blocks
+              - minecraft:air
+              - minecraft:water
+            offset: 4
+          - type: MATCH_SET
+            blocks: *blocks
+            offset: 6
+          - type: MATCH_SET
+            blocks: *blocks
+            offset: 8
+          - type: MATCH_SET
+            blocks: *blocks
+            offset: 10
+          - type: MATCH_SET
+            blocks: *blocks
+            offset: 12
+          - type: MATCH_SET
+            blocks: *blocks
+            offset: 14
+          - type: MATCH_SET
+            blocks: *blocks
+            offset: 16
 
 
 structures:

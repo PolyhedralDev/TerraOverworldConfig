@@ -18,13 +18,17 @@ variables:
   carvingThreshold: 0.55 # Higher = less carving
   carvingCap: 1 # Caps the amount of base carving
 
-  cheeseStrength: 0.8 # Higher = larger cheese caves
+  cheeseStrength: 0.7 # Higher = larger cheese caves
   cheeseHorizontalFrequency: 1.5
   cheeseVerticalFrequency: 3
 
   # Higher = larger spaghetti caves
-  spaghettiAStrength: 0.59
+  spaghettiAStrength: 0.58
   spaghettiBStrength: 0.57
+
+  # Higher = larger spaghetti caves
+  noodleAStrength: 0.605
+  noodleBStrength: 0.59
 
   pillarStrength: 0.5
   pillarRadius: 0.02
@@ -39,6 +43,9 @@ variables:
 
   cheeseSurfaceBreak: -40 # How many blocks from the surface cheese carving will stop
   cheeseSurfaceBreakTaper: 30 # How many blocks from surface break should cheese carving taper out
+
+  noodleSurfaceBreak: -20 # How many blocks from the surface cheese carving will stop
+  noodleSurfaceBreakTaper: 20 # How many blocks from surface break should cheese carving taper out
 
   spaghettiSurfaceBreak: -20 # How many blocks from the surface spaghetti carving will stop
   spaghettiSurfaceBreakTaper: 50 # How many blocks from surface break should spaghetti carving taper out
@@ -61,20 +68,34 @@ expression: | # If > 0 then carve
     maskSmooth(
       min(carvingCap,
         max(
-          // Spaghetti Caves
-          maskSmooth(
-            // Combine two layers 'A' and 'B' of 'spaghetti noise' (the sum of two ridged 3D noise functions)
-            max(
-              spaghettiAStrength * ((-(|simplex3(x,y+0000,z)|+|simplex3(x,y+1000,z)|)/2)+1),
-              spaghettiBStrength * ((-(|simplex3(x,y+2000,z)|+|simplex3(x,y+3000,z)|)/2)+1)
+          max(
+            // Spaghetti Caves
+            maskSmooth(
+              // Combine two layers 'A' and 'B' of 'spaghetti noise' (the sum of two ridged 3D noise functions)
+              max(
+                spaghettiAStrength * ((-(|simplex3(x,y+0000,z)|+|simplex3(x,y+1000,z)|)/2)+1),
+                spaghettiBStrength * ((-(|simplex3(x,y+2000,z)|+|simplex3(x,y+3000,z)|)/2)+1)
+              ),
+              // Spaghetti mask
+              // These could probably be deduplicated to prevent repeat calculations by using a wrapper function, but this will work for now.
+              if(carvingMaxMode=1,elevation(x, z)*terrainScale+terrainBase,if(carvingMaxMode=2,oceanElevation(x, z)*oceanDepth+oceanBase,carvingMaxHeight)) + spaghettiSurfaceBreakTaper,
+              if(carvingMaxMode=1,elevation(x, z)*terrainScale+terrainBase,if(carvingMaxMode=2,oceanElevation(x, z)*oceanDepth+oceanBase,carvingMaxHeight)),
+              y - spaghettiSurfaceBreak
             ),
-            // Spaghetti mask
-            // These could probably be deduplicated to prevent repeat calculations by using a wrapper function, but this will work for now.
-            if(carvingMaxMode=1,elevation(x, z)*terrainScale+terrainBase,if(carvingMaxMode=2,oceanElevation(x, z)*oceanDepth+oceanBase,carvingMaxHeight)) + spaghettiSurfaceBreakTaper,
-            if(carvingMaxMode=1,elevation(x, z)*terrainScale+terrainBase,if(carvingMaxMode=2,oceanElevation(x, z)*oceanDepth+oceanBase,carvingMaxHeight)),
-            y - spaghettiSurfaceBreak
+            // noodle Caves
+            maskSmooth(
+              // Combine two layers 'A' and 'B' of 'noodle noise' (the sum of two ridged 3D noise functions)
+                max(
+                  max(0.5,noodleAStrength * ((-(|simplex3(x,y-0000,z)*2|+|simplex3(x,y-1000,z)*2|)/2)+1)),
+                  min(0.5,noodleBStrength * ((-(|simplex3(x,y-2000,z)*2|+|simplex3(x,y-3000,z)*2|)/2)+1))
+                ),
+              // noodle mask
+              // These could probably be deduplicated to prevent repeat calculations by using a wrapper function, but this will work for now.
+              if(carvingMaxMode=1,elevation(x, z)*terrainScale+terrainBase,if(carvingMaxMode=2,oceanElevation(x, z)*oceanDepth+oceanBase,carvingMaxHeight)) + noodleSurfaceBreakTaper,
+              if(carvingMaxMode=1,elevation(x, z)*terrainScale+terrainBase,if(carvingMaxMode=2,oceanElevation(x, z)*oceanDepth+oceanBase,carvingMaxHeight)),
+              y - noodleSurfaceBreak
+            )
           ),
-  
           // Cheese caves
           maskSmooth(
             cheeseStrength * (simplex3(

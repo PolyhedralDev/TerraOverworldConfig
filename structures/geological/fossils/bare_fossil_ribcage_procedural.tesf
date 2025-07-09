@@ -2,20 +2,19 @@ num randPrecision = 100;
 num goldenAngle = 2.39996;
 num pi = 3.14159;
 
-num spineLength = 10+randomInt(10);
+num spineLength = 8+randomInt(4);
 
 str spineBlock = "minecraft:bone_block[axis=x]";
 str ribBlock = "minecraft:bone_block[axis=z]";
 str ribBlockY = "minecraft:bone_block[axis=y]";
 
-num ribInterval = 2+randomInt(4);
-num ribLengthBase = 10;
+num ribInterval = 2+randomInt(3);
+num ribLengthBase = 8;
 num ribLengthVariation = 3;
 
 num ribRadius = 1;
 num ribVerticalDirection = 1+(randomInt(randPrecision)/(randPrecision));
-num ribDroop = 0.1 +((randomInt(10)/1000));
-num ribLengthPeak = 5;
+num ribDroop = 0.15 +((randomInt(10)/1000));
 
 bool rotate = false;
 
@@ -34,11 +33,11 @@ for (num l = -3; l < spineLength; l = l + 1) {
 
     if (rotate == false) {
         xl = l;
-        if (getBlock(spineLength/2, 0, zl) == "minecraft:air") fail;
+      //  if (getBlock(spineLength/2, 0, zl) == "minecraft:air") fail;
     }
     if (rotate == true) {
         zl = l;
-        if (getBlock(xl, 0, spineLength/2) == "minecraft:air") fail;
+      //  if (getBlock(xl, 0, spineLength/2) == "minecraft:air") fail;
     }
 
     block(xl, 0, zl, spineBlock, true);
