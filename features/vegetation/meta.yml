@@ -17,6 +17,16 @@ dry-plantable-blocks:
   - minecraft:pale_moss_block
   - minecraft:rooted_dirt
 
+dragons-blood-tree-plantable-blocks:
+  - minecraft:sand
+  - minecraft:gravel
+  - minecraft:red_sand
+  - minecraft:grass_block
+  - minecraft:podzol
+  - minecraft:dirt
+  - minecraft:coarse_dirt
+  - minecraft:rooted_dirt
+
 palm-tree-plantable-blocks:
   - minecraft:sand
   - minecraft:red_sand

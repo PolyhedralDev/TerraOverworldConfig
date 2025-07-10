@@ -1,48 +1,50 @@
-id: XERIC_MOUNTAINS
+id: FIRMIHIN_FOREST
 type: BIOME
 extends:
   - COLOR_XERIC
   - ENVIRONMENT_LAND_DRY_WARM_SEMI_ARID
-  - EQ_STRATIFIED_LAND
+  - EQ_MULTI_TERRACED_LAND
   - CARVING_LAND
-  - ORES_EMERALD
   - BASE
-color: $biomes/colors.yml:XERIC_MOUNTAINS
+color: $biomes/colors.yml:FIRMIHIN_FOREST
 
 vanilla: minecraft:desert
 
 tags:
-  - DEEP_DARK
+  - LAND_CAVES
+  - USE_DESERT_RIVER
 
 palette:
-  - XERIC: $meta.yml:top-y
+  - SOCOTRA: $meta.yml:top-y
   - << meta.yml:palette-ocean-level-sand
   - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
 
+slant-depth: 5
+
 slant:
   - threshold: 0.8
     palette:
-      - XERIC: $meta.yml:top-y
+      - SOCOTRA: $meta.yml:top-y
       - << meta.yml:palette-underwater
       - << meta.yml:palette-bottom
   - threshold: 0.4
     palette:
-      - XERIC_SLANT: $meta.yml:top-y
+      - SOCOTRA_SLANT: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 features:
+  landforms:
+    - BOULDERS
+    - SMALL_BOULDER_PATCHES
+    - SMALL_SANDSTONE_BOULDER_PATCHES
+    - SANDSTONE_BOULDERS
   flora:
     - GRASS
-    - LEAF_LITTER
     - DEAD_BUSHES
-    - POPPY_PATCH
-    - DANDELION_PATCH
     - CACTUS_SPARSE
+    - DRY_GRASS
   trees:
     - OAK_BUSHES
     - SPARSE_OAK_TREES
-    - SPARSE_FALLEN_OAK_TREES
-    - SPARSE_FALLEN_NORMAL_DARK_OAK_TREES
-    - MESQUITE_TREES
-    - DEAD_TREES_SPARSE
+    - DRAGON_BLOOD_TREES
