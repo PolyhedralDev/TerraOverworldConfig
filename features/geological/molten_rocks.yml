@@ -1,0 +1,45 @@
+id: MOLTEN_ROCKS
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 5
+  padding: 3
+  salt: 6479
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: $meta.yml:ocean-level
+        max: $meta.yml:top-y
+      pattern:
+        type: MATCH
+        block: minecraft:air
+        offset: 0
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: AND
+        patterns:
+          - type: MATCH
+            block: minecraft:lava
+            offset: -1
+          - type: MATCH
+            block: minecraft:lava
+            offset: -3
+          - type: MATCH
+            block: minecraft:lava
+            offset: -6
+          - type: MATCH
+            block: minecraft:lava
+            offset: -9
+          - type: MATCH
+            block: minecraft:lava
+            offset: -12
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: molten_rock
