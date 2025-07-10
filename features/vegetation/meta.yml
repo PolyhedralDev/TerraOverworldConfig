@@ -13,8 +13,6 @@ dry-plantable-blocks:
   - minecraft:podzol
   - minecraft:dirt
   - minecraft:coarse_dirt
-  - minecraft:moss_block
-  - minecraft:pale_moss_block
   - minecraft:rooted_dirt
 
 dragons-blood-tree-plantable-blocks:
