@@ -8,6 +8,10 @@ color: $biomes/colors.yml:ERUPTED_VOLCANO
 
 vanilla: minecraft:badlands
 
+particles:
+  particle: minecraft:ash
+  probability: 0.025
+
 colors:
   sky: 0x84b3af
   fog: 0x76828b
@@ -26,3 +30,4 @@ features:
     - VOLCANO_LAVA
   landforms:
     - HORNITOS
+    - MOLTEN_ROCKS
