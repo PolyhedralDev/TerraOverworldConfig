@@ -31,7 +31,7 @@ specific to a different domain of configuration:
   blocks make up the base terrain.
 
 - `math`
-  Common mathematical functions used in the pack as well as generic noise 
+  Common mathematical functions used in the pack as well as generic noise
   samplers are defined here.
 
 For more in-depth explanations of each directory's files and subdirectories, you

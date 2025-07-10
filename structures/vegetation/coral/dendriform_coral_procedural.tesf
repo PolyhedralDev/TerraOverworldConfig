@@ -4,11 +4,11 @@ num randPrecision = 100;
 num stemRand = randomInt(5);
 str stemBlock = "minecraft:stone";
 
-if(stemRand == 0) stemBlock = "minecraft:brain_coral_block";
-else if(stemRand == 1) stemBlock = "minecraft:bubble_coral_block";
-else if(stemRand == 2) stemBlock = "minecraft:tube_coral_block";
-else if(stemRand == 3) stemBlock = "minecraft:fire_coral_block";
-else if(stemRand == 4) stemBlock = "minecraft:horn_coral_block";
+if (stemRand == 0) stemBlock = "minecraft:brain_coral_block";
+else if (stemRand == 1) stemBlock = "minecraft:bubble_coral_block";
+else if (stemRand == 2) stemBlock = "minecraft:tube_coral_block";
+else if (stemRand == 3) stemBlock = "minecraft:fire_coral_block";
+else if (stemRand == 4) stemBlock = "minecraft:horn_coral_block";
 
 num stemHeight = randomInt(2) + 1; // Length of main trunk
 
@@ -27,39 +27,39 @@ for (num i = 0; i <= stemHeight; i = i + 1) {
 // Generate branches
 for (num i = 0; i <= topBranchCount; i = i + 1) {
     // Pick random branch length
-    num branchLength = topBranchLengthMin+randomInt(topBranchLengthVariation);
+    num branchLength = topBranchLengthMin + randomInt(topBranchLengthVariation);
     // Pick random vector to determine the branch direction
-    num dx = (randomInt(randPrecision)/randPrecision-0.5)*1.5;
-    num dy = topBranchVerticalDirection+randomInt(randPrecision)/randPrecision*topBranchVerticalVariation;
-    num dz = (randomInt(randPrecision)/randPrecision-0.5)*1.5;
+    num dx = (randomInt(randPrecision) / randPrecision - 0.5) * 1.5;
+    num dy = topBranchVerticalDirection + randomInt(randPrecision) / randPrecision * topBranchVerticalVariation;
+    num dz = (randomInt(randPrecision) / randPrecision - 0.5) * 1.5;
     // Normalize direction vector
-    num mag = sqrt(pow(dx,2)+pow(dy,2)+pow(dz,2));
-    dx = dx/mag;
-    dy = dy/mag;
-    dz = dz/mag;
+    num mag = sqrt(pow(dx, 2) + pow(dy, 2) + pow(dz, 2));
+    dx = dx / mag;
+    dy = dy / mag;
+    dz = dz / mag;
     // Generate branch
     for (num l = 0; l <= branchLength; l = l + 1) {
         // Branch
-        block(dx*l, stemHeight+dy*l, dz*l, stemBlock);
+        block(dx * l, stemHeight + dy * l, dz * l, stemBlock);
 
         // Randomize what coral to use on block
         num coralRand = randomInt(9);
         str coralBlock = "minecraft:stone";
 
-        if(coralRand == 0) coralBlock = "minecraft:brain_coral";
-        else if(coralRand == 1) coralBlock = "minecraft:bubble_coral";
-        else if(coralRand == 2) coralBlock = "minecraft:tube_coral";
-        else if(coralRand == 3) coralBlock = "minecraft:fire_coral";
-        else if(coralRand == 4) coralBlock = "minecraft:horn_coral";
-        else if(coralRand == 5) coralBlock = "minecraft:brain_coral_fan";
-        else if(coralRand == 6) coralBlock = "minecraft:bubble_coral_fan";
-        else if(coralRand == 7) coralBlock = "minecraft:tube_coral_fan";
-        else if(coralRand == 8) coralBlock = "minecraft:fire_coral_fan";
-        else if(coralRand == 9) coralBlock = "minecraft:horn_coral_fan";
+        if (coralRand == 0) coralBlock = "minecraft:brain_coral";
+        else if (coralRand == 1) coralBlock = "minecraft:bubble_coral";
+        else if (coralRand == 2) coralBlock = "minecraft:tube_coral";
+        else if (coralRand == 3) coralBlock = "minecraft:fire_coral";
+        else if (coralRand == 4) coralBlock = "minecraft:horn_coral";
+        else if (coralRand == 5) coralBlock = "minecraft:brain_coral_fan";
+        else if (coralRand == 6) coralBlock = "minecraft:bubble_coral_fan";
+        else if (coralRand == 7) coralBlock = "minecraft:tube_coral_fan";
+        else if (coralRand == 8) coralBlock = "minecraft:fire_coral_fan";
+        else if (coralRand == 9) coralBlock = "minecraft:horn_coral_fan";
 
         // 33.3% chance to place coral on top OR on sides, otherwise no coral
         num doCoral = randomInt(2);
-        if(doCoral == 0) block(dx*l, stemHeight+dy*l+1, dz*l, coralBlock);
+        if (doCoral == 0) block(dx * l, stemHeight + dy * l + 1, dz * l, coralBlock);
 
 
         // TODO add coral on sides of block once I can get them to work

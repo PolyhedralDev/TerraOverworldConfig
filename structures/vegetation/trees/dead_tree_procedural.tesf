@@ -3,23 +3,23 @@ num randPrecision = 100;
 num goldenAngle = 2.39996;
 num pi = 3.14159;
 
-num trunkHeight = 2+randomInt(2);
+num trunkHeight = 2 + randomInt(2);
 str trunkBlock = "minecraft:dark_oak_log";
 str rootBlock = "minecraft:dark_oak_log";
 
-num sideBranchInterval = 3+randomInt(2);
-num sideBranchMinHeight = 2+randomInt(2);
-num sideBranchLengthMin = 2+randomInt(3);
+num sideBranchInterval = 3 + randomInt(2);
+num sideBranchMinHeight = 2 + randomInt(2);
+num sideBranchLengthMin = 2 + randomInt(3);
 num sideBranchLengthVariation = 2;
 num sideBranchVerticalVariation = 0;
-num sideBranchVerticalDirection = 0.3+randomInt(randPrecision)/randPrecision/2;
+num sideBranchVerticalDirection = 0.3 + randomInt(randPrecision) / randPrecision / 2;
 str sideBranchBlockX = "minecraft:dark_oak_log[axis=x]";
 str sideBranchBlockY = "minecraft:dark_oak_log[axis=y]";
 str sideBranchBlockZ = "minecraft:dark_oak_log[axis=z]";
 
-num topBranches = 2+randomInt(2);
-num topBranchLengthUpwardsMin = 2+randomInt(2);
-num topBranchLengthOutwardsMin = 2+randomInt(3);
+num topBranches = 2 + randomInt(2);
+num topBranchLengthUpwardsMin = 2 + randomInt(2);
+num topBranchLengthOutwardsMin = 2 + randomInt(3);
 num topBranchVerticalDirection = 0.5;
 str topBranchBlockX = "minecraft:dark_oak_log[axis=x]";
 str topBranchBlockY = "minecraft:dark_oak_log[axis=y]";
@@ -30,50 +30,50 @@ num roots = 0;
 num rootMaxDepth = 3;
 num rootHeight = 5;
 num rootLength = 2;
-num rootAngle = randomInt(randPrecision)/randPrecision*2*pi;
+num rootAngle = randomInt(randPrecision) / randPrecision * 2 * pi;
 for (num r = 0; r < roots; r = r + 1) {
     num dx = sin(rootAngle);
     num dz = cos(rootAngle);
     for (num l = 0; l <= rootLength; l = l + 1) {
-        num height = rootHeight * (1-(l/rootLength));
+        num height = rootHeight * (1 - (l / rootLength));
         bool bottomedOut = false;
         for (num h = height; h >= -rootMaxDepth; h = h - 1) {
-            if (check(round(l*dx),round(h),round(l*dz)) != "AIR") {
+            if (check(round(l * dx), round(h), round(l * dz)) != "AIR") {
                 bottomedOut = true;
                 break;
             }
-            block(l*dx, h, l*dz, rootBlock);
+            block(l * dx, h, l * dz, rootBlock);
         }
         if (!bottomedOut) break;
     }
     rootAngle = rootAngle + goldenAngle;
 }
 
-num branchAngle = randomInt(randPrecision)/randPrecision*2*pi;
+num branchAngle = randomInt(randPrecision) / randPrecision * 2 * pi;
 for (num i = 0; i < trunkHeight; i = i + 1) {
     if (i > sideBranchMinHeight) {
         if (i % sideBranchInterval == 0) {
             // Branch direction vector
             num dx = sin(branchAngle);
-            num dy = sideBranchVerticalDirection + randomInt(randPrecision)/randPrecision*sideBranchVerticalVariation;
+            num dy = sideBranchVerticalDirection + randomInt(randPrecision) / randPrecision * sideBranchVerticalVariation;
             num dz = cos(branchAngle);
             // Normalize vector
-            num mag = sqrt(pow(dx,2)+pow(dy,2)+pow(dz,2));
-            dx = dx/mag;
-            dy = dy/mag;
-            dz = dz/mag;
+            num mag = sqrt(pow(dx, 2) + pow(dy, 2) + pow(dz, 2));
+            dx = dx / mag;
+            dy = dy / mag;
+            dz = dz / mag;
             // Branch origin
             num ox = 0;
             num oy = i;
             num oz = 0;
             // Set branch block based on largest unsigned vector component
             str branchBlock = sideBranchBlockY;
-            if (abs(dx) > max(abs(dy),abs(dz))) branchBlock = sideBranchBlockX;
-            else if (abs(dz) > max(abs(dy),abs(dx))) branchBlock = sideBranchBlockZ;
-            num branchLength = sideBranchLengthMin + randomInt(randPrecision)/randPrecision*sideBranchLengthVariation;
+            if (abs(dx) > max(abs(dy), abs(dz))) branchBlock = sideBranchBlockX;
+            else if (abs(dz) > max(abs(dy), abs(dx))) branchBlock = sideBranchBlockZ;
+            num branchLength = sideBranchLengthMin + randomInt(randPrecision) / randPrecision * sideBranchLengthVariation;
             // Generate branch
             for (num l = 0; l <= branchLength; l = l + 1) {
-                block(l*dx+ox, l*dy+oy, l*dz+oz, branchBlock);
+                block(l * dx + ox, l * dy + oy, l * dz + oz, branchBlock);
             }
             // Rotate angle of next branch
             branchAngle = branchAngle + goldenAngle;
@@ -83,29 +83,29 @@ for (num i = 0; i < trunkHeight; i = i + 1) {
 }
 
 for (num b = 1; b <= topBranches; b = b + 1) {
-    num t = b/topBranches;
-    num ti = 1-t;
+    num t = b / topBranches;
+    num ti = 1 - t;
     // Branch direction vector
     num dx = sin(branchAngle) * t;
     num dy = topBranchVerticalDirection;
     num dz = cos(branchAngle) * t;
     // Normalize vector
-    num mag = sqrt(pow(dx,2)+pow(dy,2)+pow(dz,2));
-    dx = dx/mag;
-    dy = dy/mag;
-    dz = dz/mag;
+    num mag = sqrt(pow(dx, 2) + pow(dy, 2) + pow(dz, 2));
+    dx = dx / mag;
+    dy = dy / mag;
+    dz = dz / mag;
     // Branch origin
     num ox = 0;
     num oy = trunkHeight;
     num oz = 0;
     // Set branch block based on largest unsigned vector component
     str branchBlock = topBranchBlockY;
-    if (abs(dx) > max(abs(dy),abs(dz))) branchBlock = topBranchBlockX;
-    else if (abs(dz) > max(abs(dy),abs(dx))) branchBlock = topBranchBlockZ;
-    num branchLength = topBranchLengthUpwardsMin*ti + topBranchLengthOutwardsMin*t;
+    if (abs(dx) > max(abs(dy), abs(dz))) branchBlock = topBranchBlockX;
+    else if (abs(dz) > max(abs(dy), abs(dx))) branchBlock = topBranchBlockZ;
+    num branchLength = topBranchLengthUpwardsMin * ti + topBranchLengthOutwardsMin * t;
     // Generate branch
     for (num l = 0; l <= branchLength; l = l + 1) {
-        block(l*dx+ox, l*dy+oy, l*dz+oz, branchBlock);
+        block(l * dx + ox, l * dy + oy, l * dz + oz, branchBlock);
     }
     // Rotate angle of next branch
     branchAngle = branchAngle + goldenAngle;

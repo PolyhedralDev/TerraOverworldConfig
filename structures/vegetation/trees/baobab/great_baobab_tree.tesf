@@ -63,8 +63,8 @@ str leafStructure = "acacia_leaves_clump";
 
 // Generate trunk
 
-num trunkBranchAngle = randomInt(randPrecision)/randPrecision*2*pi;
-num trunkBranchInterval = round((trunkHeight - trunkSideBranchMinHeight)/trunkSideBranches);
+num trunkBranchAngle = randomInt(randPrecision) / randPrecision * 2 * pi;
+num trunkBranchInterval = round((trunkHeight - trunkSideBranchMinHeight) / trunkSideBranches);
 num currentTrunkLevelBranches = 1; // Only generate 1 branch at a time when placing in the middle of the trunk
 bool reachedTrunkTop = false;
 for (num trunkLevel = -3; trunkLevel <= trunkHeight; trunkLevel = trunkLevel + 1) {
@@ -77,7 +77,7 @@ for (num trunkLevel = -3; trunkLevel <= trunkHeight; trunkLevel = trunkLevel + 1
     // Determine if a branch should be placed at the current layer of the trunk
     if ((trunkLevel >= trunkSideBranchMinHeight && (trunkLevel - trunkSideBranchMinHeight) % trunkBranchInterval == 0) || reachedTrunkTop) {
 
-        num dir = 1+randomInt(4);
+        num dir = 1 + randomInt(4);
         num rotate = 1;
         if (randomInt(2) == 0) rotate = -1;
 
@@ -86,7 +86,7 @@ for (num trunkLevel = -3; trunkLevel <= trunkHeight; trunkLevel = trunkLevel + 1
             num xDir = 0;
             num zDir = 0;
 
-            num offset = trunkBranchHorizontalOffsetVariation-randomInt(trunkBranchHorizontalOffsetVariation*2);
+            num offset = trunkBranchHorizontalOffsetVariation - randomInt(trunkBranchHorizontalOffsetVariation * 2);
             num xOffset = 0;
             num zOffset = 0;
 
@@ -99,11 +99,11 @@ for (num trunkLevel = -3; trunkLevel <= trunkHeight; trunkLevel = trunkLevel + 1
             if (dir == 3) xDir = -1;
             if (dir == 4) zDir = -1;
 
-            num trunkBranchHorizontal = trunkBranchHorizontalLength+randomInt(trunkBranchHorizontalLengthVariation);
+            num trunkBranchHorizontal = trunkBranchHorizontalLength + randomInt(trunkBranchHorizontalLengthVariation);
 
             for (num th = 0; th < trunkBranchHorizontal; th = th + 1) {
 
-            // Generates trunk branch horizontally
+                // Generates trunk branch horizontally
                 for (num x = -trunkBranchHorizontalRadius; x < trunkBranchHorizontalRadius; x = x + 1) {
                     for (num y = -trunkBranchHorizontalRadius; y < trunkBranchHorizontalRadius; y = y + 1) {
                         for (num z = -trunkBranchHorizontalRadius; z < trunkBranchHorizontalRadius; z = z + 1) {
@@ -112,24 +112,24 @@ for (num trunkLevel = -3; trunkLevel <= trunkHeight; trunkLevel = trunkLevel + 1
 
                             if (xDir != 0) {
                                 trunkBlock = logBlockX;
-                                block(x+(xDir*th), y+trunkLevel, z+zOffset, trunkBlock);
+                                block(x + (xDir * th), y + trunkLevel, z + zOffset, trunkBlock);
                             }
 
                             if (zDir != 0) {
                                 trunkBlock = logBlockZ;
-                                block(x+xOffset, y+trunkLevel, z+(zDir*th), trunkBlock);
+                                block(x + xOffset, y + trunkLevel, z + (zDir * th), trunkBlock);
                             }
                         }
                     }
                 }
             }
 
-            num xTranslate = (xDir*trunkBranchHorizontal)+xOffset;
-            num zTranslate = (zDir*trunkBranchHorizontal)+zOffset;
+            num xTranslate = (xDir * trunkBranchHorizontal) + xOffset;
+            num zTranslate = (zDir * trunkBranchHorizontal) + zOffset;
 
-            num trunkBranchVertical = trunkBranchVerticalLength+randomInt(trunkBranchVerticalLengthVariation);
+            num trunkBranchVertical = trunkBranchVerticalLength + randomInt(trunkBranchVerticalLengthVariation);
 
-            num endBranchDir = 1+randomInt(4);
+            num endBranchDir = 1 + randomInt(4);
             num endBranchRotate = 1;
             if (randomInt(2) == 0) endBranchRotate = -1;
 
@@ -141,9 +141,9 @@ for (num trunkLevel = -3; trunkLevel <= trunkHeight; trunkLevel = trunkLevel + 1
 
                             str trunkBlock = logBlockY;
 
-                            if (xDir != 0) block(x+xTranslate, y+trunkLevel+tv, z+zTranslate, trunkBlock);
+                            if (xDir != 0) block(x + xTranslate, y + trunkLevel + tv, z + zTranslate, trunkBlock);
 
-                            if (zDir != 0) block(x+xTranslate, y+trunkLevel+tv, z+zTranslate, trunkBlock);
+                            if (zDir != 0) block(x + xTranslate, y + trunkLevel + tv, z + zTranslate, trunkBlock);
                         }
                     }
                 }
@@ -164,34 +164,34 @@ for (num trunkLevel = -3; trunkLevel <= trunkHeight; trunkLevel = trunkLevel + 1
                     if (endBranchDir == 3) xDirEndBranch = -1;
                     if (endBranchDir == 4) zDirEndBranch = -1;
 
-                    num endBranchHorizontal = endBranchHorizontalLength+randomInt(endBranchHorizontalLengthVariation);
+                    num endBranchHorizontal = endBranchHorizontalLength + randomInt(endBranchHorizontalLengthVariation);
 
                     for (num eth = 0; eth < endBranchHorizontal; eth = eth + 1) {
 
-                    // Generates trunk branch horizontally
+                        // Generates trunk branch horizontally
 
                         str trunkBlock = logBlockX;
 
                         if (xDirEndBranch != 0) trunkBlock = logBlockX;
                         if (zDirEndBranch != 0) trunkBlock = logBlockZ;
 
-                        block((xDirEndBranch*eth)+xTranslate, trunkLevel+tv, zTranslate, trunkBlock);
+                        block((xDirEndBranch * eth) + xTranslate, trunkLevel + tv, zTranslate, trunkBlock);
 
-                        block(xTranslate, trunkLevel+tv, (zDirEndBranch*eth)+zTranslate, trunkBlock);
+                        block(xTranslate, trunkLevel + tv, (zDirEndBranch * eth) + zTranslate, trunkBlock);
 
                     }
 
-                    num endBranchVertical = endBranchVerticalLength+randomInt(endBranchVerticalLengthVariation);
+                    num endBranchVertical = endBranchVerticalLength + randomInt(endBranchVerticalLengthVariation);
 
                     for (num etv = 0; etv < endBranchVertical; etv = etv + 1) {
 
-                    // Generates end branch vertically
+                        // Generates end branch vertically
 
                         str  trunkBlock = logBlockY;
 
-                        block(xDirEndBranch*endBranchHorizontal+xTranslate, trunkLevel+tv+etv, zTranslate, trunkBlock);
+                        block(xDirEndBranch * endBranchHorizontal + xTranslate, trunkLevel + tv + etv, zTranslate, trunkBlock);
 
-                        block(xTranslate, trunkLevel+tv+etv, zDirEndBranch*endBranchHorizontal+zTranslate, trunkBlock);
+                        block(xTranslate, trunkLevel + tv + etv, zDirEndBranch * endBranchHorizontal + zTranslate, trunkBlock);
 
                     }
 
@@ -201,12 +201,12 @@ for (num trunkLevel = -3; trunkLevel <= trunkHeight; trunkLevel = trunkLevel + 1
 
                     num squish = 2;
                     for (num x = floor(-radius); x < ceil(radius); x = x + 1) {
-                        for (num y = floor(-radius/squish); y < ceil(radius/squish); y = y + 1) {
+                        for (num y = floor(-radius / squish); y < ceil(radius / squish); y = y + 1) {
                             for (num z = floor(-radius); z < ceil(radius); z = z + 1) {
-                                num distanceSquared = pow2(x)+pow2(y*squish)+pow2(z);
+                                num distanceSquared = pow2(x) + pow2(y * squish) + pow2(z);
                                 if (distanceSquared < radiusSquared) {
-                                    structure(x+(endBranchHorizontal*xDirEndBranch)+xTranslate, y+trunkLevel+tv+endBranchVertical, z+zTranslate, leafStructure, "NONE", "CW_90", "CCW_90", "CW_180");
-                                    structure(x+xTranslate, y+trunkLevel+tv+endBranchVertical, z+(endBranchHorizontal*zDirEndBranch)+zTranslate, leafStructure, "NONE", "CW_90", "CCW_90", "CW_180");
+                                    structure(x + (endBranchHorizontal * xDirEndBranch) + xTranslate, y + trunkLevel + tv + endBranchVertical, z + zTranslate, leafStructure, "NONE", "CW_90", "CCW_90", "CW_180");
+                                    structure(x + xTranslate, y + trunkLevel + tv + endBranchVertical, z + (endBranchHorizontal * zDirEndBranch) + zTranslate, leafStructure, "NONE", "CW_90", "CCW_90", "CW_180");
                                 }
                             }
                         }
@@ -220,8 +220,8 @@ for (num trunkLevel = -3; trunkLevel <= trunkHeight; trunkLevel = trunkLevel + 1
 
     // Main trunk block placement
 
-    num trunkT = trunkLevel/trunkHeight;
-    num trunkTInverse = 1-trunkT;
+    num trunkT = trunkLevel / trunkHeight;
+    num trunkTInverse = 1 - trunkT;
     num trunkLevelRadius = trunkRadius * trunkTInverse + trunkBranchRadius * trunkT;
     num trunkLevelRadiusSquared = pow2(trunkLevelRadius);
     num trunkLevelRadiusInner = trunkLevelRadius - 1.5;
@@ -229,19 +229,19 @@ for (num trunkLevel = -3; trunkLevel <= trunkHeight; trunkLevel = trunkLevel + 1
 
     for (num x = round(-trunkLevelRadius); x < round(trunkLevelRadius); x = x + 1) {
         for (num z = round(-trunkLevelRadius); z < round(trunkLevelRadius); z = z + 1) {
-            num distanceSquared = pow2(x)+pow2(z);
+            num distanceSquared = pow2(x) + pow2(z);
             if (distanceSquared < trunkLevelRadiusSquared) {
                 if (distanceSquared < trunkLevelRadiusInnerSquared) {
-                    block(x, trunkLevel+1, z, logBlockY);
+                    block(x, trunkLevel + 1, z, logBlockY);
                     block(x, trunkLevel, z, "minecraft:air");
-                    block(x, max(0,trunkLevel-1), z, "minecraft:air"); // Sometimes trunk branches place blocks below so this should remove them
+                    block(x, max(0, trunkLevel - 1), z, "minecraft:air"); // Sometimes trunk branches place blocks below so this should remove them
                 } else {
                     str trunkBlock = logBlockY;
                     if ((sampler("simplex3",
-                                strippedNoiseHorizontalFrequency*(originX()+x),
-                                strippedNoiseVerticalFrequency*(originY()+trunkLevel),
-                                strippedNoiseHorizontalFrequency*(originZ()+z)
-                                )+1)/2 < strippedNoiseThreshold) trunkBlock = strippedLogBlockY;
+                        strippedNoiseHorizontalFrequency * (originX() + x),
+                        strippedNoiseVerticalFrequency * (originY() + trunkLevel),
+                        strippedNoiseHorizontalFrequency * (originZ() + z)
+                    ) + 1) / 2 < strippedNoiseThreshold) trunkBlock = strippedLogBlockY;
                     block(x, trunkLevel, z, trunkBlock);
                 }
             }

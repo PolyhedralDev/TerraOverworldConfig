@@ -42,7 +42,7 @@ terrain:
           - b
         expression: x+lerp(x,at,a,bt,b)
         functions: $math/functions/interpolation.yml:functions
-  
+
     samplers:
       warpedOceanElevation:
         dimensions: 2

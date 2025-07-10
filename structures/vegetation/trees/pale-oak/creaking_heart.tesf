@@ -8,10 +8,10 @@ num z = 0;
 
 if (loc == 1 ||
     loc == 3
-    ) x = 1;
+) x = 1;
 if (loc == 2 ||
     loc == 3
-    ) z = 1;
+) z = 1;
 
 str blockAbove = getBlock(x, 1, z);
 str blockBelow = getBlock(x, -1, z);

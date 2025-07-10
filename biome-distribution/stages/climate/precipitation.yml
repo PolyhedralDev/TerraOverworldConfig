@@ -6,12 +6,12 @@ stages:
 
     default-from: tropical-rainforest
     default-to:
-      - hot-desert:           &desert       4
-      - hot-desert:           &desertBorder 1
-      - hot-steppe:           &semiArid     1
+      - hot-desert: &desert       4
+      - hot-desert: &desertBorder 1
+      - hot-steppe: &semiArid     1
       - tropical-savanna-dry: &mid          1
-      - tropical-monsoon:     &mildlyWet    2
-      - tropical-rainforest:  &veryWet      3
+      - tropical-monsoon: &mildlyWet    2
+      - tropical-rainforest: &veryWet      3
     to:
       tropical-monsoon:
         - hot-desert: *desert
@@ -56,7 +56,7 @@ stages:
         - tropical-extinct-volcano: *mid
         - tropical-extinct-volcano: *mildlyWet
         - tropical-extinct-volcano: *veryWet
-  
+
       temperate-hot:
         - hot-desert: *desert
         - temperate-steppe: *desertBorder
@@ -97,7 +97,7 @@ stages:
         - temperate-extinct-volcano: *mid
         - temperate-extinct-volcano: *mildlyWet
         - temperate-extinct-volcano: *veryWet
-  
+
       boreal-hot:
         - cold-desert: *desert
         - cold-steppe: *desertBorder

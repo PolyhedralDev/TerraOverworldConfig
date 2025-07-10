@@ -8,7 +8,7 @@ stages:
       type: EXPRESSION
       expression: if(spotDistance(x, z) < spotRadius(x, z) + biomeBorder, 1, -1)
       variables: $math/samplers/spots.yml:variables
-  
+
   - type: REPLACE
     from: spot
     to:
@@ -17,7 +17,7 @@ stages:
     sampler:
       type: EXPRESSION
       expression: spotSizePercent(x, z)*2-1
-  
+
   - type: REPLACE
     from: volcano
     to:
@@ -26,7 +26,7 @@ stages:
     sampler:
       type: EXPRESSION
       expression: volcanoActivity(x, z)
-  
+
   - type: REPLACE
     from: extinct-volcano
     to:
@@ -35,7 +35,7 @@ stages:
     sampler:
       type: EXPRESSION
       expression: spotEdgeRadiusPercent(x, z)*2-1
-  
+
   - type: REPLACE
     from: active-volcano
     to:

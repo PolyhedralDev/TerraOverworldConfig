@@ -34,7 +34,7 @@ locator:
             dimensions: 3
             type: OPEN_SIMPLEX_2
             frequency: 0.015
-  
+
     # Punch holes into walls using cellular
     - type: SAMPLER_3D
       range: *range

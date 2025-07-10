@@ -5,8 +5,8 @@ if (blockBelow != "minecraft:snow_block") {
 
 // Binary search to check which layer is OCEAN
 
-num layers = 1+randomInt(7);
+num layers = 1 + randomInt(7);
 
-block(0, 0, 0, "minecraft:snow[layers="+layers+"]");
+block(0, 0, 0, "minecraft:snow[layers=" + layers + "]");
 
 

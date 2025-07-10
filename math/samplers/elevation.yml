@@ -72,7 +72,7 @@ samplers:
             mountainFull: 0.6
             hillMaxElevation: 0.3
             mountainCap: 0.9
-          functions: 
+          functions:
             "<<": math/functions/interpolation.yml:functions
             combine: # Stacks scaled mountain noise on top of hill noise
               arguments:

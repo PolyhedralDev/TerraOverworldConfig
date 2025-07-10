@@ -1,4 +1,4 @@
-num length = 1+((sampler("simplex", originX(), originZ())+1)*2.5);
+num length = 1 + ((sampler("simplex", originX(), originZ()) + 1) * 2.5);
 num x = 0;
 num z = 0;
 

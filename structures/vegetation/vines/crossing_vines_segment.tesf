@@ -1,11 +1,11 @@
 block(0, 0, 0, "minecraft:jungle_leaves[persistent=true]", false);
 
 // Random chance of placing adjacent blocks
-if (randomInt(2) == 0) block( 1,  0,  0, "minecraft:jungle_leaves[persistent=true]", false);
-if (randomInt(2) == 0) block(-1,  0,  0, "minecraft:jungle_leaves[persistent=true]", false);
-if (randomInt(2) == 0) block( 0, -1,  0, "minecraft:jungle_leaves[persistent=true]", false);
-if (randomInt(2) == 0) block( 0,  0,  1, "minecraft:jungle_leaves[persistent=true]", false);
-if (randomInt(2) == 0) block( 0,  0, -1, "minecraft:jungle_leaves[persistent=true]", false);
+if (randomInt(2) == 0) block(1, 0, 0, "minecraft:jungle_leaves[persistent=true]", false);
+if (randomInt(2) == 0) block(-1, 0, 0, "minecraft:jungle_leaves[persistent=true]", false);
+if (randomInt(2) == 0) block(0, -1, 0, "minecraft:jungle_leaves[persistent=true]", false);
+if (randomInt(2) == 0) block(0, 0, 1, "minecraft:jungle_leaves[persistent=true]", false);
+if (randomInt(2) == 0) block(0, 0, -1, "minecraft:jungle_leaves[persistent=true]", false);
 
 // Chance to place a hanging strand of leaves
 if (randomInt(10) == 0) {

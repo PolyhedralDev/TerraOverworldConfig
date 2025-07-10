@@ -21,7 +21,7 @@ for (num r = topRadius; r >= 1; r = r - 1) {
         else hit = true;
         for (num x = -r; x <= r; x = x + 1) {
             for (num z = -r; z <= r; z = z + 1) {
-                if (pow2(x)+pow2(z)<rSq && structure(x, y, z, replaceableMask, "NONE")) solidDisk = false;
+                if (pow2(x) + pow2(z) < rSq && structure(x, y, z, replaceableMask, "NONE")) solidDisk = false;
                 if (!solidDisk) break;
             }
             if (!solidDisk) break;
@@ -51,7 +51,7 @@ for (num r = bottomRadius; r >= 1; r = r - 1) {
         else hit = true;
         for (num x = -r; x <= r; x = x + 1) {
             for (num z = -r; z <= r; z = z + 1) {
-                if (pow2(x)+pow2(z)<rSq && structure(x, y, z, replaceableMask, "NONE")) solidDisk = false;
+                if (pow2(x) + pow2(z) < rSq && structure(x, y, z, replaceableMask, "NONE")) solidDisk = false;
                 if (!solidDisk) break;
             }
             if (!solidDisk) break;
@@ -69,25 +69,25 @@ for (num r = bottomRadius; r >= 1; r = r - 1) {
 if (!validFloor) fail;
 
 // Generate column
-num midRadius = max(1, min(topRadius, bottomRadius)*0.5);
+num midRadius = max(1, min(topRadius, bottomRadius) * 0.5);
 for (num y = -depth; y <= height; y = y + 1) {
 
-    num t = (y+depth)/(height+depth);
+    num t = (y + depth) / (height + depth);
     num radius = topRadius;
     if (t < 0.5) radius = bottomRadius;
 
-    num diskRadius = midRadius + (radius-midRadius)*pow2(2)*pow2(t-0.5);
+    num diskRadius = midRadius + (radius - midRadius) * pow2(2) * pow2(t - 0.5);
     num diskRadiusCeil = ceil(diskRadius);
     num diskRadiusSquared = pow2(diskRadius);
 
     for (num x = -diskRadiusCeil; x <= diskRadiusCeil; x = x + 1) {
         for (num z = -diskRadiusCeil; z <= diskRadiusCeil; z = z + 1) {
             num distanceOffset = abs(sampler("simplex3",
-                                         (originX()+x)*warpFrequency,
-                                         (originY()+y)*warpFrequency,
-                                         (originZ()+z)*warpFrequency)) * warpAmplitude;
+                (originX() + x) * warpFrequency,
+                (originY() + y) * warpFrequency,
+                (originZ() + z) * warpFrequency)) * warpAmplitude;
 
-            num distanceSquared = pow2(x)+pow2(z)+pow2(distanceOffset);
+            num distanceSquared = pow2(x) + pow2(z) + pow2(distanceOffset);
             if (distanceSquared < diskRadiusSquared) {
                 if (structure(x, y, z, replaceableMask, "NONE")) block(x, y, z, columnBlock);
             }

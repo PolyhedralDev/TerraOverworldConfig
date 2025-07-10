@@ -11,7 +11,7 @@ ocean:
   palette: FROZEN_OCEAN
 
 features:
-  landforms: 
+  landforms:
     - ICEBERGS
   slabs:
     - ICEBERG_SNOW_LAYERS

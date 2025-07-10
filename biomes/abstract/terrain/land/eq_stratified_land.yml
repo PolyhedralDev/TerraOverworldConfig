@@ -5,7 +5,7 @@ abstract: true
 variables: &variables
   base: $customization.yml:terrain-base-y-level
   scale: $customization.yml:terrain-height
-  
+
 
 terrain:
   sampler:

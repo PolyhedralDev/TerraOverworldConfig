@@ -12,7 +12,7 @@ locator:
   range: &range
     min: ${meta.yml:ocean-level} + 3
     max: $meta.yml:top-y
-        
+
 structures:
   distribution:
     type: CONSTANT

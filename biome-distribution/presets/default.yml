@@ -40,7 +40,7 @@ biomes:
           to: TEMPERATE_GRASSLAND
           sampler:
             type: CONSTANT
-        
+
         - type: FRACTAL_EXPAND
           sampler:
             type: WHITE_NOISE

@@ -14,7 +14,7 @@ functions:
         if(t>=at,a,if(t<=bt,b,a*(t-bt)/(at-bt)+b*(t-at)/(bt-at)))
       )
 
-  lerp3: 
+  lerp3:
     # Linear interpolation between three values
     arguments:
       - t
@@ -25,7 +25,7 @@ functions:
       - ct # Value of t where output = c
       - c
     expression: lerp(t, at, a, bt, lerp(t, bt, b, ct, c))
-    functions: 
+    functions:
       lerp: *lerp
   
   herp:

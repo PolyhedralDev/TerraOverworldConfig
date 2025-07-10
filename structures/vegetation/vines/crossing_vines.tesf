@@ -11,7 +11,7 @@ num z = 0;
 num cx = 0;
 num cz = 0;
 
-for (num i = 0; i < twopi; i = i + twopi/10) {
+for (num i = 0; i < twopi; i = i + twopi / 10) {
     cx = sin(i) * checkRadius;
     cz = cos(i) * checkRadius;
     if (check(cx, y, cz) == "LAND") {

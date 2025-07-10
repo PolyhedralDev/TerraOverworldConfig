@@ -63,7 +63,7 @@ terrain:
             weightedAvg(base+height*scale, 1, base-depth, 2), erosion * (-y+base+height*scale) * lerp(height, 0.1, 0, 0.3, 4),
             base-depth, 0
           )
-        functions: 
+        functions:
           "<<": [ math/functions/interpolation.yml:functions ]
           weightedAvg:
             arguments:

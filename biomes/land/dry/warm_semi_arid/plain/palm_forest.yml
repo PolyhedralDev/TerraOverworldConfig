@@ -40,7 +40,7 @@ slant:
     palette:
       - BLOCK:minecraft:stone: $meta.yml:top-y
       - << meta.yml:palette-bottom
-      
+
 features:
   flora:
     - GRASS

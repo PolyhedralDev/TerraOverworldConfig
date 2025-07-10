@@ -1,16 +1,16 @@
 num age = randomInt(3);
 str face = "west";
 
-if (getBlock(-1,0,0) == "minecraft:jungle_log" || getBlock(-1,0,0) == "minecraft:jungle_wood") {
+if (getBlock(-1, 0, 0) == "minecraft:jungle_log" || getBlock(-1, 0, 0) == "minecraft:jungle_wood") {
     face = "west";
-} else if (getBlock(0,0,-1) == "minecraft:jungle_log" || getBlock(0,0,-1) == "minecraft:jungle_wood") {
+} else if (getBlock(0, 0, -1) == "minecraft:jungle_log" || getBlock(0, 0, -1) == "minecraft:jungle_wood") {
     face = "north";
-} else if (getBlock(1,0,0) == "minecraft:jungle_log" || getBlock(1,0,0) == "minecraft:jungle_wood") {
+} else if (getBlock(1, 0, 0) == "minecraft:jungle_log" || getBlock(1, 0, 0) == "minecraft:jungle_wood") {
     face = "east";
-} else if (getBlock(0,0,1) == "minecraft:jungle_log" || getBlock(0,0,1) == "minecraft:jungle_wood") {
+} else if (getBlock(0, 0, 1) == "minecraft:jungle_log" || getBlock(0, 0, 1) == "minecraft:jungle_wood") {
     face = "south";
 } else fail;
 
-if (getBlock(0,0,0) == "minecraft:air" || getBlock(0,0,0) == "minecraft:vine") {
+if (getBlock(0, 0, 0) == "minecraft:air" || getBlock(0, 0, 0) == "minecraft:vine") {
     block(0, 0, 0, "minecraft:cocoa[age=" + age + ",facing=" + face + "]", true);
 }

@@ -1,6 +1,6 @@
 setWaterlog(true);
 // Use random number to determine the amount of seapickles
-num pickles = 1+randomInt(4);
+num pickles = 1 + randomInt(4);
 
 // If block is not in water, fail
 if (getBlock(0, 0, 0) != "minecraft:water") fail;

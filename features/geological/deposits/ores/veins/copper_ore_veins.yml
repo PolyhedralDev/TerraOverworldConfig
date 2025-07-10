@@ -4,8 +4,8 @@ type: FEATURE
 anchors:
   # Where the vein generates
   - &range # Y min and max
-      min: ${meta.yml:deepslate-top} - 7
-      max: ${meta.yml:ocean-level} + 3
+    min: ${meta.yml:deepslate-top} - 7
+    max: ${meta.yml:ocean-level} + 3
   - &veinThreshold 0.05 # Rough % of the world the veins generate in
   - &veinFrequency 0.0025 # How frequent veins generate, determines the spread of where veins generate
   - &salt 4929 # Seed for placement of veins, should be different for every vein
@@ -16,11 +16,11 @@ anchors:
   - &wallSalt 1929
   - &wallFrequency 0.015
   - &wallThickness 0.08
-  
+
   - &webSalt 4828
   - &webFrequency 0.04
   - &webThickness 0.18
-  
+
   - &replace # A list of blocks to replace
     - minecraft:stone
   - &blocks # What the webbing is composed of (weighted list of structures)

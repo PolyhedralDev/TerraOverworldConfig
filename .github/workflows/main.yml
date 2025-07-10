@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-      
+
       - name: Validate Biome Colors
         run: bash ./.scripts/validate-biome-colors.sh
   
@@ -81,7 +81,7 @@ jobs:
     env:
       WIKI_DIRECTORY: .wiki # Contents of this directory get pushed to the wiki
       WIKI_PARENT_REPOSITORY: ${{ github.repository }} # Where to publish to
-  
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -90,7 +90,7 @@ jobs:
 
       - name: Create Biomes Wiki Page
         run: bash ./.scripts/create-biomes-wiki-page.sh
-    
+
       - name: Upload Documentation to Wiki
         run: bash ./.scripts/upload-to-wiki.sh
         env:

@@ -40,7 +40,7 @@ terrain:
         z+y*spikeSlantStrength*spikeDirection(x, z+1000)
       )
       * herp(elevation(x, z), 0, 1, elevationCutoff, 0)
-    samplers: 
+    samplers:
       spikeDirection: # Determines the direction large spikes slant towards
         dimensions: 2
         type: OPEN_SIMPLEX_2
@@ -95,5 +95,5 @@ terrain:
               salt: 2
   sampler-2d:
     type: EXPRESSION
-    expression: scale * elevationDetailed(x, z) 
+    expression: scale * elevationDetailed(x, z)
     variables: *variables

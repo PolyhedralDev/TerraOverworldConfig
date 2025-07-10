@@ -14,5 +14,5 @@ functions:
       )
     functions:
       hermite:
-        arguments: [x]
+        arguments: [ x ]
         expression: 3*x^2-2*x^3

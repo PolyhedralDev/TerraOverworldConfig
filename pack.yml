@@ -117,7 +117,7 @@ stages:
   # Used for small features placed underwater like sea-grass.
   - id: underwater-flora
     type: FEATURE
-    
+
   # Used for small features placed on the surface like tall grass and vines.
   - id: flora
     type: FEATURE

@@ -2,8 +2,8 @@ if (getBlock(0, 0, 0) != "minecraft:air") fail;
 
 str blockBelow = getBlock(0, -1, 0);
 if (blockBelow != "minecraft:grass_block" &&
-    blockBelow != "minecraft:podzol"      &&
-    blockBelow != "minecraft:dirt"        &&
+    blockBelow != "minecraft:podzol" &&
+    blockBelow != "minecraft:dirt" &&
     blockBelow != "minecraft:coarse_dirt" &&
     blockBelow != "minecraft:moss_block" &&
     blockBelow != "minecraft:rooted_dirt") {

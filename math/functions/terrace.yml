@@ -11,10 +11,10 @@ template: &template
 childFunctions: &childFunctions
   # Ancillary functions
   clamp:
-    arguments: [x]
+    arguments: [ x ]
     expression: if(0 <= x && x < 1, x, 0)
   floorMod:
-    arguments: [x, i]
+    arguments: [ x, i ]
     expression: x - floor(x/i) * i
 
 functions:
@@ -23,7 +23,7 @@ functions:
     functions:
       <<: *childFunctions
       profile:
-        arguments: [x]
+        arguments: [ x ]
         expression: "|x - 0.5| - 0.5"
 
   terraceStrata:
@@ -31,7 +31,7 @@ functions:
     functions:
       <<: *childFunctions
       profile:
-        arguments: [x]
+        arguments: [ x ]
         expression: -if(x>0.95,-(x-1)/0.05,x/0.95)
 
   terraceParabolic:
@@ -39,7 +39,7 @@ functions:
     functions:
       <<: *childFunctions
       profile:
-        arguments: [x]
+        arguments: [ x ]
         expression: (x - 0.5)^2 - 0.25
 
   terraceParalinear:
@@ -47,7 +47,7 @@ functions:
     functions:
       <<: *childFunctions
       profile:
-        arguments: [x]
+        arguments: [ x ]
         expression: |
           if(0.25 < x && x < 0.75,
             2*(x-0.5)^2-0.375,

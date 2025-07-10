@@ -59,9 +59,9 @@ samplers:
       continentsEdge:
         dimensions: 2
         type: KERNEL
-        kernel: [[0,  1, 0],
-                 [1, -4, 1],
-                 [0,  1, 0]]
+        kernel: [ [ 0,  1, 0 ],
+                  [ 1, -4, 1 ],
+                  [ 0,  1, 0 ] ]
         sampler:
           type: EXPRESSION
           expression: continents(x*width, z*width) > 0

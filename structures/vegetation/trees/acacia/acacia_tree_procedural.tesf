@@ -26,30 +26,30 @@ for (num i = 0; i <= trunkHeight; i = i + 1) {
 // Generate top branches
 for (num i = 0; i <= topBranchCount; i = i + 1) {
     // Pick random branch length
-    num branchLength = topBranchLengthMin+randomInt(topBranchLengthVariation);
+    num branchLength = topBranchLengthMin + randomInt(topBranchLengthVariation);
     // Pick random vector to determine the branch direction
-    num dx = (randomInt(randPrecision)/randPrecision-0.5)*1.5;
-    num dy = topBranchVerticalDirection+randomInt(randPrecision)/randPrecision*topBranchVerticalVariation;
-    num dz = (randomInt(randPrecision)/randPrecision-0.5)*1.5;
+    num dx = (randomInt(randPrecision) / randPrecision - 0.5) * 1.5;
+    num dy = topBranchVerticalDirection + randomInt(randPrecision) / randPrecision * topBranchVerticalVariation;
+    num dz = (randomInt(randPrecision) / randPrecision - 0.5) * 1.5;
     // Normalize direction vector
-    num mag = sqrt(pow(dx,2)+pow(dy,2)+pow(dz,2));
-    dx = dx/mag;
-    dy = dy/mag;
-    dz = dz/mag;
+    num mag = sqrt(pow(dx, 2) + pow(dy, 2) + pow(dz, 2));
+    dx = dx / mag;
+    dy = dy / mag;
+    dz = dz / mag;
     // Generate branch
     for (num l = 0; l <= branchLength; l = l + 1) {
-        block(dx*l, trunkHeight+dy*l, dz*l, topBranchBlock);
+        block(dx * l, trunkHeight + dy * l, dz * l, topBranchBlock);
     }
     // Generate leaf cluster at the end of the branch
-    num radius = topBranchLeafRadiusMin+randomInt(randPrecision)/randPrecision*topBranchLeafRadiusVariation;
+    num radius = topBranchLeafRadiusMin + randomInt(randPrecision) / randPrecision * topBranchLeafRadiusVariation;
     num radiusCeil = ceil(radius);
     num radiusSquared = pow(radius, 2);
-    for(num x = -radiusCeil; x <= radiusCeil; x = x + 1) {
-        for(num y = 0; y <= radiusCeil; y = y + 1) {
-            for(num z = -radiusCeil; z <= radiusCeil; z = z + 1) {
-                num dist = (pow(x,2) + pow(y*leafClusterFlatness,2) + pow(z,2));
-                if (dist < radiusSquared && randomInt(randPrecision)/randPrecision < leafClusterLeafDensity) {
-                    block(x+dx*branchLength, trunkHeight+y+dy*branchLength, z+dz*branchLength, leafBlock, false);
+    for (num x = -radiusCeil; x <= radiusCeil; x = x + 1) {
+        for (num y = 0; y <= radiusCeil; y = y + 1) {
+            for (num z = -radiusCeil; z <= radiusCeil; z = z + 1) {
+                num dist = (pow(x, 2) + pow(y * leafClusterFlatness, 2) + pow(z, 2));
+                if (dist < radiusSquared && randomInt(randPrecision) / randPrecision < leafClusterLeafDensity) {
+                    block(x + dx * branchLength, trunkHeight + y + dy * branchLength, z + dz * branchLength, leafBlock, false);
                 }
             }
         }

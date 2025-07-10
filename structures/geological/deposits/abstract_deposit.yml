@@ -4,5 +4,5 @@ abstract: true
 
 replace:
   - minecraft:stone
-  
+
 size: 32
