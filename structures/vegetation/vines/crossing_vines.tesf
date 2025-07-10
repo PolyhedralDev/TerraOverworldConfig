@@ -1,7 +1,7 @@
 // Look for solid blocks within a circle from the origin
 
 num twopi = 6.28318530718;
-num checkRadius = 20; // Radius of circle
+num checkRadius = 16; // Radius of circle
 
 bool foundPos = false;
 num x = 0;
