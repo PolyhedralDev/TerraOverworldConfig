@@ -39,8 +39,7 @@ getBlock(offsetX-radius, 0, offsetZ) == "minecraft:air" &&
 getBlock(offsetX, 0, offsetZ+radius) == "minecraft:air" &&
 getBlock(offsetX, 0, offsetZ-radius) == "minecraft:air") fail;
 
-
-print("/tp " + originX() + " " + originY() + " " + originZ());
+// print("Cave Carver: /tp " + originX() + " " + originY() + " " + originZ());
 
 if (randomInt(100) < mainRoomChance*100) {
     for (num x = -radius-warp; x < radius+warp; x = x + 1) {
