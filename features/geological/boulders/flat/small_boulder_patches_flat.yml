@@ -1,0 +1,24 @@
+id: SMALL_BOULDER_PATCHES_FLAT
+type: FEATURE
+extends: BOULDER_SURFACE_LOCATOR_FLAT
+
+distributor:
+  type: AND
+  distributors:
+    - type: PADDED_GRID
+      width: 5
+      padding: 1
+      salt: 8833
+    - type: SAMPLER
+      sampler:
+        type: PROBABILITY
+        sampler:
+          type: OPEN_SIMPLEX_2
+          salt: 9138
+          frequency: 0.01
+      threshold: 0.2
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: small_boulder

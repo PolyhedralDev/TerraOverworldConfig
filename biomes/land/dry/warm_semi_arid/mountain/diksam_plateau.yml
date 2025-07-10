@@ -33,10 +33,8 @@ slant:
 
 features:
   landforms:
-    - BOULDERS
-    - SMALL_BOULDER_PATCHES
-    - SMALL_SANDSTONE_BOULDER_PATCHES
-    - SANDSTONE_BOULDERS
+    - BOULDERS_FLAT
+    - SMALL_BOULDER_PATCHES_FLAT
   flora:
     - GRASS
     - DEAD_BUSHES
