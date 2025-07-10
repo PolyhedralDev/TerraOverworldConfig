@@ -2,9 +2,9 @@ num randPrecision = 100;
 num goldenAngle = 2.39996;
 num pi = 3.14159;
 
-num length = 12+randomInt(4);
+num length = 8+randomInt(4);
 num trunkRadius = 1;
-num buffer = 7;
+num buffer = 5;
 num scanOffset = 5;
 
 num mushroomChance = 8;
@@ -12,8 +12,11 @@ num vineChance = 4;
 
 // Direction vector
 num dx = (randomInt(randPrecision)/randPrecision-0.5)*1.5;
-num dy = 0;
 num dz = (randomInt(randPrecision)/randPrecision-0.5)*1.5;
+
+num mag = sqrt(pow2(dx)+pow2(dz));
+dx = dx/mag;
+dz = dz/mag;
 
 str woodBlockX = "minecraft:jungle_log[axis=x]";
 str woodBlockY = "minecraft:jungle_log[axis=y]";
@@ -45,8 +48,8 @@ block(0,2,0, woodBlockY, true);
 for(num l = buffer; l <= buffer+length; l = l + 1) {
 
     str setBlock = woodBlockX;
-    if (abs(dx) > max(abs(dy),abs(dz))) setBlock = woodBlockX;
-    else if (abs(dz) > max(abs(dy),abs(dx))) setBlock = woodBlockZ;
+    if (abs(dx) > abs(dz)) setBlock = woodBlockX;
+    else if (abs(dz) > abs(dx)) setBlock = woodBlockZ;
 
     num yTranslate = scanOffset;
     while (check(l*dx, yTranslate-1, l*dz) != "LAND") yTranslate = yTranslate-1;
