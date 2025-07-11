@@ -54,7 +54,7 @@ structures:
     type: OPEN_SIMPLEX_2
     frequency: 0.02
     salt: 727
-  structures: 
+  structures:
     - blank: 9
     - place_adjacent_water_sculk_veins: 1
     - small_sculk_upward_tendril: 4

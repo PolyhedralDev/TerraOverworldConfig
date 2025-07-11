@@ -1,5 +1,5 @@
 num height = randomInt(4) + 1;
-for(num i = 0; i < height; i = i + 1) {
+for (num i = 0; i < height; i = i + 1) {
     block(0, i, 0, "minecraft:cactus", false);
 }
 

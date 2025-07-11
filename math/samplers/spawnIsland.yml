@@ -1,7 +1,7 @@
 samplers:
   spawnIsland:
     dimensions: 2
-    type: DOMAIN_WARP 
+    type: DOMAIN_WARP
     amplitude: 150
     warp:
       type: FBM
@@ -20,9 +20,9 @@ samplers:
           herp        (in, innerRadius/outerRadius,  1, middleRadius/outerRadius, 0),
           parabolicMap(in, middleRadius/outerRadius, 0, 1,                       -1))
       variables:
-        innerRadius:  $customization.yml:spawn-island-radius-inner
+        innerRadius: $customization.yml:spawn-island-radius-inner
         middleRadius: $customization.yml:spawn-island-radius-middle
-        outerRadius:  $customization.yml:spawn-island-radius-outer 
+        outerRadius: $customization.yml:spawn-island-radius-outer
       functions: $math/functions/interpolation.yml:functions
       sampler:
         type: PROBABILITY

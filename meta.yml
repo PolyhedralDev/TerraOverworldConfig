@@ -21,7 +21,7 @@ palette-bottom: # Added to the bottom of every biome palette stack
   - DEEPSLATE: $meta.yml:deepslate-top
   - BEDROCK: $meta.yml:bedrock-top
   - BLOCK:minecraft:bedrock: $meta.yml:bottom-y
-  
+
 palette-bedrock: # Added to the bottom of every biome palette stack that uses its own deepslate palette
   - BEDROCK: $meta.yml:bedrock-top
   - BLOCK:minecraft:bedrock: $meta.yml:bottom-y

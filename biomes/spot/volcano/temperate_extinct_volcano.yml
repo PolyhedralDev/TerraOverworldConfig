@@ -9,4 +9,5 @@ color: $biomes/colors.yml:TEMPERATE_EXTINCT_VOLCANO
 
 vanilla: minecraft:plains
 
-tags: []
+tags:
+  - USE_RIVER

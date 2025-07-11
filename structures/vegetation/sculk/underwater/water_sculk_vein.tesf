@@ -13,5 +13,5 @@ else blockID = blockID + "south=false,";
 if (structure(-1, 0, 0, "is_sculk_replaceable", "NONE")) blockID = blockID + "west=true]";
 else blockID = blockID + "west=false]";
 if (blockID != "minecraft:sculk_vein[waterlogged=true,up=false,down=false,north=false,east=false,south=false,west=false]") {
-    if (getBlock(0,0,0) == "minecraft:water") block(0, 0, 0, blockID, true);
+    if (getBlock(0, 0, 0) == "minecraft:water") block(0, 0, 0, blockID, true);
 }

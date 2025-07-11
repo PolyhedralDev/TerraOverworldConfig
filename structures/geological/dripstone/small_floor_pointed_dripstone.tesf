@@ -2,7 +2,7 @@ num minLength = 1;
 num maxLength = 7;
 num variationFrequency = 10;
 
-num length = round(minLength+(maxLength-minLength)*(sampler("simplex", (originX()+1000)*variationFrequency, originZ()*variationFrequency)+1)/2);
+num length = round(minLength + (maxLength - minLength) * (sampler("simplex", (originX() + 1000) * variationFrequency, originZ() * variationFrequency) + 1) / 2);
 num clampedLength = length;
 bool merge = false;
 for (num i = 0; i <= length; i = i + 1) {
@@ -10,9 +10,9 @@ for (num i = 0; i <= length; i = i + 1) {
     if (blockID != "minecraft:air") {
         if (blockID == "minecraft:pointed_dripstone") {
             merge = true;
-            block(0, i+1, 0, "minecraft:pointed_dripstone[vertical_direction=down, thickness=tip_merge]");
+            block(0, i + 1, 0, "minecraft:pointed_dripstone[vertical_direction=down, thickness=tip_merge]");
         }
-        clampedLength = i+1;
+        clampedLength = i + 1;
         break;
     }
 }
@@ -29,5 +29,5 @@ for (num i = 1; i <= clampedLength; i = i + 1) {
     else {
         blockID = blockID + "thickness=middle]";
     }
-    block(0, clampedLength-i, 0, blockID);
+    block(0, clampedLength - i, 0, blockID);
 }

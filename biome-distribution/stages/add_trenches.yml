@@ -103,9 +103,9 @@ stages:
         - SELF: 2
         - FROZEN_DEEP_OCEAN_VENTS: 1
       SUBTROPICAL_OCEAN_TRENCH:
-      - SELF: 2
-      - SUBTROPICAL_DEEP_OCEAN_VENTS: 1
+        - SELF: 2
+        - SUBTROPICAL_DEEP_OCEAN_VENTS: 1
       TROPICAL_OCEAN_TRENCH:
-      - SELF: 2
-      - TROPICAL_DEEP_OCEAN_VENTS: 1
+        - SELF: 2
+        - TROPICAL_DEEP_OCEAN_VENTS: 1
     sampler: *variationSampler

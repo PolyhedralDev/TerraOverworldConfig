@@ -12,7 +12,7 @@ if (dir == 0) {
     x = 0;
     z = -1;
 } else if (dir == 2) {
-    face = "east"; 
+    face = "east";
     x = 1;
     z = 0;
 } else if (dir == 3) {

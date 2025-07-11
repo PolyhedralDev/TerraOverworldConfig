@@ -39,16 +39,16 @@ variables:
   # Clamping variables
 
   carvingMinHeight: ${meta.yml:bottom-y} + 1 # Where all carving will cut off at the bottom of the world
-  carvingMinTaper: 8 # How many blocks above the min height should all carving 'fade out'
+  carvingMinTaper: 4 # How many blocks above the min height should all carving 'fade out'
 
-  cheeseSurfaceBreak: -40 # How many blocks from the surface cheese carving will stop
-  cheeseSurfaceBreakTaper: 30 # How many blocks from surface break should cheese carving taper out
+  cheeseSurfaceBreak: -20 # How many blocks from the surface cheese carving will stop
+  cheeseSurfaceBreakTaper: 20 # How many blocks from surface break should cheese carving taper out
 
-  noodleSurfaceBreak: -20 # How many blocks from the surface cheese carving will stop
-  noodleSurfaceBreakTaper: 20 # How many blocks from surface break should cheese carving taper out
+  noodleSurfaceBreak: -15 # How many blocks from the surface cheese carving will stop
+  noodleSurfaceBreakTaper: 15 # How many blocks from surface break should cheese carving taper out
 
-  spaghettiSurfaceBreak: -20 # How many blocks from the surface spaghetti carving will stop
-  spaghettiSurfaceBreakTaper: 50 # How many blocks from surface break should spaghetti carving taper out
+  spaghettiSurfaceBreak: -15 # How many blocks from the surface spaghetti carving will stop
+  spaghettiSurfaceBreakTaper: 30 # How many blocks from surface break should spaghetti carving taper out
 
   # carvingMaxMode: !!!Must be set in carving configs that use this template!!!
   #                 - 1 = cap carving by land elevation

@@ -6,7 +6,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:TEMPERATE_MESA
 
-tags: []
+tags:
+  - USE_RIVER
 
 vanilla: minecraft:plains
 

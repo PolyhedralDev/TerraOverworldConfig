@@ -27,7 +27,7 @@ biomes:
         - << biome-distribution/stages/climate/temperature.yml:stages
         - << biome-distribution/stages/climate/precipitation.yml:stages
         - << biome-distribution/stages/climate/elevation.yml:stages
-        - << biome-distribution/stages/add_large_sport_coast.yml:stages
+        - << biome-distribution/stages/add_large_spot_coast.yml:stages
         - << biome-distribution/stages/add_island_shelf.yml:stages
         - << biome-distribution/stages/add_islands.yml:stages
         - << biome-distribution/stages/climate/color.yml:stages
@@ -40,7 +40,7 @@ biomes:
           to: TEMPERATE_GRASSLAND
           sampler:
             type: CONSTANT
-        
+
         - type: FRACTAL_EXPAND
           sampler:
             type: WHITE_NOISE

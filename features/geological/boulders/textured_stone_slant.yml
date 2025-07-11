@@ -56,7 +56,7 @@ locator:
               - type: MATCH_SET
                 blocks: *blocks
                 offset: 1
-    
+
 structures:
   distribution:
     type: WHITE_NOISE

@@ -25,6 +25,6 @@ if (blockID != "minecraft:stone" &&
     blockID != "minecraft:deepslate_lapis_ore" &&
     blockID != "minecraft:deepslate_diamond_ore" &&
     blockID != "minecraft:sand" &&
-    blockID != "minecraft:gravel")  {
+    blockID != "minecraft:gravel") {
     fail;
 }

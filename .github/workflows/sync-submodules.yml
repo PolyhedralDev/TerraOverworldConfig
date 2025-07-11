@@ -2,9 +2,9 @@ name: Sync Submodules
 
 on:
   repository_dispatch: # Submodules dispatch to this when they're updated
-    types: 
+    types:
       - Sync Images
- 
+
 jobs:
   sync:
     runs-on: ubuntu-latest

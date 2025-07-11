@@ -3,6 +3,6 @@ if (blockID != "minecraft:bubble_coral_block" &&
     blockID != "minecraft:tube_coral_block" &&
     blockID != "minecraft:fire_coral_block" &&
     blockID != "minecraft:horn_coral_block" &&
-    blockID != "minecraft:brain_coral_block" ) {
+    blockID != "minecraft:brain_coral_block") {
     fail;
 }

@@ -7,11 +7,15 @@ extends:
   - BASE
 color: $biomes/colors.yml:PALE_GARDEN
 
+vanilla: minecraft:pale_garden
+
 tags:
   - RESIN_ROOTS
   - USE_PALE_GARDEN_RIVER
 
-vanilla: minecraft:pale_garden
+particles:
+  particle: minecraft:infested
+  probability: 0.0005
 
 colors:
   fog: 0x817770

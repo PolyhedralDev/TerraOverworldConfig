@@ -8,7 +8,7 @@ str rootBlockX = "minecraft:acacia_wood";
 str rootBlockZ = "minecraft:acacia_wood";
 
 num trunkRadius = 1.75;
-num trunkHeight = 10+randomInt(10);
+num trunkHeight = 10 + randomInt(10);
 num offset = 0.1;
 
 num topBranchYOffsetVariation = 2;
@@ -28,8 +28,8 @@ str topBranchBlockZ = "minecraft:acacia_log[axis=z]";
 
 num sideBranchChance = 3;
 num sideBranchInterval = 2;
-num sideBranchMinHeight = 7+randomInt(2);
-num sideBranchMaxHeight = trunkHeight-5;
+num sideBranchMinHeight = 7 + randomInt(2);
+num sideBranchMaxHeight = trunkHeight - 5;
 num sideBranchYOffsetVariation = 3;
 num sideBranchHorizontalLengthMin = 2.5;
 num sideBranchHorizontalLengthVariation = 1;
@@ -45,33 +45,33 @@ str sideBranchBlockX = "minecraft:acacia_log[axis=x]";
 str sideBranchBlockY = "minecraft:acacia_log[axis=y]";
 str sideBranchBlockZ = "minecraft:acacia_log[axis=z]";
 
-if (getBlock(3,-2,0) == "minecraft:air") fail;
-if (getBlock(-3,-2,0) == "minecraft:air") fail;
-if (getBlock(0,-2,3) == "minecraft:air") fail;
-if (getBlock(0,-2,-3) == "minecraft:air") fail;
+if (getBlock(3, -2, 0) == "minecraft:air") fail;
+if (getBlock(-3, -2, 0) == "minecraft:air") fail;
+if (getBlock(0, -2, 3) == "minecraft:air") fail;
+if (getBlock(0, -2, -3) == "minecraft:air") fail;
 
-num branchAngle = randomInt(randPrecision)/randPrecision*2*pi;
+num branchAngle = randomInt(randPrecision) / randPrecision * 2 * pi;
 
 // Generate roots at base of trunk
 num roots = 5;
 num rootMaxDepth = 3;
 num rootHeight = 6;
 num rootLength = 4;
-num rootAngle = randomInt(randPrecision)/randPrecision*2*pi;
+num rootAngle = randomInt(randPrecision) / randPrecision * 2 * pi;
 for (num r = 0; r < roots; r = r + 1) {
     num dx = sin(rootAngle);
     num dz = cos(rootAngle);
     str rootBlock = rootBlockX;
     if (abs(dz) > abs(dx)) rootBlock = rootBlockZ;
     for (num l = 0; l <= rootLength; l = l + 1) {
-        num height = rootHeight * (1-(l/rootLength));
+        num height = rootHeight * (1 - (l / rootLength));
         bool bottomedOut = false;
         for (num h = height; h >= -rootMaxDepth; h = h - 1) {
-            if (check(round(l*dx),round(h),round(l*dz)) != "AIR") {
+            if (check(round(l * dx), round(h), round(l * dz)) != "AIR") {
                 bottomedOut = true;
                 break;
             }
-            block(l*dx, h, l*dz, rootBlock);
+            block(l * dx, h, l * dz, rootBlock);
         }
         if (!bottomedOut) break;
     }
@@ -79,17 +79,17 @@ for (num r = 0; r < roots; r = r + 1) {
 }
 
 // tree trunk
-for(num h = 0; h < trunkHeight; h = h + 1) {
+for (num h = 0; h < trunkHeight; h = h + 1) {
 
     // Reduce radius inversely to height
     num r = trunkRadius;
 
-    if (h == trunkHeight-1) trunkBlock = trunkEdgeBlock;
-    
+    if (h == trunkHeight - 1) trunkBlock = trunkEdgeBlock;
+
     // Generate sphere at each point
-    for(num x = -r; x < r; x = x + 1) {
-        for(num z = -r; z < r; z = z + 1) {
-            if (pow(x+offset,2)+pow(z+offset,2) < pow(r+offset,2)) {
+    for (num x = -r; x < r; x = x + 1) {
+        for (num z = -r; z < r; z = z + 1) {
+            if (pow(x + offset, 2) + pow(z + offset, 2) < pow(r + offset, 2)) {
                 block(x, h, z, trunkBlock, true);
             }
         }
@@ -98,85 +98,85 @@ for(num h = 0; h < trunkHeight; h = h + 1) {
     if (h > sideBranchMinHeight && h < sideBranchMaxHeight) {
         if (h % sideBranchInterval == 0) {
 
-                // chance for no branch
-                if (randomInt(sideBranchChance) == 0) continue;
+            // chance for no branch
+            if (randomInt(sideBranchChance) == 0) continue;
 
-                // Branch origin
-                num ox = 0;
-                num oy = h - randomInt(sideBranchYOffsetVariation);
-                num oz = 0;
-                // Direction and Offset for each side branch generation for each loop run
-                num xDir = 0;
-                num zDir = 0;
-                num random = randomInt(4);
-                if (random == 0) {
-                    xDir = 1;
-                    ox = ox + (1+randomInt(2));
-                    oz = oz + (1-randomInt(3));
-                } else if (random == 1) {
-                    xDir = -1;
-                    ox = ox - (1+randomInt(2));
-                    oz = oz + (1-randomInt(3));
-                } else if (random == 2) {
-                    zDir = 1;
-                    oz = oz + (1+randomInt(2));
-                    ox = ox + (1-randomInt(3));
-                } else if (random == 3) {
-                    zDir = -1;
-                    oz = oz - (1+randomInt(2));
-                    ox = ox + (1-randomInt(3));
-                }
+            // Branch origin
+            num ox = 0;
+            num oy = h - randomInt(sideBranchYOffsetVariation);
+            num oz = 0;
+            // Direction and Offset for each side branch generation for each loop run
+            num xDir = 0;
+            num zDir = 0;
+            num random = randomInt(4);
+            if (random == 0) {
+                xDir = 1;
+                ox = ox + (1 + randomInt(2));
+                oz = oz + (1 - randomInt(3));
+            } else if (random == 1) {
+                xDir = -1;
+                ox = ox - (1 + randomInt(2));
+                oz = oz + (1 - randomInt(3));
+            } else if (random == 2) {
+                zDir = 1;
+                oz = oz + (1 + randomInt(2));
+                ox = ox + (1 - randomInt(3));
+            } else if (random == 3) {
+                zDir = -1;
+                oz = oz - (1 + randomInt(2));
+                ox = ox + (1 - randomInt(3));
+            }
 
-                str branchBlock = sideBranchBlockY;
-                // Set branch block based on direction
-                if (xDir != 0) branchBlock = sideBranchBlockX;
-                if (zDir != 0) branchBlock = sideBranchBlockZ;
+            str branchBlock = sideBranchBlockY;
+            // Set branch block based on direction
+            if (xDir != 0) branchBlock = sideBranchBlockX;
+            if (zDir != 0) branchBlock = sideBranchBlockZ;
 
-                // place trunk edge for branch start
-                block(ox+(-1*xDir), oy, oz+(-1*zDir), trunkEdgeBlock, true);
+            // place trunk edge for branch start
+            block(ox + (-1 * xDir), oy, oz + (-1 * zDir), trunkEdgeBlock, true);
 
-                num horizontalBranchLength = sideBranchHorizontalLengthMin + randomInt(randPrecision)/randPrecision*sideBranchHorizontalLengthVariation;
-                block(ox*xDir-1, oy, oz*zDir-1, trunkEdgeBlock, true);
-                // Generate horizontal branch portion
-                for (num l = 0; l <= horizontalBranchLength; l = l + 1) {
-                    block(ox+(l*xDir), oy, oz+(l*zDir), branchBlock, true);
-                }
+            num horizontalBranchLength = sideBranchHorizontalLengthMin + randomInt(randPrecision) / randPrecision * sideBranchHorizontalLengthVariation;
+            block(ox * xDir - 1, oy, oz * zDir - 1, trunkEdgeBlock, true);
+            // Generate horizontal branch portion
+            for (num l = 0; l <= horizontalBranchLength; l = l + 1) {
+                block(ox + (l * xDir), oy, oz + (l * zDir), branchBlock, true);
+            }
 
-                num verticalBranchLength = sideBranchVerticalLengthMin + randomInt(randPrecision)/randPrecision*sideBranchVerticalLengthVariation;
-                branchBlock = sideBranchBlockY;
+            num verticalBranchLength = sideBranchVerticalLengthMin + randomInt(randPrecision) / randPrecision * sideBranchVerticalLengthVariation;
+            branchBlock = sideBranchBlockY;
 
-                ox = ox+(horizontalBranchLength*xDir);
-                oz = oz+(horizontalBranchLength*zDir);
+            ox = ox + (horizontalBranchLength * xDir);
+            oz = oz + (horizontalBranchLength * zDir);
 
-                // Generate vertical branch portion
-                for (num vl = 0; vl <= verticalBranchLength; vl = vl + 1) {
-                    block(ox, oy+vl, oz, branchBlock, true);
-                }
+            // Generate vertical branch portion
+            for (num vl = 0; vl <= verticalBranchLength; vl = vl + 1) {
+                block(ox, oy + vl, oz, branchBlock, true);
+            }
 
-                // place trunk edge on corner
-                block(ox, oy, oz, trunkEdgeBlock);
+            // place trunk edge on corner
+            block(ox, oy, oz, trunkEdgeBlock);
 
-                // Rotate angle of next branch
-                branchAngle = branchAngle + goldenAngle;
-                // Generate leaf cluster at the end of the branch
-                num radius = sideBranchLeafRadiusMin;
-                num radiusSquared = pow(radius, 2);
-                // Leaf cluster origin (end of branch)
-                num lox = ox;
-                num loy = oy+verticalBranchLength + sideBranchLeafTranslate;
-                num loz = oz;
-                for (num cx = ceil(-radius); cx <= ceil(radius); cx = cx + 1) {
-                    for (num cy = ceil(-radius/sideBranchLeafBottomFlatness); cy <= ceil(radius/sideBranchLeafTopFlatness); cy = cy + 1) {
-                        for (num cz = ceil(-radius); cz <= ceil(radius); cz = cz + 1) {
-                            num squashFactor = sideBranchLeafBottomFlatness;
-                            if (cy > 0) squashFactor = sideBranchLeafTopFlatness;
-                            num distanceSquared = pow(cx,2)+pow(cy*squashFactor,2)+pow(cz,2);
-                            if (distanceSquared < radiusSquared && randomInt(randPrecision)/randPrecision < sideBranchLeafDensity) {
-                                structure(lox+cx, loy+cy, loz+cz, sideBranchLeafStructure, "NONE", "CW_90", "CCW_90", "CW_180");
-                            }
+            // Rotate angle of next branch
+            branchAngle = branchAngle + goldenAngle;
+            // Generate leaf cluster at the end of the branch
+            num radius = sideBranchLeafRadiusMin;
+            num radiusSquared = pow(radius, 2);
+            // Leaf cluster origin (end of branch)
+            num lox = ox;
+            num loy = oy + verticalBranchLength + sideBranchLeafTranslate;
+            num loz = oz;
+            for (num cx = ceil(-radius); cx <= ceil(radius); cx = cx + 1) {
+                for (num cy = ceil(-radius / sideBranchLeafBottomFlatness); cy <= ceil(radius / sideBranchLeafTopFlatness); cy = cy + 1) {
+                    for (num cz = ceil(-radius); cz <= ceil(radius); cz = cz + 1) {
+                        num squashFactor = sideBranchLeafBottomFlatness;
+                        if (cy > 0) squashFactor = sideBranchLeafTopFlatness;
+                        num distanceSquared = pow(cx, 2) + pow(cy * squashFactor, 2) + pow(cz, 2);
+                        if (distanceSquared < radiusSquared && randomInt(randPrecision) / randPrecision < sideBranchLeafDensity) {
+                            structure(lox + cx, loy + cy, loz + cz, sideBranchLeafStructure, "NONE", "CW_90", "CCW_90", "CW_180");
                         }
                     }
                 }
+            }
 
         }
     }
@@ -187,27 +187,27 @@ for (num sb = 0; sb < 4; sb = sb + 1) {
 
     // Branch origin
     num ox = 0;
-    num oy = (trunkHeight-1) - randomInt(topBranchYOffsetVariation);
+    num oy = (trunkHeight - 1) - randomInt(topBranchYOffsetVariation);
     num oz = 0;
     // Direction and Offset for each side branch generation for each loop run
     num xDir = 0;
     num zDir = 0;
     if (sb == 0) {
         xDir = 1;
-        ox = ox + (1+randomInt(2));
-        oz = oz + (1-randomInt(3));
+        ox = ox + (1 + randomInt(2));
+        oz = oz + (1 - randomInt(3));
     } else if (sb == 1) {
         xDir = -1;
-        ox = ox - (1+randomInt(2));
-        oz = oz + (1-randomInt(3));
+        ox = ox - (1 + randomInt(2));
+        oz = oz + (1 - randomInt(3));
     } else if (sb == 2) {
         zDir = 1;
-        oz = oz + (1+randomInt(2));
-        ox = ox + (1-randomInt(3));
+        oz = oz + (1 + randomInt(2));
+        ox = ox + (1 - randomInt(3));
     } else if (sb == 3) {
         zDir = -1;
-        oz = oz - (1+randomInt(2));
-        ox = ox + (1-randomInt(3));
+        oz = oz - (1 + randomInt(2));
+        ox = ox + (1 - randomInt(3));
     }
 
     str branchBlock = topBranchBlockY;
@@ -216,24 +216,24 @@ for (num sb = 0; sb < 4; sb = sb + 1) {
     if (zDir != 0) branchBlock = topBranchBlockZ;
 
     // place trunk edge for branch start
-    block(ox+(-1*xDir), oy, oz+(-1*zDir), trunkEdgeBlock, true);
+    block(ox + (-1 * xDir), oy, oz + (-1 * zDir), trunkEdgeBlock, true);
 
-    num horizontalBranchLength = topBranchHorizontalLengthMin + randomInt(randPrecision)/randPrecision*topBranchHorizontalLengthVariation;
-    block(ox*xDir-1, oy, oz*zDir-1, trunkEdgeBlock, true);
+    num horizontalBranchLength = topBranchHorizontalLengthMin + randomInt(randPrecision) / randPrecision * topBranchHorizontalLengthVariation;
+    block(ox * xDir - 1, oy, oz * zDir - 1, trunkEdgeBlock, true);
     // Generate horizontal branch portion
     for (num l = 0; l <= horizontalBranchLength; l = l + 1) {
-        block(ox+(l*xDir), oy, oz+(l*zDir), branchBlock, true);
+        block(ox + (l * xDir), oy, oz + (l * zDir), branchBlock, true);
     }
 
-    num verticalBranchLength = topBranchVerticalLengthMin + randomInt(randPrecision)/randPrecision*topBranchVerticalLengthVariation;
+    num verticalBranchLength = topBranchVerticalLengthMin + randomInt(randPrecision) / randPrecision * topBranchVerticalLengthVariation;
     branchBlock = topBranchBlockY;
 
-    ox = ox+(horizontalBranchLength*xDir);
-    oz = oz+(horizontalBranchLength*zDir);
+    ox = ox + (horizontalBranchLength * xDir);
+    oz = oz + (horizontalBranchLength * zDir);
 
     // Generate vertical branch portion
     for (num vl = 0; vl <= verticalBranchLength; vl = vl + 1) {
-        block(ox, oy+vl, oz, branchBlock, true);
+        block(ox, oy + vl, oz, branchBlock, true);
     }
 
     // place trunk edge on corner
@@ -246,16 +246,16 @@ for (num sb = 0; sb < 4; sb = sb + 1) {
     num radiusSquared = pow(radius, 2);
     // Leaf cluster origin (end of branch)
     num lox = ox;
-    num loy = oy+verticalBranchLength + topBranchLeafTranslate;
+    num loy = oy + verticalBranchLength + topBranchLeafTranslate;
     num loz = oz;
     for (num cx = ceil(-radius); cx <= ceil(radius); cx = cx + 1) {
-        for (num cy = ceil(-radius/topBranchLeafBottomFlatness); cy <= ceil(radius/topBranchLeafTopFlatness); cy = cy + 1) {
+        for (num cy = ceil(-radius / topBranchLeafBottomFlatness); cy <= ceil(radius / topBranchLeafTopFlatness); cy = cy + 1) {
             for (num cz = ceil(-radius); cz <= ceil(radius); cz = cz + 1) {
                 num squashFactor = topBranchLeafBottomFlatness;
                 if (cy > 0) squashFactor = topBranchLeafTopFlatness;
-                num distanceSquared = pow(cx,2)+pow(cy*squashFactor,2)+pow(cz,2);
-                if (distanceSquared < radiusSquared && randomInt(randPrecision)/randPrecision < topBranchLeafDensity) {
-                    structure(lox+cx, loy+cy, loz+cz, topBranchLeafStructure, "NONE", "CW_90", "CCW_90", "CW_180");
+                num distanceSquared = pow(cx, 2) + pow(cy * squashFactor, 2) + pow(cz, 2);
+                if (distanceSquared < radiusSquared && randomInt(randPrecision) / randPrecision < topBranchLeafDensity) {
+                    structure(lox + cx, loy + cy, loz + cz, topBranchLeafStructure, "NONE", "CW_90", "CCW_90", "CW_180");
                 }
             }
         }

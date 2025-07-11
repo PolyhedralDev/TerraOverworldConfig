@@ -6,7 +6,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:BOREAL_MESA
 
-tags: []
+tags:
+  - USE_COLD_RIVER
 
 vanilla: minecraft:taiga
 

@@ -7,7 +7,7 @@ vars: &variables
   scale: $customization.yml:terrain-height
 
   terraceHeight: 0.13
-  terraceHeightVariation: 0 
+  terraceHeightVariation: 0
   
   depositMaskLowerBound: 0.7
   depositMaskUpperBound: 1
@@ -58,8 +58,8 @@ terrain:
           )
         )
       )
-  
-      
+    
+
     samplers:
       terraceVariation:
         dimensions: 2

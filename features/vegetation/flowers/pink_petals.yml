@@ -35,7 +35,7 @@ locator:
         offset: 0
 
 structures:
-  distribution: 
+  distribution:
     type: EXPRESSION
     expression: sampler(x, z) # Using this to ensure 2D sampler is used
     samplers:
@@ -45,7 +45,7 @@ structures:
         min: 0
         max: $features/vegetation/trees/sakura_trees.yml:mask.threshold
         sampler: $features/vegetation/trees/sakura_trees.yml:mask.sampler
-  structures: 
+  structures:
     - pink_petals_4: 1
     - pink_petals_3: 1
     - pink_petals_2: 1

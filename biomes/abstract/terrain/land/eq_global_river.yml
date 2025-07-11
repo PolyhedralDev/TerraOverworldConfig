@@ -66,7 +66,7 @@ terrain:
               ceilingBase + ceilingHeight, 0
             )
           )
-        functions: 
+        functions:
           "<<":
             - math/functions/interpolation.yml:functions
   

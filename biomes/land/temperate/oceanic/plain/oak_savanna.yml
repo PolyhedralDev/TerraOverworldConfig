@@ -35,7 +35,7 @@ slant:
     palette:
       - << meta.yml:palette-slant-generic
       - << meta.yml:palette-bottom
-      
+
 
 features:
   flora:

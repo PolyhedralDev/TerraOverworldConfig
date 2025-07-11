@@ -1,7 +1,7 @@
 // Look for solid blocks within a circle from the origin
 
 num twopi = 6.28318530718;
-num checkRadius = 20; // Radius of circle
+num checkRadius = 16; // Radius of circle
 
 bool foundPos = false;
 num x = 0;
@@ -11,7 +11,7 @@ num z = 0;
 num cx = 0;
 num cz = 0;
 
-for (num i = 0; i < twopi; i = i + twopi/10) {
+for (num i = 0; i < twopi; i = i + twopi / 10) {
     cx = sin(i) * checkRadius;
     cz = cos(i) * checkRadius;
     if (check(cx, y, cz) == "LAND") {

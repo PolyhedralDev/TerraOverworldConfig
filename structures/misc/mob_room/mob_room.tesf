@@ -14,14 +14,14 @@ for (num x = -searchRadius; x <= searchRadius; x = x + 1) {
         if (spawnable == true) break;
 
         for (num y = 0; y <= 100; y = y + 1) {
-            if (getBlock(x,y,z) == "minecraft:air" &&
-                getBlock(x,y+1,z) == "minecraft:air" &&
-                getBlock(x,y-1,z) != "minecraft:air") {
+            if (getBlock(x, y, z) == "minecraft:air" &&
+                getBlock(x, y + 1, z) == "minecraft:air" &&
+                getBlock(x, y - 1, z) != "minecraft:air") {
 
-                if (structure(x+1,y,z, "is_rock", "NONE") ||
-                structure(x-1,y,z, "is_rock", "NONE") ||
-                structure(x,y,z+1, "is_rock", "NONE") ||
-                structure(x,y,z-1, "is_rock", "NONE")) {
+                if (structure(x + 1, y, z, "is_rock", "NONE") ||
+                    structure(x - 1, y, z, "is_rock", "NONE") ||
+                    structure(x, y, z + 1, "is_rock", "NONE") ||
+                    structure(x, y, z - 1, "is_rock", "NONE")) {
                     spawnable = true;
                     xOffset = x;
                     yOffset = y;
@@ -37,14 +37,14 @@ for (num x = -searchRadius; x <= searchRadius; x = x + 1) {
 if (spawnable == false) fail;
 
 // checks all four directions for proper conditions of bottom and roof solid block layers
-if (getBlock(xOffset+1,yOffset,zOffset) != "minecraft:air" &&
-getBlock(xOffset+1,yOffset,zOffset) != "minecraft:water") {
+if (getBlock(xOffset + 1, yOffset, zOffset) != "minecraft:air" &&
+    getBlock(xOffset + 1, yOffset, zOffset) != "minecraft:water") {
     for (num i = 1; i <= 13; i = i + 1) {
         if (spawnable == false) break;
 
         for (num j = -6; j <= 6; j = j + 1) {
-            if (getBlock(xOffset+i,yOffset,zOffset+j) == "minecraft:air" ||
-            getBlock(xOffset+i,yOffset+6,zOffset+j) == "minecraft:air") {
+            if (getBlock(xOffset + i, yOffset, zOffset + j) == "minecraft:air" ||
+                getBlock(xOffset + i, yOffset + 6, zOffset + j) == "minecraft:air") {
                 spawnable = false;
                 break;
             }
@@ -52,14 +52,14 @@ getBlock(xOffset+1,yOffset,zOffset) != "minecraft:water") {
     }
 
     if (spawnable == true) {
-        structure(xOffset+7,yOffset,zOffset,"mob_room_east_sc","NONE");
-        structure(xOffset+7,yOffset+3,zOffset,"spawner_state","NONE");
+        structure(xOffset + 7, yOffset, zOffset, "mob_room_east_sc", "NONE");
+        structure(xOffset + 7, yOffset + 3, zOffset, "spawner_state", "NONE");
 
         if (chest == false) {
             for (num cx = -3; cx < 3; cx = cx + 1) {
                 for (num cz = -3; cz < 3; cz = cz + 1) {
-                    if (getBlock(xOffset+cx+7,yOffset+1,zOffset+cz) == "minecraft:chest") {
-                        block(xOffset+cx+7,yOffset+1,zOffset+cz,"minecraft:air", true);
+                    if (getBlock(xOffset + cx + 7, yOffset + 1, zOffset + cz) == "minecraft:chest") {
+                        block(xOffset + cx + 7, yOffset + 1, zOffset + cz, "minecraft:air", true);
                     }
                 }
             }
@@ -71,14 +71,14 @@ getBlock(xOffset+1,yOffset,zOffset) != "minecraft:water") {
     spawnable = true;
 }
 
-if (getBlock(xOffset-1,yOffset,zOffset) != "minecraft:air" &&
-getBlock(xOffset-1,yOffset,zOffset) != "minecraft:water") {
+if (getBlock(xOffset - 1, yOffset, zOffset) != "minecraft:air" &&
+    getBlock(xOffset - 1, yOffset, zOffset) != "minecraft:water") {
     for (num i = 1; i <= 13; i = i + 1) {
         if (spawnable == false) break;
 
         for (num j = -6; j <= 6; j = j + 1) {
-            if (getBlock(xOffset-i,yOffset,zOffset-j) == "minecraft:air" ||
-            getBlock(xOffset-i,yOffset+6,zOffset-j) == "minecraft:air") {
+            if (getBlock(xOffset - i, yOffset, zOffset - j) == "minecraft:air" ||
+                getBlock(xOffset - i, yOffset + 6, zOffset - j) == "minecraft:air") {
                 spawnable = false;
                 break;
             }
@@ -86,14 +86,14 @@ getBlock(xOffset-1,yOffset,zOffset) != "minecraft:water") {
     }
 
     if (spawnable == true) {
-        structure(xOffset-7,yOffset,zOffset,"mob_room_west_sc","NONE");
-        structure(xOffset-7,yOffset+3,zOffset,"spawner_state","NONE");
+        structure(xOffset - 7, yOffset, zOffset, "mob_room_west_sc", "NONE");
+        structure(xOffset - 7, yOffset + 3, zOffset, "spawner_state", "NONE");
 
         if (chest == false) {
             for (num cx = -3; cx < 3; cx = cx + 1) {
                 for (num cz = -3; cz < 3; cz = cz + 1) {
-                    if (getBlock(xOffset+cx-7,yOffset+1,zOffset+cz) == "minecraft:chest") {
-                        block(xOffset+cx-7,yOffset+1,zOffset+cz,"minecraft:air", true);
+                    if (getBlock(xOffset + cx - 7, yOffset + 1, zOffset + cz) == "minecraft:chest") {
+                        block(xOffset + cx - 7, yOffset + 1, zOffset + cz, "minecraft:air", true);
                     }
                 }
             }
@@ -105,14 +105,14 @@ getBlock(xOffset-1,yOffset,zOffset) != "minecraft:water") {
     spawnable = true;
 }
 
-if (getBlock(xOffset,yOffset,zOffset+1) != "minecraft:air" &&
-getBlock(xOffset,yOffset,zOffset+1) != "minecraft:water") {
+if (getBlock(xOffset, yOffset, zOffset + 1) != "minecraft:air" &&
+    getBlock(xOffset, yOffset, zOffset + 1) != "minecraft:water") {
     for (num i = 1; i <= 13; i = i + 1) {
         if (spawnable == false) break;
 
         for (num j = -6; j <= 6; j = j + 1) {
-            if (getBlock(xOffset+j,yOffset,zOffset+i) == "minecraft:air" ||
-            getBlock(xOffset+j,yOffset+6,zOffset+i) == "minecraft:air") {
+            if (getBlock(xOffset + j, yOffset, zOffset + i) == "minecraft:air" ||
+                getBlock(xOffset + j, yOffset + 6, zOffset + i) == "minecraft:air") {
                 spawnable = false;
                 break;
             }
@@ -120,14 +120,14 @@ getBlock(xOffset,yOffset,zOffset+1) != "minecraft:water") {
     }
 
     if (spawnable == true) {
-        structure(xOffset,yOffset,zOffset+7,"mob_room_south_sc","NONE");
-        structure(xOffset,yOffset+3,zOffset+7,"spawner_state","NONE");
+        structure(xOffset, yOffset, zOffset + 7, "mob_room_south_sc", "NONE");
+        structure(xOffset, yOffset + 3, zOffset + 7, "spawner_state", "NONE");
 
         if (chest == false) {
             for (num cx = -3; cx < 3; cx = cx + 1) {
                 for (num cz = -3; cz < 3; cz = cz + 1) {
-                    if (getBlock(xOffset+cx,yOffset+1,zOffset+cz+7) == "minecraft:chest") {
-                        block(xOffset+cx,yOffset+1,zOffset+cz+7,"minecraft:air", true);
+                    if (getBlock(xOffset + cx, yOffset + 1, zOffset + cz + 7) == "minecraft:chest") {
+                        block(xOffset + cx, yOffset + 1, zOffset + cz + 7, "minecraft:air", true);
                     }
                 }
             }
@@ -141,14 +141,14 @@ getBlock(xOffset,yOffset,zOffset+1) != "minecraft:water") {
     spawnable = true;
 }
 
-if (getBlock(xOffset,yOffset,zOffset-1) != "minecraft:air" &&
-getBlock(xOffset,yOffset,zOffset-1) != "minecraft:water") {
+if (getBlock(xOffset, yOffset, zOffset - 1) != "minecraft:air" &&
+    getBlock(xOffset, yOffset, zOffset - 1) != "minecraft:water") {
     for (num i = 1; i <= 13; i = i + 1) {
         if (spawnable == false) break;
 
         for (num j = -6; j <= 6; j = j + 1) {
-            if (getBlock(xOffset-j,yOffset,zOffset-i) == "minecraft:air" ||
-            getBlock(xOffset-j,yOffset+6,zOffset-i) == "minecraft:air") {
+            if (getBlock(xOffset - j, yOffset, zOffset - i) == "minecraft:air" ||
+                getBlock(xOffset - j, yOffset + 6, zOffset - i) == "minecraft:air") {
                 spawnable = false;
                 break;
             }
@@ -156,14 +156,14 @@ getBlock(xOffset,yOffset,zOffset-1) != "minecraft:water") {
     }
 
     if (spawnable == true) {
-        structure(xOffset,yOffset,zOffset-7,"mob_room_north_sc","NONE");
-        structure(xOffset,yOffset+3,zOffset-7,"spawner_state","NONE");
+        structure(xOffset, yOffset, zOffset - 7, "mob_room_north_sc", "NONE");
+        structure(xOffset, yOffset + 3, zOffset - 7, "spawner_state", "NONE");
 
         if (chest == false) {
             for (num cx = -3; cx < 3; cx = cx + 1) {
                 for (num cz = -3; cz < 3; cz = cz + 1) {
-                    if (getBlock(xOffset+cx,yOffset+1,zOffset+cz-7) == "minecraft:chest") {
-                        block(xOffset+cx,yOffset+1,zOffset+cz-7,"minecraft:air", true);
+                    if (getBlock(xOffset + cx, yOffset + 1, zOffset + cz - 7) == "minecraft:chest") {
+                        block(xOffset + cx, yOffset + 1, zOffset + cz - 7, "minecraft:air", true);
                     }
                 }
             }

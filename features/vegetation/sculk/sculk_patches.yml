@@ -38,7 +38,7 @@ structures:
     type: OPEN_SIMPLEX_2
     frequency: 0.02
     salt: 727
-  structures: 
+  structures:
     - blank: 9
     - place_adjacent_sculk_veins: 1
     - BLOCK:minecraft:sculk: 4

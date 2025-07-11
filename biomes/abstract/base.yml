@@ -22,6 +22,7 @@ features:
     - SPARSE_HORNITOS
     - UNDERGROUND_LAVA_LAKES
     - CAVE_ENTRANCES
+    - CAVE_CARVERS
   underwater-flora:
     - KELP
     - CLINGING_KELP

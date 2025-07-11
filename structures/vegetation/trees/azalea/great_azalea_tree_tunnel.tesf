@@ -35,7 +35,7 @@ for (num h = 0; h <= maxTunnelHeight; h = h + 1) {
         airHeight = 0;
     }
     if (airHeight > airGap) {
-        if (structure(0, surfaceHeight-1, 0, "is_great_azalea_plantable", "NONE")) {
+        if (structure(0, surfaceHeight - 1, 0, "is_great_azalea_plantable", "NONE")) {
             foundSpot = true;
             break;
         }
@@ -55,7 +55,7 @@ str rootedBlock = "minecraft:rooted_dirt";
 num rootedNoiseHorizontalFrequency = 30;
 num rootedNoiseVerticalFrequency = 30;
 num trunkRadius = 4;
-num helixFrequency = 8+randomInt(3);
+num helixFrequency = 8 + randomInt(3);
 num helixAmplitude = 4;
 num helixJitter = 0.5;
 num helixLerpMin = 0.4;
@@ -64,18 +64,18 @@ num helixLerpMax = 0.6;
 bool placeInAir = false;
 for (num trunkLevel = undergroundHeight; trunkLevel <= surfaceHeight; trunkLevel = trunkLevel + 1) {
 
-    num t = (trunkLevel-undergroundHeight)/(surfaceHeight-undergroundHeight);
-    num it = 1-t;
-    num amp = max(0,min(1,min(t/helixLerpMin,(t-1)/(-1+helixLerpMax))));
-    num inverseAmp = 1-amp;
+    num t = (trunkLevel - undergroundHeight) / (surfaceHeight - undergroundHeight);
+    num it = 1 - t;
+    num amp = max(0, min(1, min(t / helixLerpMin, (t - 1) / (-1 + helixLerpMax))));
+    num inverseAmp = 1 - amp;
 
-    num xOffset = sin(t*helixFrequency)*amp*helixAmplitude;
-    num zOffset = cos(t*helixFrequency)*amp*helixAmplitude;
+    num xOffset = sin(t * helixFrequency) * amp * helixAmplitude;
+    num zOffset = cos(t * helixFrequency) * amp * helixAmplitude;
     num rootedNoiseThreshold = it;
 
-    num trunkLevelRadius = trunkRadius+amp*(2+randomInt(randPrecision)/randPrecision*helixJitter);
+    num trunkLevelRadius = trunkRadius + amp * (2 + randomInt(randPrecision) / randPrecision * helixJitter);
     num trunkLevelRadiusSquared = pow2(trunkLevelRadius);
-    num trunkLevelRadiusInnerSquared = pow2(trunkLevelRadius-1-amp*2);
+    num trunkLevelRadiusInnerSquared = pow2(trunkLevelRadius - 1 - amp * 2);
 
     // Determines if all of the blocks in the current layer within the radius are solid.
     bool allSolid = true;
@@ -83,25 +83,25 @@ for (num trunkLevel = undergroundHeight; trunkLevel <= surfaceHeight; trunkLevel
     // Place a layer of the tunnel
     for (num x = round(-trunkLevelRadius); x < round(trunkLevelRadius); x = x + 1) {
         for (num z = round(-trunkLevelRadius); z < round(trunkLevelRadius); z = z + 1) {
-            num distanceSquared = pow2(x)+pow2(z);
+            num distanceSquared = pow2(x) + pow2(z);
             if (distanceSquared < trunkLevelRadiusSquared) {
                 if (distanceSquared < trunkLevelRadiusInnerSquared) {
                     // Inside
-                    block(x+xOffset, trunkLevel, z+zOffset, "minecraft:air");
-                    block(x+xOffset, trunkLevel-1, z+zOffset, "minecraft:air");
+                    block(x + xOffset, trunkLevel, z + zOffset, "minecraft:air");
+                    block(x + xOffset, trunkLevel - 1, z + zOffset, "minecraft:air");
                 } else {
                     // Border
-                    if (getBlock(x+xOffset, trunkLevel, z+zOffset) == "minecraft:air") {
+                    if (getBlock(x + xOffset, trunkLevel, z + zOffset) == "minecraft:air") {
                         if (!placeInAir) continue;
                         allSolid = false;
                     }
                     str trunkBlock = logBlock;
                     if ((sampler("simplex3",
-                                rootedNoiseHorizontalFrequency*(originX()+x),
-                                rootedNoiseVerticalFrequency*(originY()+trunkLevel),
-                                rootedNoiseHorizontalFrequency*(originZ()+z)
-                                )+1)/2 < rootedNoiseThreshold) trunkBlock = rootedBlock;
-                    block(x+xOffset, trunkLevel, z+zOffset, trunkBlock);
+                        rootedNoiseHorizontalFrequency * (originX() + x),
+                        rootedNoiseVerticalFrequency * (originY() + trunkLevel),
+                        rootedNoiseHorizontalFrequency * (originZ() + z)
+                    ) + 1) / 2 < rootedNoiseThreshold) trunkBlock = rootedBlock;
+                    block(x + xOffset, trunkLevel, z + zOffset, trunkBlock);
                 }
             }
         }

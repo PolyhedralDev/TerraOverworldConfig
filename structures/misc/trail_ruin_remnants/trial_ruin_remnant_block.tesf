@@ -12,4 +12,4 @@ if (random == 6) setBlock = "minecraft:white_terracotta";
 if (random == 7) setBlock = "minecraft:bricks";
 if (random == 8) setBlock = "minecraft:gray_terracotta";
 
-block(0,0,0, setBlock, true);
+block(0, 0, 0, setBlock, true);

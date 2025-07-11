@@ -10,7 +10,7 @@ bool east = structure(1, 0, 0, "is_log", "NONE");
 
 bool west = structure(-1, 0, 0, "is_log", "NONE");
 
-if(!(north || south || east || west)) fail;
+if (!(north || south || east || west)) fail;
 
 str vine = "minecraft:vine[north=" + north + ",south=" + south + ",east=" + east + ",west=" + west + "]";
 
