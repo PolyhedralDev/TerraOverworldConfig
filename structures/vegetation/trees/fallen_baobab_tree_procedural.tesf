@@ -2,7 +2,7 @@ num randPrecision = 100;
 num goldenAngle = 2.39996;
 num pi = 3.14159;
 
-num length = 8 + randomInt(4);
+num length = 6 + randomInt(3);
 num trunkRadius = 1.75;
 num trunkHeight = 6;
 num buffer = 6;
