@@ -5,6 +5,7 @@ extends:
   - EQ_LAND
   - CARVING_LAND
   - ORES_EMERALD
+  - DEPOSITS_INFESTED
   - BASE
 color: $biomes/colors.yml:MOUNTAINS
 

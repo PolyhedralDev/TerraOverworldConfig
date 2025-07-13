@@ -5,6 +5,7 @@ extends:
   - ENVIRONMENT_LAND_POLAR_TUNDRA
   - EQ_LAND
   - ORES_EMERALD
+  - DEPOSITS_INFESTED
   - CARVING_LAND
   - BASE
 color: $biomes/colors.yml:SNOWY_MOUNTAINS

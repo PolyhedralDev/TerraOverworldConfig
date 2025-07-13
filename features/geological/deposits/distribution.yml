@@ -229,3 +229,10 @@ suspicious-gravel:
   range:
     min: -64
     max: -7
+
+infested:
+  averageCountPerChunk: 14
+  salt: 5367
+  range:
+    min: -64
+    max: 62

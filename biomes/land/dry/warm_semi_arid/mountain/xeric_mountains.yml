@@ -6,6 +6,7 @@ extends:
   - EQ_STRATIFIED_LAND
   - CARVING_LAND
   - ORES_EMERALD
+  - DEPOSITS_INFESTED
   - BASE
 color: $biomes/colors.yml:XERIC_MOUNTAINS
 

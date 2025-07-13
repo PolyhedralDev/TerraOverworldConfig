@@ -5,6 +5,7 @@ extends:
   - EQ_GLOBAL_ERODED_PILLARS
   - CARVING_OCEAN
   - ORES_EMERALD
+  - DEPOSITS_INFESTED
   - BASE
 color: $biomes/colors.yml:OVERGROWN_CLIFFS
 
