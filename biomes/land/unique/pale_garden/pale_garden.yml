@@ -43,6 +43,8 @@ slant:
       - << meta.yml:palette-bottom
 
 features:
+  preprocessors:
+    - INFESTED_DEPOSITS_PALE
   flora:
     - GRASS
     - PALE_MOSS_CARPET
@@ -54,3 +56,4 @@ features:
     - PALE_OAK_BUSHES
   landforms:
     - PALE_MOSSY_BOULDERS
+

@@ -236,3 +236,10 @@ infested:
   range:
     min: -64
     max: 62
+
+infested-pale:
+  averageCountPerChunk: 28
+  salt: 6758
+  range:
+    min: 55
+    max: 62
