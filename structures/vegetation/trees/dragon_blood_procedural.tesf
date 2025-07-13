@@ -1,9 +1,8 @@
 num randPrecision = 100;
 num goldenAngle = 2.39996;
 num pi = 3.14159;
-num twopi = 6.28318530718;
 
-num trunkHeight = 5;
+num trunkHeight = 5+randomInt(7);
 str trunkBlock = "minecraft:mangrove_log";
 str rootBlockX = "minecraft:mangrove_wood[axis=x]";
 str rootBlockZ = "minecraft:mangrove_wood[axis=z]";
@@ -67,7 +66,8 @@ str leafBranchBlockX = "minecraft:mangrove_roots";
 str leafBranchBlockY = "minecraft:mangrove_roots";
 str leafBranchBlockZ = "minecraft:mangrove_roots";
 
-num maxBranchReachRadius = 15;
+str leafBlock = "minecraft:moss_block"; // ID of block for grass to generate on top
+num maxBranchReachRadius = trunkHeight+5;
 
 // Generate roots at base of trunk
 num roots = 3;
@@ -313,10 +313,10 @@ for (num b = 1; b <= topBranches; b = b + 1) {
 }
 
 
-for (num y = maxBranchReachRadius; y < maxBranchReachRadius + 15; y = y + 1) {
+for (num y = maxBranchReachRadius; y < maxBranchReachRadius + 30; y = y + 1) {
     for (num x = -maxBranchReachRadius; x < maxBranchReachRadius; x = x + 1) {
         for (num z = -maxBranchReachRadius; z < maxBranchReachRadius; z = z + 1) {
-            if (getBlock(x, y - 1, z) == "minecraft:oak_leaves" &&
+            if (getBlock(x, y - 1, z) == leafBlock &&
                 getBlock(x, y, z) == "minecraft:air" && randomInt(3) == 0) block(x, y, z, "minecraft:short_grass");
         }
     }
