@@ -1,7 +1,7 @@
 variables: &variables
   spread: $customization.yml:spot-spread
   
-  biomeBorder: 10
+  biomeBorder: 15
 
   largeBiomeBorder: 100
 
@@ -18,6 +18,9 @@ variables: &variables
   largeMaxRadius: $customization.yml:large-spot-radius-max
   volcanoMinCenterDepth: 0.01
   volcanoMaxCenterDepth: 0.3
+
+  prismaticMinCenterDepth: 0.01
+  prismaticMaxCenterDepth: 0.15
 
 cellular: &cellular
   dimensions: 2
@@ -165,6 +168,15 @@ samplers:
     dimensions: 2
     type: EXPRESSION
     expression: lerp(spotSizePercent(x, z), 0, volcanoMinCenterDepth, 1, volcanoMaxCenterDepth)
+    functions: $math/functions/interpolation.yml:functions
+    variables: *variables
+    samplers:
+      spotSizePercent: $math/samplers/spots.yml:samplers.spotSizePercent
+
+  prismaticCenterDepth:
+    dimensions: 2
+    type: EXPRESSION
+    expression: lerp(spotSizePercent(x, z), 0, prismaticMinCenterDepth, 1, prismaticMaxCenterDepth)
     functions: $math/functions/interpolation.yml:functions
     variables: *variables
     samplers:

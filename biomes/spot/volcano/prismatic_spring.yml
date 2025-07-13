@@ -1,13 +1,20 @@
 id: PRISMATIC_SPRING
 type: BIOME
 extends:
-  - EQ_VOLCANO
+  - EQ_PRISMATIC_SPRING
   - ENVIRONMENT_LAND_CONTINENTAL_HUMID
   - CARVING_NONE
   - BASE
 color: $biomes/colors.yml:PRISMATIC_SPRING
 
 vanilla: minecraft:taiga
+
+tags:
+  - USE_RIVER
+
+particles:
+  particle: minecraft:white_smoke
+  probability: 0.001
 
 colors:
   water: 0x23b4d3
@@ -21,6 +28,7 @@ features:
     - VOLCANO_WATER
   postprocessors:
     - PRISMATIC_SPRING_MAGMA
+    - PRISMATIC_SPRING_SMOKE
   global-preprocessors:
     - LAVA_FLOOR
     - UNDERGROUND_LAVA_COLUMNS
