@@ -1,0 +1,16 @@
+num blockSelection = randomInt(1000)/1000;
+str setBlock = "minecraft:smooth_quartz";
+if (blockSelection >= 0.46) setBlock = "minecraft:iron_block";
+if (blockSelection >= 0.64) setBlock = "minecraft:gold_block";
+if (blockSelection >= 0.79) setBlock = "minecraft:lapis_block";
+if (blockSelection >= 0.89) setBlock = "minecraft:emerald_block";
+if (blockSelection >= 0.97) setBlock = "minecraft:diamond_block";
+
+for (num h = 0; h < 10; h = h + 1) {
+    if (getBlock(0, -h-1, 0) == "minecraft:deepslate" ||
+        getBlock(0, -h-1, 0) == "minecraft:smooth_basalt") {
+        block(0, -h, 0, setBlock, true);
+        fail;
+    }
+}
+
