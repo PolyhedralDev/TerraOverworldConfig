@@ -41,7 +41,10 @@ seagrass-plantable-blocks:
   - minecraft:gravel
   - minecraft:deepslate
   - minecraft:basalt
-  - minecraft:tuff
+  - minecraft:oak_planks
+  - minecraft:birch_planks
+  - minecraft:jungle_planks
+  - minecraft:spruce_planks
 
 sugarcane-plantable-blocks:
   - minecraft:mud
