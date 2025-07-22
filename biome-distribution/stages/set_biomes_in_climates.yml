@@ -11,6 +11,7 @@ stages:
       - LAND_GLACIER: 1
     to:
       ice-cap:
+        - LAND_GLACIER: 1
         - SNOWY_TUFF_MOUNTAINS: 1
       ice-cap-highlands:
         - SNOWY_BLACKSTONE_MOUNTAINS: 1

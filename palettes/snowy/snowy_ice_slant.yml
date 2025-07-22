@@ -1,0 +1,37 @@
+id: SNOWY_ICE_SLANT
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:snow_block: 1
+    layers: 3
+  - materials:
+      - minecraft:snow_block: 1
+      - minecraft:packed_ice: 1
+      - minecraft:blue_ice: 1
+    layers: 1
+    sampler:
+      type: EXPRESSION
+      expression: |
+        noise(x, y*10+yOffset(x, z)*100, z)*2+1
+      variables:
+        cutoff: ${meta.yml:ocean-level} + 10
+      samplers:
+        yOffset:
+          dimensions: 2
+          type: OPEN_SIMPLEX_2
+          salt: 2189
+          frequency: 0.007
+        noise:
+          dimensions: 3
+          type: FBM
+          octaves: 2
+          sampler:
+            type: CELLULAR
+            return: Distance2Div
+            jitter: 0.7
+            frequency: 0.02
+        offset:
+          dimensions: 2
+          type: OPEN_SIMPLEX_2
+          frequency: 0.02

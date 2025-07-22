@@ -154,6 +154,12 @@ stages:
       - SELF: 1
       - FROZEN_RIVER: 1
     sampler: *riverSampler
+  - type: REPLACE
+    from: USE_LAND_GLACIER_RIVER
+    to:
+      - SELF: 1
+      - LAND_GLACIER_RIVER: 1
+    sampler: *riverSampler
   # Frozen rivers with frozen marshes
   - type: REPLACE
     from: USE_FROZEN_RIVER_FROZEN_MARSH
