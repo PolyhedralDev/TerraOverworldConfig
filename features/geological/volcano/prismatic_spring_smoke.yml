@@ -27,4 +27,4 @@ locator:
 structures:
   distribution:
     type: CONSTANT
-  structures: prismatic_spring_smoke
+  structures: magma_smoke
