@@ -13,7 +13,11 @@ if (loc == 2 ||
     loc == 3
 ) z = 1;
 
-str blockAbove = getBlock(x, 1, z);
-str blockBelow = getBlock(x, -1, z);
+str checkBlockID = getBlock(x, 1, z);
+if (checkBlockID != "minecraft:pale_oak_wood" &&
+    checkBlockID != "minecraft:pale_oak_log") block(x, 1, z, "minecraft:pale_oak_wood");
+checkBlockID = getBlock(x, -1, z);
+if (checkBlockID != "minecraft:pale_oak_wood" &&
+    checkBlockID != "minecraft:pale_oak_log") block(x, -1, z, "minecraft:pale_oak_wood");
 
 block(x, 0, z, blockID, true, true);

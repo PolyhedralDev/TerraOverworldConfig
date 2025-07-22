@@ -14,7 +14,7 @@ locator:
     - type: RANDOM
       height: &range
         min: ${meta.yml:bottom-y} + 14
-        max: ${meta.yml:ocean-level} + 3
+        max: $meta.yml:ocean-level
       amount: 10
     - type: PATTERN
       range: *range
