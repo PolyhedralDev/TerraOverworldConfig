@@ -29,6 +29,7 @@ palm-tree-plantable-blocks:
   - minecraft:sand
   - minecraft:red_sand
   - minecraft:grass_block
+  - minecraft:black_concrete_powder
 
 aquatic-plantable-blocks:
   - minecraft:mud

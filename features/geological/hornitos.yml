@@ -26,6 +26,7 @@ locator:
             blocks: &blocks
               - minecraft:air
               - minecraft:water
+              - minecraft:black_concrete_powder
             offset: 4
           - type: MATCH_SET
             blocks: *blocks
@@ -45,8 +46,6 @@ locator:
           - type: MATCH_SET
             blocks: *blocks
             offset: 16
-
-
 
 structures:
   distribution:

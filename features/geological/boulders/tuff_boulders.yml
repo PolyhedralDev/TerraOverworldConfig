@@ -1,0 +1,35 @@
+id: TUFF_BOULDERS
+type: FEATURE
+
+distributor:
+  type: "YES"
+
+locator:
+  type: AND
+  locators:
+    - type: SURFACE
+      range: &range
+        min: $meta.yml:ocean-level
+        max: $meta.yml:top-y
+      pattern:
+        type: MATCH
+        block: minecraft:air
+        offset: 0
+    - type: ADJACENT_PATTERN
+      range: *range
+      pattern:
+        type: MATCH
+        block: minecraft:black_concrete_powder
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH
+        block: minecraft:tuff
+        offset: -1
+
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: tuff_boulder

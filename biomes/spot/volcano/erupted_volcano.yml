@@ -31,5 +31,6 @@ features:
   landforms:
     - HORNITOS
     - MOLTEN_ROCKS
+    - TUFF_BOULDERS
   postprocessors:
     - VOLCANO_SMOKE

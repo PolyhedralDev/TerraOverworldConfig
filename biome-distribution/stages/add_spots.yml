@@ -39,8 +39,19 @@ stages:
   - type: REPLACE
     from: active-volcano
     to:
-      - ERUPTED_VOLCANO: 4
+      - live-volcano: 4
       - PRISMATIC_SPRING: 1
     sampler:
       type: EXPRESSION
       expression: spotEdgeRadiusPercent(x, z)*2-1
+
+  - type: BORDER
+    from: live-volcano
+    replace: ocean
+    to:
+      - ocean: 1
+      - volcano-coast: 1
+    sampler:
+      type: EXPRESSION
+      expression: if(spotDistance(x, z) < spotRadius(x, z) + biomeBorder + 35, 1, -1)
+      variables: $math/samplers/spots.yml:variables

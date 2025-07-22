@@ -548,3 +548,9 @@ stages:
         - ISLAND_SHALLOWS: 1
       island-hot-shallow-ocean:
         - TROPICAL_ISLAND_SHALLOWS: 1
+
+      live-volcano:
+        - ERUPTED_VOLCANO: 1
+
+      volcano-coast:
+        - BLACK_SAND_BEACH: 1
