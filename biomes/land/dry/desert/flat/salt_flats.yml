@@ -13,6 +13,10 @@ tags:
   - LAND_CAVES
   - USE_DESERT_RIVER
 
+particles:
+  particle: minecraft:poof
+  probability: 0.0002
+
 palette:
   - SALT: $meta.yml:top-y
   - CALCITE_DIORITE_MIX: ${meta.yml:ocean-level} + 2
