@@ -4,7 +4,7 @@ num pi = 3.14159;
 
 num trunkHeight = 9 + randomInt(20);
 str trunkBlock = "minecraft:birch_log";
-
+str trunkEndBlock = "minecraft:birch_wood";
 
 num sideMushroomInterval = 2 + randomInt(4);
 num sideMushroomMinHeight = 100;
@@ -72,6 +72,7 @@ for (num i = 0; i < trunkHeight; i = i + 1) {
             branchAngle = branchAngle + goldenAngle;
         }
     }
+    if (i == trunkHeight-1) trunkBlock = trunkEndBlock;
     block(0, i, 0, trunkBlock);
 }
 
