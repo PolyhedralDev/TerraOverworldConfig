@@ -17,5 +17,6 @@ features:
     - UNDERWATER_SCULK_TENDRIL
   landforms:
     - UNDERWATER_SCULK_UPWARD_TENDRIL
+    - PHANTOM_NESTS
   flora:
     - SCULK_FLORA
