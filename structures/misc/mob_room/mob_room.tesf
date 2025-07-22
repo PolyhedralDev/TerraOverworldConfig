@@ -1,6 +1,12 @@
 num searchRadius = 3;
 bool chest = false;
 
+num mobRoll = randomInt(3);
+str mobState = "type=minecraft:zombie";
+if (mobRoll == 0) mobState = "type=minecraft:zombie";
+if (mobRoll == 1) mobState = "type=minecraft:skeleton";
+if (mobRoll == 2) mobState = "type=minecraft:spider";
+
 // Used for placing schematic at a location with proper conditions
 num xOffset = 0;
 num yOffset = 0;
@@ -53,7 +59,7 @@ if (getBlock(xOffset + 1, yOffset, zOffset) != "minecraft:air" &&
 
     if (spawnable == true) {
         structure(xOffset + 7, yOffset, zOffset, "mob_room_east_sc", "NONE");
-        structure(xOffset + 7, yOffset + 3, zOffset, "spawner_state", "NONE");
+        state(xOffset + 7, yOffset + 3, zOffset, mobState);
 
         if (chest == false) {
             for (num cx = -3; cx < 3; cx = cx + 1) {
@@ -87,7 +93,7 @@ if (getBlock(xOffset - 1, yOffset, zOffset) != "minecraft:air" &&
 
     if (spawnable == true) {
         structure(xOffset - 7, yOffset, zOffset, "mob_room_west_sc", "NONE");
-        structure(xOffset - 7, yOffset + 3, zOffset, "spawner_state", "NONE");
+        state(xOffset - 7, yOffset + 3, zOffset, mobState);
 
         if (chest == false) {
             for (num cx = -3; cx < 3; cx = cx + 1) {
@@ -121,7 +127,7 @@ if (getBlock(xOffset, yOffset, zOffset + 1) != "minecraft:air" &&
 
     if (spawnable == true) {
         structure(xOffset, yOffset, zOffset + 7, "mob_room_south_sc", "NONE");
-        structure(xOffset, yOffset + 3, zOffset + 7, "spawner_state", "NONE");
+        state(xOffset, yOffset + 3, zOffset + 7, mobState);
 
         if (chest == false) {
             for (num cx = -3; cx < 3; cx = cx + 1) {
@@ -157,7 +163,7 @@ if (getBlock(xOffset, yOffset, zOffset - 1) != "minecraft:air" &&
 
     if (spawnable == true) {
         structure(xOffset, yOffset, zOffset - 7, "mob_room_north_sc", "NONE");
-        structure(xOffset, yOffset + 3, zOffset - 7, "spawner_state", "NONE");
+        state(xOffset, yOffset + 3, zOffset - 7, mobState);
 
         if (chest == false) {
             for (num cx = -3; cx < 3; cx = cx + 1) {
