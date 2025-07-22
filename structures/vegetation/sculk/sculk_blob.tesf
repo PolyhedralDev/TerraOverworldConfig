@@ -1,0 +1,62 @@
+num randPrecision = 100;
+num radius = 8 + randomInt(randPrecision) / randPrecision * 2;
+num warp = 1;
+num warpFreq = 2;
+num squish = 1 + randomInt(randPrecision) / randPrecision;
+num radiusSquared = pow(radius, 2);
+num yTranslate = 0;
+
+for (num x = -radius - warp; x < radius + warp; x = x + 1) {
+    for (num y = (-radius - warp) / squish; y < (radius + warp) / squish; y = y + 1) {
+        for (num z = -radius - warp; z < radius + warp; z = z + 1) {
+            num warpX = warp * sampler("simplex3",
+                warpFreq * (x + originX()),
+                warpFreq * (y + originY() + 1000),
+                warpFreq * (z + originZ()));
+            num warpY = warp * sampler("simplex3",
+                warpFreq * (x + originX()),
+                warpFreq * (y + originY() + 2000),
+                warpFreq * (z + originZ()));
+            num warpZ = warp * sampler("simplex3",
+                warpFreq * (x + originX()),
+                warpFreq * (y + originY() + 3000),
+                warpFreq * (z + originZ()));
+            if (pow(x + warpX, 2) + pow((y + warpY) * squish, 2) + pow(z + warpZ, 2) < radiusSquared) {
+                if (structure(x, y + yTranslate, z, "is_sculk_replaceable", "NONE") && (
+                    getBlock(x, y + yTranslate + 1, z) == "minecraft:air" ||
+                    getBlock(x, y + yTranslate - 1, z) == "minecraft:air" ||
+                    getBlock(x + 1, y + yTranslate, z) == "minecraft:air" ||
+                    getBlock(x - 1, y + yTranslate, z) == "minecraft:air" ||
+                    getBlock(x, y + yTranslate, z + 1) == "minecraft:air" ||
+                    getBlock(x, y + yTranslate, z - 1) == "minecraft:air") ) {
+                    block(x, y + yTranslate, z, "minecraft:sculk");
+                }
+            }
+        }
+    }
+}
+
+radius = radius + 10;
+radiusSquared = pow(radius, 2);
+
+for (num ox = -radius - warp; ox < radius + warp; ox = ox + 1) {
+    for (num oy = (-radius - warp) / squish; oy < (radius + warp) / squish; oy = oy + 1) {
+        for (num oz = -radius - warp; oz < radius + warp; oz = oz + 1) {
+            num warpX = warp * sampler("simplex3",
+                warpFreq * (ox + originX()),
+                warpFreq * (oy + originY() + 1000),
+                warpFreq * (oz + originZ()));
+            num warpY = warp * sampler("simplex3",
+                warpFreq * (ox + originX()),
+                warpFreq * (oy + originY() + 2000),
+                warpFreq * (oz + originZ()));
+            num warpZ = warp * sampler("simplex3",
+                warpFreq * (ox + originX()),
+                warpFreq * (oy + originY() + 3000),
+                warpFreq * (oz + originZ()));
+            if (pow(ox + warpX, 2) + pow((oy + warpY) * squish, 2) + pow(oz + warpZ, 2) < radiusSquared) {
+                structure(ox, oy + yTranslate, oz, "valid_sculk_vein", "NONE");
+            }
+        }
+    }
+}

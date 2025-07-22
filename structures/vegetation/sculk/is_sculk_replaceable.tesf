@@ -1,0 +1,33 @@
+str blockID = getBlock(0, 0, 0);
+if (blockID != "minecraft:stone" &&
+    blockID != "minecraft:andesite" &&
+    blockID != "minecraft:granite" &&
+    blockID != "minecraft:diorite" &&
+    blockID != "minecraft:deepslate" &&
+    blockID != "minecraft:cobblestone" &&
+    blockID != "minecraft:mossy_cobblestone" &&
+    blockID != "minecraft:tuff" &&
+    blockID != "minecraft:basalt" &&
+    blockID != "minecraft:sand" &&
+    blockID != "minecraft:gravel" &&
+    blockID != "minecraft:cobbled_deepslate" &&
+    blockID != "minecraft:chiseled_deepslate" &&
+    blockID != "minecraft:polished_deepslate" &&
+    blockID != "minecraft:deepslate_tiles" &&
+    blockID != "minecraft:cracked_deepslate_tiles" &&
+    blockID != "minecraft:deepslate_bricks" &&
+    blockID != "minecraft:cracked_deepslate_bricks" &&
+    blockID != "minecraft:polished_basalt" &&
+    blockID != "minecraft:deepslate_tile_wall" &&
+    blockID != "minecraft:cobbled_deepslate_wall" &&
+    blockID != "minecraft:polished_deepslate_wall" &&
+    blockID != "minecraft:polished_deepslate_stairs" &&
+    blockID != "minecraft:deepslate_tile_stairs" &&
+    blockID != "minecraft:deepslate_brick_slab" &&
+    blockID != "minecraft:deepslate_tile_slab" &&
+    blockID != "minecraft:deepslate_tile_wall" &&
+    blockID != "minecraft:dark_oak_log" &&
+    blockID != "minecraft:dark_oak_planks" &&
+    blockID != "minecraft:dark_oak_fence") {
+    fail;
+}

@@ -29,5 +29,7 @@ features:
     - SCULK_WEBS
     - SCULK_PATCHES
     - SCULK_TENDRIL
+  trees:
+    - SCULK_BLOBS
   flora:
     - SCULK_FLORA
