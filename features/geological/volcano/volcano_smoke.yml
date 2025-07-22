@@ -1,0 +1,29 @@
+id: VOLCANO_SMOKE
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 5
+  padding: 3
+  salt: 4657
+
+locator:
+  type: PATTERN
+  range:
+    min: $meta.yml:ocean-level
+    max: $meta.yml:top-y
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH
+        block: minecraft:lava
+        offset: 2
+      - type: MATCH_SOLID
+        offset: 1
+      - type: MATCH_SOLID
+        offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: magma_smoke
