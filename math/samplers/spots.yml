@@ -1,5 +1,7 @@
 variables: &variables
   spread: $customization.yml:spot-spread
+
+  largeSpawnRadiusOffset: $customization.yml:large-spot-spawn-radius-offset
   
   biomeBorder: 15
 

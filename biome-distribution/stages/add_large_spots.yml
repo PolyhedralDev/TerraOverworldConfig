@@ -2,8 +2,20 @@ stages:
   - type: REPLACE_LIST
     sampler:
       type: EXPRESSION
-      expression: if(largeSpotDistance(x, z) < largeSpotRadius(x, z) + largeBiomeBorder, 1, -1)
+      expression: |
+        if(radius(x,z) > largeSpawnRadiusOffset, 
+          if(largeSpotDistance(x, z) < largeSpotRadius(x, z) + largeBiomeBorder, 1, -1), -1)
       variables: $math/samplers/spots.yml:variables
+      samplers:
+        radius:
+          dimensions: 2
+          type: DOMAIN_WARP
+          amplitude: 10
+          warp:
+            type: OPEN_SIMPLEX_2
+            frequency: 0.01
+          sampler:
+            type: DISTANCE
     from: land
     default-from: land
     default-to:

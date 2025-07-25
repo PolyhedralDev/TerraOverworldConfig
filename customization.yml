@@ -356,6 +356,10 @@ spot-radius-min: 50
 spot-radius-max: 150
 # Default: 150
 
+large-spot-spawn-radius-offset: 2000
+# Roughly how far large spots will generate away from spawn
+# Default: 2000
+
 large-spot-spread: 2150
 # Roughly how many blocks apart each spot biome will be
 # Default: 2000
