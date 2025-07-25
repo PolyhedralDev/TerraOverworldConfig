@@ -67,6 +67,10 @@ str leafBranchBlockY = "minecraft:mangrove_roots";
 str leafBranchBlockZ = "minecraft:mangrove_roots";
 
 str leafBlock = "minecraft:moss_block"; // ID of block for grass to generate on top
+num grassChance = 1;
+str coverBlock = "minecraft:short_grass";
+num altChance = 0.25;
+str altCoverBlock = "minecraft:tall_dry_grass";
 num maxBranchReachRadius = trunkHeight+5;
 
 // Generate roots at base of trunk
@@ -316,8 +320,10 @@ for (num b = 1; b <= topBranches; b = b + 1) {
 for (num y = maxBranchReachRadius; y < maxBranchReachRadius + 30; y = y + 1) {
     for (num x = -maxBranchReachRadius; x < maxBranchReachRadius; x = x + 1) {
         for (num z = -maxBranchReachRadius; z < maxBranchReachRadius; z = z + 1) {
+            str setBlock = coverBlock;
+            if (randomInt(100) < altChance*100) setBlock = altCoverBlock;
             if (getBlock(x, y - 1, z) == leafBlock &&
-                getBlock(x, y, z) == "minecraft:air" && randomInt(3) == 0) block(x, y, z, "minecraft:short_grass");
+                getBlock(x, y, z) == "minecraft:air" && randomInt(100) < grassChance*100) block(x, y, z, setBlock);
         }
     }
 }
