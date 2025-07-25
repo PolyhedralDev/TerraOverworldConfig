@@ -10,6 +10,8 @@ layers:
     layers: 2
   - materials:
       - minecraft:stone: 1
+      - minecraft:packed_ice: 8
+      - minecraft:blue_ice: 3
       - minecraft:snow_block: 8
     layers: 1
 

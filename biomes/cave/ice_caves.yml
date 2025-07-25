@@ -17,9 +17,8 @@ palette:
   - << meta.yml:palette-bedrock
 
 features:
-  preprocessors:
-    - ICE_CAVE_CEILING_ICICLES
-    - ICE_CAVE_SNOW
   landforms:
-    - ICICLE_STALACTITES
-    - ICICLE_STALAGMITES
+    - ICE_CAVE_STALACTITES
+    - ICE_CAVE_STALAGMITES
+  postprocessors:
+    - ICE_CAVE_SNOW
