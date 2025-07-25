@@ -7,23 +7,19 @@ distributor:
     - type: SAMPLER
       sampler:
         type: POSITIVE_WHITE_NOISE
-      threshold: 0.75
+        salt: 9021
+      threshold: 0.7
     - type: SAMPLER
       sampler:
         type: PROBABILITY
         sampler:
           type: DOMAIN_WARP
-          amplitude: 10
+          amplitude: 5
           warp:
             type: GAUSSIAN
           sampler:
-            type: FBM
-            octaves: 2
-            sampler:
-              type: OPEN_SIMPLEX_2
-              frequency: 1
-              salt: 546453
-      threshold: 0.9
+            type: OPEN_SIMPLEX_2
+      threshold: 0.5
 
 locator:
   type: AND
@@ -49,31 +45,5 @@ locator:
 
 structures:
   distribution:
-    type: EXPRESSION
-    expression: sampler(x, z) # Using this to ensure 2D sampler is used
-    threshold: 0.9
-    samplers:
-      sampler:
-        dimensions: 2
-        type: LINEAR
-        min: 0.5
-        max: 1
-        sampler:
-          type: PROBABILITY
-          sampler:
-            type: DOMAIN_WARP
-            amplitude: 10
-            warp:
-              type: GAUSSIAN
-            sampler:
-              type: FBM
-              octaves: 2
-              sampler:
-                type: OPEN_SIMPLEX_2
-                frequency: 10
-                salt: 54
-  structures:
-    - leaf_litter4: 1
-    - leaf_litter3: 1
-    - leaf_litter2: 2
-    - leaf_litter1: 2
+    type: CONSTANT
+  structures: leaf_litter

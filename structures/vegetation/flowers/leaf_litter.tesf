@@ -1,0 +1,16 @@
+num flowers = randomInt(1000)/1000;
+num dir = randomInt(4);
+str blockID = "minecraft:leaf_litter";
+
+if(dir == 0) blockID = blockID + "[facing=north";
+else if(dir == 1) blockID = blockID + "[facing=east";
+else if(dir == 2) blockID = blockID + "[facing=west";
+else blockID = blockID + "[facing=south";
+
+if(flowers <= 0.5) blockID = blockID + ",segment_amount=4]";
+else if(flowers <= 0.6) blockID = blockID + ",segment_amount=3]";
+else if(flowers <= 0.8) blockID = blockID + ",segment_amount=2]";
+else blockID = blockID + ",segment_amount=1]";
+
+// Place flowers
+block(0, 0, 0, blockID);
