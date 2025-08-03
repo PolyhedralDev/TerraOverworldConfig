@@ -11,7 +11,11 @@ for (num a = 0; a < amount; a = a + 1) {
     num z = sin(theta) * r;
 
     for (y; y > -10; y = y - 1) {
-        if (getBlock(x, y - 1, z) != "minecraft:air") {
+        str blockId = getBlock(x, y - 1, z);
+        if (blockId != "minecraft:air" &&
+            blockId != "minecraft:torchflower" &&
+            blockId != "minecraft:pitcher_plant" &&
+            blockId != "minecraft:lava") {
             structure(x, y, z, "trial_ruin_remnant_block", "NONE");
             break;
         }
