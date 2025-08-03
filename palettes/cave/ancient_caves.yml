@@ -7,13 +7,13 @@ layers:
       - minecraft:terracotta: 8
       - minecraft:sand: 8
       - minecraft:gravel: 6
-      - minecraft:coarse_dirt: 6
+      - minecraft:rooted_dirt: 6
     layers: 3
   - materials:
       - minecraft:stone: 1
       - minecraft:terracotta: 8
-      - minecraft:sandstone: 8
-      - minecraft:coarse_dirt: 6
+      - minecraft:smooth_sandstone: 8
+      - minecraft:rooted_dirt: 6
     layers: 1
 
 sampler:
