@@ -22,6 +22,7 @@ colors:
 palette:
   - BLOCK:minecraft:stone: $meta.yml:top-y
   - PINE_BARRENS: ${meta.yml:ocean-level} + 14
+  - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
 
 features:
