@@ -29,6 +29,7 @@ for (num x = -radius - warp; x < radius + warp; x = x + 1) {
                 warpFreq * (z + originZ()));
             if (pow(x + warpX, 2) + pow((y + warpY) * squish, 2) + pow(z + warpZ, 2) < radiusSquared && y < 0) {
                 str setBlock = "minecraft:stone";
+                if (originY() < 10) setBlock = "minecraft:deepslate";
                 if (randomInt(2) == 0) setBlock = "minecraft:magma_block";
                 if (getBlock(x, y + yTranslate, z) != "minecraft:air") block(x, y + yTranslate, z, setBlock, true);
             }
