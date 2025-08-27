@@ -286,11 +286,11 @@ river-spread-scale: 1
 # rivers, smaller scale = closer packed together rivers.
 # Default: 1
 
-river-min-width: 13
+river-min-width: 10
 # Controls in blocks the minimum width of rivers.
 # Default: 13
 
-river-max-width: 30
+river-max-width: 24
 # Controls in blocks the maximum width of rivers.
 # Default: 30
 

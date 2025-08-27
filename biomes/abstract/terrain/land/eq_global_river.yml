@@ -32,10 +32,10 @@ terrain:
       erosionStrengthVariation: # Used to roughen up the walls
         dimensions: 3
         type: FBM
-        octaves: 2
+        octaves: 4
         sampler:
           type: OPEN_SIMPLEX_2
-          frequency: 0.03
+          frequency: 0.05
           salt: 5
       openings:
         dimensions: 2
