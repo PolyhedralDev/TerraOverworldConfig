@@ -490,8 +490,6 @@ stages:
 
       tropical-coast-flat:
         - MUDDY_COASTS: 1
-        - SWAMP: 1
-        - MANGROVE_SWAMP: 1
         - PALM_BEACH: 1
       tropical-coast: LUSH_SEA_CAVES
       tropical-coast-highlands: LUSH_SEA_CAVES
