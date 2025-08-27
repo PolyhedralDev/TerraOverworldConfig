@@ -200,13 +200,13 @@ flatness-factor: 0.95
 # Temperature
 # ---
 
-temperature-scale: 1
+temperature-scale: 0.95
 # Controls the scale of temperature zones. Most biomes are placed according to
 # a temperature map so hot biomes can't generate next to cold biomes, as well as
 # allowing for biomes of similar temperatures to generate together. Increasing this
 # will increase the distance between temperature changes, which results in things like
 # hot and cold biomes generating further apart - and vice versa when decreasing it.
-# Default: 1
+# Default: 0.95
 
 temperature-min: -1
 # Default: -1
