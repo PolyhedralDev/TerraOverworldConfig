@@ -85,11 +85,11 @@ continental-scale: 2
 # this produces larger landmasses and larger oceans, and vice-versa when
 # decreasing it. This does not control the ratio of land / ocean, for that
 # you should change continental-offset instead.
-# Default: 1
+# Default: 2
 
-continental-coast-width: 20
+continental-coast-width: 15
 # Determines the width of costal biomes in blocks.
-# Default: 20
+# Default: 15
 
 continental-coast-threshold: 0.05
 # Determines how far from a continental value of 0 is considered for calculating 
