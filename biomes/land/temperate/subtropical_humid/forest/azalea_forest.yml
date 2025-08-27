@@ -21,6 +21,7 @@ colors:
 
 palette:
   - GRASS: $meta.yml:top-y
+  - GRASS_MOSSY: 90
   - << meta.yml:palette-ocean-level-sand
   - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
