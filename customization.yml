@@ -248,11 +248,11 @@ precipitation-land-threshold: 0.4
 # Variation
 # ---
 
-variation-scale: 1.25
+variation-scale: 1.5
 # Controls scale of biome variations within each climate zone.
 # Decreasing this will result in more smaller biomes to generate in any given
 # climate, while increasing it will result in larger climate variations.
-# Default: 1.25
+# Default: 1.5
 
 # ---
 # Caves
