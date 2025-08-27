@@ -73,13 +73,15 @@ stages:
     from: USE_DESERT_RIVER
     to:
       - SELF: 1
-      - DESERT_RIVER: 1
+      - GALLERY_FOREST: 1
+      - DESERT_RIVER: 2
     sampler: *riverSampler
   # Red desert rivers
   - type: REPLACE
     from: USE_RED_DESERT_RIVER
     to:
       - SELF: 1
+      - GALLERY_FOREST: 1
       - RED_DESERT_RIVER: 1
     sampler: *riverSampler
   # Regular rivers with temperate marshes
@@ -130,7 +132,8 @@ stages:
     from: USE_TROPICAL_RIVER
     to:
       - SELF: 1
-      - TROPICAL_RIVER: 1
+      - GALLERY_FOREST: 1
+      - TROPICAL_RIVER: 2
     sampler: *riverSampler
   # Tropical coastal rivers with mangrove swamps
   - type: REPLACE
