@@ -1,0 +1,15 @@
+functions:
+  shelf: # Similar to terrace function, except it only uses one 'terrace' to produce a shelf
+    arguments:
+      - x
+      - shelfOffset
+      - shelfWidth
+      - shelfDepth
+    expression: x + shelfDepth * shelfWidth * profile(clamp((x/shelfWidth)+1-shelfOffset))
+    functions:
+      clamp:
+        arguments: [ x ]
+        expression: if(0 <= x && x < 1, x, 0)
+      profile:
+        arguments: [ x ]
+        expression: "|x - 0.5| - 0.5"

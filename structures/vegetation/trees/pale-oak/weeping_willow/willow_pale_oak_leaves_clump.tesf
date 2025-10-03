@@ -1,0 +1,46 @@
+num randPrecision = 100;
+num goldenAngle = 2.39996;
+num pi = 3.14159;
+
+str leafBlock = "minecraft:pale_oak_leaves[distance=1,persistent=false]";
+
+num length = 5 + randomInt(3);
+
+num droop = 0.03;
+num verticalDirection = 2 + randomInt(randPrecision) / randPrecision;
+num angle = randomInt(randPrecision) / randPrecision * 2 * pi;
+
+// Branch direction vector
+num dx = sin(angle);
+num dy = verticalDirection;
+num dz = cos(angle);
+// Normalize vector
+num mag = sqrt(pow(dx, 2) + pow(dy, 2) + pow(dz, 2));
+dx = dx / mag;
+dy = dy / mag;
+dz = dz / mag;
+
+for (num l = 0; l <= length; l = l + 0.1) {
+
+    num r = (length * -l / 2);
+
+    num cx = l * dx;
+    num cy = l * dy;
+    num cz = l * dz;
+
+    if (length < 6) {
+        block(cx, cy, cz, "minecraft:pale_oak_wood", true);
+    } else block(cx, cy, cz, leafBlock, false);
+
+    // Point vector down more
+    dy = dy - droop;
+    // Normalize vector
+    mag = sqrt(pow2(dx) + pow2(dy) + pow2(dz));
+    dx = dx / mag;
+    dy = dy / mag;
+    dz = dz / mag;
+
+
+}
+
+structure(length * dx, (length * dy) - 1, length * dz, "long_pale_hanging_moss", "NONE");

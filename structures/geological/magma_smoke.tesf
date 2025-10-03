@@ -1,0 +1,12 @@
+block(0, 1, 0, "minecraft:magma_block", true);
+
+if (getBlock(1, 0, 0) == "minecraft:water" ||
+    getBlock(1, 0, 0) == "minecraft:lava" ||
+    getBlock(-1, 0, 0) == "minecraft:water" ||
+    getBlock(-1, 0, 0) == "minecraft:lava" ||
+    getBlock(0, 0, 1) == "minecraft:water" ||
+    getBlock(0, 0, 1) == "minecraft:lava" ||
+    getBlock(0, 0, -1) == "minecraft:water" ||
+    getBlock(0, 0, -1) == "minecraft:lava") fail;
+
+block(0, 0, 0, "minecraft:campfire[lit=true,signal_fire=true]", true);

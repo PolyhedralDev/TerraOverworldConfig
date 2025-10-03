@@ -1,5 +1,0 @@
-num blockSelection = randomInt(1000)/1000;
-if (blockSelection <= 0.7) block(0, 0, 0,"minecraft:stone");
-else if (blockSelection <= 0.8) block(0, 0, 0,"minecraft:andesite");
-else if (blockSelection <= 0.9) block(0, 0, 0,"minecraft:mossy_cobblestone");
-else block(0, 0, 0,"minecraft:tuff");

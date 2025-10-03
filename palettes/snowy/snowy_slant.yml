@@ -1,0 +1,28 @@
+id: SNOWY_SLANT
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:stone: 1
+      - minecraft:snow_block: 1
+    layers: 15
+    sampler:
+      type: EXPRESSION
+      expression: noise(x, y*10+yOffset(x, z)*100, z)*2+1
+      samplers:
+        yOffset:
+          dimensions: 2
+          type: OPEN_SIMPLEX_2
+          salt: 2189
+          frequency: 0.007
+        noise:
+          dimensions: 3
+          type: FBM
+          octaves: 2
+          sampler:
+            type: CELLULAR
+            return: Distance2Div
+            jitter: 0.7
+            frequency: 0.02
+  - materials: minecraft:stone
+    layers: 1

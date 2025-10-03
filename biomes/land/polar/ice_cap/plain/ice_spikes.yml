@@ -1,0 +1,38 @@
+id: ICE_SPIKES
+type: BIOME
+extends:
+  - COLOR_FROZEN
+  - ENVIRONMENT_LAND_POLAR_ICE_CAP
+  - EQ_SPIKES
+  - SNOWY_PLAINS
+color: $biomes/colors.yml:ICE_SPIKES
+
+vanilla: minecraft:ice_spikes
+
+tags:
+  - LAND_CAVES
+  - ICE_CAVES
+  - USE_FROZEN_RIVER_FROZEN_MARSH
+
+slant:
+  - threshold: 0.5
+    palette:
+      - BLOCK:minecraft:packed_ice: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0
+    palette:
+      - BLOCK:minecraft:ice: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+slant-depth: 6
+
+features:
+  trees:
+    - ICE_SPIKES
+  preprocessors:
+    - ICE_COASTLINE
+  postprocessors:
+    - CEILING_ICICLES
+    - TREE_SNOW
+  landforms:
+    - OVERHANG_STONE_COLUMNS

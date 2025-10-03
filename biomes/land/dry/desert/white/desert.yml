@@ -1,0 +1,35 @@
+id: DESERT
+type: BIOME
+extends:
+  - COLOR_XERIC
+  - ENVIRONMENT_LAND_DRY_WHITE_DESERT
+  - EQ_GLOBAL_DUNES
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:DESERT
+
+vanilla: minecraft:desert
+
+tags:
+  - LAND_CAVES
+  - USE_DESERT_RIVER
+
+palette:
+  - SAND: $meta.yml:top-y
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.3
+    palette:
+      - BLOCK:minecraft:packed_mud: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - CACTUS_SPARSE
+    - DEAD_BUSHES
+    - DRY_GRASS
+  structures:
+    - MOB_ROOMS
+    - DESERT_WELLS
+    - SPARSE_FOSSILS

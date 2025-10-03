@@ -1,0 +1,56 @@
+id: GLOW_LICHEN_TENDRIL_CAVES
+type: FEATURE
+
+# Adds 'webs' of glow lichen to surface blocks
+
+distributor:
+  type: "YES"
+
+locator:
+  type: AND
+  locators:
+    - type: PATTERN
+      range: &range
+        min: ${meta.yml:bottom-y} + 14
+        max: ${meta.yml:ocean-level} + 3
+      pattern:
+        type: MATCH_AIR
+        offset: 0
+    # Check for pale oak tre
+    - type: OR
+      locators:
+        # If any side faces are pale oak tree
+        - type: ADJACENT_PATTERN
+          range: *range
+          pattern:
+            type: MATCH_SET
+            blocks: &blocks
+              - minecraft:pale_oak_log
+              - minecraft:pale_oak_wood
+            offset: 0
+        # OR any top / bottom faces are pale oak tree
+        - type: PATTERN
+          range: *range
+          pattern:
+            type: OR
+            patterns:
+              - type: MATCH_SET
+                blocks: *blocks
+                offset: 1
+              - type: MATCH_SET
+                blocks: *blocks
+                offset: -1
+
+structures:
+  distribution:
+    dimensions: 3
+    type: LINEAR
+    min: -1
+    max: 0
+    sampler:
+      type: CELLULAR
+      return: Distance2Div
+      frequency: 0.1
+  structures:
+    - blank: 70
+    - glow_lichen_solid: 1

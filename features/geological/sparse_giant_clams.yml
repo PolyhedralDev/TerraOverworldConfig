@@ -1,0 +1,28 @@
+id: SPARSE_GIANT_CLAMS
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 317
+  padding: 198
+  salt: 5467
+
+locator:
+  type: PATTERN
+  range:
+    min: ${meta.yml:deepslate-top} - 7
+    max: ${meta.yml:ocean-level} - 20
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH
+        block: minecraft:water
+        offset: 0
+      - type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:aquatic-plantable-blocks
+        offset: -1
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: giant_clam_procedural

@@ -3,13 +3,13 @@ type: PALETTE
 
 layers:
   - materials:
-      - minecraft:stone: 2
-      - minecraft:moss_block: 4
-      - minecraft:clay: 3
+      - minecraft:stone: 1
+      - minecraft:moss_block: 6
+      - minecraft:clay: 5
     layers: 2
   - materials:
-      - minecraft:stone: 5
-      - minecraft:moss_block: 4
+      - minecraft:stone: 1
+      - minecraft:moss_block: 6
     layers: 1
 
 

@@ -1,0 +1,29 @@
+id: ANCIENT_CAVES
+type: BIOME
+extends:
+  - CAVE
+  - BASE
+color: $biomes/colors.yml:ANCIENT_CAVES
+
+vanilla: minecraft:dripstone_caves
+
+particles:
+  particle: falling_dust{block_state:{Name:light_gray_terracotta}}
+  probability: 0.0005
+
+palette:
+  - ANCIENT_CAVES: $meta.yml:top-y
+  - ANCIENT_CAVES_DEEPSLATE: $meta.yml:deepslate-top
+  - << meta.yml:palette-bedrock
+
+features:
+  flora:
+    - ANCIENT_FLOWER_COVER
+  preprocessors:
+    - SUSPICIOUS_SAND_DEPOSITS
+    - SUSPICIOUS_GRAVEL_DEPOSITS
+  postprocessors:
+    - TRIAL_RUIN_REMNANTS
+  landforms:
+    - GREAT_BAOBAB_TREES
+    - FOSSILS

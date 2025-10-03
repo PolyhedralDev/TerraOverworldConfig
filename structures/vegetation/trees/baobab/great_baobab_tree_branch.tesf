@@ -1,0 +1,77 @@
+num randPrecision = 100;
+
+str logBlockX = "minecraft:acacia_wood[axis=x]";
+str logBlockY = "minecraft:acacia_wood[axis=y]";
+str logBlockZ = "minecraft:acacia_wood[axis=z]";
+
+num endBranchHorizontalLength = 3;
+num endBranchHorizontalLengthVariation = 2;
+
+num endBranchVerticalLength = 3;
+num endBranchVerticalLengthVariation = 2;
+
+num leafRadiusMin = 3;
+
+str leafStructure = "acacia_leaves_clump";
+
+num xDir = 0;
+num zDir = 0;
+
+if (randomInt(2) == 0) {
+    xDir = 1;
+    if (randomInt(2) == 0) xDir = -1;
+} else {
+    zDir = 1;
+    if (randomInt(2) == 0) zDir = -1;
+}
+
+num endBranchHorizontal = endBranchHorizontalLength + randomInt(endBranchHorizontalLengthVariation);
+
+for (num th = 0; th < endBranchHorizontal; th = th + 1) {
+
+    // Generates trunk branch horizontally
+    if (getBlock((xDir * th), 0, 0) != "minecraft:air") fail;
+
+    str trunkBlock = logBlockX;
+
+    if (xDir != 0) {
+        trunkBlock = logBlockX;
+        block((xDir * th), 0, 0, trunkBlock);
+    }
+
+    if (zDir != 0) {
+        trunkBlock = logBlockZ;
+        block(0, 0, (zDir * th), trunkBlock);
+    }
+
+}
+
+num endBranchVertical = endBranchVerticalLength + randomInt(endBranchVerticalLengthVariation);
+
+// Generates trunk branch vertically
+for (num tv = 0; tv < endBranchVertical; tv = tv + 1) {
+
+    str trunkBlock = logBlockY;
+
+    if (xDir != 0) block((xDir * endBranchHorizontal), tv, 0, trunkBlock);
+
+    if (zDir != 0) block(0, tv, (zDir * endBranchHorizontal), trunkBlock);
+
+}
+
+// Generate leaf cluster at the end of the branch
+num radius = leafRadiusMin;
+num radiusSquared = pow(radius, 2);
+
+num squish = 2;
+for (num x = floor(-radius); x < ceil(radius); x = x + 1) {
+    for (num y = floor(-radius / squish); y < ceil(radius / squish); y = y + 1) {
+        for (num z = floor(-radius); z < ceil(radius); z = z + 1) {
+            num distanceSquared = pow2(x) + pow2(y * squish) + pow2(z);
+            if (distanceSquared < radiusSquared && randomInt(randPrecision) / randPrecision < 0.5) {
+                if (xDir != 0) structure((endBranchHorizontal * xDir) + x, endBranchVertical + y, z, leafStructure, "NONE", "CW_90", "CCW_90", "CW_180");
+                if (zDir != 0) structure(x, endBranchVertical + y, (endBranchHorizontal * zDir) + z, leafStructure, "NONE", "CW_90", "CCW_90", "CW_180");
+            }
+        }
+    }
+}

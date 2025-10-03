@@ -1,0 +1,42 @@
+num randPrecision = 100;
+
+num yTranslate = -1;
+
+num length = 8 + randomInt(randPrecision) / randPrecision * 2;
+num radius = 0.75 + randomInt(randPrecision) / randPrecision;
+
+str mainBlock = "minecraft:packed_ice";
+str altBlock = "minecraft:blue_ice";
+
+// Direction vector
+num dx = (randomInt(randPrecision) / randPrecision - 0.5) * 1.5;
+num dy = 1 + randomInt(randPrecision) / randPrecision;
+num dz = (randomInt(randPrecision) / randPrecision - 0.5) * 1.5;
+
+// Normalize vector
+num mag = sqrt(pow(dx, 2) + pow(dy, 2) + pow(dz, 2));
+dx = dx / mag;
+dy = dy / mag;
+dz = dz / mag;
+
+str setBlock = "minecraft:packed_ice";
+for (num l = 0; l <= length; l = l + 1) {
+
+    // Reduce radius inversely to length
+    num r = (radius / length * -l) + radius;
+
+    // Generate sphere at each point
+    for (num x = -r; x <= r; x = x + 1) {
+        for (num y = -r; y <= r; y = y + 1) {
+            for (num z = -r; z <= r; z = z + 1) {
+                if (pow(x, 2) + pow(y, 2) + pow(z, 2) < pow(r, 2)) {
+
+                    setBlock = mainBlock;
+                    if (randomInt(3) == 0) setBlock = altBlock;
+                    block(l * dx + x, l * dy + y - radius + yTranslate, l * dz + z, setBlock, false);
+                    block(l * dx + x, l * dy + y - radius + yTranslate - 1, l * dz + z, setBlock, false);
+                }
+            }
+        }
+    }
+}

@@ -7,10 +7,10 @@ else if(dir == 1) blockID = blockID + "[facing=east";
 else if(dir == 2) blockID = blockID + "[facing=west";
 else blockID = blockID + "[facing=south";
 
-if(flowers <= 0.5) blockID = blockID + ",flower_amount=4]";
-else if(flowers <= 0.6) blockID = blockID + ",flower_amount=3]";
-else if(flowers <= 0.8) blockID = blockID + ",flower_amount=2]";
-else blockID = blockID + ",flower_amount=1]";
+if(flowers <= 0.4) blockID = blockID + ",flower_amount=1]";
+else if(flowers <= 0.7) blockID = blockID + ",flower_amount=2]";
+else if(flowers <= 0.9) blockID = blockID + ",flower_amount=3]";
+else blockID = blockID + ",flower_amount=4]";
 
 // Place flowers
 block(0, 0, 0, blockID);

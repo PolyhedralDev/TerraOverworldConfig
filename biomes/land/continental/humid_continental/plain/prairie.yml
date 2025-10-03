@@ -1,0 +1,44 @@
+id: PRAIRIE
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_CONTINENTAL_HUMID
+  - EQ_LAND
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:PRAIRIE
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER_TEMPERATE_MARSH
+
+vanilla: minecraft:meadow
+
+colors:
+  grass: 0xA8DA6C
+  foliage: 0xA8E27E
+  water: 0x44aff5
+  water-fog: 0x44aff5
+
+palette:
+  - GRASS: $meta.yml:top-y
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.3
+    palette:
+      - << meta.yml:palette-slant-generic
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - TALL_GRASS
+    - DENSE_DRY_GRASS
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - OXEYE_DAISY_PATCH
+    - CORNFLOWER_PATCH
+    - SPARSE_OAK_TREES
+    - SPARSE_FALLEN_OAK_TREES
+    - CARROT_PATCHES
+    - WHEAT_PATCHES

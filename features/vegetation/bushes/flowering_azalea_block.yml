@@ -11,15 +11,15 @@ distributor:
 locator:
   type: PATTERN
   range:
-    min: -64
-    max: 64
+    min: $meta.yml:bottom-y
+    max: ${meta.yml:ocean-level} + 3
   pattern:
     type: AND
     patterns:
       - type: MATCH_AIR
         offset: 0
       - type: MATCH_SET
-        blocks: $features/vegetation/meta.yml:plantable-blocks
+        blocks: $features/vegetation/meta.yml:dry-plantable-blocks
         offset: -1
 
 structures:

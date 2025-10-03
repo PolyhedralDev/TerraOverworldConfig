@@ -1,0 +1,6 @@
+num random = randomInt(4);
+
+if (random == 0) structure(0, 0, 0, "desert_well_bottom_1", "NONE");
+if (random == 1) structure(0, 0, 0, "desert_well_bottom_2", "NONE");
+if (random == 2) structure(0, 0, 0, "desert_well_bottom_3", "NONE");
+if (random == 3) structure(0, 0, 0, "desert_well_bottom_4", "NONE");

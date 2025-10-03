@@ -1,0 +1,41 @@
+id: DESERT_PILLARS
+type: BIOME
+extends:
+  - COLOR_XERIC
+  - ENVIRONMENT_LAND_DRY_WHITE_DESERT
+  - EQ_GLOBAL_ERODED_PILLARS
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:DESERT_PILLARS
+
+vanilla: minecraft:desert
+
+tags:
+  - LAND_CAVES
+  - USE_DESERT_RIVER
+
+palette:
+  - SAND: $meta.yml:top-y
+  - << meta.yml:palette-bottom
+
+slant-depth: 50
+
+slant:
+  - threshold: 0.45
+    palette:
+      - GRANITE_SLANT: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - TERRACOTTA_STRATA_VERTICAL: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - CACTUS_SPARSE
+    - DEAD_BUSHES
+    - DRY_GRASS
+  structures:
+    - MOB_ROOMS
+    - DESERT_WELLS
+    - SPARSE_FOSSILS

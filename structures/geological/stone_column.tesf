@@ -1,0 +1,96 @@
+num maxRadius = 3 + randomInt(2);
+num maxDepth = 20;
+num maxHeight = 5;
+
+num warpFrequency = 15;
+num warpAmplitude = 3;
+
+str columnBlock = "minecraft:stone";
+str replaceableMask = "is_stone_column_replaceable";
+
+// Search upwards for valid ceiling
+num topRadius = maxRadius;
+num height = 0;
+bool validCeiling = false;
+for (num r = topRadius; r >= 1; r = r - 1) {
+    num rSq = r * r;
+    bool hit = false;
+    for (num y = 0; y <= maxHeight; y = y + 1) {
+        bool solidDisk = true;
+        if (!hit && structure(0, y, 0, replaceableMask, "NONE")) continue;
+        else hit = true;
+        for (num x = -r; x <= r; x = x + 1) {
+            for (num z = -r; z <= r; z = z + 1) {
+                if (pow2(x) + pow2(z) < rSq && structure(x, y, z, replaceableMask, "NONE")) solidDisk = false;
+                if (!solidDisk) break;
+            }
+            if (!solidDisk) break;
+        }
+        if (solidDisk) {
+            validCeiling = true;
+            height = y;
+            topRadius = r;
+            break;
+        }
+    }
+    if (validCeiling) break;
+}
+
+if (!validCeiling) fail;
+
+// Search downwards for valid floor
+num bottomRadius = maxRadius;
+num depth = 0;
+bool validFloor = false;
+for (num r = bottomRadius; r >= 1; r = r - 1) {
+    num rSq = r * r;
+    bool hit = false;
+    for (num y = 0; y >= -maxDepth; y = y - 1) {
+        bool solidDisk = true;
+        if (!hit && structure(0, y, 0, replaceableMask, "NONE")) continue;
+        else hit = true;
+        for (num x = -r; x <= r; x = x + 1) {
+            for (num z = -r; z <= r; z = z + 1) {
+                if (pow2(x) + pow2(z) < rSq && structure(x, y, z, replaceableMask, "NONE")) solidDisk = false;
+                if (!solidDisk) break;
+            }
+            if (!solidDisk) break;
+        }
+        if (solidDisk) {
+            validFloor = true;
+            depth = -y;
+            bottomRadius = r;
+            break;
+        }
+    }
+    if (validFloor) break;
+}
+
+if (!validFloor) fail;
+
+// Generate column
+num midRadius = max(1, min(topRadius, bottomRadius) * 0.5);
+for (num y = -depth; y <= height; y = y + 1) {
+
+    num t = (y + depth) / (height + depth);
+    num radius = topRadius;
+    if (t < 0.5) radius = bottomRadius;
+
+    num diskRadius = midRadius + (radius - midRadius) * pow2(2) * pow2(t - 0.5);
+    num diskRadiusCeil = ceil(diskRadius);
+    num diskRadiusSquared = pow2(diskRadius);
+
+    for (num x = -diskRadiusCeil; x <= diskRadiusCeil; x = x + 1) {
+        for (num z = -diskRadiusCeil; z <= diskRadiusCeil; z = z + 1) {
+            num distanceOffset = abs(sampler("simplex3",
+                (originX() + x) * warpFrequency,
+                (originY() + y) * warpFrequency,
+                (originZ() + z) * warpFrequency)) * warpAmplitude;
+
+            num distanceSquared = pow2(x) + pow2(z) + pow2(distanceOffset);
+            if (distanceSquared < diskRadiusSquared) {
+                if (structure(x, y, z, replaceableMask, "NONE")) block(x, y, z, columnBlock);
+            }
+        }
+    }
+}

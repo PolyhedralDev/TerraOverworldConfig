@@ -1,0 +1,35 @@
+id: SNOWY_SEA_CAVES
+type: BIOME
+extends:
+  - RIVER_FROZEN
+  - ENVIRONMENT_LAND_MARITIME_FROZEN
+  - EQ_ERODED_COAST
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:SNOWY_SEA_CAVES
+
+vanilla: minecraft:snowy_beach
+
+tags:
+  - LAND_CAVES
+  - USE_FROZEN_RIVER
+
+palette:
+  - SNOW: $meta.yml:top-y
+  - SAND: ${meta.yml:ocean-level} + 1
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - SAND: ${meta.yml:ocean-level} + 1
+      - << meta.yml:palette-bottom
+
+features:
+  slabs:
+    - SNOW_LAYERS
+    - STONE_SLABS
+  preprocessors:
+    - POWDER_SNOW_DEPOSITS
+    - ICE_COASTLINE

@@ -1,0 +1,8 @@
+id: CORAL_OCEAN_TRENCH
+type: BIOME
+extends:
+  - EQ_OCEAN_TRENCH
+  - CORAL_OCEAN
+color: $biomes/colors.yml:CORAL_OCEAN_TRENCH
+
+vanilla: minecraft:warm_ocean

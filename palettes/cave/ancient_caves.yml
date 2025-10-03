@@ -1,0 +1,29 @@
+id: ANCIENT_CAVES
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:stone: 1
+      - minecraft:terracotta: 8
+      - minecraft:sand: 8
+      - minecraft:gravel: 6
+      - minecraft:rooted_dirt: 6
+    layers: 3
+  - materials:
+      - minecraft:stone: 1
+      - minecraft:terracotta: 8
+      - minecraft:smooth_sandstone: 8
+      - minecraft:rooted_dirt: 6
+    layers: 1
+
+sampler:
+  dimensions: 2
+  type: DOMAIN_WARP
+  amplitude: 4
+  warp:
+    type: OPEN_SIMPLEX_2
+    frequency: 0.1
+  sampler:
+    type: CELLULAR
+    return: CellValue
+    frequency: 0.08

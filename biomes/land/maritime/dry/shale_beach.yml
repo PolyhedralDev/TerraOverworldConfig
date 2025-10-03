@@ -1,0 +1,31 @@
+id: SHALE_BEACH
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_MARITIME_DRY
+  - EQ_FLAT_ERODED
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:SHALE_BEACH
+
+vanilla: minecraft:beach
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER_TEMPERATE_MARSH
+
+colors:
+  grass: 0x91bd59
+  foliage: 0x77ab2f
+  water: 0x44aff5
+  water-fog: 0x44aff5
+
+palette:
+  - BLOCK:minecraft:stone: $meta.yml:top-y
+  - SHALE_BEACH: ${meta.yml:ocean-level} + 14
+  - << meta.yml:palette-bottom
+
+features:
+  preprocessors:
+    - COASTAL_WATER_POOLS
+  flora:
+    - DEAD_CORAL

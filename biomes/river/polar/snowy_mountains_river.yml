@@ -1,0 +1,8 @@
+id: SNOWY_MOUNTAINS_RIVER
+type: BIOME
+extends:
+  - RIVER_FROZEN
+  - EQ_GLOBAL_RIVER
+  - CARVING_OCEAN
+  - SNOWY_MOUNTAINS
+color: $biomes/colors.yml:SNOWY_MOUNTAINS_RIVER

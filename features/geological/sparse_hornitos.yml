@@ -1,0 +1,53 @@
+id: SPARSE_HORNITOS
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 792
+  padding: 477
+  salt: 5368
+
+locator:
+  type: AND
+  locators:
+    - type: PATTERN
+      range: &range
+        min: ${meta.yml:deepslate-top} - 7
+        max: $meta.yml:top-y
+      pattern:
+        type: MATCH_SOLID
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: AND
+        patterns:
+          - type: MATCH_SET
+            blocks: &blocks
+              - minecraft:air
+              - minecraft:water
+            offset: 4
+          - type: MATCH_SET
+            blocks: *blocks
+            offset: 6
+          - type: MATCH_SET
+            blocks: *blocks
+            offset: 8
+          - type: MATCH_SET
+            blocks: *blocks
+            offset: 10
+          - type: MATCH_SET
+            blocks: *blocks
+            offset: 12
+          - type: MATCH_SET
+            blocks: *blocks
+            offset: 14
+          - type: MATCH_SET
+            blocks: *blocks
+            offset: 16
+
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: hornito

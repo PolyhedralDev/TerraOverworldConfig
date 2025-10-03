@@ -1,0 +1,18 @@
+id: EQ_SHALLOW_OCEAN
+type: BIOME
+abstract: true
+extends: NO_TERRAIN_2D
+
+# Simple relatively flat terrain under ocean level.
+
+terrain:
+  sampler:
+    dimensions: 3
+    type: LINEAR_HEIGHTMAP
+    base: ${meta.yml:ocean-level} - 5
+  sampler-2d:
+    dimensions: 2
+    type: EXPRESSION
+    variables:
+      height: 4
+    expression: "|simplex(x/2, z/2)| * height"

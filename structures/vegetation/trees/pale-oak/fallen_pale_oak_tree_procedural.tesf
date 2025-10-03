@@ -1,0 +1,100 @@
+num randPrecision = 100;
+num goldenAngle = 2.39996;
+num pi = 3.14159;
+
+num length = 8 + randomInt(4);
+num trunkRadius = 1.5;
+num buffer = 5;
+num scanOffset = 5;
+
+num mushroomChance = 5;
+num eyeChance = 3;
+
+// Direction vector
+num dx = (randomInt(randPrecision) / randPrecision - 0.5) * 1.5;
+num dz = (randomInt(randPrecision) / randPrecision - 0.5) * 1.5;
+
+num mag = sqrt(pow2(dx) + pow2(dz));
+dx = dx / mag;
+dz = dz / mag;
+
+str woodBlockX = "minecraft:pale_oak_log[axis=x]";
+str woodBlockY = "minecraft:pale_oak_log[axis=y]";
+str woodBlockZ = "minecraft:pale_oak_log[axis=z]";
+
+str rootBlockX = "minecraft:pale_oak_wood[axis=x]";
+str rootBlockY = "minecraft:pale_oak_wood[axis=y]";
+str rootBlockZ = "minecraft:pale_oak_wood[axis=z]";
+
+// Generate roots at base of trunk
+num roots = 3;
+num rootMaxDepth = 3;
+num rootHeight = 2;
+num rootLength = 4;
+num rootAngle = randomInt(randPrecision) / randPrecision * 2 * pi;
+for (num r = 0; r < roots; r = r + 1) {
+    num rdx = sin(rootAngle);
+    num rdz = cos(rootAngle);
+    str rootBlock = rootBlockX;
+    if (abs(rdz) > abs(rdx)) rootBlock = rootBlockZ;
+    for (num l = 0; l <= rootLength; l = l + 1) {
+        num height = rootHeight * (1 - (l / rootLength));
+        bool bottomedOut = false;
+        for (num h = height; h >= -rootMaxDepth; h = h - 1) {
+            if (check(round(l * rdx), round(h), round(l * rdz)) != "AIR") {
+                bottomedOut = true;
+                break;
+            }
+            block(l * rdx, h, l * rdz, rootBlock);
+        }
+        if (!bottomedOut) break;
+    }
+    rootAngle = rootAngle + goldenAngle;
+}
+
+for (num h = 0; h < 3; h = h + 1) {
+    block(0, h, 0, woodBlockY, true);
+    block(1, h, 0, woodBlockY, true);
+    block(1, h, 1, woodBlockY, true);
+    block(0, h, 1, woodBlockY, true);
+}
+
+if (check((length / 2) * dx, scanOffset, (length / 2) * dz) == "LAND") fail;
+if (getBlock((length / 2) * dx, scanOffset, (length / 2) * dz) != "minecraft:air") fail;
+
+for (num l = buffer; l <= buffer + length; l = l + 1) {
+
+    str setBlock = woodBlockX;
+    if (abs(dx) > abs(dz)) setBlock = woodBlockX;
+    else if (abs(dz) > abs(dx)) setBlock = woodBlockZ;
+
+    num yTranslate = scanOffset;
+    while (check(l * dx, yTranslate - 1, l * dz) != "LAND" &&
+        check(l * dx + 1, yTranslate - 1, l * dz) != "LAND" &&
+        check(l * dx + 1, yTranslate - 1, l * dz + 1) != "LAND" &&
+        check(l * dx, yTranslate - 1, l * dz + 1) != "LAND") yTranslate = yTranslate - 1;
+
+    if (getBlock(l * dx, yTranslate - 1, l * dz) == woodBlockX) continue;
+
+    num r = trunkRadius;
+    // Generate sphere at each point
+    for (num x = -r; x <= r; x = x + 1) {
+        for (num y = -r; y <= r; y = y + 1) {
+            for (num z = -r; z <= r; z = z + 1) {
+                if (pow(x, 2) + pow(y, 2) + pow(z, 2) < pow(r, 2)) {
+                    if (getBlock(l * dx + x, yTranslate + y, l * dz + z) != "minecraft:pale_moss_block") {
+                        block(l * dx + x, yTranslate + y, l * dz + z, setBlock, true);
+                    }
+                }
+            }
+        }
+    }
+
+    str mushroomBlock = "minecraft:brown_mushroom";
+    if (randomInt(mushroomChance) == 0) block(l * dx, yTranslate + 1, l * dz , mushroomBlock, false);
+    else if (randomInt(eyeChance) == 0) {
+        block(l * dx, yTranslate + 1, l * dz , "minecraft:closed_eyeblossom", false);
+        block(l * dx, yTranslate, l * dz , "minecraft:pale_moss_block", true);
+    }
+
+}

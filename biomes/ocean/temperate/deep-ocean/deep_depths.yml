@@ -1,0 +1,22 @@
+id: DEEP_DEPTHS
+type: BIOME
+extends:
+  - DEEP_OCEAN
+  - BASE
+color: $biomes/colors.yml:DEEP_DEPTHS
+
+vanilla: minecraft:deep_ocean
+
+features:
+  preprocessors:
+    - SCULK_WEBS
+    - SCULK_PATCHES
+    - SCULK_TENDRIL
+  processors:
+    - UNDERWATER_SCULK_PATCHES
+    - UNDERWATER_SCULK_TENDRIL
+  landforms:
+    - UNDERWATER_SCULK_UPWARD_TENDRIL
+    - PHANTOM_NESTS
+  flora:
+    - SCULK_FLORA

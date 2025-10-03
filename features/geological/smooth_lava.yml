@@ -1,0 +1,32 @@
+id: SMOOTH_LAVA
+type: FEATURE
+
+distributor:
+  type: "YES"
+
+locator:
+  type: AND
+  locators:
+    - type: PATTERN
+      range: &range
+        min: ${meta.yml:ocean-level} + 29
+        max: $meta.yml:top-y
+      pattern:
+        type: AND
+        patterns:
+          - type: MATCH
+            block: minecraft:lava
+            offset: -1
+          - type: MATCH_AIR
+            offset: 0
+    - type: ADJACENT_PATTERN
+      range: *range
+      pattern:
+        type: MATCH
+        block: minecraft:lava[level=0]
+        offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: BLOCK:minecraft:lava[level=5]

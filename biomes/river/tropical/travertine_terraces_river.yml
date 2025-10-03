@@ -1,0 +1,11 @@
+id: TRAVERTINE_TERRACES_RIVER
+type: BIOME
+extends:
+  - RIVER_BASIC
+  - ENVIRONMENT_MARINE_RIVER_WARM
+  - EQ_GLOBAL_RIVER
+  - CARVING_OCEAN
+  - TRAVERTINE_TERRACES
+color: $biomes/colors.yml:TROPICAL_RIVER
+
+vanilla: minecraft:river

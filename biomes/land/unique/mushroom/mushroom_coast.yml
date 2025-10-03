@@ -1,0 +1,9 @@
+id: MUSHROOM_COAST
+type: BIOME
+extends:
+  - EQ_FLAT_ERODED
+  - CARVING_OCEAN
+  - MUSHROOM_FIELDS
+color: $biomes/colors.yml:MUSHROOM_COAST
+
+vanilla: minecraft:mushroom_fields

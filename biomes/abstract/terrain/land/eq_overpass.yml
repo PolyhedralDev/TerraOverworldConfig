@@ -1,0 +1,80 @@
+id: EQ_OVERPASS
+type: BIOME
+abstract: true
+
+variables: &variables
+  base: $customization.yml:terrain-base-y-level
+  scale: $customization.yml:terrain-height
+  depth: 0
+  depthVariation: 20
+
+terrain:
+  sampler:
+    type: EXPRESSION
+    dimensions: 3
+    variables: *variables
+    expression: |
+      -y + base +
+      erode(
+        depth - depthVariationNoise(x, z) * depthVariation,
+        base,
+        elevation(x,z) * lerp(openings(x, z), 0.3, 1, 0.7, 1.2),
+        scale,
+        y,
+        1 - lerp(openings(x, z), 0.6, 1, 0.8, 0) * lerp(erosion(x, z), 0.7, 0, 0.8, 1)
+      )
+    samplers: &samplers
+      openings:
+        dimensions: 2
+        type: DOMAIN_WARP
+        amplitude: 20
+        warp:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.006
+          salt: 4329
+        sampler:
+          type: EXPRESSION_NORMALIZER
+          expression: -in
+          sampler:
+            type: CELLULAR
+            return: Distance2Div
+            frequency: 0.006
+            salt: 6432
+      erosion:
+        dimensions: 2
+        type: OPEN_SIMPLEX_2
+        frequency: 0.015
+        salt: 8522
+      depthVariationNoise:
+        dimensions: 2
+        type: PROBABILITY
+        sampler:
+          type: FBM
+          sampler:
+            type: OPEN_SIMPLEX_2
+            frequency: 0.008
+            salt: 9
+    functions:
+      erode:
+        arguments: [ depth, base, height, scale, y, erosion ]
+        expression: |
+          -lerp3(y,
+            base+height*scale, 0,
+            weightedAvg(base+height*scale, 1, base-depth, 2), erosion * (-y+base+height*scale) * lerp(height, 0.1, 0, 0.3, 4),
+            base-depth, 0
+          )
+        functions:
+          "<<": [ math/functions/interpolation.yml:functions ]
+          weightedAvg:
+            arguments:
+              - a
+              - aw
+              - b
+              - bw
+            expression: (a*aw + b*bw)/(aw + bw)
+
+  sampler-2d:
+    type: EXPRESSION
+    variables: *variables
+    samplers: *samplers
+    expression: elevationDetailed(x, z) * scale

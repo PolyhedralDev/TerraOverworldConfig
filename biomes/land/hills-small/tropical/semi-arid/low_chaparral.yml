@@ -1,8 +1,0 @@
-id: LOW_CHAPARRAL
-type: BIOME
-extends: [ EQ_TERRACED_HILLS, CHAPARRAL ]
-color: $biomes/colors.yml:LOW_CHAPARRAL
-
-tags:
-  - LAND_CAVES
-  - USE_RIVER_TEMPERATE_MARSH

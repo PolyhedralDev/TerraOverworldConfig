@@ -1,0 +1,28 @@
+id: ICE_CAVES
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:stone: 1
+      - minecraft:packed_ice: 8
+      - minecraft:blue_ice: 3
+      - minecraft:snow_block: 8
+    layers: 2
+  - materials:
+      - minecraft:stone: 1
+      - minecraft:packed_ice: 8
+      - minecraft:blue_ice: 3
+      - minecraft:snow_block: 8
+    layers: 1
+
+sampler:
+  dimensions: 2
+  type: DOMAIN_WARP
+  amplitude: 4
+  warp:
+    type: OPEN_SIMPLEX_2
+    frequency: 0.1
+  sampler:
+    type: CELLULAR
+    return: CellValue
+    frequency: 0.08

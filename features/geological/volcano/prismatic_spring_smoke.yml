@@ -1,0 +1,30 @@
+id: PRISMATIC_SPRING_SMOKE
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 5
+  padding: 3
+  salt: 6478
+
+locator:
+  type: PATTERN
+  range:
+    min: $meta.yml:ocean-level
+    max: $meta.yml:top-y
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH
+        block: minecraft:water
+        offset: 2
+      - type: MATCH
+        block: minecraft:cyan_terracotta
+        offset: 1
+      - type: MATCH_SOLID
+        offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: magma_smoke

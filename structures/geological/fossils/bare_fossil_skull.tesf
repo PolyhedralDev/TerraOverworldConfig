@@ -1,0 +1,6 @@
+num random = randomInt(4);
+
+if (random == 0) structure(0, 0, 0, "fossil_skull_1", "NONE", "CW_90", "CCW_90", "CW_180");
+if (random == 1) structure(0, 0, 0, "fossil_skull_2", "NONE", "CW_90", "CCW_90", "CW_180");
+if (random == 2) structure(0, 0, 0, "fossil_skull_3", "NONE", "CW_90", "CCW_90", "CW_180");
+if (random == 3) structure(0, 0, 0, "fossil_skull_4", "NONE", "CW_90", "CCW_90", "CW_180");

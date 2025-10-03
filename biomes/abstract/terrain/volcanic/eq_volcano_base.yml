@@ -1,4 +1,0 @@
-id: EQ_VOLCANO_BASE
-type: BIOME
-abstract: true
-extends: EQ_MOUNTAINS

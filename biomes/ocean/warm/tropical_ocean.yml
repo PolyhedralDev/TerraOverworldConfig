@@ -1,0 +1,21 @@
+id: TROPICAL_OCEAN
+type: BIOME
+extends:
+  - PALETTE_SAND_OCEAN
+  - ENVIRONMENT_MARINE_OCEAN_WARM
+  - EQ_GLOBAL_OCEAN
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:TROPICAL_OCEAN
+
+vanilla: minecraft:warm_ocean
+
+tags:
+  - USE_TROPICAL_TRENCH
+
+features:
+  trees:
+    - PALM_TREES
+  landforms:
+    - SPARSE_GIANT_CLAMS
+    - OCEAN_BOULDERS

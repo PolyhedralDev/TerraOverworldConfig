@@ -1,0 +1,80 @@
+id: ARID_SPIKES
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_DRY_RED_DESERT
+  - COLOR_XERIC
+  - EQ_SPIKES
+  - CARVING_LAND
+  - ORES_GOLD
+  - BASE
+color: $biomes/colors.yml:ARID_SPIKES
+
+vanilla: minecraft:badlands
+
+tags:
+  - LAND_CAVES
+  - USE_RED_DESERT_RIVER
+
+palette:
+  - ARID: $meta.yml:top-y
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.45
+    palette:
+      - BLOCK:minecraft:smooth_red_sandstone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:orange_terracotta: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.35
+    palette:
+      - BLOCK:minecraft:terracotta: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.3
+    palette:
+      - TERRACOTTA_STRATA: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.25
+    palette:
+      - BLOCK:minecraft:granite: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.2
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.15
+    palette:
+      - TERRACOTTA_STRATA: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.1
+    palette:
+      - BLOCK:minecraft:granite: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.05
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0
+    palette:
+      - BLOCK:minecraft:andesite: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  preprocessors:
+    - DEL_FLOATING_BLOCKS
+  flora:
+    - GRASS
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - CACTUS_SPARSE
+    - DRY_GRASS
+  trees:
+    - OAK_BUSHES
+    - SPARSE_OAK_TREES
+    - SPARSE_FALLEN_OAK_TREES
+    - DEAD_TREES_SPARSE
+  structures:
+    - MOB_ROOMS
+    - SPARSE_FOSSILS

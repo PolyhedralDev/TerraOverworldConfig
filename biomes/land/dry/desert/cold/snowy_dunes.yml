@@ -1,0 +1,29 @@
+id: SNOWY_DUNES
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_DRY_DESERT
+  - EQ_GLOBAL_DUNES
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:SNOWY_DUNES
+
+vanilla: minecraft:snowy_plains
+
+tags:
+  - LAND_CAVES
+  - USE_DESERT_RIVER
+
+palette:
+  - SNOW: $meta.yml:top-y
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.8
+    palette:
+      - BLOCK:minecraft:sand: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  slabs:
+    - SNOW_LAYERS

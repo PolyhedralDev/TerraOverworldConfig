@@ -12,8 +12,8 @@ locator:
     # Check if block can be replaced with sculk
     - type: PATTERN
       range: &range
-        min: -64
-        max: 0
+        min: $meta.yml:bottom-y
+        max: ${meta.yml:deepslate-top} - 7
       pattern:
         type: MATCH_SET
         blocks: $features/vegetation/meta.yml:sculk-plantable-blocks

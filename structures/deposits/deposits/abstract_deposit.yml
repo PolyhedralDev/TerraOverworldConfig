@@ -1,8 +1,0 @@
-id: ABSTRACT_DEPOSIT
-type: ORE
-abstract: true
-
-replace:
-  - minecraft:stone
-  
-size: 32

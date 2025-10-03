@@ -1,0 +1,49 @@
+id: SNOWY_BIRCH_FOREST
+type: BIOME
+extends:
+  - COLOR_FROZEN
+  - ENVIRONMENT_LAND_CONTINENTAL_SUBARCTIC
+  - EQ_LAND
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:SNOWY_BIRCH_FOREST
+
+vanilla: minecraft:snowy_plains
+
+tags:
+  - LAND_CAVES
+  - ICE_CAVES
+  - USE_FROZEN_RIVER_FROZEN_MARSH
+
+ocean:
+  palette: FROZEN_OCEAN
+
+palette:
+  - GRASS: $meta.yml:top-y
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - GRASS_SPARSE
+    - FERNS
+  landforms:
+    - BOULDERS
+    - SMALL_BOULDER_PATCHES
+  trees:
+    - BARREN_BIRCH_TREES
+    - SPARSE_FALLEN_BIRCH_TREES
+    - SPRUCE_BUSH_PATCHES
+  processors:
+    - SNOW_FOREST_LAYERS
+  preprocessors:
+    - POWDER_SNOW_DEPOSITS
+    - ICE_COASTLINE
+  postprocessors:
+    - TREE_SNOW

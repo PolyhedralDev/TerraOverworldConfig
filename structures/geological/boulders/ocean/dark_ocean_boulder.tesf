@@ -1,0 +1,52 @@
+num randPrecision = 100;
+num radius = 4 + randomInt(randPrecision) / randPrecision * 6;
+num warp = 5;
+num warpFreq = 5;
+num squish = 1 + randomInt(randPrecision) / randPrecision / 2;
+num radiusSquared = pow(radius, 2);
+num yTranslate = -1;
+
+str mainBlock = "minecraft:deepslate";
+// altBlock has axis randomized every block
+str altBlock = "minecraft:basalt";
+
+if (getBlock(radius, -radius / squish, 0) == "minecraft:water" ||
+    getBlock(-radius, -radius / squish, 0) == "minecraft:water" ||
+    getBlock(0, -radius / squish, radius) == "minecraft:water" ||
+    getBlock(0, -radius / squish, -radius) == "minecraft:water" ||
+    getBlock(radius, radius / squish, 0) != "minecraft:water" ||
+    getBlock(-radius, radius / squish, 0) != "minecraft:water" ||
+    getBlock(0, radius / squish, radius) != "minecraft:water" ||
+    getBlock(0, radius / squish, -radius) != "minecraft:water"
+) fail;
+
+for (num x = -radius - warp; x < radius + warp; x = x + 1) {
+    for (num y = (-radius - warp) / squish; y < (radius + warp) / squish; y = y + 1) {
+        for (num z = -radius - warp; z < radius + warp; z = z + 1) {
+            num warpX = warp * sampler("simplex3",
+                warpFreq * (x + originX()),
+                warpFreq * (y + originY() + 1000),
+                warpFreq * (z + originZ()));
+            num warpY = warp * sampler("simplex3",
+                warpFreq * (x + originX()),
+                warpFreq * (y + originY() + 2000),
+                warpFreq * (z + originZ()));
+            num warpZ = warp * sampler("simplex3",
+                warpFreq * (x + originX()),
+                warpFreq * (y + originY() + 3000),
+                warpFreq * (z + originZ()));
+            if (pow(x + warpX, 2) + pow((y + warpY) * squish, 2) + pow(z + warpZ, 2) < radiusSquared) {
+                str setBlock = mainBlock;
+
+                if (randomInt(2) == 0) setBlock = altBlock;
+                num face = randomInt(3);
+                if (face == 0) altBlock = "minecraft:basalt[axis=y]";
+                if (face == 1) altBlock = "minecraft:basalt[axis=z]";
+                if (face == 2) altBlock = "minecraft:basalt[axis=x]";
+
+                block(x, y + yTranslate, z, setBlock);
+
+            }
+        }
+    }
+}

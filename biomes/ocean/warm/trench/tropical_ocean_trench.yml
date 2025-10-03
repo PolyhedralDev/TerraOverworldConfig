@@ -1,0 +1,8 @@
+id: TROPICAL_OCEAN_TRENCH
+type: BIOME
+extends:
+  - EQ_OCEAN_TRENCH
+  - TROPICAL_DEEP_OCEAN
+color: $biomes/colors.yml:TROPICAL_OCEAN_TRENCH
+
+vanilla: minecraft:warm_ocean

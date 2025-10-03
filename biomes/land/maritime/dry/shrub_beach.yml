@@ -1,0 +1,36 @@
+id: SHRUB_BEACH
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_MARITIME_DRY
+  - EQ_FLAT_ERODED
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:SHRUB_BEACH
+
+vanilla: minecraft:beach
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER_TEMPERATE_MARSH
+
+colors:
+  grass: 0x9fbd59
+  foliage: 0x869e31
+  water: 0x449ff5
+  water-fog: 0x449ff5
+
+palette:
+  - BLOCK:minecraft:stone: $meta.yml:top-y
+  - SHRUB_BEACH: ${meta.yml:ocean-level} + 14
+  - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - DEAD_BUSHES
+    - FERNS
+    - TALL_GRASS
+  trees:
+    - MESQUITE_TREES
+    - DEAD_TREES_SPARSE
+    - MIXED_BUSHES
+    - DENSE_SUBTROPICAL_BUSHES

@@ -1,8 +1,0 @@
-id: FLOWERING_FOREST
-type: BIOME
-extends: [ EQ_PLAIN, FLOWERING_FOREST_HILLS ]
-color: $biomes/colors.yml:FLOWERING_FOREST
-
-tags:
-  - LAND_CAVES
-  - USE_RIVER_TEMPERATE_SWAMP

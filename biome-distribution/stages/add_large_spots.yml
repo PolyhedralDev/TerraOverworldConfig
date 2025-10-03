@@ -1,0 +1,41 @@
+stages:
+  - type: REPLACE_LIST
+    sampler:
+      type: EXPRESSION
+      expression: |
+        if(radius(x,z) > largeSpawnRadiusOffset, 
+          if(largeSpotDistance(x, z) < largeSpotRadius(x, z) + largeBiomeBorder, 1, -1), -1)
+      variables: $math/samplers/spots.yml:variables
+      samplers:
+        radius:
+          dimensions: 2
+          type: DOMAIN_WARP
+          amplitude: 10
+          warp:
+            type: OPEN_SIMPLEX_2
+            frequency: 0.01
+          sampler:
+            type: DISTANCE
+    from: land
+    default-from: land
+    default-to:
+      - SELF: 1
+      - land-large-spot: 1
+    to:
+      ocean:
+        - SELF: 1
+        - ocean-large-spot: 1
+
+  # These lists must stay aligned, or a pale garden will not have consistency across land and ocean
+  - type: REPLACE_LIST
+    sampler:
+      type: EXPRESSION
+      expression: largeSpotSizePercent(x, z)*2-1
+    default-from: land-large-spot
+    default-to:
+      - land: 1
+      - vast-forest: 1
+    to:
+      ocean-large-spot:
+        - island: 1
+        - ocean: 1

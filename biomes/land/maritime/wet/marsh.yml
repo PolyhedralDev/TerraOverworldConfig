@@ -1,0 +1,37 @@
+id: MARSH
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_MARITIME_WET
+  - EQ_WARPED_WETLANDS
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:MARSH
+
+vanilla: minecraft:river
+
+colors:
+  grass: 0x61b354
+  foliage: 0x75c458
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER_TEMPERATE_MARSH
+
+palette:
+  - GRASS: $meta.yml:top-y
+  - GRASS_MARSH: ${meta.yml:ocean-level} + 11
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.4
+    palette:
+      - << meta.yml:palette-slant-generic
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - TALL_GRASS
+    - SUGAR_CANE
+    - SMALL_DRIPLEAF
+    - BIG_DRIPLEAF

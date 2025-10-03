@@ -1,8 +1,0 @@
-id: BIRCH_FOREST
-type: BIOME
-extends: [ EQ_TERRACED_HILLS, BIRCH_FOREST_HILLS ]
-color: $biomes/colors.yml:BIRCH_FOREST
-
-tags:
-  - LAND_CAVES
-  - USE_RIVER_TEMPERATE_MARSH

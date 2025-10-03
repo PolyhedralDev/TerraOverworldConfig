@@ -1,0 +1,21 @@
+id: SUBTROPICAL_OCEAN
+type: BIOME
+extends:
+  - PALETTE_SAND_OCEAN
+  - ENVIRONMENT_MARINE_OCEAN_LUKEWARM
+  - EQ_GLOBAL_OCEAN
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:SUBTROPICAL_OCEAN
+
+vanilla: minecraft:lukewarm_ocean
+
+tags:
+  - USE_SUBTROPICAL_TRENCH
+
+features:
+  trees:
+    - PALM_TREES
+  landforms:
+    - SPARSE_GIANT_CLAMS
+    - OCEAN_BOULDERS

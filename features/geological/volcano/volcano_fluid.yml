@@ -1,0 +1,43 @@
+id: VOLCANO_FLUID
+type: FEATURE
+abstract: true
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: EXPRESSION
+    expression: if(spotDistance(x, z) < spotEdgeRadius(x, z) * spotRadius(x, z), -1, 1)
+    variables: $math/samplers/spots.yml:variables
+  threshold: 0
+
+locator:
+  type: AND
+  locators:
+    - type: PATTERN
+      range:
+        min: $meta.yml:bottom-y
+        max: $meta.yml:top-y
+      pattern:
+        type: MATCH_AIR
+        offset: 0
+    - type: SAMPLER_3D
+      sampler:
+        type: EXPRESSION
+        expression: |
+          -y + terrainBase
+          + terrainHeight * (
+            spotBaseElevation(x, z) +
+            lerp(spotSizePercent(x, z) * (1-spotEdgeRadiusPercent(x, z)),
+              0, minHeight,
+              1, maxHeight
+            )
+          ) - 1
+        variables:
+          terrainBase: $customization.yml:terrain-base-y-level
+          terrainHeight: $customization.yml:terrain-height
+          "<<":
+            - math/samplers/spots.yml:variables
+
+structures:
+  distribution:
+    type: CONSTANT

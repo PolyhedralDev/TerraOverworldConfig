@@ -3,14 +3,12 @@ type: BIOME
 abstract: true
 
 palette:
-  - SAND: 319
-  - << meta.yml:palette-bottom
-
-slant-depth: 4
+  - SAND_GRAVEL_OCEAN: $meta.yml:top-y
+  - << meta.yml:palette-bedrock
 
 slant:
-  - threshold: 2.5
+  - threshold: 0.4
     palette:
-      - BLOCK:minecraft:stone: 319
-      - GRAVEL: 61
-      - << meta.yml:palette-bottom
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - SAND_GRAVEL_OCEAN: $meta.yml:ocean-level
+      - << meta.yml:palette-bedrock

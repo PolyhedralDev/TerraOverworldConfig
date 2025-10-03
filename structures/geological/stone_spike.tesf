@@ -1,0 +1,42 @@
+num randPrecision = 100;
+
+num length = 10 + randomInt(randPrecision) / randPrecision * 40;
+num radius = 3 + randomInt(randPrecision) / randPrecision * 4;
+// Direction vector
+num dx = randomInt(randPrecision) / randPrecision * 2 - 1;
+num dy = 5;// + randomInt(randPrecision)/randPrecision;
+num dz = randomInt(randPrecision) / randPrecision * 2 - 1;
+
+// Normalize vector
+num mag = sqrt(pow(dx, 2) + pow(dy, 2) + pow(dz, 2));
+dx = dx / mag;
+dy = dy / mag;
+dz = dz / mag;
+
+for (num l = 0; l <= length; l = l + 1) {
+    num t = l / length;
+
+    // Reduce radius inversely to length
+    num r = max(radius * (1 - t), 1);
+
+    if (t > 0.7) continue;
+
+    // Generate sphere at each point
+    for (num x = -r; x <= r; x = x + 1) {
+        for (num y = -r; y <= r; y = y + 1) {
+            for (num z = -r; z <= r; z = z + 1) {
+                if (pow(x, 2) + pow(y, 2) + pow(z, 2) < pow(r, 2)) {
+                    if (t < 0.5) {
+                        block(l * dx + x, l * dy + y - radius, l * dz + z, "minecraft:tuff", true);
+                    }
+                    else if (t < 0.8) {
+                        block(l * dx + x, l * dy + y - radius, l * dz + z, "minecraft:stone", true);
+                    }
+                    else {
+                        block(l * dx + x, l * dy + y - radius, l * dz + z, "minecraft:andesite", true);
+                    }
+                }
+            }
+        }
+    }
+}

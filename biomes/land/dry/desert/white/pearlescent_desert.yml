@@ -1,0 +1,73 @@
+id: PEARLESCENT_DESERT
+type: BIOME
+extends:
+  - COLOR_XERIC
+  - ENVIRONMENT_LAND_DRY_WHITE_DESERT
+  - EQ_ROCKY_OVERHANGS
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:PEARLESCENT_DESERT
+
+colors:
+  grass: 0xffea93
+
+vanilla: minecraft:desert
+
+tags:
+  - LAND_CAVES
+  - USE_DESERT_RIVER
+
+palette:
+  - SAND_GRASS_MUD_PATCHES: $meta.yml:top-y
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.99
+    palette:
+      - SAND: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.85
+    palette:
+      - DIORITE_SLANT: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.75
+    palette:
+      - BLOCK:minecraft:white_terracotta: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.5
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:tuff: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.3
+    palette:
+      - BLOCK:minecraft:light_blue_terracotta: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: -0.2
+    palette:
+      - BLOCK:minecraft:granite: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: -0.4
+    palette:
+      - BLOCK:minecraft:terracotta: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: -0.6
+    palette:
+      - BLOCK:minecraft:smooth_red_sandstone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+slant-depth: 15
+
+features:
+  flora:
+    - GRASS_DENSE
+    - CACTUS_SPARSE
+    - DEAD_BUSHES
+    - DRY_GRASS
+  structures:
+    - MOB_ROOMS
+    - DESERT_WELLS
+    - SPARSE_FOSSILS

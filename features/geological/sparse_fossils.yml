@@ -1,0 +1,41 @@
+id: SPARSE_FOSSILS
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 85
+  padding: 35
+  salt: 5647
+
+locator:
+  type: AND
+  locators:
+    - type: RANDOM
+      amount: 1
+      height: &range
+        min: ${meta.yml:bottom-y} + 22
+        max: ${meta.yml:ocean-level} - 5
+      salt: 5642
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SOLID
+        offset: 0
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SOLID
+        offset: 4
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SOLID
+        offset: -4
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures:
+    - fossil_skull: 1
+    - fossil_ribcage_procedural: 1
+    - blank: 2

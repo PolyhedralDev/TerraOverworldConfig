@@ -1,0 +1,64 @@
+biomes:
+  type: EXTRUSION
+  extrusions:
+    - << biome-distribution/extrusions/add_cave_biomes.yml:extrusions
+    - << biome-distribution/extrusions/add_deep_dark.yml:extrusions
+  provider:
+    type: PIPELINE
+    resolution: 4
+    blend:
+      amplitude: 2
+      sampler:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.1
+    pipeline:
+      source:
+        type: SAMPLER
+        sampler:
+          type: EXPRESSION
+          expression: continents(x, z)
+        biomes:
+          ocean: 1
+          land: 1
+      stages:
+        - << biome-distribution/stages/add_spots.yml:stages
+        - << biome-distribution/stages/add_large_spots.yml:stages
+        - << biome-distribution/stages/add_coast.yml:stages
+        - << biome-distribution/stages/climate/temperature.yml:stages
+        - << biome-distribution/stages/climate/precipitation.yml:stages
+        - << biome-distribution/stages/climate/elevation.yml:stages
+        - << biome-distribution/stages/add_large_spot_coast.yml:stages
+        - << biome-distribution/stages/add_island_shelf.yml:stages
+        - << biome-distribution/stages/add_islands.yml:stages
+        - << biome-distribution/stages/climate/color.yml:stages
+        - << biome-distribution/stages/add_travertine_terraces.yml:stages
+        - << biome-distribution/stages/set_biomes_in_climates.yml:stages
+        - << biome-distribution/stages/add_biome_color_variants.yml:stages
+
+        - type: REPLACE
+          from: todo
+          to: TEMPERATE_GRASSLAND
+          sampler:
+            type: CONSTANT
+
+        - type: FRACTAL_EXPAND
+          sampler:
+            type: WHITE_NOISE
+        - type: FRACTAL_EXPAND
+          sampler:
+            type: WHITE_NOISE
+        - type: FRACTAL_EXPAND
+          sampler:
+            type: WHITE_NOISE
+        - type: FRACTAL_EXPAND
+          sampler:
+            type: WHITE_NOISE
+        - type: SMOOTH
+          sampler:
+            type: WHITE_NOISE
+        - type: SMOOTH
+          sampler:
+            type: WHITE_NOISE
+
+        - << biome-distribution/stages/add_rivers.yml:stages
+        - << biome-distribution/stages/add_trenches.yml:stages

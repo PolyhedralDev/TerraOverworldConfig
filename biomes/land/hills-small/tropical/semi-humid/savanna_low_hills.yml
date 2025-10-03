@@ -1,8 +1,0 @@
-id: SAVANNA_LOW_HILLS
-type: BIOME
-extends: [ EQ_TERRACED_HILLS, SAVANNA_HILLS ]
-color: $biomes/colors.yml:SAVANNA_LOW_HILLS
-
-tags:
-  - LAND_CAVES
-  - USE_RIVER_TEMPERATE_MARSH

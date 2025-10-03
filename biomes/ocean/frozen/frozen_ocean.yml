@@ -1,0 +1,21 @@
+id: FROZEN_OCEAN
+type: BIOME
+extends:
+  - PALETTE_GRAVEL_OCEAN
+  - ENVIRONMENT_MARINE_OCEAN_FROZEN
+  - EQ_GLOBAL_OCEAN
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:FROZEN_OCEAN
+
+vanilla: minecraft:frozen_ocean
+
+tags:
+  - USE_FROZEN_TRENCH
+
+ocean:
+  palette: FROZEN_OCEAN
+
+features:
+  landforms:
+    - OCEAN_BOULDERS

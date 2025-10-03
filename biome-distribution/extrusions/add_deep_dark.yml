@@ -1,0 +1,9 @@
+extrusions:
+  - type: REPLACE
+    from: DEEP_DARK
+    sampler:
+      type: CONSTANT
+    to: DEEP_DARK
+    range:
+      min: $meta.yml:bottom-y
+      max: $meta.yml:deepslate-top

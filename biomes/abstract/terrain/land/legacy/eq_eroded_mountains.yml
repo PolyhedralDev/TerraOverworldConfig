@@ -1,0 +1,30 @@
+id: EQ_ERODED_MOUNTAINS
+type: BIOME
+abstract: true
+extends: EQ_MOUNTAINS
+
+# EQ_MOUNTAINS, but with a range of Y levels eroded away,
+# creating flat areas and some small overhangs.
+
+vars: &variables
+  erosion: 30 # Strength of erosion
+  erosionYMax: 130 # The height that erosion is capped by
+  erosionYMid: 105 # The height that erosion is strongest
+  erosionYMin: 100 # The height that erosion starts
+
+terrain:
+  sampler:
+    dimensions: 3
+    type: EXPRESSION
+    expression: |
+      noise(x, y, z)
+      -|erosion(x,y/3,z)|
+      * erosion
+      * max(0, min((y-erosionYMin)/(erosionYMid-erosionYMin),(y-erosionYMax)/(erosionYMid-erosionYMax)))
+    variables: *variables
+    samplers:
+      erosion:
+        dimensions: 3
+        type: OPEN_SIMPLEX_2
+        frequency: 0.03
+      noise: $biomes/abstract/terrain/land/legacy/eq_mountains.yml:terrain.sampler

@@ -1,0 +1,82 @@
+num randPrecision = 100;
+num radius = 1.5 + randomInt(randPrecision) / randPrecision;
+num warp = 0;
+num warpFreq = 2;
+num squish = 0.2;
+num radiusSquared = pow(radius, 2);
+num yTranslate = -3;
+
+if (false) {
+    if (check(radius, -radius / squish, 0) != "LAND" ||
+        check(-radius, -radius / squish, 0) != "LAND" ||
+        check(0, -radius / squish, radius) != "LAND" ||
+        check(0, -radius / squish, -radius) != "LAND"
+    ) fail;
+}
+
+if (randomInt(3) == 0) squish = squish - 0.1;
+str setBlock = "minecraft:deepslate";
+for (num x = (-radius - warp) * 3; x < (radius + warp) * 3; x = x + 1) {
+    for (num y = (-radius - warp) / squish; y < (radius + warp) / squish; y = y + 1) {
+        for (num z = (-radius - warp) * 3; z < (radius + warp) * 3; z = z + 1) {
+
+            warp = 0;
+            num warpX = warp * sampler("simplex3",
+                warpFreq * (x + originX()),
+                warpFreq * (y + originY() + 1000),
+                warpFreq * (z + originZ()));
+            num warpY = warp * sampler("simplex3",
+                warpFreq * (x + originX()),
+                warpFreq * (y + originY() + 2000),
+                warpFreq * (z + originZ()));
+            num warpZ = warp * sampler("simplex3",
+                warpFreq * (x + originX()),
+                warpFreq * (y + originY() + 3000),
+                warpFreq * (z + originZ()));
+
+            if (pow(x + warpX, 2) + pow(((y + warpY) * squish), 2) + pow(z + warpZ, 2) < radiusSquared && y > -radius / 2) {
+                num random = randomInt(3);
+                if (random == 0) setBlock = "minecraft:deepslate";
+                if (random == 1) setBlock = "minecraft:basalt";
+                if (random == 2) setBlock = "minecraft:tuff";
+                block(x, y + yTranslate, z, setBlock, true);
+            }
+
+            warp = 2;
+            warpX = warp * sampler("simplex3",
+                warpFreq * (x + originX()),
+                warpFreq * (y + originY() + 1000),
+                warpFreq * (z + originZ()));
+            warpY = warp * sampler("simplex3",
+                warpFreq * (x + originX()),
+                warpFreq * (y + originY() + 2000),
+                warpFreq * (z + originZ()));
+            warpZ = warp * sampler("simplex3",
+                warpFreq * (x + originX()),
+                warpFreq * (y + originY() + 3000),
+                warpFreq * (z + originZ()));
+            if ((pow((x + warpX) / 2, 2) + pow(((y + warpY) * squish * 2), 2) + pow((z + warpZ) / 2, 2)) < radiusSquared) {
+                num random = randomInt(3);
+                if (random == 0) setBlock = "minecraft:deepslate";
+                if (random == 1) setBlock = "minecraft:basalt";
+                if (random == 2) setBlock = "minecraft:tuff";
+                block(x, y + yTranslate, z, setBlock, true);
+            }
+        }
+    }
+}
+
+for (num h = 25; h > 0; h = h - 1) {
+
+    if (structure(0, h, 1, "is_rock", "NONE") &&
+        structure(0, h, -1, "is_rock", "NONE") &&
+        structure(1, h, 0, "is_rock", "NONE") &&
+        structure(-1, h, 0, "is_rock", "NONE")) {
+        block(0, h, 0, "minecraft:water", true);
+        block(0, h - 1, 0, "minecraft:magma_block", true);
+        block(0, h - 2, 0, "minecraft:campfire[lit=true,signal_fire=true]", true);
+        break;
+    }
+
+    if (structure(0, h, 0, "is_rock", "NONE")) block(0, h, 0, "minecraft:water", true);
+}

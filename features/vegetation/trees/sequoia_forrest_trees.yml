@@ -1,0 +1,39 @@
+id: SEQUOIA_FOREST_TREES
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 8
+  padding: 5
+  salt: 2314
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: ${meta.yml:ocean-level} + 3
+        max: ${meta.yml:ocean-level} + 69
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:podzol
+          - minecraft:coarse_dirt
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:snow
+          - minecraft:air
+        offset: 0
+structures:
+  distribution:
+    type: WHITE_NOISE
+    salt: 9125
+  structures:
+    - sequoia_tree_procedural: 25
+    - giant_sequoia_tree_procedural: 1

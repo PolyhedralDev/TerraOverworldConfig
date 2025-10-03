@@ -1,5 +1,0 @@
-id: SUBTROPICAL_DEEP_OCEAN
-type: BIOME
-extends: [ PALETTE_OCEAN, EQ_DEEP_OCEAN, CARVING_OCEAN, BASE ]
-vanilla: minecraft:deep_lukewarm_ocean
-color: $biomes/colors.yml:SUBTROPICAL_DEEP_OCEAN

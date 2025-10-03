@@ -1,0 +1,11 @@
+num length = 1 + ((sampler("simplex", originX(), originZ()) + 1) * 2.5);
+num x = 0;
+num z = 0;
+
+for (num i = 0; i <= length; i = i + 1) {
+    str blockID = "minecraft:pale_hanging_moss";
+    if (i != length) {
+        blockID = blockID + "[tip=false]";
+    }
+    block(x, -i, z, blockID, false);
+}

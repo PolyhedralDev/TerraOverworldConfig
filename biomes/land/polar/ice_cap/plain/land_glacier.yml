@@ -1,0 +1,47 @@
+id: LAND_GLACIER
+type: BIOME
+extends:
+  - COLOR_FROZEN
+  - ENVIRONMENT_LAND_POLAR_TUNDRA
+  - EQ_ELEVATED_LANDSCAPES
+  - SNOWY_PLAINS
+color: $biomes/colors.yml:LAND_GLACIER
+
+vanilla: minecraft:frozen_peaks
+
+tags:
+  - LAND_CAVES
+  - ICE_CAVES
+  - USE_LAND_GLACIER_RIVER
+
+ocean:
+  palette: FROZEN_OCEAN
+
+palette:
+  - SNOW_ICE_MIX: $meta.yml:top-y
+  - SNOW_ICE_STONE_MIX: $meta.yml:ocean-level
+  - << meta.yml:palette-bottom
+
+slant-depth: 15
+
+slant:
+  - threshold: 1
+    palette:
+      - SNOWY_ICE_SLANT: $meta.yml:top-y
+      - SNOW_ICE_STONE_MIX: $meta.yml:ocean-level
+      - << meta.yml:palette-bottom
+  - threshold: 0.3
+    palette:
+      - SNOW_ICE_MIX: $meta.yml:top-y
+      - SNOW_ICE_STONE_MIX: $meta.yml:ocean-level
+      - << meta.yml:palette-bottom
+
+features:
+  slabs:
+    - STONE_SLABS
+    - SNOW_LAYERS
+  preprocessors:
+    - POWDER_SNOW_DEPOSITS
+    - ICE_COASTLINE
+  postprocessors:
+    - TREE_SNOW

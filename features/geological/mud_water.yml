@@ -1,0 +1,57 @@
+id: MUD_WATER
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: PROBABILITY
+    sampler:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.3
+      salt: 4357
+  threshold: 0.35
+
+locator:
+  type: AND
+  locators:
+    - type: PATTERN
+      range: &range
+        min: ${meta.yml:ocean-level} + 2
+        max: $meta.yml:top-y
+      pattern:
+        type: AND
+        patterns:
+          - type: MATCH
+            block: minecraft:mud
+            offset: -1
+          - type: MATCH
+            block: minecraft:mud
+            offset: 0
+          - type: MATCH_AIR
+            offset: 1
+    - type: ADJACENT_PATTERN
+      range: *range
+      match-all: true
+      pattern:
+        type: AND
+        patterns:
+          - type: NOT
+            pattern:
+              type: MATCH_AIR
+              offset: 0
+          - type: MATCH_AIR
+            offset: 1
+          - type: MATCH
+            block: minecraft:mud
+            offset: -1
+    - type: ADJACENT_PATTERN
+      range: *range
+      pattern:
+        type: MATCH
+        block: minecraft:mud
+        offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: BLOCK:minecraft:water

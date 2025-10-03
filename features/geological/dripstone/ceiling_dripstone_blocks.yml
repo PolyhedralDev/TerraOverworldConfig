@@ -1,0 +1,42 @@
+id: CEILING_DRIPSTONE
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    dimensions: 2
+    type: DOMAIN_WARP
+    amplitude: 1
+    warp:
+      type: WHITE_NOISE
+    sampler:
+      type: FBM
+      octaves: 3
+      salt: 23424
+      sampler:
+        type: OPEN_SIMPLEX_2
+
+locator:
+  type: AND
+  locators:
+    - type: PATTERN
+      range: &range
+        min: $meta.yml:bottom-y
+        max: ${meta.yml:ocean-level} - 13
+      pattern:
+        type: MATCH_AIR
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH
+        block: minecraft:stone
+        offset: 0
+
+structures:
+  distribution:
+    type: OPEN_SIMPLEX_2
+    frequency: 0.02
+    salt: 112
+  structures: BLOCK:minecraft:dripstone_block
+      

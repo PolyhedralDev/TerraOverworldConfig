@@ -1,0 +1,75 @@
+id: EQ_CELL_MARSH
+type: BIOME
+abstract: true
+
+vars: &variables
+  base: $customization.yml:terrain-base-y-level
+  height: $customization.yml:terrain-height
+  angleFrequency: 60
+
+terrain:
+  sampler:
+    type: EXPRESSION
+    variables: *variables
+    expression: -y + base + lerp(overhangsMask(x, y, z) * lerp(y, base, 0, base + 5, 1), 0.1, 0, 0.3, overhangs(x, y*5, z) * 30)
+    samplers:
+      overhangsMask:
+        dimensions: 3
+        type: PROBABILITY
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.007
+          salt: 8481
+      overhangs:
+        dimensions: 3
+        type: FBM
+        octaves: 2
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.007
+          salt: 4957
+
+  sampler-2d:
+    type: DOMAIN_WARP
+    amplitude: 30
+    warp:
+      type: FBM
+      octaves: 3
+      sampler:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.003
+    sampler:
+      type: EXPRESSION
+      variables: *variables
+      expression: |
+        herp(|-distance2div(x, z)-0.6|*2,
+          0.1, -10 * noise(
+            distance2div(x, z),
+            sin(angle(x, z)) * angleFrequency,
+            cos(angle(x, z)) * angleFrequency
+          ),
+          0.8, 0
+        )
+        + simplex(x/2, z/2) * 3
+      samplers:
+        distance2div:
+          dimensions: 2
+          type: CELLULAR
+          frequency: 0.015
+          salt: 1
+          return: Distance2Div
+        angle:
+          dimensions: 2
+          type: CELLULAR
+          frequency: 0.015
+          salt: 1
+          return: Angle
+        noise:
+          dimensions: 3
+          type: PROBABILITY
+          sampler:
+            type: FBM
+            octaves: 3
+            sampler:
+              type: OPEN_SIMPLEX_2
+              frequency: 0.02

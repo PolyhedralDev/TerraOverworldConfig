@@ -12,13 +12,13 @@ locator:
   locators:
     - type: TOP
       range: &range
-        min: 64
-        max: 180
+        min: ${meta.yml:ocean-level} + 3
+        max: ${meta.yml:ocean-level} + 119
     - type: PATTERN
       range: *range
       pattern:
         type: MATCH_SET
-        blocks: $features/vegetation/meta.yml:plantable-blocks
+        blocks: $features/vegetation/meta.yml:dry-plantable-blocks
         offset: -1
 
 structures:

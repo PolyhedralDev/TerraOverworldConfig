@@ -1,0 +1,57 @@
+stages:
+  - type: REPLACE
+    from: ALL
+    to:
+      - SELF: 1
+      - spot: 1
+    sampler:
+      type: EXPRESSION
+      expression: if(spotDistance(x, z) < spotRadius(x, z) + biomeBorder, 1, -1)
+      variables: $math/samplers/spots.yml:variables
+
+  - type: REPLACE
+    from: spot
+    to:
+      - volcano: 1
+      - mesa: 1
+    sampler:
+      type: EXPRESSION
+      expression: spotSizePercent(x, z)*2-1
+
+  - type: REPLACE
+    from: volcano
+    to:
+      - extinct-volcano: 5
+      - active-volcano: 1
+    sampler:
+      type: EXPRESSION
+      expression: volcanoActivity(x, z)
+
+  - type: REPLACE
+    from: extinct-volcano
+    to:
+      - extinct-volcano: 4
+      # - crater-lake: 1 # Crater lakes are disabled until a good method of adding fluid is implemented
+    sampler:
+      type: EXPRESSION
+      expression: spotEdgeRadiusPercent(x, z)*2-1
+
+  - type: REPLACE
+    from: active-volcano
+    to:
+      - live-volcano: 4
+      - PRISMATIC_SPRING: 1
+    sampler:
+      type: EXPRESSION
+      expression: spotEdgeRadiusPercent(x, z)*2-1
+
+  - type: BORDER
+    from: live-volcano
+    replace: ocean
+    to:
+      - ocean: 1
+      - volcano-coast: 1
+    sampler:
+      type: EXPRESSION
+      expression: if(spotDistance(x, z) < spotRadius(x, z) + biomeBorder + 35, 1, -1)
+      variables: $math/samplers/spots.yml:variables

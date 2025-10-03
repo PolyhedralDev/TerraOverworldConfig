@@ -1,8 +1,0 @@
-id: CHAPARRAL_FLATS
-type: BIOME
-extends: [ EQ_PLAIN, CHAPARRAL ]
-color: $biomes/colors.yml:CHAPARRAL_FLATS
-
-tags:
-  - LAND_CAVES
-  - USE_RIVER_TEMPERATE_MARSH

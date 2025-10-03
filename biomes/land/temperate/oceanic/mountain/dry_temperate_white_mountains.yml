@@ -1,0 +1,28 @@
+id: DRY_TEMPERATE_WHITE_MOUNTAINS
+type: BIOME
+extends: DRY_TEMPERATE_MOUNTAINS
+color: $biomes/colors.yml:DRY_TEMPERATE_WHITE_MOUNTAINS
+
+tags:
+  - DEEP_DARK
+
+colors:
+  grass: 0x8ace98
+  foliage: 0x59ba6c
+
+slant:
+  - threshold: 0.8
+    palette:
+      - GRASS: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - WHITE_ROCKY_SLANT: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - WHITE_FLOWER_COVER
+    - GRASS
+    - DENSE_DRY_GRASS

@@ -1,0 +1,33 @@
+id: PHANTOM_NESTS
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 66
+  padding: 24
+  salt: 85769
+
+locator:
+  type: PATTERN
+  range:
+    min: $meta.yml:bottom-y
+    max: $meta.yml:deepslate-bottom
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH
+        block: minecraft:water
+        offset: 3
+      - type: MATCH
+        block: minecraft:water
+        offset: 0
+      - type: MATCH_SOLID
+        offset: -1
+      - type: MATCH_SOLID
+        offset: -5
+
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: phantom_nest

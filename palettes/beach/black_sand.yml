@@ -1,0 +1,35 @@
+id: BLACK_SAND
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:black_concrete_powder: 1
+    layers: 3
+  - materials:
+      - minecraft:blackstone: 1
+    layers: 2
+  - materials:
+      - minecraft:blackstone: 1
+      - minecraft:stone: 1
+    layers: 1
+  - materials:
+      - minecraft:stone: 1
+    layers: 1
+
+sampler:
+  dimensions: 2
+  type: DOMAIN_WARP
+  amplitude: 10
+  warp:
+    dimensions: 2
+    type: LINEAR
+    min: -1
+    max: 0.2
+    sampler:
+      type: CELLULAR
+      frequency: 0.08
+  sampler:
+    type: FBM
+    octaves: 3
+    sampler:
+      type: OPEN_SIMPLEX_2

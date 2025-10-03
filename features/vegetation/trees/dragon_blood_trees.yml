@@ -1,0 +1,36 @@
+id: DRAGON_BLOOD_TREES
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 25
+  padding: 3
+  salt: 4809
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: ${meta.yml:ocean-level} + 3
+        max: $meta.yml:top-y
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:dragons-blood-tree-plantable-blocks
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:snow
+          - minecraft:air
+        offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: dragon_blood_procedural
+  

@@ -1,0 +1,23 @@
+num amount = 2;
+
+
+for (num a = 0; a < amount; a = a + 1) {
+
+    num y = -5 + randomInt(10);
+
+    num theta = randomInt(360) * 3.14159 / 180;
+    num r = 5 - randomInt(randomInt(6) + 1);
+    num x = cos(theta) * r;
+    num z = sin(theta) * r;
+
+    for (y; y > -10; y = y - 1) {
+        str blockId = getBlock(x, y - 1, z);
+        if (blockId != "minecraft:air" &&
+            blockId != "minecraft:torchflower" &&
+            blockId != "minecraft:pitcher_plant" &&
+            blockId != "minecraft:lava") {
+            structure(x, y, z, "trial_ruin_remnant_block", "NONE");
+            break;
+        }
+    }
+}

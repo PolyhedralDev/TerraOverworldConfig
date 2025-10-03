@@ -1,0 +1,39 @@
+id: BLACKSTONE_DEEPSLATE_MIX
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:deepslate: 50
+      - minecraft:blackstone: 50
+      - minecraft:stone: 1
+    layers: 10
+  - materials:
+      - minecraft:stone: 1
+    layers: 1
+
+sampler:
+  type: EXPRESSION
+  expression: |
+    if(y > cutoff-(offset(x,z)+1)*10, noise(x, y*10+yOffset(x, z)*100, z)*2+1, 
+    -noise(x, y*10+yOffset(x, z)*100, z)*2+1)
+  variables:
+    cutoff: ${meta.yml:ocean-level} + 80
+  samplers:
+    yOffset:
+      dimensions: 2
+      type: OPEN_SIMPLEX_2
+      salt: 2189
+      frequency: 0.007
+    noise:
+      dimensions: 3
+      type: FBM
+      octaves: 2
+      sampler:
+        type: CELLULAR
+        return: Distance2Div
+        jitter: 0.7
+        frequency: 0.02
+    offset:
+      dimensions: 2
+      type: OPEN_SIMPLEX_2
+      frequency: 0.02

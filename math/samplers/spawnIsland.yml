@@ -1,0 +1,35 @@
+samplers:
+  spawnIsland:
+    dimensions: 2
+    type: DOMAIN_WARP
+    amplitude: 150
+    warp:
+      type: FBM
+      octaves: 2
+      sampler:
+        type: TRANSLATE
+        x: 5000
+        z: -5000
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.004
+    sampler:
+      type: EXPRESSION_NORMALIZER
+      expression: | # Maps innerRadius to 1, middleRadius to 0, outerRadius to -1
+        if(in < middleRadius/outerRadius,
+          herp        (in, innerRadius/outerRadius,  1, middleRadius/outerRadius, 0),
+          parabolicMap(in, middleRadius/outerRadius, 0, 1,                       -1))
+      variables:
+        innerRadius: $customization.yml:spawn-island-radius-inner
+        middleRadius: $customization.yml:spawn-island-radius-middle
+        outerRadius: $customization.yml:spawn-island-radius-outer
+      functions: $math/functions/interpolation.yml:functions
+      sampler:
+        type: PROBABILITY
+        sampler:
+          type: DISTANCE
+          point:
+            x: $customization.yml:spawn-island-origin-x
+            z: $customization.yml:spawn-island-origin-z
+          normalize: true
+          radius: $customization.yml:spawn-island-radius-outer 

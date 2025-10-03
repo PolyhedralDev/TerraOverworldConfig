@@ -1,0 +1,18 @@
+num random = randomInt(4);
+
+if (random == 0) structure(0, 0, 0, "fossil_skull_1", "NONE", "CW_90", "CCW_90", "CW_180");
+if (random == 1) structure(0, 0, 0, "fossil_skull_2", "NONE", "CW_90", "CCW_90", "CW_180");
+if (random == 2) structure(0, 0, 0, "fossil_skull_3", "NONE", "CW_90", "CCW_90", "CW_180");
+if (random == 3) structure(0, 0, 0, "fossil_skull_4", "NONE", "CW_90", "CCW_90", "CW_180");
+
+num radius = 5;
+num r = radius;
+for (num x = -r; x < r; x = x + 1) {
+    for (num y = -r; y < r; y = y + 1) {
+        for (num z = -r; z < r; z = z + 1) {
+            str get = getBlock(x, y, z);
+            if (getBlock(x, y, z) == "minecraft:bone_block") structure(x, y, z, "fossil_ore_block", "NONE");
+        }
+    }
+}
+

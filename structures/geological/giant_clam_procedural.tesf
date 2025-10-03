@@ -1,0 +1,100 @@
+num randPrecision = 100;
+num pi = 3.14159;
+
+num yTranslate = 4;
+
+if (getBlock(5, yTranslate, 0) != "minecraft:water" ||
+    getBlock(-5, yTranslate, 0) != "minecraft:water" ||
+    getBlock(0, yTranslate, 5) != "minecraft:water" ||
+    getBlock(0, yTranslate, -5) != "minecraft:water") fail;
+
+num radiusBase = 1;
+
+num range = 60;
+num lengthBase = 20;
+
+num rearOffset = 10; // Controls the back starting position of strand
+num rearRadiusOffset = 0.25; // Adds extra width to back of clam to prevent holes
+num rearLengthEnd = 0.3; // Controls where the rear section of clam ends
+
+num gap = randomInt(2); // Adds variation between the top and bottom strands
+num endBlockStart = 0.95; // Controls at point that the endBlock is used on the strand
+num endFrequency = 0.4; // Controls the frequency at which the end strands deviate from one another
+
+num bottomFlatness = 1.25; // Controls flatness of the bottom strands
+num bottomTranslate = 8; // Controls the y-level of the bottom strands
+
+str mainBlock = "minecraft:smooth_basalt";
+str altBlock = "minecraft:deepslate";
+str endBlock = "minecraft:calcite";
+
+str pearlStructure = "clam_pearl";
+num pearlOffset = -20; // Controls the forward and backward position of the pearl
+
+num droop = 0.035;
+num angle = randomInt(randPrecision) / randPrecision * 2 * pi;
+
+range = round(range/2);
+for (num w = -range; w < range; w = w + 0.5) {
+
+    num yDir = 1;
+    if (randomInt(2) == 0) yDir = yDir * -1;
+    angle = angle - 0.025;
+
+    num dx = sin(angle);
+    num dy = (gap / 2) + 2 + (randomInt(randPrecision) / randPrecision) * endFrequency;
+    num dz = cos(angle);
+
+    num mag = sqrt(pow(dx, 2) + pow(dy, 2) + pow(dz, 2));
+    dx = dx / mag;
+    dy = dy / mag;
+    dz = dz / mag;
+
+    num ox = -sin(angle)*rearOffset;
+    num oz = -cos(angle)*rearOffset;
+
+    if (w == 0) structure((lengthBase + gap + pearlOffset) * dx, yTranslate, (lengthBase + gap + pearlOffset) * dz, pearlStructure, "NONE");
+
+    num length = lengthBase;
+    for (num tl = 0; tl <= length; tl = tl + 0.5) {
+
+        num tx = dx * tl;
+        num ty = dy * tl;
+        num tz = dz * tl;
+
+        num yOffset = yTranslate;
+        if (yDir == -1) {
+            yOffset = yTranslate-bottomTranslate;
+            ty = ty/bottomFlatness;
+        }
+
+        num teethRadius = radiusBase;
+
+        if (tl == 0) teethRadius = 1.5;
+
+        num r = teethRadius+rearRadiusOffset;
+        for (num x = -r; x <= r; x = x + 1) {
+            for (num y = -r; y <= r; y = y + 1) {
+                for (num z = -r; z <= r; z = z + 1) {
+                    str setBlock = mainBlock;
+                    if (randomInt(2) == 0) setBlock = altBlock;
+                    if (tl / length > endBlockStart) setBlock = endBlock;
+                    if (tl / length > rearLengthEnd) r = teethRadius;
+
+                    if (pow(x, 2) + pow(y, 2) + pow(z, 2) < pow(r, 2)) {
+                        block(tx + x + ox , yDir * (ty + y + yOffset), tz + z + oz , setBlock, true);
+                    }
+                }
+            }
+        }
+
+        // Point vector down more
+        dy = dy - droop;
+        // Normalize vector
+        mag = sqrt(pow2(dx) + pow2(dy) + pow2(dz));
+        dx = dx / mag;
+        dy = dy / mag;
+        dz = dz / mag;
+    }
+}
+

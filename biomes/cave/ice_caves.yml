@@ -1,0 +1,24 @@
+id: ICE_CAVES
+type: BIOME
+extends:
+  - CAVE
+  - BASE
+color: $biomes/colors.yml:ICE_CAVES
+
+vanilla: minecraft:dripstone_caves
+
+particles:
+  particle: falling_dust{block_state:{Name:snow_block}}
+  probability: 0.0005
+
+palette:
+  - ICE_CAVES: $meta.yml:top-y
+  - ICE_CAVES_DEEPSLATE: $meta.yml:deepslate-top
+  - << meta.yml:palette-bedrock
+
+features:
+  landforms:
+    - ICE_CAVE_STALACTITES
+    - ICE_CAVE_STALAGMITES
+  postprocessors:
+    - ICE_CAVE_SNOW

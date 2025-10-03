@@ -1,0 +1,31 @@
+id: PALM_BEACH
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_MARITIME_WET
+  - EQ_FLAT_ERODED
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:PALM_BEACH
+
+vanilla: minecraft:beach
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER_COASTAL_TROPICAL_SWAMP
+
+colors:
+  grass: 0x88bd59
+  foliage: 0x73c441
+  water: 0x44aff5
+  water-fog: 0x44aff5
+
+palette:
+  - BLOCK:minecraft:stone: $meta.yml:top-y
+  - SANDY_BEACH: ${meta.yml:ocean-level} + 14
+  - << meta.yml:palette-bottom
+
+features:
+  landforms:
+    - SMALL_BOULDER_PATCHES
+  trees:
+    - PALM_TREES

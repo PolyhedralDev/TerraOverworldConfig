@@ -1,0 +1,5 @@
+id: ISLAND_SHALLOWS
+type: BIOME
+extends:
+  - OCEAN
+  - EQ_SHALLOW_OCEAN

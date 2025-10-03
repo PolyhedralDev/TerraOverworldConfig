@@ -2,32 +2,19 @@ id: PALE_MOSS_CARPET
 type: FEATURE
 
 distributor:
-  type: AND
-  distributors:
-    - type: SAMPLER
-      sampler:
-        type: POSITIVE_WHITE_NOISE
-        salt: 6521
-      threshold: 0.7
-    - type: SAMPLER
-      sampler:
-        type: PROBABILITY
-        sampler:
-          type: DOMAIN_WARP
-          amplitude: 5
-          warp:
-            type: GAUSSIAN
-          sampler:
-            type: OPEN_SIMPLEX_2
-      threshold: 0.5
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    seed: 6129
+  threshold: 0.2
 
 locator:
   type: AND
   locators:
-    - type: TOP
+    - type: SURFACE
       range: &range
-        min: 62
-        max: 319
+        min: ${meta.yml:ocean-level} + 1
+        max: $meta.yml:top-y
     - type: PATTERN
       range: *range
       pattern:
@@ -35,6 +22,7 @@ locator:
         blocks:
           - minecraft:pale_moss_block
           - minecraft:pale_oak_wood
+          - minecraft:pale_oak_log
           - minecraft:grass_block
         offset: -1
     - type: PATTERN
@@ -49,4 +37,4 @@ locator:
 structures:
   distribution:
     type: CONSTANT
-  structures: BLOCK:minecraft:pale_moss_carpet
+  structures: pale_moss_carpet

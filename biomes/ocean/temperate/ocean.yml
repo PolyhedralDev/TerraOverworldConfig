@@ -1,0 +1,19 @@
+id: OCEAN
+type: BIOME
+extends:
+  - PALETTE_OCEAN
+  - ENVIRONMENT_MARINE_OCEAN
+  - EQ_GLOBAL_OCEAN
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:OCEAN
+
+vanilla: minecraft:ocean
+
+tags:
+  - USE_TRENCH
+
+features:
+  landforms:
+    - SPARSE_GIANT_CLAMS
+    - OCEAN_BOULDERS

@@ -1,0 +1,40 @@
+id: SANDSTONE_ARCHIPELAGO
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_MARITIME_DRY
+  - EQ_ERODED_COAST
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:SANDSTONE_ARCHIPELAGO
+
+vanilla: minecraft:beach
+
+colors:
+  grass: 0x30bb0b
+  foliage: 0x30bb0b
+  water: 0x32a598
+  water-fog: 0x32A598
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER
+
+palette:
+  - BLOCK:minecraft:sandstone: $meta.yml:top-y
+  - SAND: ${meta.yml:ocean-level} + 3
+  - MUDDY_BEACH: $meta.yml:ocean-level
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.45
+    palette:
+      - SAND: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - TERRACOTTA_SLANT: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - CACTUS_SPARSE

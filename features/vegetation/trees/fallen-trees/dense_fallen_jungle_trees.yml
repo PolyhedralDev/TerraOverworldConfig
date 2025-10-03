@@ -1,0 +1,38 @@
+id: DENSE_FALLEN_JUNGLE_TREES
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 37
+  padding: 7
+  salt: 4536
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: ${meta.yml:ocean-level} + 3
+        max: $meta.yml:top-y
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:dry-plantable-blocks
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:snow
+          - minecraft:air
+        offset: 0
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures:
+    - blank: 2
+    - fallen_medium_jungle_tree_procedural: 1
+    - fallen_large_jungle_tree_procedural: 1

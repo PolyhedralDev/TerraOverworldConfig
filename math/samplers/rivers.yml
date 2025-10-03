@@ -1,0 +1,104 @@
+variables: &variables
+  notRiverValue: 2 # Value the sampler outputs for areas where there is not a river.
+  borderValue: 1 # Value the sampler outputs for areas bordering rivers.
+  riverValue: 0 # Value the sampler outputs where there should be a river.
+  
+  riverFrequency: 1 / 40 / ${customization.yml:river-spread-scale} / ${customization.yml:global-scale}
+  riverThreshold: 0.3 # Determines the area calculated as river, which also determines how far away river borders will be.
+  riverMinWidth: ${customization.yml:river-min-width} * ${customization.yml:global-scale} # Determines the minimum width of rivers within riverThreshold.
+  riverMaxWidth: ${customization.yml:river-max-width} * ${customization.yml:global-scale} # Determines the maximum width of rivers within riverThreshold.
+
+  erosionMaxDistance: 0.3
+  erosionMax: 0.95
+  erosionMin: 0
+
+samplers:
+  riverNoise: &riverNoise
+    dimensions: 2
+    type: TRANSLATE
+    x: 10000
+    z: 10000
+    sampler:
+      type: DOMAIN_WARP
+      amplitude: 3
+      warp:
+        type: OPEN_SIMPLEX_2
+        frequency: 0.1
+      sampler:
+        type: OPEN_SIMPLEX_2
+
+  riverDistance: &riverDistance
+    dimensions: 2
+    type: EXPRESSION
+    expression: "|riverNoise(x*riverFrequency, z*riverFrequency)|"
+    variables: *variables
+    samplers:
+      riverNoise: *riverNoise
+
+  riverTerrainErosion:
+    dimensions: 2
+    type: EXPRESSION
+    expression: |
+      herp(riverDistance(x, z) + herp(erosionStrength(x, z), 0.6, erosionMaxDistance, 0.4, 0),
+        0, erosionMax,
+        erosionMaxDistance, erosionMin
+      ) 
+    variables: *variables
+    functions: $math/functions/interpolation.yml:functions
+    samplers:
+      riverDistance: *riverDistance
+      erosionStrength:
+        dimensions: 2
+        type: PROBABILITY
+        sampler:
+          type: FBM
+          octaves: 2
+          sampler:
+            type: OPEN_SIMPLEX_2
+            frequency: 1 / 1000
+            salt: 2175
+
+  riverBiomeMap:
+    dimensions: 2
+    type: EXPRESSION
+    expression: |
+      riverBiomeMap(
+        x,
+        lerp(width(x*riverFrequency, z*riverFrequency), -0.75, riverMinWidth, 0.75, riverMaxWidth),
+        z
+      )
+    variables: *variables
+    functions: $math/functions/interpolation.yml:functions
+    samplers:
+      width:
+        dimensions: 2
+        type: OPEN_SIMPLEX_2
+        frequency: 0.05
+      riverBiomeMap:
+        dimensions: 3 # Y dimension is used as the width
+        type: EXPRESSION
+        expression: |
+          if(riverDistance(x, z)>riverThreshold,
+            notRiverValue,
+            if(riverKerneled((x-y)/y, y, (z-y)/y)!=0,
+              riverValue,
+              borderValue
+            )
+          )
+        variables: *variables
+        samplers:
+          riverDistance: *riverDistance
+          riverKerneled:
+            dimensions: 3
+            type: KERNEL # Edge detection
+            kernel: [
+              [ 0,  1, 0 ],
+              [ 1, -4, 1 ],
+              [ 0,  1, 0 ]
+            ]
+            sampler:
+              type: EXPRESSION
+              expression: riverNoise(x*y*riverFrequency, z*y*riverFrequency)>0
+              variables: *variables
+              samplers:
+                riverNoise: *riverNoise

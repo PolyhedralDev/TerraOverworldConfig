@@ -1,0 +1,8 @@
+id: SUBTROPICAL_DEEP_OCEAN
+type: BIOME
+extends:
+  - EQ_GLOBAL_OCEAN
+  - SUBTROPICAL_OCEAN
+color: $biomes/colors.yml:SUBTROPICAL_DEEP_OCEAN
+
+vanilla: minecraft:deep_lukewarm_ocean

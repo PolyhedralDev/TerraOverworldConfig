@@ -1,0 +1,55 @@
+id: TROPICAL_FLOODPLAIN
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_TROPICAL_EQUATORIAL
+  - EQ_SWAMP
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:TROPICAL_FLOODPLAIN
+
+vanilla: minecraft:bamboo_jungle
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER_TEMPERATE_SWAMP
+
+palette:
+  - BAMBOO_PONDS: $meta.yml:top-y
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 1
+    palette:
+      - BAMBOO_PONDS_WATER: $meta.yml:top-y
+      - BAMBOO_PONDS: ${meta.yml:ocean-level} + 5
+      - << meta.yml:palette-ocean-level-sand
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.995
+    palette:
+      - BAMBOO_PONDS: $meta.yml:top-y
+      - << meta.yml:palette-ocean-level-sand
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+
+slant-depth: 1
+
+features:
+  flora:
+    - GRASS
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - LILY_PADS
+    - SMALL_DRIPLEAF
+    - BIG_DRIPLEAF_PONDS
+    - MOSS_CARPET
+  trees:
+    - SUBTROPICAL_BUSHES
+    - PALM_TREES
+    - SPARSE_FALLEN_PALM_TREES
+    - ACACIA_TREES
+    - SWAMP_TREES
+  postprocessors:
+    - FLOW_STILL_WATER

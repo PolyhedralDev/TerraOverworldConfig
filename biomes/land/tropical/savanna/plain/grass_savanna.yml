@@ -1,0 +1,16 @@
+id: GRASS_SAVANNA
+type: BIOME
+extends: SAVANNA
+color: $biomes/colors.yml:GRASS_SAVANNA
+
+features:
+  flora:
+    - TALL_GRASS
+    - DENSE_DRY_GRASS
+    - POPPY_PATCH
+    - DANDELION_PATCH
+  trees:
+    - SPARSE_ACACIA_TREES
+    - SPARSE_FALLEN_ACACIA_TREES
+    - SPARSE_BAOBAB_TREES
+    - SPARSE_FALLEN_BAOBAB_TREES

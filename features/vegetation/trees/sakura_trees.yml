@@ -1,0 +1,59 @@
+id: SAKURA_TREES
+type: FEATURE
+
+mask: &mask
+  sampler:
+    type: PROBABILITY
+    sampler:
+      type: DOMAIN_WARP
+      amplitude: 10
+      warp:
+        type: GAUSSIAN
+      sampler:
+        type: FBM
+        octaves: 2
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.01
+          salt: 98342
+  threshold: 0.4
+
+distributor:
+  type: AND
+  distributors:
+    - type: PADDED_GRID
+      width: 7
+      padding: 5
+      salt: 5932
+    - type: SAMPLER
+      <<: *mask
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: ${meta.yml:ocean-level} + 3
+        max: $meta.yml:top-y
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:dry-plantable-blocks
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:snow
+          - minecraft:air
+        offset: 0
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+    salt: 2818
+  structures:
+    - cherry_blossom_tree_procedural: 12
+    - large_cherry_blossom_tree_procedural: 6

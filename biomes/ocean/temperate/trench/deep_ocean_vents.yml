@@ -1,0 +1,23 @@
+id: DEEP_OCEAN_VENTS
+type: BIOME
+extends:
+  - EQ_OCEAN_TRENCH
+  - DEEP_OCEAN
+  - CARVING_OCEAN
+color: $biomes/colors.yml:DEEP_OCEAN_VENTS
+
+vanilla: minecraft:deep_ocean
+
+palette:
+  - BASALT_TUFF_OCEAN: $meta.yml:top-y
+  - << meta.yml:palette-bedrock
+
+slant:
+  - threshold: 0.4
+    palette:
+      - BASALT_TUFF_OCEAN: $meta.yml:top-y
+      - << meta.yml:palette-bedrock
+
+features:
+  landforms:
+    - HYDROTHERMAL_VENTS

@@ -13,8 +13,8 @@ locator:
   locators:
     - type: SURFACE
       range: &range
-        min: 62
-        max: 70
+        min: ${meta.yml:ocean-level} + 1
+        max: ${meta.yml:ocean-level} + 9
     - type: PATTERN
       range: *range
       pattern:

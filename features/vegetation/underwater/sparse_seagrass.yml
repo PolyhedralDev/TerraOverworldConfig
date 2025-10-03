@@ -1,0 +1,41 @@
+id: SPARSE_SEAGRASS
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 6479
+  threshold: 0.1
+
+locator:
+  type: PATTERN
+  range:
+    min: $meta.yml:bottom-y
+    max: $meta.yml:deepslate-top
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH
+        block: minecraft:water
+        offset: 0
+      - type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:seagrass-plantable-blocks
+        offset: -1
+
+structures:
+  distribution:
+    type: DOMAIN_WARP
+    amplitude: 3
+    warp:
+      type: GAUSSIAN
+    sampler:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.03
+    salt: 3696
+  structures:
+    - tall_seagrass: 1
+    - BLOCK:minecraft:seagrass: 1
+    - blank: 4
+    - BLOCK:minecraft:seagrass: 1
+    - tall_seagrass: 1

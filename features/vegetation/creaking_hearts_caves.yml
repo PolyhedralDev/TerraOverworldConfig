@@ -1,0 +1,41 @@
+id: CREAKING_HEARTS_CAVES
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    seed: 6129
+  threshold: 0.2
+
+locator:
+  type: AND
+  locators:
+    - type: RANDOM
+      height: &range
+        min: ${meta.yml:bottom-y} + 14
+        max: $meta.yml:ocean-level
+      amount: 10
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH
+        block: minecraft:pale_oak_wood
+        offset: 0
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH
+        block: minecraft:pale_oak_wood
+        offset: 1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH
+        block: minecraft:pale_oak_wood
+        offset: -1
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: creaking_heart

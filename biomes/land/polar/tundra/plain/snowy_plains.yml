@@ -1,0 +1,39 @@
+id: SNOWY_PLAINS
+type: BIOME
+extends:
+  - COLOR_FROZEN
+  - ENVIRONMENT_LAND_POLAR_TUNDRA
+  - EQ_LAND
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:SNOWY_PLAINS
+
+vanilla: minecraft:snowy_plains
+
+tags:
+  - LAND_CAVES
+  - ICE_CAVES
+  - USE_FROZEN_RIVER_FROZEN_MARSH
+
+ocean:
+  palette: FROZEN_OCEAN
+
+palette:
+  - SNOW: $meta.yml:top-y
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.3
+    palette:
+      - << meta.yml:palette-slant-generic
+      - << meta.yml:palette-bottom
+
+features:
+  slabs:
+    - SNOW_LAYERS
+  preprocessors:
+    - ICE_COASTLINE
+    - POWDER_SNOW_DEPOSITS
+  postprocessors:
+    - TREE_SNOW

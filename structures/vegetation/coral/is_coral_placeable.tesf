@@ -1,0 +1,16 @@
+str blockID = getBlock(0, 0, 0);
+if (blockID != "minecraft:stone" &&
+    blockID != "minecraft:deepslate" &&
+    blockID != "minecraft:gravel" &&
+    blockID != "minecraft:andesite" &&
+    blockID != "minecraft:sand" &&
+    blockID != "minecraft:tuff" &&
+    blockID != "minecraft:basalt" &&
+    blockID != "minecraft:smooth_sandstone" &&
+    blockID != "minecraft:bubble_coral_block" &&
+    blockID != "minecraft:tube_coral_block" &&
+    blockID != "minecraft:horn_coral_block" &&
+    blockID != "minecraft:fire_coral_block" &&
+    blockID != "minecraft:brain_coral_block") {
+    fail;
+}

@@ -1,0 +1,21 @@
+id: GREAT_BAOBAB_TREES
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 30
+  padding: 80
+  salt: 4351
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range:
+        min: ${meta.yml:bottom-y} + 5
+        max: $meta.yml:deepslate-top
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: place_great_baobab_tree_underground

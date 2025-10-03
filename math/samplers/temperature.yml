@@ -1,0 +1,36 @@
+samplers:
+  rawTemperature:
+    dimensions: 2
+    type: EXPRESSION
+    expression: sampler(x / temperatureScale / globalScale, z / temperatureScale / globalScale) * temperatureSpread + temperatureOffset
+    variables:
+      globalScale: $customization.yml:global-scale
+      temperatureScale: $customization.yml:temperature-scale
+      temperatureOffset: (${customization.yml:temperature-max}+${customization.yml:temperature-min})/2
+      temperatureSpread: (${customization.yml:temperature-max}-${customization.yml:temperature-min})/2
+    samplers:
+      sampler:
+        dimensions: 2
+        type: TRANSLATE
+        x: 10000
+        z: 10000
+        sampler:
+          type: FBM
+          gain: 0.4
+          octaves: 2
+          sampler:
+            type: OPEN_SIMPLEX_2
+            salt: 3
+            frequency: 1 / 5000
+
+  temperature:
+    dimensions: 2
+    type: EXPRESSION
+    expression: rawTemperature(x, z) - lerp(elevation(x, z), lapseStart, 0, 1, lapseRate)
+    functions: $math/functions/interpolation.yml:functions
+    variables:
+      lapseRate: $customization.yml:temperature-altitude-lapse-rate
+      lapseStart: $customization.yml:temperature-altitude-lapse-start
+    samplers:
+      elevation: $math/samplers/elevation.yml:samplers.elevation
+      rawTemperature: $math/samplers/temperature.yml:samplers.rawTemperature

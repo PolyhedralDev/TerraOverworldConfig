@@ -1,0 +1,28 @@
+str up = "false";
+str down = "false";
+str north = "false";
+str east = "false";
+str south = "false";
+str west = "false";
+
+num x = 1 - randomInt(3);
+num y = 1 - randomInt(3);
+num z = 1 - randomInt(3);
+
+if (getBlock(x, y + 1, z) == "minecraft:pale_oak_wood") up = "true";
+
+if (getBlock(x, y - 1, z) == "minecraft:pale_oak_wood") down = "true";
+
+if (getBlock(x, y, z - 1) == "minecraft:pale_oak_wood") north = "true";
+
+if (getBlock(x + 1, y, z) == "minecraft:pale_oak_wood") east = "true";
+
+if (getBlock(x, y, z + 1) == "minecraft:pale_oak_wood") south = "true";
+
+if (getBlock(x - 1, y, z) == "minecraft:pale_oak_wood") west = "true";
+
+block(0, 0, 0, "minecraft:pale_oak_wood", false);
+
+str blockID = "minecraft:resin_clump[up=" + up + ",down=" + down + ",north=" + north + ",east=" + east + ",south=" + south + ",west=" + west + "]";
+
+if (blockID != "minecraft:resin_clump[up=false,down=false,north=false,east=false,south=false,west=false]") block(x, y, z, blockID, false);

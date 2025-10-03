@@ -1,0 +1,215 @@
+// Features can only generate within a 3x3 chunk area, so
+// generating exactly in the chunk center minimizes stuff
+// getting cut off causing the game to complain in console.
+
+// Get local coordinates within chunk
+num chunkX = originX() % 16;
+num chunkZ = originZ() % 16;
+if (chunkX < 0) chunkX = chunkX + 16;
+if (chunkZ < 0) chunkZ = chunkZ + 16;
+
+// Calculate the offset from the center of the chunk (randomized around 2x2 center)
+num offsetX = -chunkX + 7 + randomInt(2);
+num offsetZ = -chunkZ + 7 + randomInt(2);
+
+num randPrecision = 100;
+num radius = 7 + randomInt(randPrecision) / randPrecision * 2;
+num warp = 5;
+num warpFreq = 2;
+num squish = 1.5 + randomInt(randPrecision) / randPrecision;
+num radiusSquared = pow(radius, 2);
+
+num mainRoomChance = 0.25;
+num mainTunnelChance = 0.75;
+num sideTunnelChance = 0.50;
+
+num mainTunnelAmount = 1 + randomInt(4);
+num mainTunnelLengthBase = 16;
+num mainTunnelLengthVariation = 1;
+
+num sideTunnelMinStart = 5;
+num sideTunnelInterval = 6;
+num sideTunnelLengthBase = 8;
+num sideTunnelLengthVariation = 1;
+
+num maxRange = 16;
+
+if (getBlock(offsetX + radius, 0, offsetZ) == "minecraft:air" &&
+    getBlock(offsetX - radius, 0, offsetZ) == "minecraft:air" &&
+    getBlock(offsetX, 0, offsetZ + radius) == "minecraft:air" &&
+    getBlock(offsetX, 0, offsetZ - radius) == "minecraft:air") fail;
+
+// print("Cave Carver: /tp " + originX() + " " + originY() + " " + originZ());
+
+if (randomInt(100) < mainRoomChance * 100) {
+    for (num x = -radius - warp; x < radius + warp; x = x + 1) {
+        for (num y = (-radius - warp) / squish; y < (radius + warp) / squish; y = y + 1) {
+            for (num z = -radius - warp; z < radius + warp; z = z + 1) {
+                num warpX = warp * sampler("simplex3",
+                    warpFreq * (x + originX()),
+                    warpFreq * (y + originY() + 1000),
+                    warpFreq * (z + originZ()));
+                num warpY = warp * sampler("simplex3",
+                    warpFreq * (x + originX()),
+                    warpFreq * (y + originY() + 2000),
+                    warpFreq * (z + originZ()));
+                num warpZ = warp * sampler("simplex3",
+                    warpFreq * (x + originX()),
+                    warpFreq * (y + originY() + 3000),
+                    warpFreq * (z + originZ()));
+                if (pow(x + warpX, 2) + pow((y + warpY) * squish, 2) + pow(z + warpZ, 2) < radiusSquared) {
+                    block(x + offsetX, y, z + offsetZ, "minecraft:air");
+                }
+            }
+        }
+    }
+}
+
+num minRadius = radius / 2.5;
+num minWarp = 2;
+num warpVariation = 3;
+
+num minSideRadius = radius / 3.5;
+
+for (num t = 0; t < mainTunnelAmount; t = t + 1) {
+    num xTranslate = 0;
+    num yTranslate = 0;
+    num zTranslate = 0;
+
+    num tunnelLength = mainTunnelLengthBase + randomInt(mainTunnelLengthVariation);
+
+    num dx = (randomInt(randPrecision) / randPrecision - 0.5) * 1.5;
+    num dy = 0;
+    num dz = (randomInt(randPrecision) / randPrecision - 0.5) * 1.5;
+
+    num mag = sqrt(pow2(dx) + pow2(dy) + pow2(dz));
+    dx = dx / mag;
+    dy = dy / mag;
+    dz = dz / mag;
+
+    if (t == 0 || randomInt(100) < mainTunnelChance * 100) {
+
+        for (num l = 0; l < tunnelLength; l = l + 0.5) {
+
+            if (pow2(xTranslate) + pow2(yTranslate) + pow2(zTranslate) > pow2(maxRange)) {
+                break;
+            }
+
+            dx = (dx + randomInt(randPrecision) / randPrecision - 0.5);
+            dy = (dy + randomInt(randPrecision) / randPrecision - 0.5) / 1.25;
+            dz = (dz + randomInt(randPrecision) / randPrecision - 0.5);
+
+            xTranslate = xTranslate + dx;
+            yTranslate = yTranslate + dy;
+            zTranslate = zTranslate + dz;
+
+            if (getBlock(xTranslate + offsetX + radius, yTranslate, zTranslate + offsetZ + radius) == "minecraft:water" ||
+                getBlock(xTranslate + offsetX + radius, yTranslate, zTranslate + offsetZ - radius) == "minecraft:water" ||
+                getBlock(xTranslate + offsetX - radius, yTranslate, zTranslate + offsetZ + radius) == "minecraft:water" ||
+                getBlock(xTranslate + offsetX - radius, yTranslate, zTranslate + offsetZ - radius) == "minecraft:water" ||
+                getBlock(xTranslate + offsetX, yTranslate + radius, zTranslate + offsetZ) == "minecraft:water") {
+                break;
+            }
+
+            warp = minWarp + randomInt(warpVariation);
+
+            radius = minRadius + randomInt(randPrecision) / randPrecision;
+            radiusSquared = pow(radius, 2);
+
+            for (num x = -radius - warp; x < radius + warp; x = x + 1) {
+                for (num y = (-radius - warp) / squish; y < (radius + warp) / squish; y = y + 1) {
+                    for (num z = -radius - warp; z < radius + warp; z = z + 1) {
+                        num warpX = warp * sampler("simplex3",
+                            warpFreq * (x + originX()),
+                            warpFreq * (y + originY() + 1000),
+                            warpFreq * (z + originZ()));
+                        num warpY = warp * sampler("simplex3",
+                            warpFreq * (x + originX()),
+                            warpFreq * (y + originY() + 2000),
+                            warpFreq * (z + originZ()));
+                        num warpZ = warp * sampler("simplex3",
+                            warpFreq * (x + originX()),
+                            warpFreq * (y + originY() + 3000),
+                            warpFreq * (z + originZ()));
+                        if (pow(x + warpX, 2) + pow((y + warpY) * squish, 2) + pow(z + warpZ, 2) < radiusSquared) {
+                            block(x + xTranslate + offsetX, y + yTranslate, z + zTranslate + offsetZ, "minecraft:air", true);
+                        }
+                    }
+                }
+            }
+
+            if (l % sideTunnelInterval == 0 &&
+                l > sideTunnelMinStart &&
+                randomInt(100) < sideTunnelChance * 100) {
+
+                num xTranslateSide = xTranslate;
+                num yTranslateSide = yTranslate;
+                num zTranslateSide = zTranslate;
+
+                num sideTunnelLength = sideTunnelLengthBase + randomInt(sideTunnelLengthVariation);
+
+                num sdx = (randomInt(randPrecision) / randPrecision - 0.5) * 1.5;
+                num sdy = 0;
+                num sdz = (randomInt(randPrecision) / randPrecision - 0.5) * 1.5;
+
+                num smag = sqrt(pow2(sdx) + pow2(sdy) + pow2(sdz));
+                sdx = sdx / smag;
+                sdy = sdy / smag;
+                sdz = sdz / smag;
+
+                for (num sl = 0; sl < sideTunnelLength; sl = sl + 0.5) {
+
+                    sdx = (sdx + randomInt(randPrecision) / randPrecision - 0.5);
+                    sdy = (sdy + randomInt(randPrecision) / randPrecision - 0.5) / 2;
+                    sdz = (sdz + randomInt(randPrecision) / randPrecision - 0.5);
+
+                    xTranslateSide = xTranslateSide + sdx;
+                    yTranslateSide = yTranslateSide + sdy;
+                    zTranslateSide = zTranslateSide + sdz;
+
+                    if (pow2(xTranslateSide) + pow2(yTranslateSide) + pow2(zTranslateSide) > pow2(maxRange)) {
+                        break;
+                    }
+
+                    if (getBlock(xTranslateSide + offsetX + radius, yTranslate, zTranslateSide + offsetZ + radius) == "minecraft:water" ||
+                        getBlock(xTranslateSide + offsetX + radius, yTranslate, zTranslateSide + offsetZ - radius) == "minecraft:water" ||
+                        getBlock(xTranslateSide + offsetX - radius, yTranslate, zTranslateSide + offsetZ + radius) == "minecraft:water" ||
+                        getBlock(xTranslateSide + offsetX - radius, yTranslate, zTranslateSide + offsetZ - radius) == "minecraft:water" ||
+                        getBlock(xTranslateSide + offsetX, yTranslate + radius, zTranslateSide + offsetZ) == "minecraft:water") {
+                        break;
+                    }
+
+                    warp = minWarp + randomInt(warpVariation);
+
+                    radius = minSideRadius + randomInt(randPrecision) / randPrecision;
+                    radiusSquared = pow(radius, 2);
+
+                    for (num sx = -radius - warp; sx < radius + warp; sx = sx + 1) {
+                        for (num sy = (-radius - warp) / squish; sy < (radius + warp) / squish; sy = sy + 1) {
+                            for (num sz = -radius - warp; sz < radius + warp; sz = sz + 1) {
+                                num warpX = warp * sampler("simplex3",
+                                    warpFreq * (sx + originX()),
+                                    warpFreq * (sy + originY() + 1000),
+                                    warpFreq * (sz + originZ()));
+                                num warpY = warp * sampler("simplex3",
+                                    warpFreq * (sx + originX()),
+                                    warpFreq * (sy + originY() + 2000),
+                                    warpFreq * (sz + originZ()));
+                                num warpZ = warp * sampler("simplex3",
+                                    warpFreq * (sx + originX()),
+                                    warpFreq * (sy + originY() + 3000),
+                                    warpFreq * (sz + originZ()));
+                                if (pow(sx + warpX, 2) + pow((sy + warpY) * squish, 2) + pow(sz + warpZ, 2) < radiusSquared) {
+                                    block(sx + xTranslateSide + offsetX, sy + yTranslateSide, sz + zTranslateSide + offsetZ, "minecraft:air", true);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+

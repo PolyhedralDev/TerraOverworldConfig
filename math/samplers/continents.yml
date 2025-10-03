@@ -1,0 +1,70 @@
+samplers:
+  continents: &continents
+    dimensions: 2
+    type: EXPRESSION
+    expression: |
+      max(
+        max(
+          -sampler(x / scale / globalScale, z / scale / globalScale) * spread + offset,
+          spawnIsland(x, z)
+        ),
+        // Set continentalness to spotContinentalFactor in center of spots, 0 on spot edges,
+        // and decrease quadratically moving further outwards
+        spotContinentalFactor * (1-(spotDistance(x,z)/spotRadius(x,z))^2))
+    variables:
+      globalScale: $customization.yml:global-scale
+      scale: $customization.yml:continental-scale
+      offset: $customization.yml:continental-offset
+      spread: $customization.yml:continental-spread
+      spotContinentalFactor: 0.3
+    samplers:
+      spawnIsland: $math/samplers/spawnIsland.yml:samplers.spawnIsland
+      spotDistance: $math/samplers/spots.yml:samplers.spotDistance
+      spotRadius: $math/samplers/spots.yml:samplers.spotRadius
+      sampler:
+        dimensions: 2
+        type: TRANSLATE
+        x: 10000
+        z: 10000
+        sampler:
+          type: RIDGED
+          lacunarity: 3
+          gain: 0.45
+          octaves: 4
+          sampler:
+            type: OPEN_SIMPLEX_2
+            salt: 1
+            frequency: 1 / 5000
+  
+  continentBorder:
+    dimensions: 2
+    type: EXPRESSION
+    expression: |
+      if(inRange(continents(x, z), -threshold, threshold),
+        if(continentsEdge((x-width)/width, (z-width)/width) != 0, 1, -1),
+        -1
+      )
+    variables: &continentBorderVariables
+      width: ${customization.yml:continental-coast-width} * ${customization.yml:global-scale}
+      threshold: $customization.yml:continental-coast-width
+    functions:
+      inRange:
+        arguments:
+          - x
+          - lower
+          - upper
+        expression: x >= lower && x <= upper
+    samplers:
+      continents: *continents
+      continentsEdge:
+        dimensions: 2
+        type: KERNEL
+        kernel: [ [ 0,  1, 0 ],
+                  [ 1, -4, 1 ],
+                  [ 0,  1, 0 ] ]
+        sampler:
+          type: EXPRESSION
+          expression: continents(x*width, z*width) > 0
+          variables: *continentBorderVariables
+          samplers:
+            continents: *continents

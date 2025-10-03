@@ -1,0 +1,14 @@
+id: COLD_DESERT_MESA
+type: BIOME
+extends:
+  - EQ_SPOT_MESA
+  - CARVING_OCEAN
+  - SNOWY_MOUNTAINS
+  - BASE
+color: $biomes/colors.yml:COLD_DESERT_MESA
+
+tags:
+  - ICE_CAVES
+  - USE_DESERT_RIVER
+
+vanilla: minecraft:snowy_plains

@@ -1,0 +1,39 @@
+id: DENSE_KELP
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 7234
+  threshold: 0.75
+
+locator:
+  type: PATTERN
+  range:
+    min: ${meta.yml:deepslate-top} - 7
+    max: ${meta.yml:ocean-level} - 2
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH
+        block: minecraft:water
+        offset: 0
+      - type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:aquatic-plantable-blocks
+        offset: -1
+
+structures:
+  distribution:
+    type: DOMAIN_WARP
+    amplitude: 3
+    warp:
+      type: GAUSSIAN
+    sampler:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.03
+    salt: 6922
+  structures:
+    - kelp: 1
+    - kelp_low: 2
+    - blank: 1

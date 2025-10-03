@@ -1,0 +1,26 @@
+num radius = 1.5;
+num length = 10 + randomInt(10);
+num xTranslate = 0;
+num zTranslate = 0;
+num yTranslate = 0;
+str setBlock = "minecraft:pale_oak_wood";
+
+for (num l = 0; l <= length; l = l + 1) {
+
+    // Reduce radius inversely to length
+    num r = (radius / length * -l) + radius;
+
+    // Generate sphere at each point
+    for (num x = -r; x <= r; x = x + 1) {
+        for (num y = -r; y <= r; y = y + 0.5) {
+            for (num z = -r; z <= r; z = z + 1) {
+                if (pow(x, 2) + pow(y, 2) + pow(z, 2) < pow(r, 2)) {
+                    if (randomInt(2) == 0) structure(x + xTranslate, -(l + y - radius) + yTranslate, z + zTranslate, "resin_clump", "NONE");
+                    block(x + xTranslate, -(l + y - radius) + yTranslate, z + zTranslate, setBlock, true);
+                }
+            }
+        }
+    }
+    xTranslate = xTranslate + (1 - randomInt(3));
+    zTranslate = zTranslate + (1 - randomInt(3));
+}

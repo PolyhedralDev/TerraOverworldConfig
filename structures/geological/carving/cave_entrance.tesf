@@ -1,0 +1,120 @@
+num randPrecision = 100;
+
+// Search variables
+num maxTunnelHeight = 50;
+num airGap = 15; // How much air must be above the surface opening
+num undergroundGap = 3; // Determines how much air must be below the tunnel exit
+
+// Search tracking variables
+bool foundSpot = false;
+bool hasUndergroundSpace = true;
+num airHeight = 0; // Keeps track of how much air is below
+num surfaceHeight = 0; // Set to y level of surface if found
+num undergroundHeight = 0; // Set to the y level of tunnel exit
+
+num flatDistance = 16; // Flat distance from center that tunnel should carve upward by the end of
+num flatDistanceCutoff = 18; // Flat distance from center that tunnel will be cutoff
+num aboveSurfaceOffset = 3; // Offset above surface opening for cutoff
+
+num dx = (randomInt(randPrecision) / randPrecision - 0.5) * 1.5;
+num dz = (randomInt(randPrecision) / randPrecision - 0.5) * 1.5;
+
+num mag = sqrt(pow2(dx) + pow2(dz));
+dx = dx / mag;
+dz = dz / mag;
+
+// Run search
+for (num h = 0; h <= maxTunnelHeight; h = h + 1) {
+    str blockID = getBlock(0, h, 0);
+    if (h > maxTunnelHeight / 2) blockID = getBlock(dx * flatDistance, h, dz * flatDistance);
+    if (blockID == "minecraft:air") {
+        // Hit air
+        if (airHeight == 0) {
+            airHeight = 1;
+            surfaceHeight = h;
+        }
+        else airHeight = airHeight + 1;
+    } else if (blockID == "minecraft:water") {
+        fail;
+    } else {
+        // Hit solid block
+        if (undergroundHeight == 0) {
+            // Hit first solid block
+            if (h < undergroundGap) {
+                hasUndergroundSpace = false;
+                break;
+            }
+            undergroundHeight = h;
+        }
+        airHeight = 0;
+    }
+    if (airHeight > airGap) {
+        foundSpot = true;
+        break;
+
+    }
+}
+
+if (!foundSpot || !hasUndergroundSpace) fail;
+
+num minRadius = 3;
+num minWarp = 2;
+num warpVariation = 3;
+num warpFreq = 3;
+num squish = 1;
+
+str setBlock = "minecraft:air";
+
+num maxAngle = atan(surfaceHeight / (flatDistance - minRadius));
+
+num dy = 0;
+
+num yOffset = 0;
+for (num l = 1; l < flatDistanceCutoff; l = l + 0.1) {
+
+    if (yOffset > surfaceHeight + aboveSurfaceOffset) {
+        fail;
+    }
+
+    num xOffset = dx * l;
+    num zOffset = dz * l;
+
+    dy = (1 - sampler("whiteNoise", xOffset, zOffset)) * 0.1 + sampler("whiteNoise", xOffset, zOffset) * maxAngle;
+
+    if (pow2(xOffset) + pow2(zOffset) > pow2(flatDistance)) {
+        dy = maxAngle;
+    }
+
+    yOffset = yOffset + dy;
+
+    if (pow2(xOffset) + pow2(zOffset) > pow2(flatDistanceCutoff)) {
+        fail;
+    }
+
+    num warp = minWarp + randomInt(warpVariation);
+
+    num radius = minRadius + randomInt(randPrecision) / randPrecision;
+    num radiusSquared = pow(radius, 2);
+
+    for (num x = -radius - warp; x < radius + warp; x = x + 1) {
+        for (num y = (-radius - warp) / squish; y < (radius + warp) / squish; y = y + 1) {
+            for (num z = -radius - warp; z < radius + warp; z = z + 1) {
+                num warpX = warp * sampler("simplex3",
+                    warpFreq * (x + originX()),
+                    warpFreq * (y + originY() + 1000),
+                    warpFreq * (z + originZ()));
+                num warpY = warp * sampler("simplex3",
+                    warpFreq * (x + originX()),
+                    warpFreq * (y + originY() + 2000),
+                    warpFreq * (z + originZ()));
+                num warpZ = warp * sampler("simplex3",
+                    warpFreq * (x + originX()),
+                    warpFreq * (y + originY() + 3000),
+                    warpFreq * (z + originZ()));
+                if (pow(x + warpX, 2) + pow((y + warpY) * squish, 2) + pow(z + warpZ, 2) < radiusSquared) {
+                    block(x + xOffset, y + yOffset, z + zOffset, setBlock);
+                }
+            }
+        }
+    }
+}

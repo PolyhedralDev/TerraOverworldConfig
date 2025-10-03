@@ -1,7 +1,0 @@
-source:
-  type: SAMPLER
-  biomes:
-    - land: 1
-  sampler:
-    dimensions: 2
-    type: CONSTANT

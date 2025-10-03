@@ -1,0 +1,18 @@
+id: INFESTED_DEPOSIT
+type: ORE
+
+replace:
+  - minecraft:stone
+  - minecraft:deepslate
+  - minecraft:andesite
+  - minecraft:diorite
+  - minecraft:granite
+  - minecraft:tuff
+
+material: minecraft:infested_stone
+
+material-overrides:
+  minecraft:deepslate: minecraft:infested_deepslate
+  minecraft:tuff: minecraft:infested_deepslate
+
+size: 13

@@ -1,3 +1,0 @@
-num blockSelection = randomInt(34);
-if(blockSelection <= 27) block(0, 0, 0, "minecraft:granite");
-else if(blockSelection <= 33) block(0, 0, 0, "minecraft:raw_copper_block");

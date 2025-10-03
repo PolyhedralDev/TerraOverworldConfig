@@ -1,0 +1,241 @@
+variables: &variables
+  detailFactor: 0.1
+  detailStart: 0
+  detailEnd: 0.5
+  
+  terraceBaseScale: 0.2
+  terraceScaleVariation: 0.1
+  terraceOffsetVariation: 0.25
+  terraceDepthVariation: 1
+  terraceDepthStart: 0.1 # At what elevation should it start to be terraced
+
+samplers:
+  rawFlatness: &rawFlatness
+    dimensions: 2
+    type: EXPRESSION
+    expression: noise(x / scale / globalScale, z / scale / globalScale)
+    variables:
+      globalScale: $customization.yml:global-scale
+      scale: $customization.yml:flatness-scale
+    samplers:
+      noise:
+        dimensions: 2
+        type: TRANSLATE
+        x: 10000
+        z: 10000
+        sampler:
+          type: PROBABILITY
+          sampler:
+            type: FBM
+            gain: 0.3
+            lacunarity: 2.3
+            sampler:
+              type: OPEN_SIMPLEX_2
+              frequency: 1 / 1000
+
+  flatness: &flatness
+    dimensions: 2
+    type: EXPRESSION
+    expression: herp(rawFlatness(x, z), threshold, factor, threshold + blend, 0)
+    functions: $math/functions/interpolation.yml:functions
+    variables:
+      threshold: $customization.yml:flatness-percent
+      blend: $customization.yml:flatness-blend
+      factor: $customization.yml:flatness-factor
+    samplers:
+      rawFlatness: *rawFlatness
+
+  rawElevation: &rawElevation
+    dimensions: 2
+    type: EXPRESSION
+    expression: noise(x / scale / globalScale, z / scale / globalScale) * multiplier + offset
+    variables:
+      globalScale: $customization.yml:global-scale
+      scale: $customization.yml:elevation-scale
+      multiplier: $customization.yml:elevation-multiplier
+      offset: $customization.yml:elevation-offset
+    samplers:
+      noise:
+        dimensions: 2
+        type: TRANSLATE
+        x: 10000
+        z: 10000
+        sampler:
+          type: EXPRESSION
+          expression: |
+            combine(
+              hills(x, z) * hillMaxElevation,
+              parabolicMap(mountainMask(x, z), mountainZero, 0, mountainFull, mountains(x, z)),
+              mountainCap)
+          variables:
+            mountainZero: 0.3
+            mountainFull: 0.6
+            hillMaxElevation: 0.3
+            mountainCap: 0.9
+          functions:
+            "<<": math/functions/interpolation.yml:functions
+            combine: # Stacks scaled mountain noise on top of hill noise
+              arguments:
+                - hills
+                - mountains
+                - mountainCap
+              expression: hills + mountains * min(1 - hills, mountainCap)
+
+          samplers:
+            mountainMask:
+              dimensions: 2
+              type: PROBABILITY
+              sampler:
+                type: OPEN_SIMPLEX_2
+                salt: 0694
+                frequency: 1 / 1500
+            mountains:
+              dimensions: 2
+              type: EXPRESSION_NORMALIZER
+              expression: ((-in+1)/2)^2
+              sampler:
+                type: PSEUDOEROSION
+                erosion-frequency: 0.01
+                lacunarity: 1.5
+                branch-strength: 1
+                octaves: 3
+                strength: 0.15
+                gain: 0.3
+                sampler:
+                  type: FBM
+                  octaves: 3
+                  sampler:
+                    type: OPEN_SIMPLEX_2
+                    frequency: 1 / 900
+            hills:
+              dimensions: 2
+              type: EXPRESSION_NORMALIZER
+              expression: ((in+1)/2)^2
+              sampler:
+                type: FBM
+                octaves: 6
+                sampler:
+                  type: OPEN_SIMPLEX_2
+                  frequency: 1 / 2000
+
+  elevation: &elevation
+    dimensions: 2
+    type: EXPRESSION
+    expression: |
+      rawElevation(x, z) * (1-flatness(x, z))
+      * if(factorContinental, herp(continents(x, z), continentZero, 0, continentFull, 1), 1)
+      * if(factorSpawnIsland, herp(spawnIsland(x, z), 0, spawnIslandScale, -1, 1), 1)
+      * if(factorRiver, (1-riverTerrainErosion(x, z)), 1)
+    functions: $math/functions/interpolation.yml:functions
+    variables:
+      continentZero: $customization.yml:elevation-continental-flat-threshold
+      continentFull: $customization.yml:elevation-continental-full-height-threshold
+      factorContinental: $customization.yml:elevation-factor-continental
+      factorRiver: $customization.yml:elevation-factor-rivers
+      factorSpawnIsland: $customization.yml:elevation-factor-spawn-island
+      spawnIslandScale: $customization.yml:elevation-spawn-island-scale
+    samplers:
+      rawElevation: *rawElevation
+      flatness: *flatness
+      continents: $math/samplers/continents.yml:samplers.continents
+      spawnIsland: $math/samplers/spawnIsland.yml:samplers.spawnIsland
+      riverTerrainErosion: $math/samplers/rivers.yml:samplers.riverTerrainErosion
+  
+  elevationDetailed:
+    dimensions: 2
+    type: EXPRESSION
+    expression: |
+      terrace(
+        combine(
+          elevation(x, z),
+          detailStart, 0,
+          detailEnd, detail(x, z) * detailFactor
+        ),
+        terraceBaseScale + terraceScale(x, z) * terraceScaleVariation,
+        terraceOffset(x, z) * terraceOffsetVariation,
+        0,
+        (terraceDepth(x, z)^3) * terraceDepthVariation,
+        0, terraceDepthStart
+      )
+    variables: *variables
+    samplers:
+      elevation:
+        dimensions: 2
+        type: DOMAIN_WARP
+        sampler: *elevation
+        # Elevation is warped slightly by white noise, creating a small fuzzy
+        # or dithered look to break up perfectly smooth noise. Produces small
+        # 1 block divots in terrain, especially apparent on steeper terrain and
+        # countours which is good because these areas tend to look too perfect / artifical.
+        amplitude: $customization.yml:elevation-fuzz
+        warp:
+          type: WHITE_NOISE
+          salt: 2394
+      terraceScale:
+        dimensions: 2
+        type: OPEN_SIMPLEX_2
+        frequency: 0.002
+        salt: 1926
+      terraceDepth:
+        dimensions: 2
+        type: PROBABILITY
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.001
+          salt: 5812
+      terraceOffset:
+        dimensions: 2
+        type: FBM
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.001
+          salt: 8512
+      detail:
+        dimensions: 2
+        type: FBM
+        octaves: 4
+        lacunarity: 2
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.008
+          salt: 5912
+
+    functions:
+      terrace: # Terrace function but with depth masked by input value, so terracing doesn't cut down below ocean level
+        arguments:
+          - i  # Input
+          - sc # Scale
+          - o  # Offset
+          - g  # Gap
+          - d  # Terrace depth
+          - tz # Value of i where depth = 0
+          - tf # Value of i where depth = d
+        expression: terraceParalinear(i,sc,o,g,lerp(i,tz,0,tf,d))
+        functions:
+          "<<":
+            - math/functions/terrace.yml:functions
+            - math/functions/interpolation.yml:functions
+      combine: # Stacks a layer of noise on top scaled according to the base noise
+        arguments:
+          - x
+          - at
+          - a
+          - bt
+          - b
+        expression: x+lerp(x,at,a,bt,b)
+        functions: $math/functions/interpolation.yml:functions
+
+  oceanElevation:
+    dimensions: 2
+    type: EXPRESSION
+    expression: |
+      (-1+rawElevation(x, z))
+      * if(factorContinental, herp(continents(x, z), continentZero, 0, continentFull, 1), 1)
+    functions: $math/functions/interpolation.yml:functions
+    variables:
+      continentZero: 0
+      continentFull: -0.8
+      factorContinental: $customization.yml:elevation-factor-continental
+    samplers:
+      rawElevation: *rawElevation
+      continents: $math/samplers/continents.yml:samplers.continents

@@ -1,0 +1,14 @@
+if (check(3, -1, 3) != "LAND" ||
+    check(-3, -1, 3) != "LAND" ||
+    check(3, -1, -3) != "LAND" ||
+    check(-3, -1, -3) != "LAND"
+) fail;
+
+num depth = 3 + randomInt(3);
+num yTranslate = 1;
+structure(0, yTranslate + 1, 0, "red_desert_well_top", "NONE");
+structure(0, yTranslate, 0, "red_desert_well_bottom", "NONE");
+
+for (num y = yTranslate; y > -depth; y = y - 1) {
+    block(0, y, 0, "minecraft:water", true, true);
+}

@@ -1,0 +1,134 @@
+num randPrecision = 100;
+num radius = 4 + randomInt(randPrecision) / randPrecision * 2;
+num warp = 3;
+num warpFreq = 4;
+num yTranslate = 0;
+
+num height = 10 + randomInt(8);
+num radiusInterval = 3;
+num radiusShiftBase = 14;
+num radiusShiftVariation = 2;
+num startThickness = 1.5;
+num halfwayThickness = 4;
+
+str rockBlock = "minecraft:blackstone";
+str rockAltBlock = "minecraft:smooth_basalt";
+
+num tubeDepth = 8 + randomInt(2);
+
+if (true && (check(radius + 3, -1, radius + 3) != "LAND" ||
+    check(-radius - 3, -1, radius + 3) != "LAND" ||
+    check(radius + 3, -1, -radius - 3) != "LAND" ||
+    check(-radius - 3, -1, -radius - 3) != "LAND")) fail;
+
+str airBlock = "minecraft:air";
+if (getBlock(0, 3 + yTranslate, 0) == "minecraft:water") airBlock = "minecraft:water";
+
+num radiusPolarity = 1;
+num wallThickness = startThickness;
+for (num y = -6; y < height; y = y + 1) {
+
+    num radiusShift = radiusShiftBase + (randomInt(radiusShiftVariation));
+
+    if (y % radiusInterval == 0) radiusPolarity = radiusPolarity * -1;
+    if (y > height - radiusInterval) radiusPolarity = -1;
+    radius = radius + (y / radiusShift) * radiusPolarity;
+
+    num radiusSquared = pow(radius, 2);
+    for (num x = -radius - warp; x < radius + warp; x = x + 1) {
+        for (num z = -radius - warp; z < radius + warp; z = z + 1) {
+            num warpX = warp * sampler("simplex",
+                warpFreq * (x + originX() + 1000),
+                warpFreq * (z + originZ() + y));
+            num warpZ = warp * sampler("simplex",
+                warpFreq * (x + originX() + 2000),
+                warpFreq * (z + originZ() + y));
+            if (pow(x + warpX, 2) + pow(z + warpZ, 2) < radiusSquared) {
+
+                if (y >= 1 && y <= height / 2) block(x, y + yTranslate, z, airBlock);
+
+                if (y > height / 4) wallThickness = halfwayThickness;
+
+                if (pow(x + warpX, 2) + pow(z + warpZ, 2) > (radiusSquared / wallThickness)) {
+                    str setBlock = rockBlock;
+                    if (randomInt(2) == 0) setBlock = rockAltBlock;
+                    block(x, y + yTranslate, z, setBlock);
+                }
+
+                if (y < 1 || y > height / 2) {
+                    str setBlock = rockBlock;
+                    if (randomInt(2) == 0) setBlock = rockAltBlock;
+                    block(x, y + yTranslate, z, setBlock);
+                }
+            }
+        }
+    }
+}
+
+if (getBlock(1, height - 3, 0) != "minecraft:air" &&
+    getBlock(0, height - 3, 1) != "minecraft:air" &&
+    getBlock(1, height - 3, 0) != "minecraft:air" &&
+    getBlock(0, height - 3, 1) != "minecraft:air") {
+    str setBlock = "minecraft:air";
+    if (getBlock(0, height, 0) == "minecraft:water") setBlock = "minecraft:water";
+    block(0, height - 1, 0, setBlock, true);
+    block(0, height - 2, 0, "minecraft:magma_block", true);
+    block(0, height - 3, 0, "minecraft:campfire[lit=true,signal_fire=true]", true);
+}
+
+
+str tubeInnerBlock = "minecraft:magma_block";
+str tubeOuterBlock = "minecraft:blackstone";
+num trunkRadius = 2;
+num helixFrequency = 2;
+num helixAmplitude = 1;
+num helixJitter = 0.1;
+num helixLerpMin = 0.4;
+num helixLerpMax = 0.6;
+
+bool placeInAir = false;
+for (num tubeLevel = 0; tubeLevel <= tubeDepth; tubeLevel = tubeLevel + 1) {
+
+    num t = tubeLevel / tubeDepth;
+    num amp = max(0, min(1, min(t / helixLerpMin, (t - 1) / (-1 + helixLerpMax))));
+
+    num xOffset = (t * helixFrequency) * amp * helixAmplitude;
+    num zOffset = cos(t * helixFrequency) * amp * helixAmplitude;
+
+    num tubeLevelRadius = trunkRadius + amp * (2 + randomInt(randPrecision) / randPrecision * helixJitter);
+    num tubeLevelRadiusSquared = pow2(tubeLevelRadius);
+    num tubeLevelRadiusInnerSquared = pow2(tubeLevelRadius - 1 - amp * 2);
+
+    block(xOffset, -tubeLevel + 1, zOffset, tubeInnerBlock);
+
+    // Determines if all of the blocks in the current layer within the radius are solid.
+    bool allSolid = true;
+
+    // Place a layer of the tunnel
+    for (num x = round(-tubeLevelRadius); x < round(tubeLevelRadius); x = x + 1) {
+        for (num z = round(-tubeLevelRadius); z < round(tubeLevelRadius); z = z + 1) {
+            num distanceSquared = pow2(x) + pow2(z);
+            if (distanceSquared < tubeLevelRadiusSquared) {
+                if (distanceSquared < tubeLevelRadiusInnerSquared) {
+                    block(x + xOffset, -tubeLevel, z + zOffset, tubeInnerBlock);
+                } else {
+                    // Border
+                    if (getBlock(x + xOffset, -tubeLevel, z + zOffset) == "minecraft:air") {
+                        if (!placeInAir) continue;
+                        allSolid = false;
+                    }
+                    str setBlock = tubeOuterBlock;
+                    if (randomInt(2) == 0) setBlock = tubeOuterBlock;
+                    block(x + xOffset, -tubeLevel, z + zOffset, setBlock);
+                }
+            }
+        }
+    }
+    if (allSolid) placeInAir = true;
+
+    if (tubeLevel == tubeDepth) structure(xOffset, -tubeDepth, zOffset, "underground_lava_lake", "NONE");
+}
+
+
+
+

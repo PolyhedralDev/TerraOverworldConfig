@@ -1,0 +1,34 @@
+id: BEACH
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_MARITIME_WET
+  - EQ_FLAT_ERODED
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:BEACH
+
+vanilla: minecraft:beach
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER_TEMPERATE_MARSH
+
+colors:
+  grass: 0x91bd59
+  foliage: 0x77ab2f
+  water: 0x44aff5
+  water-fog: 0x44aff5
+
+palette:
+  - SAND: $meta.yml:top-y
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  landforms:
+    - SMALL_BOULDER_PATCHES

@@ -1,0 +1,22 @@
+num yTranslate = 0;
+num spawnerTranslate = -2;
+num veinCover = 3;
+
+if (getBlock(2, yTranslate-2, 0) == "minecraft:water" ||
+    getBlock(-2, yTranslate-2, 0) == "minecraft:water" ||
+    getBlock(0, yTranslate-2, 2) == "minecraft:water" ||
+    getBlock(0, yTranslate-2, -2) == "minecraft:water") fail;
+
+structure(0, yTranslate, 0, "phantom_nest_sc", "NONE");
+
+num radius = 2;
+
+for (num x = -radius; x < radius; x = x + 1) {
+    for (num z = -radius; z < radius; z = z + 1) {
+        if (pow2(x) + pow2(z) < pow2(radius)) {
+            block(x, yTranslate+veinCover, z, "minecraft:sculk_vein[down=true,waterlogged=true]");
+        }
+    }
+}
+block(0, spawnerTranslate+yTranslate, 0, "minecraft:spawner", true);
+state(0, spawnerTranslate+yTranslate, 0, "type=minecraft:phantom");

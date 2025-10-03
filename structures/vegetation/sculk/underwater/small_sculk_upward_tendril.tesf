@@ -1,0 +1,28 @@
+num radius = 1.5;
+num length = 8 + randomInt(3);
+str tendrilBlock = "minecraft:sculk";
+num endBuffer = length * 0.5;
+
+if (getBlock(0, -5, 0) == "minecraft:water") fail;
+
+num xOffset = 0;
+num zOffset = 0;
+for (num l = 0; l <= length - endBuffer; l = l + 1) {
+
+    // Reduce radius inversely to length
+    num r = (radius / length * -l) + radius;
+
+    // Generate sphere at each point
+    for (num x = -r; x <= r; x = x + 1) {
+        for (num y = -r; y <= r; y = y + 1) {
+            for (num z = -r; z <= r; z = z + 1) {
+                if (pow(x, 2) + pow(y, 2) + pow(z, 2) < pow(r, 2)) {
+                    block(x + xOffset, l + y - radius, z + zOffset, tendrilBlock, true);
+                }
+            }
+        }
+    }
+
+    xOffset = xOffset + (1 - randomInt(3));
+    zOffset = zOffset + (1 - randomInt(3));
+}

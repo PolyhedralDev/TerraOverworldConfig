@@ -1,0 +1,38 @@
+id: OLD_GROWTH_SEQUOIA_FOREST
+type: BIOME
+extends: SEQUOIA_FOREST
+color: $biomes/colors.yml:OLD_GROWTH_SEQUOIA_FOREST
+
+palette:
+  - GRASS_PODZOL: $meta.yml:top-y
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.8
+    palette:
+      - GRASS_PODZOL: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.5
+    palette:
+      - COARSE_DIRT: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - << meta.yml:palette-slant-generic
+      - << meta.yml:palette-bottom
+features:
+  landforms:
+    - MOSSY_BOULDERS
+    - SMALL_BOULDER_PATCHES
+  flora:
+    - SWEET_BERRY_BUSH_PATCHES
+    - FERNS_DENSE
+    - BUSH
+    - LEAF_LITTER
+  trees:
+    - SEQUOIA_FOREST_TREES
+    - OLD_GROWTH_SEQUOIA_FOREST_TREES

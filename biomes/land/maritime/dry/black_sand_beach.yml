@@ -1,0 +1,31 @@
+id: BLACK_SAND_BEACH
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_MARITIME_DRY
+  - EQ_FLAT_BUMPY
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:BLACK_SAND_BEACH
+
+vanilla: minecraft:stony_shore
+
+colors:
+  water: 0x77b7d9
+  water-fog: 0x77b7d9
+
+tags:
+  - LAND_CAVES
+
+palette:
+  - BLACK_SAND: $meta.yml:top-y
+  - BLACKSTONE: $meta.yml:ocean-level
+  - SAND: ${meta.yml:ocean-level} - 1
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.4
+    palette:
+      - BLACK_SAND: $meta.yml:top-y
+      - BLACKSTONE: $meta.yml:ocean-level
+      - SAND: ${meta.yml:ocean-level} - 1
+      - << meta.yml:palette-bottom

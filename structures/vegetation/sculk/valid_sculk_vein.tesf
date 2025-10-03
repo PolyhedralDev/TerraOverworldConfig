@@ -1,0 +1,30 @@
+setWaterlog(true);
+num checkRadius = 1;
+bool valid = false;
+for (num x = -checkRadius; x <= checkRadius; x = x + 1) {
+    for (num y = -checkRadius; y <= checkRadius; y = y + 1) {
+        for (num z = -checkRadius; z <= checkRadius; z = z + 1) {
+            if (getBlock(x,y,z) == "minecraft:sculk") {
+                valid = true;
+                break;
+            }
+        }
+    }
+}
+
+if (!valid) fail;
+
+str blockID = "minecraft:sculk_vein[";
+if (structure(0, 1, 0, "is_sculk_vein_placeable", "NONE")) blockID = blockID + "up=true,";
+else blockID = blockID + "up=false,";
+if (structure(0, -1, 0, "is_sculk_vein_placeable", "NONE")) blockID = blockID + "down=true,";
+else blockID = blockID + "down=false,";
+if (structure(0, 0, -1, "is_sculk_vein_placeable", "NONE")) blockID = blockID + "north=true,";
+else blockID = blockID + "north=false,";
+if (structure(1, 0, 0, "is_sculk_vein_placeable", "NONE")) blockID = blockID + "east=true,";
+else blockID = blockID + "east=false,";
+if (structure(0, 0, 1, "is_sculk_vein_placeable", "NONE")) blockID = blockID + "south=true,";
+else blockID = blockID + "south=false,";
+if (structure(-1, 0, 0, "is_sculk_vein_placeable", "NONE")) blockID = blockID + "west=true]";
+else blockID = blockID + "west=false]";
+if (blockID != "minecraft:sculk_vein[up=false,down=false,north=false,east=false,south=false,west=false]") block(0, 0, 0, blockID, false);

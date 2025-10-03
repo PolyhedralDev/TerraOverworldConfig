@@ -1,0 +1,12 @@
+stages:
+  - type: REPLACE_LIST
+    sampler:
+      type: EXPRESSION
+      expression: largeSpotSizePercent(x, z)*2-1
+
+    default-from: island
+    default-to:
+      - mushroom: 1
+    to:
+      island-coast:
+        - mushroom-coast: 1

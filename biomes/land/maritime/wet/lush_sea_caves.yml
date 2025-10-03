@@ -1,0 +1,38 @@
+id: LUSH_SEA_CAVES
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_MARITIME_WET
+  - EQ_ERODED_COAST
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:LUSH_SEA_CAVES
+
+vanilla: minecraft:beach
+
+tags:
+  - USE_RIVER
+
+palette:
+  - MOSS_STONE: $meta.yml:top-y
+  - SAND: ${meta.yml:ocean-level} + 9
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.45
+    palette:
+      - MOSS_STONE: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.1
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - SAND: ${meta.yml:ocean-level} + 1
+      - << meta.yml:palette-bottom
+
+features:
+  slabs:
+    - STONE_SLABS
+  flora:
+    - GRASS
+    - SMALL_DRIPLEAF
+  trees:
+    - DENSE_AZALEA_TREE_PATCHES

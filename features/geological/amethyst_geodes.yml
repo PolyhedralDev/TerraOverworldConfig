@@ -1,0 +1,44 @@
+id: AMETHYST_GEODES
+type: FEATURE
+
+distributor:
+  type: AND
+  distributors:
+    - type: PADDED_GRID
+      width: 10
+      padding: 200
+      salt: 2274
+    - type: SAMPLER
+      sampler:
+        type: PROBABILITY
+        sampler:
+          type: OPEN_SIMPLEX_2
+          salt: 9333
+          frequency: 0.0416667
+      threshold: 1
+
+locator:
+  type: AND
+  locators:
+    - type: RANDOM
+      amount: 1
+      height:
+        min: ${meta.yml:bottom-y} + 22
+        max: ${meta.yml:ocean-level} - 32
+      salt: 5844
+    - type: PATTERN
+      range:
+        min: ${meta.yml:bottom-y} + 22
+        max: ${meta.yml:ocean-level} - 32
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:stone
+          - minecraft:deepslate
+          - minecraft:tuff
+        offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: amethyst_geode

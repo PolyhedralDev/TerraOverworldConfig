@@ -1,0 +1,13 @@
+id: DESERT_MESA
+type: BIOME
+extends:
+  - EQ_SPOT_MESA
+  - CARVING_OCEAN
+  - ROCKY_DESERT
+  - BASE
+color: $biomes/colors.yml:DESERT_MESA
+
+tags:
+  - USE_DESERT_RIVER
+
+vanilla: minecraft:desert

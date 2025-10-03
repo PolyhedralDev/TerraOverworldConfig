@@ -1,0 +1,38 @@
+id: TRAVERTINE_WATER
+type: FEATURE
+
+distributor:
+  type: "YES"
+
+locator:
+  type: AND
+  locators:
+    - type: PATTERN
+      range: &range
+        min: ${meta.yml:ocean-level} + 2
+        max: $meta.yml:top-y
+      pattern:
+        type: AND
+        patterns:
+          - type: MATCH
+            block: minecraft:calcite
+            offset: 0
+          - type: MATCH_AIR
+            offset: 1
+    - type: ADJACENT_PATTERN
+      range: *range
+      match-all: true
+      pattern:
+        type: AND
+        patterns:
+          - type: NOT
+            pattern:
+              type: MATCH_AIR
+              offset: 0
+          - type: MATCH_AIR
+            offset: 1
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: BLOCK:minecraft:water

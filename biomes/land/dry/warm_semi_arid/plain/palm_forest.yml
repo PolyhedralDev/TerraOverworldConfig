@@ -1,0 +1,57 @@
+id: PALM_FOREST
+type: BIOME
+extends:
+  - COLOR_XERIC
+  - ENVIRONMENT_LAND_DRY_WARM_SEMI_ARID
+  - EQ_BUTTES
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:DRY_WOODLANDS
+
+vanilla: minecraft:savanna
+
+tags:
+  - LAND_CAVES
+  - USE_LUKEWARM_RIVER
+
+palette:
+  - SANDY_GRASS: $meta.yml:top-y
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant-depth: 1
+
+slant:
+  - threshold: 0.8
+    palette:
+      - SANDY_GRASS: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.5
+    palette:
+      - BLOCK:minecraft:mossy_cobblestone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.45
+    palette:
+      - BLOCK:minecraft:cobblestone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - GRASS
+    - DENSE_DRY_GRASS
+    - FERNS
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - ALLIUM_PATCH
+  trees:
+    - DENSE_PALM_TREES
+    - DEAD_TREES_SPARSE
+  landforms:
+    - SMALL_GRANITE_BOULDER_PATCHES
+  

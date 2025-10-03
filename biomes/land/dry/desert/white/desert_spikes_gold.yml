@@ -1,0 +1,36 @@
+id: DESERT_SPIKES_GOLD
+type: BIOME
+extends: DESERT_SPIKES
+color: $biomes/colors.yml:DESERT_SPIKES_GOLD
+
+tags:
+  - LAND_CAVES
+  - USE_DESERT_RIVER
+
+slant:
+  - threshold: 0.55
+    palette:
+      - BLOCK:minecraft:smooth_sandstone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.5
+    palette:
+      - BLOCK:minecraft:white_terracotta: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.45
+    palette:
+      - BLOCK:minecraft:light_gray_terracotta: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - TERRACOTTA_STRATA_GOLD: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - CACTUS_SPARSE
+    - DEAD_BUSHES
+    - DRY_GRASS
+  structures:
+    - MOB_ROOMS
+    - DESERT_WELLS
+    - SPARSE_FOSSILS

@@ -1,0 +1,13 @@
+id: TROPICAL_MESA
+type: BIOME
+extends:
+  - EQ_SPOT_MESA
+  - CARVING_OCEAN
+  - JUNGLE
+  - BASE
+color: $biomes/colors.yml:TROPICAL_MESA
+
+tags:
+  - USE_TROPICAL_RIVER
+
+vanilla: minecraft:jungle

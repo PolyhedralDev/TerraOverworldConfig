@@ -1,0 +1,24 @@
+id: GRAVEL_OCEAN
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:gravel: 1
+    layers: 3
+  - materials:
+      - minecraft:stone: 1
+      - minecraft:deepslate: 1
+    layers: 1
+    sampler:
+      dimensions: 3
+      type: EXPRESSION
+      expression: |
+        if(y > top, -1, 
+        -y + top - (offset(x,y,z)+1)*5)
+      variables:
+        top: ${meta.yml:deepslate-top} + 10
+      samplers:
+        offset:
+          dimensions: 3
+          type: OPEN_SIMPLEX_2
+          frequency: 0.08

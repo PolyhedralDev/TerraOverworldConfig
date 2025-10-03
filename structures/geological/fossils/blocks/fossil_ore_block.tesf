@@ -1,0 +1,9 @@
+num chance = randomInt(100);
+
+if (chance < 10) {
+    if (originY() > 0) {
+        block(0, 0, 0, "minecraft:coal_ore", true);
+    } else block(0, 0, 0, "minecraft:deepslate_diamond_ore", true);
+} else if (chance < 100) {
+    fail;
+}

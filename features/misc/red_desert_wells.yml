@@ -1,0 +1,19 @@
+id: RED_DESERT_WELLS
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 100
+  padding: 45
+  salt: 7863
+
+locator:
+  type: TOP
+  range: &range
+    min: ${meta.yml:ocean-level} + 3
+    max: $meta.yml:top-y
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: red_desert_well

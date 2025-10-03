@@ -1,0 +1,57 @@
+id: TALL_DRY_GRASS_MUD
+type: FEATURE
+
+distributor:
+  type: "YES"
+
+locator:
+  type: AND
+  locators:
+    - type: SURFACE
+      range: &range
+        min: ${meta.yml:ocean-level} + 1
+        max: $meta.yml:top-y
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH
+        block: minecraft:air
+        offset: 0
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH
+        block: minecraft:air
+        offset: 1
+    - type: OR
+      locators:
+        - type: PATTERN
+          range: *range
+          pattern:
+            type: MATCH
+            block: minecraft:mud
+            offset: -1
+        - type: AND
+          locators:
+            - type: PATTERN
+              range: *range
+              pattern:
+                type: MATCH_SET
+                blocks:
+                  - minecraft:mud
+                  - minecraft:grass_block
+                offset: -1
+            - type: ADJACENT_PATTERN
+              range: *range
+              pattern:
+                type: MATCH
+                block: minecraft:mud
+                offset: -1
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures:
+    - blank: 1
+    - BLOCK:minecraft:short_dry_grass: 1
+    - BLOCK:minecraft:tall_dry_grass: 2

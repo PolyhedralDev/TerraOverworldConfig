@@ -1,0 +1,67 @@
+num randPrecision = 100;
+
+num amount = 1 + randomInt(5);
+
+// Used to randomize what coral block the coral uses
+num stemRand = randomInt(5);
+str stemBlock = "minecraft:stone";
+
+if (stemRand == 0) stemBlock = "minecraft:brain_coral_block";
+else if (stemRand == 1) stemBlock = "minecraft:bubble_coral_block";
+else if (stemRand == 2) stemBlock = "minecraft:tube_coral_block";
+else if (stemRand == 3) stemBlock = "minecraft:fire_coral_block";
+else if (stemRand == 4) stemBlock = "minecraft:horn_coral_block";
+
+for (num a = 0; a < amount; a = a + 1) {
+
+    num length = 20 + randomInt(randPrecision) / randPrecision * 20;
+    num radius = 3 + randomInt(2);
+    // Direction vector
+    num dx = (randomInt(randPrecision) / randPrecision - 0.5) * 1.5;
+    num dy = 0.9 + randomInt(randPrecision) / randPrecision;
+    num dz = (randomInt(randPrecision) / randPrecision - 0.5) * 1.5;
+
+    // Normalize vector
+    num mag = sqrt(pow(dx, 2) + pow(dy, 2) + pow(dz, 2));
+    dx = dx / mag;
+    dy = dy / mag;
+    dz = dz / mag;
+
+    for (num l = 0; l <= length / 2; l = l + 1) {
+
+        // Reduce radius inversely to length
+        num r = (radius / length * -l / 2) + radius;
+
+        // Generate sphere at each point
+        for (num x = -r; x <= r; x = x + 1) {
+            for (num y = -r; y <= r; y = y + 1) {
+                for (num z = -r; z <= r; z = z + 1) {
+                    if (pow(x, 2) + pow(y, 2) + pow(z, 2) < pow(r, 2)) {
+                        if (getBlock(l * dx + x, l * dy + y - radius, l * dz + z) == "minecraft:water") {
+                            block(l * dx + x, l * dy + y - radius, l * dz + z, stemBlock, true);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    for (num h = 0; h <= length; h = h + 1) {
+
+        // Reduce radius inversely to length
+        num r = (radius / length * -h) + radius;
+
+        // Generate sphere at each point
+        for (num x = -r; x <= r; x = x + 1) {
+            for (num y = -r; y <= r; y = y + 1) {
+                for (num z = -r; z <= r; z = z + 1) {
+                    if (pow(x, 2) + pow(y, 2) + pow(z, 2) < pow(r, 2) / 1.5) {
+                        if (structure(h * dx + x, h * dy + y - radius, h * dz + z, "is_coral", "NONE")) {
+                            block(h * dx + x, h * dy + y - radius, h * dz + z, "minecraft:water", true);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+id: EQ_SUBMERGED_OVERHANGS
+type: BIOME
+abstract: true
+
+variables: &variables
+  base: $customization.yml:terrain-ocean-base-y-level
+  scale: $customization.yml:terrain-ocean-depth
+  overhangStrength: 50
+  overhangStartPercent: 0.1 # Percentage from base max depth where
+                            # overhangs become full strength, strength
+                            # gradually increases with depth.
+  shelfSize: 0.25
+  shelfStrength: 0.6
+
+terrain:
+  sampler:
+    type: EXPRESSION
+    expression: |
+      -y + base
+      + overhangs(x, y*3, z) * parabolicMap(y,
+        base - scale * overhangStartPercent,
+        overhangStrength, base, 0)
+    variables: *variables
+    samplers:
+      overhangs:
+        dimensions: 3
+        type: PROBABILITY
+        sampler:
+          type: FBM
+          octaves: 3
+          sampler:
+            type: OPEN_SIMPLEX_2
+            frequency: 0.01
+            salt: 4957
+  sampler-2d:
+    type: EXPRESSION
+    expression: scale * shelf(oceanElevation(x, z), 0, shelfSize, -shelfStrength)
+    variables: *variables

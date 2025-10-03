@@ -1,0 +1,123 @@
+id: EQ_MULTI_TERRACED_LAND
+type: BIOME
+abstract: true
+
+variables: &variables
+  base: $customization.yml:terrain-base-y-level
+  scale: $customization.yml:terrain-height
+  
+  detailFactor: 0.05
+  detailZero: 0
+  detailFull: 0.2
+
+  terraceDepth: 1
+  terraceZero: 0.1
+  terraceFull: 0.2
+  terraceVariationBase: 0.8
+  terraceVariationScaled: 0.25
+  terraceScale: 0.12
+
+terrain:
+  sampler:
+    type: EXPRESSION
+    expression: -y + base
+    variables: *variables
+
+  sampler-2d:
+    type: EXPRESSION
+    expression: |
+      scale * triTerrace(
+        combine(
+          elevation(x, z),
+          detailZero, 0,
+          detailFull, detail(x, z) * detailFactor
+        ),
+        terraceDepth, terraceZero, terraceFull,
+        terraceScale*1/3, terraceVariation(x, z+1000)*(terraceVariationBase+terraceVariationScaled*0),
+        terraceScale*2/3, terraceVariation(x, z+2000)*(terraceVariationBase+terraceVariationScaled*1),
+        terraceScale*3/3, terraceVariation(x, z+3000)*(terraceVariationBase+terraceVariationScaled*2)
+      )
+    variables: *variables
+    samplers:
+      detail: # Creates bubbly looking terrain
+        dimensions: 2
+        type: DOMAIN_WARP
+        amplitude: 5
+        warp:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.02
+          salt: 4219
+        sampler:
+          type: PROBABILITY
+          sampler:
+            type: LINEAR
+            min: 0.2
+            max: -1
+            sampler:
+              type: CELLULAR
+              frequency: 0.07
+      terraceVariation:
+        dimensions: 2
+        type: FBM
+        octaves: 3
+        lacunarity: 2.5
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.0015
+    functions:
+      combine:
+        arguments:
+          - x
+          - at
+          - a
+          - bt
+          - b
+        expression: x+lerp(x,at,a,bt,b)
+        functions: $math/functions/interpolation.yml:functions
+      
+      triTerrace: # This is a terrible function that exists to avoid duplicate calculations of the 'in' value.
+                  # Allows terrace depth to be controlled according to the value it terraces.
+        arguments:
+          - in
+          - depth
+          - depthLerpZero # Value of 'in' where terrace depth should be 0
+          - depthLerpFull # Value of 'in' where terrace depth should be depth
+          - scale1
+          - offset1
+          - scale2
+          - offset2
+          - scale3
+          - offset3
+        expression: |
+          triTerraceWithLerpedDepth(
+            in,
+            lerp(in, depthLerpZero, 0, depthLerpFull, depth),
+            scale1, offset1,
+            scale2, offset2,
+            scale3, offset3
+          )
+        functions:
+          "<<":
+            math/functions/interpolation.yml:functions
+          triTerraceWithLerpedDepth:
+            arguments:
+              - in
+              - depth
+              - scale1
+              - offset1
+              - scale2
+              - offset2
+              - scale3
+              - offset3
+            expression: |
+              terraceParalinear(
+                terraceParalinear(
+                  terraceParalinear(
+                    in,
+                    scale1, offset1, 0, depth
+                  ),
+                  scale2, offset2, 0, depth
+                ),
+                scale3, offset3, 0, depth
+              )
+            functions: $math/functions/terrace.yml:functions

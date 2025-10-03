@@ -1,0 +1,54 @@
+id: SAKURA_GROVE
+type: BIOME
+extends:
+  - EQ_MULTI_TERRACED_LAND
+  - TEMPERATE_MOUNTAINS
+color: $biomes/colors.yml:SAKURA_GROVE
+
+vanilla: minecraft:cherry_grove
+
+tags:
+  - USE_RIVER
+  - DEEP_DARK
+
+colors:
+  foliage: 0x5AC67B
+  grass: 0xb6db61
+  water: 0x5DB7EF
+  fog: 0xabd2ff
+
+slant:
+  - threshold: 0.8
+    palette:
+      - GRASS: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.55
+    palette:
+      - MOSS_STONE: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.5
+    palette:
+      - MOSSY_COBBLESTONE_STONE: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.45
+    palette:
+      - TUFF_STONE: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - ROCKY_SLANT: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - PINK_PETALS
+    - GRASS
+    - PEONY_PATCH
+    - ALLIUM_PATCH
+  trees:
+    - SAKURA_TREES
+    - SPARSE_FALLEN_CHERRY_TREES
+  landforms:
+    - MOSSY_BOULDERS
+    - SMALL_MOSSY_BOULDER_PATCHES

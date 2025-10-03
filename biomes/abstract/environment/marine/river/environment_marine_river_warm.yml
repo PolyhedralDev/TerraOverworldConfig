@@ -1,0 +1,16 @@
+id: ENVIRONMENT_MARINE_RIVER_WARM
+type: BIOME
+abstract: true
+
+colors:
+  fog: 0xc0d8ff
+  water: 0x32A598
+  water-fog: 0x32A598
+  sky: 0x7ba4ff
+  grass: 0xbdd394
+  foliage: 0x8cbb5e
+
+climate:
+  precipitation: false
+  temperature: 1.5
+  downfall: 0.1

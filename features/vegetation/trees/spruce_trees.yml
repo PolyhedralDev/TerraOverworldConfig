@@ -12,13 +12,13 @@ locator:
   locators:
     - type: TOP
       range: &range
-        min: 64
-        max: 130
+        min: ${meta.yml:ocean-level} + 3
+        max: ${meta.yml:ocean-level} + 69
     - type: PATTERN
       range: *range
       pattern:
         type: MATCH_SET
-        blocks: $features/vegetation/meta.yml:plantable-blocks
+        blocks: $features/vegetation/meta.yml:dry-plantable-blocks
         offset: -1
     - type: PATTERN
       range: *range
@@ -31,5 +31,10 @@ locator:
 
 structures:
   distribution:
-    type: CONSTANT
-  structures: spruce_tree_procedural
+    type: WHITE_NOISE
+    salt: 3023
+  structures:
+    - spruce_tree_procedural: 7
+    - spruce_tree_procedural_2: 1
+    - tall_thin_pine_tree_procedural: 3
+    - tall_spruce_tree_procedural: 3

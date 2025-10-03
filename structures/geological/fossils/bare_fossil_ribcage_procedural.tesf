@@ -1,0 +1,118 @@
+num randPrecision = 100;
+num goldenAngle = 2.39996;
+num pi = 3.14159;
+
+num spineLength = 8 + randomInt(4);
+
+str spineBlock = "minecraft:bone_block[axis=x]";
+str ribBlock = "minecraft:bone_block[axis=z]";
+str ribBlockY = "minecraft:bone_block[axis=y]";
+
+num ribInterval = 2 + randomInt(3);
+num ribLengthBase = 8;
+num ribLengthVariation = 3;
+
+num ribRadius = 1;
+num ribVerticalDirection = 1 + (randomInt(randPrecision) / (randPrecision));
+num ribDroop = 0.15 + ((randomInt(10) / 1000));
+
+bool rotate = false;
+
+if (randomInt(2) == 0) {
+    rotate = true;
+    spineBlock = "minecraft:bone_block[axis=z]";
+    ribBlock = "minecraft:bone_block[axis=x]";
+}
+
+num xl = 0;
+num yDir = 1;
+num zl = 0;
+
+if (randomInt(2) == 0) yDir = -1;
+for (num l = -3; l < spineLength; l = l + 1) {
+
+    if (rotate == false) {
+        xl = l;
+        //  if (getBlock(spineLength/2, 0, zl) == "minecraft:air") fail;
+    }
+    if (rotate == true) {
+        zl = l;
+        //  if (getBlock(xl, 0, spineLength/2) == "minecraft:air") fail;
+    }
+
+    block(xl, 0, zl, spineBlock, true);
+
+    num ribVerticalDirectionVariation = 0;
+    ribVerticalDirectionVariation = ribVerticalDirectionVariation + ((randomInt(10) / 1000) * 6);
+
+    num ribDroopVariation = 0;
+    ribDroopVariation = ribDroopVariation + ((randomInt(10) / 1000));
+    ribDroop = ribDroop + ribDroopVariation;
+
+    ribLengthBase = ribLengthBase - (l / 8);
+    if (l % ribInterval == 0) {
+
+        num rootAngle = randomInt(randPrecision) / randPrecision * 2 * pi + 5;
+
+        for (num d = 0; d < 2; d = d + 1) {
+            num ribLength = ribLengthBase + randomInt(1 + ribLengthVariation);
+
+            num vd = ribVerticalDirection;
+            // Branch direction vector
+            num dx = 0;
+            num dy = vd;
+            num dz = 1;
+
+            dy = dy + ribVerticalDirectionVariation;
+
+            if (rotate == true) {
+                dx = 1;
+                dz = 0;
+            }
+
+            // Normalize vector
+            num mag = sqrt(pow(dx, 2) + pow(dy, 2) + pow(dz, 2));
+            dx = dx / mag;
+            dy = dy / mag;
+            dz = dz / mag;
+
+            for (num i = 0; i <= ribLength; i = i + 0.5) {
+
+                num cx = i * dx;
+                num cy = i * dy;
+                num cz = i * dz;
+
+                num r = ribRadius;
+
+                num zDir = 1;
+                if (d == 1) zDir = -1;
+                num xDir = 1;
+                if (d == 1) xDir = -1;
+
+                // Generate sphere at each point
+                for (num x = -r; x < r; x = x + 1) {
+                    for (num y = -r; y < r; y = y + 1) {
+                        for (num z = -r; z < r; z = z + 1) {
+                            if (pow(x, 2) + pow(y, 2) + pow(z, 2) < pow(r, 2)) {
+
+                                if (i < 4) {
+                                    block(xl + (xDir * (cx + x)), (cy + y) * yDir, zl + (zDir * (cz + z)), ribBlock, true);
+                                } else block(xl + (xDir * (cx + x)), (cy + y) * yDir, zl + (zDir * (cz + z)), ribBlockY, true);
+                            }
+                        }
+                    }
+                }
+
+                // Point vector down more
+                dy = dy - ribDroop;
+
+                // Normalize vector
+                mag = sqrt(pow2(dx) + pow2(dy) + pow2(dz));
+                dx = dx / mag;
+                dy = dy / mag;
+                dz = dz / mag;
+            }
+        }
+    }
+}
+

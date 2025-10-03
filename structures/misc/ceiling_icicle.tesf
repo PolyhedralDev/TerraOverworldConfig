@@ -1,4 +1,0 @@
-num length = 2+randomInt(5);
-for (num i = 0; i <= length; i = i + 1) {
-    block(0, -i, 0, "minecraft:ice", false);
-}

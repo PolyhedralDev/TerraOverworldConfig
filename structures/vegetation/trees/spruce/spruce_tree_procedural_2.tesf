@@ -1,0 +1,82 @@
+num randPrecision = 100;
+num goldenAngle = 2.39996;
+num pi = 3.14159;
+
+str trunkBlock = "minecraft:spruce_log";
+str branchBlock = "minecraft:spruce_wood";
+str leafBlock = "minecraft:azalea_leaves[persistent=false,distance=1]";
+
+num trunkRadius = 1.5;
+num trunkHeight = 40 + randomInt(10);
+
+num sideBranchInterval = 5;
+num sideBranchMinHeight = 10;
+
+num leafLengthBase = 10;
+num leafLengthVariation = 6;
+num leafRadius = 3.5;
+num leafAmount = 10;
+num leafInterval = trunkHeight * 0.05;
+
+num branchAngle = randomInt(randPrecision) / randPrecision * 2 * pi;
+
+// tree trunk
+for (num h = 0; h <= trunkHeight; h = h + 1) {
+    // Reduce radius inversely to trunkHeight
+    num tr = (trunkRadius / trunkHeight * -h / 2) + trunkRadius;
+
+    // Generate sphere at each point
+    for (num x = -tr; x <= tr; x = x + 1) {
+        for (num y = -tr; y <= tr; y = y + 1) {
+            for (num z = -tr; z <= tr; z = z + 1) {
+                if (pow(x, 2) + pow(y, 2) + pow(z, 2) < pow(tr, 2)) {
+
+                    if (h < trunkHeight - 3) {
+                        block(x, h + y - trunkRadius, z, trunkBlock, true);
+                    } else block(x, h + y - trunkRadius, z, leafBlock, true);
+                }
+            }
+        }
+    }
+
+    if (h > sideBranchMinHeight) {
+        if (h % sideBranchInterval == 0 || h == trunkHeight) {
+            for (num n = 0; n < leafAmount; n = n + 1) {
+
+                num length = leafLengthBase + randomInt(leafLengthVariation);
+                num r = leafRadius - (h / trunkHeight);
+
+                // Direction vector
+                num dx = (randomInt(randPrecision) / randPrecision - 0.5) * 1.5;
+                num dy = -0.5;
+                num dz = (randomInt(randPrecision) / randPrecision - 0.5) * 1.5;
+
+                num mag = sqrt(pow(dx, 2) + pow(dy, 2) + pow(dz, 2));
+                dx = dx / mag;
+                dy = dy / mag;
+                dz = dz / mag;
+
+                for (num l = 0; l <= length; l = l + 1) {
+
+                    // Reduce radius inversely to length
+                    num lr = (r / length * -l - (h / 35)) + r;
+
+                    // Generate sphere at each point
+                    for (num lx = -lr; lx <= lr; lx = lx + 1) {
+                        for (num ly = -lr; ly <= lr; ly = ly + 1) {
+                            for (num lz = -lr; lz <= lr; lz = lz + 1) {
+                                if (pow(lx, 2) + pow(ly, 2) + pow(lz, 2) < (pow(lr, 2) / 5) && l < (length / 3) && h < trunkHeight / 1.5) {
+                                    block(l * dx + lx, l * dy + ly - leafRadius + h, l * dz + lz, branchBlock, true);
+                                }
+
+                                if (pow(lx, 2) + pow(ly, 2) + pow(lz, 2) < pow(lr, 2)) {
+                                    block(l * dx + lx, l * dy + ly - leafRadius + h, l * dz + lz, leafBlock, false);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

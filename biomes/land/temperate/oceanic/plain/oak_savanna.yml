@@ -1,0 +1,49 @@
+id: OAK_SAVANNA
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_TEMPERATE_OCEANIC
+  - EQ_LAND
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:OAK_SAVANNA
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER_TEMPERATE_MARSH
+
+vanilla: minecraft:plains
+
+colors:
+  grass: 0x88be56
+  foliage: 0x96d937
+  water: 0x44aff5
+  water-fog: 0x44aff5
+
+palette:
+  - GRASS_VARIATION: $meta.yml:top-y
+  - GRASS_VARIATION: ${meta.yml:ocean-level} + 1
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.8
+    palette:
+      - GRASS_VARIATION: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - << meta.yml:palette-slant-generic
+      - << meta.yml:palette-bottom
+
+
+features:
+  flora:
+    - GRASS
+    - DRY_GRASS
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - PUMPKIN_PATCHES
+  trees:
+    - SPARSE_DARK_OAK_TREE_PATCHES
+    - SPARSE_FALLEN_DARK_OAK_TREES

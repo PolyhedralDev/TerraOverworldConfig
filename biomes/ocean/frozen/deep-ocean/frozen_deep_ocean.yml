@@ -1,0 +1,11 @@
+id: FROZEN_DEEP_OCEAN
+type: BIOME
+extends:
+  - EQ_GLOBAL_OCEAN
+  - FROZEN_OCEAN
+color: $biomes/colors.yml:FROZEN_DEEP_OCEAN
+
+vanilla: minecraft:deep_frozen_ocean
+
+ocean:
+  palette: FROZEN_OCEAN

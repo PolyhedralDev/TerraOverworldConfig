@@ -1,8 +1,0 @@
-id: RAINFOREST
-type: BIOME
-extends: [ EQ_PLAIN, RAINFOREST_HILLS ]
-color: $biomes/colors.yml:RAINFOREST
-
-tags:
-  - LAND_CAVES
-  - USE_RIVER_TEMPERATE_SWAMP

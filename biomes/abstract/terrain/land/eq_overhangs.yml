@@ -1,0 +1,29 @@
+id: EQ_OVERHANGS
+type: BIOME
+abstract: true
+
+variables: &variables
+  base: $customization.yml:terrain-base-y-level
+  scale: $customization.yml:terrain-height
+  
+  overhangStrength: 20
+
+terrain:
+  sampler:
+    type: EXPRESSION
+    expression: -y + base + overhangs(x, y*3, z) * overhangStrength
+    variables: *variables
+    samplers:
+      overhangs:
+        dimensions: 3
+        type: FBM
+        octaves: 3
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.01
+          salt: 4957
+
+  sampler-2d:
+    type: EXPRESSION
+    expression: scale * elevationDetailed(x, z)
+    variables: *variables

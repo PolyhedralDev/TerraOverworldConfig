@@ -1,0 +1,7 @@
+id: XERIC_MOUNTAINS_RIVER
+type: BIOME
+extends:
+  - EQ_GLOBAL_RIVER
+  - CARVING_OCEAN
+  - XERIC_MOUNTAINS
+color: $biomes/colors.yml:XERIC_MOUNTAINS_RIVER

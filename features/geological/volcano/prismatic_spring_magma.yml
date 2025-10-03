@@ -1,0 +1,39 @@
+id: PRISMATIC_SPRING_MAGMA
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: LINEAR
+    min: 1
+    max: -1
+    sampler:
+      type: FBM
+      octaves: 3
+      gain: 1
+      sampler:
+        type: CELLULAR
+        return: Distance2Div
+        frequency: 0.03
+        distance: Euclidean
+  threshold: 0.15
+
+locator:
+  type: PATTERN
+  range:
+    min: $meta.yml:bottom-y
+    max: $meta.yml:top-y
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH
+        block: minecraft:cyan_terracotta
+        offset: 0
+      - type: MATCH
+        block: minecraft:water
+        offset: 1
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: BLOCK:minecraft:magma_block

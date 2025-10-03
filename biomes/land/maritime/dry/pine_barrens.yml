@@ -1,0 +1,37 @@
+id: PINE_BARRENS
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_MARITIME_DRY
+  - EQ_FLAT_ERODED
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:PINE_BARRENS
+
+vanilla: minecraft:beach
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER_TEMPERATE_MARSH
+
+colors:
+  grass: 0x9fbd59
+  foliage: 0x869e31
+  water: 0x449ff5
+  water-fog: 0x449ff5
+
+palette:
+  - BLOCK:minecraft:stone: $meta.yml:top-y
+  - PINE_BARRENS: ${meta.yml:ocean-level} + 14
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - DEAD_BUSHES
+    - FERNS
+    - TALL_GRASS
+    - CACTUS_SPARSE
+  trees:
+    - TALL_PINE_TREES
+    - MIXED_BUSHES
+    - DENSE_FALLEN_THIN_PINE_TREES

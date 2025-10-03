@@ -1,0 +1,28 @@
+id: DRIPSTONE_CAVES_FLOOR_POINTED_DRIPSTONE
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 1023
+  threshold: 0.07
+
+locator:
+  type: PATTERN
+  range:
+    min: ${meta.yml:bottom-y} + 16
+    max: ${meta.yml:ocean-level} - 14
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH
+        block: minecraft:dripstone_block
+        offset: -1
+      - type: MATCH_AIR
+        offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: small_floor_pointed_dripstone

@@ -1,0 +1,34 @@
+id: EQ_BUTTES_ARCHIPELAGO
+type: BIOME
+abstract: true
+
+# Shallow waters spotted with small terraced islands.
+# Uses EQ_BUTTES as a template, with just the variables tweaked.
+
+vars: &variables
+  "<<": # Inject template variables
+    - biomes/abstract/terrain/land/legacy/eq_buttes.yml:vars
+  base: 45
+  groundHeight: 30
+  groundFrequency: 1
+  terraceHeight: 12
+  terraceHeightVariation: 8
+  butteHeight: 32
+  butteBase: 15
+  butteMaskFrequency: 1.8
+  butteMaskLowerBound: 0.8
+  butteMaskUpperBound: 1
+
+# Grab samplers from template and inject variables
+terrain:
+  sampler:
+    dimensions: 3
+    type: EXPRESSION
+    variables: *variables
+    expression: $biomes/abstract/terrain/land/legacy/eq_buttes.yml:terrain.sampler.expression
+  sampler-2d:
+    dimensions: 2
+    type: EXPRESSION
+    variables: *variables
+    expression: $biomes/abstract/terrain/land/legacy/eq_buttes.yml:terrain.sampler-2d.expression
+    samplers: $biomes/abstract/terrain/land/legacy/eq_buttes.yml:terrain.sampler-2d.samplers

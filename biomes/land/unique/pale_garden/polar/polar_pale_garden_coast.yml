@@ -1,0 +1,31 @@
+id: POLAR_PALE_GARDEN_COAST
+type: BIOME
+extends:
+  - PALE_GARDEN_COAST
+color: $biomes/colors.yml:POLAR_PALE_GARDEN_COAST
+
+vanilla: minecraft:pale_garden
+
+tags:
+  - RESIN_ROOTS
+  - USE_PALE_GARDEN_RIVER
+
+features:
+  flora:
+    - GRASS
+    - PALE_MOSS_CARPET
+    - EYEBLOSSOM_PATCH
+    - CAVE_GLOW_LICHEN
+  trees:
+    - DENSE_PALE_FOREST_TREES
+    - DENSE_FALLEN_PALE_OAK_TREES
+    - PALE_OAK_BUSHES
+  landforms:
+    - PALE_MOSSY_BOULDERS
+  processors:
+    - SNOW_FOREST_LAYERS
+  preprocessors:
+    - POWDER_SNOW_DEPOSITS
+    - ICE_COASTLINE
+  postprocessors:
+    - TREE_SNOW

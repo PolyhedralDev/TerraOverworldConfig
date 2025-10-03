@@ -1,0 +1,15 @@
+num random = randomInt(3);
+str setBlock = "minecraft:red_terracotta";
+
+if (random == 0) setBlock = "minecraft:red_terracotta";
+if (random == 1) setBlock = "minecraft:mud_bricks";
+if (random == 2) setBlock = "minecraft:blue_terracotta";
+
+if (random == 3) setBlock = "minecraft:packed_mud";
+if (random == 4) setBlock = "minecraft:cyan_terracotta";
+if (random == 5) setBlock = "minecraft:orange_terracotta";
+if (random == 6) setBlock = "minecraft:white_terracotta";
+if (random == 7) setBlock = "minecraft:bricks";
+if (random == 8) setBlock = "minecraft:gray_terracotta";
+
+block(0, 0, 0, setBlock, true);

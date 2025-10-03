@@ -1,0 +1,26 @@
+num randPrecision = 100;
+num goldenAngle = 2.39996;
+num pi = 3.14159;
+
+num length = 30 + randomInt(5);
+num maxRadius = 2.5 + randomInt(3);
+str rootBlock = "minecraft:pale_oak_wood[axis=y]";
+for (num l = 0; l <= (length - 5); l = l + 1) {
+
+    num r = (maxRadius + (maxRadius / length) * -l);
+    for (num x = -r; x <= r; x = x + 1) {
+        for (num y = -r; y <= r; y = y + 1) {
+            for (num z = -r; z <= r; z = z + 1) {
+                if (pow(x, 2) + pow(y, 2) + pow(z, 2) < pow(r, 2)) {
+                    if (randomInt(4) == 0 && l < length - 8) {
+                        structure(x, y + l, z, "resin_clump", "NONE");
+                    } else block(x, y + l, z, rootBlock);
+                }
+            }
+        }
+    }
+}
+
+// Generate creaking heart along lower trunk
+num creakingHeartRoll = randomInt(10);
+if (creakingHeartRoll == 0) structure(0, length / 3, 0, "creaking_heart", "NONE");

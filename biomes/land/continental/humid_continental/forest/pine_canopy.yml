@@ -1,0 +1,60 @@
+id: PINE_CANOPY
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_CONTINENTAL_HUMID
+  - EQ_LAND
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:PINE_CANOPY
+
+tags:
+  - LAND_CAVES
+  - USE_COLD_RIVER
+
+vanilla: minecraft:old_growth_pine_taiga
+
+colors:
+  grass: 0x88C15D
+  foliage: 0x6FC15D
+  water: 0x287082
+  water-fog: 0x287082
+
+palette:
+  - GRASS_PODZOL: $meta.yml:top-y
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.8
+    palette:
+      - GRASS: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.45
+    palette:
+      - COARSE_DIRT: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - << meta.yml:palette-slant-generic
+      - << meta.yml:palette-bottom
+
+features:
+  landforms:
+    - SMALL_MOSSY_BOULDER_PATCHES
+  flora:
+    - SWEET_BERRY_BUSH_PATCHES
+    - POPPY_PATCH
+    - DANDELION_PATCH
+    - DANDELION_PATCH
+    - LILAC_PATCH
+    - GRASS
+    - FERNS_DENSE
+  trees:
+    - SPARSE_FALLEN_SPRUCE_TREES
+    - MIXED_BUSHES
+    - SPARSE_SPRUCE_TREES
+    - PINE_TREES
+    - DENSE_FALLEN_THIN_PINE_TREES
+    - SPARSE_FALLEN_LARGE_PINE_TREES

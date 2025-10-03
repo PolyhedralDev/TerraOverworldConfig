@@ -1,0 +1,12 @@
+id: COLD_DEEP_OCEAN
+type: BIOME
+extends:
+  - EQ_GLOBAL_OCEAN
+  - COLD_OCEAN
+color: $biomes/colors.yml:COLD_DEEP_OCEAN
+
+vanilla: minecraft:deep_cold_ocean
+
+features:
+  flora:
+    - SPARSE_SEAGRASS

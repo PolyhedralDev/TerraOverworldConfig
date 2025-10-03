@@ -1,0 +1,19 @@
+id: DESERT_WELLS
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 106
+  padding: 75
+  salt: 4357
+
+locator:
+  type: TOP
+  range: &range
+    min: ${meta.yml:ocean-level} + 3
+    max: $meta.yml:top-y
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: desert_well

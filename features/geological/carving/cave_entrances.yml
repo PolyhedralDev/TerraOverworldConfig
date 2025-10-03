@@ -1,0 +1,39 @@
+id: CAVE_ENTRANCES
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 15
+  padding: 20
+  salt: 6473
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range: &range
+        min: ${meta.yml:ocean-level} - 30
+        max: ${meta.yml:ocean-level} + 30
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: OR
+        patterns:
+          - type: MATCH
+            block: minecraft:stone
+            offset: 4
+          - type: MATCH
+            block: minecraft:stone
+            offset: 6
+          - type: MATCH
+            block: minecraft:stone
+            offset: 8
+          - type: MATCH
+            block: minecraft:stone
+            offset: 10
+
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: place_cave_entrance

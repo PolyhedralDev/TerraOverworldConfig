@@ -4,17 +4,26 @@ type: PALETTE
 layers:
   - materials:
       - minecraft:grass_block: 3
-      - minecraft:coarse_dirt: 1
       - minecraft:snow_block: 5
     layers: 1
     sampler:
       type: DOMAIN_WARP
-      amplitude: 1
+      amplitude: 0.5
       warp:
         type: GAUSSIAN
       sampler:
-        type: OPEN_SIMPLEX_2
-        frequency: 0.02
+        type: DOMAIN_WARP
+        amplitude: 30
+        warp:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.01
+        sampler:
+          type: FBM
+          octaves: 3
+          sampler:
+            type: OPEN_SIMPLEX_2
+            frequency: 0.02
+            salt: 8632
   - materials:
       - minecraft:coarse_dirt: 1
       - minecraft:dirt: 2

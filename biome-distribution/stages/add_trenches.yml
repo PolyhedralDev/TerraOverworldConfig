@@ -1,0 +1,111 @@
+trenchSampler: &trenchSampler
+  type: EXPRESSION
+  expression: segment(trenchBiomeMap(x, z), trenchValue, borderValue, (elevation(x, z) < lowlandsThreshold) && (borderMask(x, z) < borderMaskThreshold))
+  variables:
+    trenchValue: $math/samplers/trenches.yml:variables.trenchValue
+    borderValue: $math/samplers/trenches.yml:variables.borderValue
+    borderMaskThreshold: 0.2
+    lowlandsThreshold: $customization.yml:elevation-lowlands-threshold
+  functions:
+    segment:
+      arguments:
+        - trench
+        - trenchValue
+        - borderValue
+        - borderPredicate
+      expression: if(trench <= trenchValue, 1, if((trench <= borderValue) && borderPredicate, -0.4, -1))
+  samplers:
+    borderMask:
+      dimensions: 2
+      type: PROBABILITY
+      sampler:
+        type: OPEN_SIMPLEX_2
+        salt: 4812
+        frequency: 0.003
+
+variationSampler: &variationSampler
+  type: CELLULAR
+  return: CellValue
+  frequency: 1 / 100 / ${customization.yml:variation-scale} / ${customization.yml:global-scale}
+
+# Tags are used by biomes to determine the kind of trench to use, except for biomes with
+# their own specific trench biome.
+
+stages:
+  # Regular trenches
+  - type: REPLACE_LIST
+    default-from: USE_TRENCH
+    default-to:
+      - SELF: 1
+      - OCEAN_TRENCH: 1
+    to:
+      DEEP_DEPTHS:
+        - SELF: 1
+        - DEEP_DEPTHS_TRENCH: 1
+    sampler: *trenchSampler
+  - type: REPLACE_LIST
+    default-from: USE_COLD_TRENCH
+    default-to:
+      - SELF: 1
+      - COLD_OCEAN_TRENCH: 1
+    to:
+      COLD_DEEP_DEPTHS:
+        - SELF: 1
+        - COLD_DEEP_DEPTHS_TRENCH: 1
+    sampler: *trenchSampler
+  - type: REPLACE_LIST
+    default-from: USE_FROZEN_TRENCH
+    default-to:
+      - SELF: 1
+      - FROZEN_OCEAN_TRENCH: 1
+    to:
+      FROZEN_DEEP_DEPTHS:
+        - SELF: 1
+        - FROZEN_DEEP_DEPTHS_TRENCH: 1
+    sampler: *trenchSampler
+  - type: REPLACE_LIST
+    default-from: USE_TROPICAL_TRENCH
+    default-to:
+      - SELF: 1
+      - TROPICAL_OCEAN_TRENCH: 1
+    to:
+      TROPICAL_DEEP_DEPTHS:
+        - SELF: 1
+        - TROPICAL_DEEP_DEPTHS_TRENCH: 1
+    sampler: *trenchSampler
+  - type: REPLACE_LIST
+    default-from: USE_SUBTROPICAL_TRENCH
+    default-to:
+      - SELF: 1
+      - SUBTROPICAL_OCEAN_TRENCH: 1
+    to:
+      SUBTROPICAL_DEEP_DEPTHS:
+        - SELF: 1
+        - SUBTROPICAL_DEEP_DEPTHS_TRENCH: 1
+    sampler: *trenchSampler
+  - type: REPLACE
+    from: USE_CORAL_TRENCH
+    to:
+      - SELF: 1
+      - CORAL_OCEAN_TRENCH: 1
+    sampler: *trenchSampler
+
+  - type: REPLACE_LIST
+    default-from: OCEAN_TRENCH
+    default-to:
+      - SELF: 2
+      - DEEP_OCEAN_VENTS: 1
+    to:
+      COLD_OCEAN_TRENCH:
+        - SELF: 2
+        - COLD_DEEP_OCEAN_VENTS: 1
+      FROZEN_OCEAN_TRENCH:
+        - SELF: 2
+        - FROZEN_DEEP_OCEAN_VENTS: 1
+      SUBTROPICAL_OCEAN_TRENCH:
+        - SELF: 2
+        - SUBTROPICAL_DEEP_OCEAN_VENTS: 1
+      TROPICAL_OCEAN_TRENCH:
+        - SELF: 2
+        - TROPICAL_DEEP_OCEAN_VENTS: 1
+    sampler: *variationSampler

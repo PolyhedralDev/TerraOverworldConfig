@@ -1,5 +1,0 @@
-id: COLD_DEEP_OCEAN
-type: BIOME
-extends: [ PALETTE_OCEAN, EQ_DEEP_OCEAN, CARVING_OCEAN, BASE ]
-vanilla: minecraft:deep_cold_ocean
-color: $biomes/colors.yml:COLD_DEEP_OCEAN

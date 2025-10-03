@@ -1,0 +1,77 @@
+id: EQ_PLAIN_PEAKS
+type: BIOME
+abstract: true
+
+# Flat terrain with mixed with occasional sharp land forms
+
+terrain:
+  sampler:
+    dimensions: 3
+    type: LINEAR_HEIGHTMAP
+    base: $customization.yml:terrain-base-y-level
+  sampler-2d:
+    dimensions: 2
+    type: EXPRESSION
+    variables:
+      height: 5
+    expression: |
+      noise(x,z)*height
+      + maskSmooth(
+        3+terrace(plateau(x,z)*40,10,terraceOffset(x,z)*0.2,0,1),
+        0.7, 0.9,
+        plateauMask(x,z)
+      )
+    samplers:
+      terraceOffset:
+        dimensions: 2
+        type: OPEN_SIMPLEX_2
+        frequency: 0.03
+        seed: 1925
+      plateauMask:
+        dimensions: 2
+        type: PROBABILITY
+        sampler:
+          type: DOMAIN_WARP
+          amplitude: 5
+          warp:
+            type: OPEN_SIMPLEX_2
+            frequency: 0.04
+            seed: 5912
+          sampler:
+            type: FBM
+            octaves: 2
+            sampler:
+              type: OPEN_SIMPLEX_2
+              frequency: 0.004
+              seed: 4123
+      plateau:
+        dimensions: 2
+        type: PROBABILITY
+        sampler:
+          type: DOMAIN_WARP
+          amplitude: 5
+          warp:
+            type: FBM
+            octaves: 2
+            sampler:
+              type: OPEN_SIMPLEX_2
+              frequency: 0.03
+          sampler:
+            type: FBM
+            octaves: 2
+            sampler:
+              type: LINEAR
+              min: -1
+              max: -0.2
+              sampler:
+                type: CELLULAR
+      noise:
+        dimensions: 2
+        type: PROBABILITY
+        sampler:
+          type: FBM
+          octaves: 5
+          sampler:
+            type: OPEN_SIMPLEX_2
+            seed: 4192
+            frequency: 0.006

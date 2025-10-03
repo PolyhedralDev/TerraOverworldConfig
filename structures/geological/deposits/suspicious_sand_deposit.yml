@@ -1,0 +1,8 @@
+id: SUSPICIOUS_SAND_DEPOSIT
+type: ORE
+extends: ABSTRACT_DEPOSIT
+
+material: minecraft:suspicious_sand
+
+replace:
+  - minecraft:sand

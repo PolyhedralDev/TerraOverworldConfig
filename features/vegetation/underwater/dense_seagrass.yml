@@ -1,0 +1,39 @@
+id: DENSE_SEAGRASS
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 5252
+  threshold: 0.8
+
+locator:
+  type: PATTERN
+  range:
+    min: ${meta.yml:deepslate-top} - 7
+    max: ${meta.yml:ocean-level} + 1
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH
+        block: minecraft:water
+        offset: 0
+      - type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:seagrass-plantable-blocks
+        offset: -1
+
+structures:
+  distribution:
+    type: DOMAIN_WARP
+    amplitude: 3
+    warp:
+      type: GAUSSIAN
+    sampler:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.05
+    salt: 9834
+  structures:
+    - tall_seagrass: 1
+    - BLOCK:minecraft:seagrass: 1
+    - blank: 1

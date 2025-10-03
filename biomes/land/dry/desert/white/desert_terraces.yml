@@ -1,0 +1,40 @@
+id: DESERT_TERRACES
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_DRY_WHITE_DESERT
+  - EQ_STRATIFIED_LAND
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:DESERT_TERRACES
+
+vanilla: minecraft:desert
+
+tags:
+  - LAND_CAVES
+  - USE_DESERT_RIVER
+
+palette:
+  - SAND: $meta.yml:top-y
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.45
+    palette:
+      - BLOCK:minecraft:smooth_sandstone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:sandstone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  landforms:
+    - SMALL_SANDSTONE_BOULDER_PATCHES
+  flora:
+    - CACTUS_SPARSE
+    - DEAD_BUSHES
+    - DRY_GRASS
+  structures:
+    - MOB_ROOMS
+    - DESERT_WELLS
+    - SPARSE_FOSSILS

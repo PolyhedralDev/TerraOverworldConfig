@@ -1,0 +1,32 @@
+id: ICE_CAVE_STALACTITES
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 5367
+  threshold: 0.1
+
+locator:
+  type: PATTERN
+  range:
+    min: $meta.yml:bottom-y
+    max: $meta.yml:ocean-level
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH_SET
+        blocks:
+          - minecraft:packed_ice
+          - minecraft:blue_ice
+        offset: 0
+      - type: MATCH_AIR
+        offset: -1
+      - type: MATCH_AIR
+        offset: -3
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: ice_stalactite

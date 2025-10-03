@@ -1,0 +1,47 @@
+id: DIKSAM_PLATEAU
+type: BIOME
+extends:
+  - COLOR_XERIC
+  - ENVIRONMENT_LAND_DRY_WARM_SEMI_ARID
+  - EQ_ROCKY_BUTTES
+  - CARVING_LAND
+  - ORES_EMERALD
+  - DEPOSITS_INFESTED
+  - BASE
+color: $biomes/colors.yml:DIKSAM_PLATEAU
+
+vanilla: minecraft:desert
+
+tags:
+  - DEEP_DARK
+
+palette:
+  - SOCOTRA: $meta.yml:top-y
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.8
+    palette:
+      - SOCOTRA: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - SOCOTRA_SLANT: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  landforms:
+    - BOULDERS_FLAT
+    - SMALL_BOULDER_PATCHES_FLAT
+  flora:
+    - GRASS
+    - DEAD_BUSHES
+    - CACTUS_SPARSE
+    - DENSE_DRY_GRASS
+  trees:
+    - OAK_BUSHES
+    - SPARSE_OAK_TREES
+    - DRAGON_BLOOD_TREES

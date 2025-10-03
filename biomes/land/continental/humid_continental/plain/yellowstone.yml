@@ -1,0 +1,62 @@
+id: YELLOWSTONE
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_CONTINENTAL_HUMID
+  - EQ_MULTI_TERRACED_LAND
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:YELLOWSTONE
+
+# TODO - This biome needs fixing
+
+tags:
+  - LAND_CAVES
+  - USE_RIVER_TEMPERATE_MARSH
+
+vanilla: minecraft:taiga
+
+colors:
+  grass: 0x91bd59
+  foliage: 0x77ab2f
+  water: 0x44aff5
+  water-fog: 0x44aff5
+
+palette:
+  - YELLOWSTONE_WATER: $meta.yml:top-y
+  - CALCITE: ${meta.yml:ocean-level} + 11
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.55
+    palette:
+      - YELLOWSTONE: $meta.yml:top-y
+      - CALCITE: ${meta.yml:ocean-level} + 11
+      - << meta.yml:palette-bottom
+  - threshold: 0.5
+    palette:
+      - YELLOWSTONE_RED_SAND: $meta.yml:top-y
+      - CALCITE: ${meta.yml:ocean-level} + 11
+      - << meta.yml:palette-bottom
+  - threshold: 0.45
+    palette:
+      - YELLOWSTONE_BASALT: $meta.yml:top-y
+      - CALCITE: ${meta.yml:ocean-level} + 11
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:calcite: $meta.yml:top-y
+      - CALCITE: ${meta.yml:ocean-level} + 3
+      - << meta.yml:palette-bottom
+
+slant-depth: 12
+
+features:
+  flora:
+    - GRASS
+    - POPPY_PATCH
+    - DANDELION_PATCH
+  trees:
+    - SPARSE_OAK_TREES
+    - SPARSE_FALLEN_OAK_TREES

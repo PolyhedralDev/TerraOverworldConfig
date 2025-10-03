@@ -1,0 +1,31 @@
+id: BADLANDS
+type: BIOME
+extends:
+  - COLOR_XERIC
+  - ENVIRONMENT_LAND_DRY_RED_DESERT
+  - EQ_STRATIFIED_LAND
+  - CARVING_LAND
+  - ORES_GOLD
+  - BASE
+color: $biomes/colors.yml:BADLANDS
+
+vanilla: minecraft:badlands
+
+tags:
+  - LAND_CAVES
+  - USE_RED_DESERT_RIVER
+
+palette:
+  - RED_SAND: $meta.yml:top-y
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.4
+    palette:
+      - BADLANDS_STRATA: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - CACTUS_SPARSE
+    - DRY_GRASS

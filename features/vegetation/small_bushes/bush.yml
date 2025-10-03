@@ -1,0 +1,42 @@
+id: BUSH
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 3456
+  threshold: 0.05
+
+locator:
+  type: AND
+  locators:
+    - type: SURFACE
+      range: &range
+        min: ${meta.yml:ocean-level} + 1
+        max: $meta.yml:top-y
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: OR
+        patterns:
+          - type: MATCH_SET
+            blocks: $features/vegetation/meta.yml:dry-plantable-blocks
+            offset: -1
+          - type: MATCH_SET
+            blocks:
+              - minecraft:grass_block
+              - minecraft:moss_block
+              - minecraft:mycelium
+              - minecraft:podzol
+              - minecraft:dirt
+              - minecraft:coarse_dirt
+              - minecraft:rooted_dirt
+              - minecraft:mud
+            offset: -1
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures:
+    - BLOCK:minecraft:bush: 1

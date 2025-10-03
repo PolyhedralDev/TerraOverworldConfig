@@ -1,0 +1,32 @@
+id: EQ_LAND
+type: BIOME
+abstract: true
+
+vars: &variables
+  base: $customization.yml:terrain-base-y-level
+  scale: $customization.yml:terrain-height
+
+terrain:
+  sampler:
+    type: EXPRESSION
+    expression: -y + base + lerp(overhangsMask(x, y, z), 0, 0, 1, overhangs(x, y*3, z) * 20)
+    variables: *variables
+    samplers:
+      overhangsMask:
+        dimensions: 3
+        type: OPEN_SIMPLEX_2
+        frequency: 0.002
+        salt: 8481
+      overhangs:
+        dimensions: 3
+        type: FBM
+        octaves: 3
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.01
+          salt: 4957
+
+  sampler-2d:
+    type: EXPRESSION
+    expression: scale * elevationDetailed(x, z)
+    variables: *variables

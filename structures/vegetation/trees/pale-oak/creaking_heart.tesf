@@ -1,0 +1,23 @@
+str blockID = "minecraft:creaking_heart[creaking_heart_state=dormant,natural=true]";
+// Comment the line above and uncomment the line below if prior to 1.21.5
+// str blockID = "minecraft:creaking_heart[active=true,natural=true]";
+
+num loc = randomInt(4);
+num x = 0;
+num z = 0;
+
+if (loc == 1 ||
+    loc == 3
+) x = 1;
+if (loc == 2 ||
+    loc == 3
+) z = 1;
+
+str checkBlockID = getBlock(x, 1, z);
+if (checkBlockID != "minecraft:pale_oak_wood" &&
+    checkBlockID != "minecraft:pale_oak_log") block(x, 1, z, "minecraft:pale_oak_wood");
+checkBlockID = getBlock(x, -1, z);
+if (checkBlockID != "minecraft:pale_oak_wood" &&
+    checkBlockID != "minecraft:pale_oak_log") block(x, -1, z, "minecraft:pale_oak_wood");
+
+block(x, 0, z, blockID, true, true);

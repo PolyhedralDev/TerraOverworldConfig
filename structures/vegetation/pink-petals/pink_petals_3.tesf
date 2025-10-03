@@ -1,0 +1,9 @@
+str blockID = "minecraft:pink_petals[flower_amount=3,";
+
+num dir = sampler("positiveWhiteNoise", originX(), originZ());
+if (dir < 0.25) blockID = blockID + "facing=north]";
+else if (dir < 0.5) blockID = blockID + "facing=east]";
+else if (dir < 0.75) blockID = blockID + "facing=west]";
+else blockID = blockID + "facing=south]";
+
+block(0, 0, 0, blockID);

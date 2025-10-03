@@ -1,0 +1,37 @@
+id: EQ_FLAT_ERODED
+type: BIOME
+abstract: true
+
+# Flat terrain that also erodes surrounding terrain.
+
+terrain:
+  sampler:
+    type: MUL
+    left:
+      type: EXPRESSION
+      variables:
+        erosion: 100 # Strength of erosion
+        erosionYMax: ${customization.yml:terrain-base-y-level} + 65 # The height that erosion is capped by
+        erosionYMid: ${customization.yml:terrain-base-y-level} + 10 # The height that erosion is strongest
+        erosionYMin: ${customization.yml:terrain-base-y-level} # The height that erosion starts
+      expression: |
+        noise(x,y,z)
+        // Erode
+        -|erosion(x,y/3,z)|
+        * erosion
+        * max(0, min((y-erosionYMin)/(erosionYMid-erosionYMin),(y-erosionYMax)/(erosionYMid-erosionYMax)))
+      samplers:
+        erosion:
+          dimensions: 3
+          type: OPEN_SIMPLEX_2
+          frequency: 0.03
+        noise: $biomes/abstract/terrain/land/legacy/eq_flat.yml:terrain.sampler
+    right:
+      type: CONSTANT
+      value: 5
+  sampler-2d:
+    type: MUL
+    left: $biomes/abstract/terrain/land/legacy/eq_flat.yml:terrain.sampler-2d
+    right:
+      type: CONSTANT
+      value: 5

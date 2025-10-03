@@ -1,0 +1,30 @@
+id: SALT_FLATS
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_DRY_DESERT
+  - EQ_CRACKED_FLATS
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:SALT_FLATS
+
+vanilla: minecraft:desert
+
+tags:
+  - LAND_CAVES
+  - USE_DESERT_RIVER
+
+particles:
+  particle: minecraft:poof
+  probability: 0.0002
+
+palette:
+  - SALT: $meta.yml:top-y
+  - CALCITE_DIORITE_MIX: ${meta.yml:ocean-level} + 2
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - << meta.yml:palette-bottom

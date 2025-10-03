@@ -3,24 +3,24 @@ num goldenAngle = 2.39996;
 num pi = 3.14159;
 num twopi = 6.28318530718;
 
-num trunkHeight = 4+randomInt(15);
+num trunkHeight = 4 + randomInt(15);
 str trunkBlock = "minecraft:oak_log";
 str rootBlockX = "minecraft:oak_wood[axis=x]";
 str rootBlockZ = "minecraft:oak_wood[axis=z]";
 
-num sideBranchInterval = 3+randomInt(2);
-num sideBranchMinHeight = 2+randomInt(3);
-num sideBranchLengthMin = 4+randomInt(2);
+num sideBranchInterval = 3 + randomInt(2);
+num sideBranchMinHeight = 2 + randomInt(3);
+num sideBranchLengthMin = 4 + randomInt(2);
 num sideBranchLengthVariation = 2;
 num sideBranchVerticalVariation = 0;
-num sideBranchVerticalDirection = 1+randomInt(randPrecision)/randPrecision/2;
+num sideBranchVerticalDirection = 1 + randomInt(randPrecision) / randPrecision / 2;
 str sideBranchBlockX = "minecraft:oak_log[axis=x]";
 str sideBranchBlockY = "minecraft:oak_log[axis=y]";
 str sideBranchBlockZ = "minecraft:oak_log[axis=z]";
 
-num topBranches = 4+randomInt(5);
-num topBranchLengthUpwardsMin = 16+randomInt(2);
-num topBranchLengthOutwardsMin = 9+randomInt(6);
+num topBranches = 4 + randomInt(5);
+num topBranchLengthUpwardsMin = 16 + randomInt(2);
+num topBranchLengthOutwardsMin = 9 + randomInt(6);
 num topBranchVerticalDirection = 1;
 str topBranchBlockX = "minecraft:oak_log[axis=x]";
 str topBranchBlockY = "minecraft:oak_log[axis=y]";
@@ -31,52 +31,52 @@ num roots = 3;
 num rootMaxDepth = 3;
 num rootHeight = 3;
 num rootLength = 4;
-num rootAngle = randomInt(randPrecision)/randPrecision*2*pi;
+num rootAngle = randomInt(randPrecision) / randPrecision * 2 * pi;
 for (num r = 0; r < roots; r = r + 1) {
     num dx = sin(rootAngle);
     num dz = cos(rootAngle);
     str rootBlock = rootBlockX;
     if (abs(dz) > abs(dx)) rootBlock = rootBlockZ;
     for (num l = 0; l <= rootLength; l = l + 1) {
-        num height = rootHeight * (1-(l/rootLength));
+        num height = rootHeight * (1 - (l / rootLength));
         bool bottomedOut = false;
         for (num h = height; h >= -rootMaxDepth; h = h - 1) {
-            if (check(round(l*dx),round(h),round(l*dz)) != "AIR") {
+            if (check(round(l * dx), round(h), round(l * dz)) != "AIR") {
                 bottomedOut = true;
                 break;
             }
-            block(l*dx, h, l*dz, rootBlock);
+            block(l * dx, h, l * dz, rootBlock);
         }
         if (!bottomedOut) break;
     }
     rootAngle = rootAngle + goldenAngle;
 }
 
-num branchAngle = randomInt(randPrecision)/randPrecision*2*pi;
+num branchAngle = randomInt(randPrecision) / randPrecision * 2 * pi;
 for (num i = 0; i < trunkHeight; i = i + 1) {
     if (i > sideBranchMinHeight) {
         if (i % sideBranchInterval == 0) {
             // Branch direction vector
             num dx = sin(branchAngle);
-            num dy = sideBranchVerticalDirection + randomInt(randPrecision)/randPrecision*sideBranchVerticalVariation;
+            num dy = sideBranchVerticalDirection + randomInt(randPrecision) / randPrecision * sideBranchVerticalVariation;
             num dz = cos(branchAngle);
             // Normalize vector
-            num mag = sqrt(pow(dx,2)+pow(dy,2)+pow(dz,2));
-            dx = dx/mag;
-            dy = dy/mag;
-            dz = dz/mag;
+            num mag = sqrt(pow(dx, 2) + pow(dy, 2) + pow(dz, 2));
+            dx = dx / mag;
+            dy = dy / mag;
+            dz = dz / mag;
             // Branch origin
             num ox = 0;
             num oy = i;
             num oz = 0;
             // Set branch block based on largest unsigned vector component
             str branchBlock = sideBranchBlockY;
-            if (abs(dx) > max(abs(dy),abs(dz))) branchBlock = sideBranchBlockX;
-            else if (abs(dz) > max(abs(dy),abs(dx))) branchBlock = sideBranchBlockZ;
-            num branchLength = sideBranchLengthMin + randomInt(randPrecision)/randPrecision*sideBranchLengthVariation;
+            if (abs(dx) > max(abs(dy), abs(dz))) branchBlock = sideBranchBlockX;
+            else if (abs(dz) > max(abs(dy), abs(dx))) branchBlock = sideBranchBlockZ;
+            num branchLength = sideBranchLengthMin + randomInt(randPrecision) / randPrecision * sideBranchLengthVariation;
             // Generate branch
             for (num l = 0; l <= branchLength; l = l + 1) {
-                block(l*dx+ox, l*dy+oy, l*dz+oz, branchBlock);
+                block(l * dx + ox, l * dy + oy, l * dz + oz, branchBlock);
             }
             // Rotate angle of next branch
             branchAngle = branchAngle + goldenAngle;
@@ -89,40 +89,40 @@ for (num i = 0; i < trunkHeight; i = i + 1) {
 }
 
 for (num b = 1; b <= topBranches; b = b + 1) {
-    num t = b/topBranches;
-    num ti = 1-t;
+    num t = b / topBranches;
+    num ti = 1 - t;
     // Branch direction vector
     num dx = sin(branchAngle) * t;
     num dy = topBranchVerticalDirection;
     num dz = cos(branchAngle) * t;
     // Normalize vector
-    num mag = sqrt(pow(dx,2)+pow(dy,2)+pow(dz,2));
-    dx = dx/mag;
-    dy = dy/mag;
-    dz = dz/mag;
+    num mag = sqrt(pow(dx, 2) + pow(dy, 2) + pow(dz, 2));
+    dx = dx / mag;
+    dy = dy / mag;
+    dz = dz / mag;
     // Branch origin
     num ox = 0;
     num oy = trunkHeight;
     num oz = 0;
     // Set branch block based on largest unsigned vector component
     str branchBlock = topBranchBlockY;
-    if (abs(dx) > max(abs(dy),abs(dz))) branchBlock = topBranchBlockX;
-    else if (abs(dz) > max(abs(dy),abs(dx))) branchBlock = topBranchBlockZ;
-    num branchLength = topBranchLengthUpwardsMin*ti + topBranchLengthOutwardsMin*t;
+    if (abs(dx) > max(abs(dy), abs(dz))) branchBlock = topBranchBlockX;
+    else if (abs(dz) > max(abs(dy), abs(dx))) branchBlock = topBranchBlockZ;
+    num branchLength = topBranchLengthUpwardsMin * ti + topBranchLengthOutwardsMin * t;
     // Generate branch
     for (num l = 0; l <= branchLength; l = l + 1) {
-        block(l*dx+ox, l*dy+oy, l*dz+oz, branchBlock);
+        block(l * dx + ox, l * dy + oy, l * dz + oz, branchBlock);
 
         num doMoss = randomInt(2);
-        if(doMoss == 0) block(dx*l, trunkHeight+dy*l+1, dz*l, "minecraft:moss_carpet", false);
+        if (doMoss == 0) block(dx * l, trunkHeight + dy * l + 1, dz * l, "minecraft:moss_carpet", false);
     }
     // Rotate angle of next branch
     branchAngle = branchAngle + goldenAngle;
 }
 
 for (num v = 15; v > trunkHeight; v = v - 1) {
-    num rx = sin(randomInt(100)/100 * twopi) * (randomInt(5) + 2);
-    num rz = cos(randomInt(100)/100 * twopi) * (randomInt(5) + 2);
+    num rx = sin(randomInt(100) / 100 * twopi) * (randomInt(5) + 2);
+    num rz = cos(randomInt(100) / 100 * twopi) * (randomInt(5) + 2);
     structure(rx, v, rz, "place_trunk_vines", "NONE");
     structure(-rx, v, rz, "place_trunk_vines", "NONE");
     structure(rx, v, -rz, "place_trunk_vines", "NONE");

@@ -1,0 +1,33 @@
+id: HYDROTHERMAL_VENTS
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 5
+  padding: 3
+  salt: 5467
+
+locator:
+  type: PATTERN
+  range:
+    min: $meta.yml:bottom-y
+    max: ${meta.yml:ocean-level} - 30
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH_SET
+        blocks:
+          - minecraft:deepslate
+          - minecraft:basalt
+          - minecraft:tuff
+        offset: -1
+      - type: MATCH
+        block: minecraft:water
+        offset: 0
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures:
+    - hydrothermal_vent: 5
+    - blank: 1

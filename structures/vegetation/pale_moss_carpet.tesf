@@ -1,0 +1,35 @@
+str blockID = "minecraft:pale_hanging_moss";
+
+str north = "none";
+str east = "none";
+str south = "none";
+str west = "none";
+
+if (structure(0, 0, -1, "is_pale_oak_trunk", "NONE")) {
+    north = "low";
+    if (structure(0, 1, -1, "is_pale_oak_trunk", "NONE")) north = "tall";
+}
+
+if (structure(1, 0, 0, "is_pale_oak_trunk", "NONE")) {
+    east = "low";
+    if (structure(1, 1, 0, "is_pale_oak_trunk", "NONE")) east = "tall";
+}
+
+
+if (structure(0, 0, 1, "is_pale_oak_trunk", "NONE")) {
+    south = "low";
+    if (structure(0, 1, 1, "is_pale_oak_trunk", "NONE")) south = "tall";
+}
+
+if (structure(-1, 0, 0, "is_pale_oak_trunk", "NONE")) {
+    west = "low";
+    if (structure(-1, 1, 0, "is_pale_oak_trunk", "NONE")) west = "tall";
+}
+
+if (north == "tall") block(0, 1, 0, "minecraft:pale_moss_carpet[bottom=false,north=low]", false);
+if (east == "tall") block(0, 1, 0, "minecraft:pale_moss_carpet[bottom=false,east=low]", false);
+if (south == "tall") block(0, 1, 0, "minecraft:pale_moss_carpet[bottom=false,south=low]", false);
+if (west == "tall") block(0, 1, 0, "minecraft:pale_moss_carpet[bottom=false,west=low]", false);
+
+
+block(0, 0, 0, "minecraft:pale_moss_carpet[north=" + north + ",east=" + east + ",south=" + south + ",west=" + west + "]", false);

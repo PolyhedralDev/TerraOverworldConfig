@@ -1,0 +1,50 @@
+num randPrecision = 100;
+num radius = 5 + randomInt(randPrecision) / randPrecision * 3;
+num warp = 3;
+num warpFreq = 4;
+num squish = 1 + randomInt(randPrecision) / randPrecision;
+num radiusSquared = pow(radius, 2);
+num yTranslate = 0;
+
+if (!structure(radius, -radius / squish, 0, "is_rock", "NONE") ||
+    !structure(-radius, -radius / squish, 0, "is_rock", "NONE") ||
+    !structure(0, -radius / squish, radius, "is_rock", "NONE") ||
+    !structure(0, -radius / squish, -radius, "is_rock", "NONE") ||
+    getBlock(radius, radius / squish, 0) == "minecraft:water" ||
+    getBlock(-radius, radius / squish, 0) == "minecraft:water" ||
+    getBlock(0, radius / squish, radius) == "minecraft:water" ||
+    getBlock(0, radius / squish, -radius) == "minecraft:water"
+) fail;
+
+for (num x = -radius - warp; x < radius + warp; x = x + 1) {
+    for (num y = (-radius - warp) / squish; y < (radius + warp) / squish; y = y + 1) {
+        for (num z = -radius - warp; z < radius + warp; z = z + 1) {
+            num warpX = warp * sampler("simplex3",
+                warpFreq * (x + originX()),
+                warpFreq * (y + originY() + 1000),
+                warpFreq * (z + originZ()));
+            num warpY = warp * sampler("simplex3",
+                warpFreq * (x + originX()),
+                warpFreq * (y + originY() + 2000),
+                warpFreq * (z + originZ()));
+            num warpZ = warp * sampler("simplex3",
+                warpFreq * (x + originX()),
+                warpFreq * (y + originY() + 3000),
+                warpFreq * (z + originZ()));
+            if (pow(x + warpX, 2) + pow((y + warpY) * squish, 2) + pow(z + warpZ, 2) < radiusSquared && y < 0) {
+                str setBlock = "minecraft:stone";
+                if (originY() < 10) setBlock = "minecraft:deepslate";
+                if (randomInt(2) == 0) setBlock = "minecraft:magma_block";
+                if (getBlock(x, y + yTranslate, z) != "minecraft:air") block(x, y + yTranslate, z, setBlock, true);
+            }
+
+            if (pow(x + warpX, 2) + pow((y + warpY) * squish, 2) + pow(z + warpZ, 2) < (radiusSquared - 20) && y < 0) {
+                block(x, y + yTranslate, z, "minecraft:lava", true, true);
+            }
+
+            if (pow(x + warpX, 2) + pow((y + warpY) * squish, 2) + pow(z + warpZ, 2) < (radiusSquared - 15) && y >= 0) {
+                block(x, y + yTranslate, z, "minecraft:air", true);
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+num randPrecision = 100;
+
+num length = 5 + randomInt(8);
+num trunkRadius = 1;
+num buffer = 3;
+num scanOffset = 5;
+
+num mushroomChance = 8;
+
+// Direction vector
+num dx = (randomInt(randPrecision) / randPrecision - 0.5) * 1.5;
+num dz = (randomInt(randPrecision) / randPrecision - 0.5) * 1.5;
+
+num mag = sqrt(pow2(dx) + pow2(dz));
+dx = dx / mag;
+dz = dz / mag;
+
+str woodBlockX = "minecraft:cherry_log[axis=x]";
+str woodBlockY = "minecraft:cherry_log[axis=y]";
+str woodBlockZ = "minecraft:cherry_log[axis=z]";
+
+block(0, 0, 0, woodBlockY, false);
+
+for (num l = buffer; l <= buffer + length; l = l + 1) {
+
+    str setBlock = woodBlockX;
+    if (abs(dx) > abs(dz)) setBlock = woodBlockX;
+    else if (abs(dz) > abs(dx)) setBlock = woodBlockZ;
+
+    num yTranslate = scanOffset;
+    while (check(l * dx, yTranslate - 1, l * dz) != "LAND") yTranslate = yTranslate - 1;
+
+    if (getBlock(l * dx, yTranslate - 1, l * dz) == woodBlockY) continue;
+
+    num r = trunkRadius;
+    // Generate sphere at each point
+    for (num x = -r; x <= r; x = x + 1) {
+        for (num y = -r; y <= r; y = y + 1) {
+            for (num z = -r; z <= r; z = z + 1) {
+                if (pow(x, 2) + pow(y, 2) + pow(z, 2) < pow(r, 2)) {
+                    block(l * dx + x, yTranslate, l * dz + z, setBlock, true);
+                }
+            }
+        }
+    }
+
+    str mushroomBlock = "minecraft:red_mushroom";
+    if (randomInt(2) == 0) mushroomBlock = "minecraft:brown_mushroom";
+    if (randomInt(mushroomChance) == 0) block(l * dx, yTranslate + 1, l * dz, mushroomBlock, false);
+
+}

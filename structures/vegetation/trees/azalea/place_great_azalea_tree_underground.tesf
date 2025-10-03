@@ -9,8 +9,8 @@ if (chunkX < 0) chunkX = chunkX + 16;
 if (chunkZ < 0) chunkZ = chunkZ + 16;
 
 // Calculate the offset from the center of the chunk (randomized around 2x2 center)
-num offsetX = -chunkX+7+randomInt(2);
-num offsetZ = -chunkZ+7+randomInt(2);
+num offsetX = -chunkX + 7 + randomInt(2);
+num offsetZ = -chunkZ + 7 + randomInt(2);
 
 // Place structure in the center of the chunk
 structure(offsetX, 0, offsetZ, "great_azalea_tree_tunnel", "NONE");

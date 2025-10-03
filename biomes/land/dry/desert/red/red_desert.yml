@@ -1,0 +1,20 @@
+id: RED_DESERT
+type: BIOME
+extends: DESERT
+color: $biomes/colors.yml:RED_DESERT
+
+tags:
+  - LAND_CAVES
+  - USE_RED_DESERT_RIVER
+
+palette:
+  - RED_SAND: $meta.yml:top-y
+  - << meta.yml:palette-bottom
+
+features:
+  structures:
+    - MOB_ROOMS
+    - RED_DESERT_WELLS
+    - SPARSE_FOSSILS
+  flora:
+    - DRY_GRASS

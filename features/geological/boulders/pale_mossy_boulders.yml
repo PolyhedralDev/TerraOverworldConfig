@@ -1,0 +1,20 @@
+id: PALE_MOSSY_BOULDERS
+type: FEATURE
+extends: BOULDER_SURFACE_LOCATOR
+
+distributor:
+  type: PADDED_GRID
+  width: 27
+  padding: 11
+  salt: 4532
+
+locator:
+  type: SURFACE
+  range:
+    min: ${meta.yml:ocean-level} + 3
+    max: $meta.yml:top-y
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: pale_mossy_boulder

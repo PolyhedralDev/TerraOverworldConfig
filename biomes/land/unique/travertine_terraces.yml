@@ -1,0 +1,27 @@
+id: TRAVERTINE_TERRACES
+type: BIOME
+extends:
+  - EQ_TRAVERTINE_TERRACES
+  - ENVIRONMENT_LAND_TEMPERATE_OCEANIC
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:TRAVERTINE_TERRACES
+
+colors:
+  water: 0x76ddff
+
+vanilla: minecraft:river
+
+tags:
+  - USE_RIVER
+
+palette:
+  - BLOCK:minecraft:calcite: $meta.yml:top-y
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+features:
+  preprocessors:
+    - TRAVERTINE_WATER
+  postprocessors:
+    - TRAVERTINE_WATERFALLS

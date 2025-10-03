@@ -1,0 +1,32 @@
+id: FROZEN_BEACH
+type: BIOME
+extends:
+  - COLOR_FROZEN
+  - ENVIRONMENT_LAND_MARITIME_FROZEN
+  - EQ_FLAT_ERODED
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:FROZEN_BEACH
+
+vanilla: minecraft:snowy_beach
+
+tags:
+  - LAND_CAVES
+  - ICE_CAVES
+  - USE_FROZEN_RIVER_FROZEN_MARSH
+
+ocean:
+  palette: FROZEN_OCEAN
+
+palette:
+  - SNOW: $meta.yml:top-y
+  - SANDY_BEACH: $meta.yml:ocean-level
+  - << meta.yml:palette-bottom
+
+features:
+  slabs:
+    - SNOW_LAYERS
+  preprocessors:
+    - ICE_COASTLINE
+  postprocessors:
+    - TREE_SNOW

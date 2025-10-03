@@ -1,0 +1,8 @@
+id: TROPICAL_DEEP_OCEAN
+type: BIOME
+extends:
+  - EQ_GLOBAL_OCEAN
+  - TROPICAL_OCEAN
+color: $biomes/colors.yml:TROPICAL_DEEP_OCEAN
+
+vanilla: minecraft:warm_ocean

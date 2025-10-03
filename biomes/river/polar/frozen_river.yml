@@ -1,0 +1,35 @@
+id: FROZEN_RIVER
+type: BIOME
+extends:
+  - COLOR_FROZEN
+  - RIVER_FROZEN
+  - ENVIRONMENT_MARINE_RIVER_FROZEN
+  - EQ_GLOBAL_RIVER
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:FROZEN_RIVER
+
+vanilla: minecraft:frozen_river
+
+ocean:
+  palette: FROZEN_OCEAN
+
+palette:
+  - SNOW: $meta.yml:top-y
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.3
+    palette:
+      - << meta.yml:palette-slant-generic
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+
+features:
+  slabs:
+    - SNOW_LAYERS
+  preprocessors:
+    - ICE_COASTLINE
+  postprocessors:
+    - TREE_SNOW

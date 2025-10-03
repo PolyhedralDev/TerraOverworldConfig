@@ -1,0 +1,40 @@
+id: FROZEN_MARSH
+type: BIOME
+extends:
+  - COLOR_FROZEN
+  - ENVIRONMENT_LAND_MARITIME_FROZEN
+  - EQ_WARPED_WETLANDS
+  - CARVING_OCEAN
+  - BASE
+color: $biomes/colors.yml:FROZEN_MARSH
+
+vanilla: minecraft:frozen_river
+
+tags:
+  - LAND_CAVES
+  - ICE_CAVES
+  - USE_FROZEN_RIVER_FROZEN_MARSH
+
+ocean:
+  palette: FROZEN_OCEAN
+
+palette:
+  - GRASS: $meta.yml:top-y
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  slabs:
+    - SNOW_LAYERS
+  preprocessors:
+    - ICE_COASTLINE
+  postprocessors:
+    - TREE_SNOW
+  flora:
+    - TALL_GRASS

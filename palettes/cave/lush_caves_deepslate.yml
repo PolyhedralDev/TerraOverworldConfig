@@ -3,12 +3,13 @@ type: PALETTE
 
 layers:
   - materials:
-      - minecraft:deepslate: 2
-      - minecraft:moss_block: 4
-      - minecraft:clay: 3
+      - minecraft:deepslate: 1
+      - minecraft:moss_block: 6
+      - minecraft:clay: 5
     layers: 2
   - materials:
-      - minecraft:stone: 1
+      - minecraft:deepslate: 1
+      - minecraft:moss_block: 6
     layers: 1
 
 sampler:
