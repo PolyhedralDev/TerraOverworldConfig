@@ -13,60 +13,71 @@ spawning:
       entries:
         - type:
             id: minecraft:bat
-          min-group-size: 8
-          max-group-size: 8
+          group-size:
+            min: 8
+            max: 8
           weight: 10
     - group: MONSTER
       entries:
         - type:
             id: minecraft:spider
-          min-group-size: 4
-          max-group-size: 4
+          group-size:
+            min: 4
+            max: 4
           weight: 100
         - type:
             id: minecraft:zombie
-          min-group-size: 4
-          max-group-size: 4
+          group-size:
+            min: 4
+            max: 4
           weight: 95
         - type:
             id: minecraft:zombie_villager
-          min-group-size: 1
-          max-group-size: 1
+          group-size:
+            min: 1
+            max: 1
           weight: 5
         - type:
             id: minecraft:skeleton
-          min-group-size: 4
-          max-group-size: 4
+          group-size:
+            min: 4
+            max: 4
           weight: 100
         - type:
             id: minecraft:creeper
-          min-group-size: 4
-          max-group-size: 4
+          group-size:
+            min: 4
+            max: 4
           weight: 100
         - type:
             id: minecraft:slime
-          min-group-size: 4
-          max-group-size: 4
+          group-size:
+            min: 4
+            max: 4
           weight: 100
         - type:
             id: minecraft:enderman
-          min-group-size: 1
-          max-group-size: 4
+          group-size:
+            min: 1
+            max: 4
           weight: 5
         - type:
             id: minecraft:witch
-          min-group-size: 1
-          max-group-size: 1
+          group-size:
+            min: 1
+            max: 1
           weight: 5
         - type:
             id: minecraft:creaking
-          min-group-size: 1
-          max-group-size: 4
+          group-size:
+            min: 1
+            max: 4
           weight: 15
     - group: UNDERGROUND_WATER_CREATURE
       entries:
         - type:
             id: minecraft:glow_squid
-          min-group-size: 4
-          max-group-size: 6
+          group-size:
+            min: 4
+            max: 6
           weight: 10
