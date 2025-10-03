@@ -7,7 +7,7 @@ extends:
   - ORES_EMERALD
   - DEPOSITS_INFESTED
   - BASE
-color: $biomes/colors.yml:OVERGROWN_CLIFFS
+color: $biomes/colors.yml:CLOUD_FOREST
 
 vanilla: minecraft:jungle
 

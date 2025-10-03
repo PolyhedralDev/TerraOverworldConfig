@@ -6,6 +6,6 @@ extends:
   - EQ_GLOBAL_RIVER
   - CARVING_OCEAN
   - TRAVERTINE_TERRACES
-color: $biomes/colors.yml:TROPICAL_RIVER
+color: $biomes/colors.yml:TRAVERTINE_TERRACES_RIVER
 
 vanilla: minecraft:river

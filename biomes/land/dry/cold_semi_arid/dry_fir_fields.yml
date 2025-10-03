@@ -5,7 +5,7 @@ extends:
   - EQ_LAND
   - CARVING_LAND
   - BASE
-color: $biomes/colors.yml:COLD_STEPPE
+color: $biomes/colors.yml:DRY_FIR_FIELDS
 
 tags:
   - LAND_CAVES

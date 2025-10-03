@@ -3,3 +3,6 @@ type: BIOME
 extends:
   - FROZEN_OCEAN
   - EQ_SHALLOW_OCEAN
+color: $biomes/colors.yml:FROZEN_ISLAND_SHALLOWS
+
+vanilla: minecraft:frozen_ocean

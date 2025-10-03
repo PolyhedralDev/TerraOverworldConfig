@@ -5,7 +5,7 @@ extends:
   - EQ_MULTI_TERRACED_LAND
   - CARVING_LAND
   - BASE
-color: $biomes/colors.yml:TEMPERATE_RAINFOREST
+color: $biomes/colors.yml:TEMPERATE_MONTANE_RAINFOREST
 
 tags:
   - LAND_CAVES

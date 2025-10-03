@@ -5,7 +5,7 @@ extends:
   - EQ_LAND
   - CARVING_LAND
   - BASE
-color: $biomes/colors.yml:TEMPERATE_GRASSLAND
+color: $biomes/colors.yml:ROCKY_GRASSLAND
 
 tags:
   - LAND_CAVES

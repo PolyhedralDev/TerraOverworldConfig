@@ -1,4 +1,4 @@
-id: PALM_FOREST
+id: DRY_PALM_FOREST
 type: BIOME
 extends:
   - COLOR_XERIC
@@ -6,7 +6,7 @@ extends:
   - EQ_BUTTES
   - CARVING_LAND
   - BASE
-color: $biomes/colors.yml:DRY_WOODLANDS
+color: $biomes/colors.yml:DRY_PALM_FOREST
 
 vanilla: minecraft:savanna
 

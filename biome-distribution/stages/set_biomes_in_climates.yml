@@ -197,6 +197,7 @@ stages:
       temperate-hot-dry:
         - CHAPARRAL: 1
         - MOORLAND: 1
+        - PALM_FORREST: 1
       temperate-hot-dry-highlands:
         - DRY_TEMPERATE_MOUNTAINS: 1
         - DRY_TEMPERATE_WHITE_MOUNTAINS: 1
@@ -208,13 +209,14 @@ stages:
       temperate-warm-dry:
         - CHAPARRAL: 1
         - MOORLAND: 1
+        - PALM_FORREST: 1
       temperate-warm-dry-highlands:
         - DRY_TEMPERATE_MOUNTAINS: 1
         - DRY_TEMPERATE_WHITE_MOUNTAINS: 1
 
       temperate-hot-flat:
         - MOORLAND: 1
-        - ALIEN_MARSH: 1
+        - PALM_FORREST: 1
         - TEMPERATE_RAINFOREST: 1
         - ROCKY_GRASSLAND: 1
         - OAK_FOREST: 1
@@ -365,24 +367,24 @@ stages:
       # Orange hot steppe
       hot-steppe-flat-orange:
         - XERIC_SHRUBLAND: 1
-        - PALM_FOREST: 1
+        - DRY_PALM_FOREST: 1
       hot-steppe-orange:
         - XERIC_SHRUBLAND: 1
-        - PALM_FOREST: 1
+        - DRY_PALM_FOREST: 1
       hot-steppe-highlands-orange:
         - XERIC_MOUNTAINS: 1
-        - PALM_FOREST: 1
+        - DRY_PALM_FOREST: 1
 
       # White hot steppe
       hot-steppe-flat-white:
         - XERIC_SHRUBLAND: 1
         - TAR_PITS: 1
-        - PALM_FOREST: 1
+        - DRY_PALM_FOREST: 1
         - FIRMIHIN_FOREST: 1
       hot-steppe-white:
         - XERIC_SHRUBLAND: 1
         - TAR_PITS: 1
-        - PALM_FOREST: 1
+        - DRY_PALM_FOREST: 1
         - FIRMIHIN_FOREST: 1
       hot-steppe-highlands-white:
         - XERIC_MOUNTAINS: 1

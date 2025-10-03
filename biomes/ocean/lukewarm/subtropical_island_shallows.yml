@@ -3,3 +3,6 @@ type: BIOME
 extends:
   - SUBTROPICAL_OCEAN
   - EQ_SHALLOW_OCEAN
+color: $biomes/colors.yml:SUBTROPICAL_ISLAND_SHALLOWS
+
+vanilla: minecraft:lukewarm_ocean
