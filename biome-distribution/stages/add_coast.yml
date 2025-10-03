@@ -20,5 +20,5 @@ stages:
       SELF: 1
     sampler:
       type: OPEN_SIMPLEX_2
-      frequency: 1 / 300 / ${customization.yml:global-scale}
+      frequency: 1 / 150 / ${customization.yml:global-scale}
       salt: 1023

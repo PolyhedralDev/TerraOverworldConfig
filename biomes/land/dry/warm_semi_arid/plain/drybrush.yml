@@ -10,7 +10,7 @@ color: $biomes/colors.yml:DRYBRUSH
 
 tags:
   - LAND_CAVES
-  - USE_RIVER
+  - USE_DESERT_RIVER
 
 vanilla: minecraft:savanna
 

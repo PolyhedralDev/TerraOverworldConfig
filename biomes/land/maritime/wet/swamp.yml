@@ -2,7 +2,7 @@ id: SWAMP
 type: BIOME
 extends:
   - ENVIRONMENT_LAND_MARITIME_WET
-  - EQ_SWAMP
+  - EQ_MANGROVE_SWAMP
   - CARVING_OCEAN
   - BASE
 color: $biomes/colors.yml:SWAMP

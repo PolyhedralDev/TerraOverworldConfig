@@ -55,7 +55,7 @@ terrain-ocean-depth: 100
 # 1 means 100% inland, 0 means the coast, and -1 means 100% ocean.
 # These options are primarily used in the math/samplers/continents.yml config file.
 
-continental-offset: 0
+continental-offset: 0.15
 # Controls the land / ocean ratio.
 # - A value of 0 results in equal land and ocean
 # - A value of 1 results in 100% land
@@ -66,7 +66,7 @@ continental-offset: 0
 # Dividing your desired land percentage by 50 then subtracting 1 will give
 # you the equivalent continental-offset, i.e. land% / 50 - 1 = offset
 #
-# Default: 0.2
+# Default: 0.15
 
 continental-spread: 1
 # Controls how much variation there is in the continental value from
@@ -85,11 +85,11 @@ continental-scale: 2
 # this produces larger landmasses and larger oceans, and vice-versa when
 # decreasing it. This does not control the ratio of land / ocean, for that
 # you should change continental-offset instead.
-# Default: 1
+# Default: 2
 
-continental-coast-width: 20
+continental-coast-width: 15
 # Determines the width of costal biomes in blocks.
-# Default: 20
+# Default: 15
 
 continental-coast-threshold: 0.05
 # Determines how far from a continental value of 0 is considered for calculating 
@@ -200,13 +200,13 @@ flatness-factor: 0.95
 # Temperature
 # ---
 
-temperature-scale: 1
+temperature-scale: 0.95
 # Controls the scale of temperature zones. Most biomes are placed according to
 # a temperature map so hot biomes can't generate next to cold biomes, as well as
 # allowing for biomes of similar temperatures to generate together. Increasing this
 # will increase the distance between temperature changes, which results in things like
 # hot and cold biomes generating further apart - and vice versa when decreasing it.
-# Default: 1
+# Default: 0.95
 
 temperature-min: -1
 # Default: -1
@@ -248,11 +248,11 @@ precipitation-land-threshold: 0.4
 # Variation
 # ---
 
-variation-scale: 1
+variation-scale: 1.5
 # Controls scale of biome variations within each climate zone.
 # Decreasing this will result in more smaller biomes to generate in any given
 # climate, while increasing it will result in larger climate variations.
-# Default: 1
+# Default: 1.5
 
 # ---
 # Caves
@@ -286,11 +286,11 @@ river-spread-scale: 1
 # rivers, smaller scale = closer packed together rivers.
 # Default: 1
 
-river-min-width: 13
+river-min-width: 10
 # Controls in blocks the minimum width of rivers.
 # Default: 13
 
-river-max-width: 30
+river-max-width: 24
 # Controls in blocks the maximum width of rivers.
 # Default: 30
 

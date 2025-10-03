@@ -447,9 +447,9 @@ stages:
         - JUNGLE: 1
         - ROCKY_JUNGLE: 1
         - TROPICAL_RAINFOREST: 1
+        - TROPICAL_FLOODPLAIN: 1
       tropical-rainforest:
         - BAMBOO_JUNGLE: 1
-        - TROPICAL_FLOODPLAIN: 1
         - OVERGROWN_CLIFFS: 1
         - CLOUD_FOREST: 1
         - TROPICAL_RAINFOREST: 1
@@ -490,7 +490,6 @@ stages:
 
       tropical-coast-flat:
         - MUDDY_COASTS: 1
-        - MANGROVE_SWAMP: 1
         - PALM_BEACH: 1
       tropical-coast: LUSH_SEA_CAVES
       tropical-coast-highlands: LUSH_SEA_CAVES
