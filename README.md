@@ -1,6 +1,6 @@
 # Terra Overworld Config
 
-The default overworld configuration for Terra 6.0+, containing over _140_ different biomes.
+The default overworld configuration for Terra 7.0+, containing over _200_ different biomes.
 
 You can find Terra - the main project this config pack is designed for
 [here](https://github.com/PolyhedralDev/Terra).
