@@ -40,28 +40,26 @@ generate in an area where it previously did not (resulting in a chunk border).
 ---
 
 ## [Unreleased]
-
 ### Added
 
-- Added cold steppe.
-- Added the spawn island, a flattened landmass at 0,0 that guarantees the world spawn is on land.
 
 ### Changed
 
-- Reworked terrain to use a global heightmap.
-- Reworked biome distribution to be based on
-  the [Koppen Climate Classification](https://en.wikipedia.org/wiki/K%C3%B6ppen_climate_classification)
 
 ### Removed
 
-- Removed elevation biome variants, as biomes now use a global height map for terrain.
 
 ### Fixed
+
 
 <!--
 DO NOT MODIFY TEXT BELOW, CI automatically manages new version sections for each
 new release. Add any new change logs to the [Unreleased] section above instead.
 -->
+
+## [v1.5.2]
+### Fixed
+- Fixed creaking heart block ID on 1.21.5
 
 ## [v1.5.1]
 
@@ -191,8 +189,8 @@ new release. Add any new change logs to the [Unreleased] section above instead.
 
 - Everything
 
-[Unreleased]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.5.1...HEAD
-
+[Unreleased]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.5.2...HEAD
+[v1.5.2]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.5.1...v1.5.2
 [v1.5.1]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.5.0...v1.5.1
 
 [v1.3.4]: https://github.com/PolyhedralDev/TerraOverworldConfig/compare/v1.3.3...v1.3.4
