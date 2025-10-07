@@ -112,7 +112,7 @@ continental-coast-threshold: 0.05
 # correspons to the highest elevation.
 # These options are primarily used in the math/samplers/elevation.yml config file.
 
-elevation-scale: 1
+elevation-scale: 1.05
 # Controls the scale of the elevation noise map. A larger scale results in larger distances
 # between aspects like mountain ranges and flat areas. If you want more gradual changes in
 # elevation, you can increase this. Conversely, if you want more sudden changes in elevation,
@@ -183,10 +183,10 @@ elevation-fuzz: 0.25
 # Flatness
 # ---
 
-flatness-scale: 1
+flatness-scale: 1.05
 # Default: 1
 
-flatness-percent: 0.25
+flatness-percent: 0.26
 # Default: TODO
 
 flatness-blend: 0.35
@@ -200,7 +200,7 @@ flatness-factor: 0.95
 # Temperature
 # ---
 
-temperature-scale: 0.95
+temperature-scale: 0.96
 # Controls the scale of temperature zones. Most biomes are placed according to
 # a temperature map so hot biomes can't generate next to cold biomes, as well as
 # allowing for biomes of similar temperatures to generate together. Increasing this
@@ -208,7 +208,7 @@ temperature-scale: 0.95
 # hot and cold biomes generating further apart - and vice versa when decreasing it.
 # Default: 0.95
 
-temperature-min: -1
+temperature-min: -1.04
 # Default: -1
 
 temperature-max: 1
