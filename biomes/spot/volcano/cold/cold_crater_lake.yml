@@ -1,0 +1,14 @@
+id: COLD_CRATER_LAKE
+type: BIOME
+extends:
+  - CARVING_NONE
+  - COLD_EXTINCT_VOLCANO
+color: $biomes/colors.yml:COLD_CRATER_LAKE
+
+vanilla: minecraft:frozen_peaks
+
+features:
+  preprocessors:
+    - VOLCANO_WATER
+    - ICE_LAKE
+    - ICE_COASTLINE

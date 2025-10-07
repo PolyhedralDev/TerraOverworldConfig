@@ -1,0 +1,12 @@
+id: DESERT_CRATER_LAKE
+type: BIOME
+extends:
+  - CARVING_NONE
+  - DESERT_EXTINCT_VOLCANO
+color: $biomes/colors.yml:DESERT_CRATER_LAKE
+
+vanilla: minecraft:desert
+
+features:
+  preprocessors:
+    - VOLCANO_WATER

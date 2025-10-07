@@ -1,0 +1,24 @@
+id: ICE_LAKE
+type: FEATURE
+
+distributor:
+  type: "YES"
+
+locator:
+  type: PATTERN
+  range:
+    min: ${meta.yml:ocean-level} + 3
+    max: $meta.yml:top-y
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH
+        block: minecraft:water
+        offset: 0
+      - type: MATCH_AIR
+        offset: 1
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: BLOCK:minecraft:blue_ice

@@ -1,0 +1,13 @@
+id: DESERT_EXTINCT_VOLCANO
+type: BIOME
+extends:
+  - EQ_VOLCANO
+  - CARVING_OCEAN
+  - ROCKY_DESERT
+  - BASE
+color: $biomes/colors.yml:DESERT_EXTINCT_VOLCANO
+
+vanilla: minecraft:desert
+
+tags:
+  - USE_DESERT_RIVER

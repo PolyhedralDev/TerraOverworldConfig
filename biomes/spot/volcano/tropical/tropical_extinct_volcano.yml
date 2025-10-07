@@ -1,0 +1,13 @@
+id: TROPICAL_EXTINCT_VOLCANO
+type: BIOME
+extends:
+  - EQ_VOLCANO
+  - CARVING_OCEAN
+  - JUNGLE
+  - BASE
+color: $biomes/colors.yml:TROPICAL_EXTINCT_VOLCANO
+
+vanilla: minecraft:jungle
+
+tags:
+  - USE_TROPICAL_RIVER

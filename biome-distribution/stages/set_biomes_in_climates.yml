@@ -14,7 +14,9 @@ stages:
         - LAND_GLACIER: 1
         - SNOWY_TUFF_MOUNTAINS: 1
       ice-cap-highlands:
+        - SNOWY_TUFF_MOUNTAINS: 1
         - SNOWY_BLACKSTONE_MOUNTAINS: 1
+        - ICE_CAPS: 4
 
       tundra-flat:
         - TUNDRA: 1
@@ -22,6 +24,7 @@ stages:
         - TUNDRA: 1
       tundra-highlands:
         - SNOWY_TUFF_MOUNTAINS: 1
+        - SNOWY_BLACKSTONE_MOUNTAINS: 1
 
       polar-coast-flat:
         - FROZEN_BEACH: 1
@@ -34,10 +37,10 @@ stages:
         - COLD_DESERT_MESA: 1
 
       polar-crater-lake:
-        - todo: 1
+        - COLD_CRATER_LAKE: 1
 
       polar-extinct-volcano:
-        - todo: 1
+        - COLD_EXTINCT_VOLCANO: 1
 
       polar-shallow-ocean:
         - FROZEN_OCEAN: 1
@@ -173,10 +176,10 @@ stages:
         - BOREAL_MESA: 1
 
       boreal-crater-lake:
-        - todo: 1
+        - BOREAL_CRATER_LAKE: 1
 
       boreal-extinct-volcano:
-        - todo: 1
+        - BOREAL_EXTINCT_VOLCANO: 1
 
       boreal-shallow-ocean:
         - KELP_FOREST_GRAVEL: 1
@@ -422,10 +425,10 @@ stages:
         - COLD_DESERT_MESA: 1
 
       cold-desert-crater-lake:
-        - todo: 1
+        - COLD_CRATER_LAKE: 1
 
       cold-desert-extinct-volcano:
-        - todo: 1
+        - COLD_EXTINCT_VOLCANO: 1
 
       arid-coast-flat:
         - BLACK_SAND_BEACH: 1
@@ -439,10 +442,10 @@ stages:
         - DESERT_MESA: 1
 
       desert-crater-lake:
-        - todo: 1
+        - DESERT_CRATER_LAKE: 1
 
       desert-extinct-volcano:
-        - todo: 1
+        - DESERT_EXTINCT_VOLCANO: 1
 
       tropical-rainforest-flat:
         - BAMBOO_JUNGLE: 1
@@ -500,10 +503,10 @@ stages:
         - TROPICAL_MESA: 1
 
       tropical-crater-lake:
-        - todo: 1
+        - TROPICAL_CRATER_LAKE: 1
 
       tropical-extinct-volcano:
-        - todo: 1
+        - TROPICAL_EXTINCT_VOLCANO: 1
 
       hot-shallow-ocean:
         - SHALLOW_CORAL_OCEAN: 1

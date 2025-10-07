@@ -1,0 +1,12 @@
+id: BOREAL_CRATER_LAKE
+type: BIOME
+extends:
+  - CARVING_NONE
+  - BOREAL_EXTINCT_VOLCANO
+color: $biomes/colors.yml:BOREAL_CRATER_LAKE
+
+vanilla: minecraft:taiga
+
+features:
+  preprocessors:
+    - VOLCANO_WATER

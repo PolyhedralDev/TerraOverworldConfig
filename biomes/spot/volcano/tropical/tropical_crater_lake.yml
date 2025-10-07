@@ -1,0 +1,12 @@
+id: TROPICAL_CRATER_LAKE
+type: BIOME
+extends:
+  - CARVING_NONE
+  - TROPICAL_EXTINCT_VOLCANO
+color: $biomes/colors.yml:TROPICAL_CRATER_LAKE
+
+vanilla: minecraft:jungle
+
+features:
+  preprocessors:
+    - VOLCANO_WATER

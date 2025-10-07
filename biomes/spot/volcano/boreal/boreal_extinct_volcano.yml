@@ -1,0 +1,13 @@
+id: BOREAL_EXTINCT_VOLCANO
+type: BIOME
+extends:
+  - EQ_VOLCANO
+  - CARVING_OCEAN
+  - BOREAL_MESA
+  - BASE
+color: $biomes/colors.yml:BOREAL_EXTINCT_VOLCANO
+
+vanilla: minecraft:taiga
+
+tags:
+  - USE_COLD_RIVER

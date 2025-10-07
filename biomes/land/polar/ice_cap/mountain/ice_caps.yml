@@ -1,0 +1,34 @@
+id: ICE_CAPS
+type: BIOME
+extends:
+  - COLOR_FROZEN
+  - ENVIRONMENT_LAND_POLAR_ICE_CAP
+  - EQ_LAND
+  - ORES_EMERALD
+  - DEPOSITS_INFESTED
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:ICE_CAPS
+
+vanilla: minecraft:frozen_peaks
+
+tags:
+  - DEEP_DARK
+
+ocean:
+  palette: FROZEN_OCEAN
+
+palette:
+  - ICE_CAVES: $meta.yml:top-y
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+features:
+  slabs:
+    - STONE_SLABS
+    - SNOW_LAYERS
+  preprocessors:
+    - POWDER_SNOW_DEPOSITS
+    - ICE_COASTLINE
+  postprocessors:
+    - TREE_SNOW

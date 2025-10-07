@@ -38,21 +38,21 @@ stages:
       hot-mesa:
         - desert-mesa: *desert
         - desert-mesa: *desertBorder
-        - temperate-mesa: *semiArid
+        - desert-mesa: *semiArid
         - tropical-mesa: *mid
         - tropical-mesa: *mildlyWet
         - tropical-mesa: *veryWet
       hot-crater-lake:
         - desert-crater-lake: *desert
         - desert-crater-lake: *desertBorder
-        - temperate-crater-lake: *semiArid
+        - desert-crater-lake: *semiArid
         - tropical-crater-lake: *mid
         - tropical-crater-lake: *mildlyWet
         - tropical-crater-lake: *veryWet
       hot-extinct-volcano:
         - desert-extinct-volcano: *desert
         - desert-extinct-volcano: *desertBorder
-        - temperate-extinct-volcano: *semiArid
+        - desert-extinct-volcano: *semiArid
         - tropical-extinct-volcano: *mid
         - tropical-extinct-volcano: *mildlyWet
         - tropical-extinct-volcano: *veryWet
