@@ -9,9 +9,6 @@ color: $biomes/colors.yml:PRISMATIC_SPRING
 
 vanilla: minecraft:taiga
 
-tags:
-  - USE_RIVER
-
 particles:
   particle: minecraft:white_smoke
   probability: 0.001
