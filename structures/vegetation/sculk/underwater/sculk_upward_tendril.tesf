@@ -1,4 +1,4 @@
-num radius = 2 + randomInt(1);
+num radius = 2 + randomInt(2);
 num length = 20 + randomInt(15);
 str tendrilBlock = "minecraft:sculk";
 num endBuffer = length * 0.5;

@@ -10,10 +10,10 @@ else if (stemRand == 2) stemBlock = "minecraft:tube_coral_block";
 else if (stemRand == 3) stemBlock = "minecraft:fire_coral_block";
 else if (stemRand == 4) stemBlock = "minecraft:horn_coral_block";
 
-num stemHeight = randomInt(2) + 1; // Length of main trunk
+num stemHeight = randomInt(3) + 1; // Length of main trunk
 
 // 'Top branch' = branches that stem from the top of the main stem
-num topBranchCount = randomInt(1) + 1; // How many top branches will generate
+num topBranchCount = randomInt(2) + 1; // How many top branches will generate
 num topBranchLengthMin = 2; // Minimum length of each branch
 num topBranchLengthVariation = 2; // Random branch length variation in blocks from 0 - n
 num topBranchVerticalDirection = 0.75; // Roughly how much any given branch will point upwards
