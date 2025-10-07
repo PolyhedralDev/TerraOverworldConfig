@@ -346,21 +346,21 @@ spawn-island-radius-outer: 400
 # Spot biomes are special circular biomes scattered around the world.
 # Examples include volcanoes, prismatic springs, and crater lakes
 
-spot-spread: 2050
+spot-spread: 2150
 # Roughly how many blocks apart each spot biome will be
 # Default: 2220
 
-spot-radius-min: 50
+spot-radius-min: 75
 # Default: 50
 
 spot-radius-max: 150
 # Default: 150
 
-large-spot-spawn-radius-offset: 2000
+large-spot-spawn-radius-offset: 4000
 # Roughly how far large spots will generate away from spawn
 # Default: 2000
 
-large-spot-spread: 2150
+large-spot-spread: 4150
 # Roughly how many blocks apart each spot biome will be
 # Default: 2000
 
