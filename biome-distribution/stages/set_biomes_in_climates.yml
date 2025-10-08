@@ -360,22 +360,22 @@ stages:
 
       # Red hot steppe
       hot-steppe-flat-red:
-        - XERIC_SHRUBLAND: 1
+        - RED_XERIC_SHRUBLAND: 1
       hot-steppe-red:
-        - XERIC_SHRUBLAND: 1
+        - RED_XERIC_SHRUBLAND: 1
       hot-steppe-highlands-red:
-        - XERIC_MOUNTAINS: 1
+        - RED_XERIC_MOUNTAINS: 1
 
       # Orange hot steppe
       hot-steppe-flat-orange:
-        - XERIC_SHRUBLAND: 1
-        - DRY_PALM_FOREST: 1
+        - ORANGE_XERIC_SHRUBLAND: 1
+        - ORANGE_DRY_PALM_FOREST: 1
       hot-steppe-orange:
-        - XERIC_SHRUBLAND: 1
-        - DRY_PALM_FOREST: 1
+        - ORANGE_XERIC_SHRUBLAND: 1
+        - ORANGE_DRY_PALM_FOREST: 1
       hot-steppe-highlands-orange:
-        - XERIC_MOUNTAINS: 1
-        - DRY_PALM_FOREST: 1
+        - ORANGE_XERIC_MOUNTAINS: 1
+        - ORANGE_DRY_PALM_FOREST: 1
 
       # White hot steppe
       hot-steppe-flat-white:

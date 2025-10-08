@@ -1,0 +1,27 @@
+id: RED_XERIC_MOUNTAINS
+type: BIOME
+extends:
+  - XERIC_MOUNTAINS
+color: $biomes/colors.yml:RED_XERIC_MOUNTAINS
+
+vanilla: minecraft:desert
+
+tags:
+  - DEEP_DARK
+
+palette:
+  - RED_XERIC: $meta.yml:top-y
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.8
+    palette:
+      - RED_XERIC: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - RED_XERIC_SLANT: $meta.yml:top-y
+      - << meta.yml:palette-bottom

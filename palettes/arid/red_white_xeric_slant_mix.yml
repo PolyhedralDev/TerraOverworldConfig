@@ -1,0 +1,29 @@
+id: RED_WHITE_XERIC_SLANT_MIX
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:coarse_dirt: 7
+      - minecraft:dirt: 7
+      - minecraft:packed_mud: 7
+      - minecraft:granite: 5
+      - minecraft:light_gray_terracotta: 3
+      - minecraft:white_terracotta: 10
+      - minecraft:terracotta: 3
+      - minecraft:pink_terracotta: 10
+    layers: 1
+    sampler:
+      type: EXPRESSION
+      expression: noise(x, y*3, z)*2+1
+      samplers:
+        yOffset:
+          dimensions: 2
+          type: OPEN_SIMPLEX_2
+          salt: 2189
+          frequency: 0.002
+        noise:
+          dimensions: 3
+          type: CELLULAR
+          return: Distance2Div
+          jitter: 0.3
+          frequency: 0.05

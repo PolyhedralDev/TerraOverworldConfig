@@ -1,0 +1,29 @@
+id: ORANGE_XERIC_SHRUBLAND
+type: BIOME
+extends: XERIC_SHRUBLAND
+color: $biomes/colors.yml:ORANGE_XERIC_SHRUBLAND
+
+vanilla: minecraft:desert
+
+tags:
+  - LAND_CAVES
+  - USE_RED_DESERT_RIVER
+
+palette:
+  - RED_WHITE_XERIC_MIX: $meta.yml:top-y
+  - << meta.yml:palette-ocean-level-sand
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant-depth: 5
+
+slant:
+  - threshold: 0.8
+    palette:
+      - RED_WHITE_XERIC_MIX: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - RED_WHITE_XERIC_SLANT_MIX: $meta.yml:top-y
+      - << meta.yml:palette-bottom
