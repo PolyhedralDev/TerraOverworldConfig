@@ -3,7 +3,7 @@ stages:
     sampler:
       type: CELLULAR
       return: CellValue
-      frequency: 1 / 200 / ${customization.yml:variation-scale} / ${customization.yml:global-scale}
+      frequency: 1 / 400 / ${customization.yml:variation-scale} / ${customization.yml:global-scale}
     default-from: tropical-rainforest
     default-to: &travertineList
       - SELF: 80
