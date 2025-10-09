@@ -77,23 +77,23 @@ stages:
         - temperate-cold: *veryWet
 
       temperate-mesa:
-        - temperate-mesa: *desert
-        - temperate-mesa: *desertBorder
-        - temperate-mesa: *semiArid
+        - desert-mesa: *desert
+        - desert-mesa: *desertBorder
+        - desert-mesa: *semiArid
         - temperate-mesa: *mid
         - temperate-mesa: *mildlyWet
         - temperate-mesa: *veryWet
       temperate-crater-lake:
-        - temperate-crater-lake: *desert
-        - temperate-crater-lake: *desertBorder
-        - temperate-crater-lake: *semiArid
+        - desert-crater-lake: *desert
+        - desert-crater-lake: *desertBorder
+        - desert-crater-lake: *semiArid
         - temperate-crater-lake: *mid
         - temperate-crater-lake: *mildlyWet
         - temperate-crater-lake: *veryWet
       temperate-extinct-volcano:
-        - temperate-extinct-volcano: *desert
-        - temperate-extinct-volcano: *desertBorder
-        - temperate-extinct-volcano: *semiArid
+        - desert-extinct-volcano: *desert
+        - desert-extinct-volcano: *desertBorder
+        - desert-extinct-volcano: *semiArid
         - temperate-extinct-volcano: *mid
         - temperate-extinct-volcano: *mildlyWet
         - temperate-extinct-volcano: *veryWet
