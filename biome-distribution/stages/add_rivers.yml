@@ -88,7 +88,7 @@ stages:
     to:
       - SELF: 1
       - GALLERY_FOREST: 1
-      - RED_DESERT_RIVER: 1
+      - RED_DESERT_RIVER: 2
     sampler: *riverSampler
   # Orange desert rivers
   - type: REPLACE
@@ -96,7 +96,7 @@ stages:
     to:
       - SELF: 1
       - GALLERY_FOREST: 1
-      - ORANGE_DESERT_RIVER: 1
+      - ORANGE_DESERT_RIVER: 2
     sampler: *riverSampler
   # Tar pit rivers
   - type: REPLACE

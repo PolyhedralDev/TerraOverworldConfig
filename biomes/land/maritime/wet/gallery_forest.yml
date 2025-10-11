@@ -15,7 +15,6 @@ colors:
 
 tags:
   - LAND_CAVES
-  - USE_RIVER_TEMPERATE_MARSH
 
 palette:
   - GRASS: $meta.yml:top-y
