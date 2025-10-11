@@ -20,7 +20,7 @@ palette:
   - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
 
-slant-depth: 1
+slant-depth: 4
 
 slant:
   - threshold: 0.8
@@ -38,7 +38,7 @@ slant:
       - << meta.yml:palette-bottom
   - threshold: 0.4
     palette:
-      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - SAND_SLANT: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
 features:
