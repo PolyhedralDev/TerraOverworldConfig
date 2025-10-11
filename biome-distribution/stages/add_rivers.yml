@@ -92,7 +92,7 @@ stages:
     sampler: *riverSampler
   # Orange desert rivers
   - type: REPLACE
-    from: USE_RED_DESERT_RIVER
+    from: USE_ORANGE_DESERT_RIVER
     to:
       - SELF: 1
       - GALLERY_FOREST: 1
