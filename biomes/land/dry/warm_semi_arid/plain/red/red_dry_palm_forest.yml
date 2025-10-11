@@ -7,7 +7,7 @@ vanilla: minecraft:savanna
 
 tags:
   - LAND_CAVES
-  - USE_LUKEWARM_RIVER
+  - USE_RED_DESERT_RIVER
 
 palette:
   - RED_SANDY_GRASS: $meta.yml:top-y
