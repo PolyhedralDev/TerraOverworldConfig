@@ -1,0 +1,7 @@
+id: TAR_PIT_RIVER
+type: BIOME
+extends:
+  - EQ_GLOBAL_RIVER
+  - CARVING_OCEAN
+  - TAR_PITS
+color: $biomes/colors.yml:TAR_PIT_RIVER

@@ -98,6 +98,13 @@ stages:
       - GALLERY_FOREST: 1
       - ORANGE_DESERT_RIVER: 1
     sampler: *riverSampler
+  # Tar pit rivers
+  - type: REPLACE
+    from: USE_TAR_PIT_RIVER
+    to:
+      - SELF: 1
+      - TAR_PIT_RIVER: 1
+    sampler: *riverSampler
   # Regular rivers with temperate marshes
   - type: REPLACE
     from: USE_RIVER_TEMPERATE_MARSH

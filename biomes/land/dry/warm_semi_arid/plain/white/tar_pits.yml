@@ -16,7 +16,7 @@ colors:
 
 tags:
   - LAND_CAVES
-  - USE_DESERT_RIVER
+  - USE_TAR_PIT_RIVER
 
 palette:
   - GRASS: $meta.yml:top-y
