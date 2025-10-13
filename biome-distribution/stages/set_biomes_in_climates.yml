@@ -430,7 +430,6 @@ stages:
         - COLD_EXTINCT_VOLCANO: 1
 
       arid-coast-flat:
-        - BLACK_SAND_BEACH: 1
         - BEACH: 1
       arid-coast:
         - SANDSTONE_ARCHIPELAGO: 1
