@@ -21,6 +21,7 @@ tags:
 
 palette:
   - MUDDY_GRASS_DIRT: $meta.yml:top-y
+  - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
 
 slant:

@@ -23,7 +23,6 @@ palette:
   - GRASS: $meta.yml:top-y
   - GRASS_VARIATION: ${meta.yml:ocean-level} + 35
   - GRASS_MOSSY: ${meta.yml:ocean-level} + 25
-  - << meta.yml:palette-ocean-level-sand
   - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
 

@@ -28,6 +28,7 @@ slant:
   - threshold: 0.4
     palette:
       - GRASS_MUDDY: $meta.yml:top-y
+      - << meta.yml:palette-underwater
       - << meta.yml:palette-bottom
 
 slant-depth: 1

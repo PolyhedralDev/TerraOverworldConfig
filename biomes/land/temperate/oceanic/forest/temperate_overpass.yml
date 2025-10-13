@@ -14,8 +14,7 @@ vanilla: minecraft:plains
 
 palette:
   - GRASS: $meta.yml:top-y
-  - << meta.yml:palette-ocean-level-sand
-  - << meta.yml:palette-underwater
+  - MUDDY_BEACH: $meta.yml:ocean-level
   - << meta.yml:palette-bottom
 
 slant:

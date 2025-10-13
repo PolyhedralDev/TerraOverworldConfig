@@ -16,7 +16,7 @@ vanilla: minecraft:dark_forest
 palette:
   - GRASS: $meta.yml:top-y
   - COARSE_DIRT: ${meta.yml:ocean-level} + 1
-  - MUDDY_BEACH: $meta.yml:ocean-level
+  - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
 
 slant:

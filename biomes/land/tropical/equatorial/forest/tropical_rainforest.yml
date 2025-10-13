@@ -22,7 +22,6 @@ tags:
 palette:
   - GRASS: $meta.yml:top-y
   - SANDY_GRASS: ${meta.yml:ocean-level} + 4
-  - << meta.yml:palette-ocean-level-sand
   - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
 

@@ -24,7 +24,6 @@ colors:
 palette:
   - YELLOWSTONE_WATER: $meta.yml:top-y
   - CALCITE: ${meta.yml:ocean-level} + 11
-  - << meta.yml:palette-ocean-level-sand
   - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
 

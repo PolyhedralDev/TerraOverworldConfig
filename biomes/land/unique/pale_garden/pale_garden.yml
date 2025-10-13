@@ -29,7 +29,6 @@ colors:
 palette:
   - GRASS_MOSSY_PALE: $meta.yml:top-y
   - COARSE_DIRT: $meta.yml:ocean-level
-  - << meta.yml:palette-ocean-level-sand
   - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
 

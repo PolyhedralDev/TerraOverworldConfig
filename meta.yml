@@ -11,9 +11,6 @@ bottom-y: -64
 palette-slant-generic:
   - BLOCK:minecraft:stone: $meta.yml:top-y
 
-palette-ocean-level-sand:
-  - SAND: ${meta.yml:ocean-level} + 1
-
 palette-underwater:
   - MUDDY_BEACH: ${meta.yml:ocean-level} - 1
 
