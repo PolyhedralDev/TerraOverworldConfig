@@ -40,6 +40,9 @@ stages:
       TEMPERATE_MOUNTAINS:
         - SELF: 1
         - TEMPERATE_MOUNTAINS_RIVER: 1
+      HIGHLANDS:
+        - SELF: 1
+        - HIGHLANDS_RIVER: 1
       MOUNTAINS:
         - SELF: 1
         - MOUNTAINS_RIVER: 1

@@ -1,0 +1,8 @@
+id: HIGHLANDS_RIVER
+type: BIOME
+extends:
+  - RIVER_DRIPSTONE
+  - EQ_GLOBAL_RIVER
+  - CARVING_OCEAN
+  - HIGHLANDS
+color: $biomes/colors.yml:HIGHLANDS_RIVER
