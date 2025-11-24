@@ -1,9 +1,9 @@
-id: DEAD_SWAMP_TREES
+id: DENSE_SWAMP_TREES
 type: FEATURE
 
 distributor:
   type: PADDED_GRID
-  width: 100
+  width: 7
   padding: 3
   salt: 7718
 
@@ -18,7 +18,7 @@ locator:
       range: *range
       pattern:
         type: MATCH_SET
-        blocks: $features/vegetation/meta.yml:plantable-blocks
+        blocks: $features/vegetation/meta.yml:dry-grass-plantable-blocks
         offset: -1
     - type: PATTERN
       range: *range
@@ -27,9 +27,12 @@ locator:
         blocks:
           - minecraft:snow
           - minecraft:air
+          - minecraft:water
         offset: 0
 
 structures:
   distribution:
-    type: CONSTANT
-  structures: dead_medium_swamp_tree_procedural
+    type: WHITE_NOISE
+  structures:
+    - large_swamp_tree_procedural: 1
+    - medium_swamp_tree_procedural: 1

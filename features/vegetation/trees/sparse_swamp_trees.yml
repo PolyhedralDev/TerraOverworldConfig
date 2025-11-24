@@ -1,11 +1,11 @@
-id: SWAMP_TREES
+id: SPARSE_SWAMP_TREES
 type: FEATURE
 
 distributor:
   type: PADDED_GRID
   width: 20
   padding: 3
-  salt: 7718
+  salt: 6578
 
 locator:
   type: AND
@@ -32,4 +32,4 @@ locator:
 structures:
   distribution:
     type: CONSTANT
-  structures: large_swamp_tree_procedural
+  structures: medium_swamp_tree_procedural

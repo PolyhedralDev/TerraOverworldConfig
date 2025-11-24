@@ -1,0 +1,10 @@
+id: SWAMP_RIVER
+type: BIOME
+extends:
+  - RIVER_BASIC
+  - EQ_GLOBAL_RIVER
+  - CARVING_OCEAN
+  - SWAMP
+color: $biomes/colors.yml:SWAMP_RIVER
+
+vanilla: minecraft:river

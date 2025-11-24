@@ -1,0 +1,20 @@
+num maxLength = 15;
+num random = 0;
+str face = "north";
+
+if (random == 0) face = "north";
+if (random == 0) face = "east";
+if (random == 0) face = "south";
+if (random == 0) face = "west";
+
+for (num y = 0; y < maxLength; y = y + 1) {
+    block(0, y, 0, "minecraft:small_dripleaf[waterlogged=true,half=lower,facing=" + face + "]");
+
+    if (getBlock(0, y + 1, 0) != "minecraft:water") {
+        block(0, y + 1, 0, "minecraft:small_dripleaf[waterlogged=false,half=upper,facing=" + face + "]");
+        fail;
+    }
+}
+
+block(0, maxLength, 0, "minecraft:small_dripleaf[waterlogged=true,half=upper,facing=" + face + "]");
+

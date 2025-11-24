@@ -47,6 +47,6 @@ features:
     - PALM_TREES
     - SPARSE_FALLEN_PALM_TREES
     - ACACIA_TREES
-    - SWAMP_TREES
+    - SPARSE_SWAMP_TREES
   postprocessors:
     - FLOW_STILL_WATER

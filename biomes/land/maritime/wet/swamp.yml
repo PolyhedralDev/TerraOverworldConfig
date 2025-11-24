@@ -2,7 +2,7 @@ id: SWAMP
 type: BIOME
 extends:
   - ENVIRONMENT_LAND_MARITIME_WET
-  - EQ_MANGROVE_SWAMP
+  - EQ_SWAMP
   - CARVING_OCEAN
   - BASE
 color: $biomes/colors.yml:SWAMP
@@ -11,7 +11,7 @@ vanilla: minecraft:swamp
 
 tags:
   - LAND_CAVES
-  - USE_RIVER_TEMPERATE_SWAMP
+  - USE_SWAMP_RIVER
 
 colors:
   grass: 0x4C763C
@@ -34,8 +34,6 @@ slant:
 slant-depth: 1
 
 features:
-  preprocessors:
-    - SWAMP_WATER
   flora:
     - GRASS
     - FIREFLY_BUSH
@@ -44,10 +42,12 @@ features:
     - BLUE_ORCHID_PATCH
     - LILY_PADS
     - SUGAR_CANE
+    - DRIPLEAF_KELP
   trees:
     - OAK_BUSHES
-    - SWAMP_TREES
+    - DENSE_SWAMP_TREES
     - DEAD_SWAMP_TREES
+    - SPARSE_FALLEN_SWAMP_TREES
   structures:
     - MOB_ROOMS
     - SPARSE_FOSSILS

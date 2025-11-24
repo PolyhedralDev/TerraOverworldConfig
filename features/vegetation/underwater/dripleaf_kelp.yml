@@ -1,0 +1,41 @@
+id: DRIPLEAF_KELP
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 2
+  padding: 1
+  salt: 5467
+
+
+locator:
+  type: AND
+  locators:
+   - type: PATTERN
+     range: &range
+       min: ${meta.yml:deepslate-top} - 7
+       max: ${meta.yml:ocean-level} - 1
+     pattern:
+       type: AND
+       patterns:
+         - type: MATCH
+           block: minecraft:water
+           offset: 0
+         - type: MATCH_SET
+           blocks: $features/vegetation/meta.yml:aquatic-plantable-blocks
+           offset: -1
+   - type: ADJACENT_PATTERN
+     match-all: true
+     range: *range
+     pattern:
+      type: MATCH
+      block: minecraft:water
+      offset: 0
+
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures:
+    - dripleaf_kelp: 3
+    - blank: 1

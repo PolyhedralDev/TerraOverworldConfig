@@ -1,11 +1,11 @@
-id: DEAD_SWAMP_TREES
+id: SPARSE_FALLEN_SWAMP_TREES
 type: FEATURE
 
 distributor:
   type: PADDED_GRID
-  width: 100
-  padding: 3
-  salt: 7718
+  width: 37
+  padding: 7
+  salt: 1235
 
 locator:
   type: AND
@@ -13,12 +13,12 @@ locator:
     - type: TOP
       range: &range
         min: ${meta.yml:ocean-level} + 3
-        max: ${meta.yml:ocean-level} + 119
+        max: $meta.yml:top-y
     - type: PATTERN
       range: *range
       pattern:
         type: MATCH_SET
-        blocks: $features/vegetation/meta.yml:plantable-blocks
+        blocks: $features/vegetation/meta.yml:dry-plantable-blocks
         offset: -1
     - type: PATTERN
       range: *range
@@ -31,5 +31,7 @@ locator:
 
 structures:
   distribution:
-    type: CONSTANT
-  structures: dead_medium_swamp_tree_procedural
+    type: WHITE_NOISE
+  structures:
+    - blank: 1
+    - fallen_swamp_tree_procedural: 1
