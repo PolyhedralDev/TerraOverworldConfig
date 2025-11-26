@@ -1,0 +1,27 @@
+id: DEEP_DARK_GROVE_DEEPSLATE
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:deepslate: 1
+      - minecraft:mud: 6
+      - minecraft:smooth_basalt: 5
+    layers: 2
+  - materials:
+      - minecraft:deepslate: 1
+      - minecraft:mud: 6
+      - minecraft:smooth_basalt: 5
+    layers: 1
+
+
+sampler:
+  dimensions: 2
+  type: DOMAIN_WARP
+  amplitude: 4
+  warp:
+    type: OPEN_SIMPLEX_2
+    frequency: 0.1
+  sampler:
+    type: CELLULAR
+    return: CellValue
+    frequency: 0.08

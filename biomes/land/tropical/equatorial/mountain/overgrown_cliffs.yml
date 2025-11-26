@@ -14,7 +14,7 @@ vanilla: minecraft:jungle
 tags:
   - LAND_CAVES
   - USE_TROPICAL_RIVER
-  - DEEP_DARK
+  - DEEP_DARK_GROVE
 
 colors:
   grass: 0x3abf13

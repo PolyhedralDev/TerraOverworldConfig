@@ -1,0 +1,38 @@
+id: DEEP_DARK_GROVE
+type: BIOME
+extends:
+  - CAVE
+  - EQ_GLOBAL_OCEAN
+  - BASE
+color: $biomes/colors.yml:DEEP_DARK_GROVE
+
+vanilla: minecraft:deep_dark
+
+colors:
+  fog: 0x444f56
+  water: 0x102e38
+  water-fog: 0x171921
+  sky: 0x1c2742
+  grass: 0x041e24
+  foliage: 0x041e24
+
+climate:
+  precipitation: true
+  temperature: 1.0
+  downfall: 1.0
+
+palette:
+  - DEEP_DARK_GROVE: $meta.yml:top-y
+  - DEEP_DARK_GROVE_DEEPSLATE: $meta.yml:deepslate-top
+  - << meta.yml:palette-bedrock
+
+features:
+  preprocessors:
+    - SCULK_WEBS
+    - SCULK_PATCHES
+    - SCULK_TENDRIL
+  flora:
+    - SCULK_FLORA
+    - LARGE_CEILING_VINES_UNDERGROUND
+    - LARGE_OAK_LEAF_VINES_UNDERGROUND
+    - GRASS_CAVES

@@ -1,0 +1,29 @@
+id: LARGE_CEILING_VINES_UNDERGROUND
+type: FEATURE
+
+# Adds leaf + vine segments that generate down from ceilings
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 79498
+  threshold: 0.025
+
+locator:
+  type: PATTERN
+  range:
+    min: ${meta.yml:bottom-y} + 10
+    max: $meta.yml:deepslate-top
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH_AIR
+        offset: 0
+      - type: MATCH_SOLID
+        offset: 1
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: large_ceiling_vines
