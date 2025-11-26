@@ -3,8 +3,8 @@ type: FEATURE
 
 distributor:
   type: PADDED_GRID
-  width: 5
-  padding: 11
+  width: 8
+  padding: 13
   salt: 4678
 
 locator:
@@ -39,26 +39,6 @@ locator:
                 type: MATCH
                 block: minecraft:air
                 offset: 5
-        - type: AND
-          locators:
-            - type: PATTERN
-              range: *range
-              pattern:
-                type: MATCH
-                block: minecraft:air
-                offset: -1
-            - type: PATTERN
-              range: *range
-              pattern:
-                type: MATCH
-                block: minecraft:air
-                offset: -3
-            - type: PATTERN
-              range: *range
-              pattern:
-                type: MATCH
-                block: minecraft:air
-                offset: -5
 
 structures:
   distribution:
