@@ -1,0 +1,20 @@
+id: SUSPICIOUS_SAND
+type: FEATURE
+
+distributor:
+  type: "YES"
+
+locator:
+  type: PATTERN
+  range:
+    min: $meta.yml:bottom-y
+    max: $meta.yml:deepslate-top
+  pattern:
+    type: MATCH
+    block: minecraft:suspicious_sand
+    offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: suspicious_sand

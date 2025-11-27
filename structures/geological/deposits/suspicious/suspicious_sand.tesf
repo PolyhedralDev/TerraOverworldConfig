@@ -1,0 +1,4 @@
+num random = randomInt(3);
+if (random == 0) block(0, 0, 0, "minecraft:suspicious_sand{LootTable:'archaeology/desert_pyramid'}");
+if (random == 1) block(0, 0, 0, "minecraft:suspicious_sand{LootTable:'archaeology/desert_well'}");
+if (random == 2) block(0, 0, 0, "minecraft:suspicious_sand{LootTable:'archaeology/ocean_ruin_warm'}");

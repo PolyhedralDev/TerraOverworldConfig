@@ -24,6 +24,8 @@ features:
     - SUSPICIOUS_GRAVEL_DEPOSITS
   postprocessors:
     - TRIAL_RUIN_REMNANTS
+    - SUSPICIOUS_SAND
+    - SUSPICIOUS_GRAVEL
   landforms:
     - GREAT_BAOBAB_TREES
     - FOSSILS

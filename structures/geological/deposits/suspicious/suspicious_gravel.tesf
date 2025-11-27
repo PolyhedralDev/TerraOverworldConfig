@@ -1,0 +1,4 @@
+num random = randomInt(9);
+if (random == 0) block(0, 0, 0, "minecraft:suspicious_gravel{LootTable:'archaeology/trial_ruins_rare'}");
+if (random > 0 &&  random < 4) block(0, 0, 0, "minecraft:suspicious_gravel{LootTable:'archaeology/trial_ruins_common'}");
+if (random < 8) block(0, 0, 0, "minecraft:suspicious_gravel{LootTable:'archaeology/ocean_ruin_cold'}");
