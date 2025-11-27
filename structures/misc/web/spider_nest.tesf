@@ -84,4 +84,4 @@ for (num j = 0; j < strands; j = j + 1) {
 block(0, yTranslate, 0, "minecraft:spawner", true);
 state(0, yTranslate, 0, "type=minecraft:spider");
 
-print("Generating at " + originX() + " " + originY() + " " + originZ());
+//print("Generating at " + originX() + " " + originY() + " " + originZ());
