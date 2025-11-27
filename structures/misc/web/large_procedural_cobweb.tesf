@@ -1,0 +1,88 @@
+// WIP Procedural Cobweb
+
+num randPrecision = 100;
+
+num d = randomInt(randPrecision)/randPrecision;
+
+num strings = 7;
+num maxLength = 10;
+num length = 18;
+num branchWebTranslate = -7;
+str checkBlock = "";
+
+num bx0 = 0;
+num bz0 = 0;
+num bx1 = 0;
+num bz1 = 0;
+num bx2 = 0;
+num bz2 = 0;
+num bd = 0;
+num bl = 0;
+num sbl = 0;
+num xDir = 1;
+num zDir = 1;
+
+for (num s = 1; s <= strings; s = s + 1) {
+
+    d = d  + 1;
+    length = 0;
+
+    for (num t = 0; t < maxLength; t = t + 1) {
+        checkBlock = getBlock(t*cos(d), 0, t*sin(d));
+
+        if (checkBlock == "minecraft:air" || checkBlock == "minecraft:cobweb") {
+            continue;
+        }
+        print("length: "+length+" t: "+t);
+        length = t;
+        break;
+    }
+
+    if (length == 0) continue;
+
+    for (num l = 0; l < length; l = l + 1) {
+        print("l: "+l);
+        sbl = l+branchWebTranslate;
+        print("sbl: "+sbl);
+        if (s != strings && getBlock(l*cos(d), l*sin(d), 0 ) == "minecraft:air") block(l*cos(d), l*sin(d), 0 , "minecraft:cobweb");
+
+        if (s == strings) {
+            bx2 = bx0;
+            bz2 = bz0;
+        } else if (s == 1) {
+            bx1 = sbl*cos(d);
+            bz1 = sbl*sin(d);
+            bx0 = bx1;
+            bz0 = bz1;
+            continue;
+        } else {
+            bx2 = sbl*cos(d);
+            bz2 = sbl*sin(d);
+        }
+    }
+
+    bl = sqrt(pow((bx2-bx1),2)+pow((bz2-bz1),2));
+    bd = atan((bx2-bx1)/(bz2-bz1));
+
+    for (num bp = 0; bp < bl; bl = bl + 1) {
+
+        if (((bx2-bx1) >= 0 && (bz2-bz1) >= 0) || ((bx1-bx2) <= 0 && (bz1-bz2) <= 0)) {
+            xDir = 1;
+            zDir = 1;
+        } else {
+            xDir = -1;
+            zDir = -1;
+        }
+
+        if (s == strings ) {
+            xDir = 1;
+            zDir = 1;
+        }
+
+        if (getBlock(bx1+(xDir*bp*sin(bd)), bz1+(zDir*bp*cos(bd)),0) == "minecraft:air") block(bx1+(xDir*bp*sin(bd)), bz1+(zDir*bp*cos(bd)),0, "minecraft:cobweb");
+
+    }
+
+    bx1 = bx2;
+    bz1 = bz2;
+}

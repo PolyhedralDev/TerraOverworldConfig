@@ -1,0 +1,77 @@
+id: MOB_SPIDER
+type: BIOME
+abstract: true
+
+spawning:
+  costs:
+    - type:
+        id: minecraft:pig
+      mass: 1
+      gravity: 1
+  spawns:
+    - group: AMBIENT
+      entries:
+        - type:
+            id: minecraft:bat
+          group-size:
+            min: 8
+            max: 8
+          weight: 10
+    - group: MONSTER
+      entries:
+        - type:
+            id: minecraft:spider
+          group-size:
+            min: 4
+            max: 4
+          weight: 400
+        - type:
+            id: minecraft:zombie
+          group-size:
+            min: 4
+            max: 4
+          weight: 95
+        - type:
+            id: minecraft:zombie_villager
+          group-size:
+            min: 1
+            max: 1
+          weight: 5
+        - type:
+            id: minecraft:skeleton
+          group-size:
+            min: 4
+            max: 4
+          weight: 100
+        - type:
+            id: minecraft:creeper
+          group-size:
+            min: 4
+            max: 4
+          weight: 100
+        - type:
+            id: minecraft:slime
+          group-size:
+            min: 4
+            max: 4
+          weight: 100
+        - type:
+            id: minecraft:enderman
+          group-size:
+            min: 1
+            max: 4
+          weight: 5
+        - type:
+            id: minecraft:witch
+          group-size:
+            min: 1
+            max: 1
+          weight: 5
+    - group: UNDERGROUND_WATER_CREATURE
+      entries:
+        - type:
+            id: minecraft:glow_squid
+          group-size:
+            min: 4
+            max: 6
+          weight: 10

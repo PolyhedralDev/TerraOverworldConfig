@@ -1,0 +1,87 @@
+num randPrecision = 100;
+num radius = 3+ randomInt(randPrecision) / randPrecision;
+num warp = 2;
+num warpFreq = 2;
+num squish = 0.7;
+num radiusSquared = pow(radius, 2);
+num yTranslate = -10;
+
+if (getBlock(radius, -radius / squish, 0) != "minecraft:air" ||
+    getBlock(-radius, -radius / squish, 0) != "minecraft:air" ||
+    getBlock(0, -radius / squish, radius) != "minecraft:air" ||
+    getBlock(0, -radius / squish, -radius) != "minecraft:air"
+) fail;
+
+for (num x = -radius - warp; x < radius + warp; x = x + 1) {
+    for (num y = (-radius - warp) / squish; y < (radius + warp) / squish; y = y + 1) {
+        for (num z = -radius - warp; z < radius + warp; z = z + 1) {
+            num warpX = warp * sampler("simplex3",
+                warpFreq * (x + originX()),
+                warpFreq * (y + originY() + 1000),
+                warpFreq * (z + originZ()));
+            num warpY = warp * sampler("simplex3",
+                warpFreq * (x + originX()),
+                warpFreq * (y + originY() + 2000),
+                warpFreq * (z + originZ()));
+            num warpZ = warp * sampler("simplex3",
+                warpFreq * (x + originX()),
+                warpFreq * (y + originY() + 3000),
+                warpFreq * (z + originZ()));
+            if (pow(x + warpX, 2) + pow((y + warpY) * squish, 2) + pow(z + warpZ, 2) < radiusSquared) {
+                block(x, y + yTranslate, z, "minecraft:cobweb");
+            }
+        }
+    }
+}
+
+num length = 32;
+num strandRadius = 1;
+num strands = 6 + randomInt(3);
+
+str mainBlock = "minecraft:cobweb";
+
+for (num j = 0; j < strands; j = j + 1) {
+
+    num strandLength = length;
+    // Direction vector
+    num dx = randomInt(randPrecision) / randPrecision * 2 - 1;
+    num dy = 3;// + randomInt(randPrecision)/randPrecision;
+    num dz = randomInt(randPrecision) / randPrecision * 2 - 1;
+
+    // Normalize vector
+    num mag = sqrt(pow(dx, 2) + pow(dy, 2) + pow(dz, 2));
+    dx = dx / mag;
+    dy = dy / mag;
+    dz = dz / mag;
+
+    str setBlock = mainBlock;
+    bool valid = false;
+    for (num i = 0; i < strandLength; i = i + 1) {
+        if (getBlock(i * dx, i * dy - strandRadius + yTranslate, i * dz) != "minecraft:air" &&
+            getBlock(i * dx, i * dy - strandRadius + yTranslate, i * dz) != "minecraft:cobweb") {
+            strandLength = i;
+            valid = true;
+            break;
+        }
+    }
+
+    if (!valid) fail;
+
+    num r = strandRadius;
+    for (num l = 0; l < strandLength; l = l + 1) {
+        for (num x = -r; x <= r; x = x + 1) {
+            for (num y = -r; y <= r; y = y + 1) {
+                for (num z = -r; z <= r; z = z + 1) {
+                    if (pow(x, 2) + pow(y, 2) + pow(z, 2) < pow(r, 2)) {
+                        block(l * dx + x, l * dy + y - strandRadius + yTranslate, l * dz + z, setBlock, false);
+                    }
+                }
+            }
+        }
+    }
+}
+
+block(0, yTranslate, 0, "minecraft:spawner", true);
+state(0, yTranslate, 0, "type=minecraft:spider");
+
+print("Generating at " + originX() + " " + originY() + " " + originZ());

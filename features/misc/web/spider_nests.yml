@@ -1,0 +1,43 @@
+id: SPIDER_NESTS
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 37
+  padding: 48
+  salt: 7684
+
+locator:
+  type: AND
+  locators:
+    # Match air underground
+    - type: PATTERN
+      range: &range
+        min: $meta.yml:bottom-y
+        max: $meta.yml:top-y
+      pattern:
+        type: MATCH_AIR
+        offset: 0
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_AIR
+        offset: -10
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_AIR
+        offset: -15
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SOLID
+        offset: 1
+
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures:
+    - spider_nest: 1
+    - blank: 3

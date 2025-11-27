@@ -1,0 +1,47 @@
+num randPrecision = 100;
+
+num length = 16;
+num radius = 1;
+
+str mainBlock = "minecraft:cobweb";
+
+// Direction vector
+num dx = randomInt(randPrecision) / randPrecision * 2 - 1;
+num dy = randomInt(randPrecision) / randPrecision * 2 - 1;// + randomInt(randPrecision)/randPrecision;
+num dz = randomInt(randPrecision) / randPrecision * 2 - 1;
+
+// Normalize vector
+num mag = sqrt(pow(dx, 2) + pow(dy, 2) + pow(dz, 2));
+dx = dx / mag;
+dy = dy / mag;
+dz = dz / mag;
+
+str setBlock = mainBlock;
+bool valid = false;
+for (num i = 0; i < length; i = i + 1) {
+    if (getBlock(i * dx, i * dy - radius, i * dz) == "minecraft:water" ||
+        getBlock(i * dx, i * dy - radius, i * dz) == "minecraft:lava") {
+        fail;
+    }
+    if (getBlock(i * dx, i * dy - radius, i * dz) != "minecraft:air" &&
+        getBlock(i * dx, i * dy - radius, i * dz) != "minecraft:short_grass") {
+        length = i;
+        valid = true;
+        break;
+    }
+}
+
+if (!valid) fail;
+
+num r = radius;
+for (num l = 0; l < length; l = l + 1) {
+    for (num x = -r; x <= r; x = x + 1) {
+        for (num y = -r; y <= r; y = y + 1) {
+            for (num z = -r; z <= r; z = z + 1) {
+                if (pow(x, 2) + pow(y, 2) + pow(z, 2) < pow(r, 2)) {
+                    block(l * dx + x, l * dy + y - radius, l * dz + z, setBlock, false);
+                }
+            }
+        }
+    }
+}

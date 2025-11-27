@@ -29,6 +29,20 @@ extrusions:
       max: ${meta.yml:ocean-level} - 13
 
   - type: REPLACE
+    from: SPIDER_CAVES
+    sampler:
+      type: CELLULAR
+      return: CellValue
+      salt: 1252
+      frequency: 1 / 200 / ${customization.yml:cave-biome-scale} / ${customization.yml:global-scale}
+    to:
+      - SELF: 5
+      - SPIDER_CAVES: 1
+    range:
+      min: $meta.yml:deepslate-bottom
+      max: ${meta.yml:ocean-level} - 13
+
+  - type: REPLACE
     from: ANCIENT_CAVES
     sampler:
       type: CELLULAR

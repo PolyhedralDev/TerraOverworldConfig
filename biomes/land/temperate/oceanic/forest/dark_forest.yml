@@ -9,6 +9,7 @@ color: $biomes/colors.yml:DARK_FOREST
 
 tags:
   - LAND_CAVES
+  - SPIDER_CAVES
   - USE_RIVER_TEMPERATE_MARSH
 
 vanilla: minecraft:dark_forest

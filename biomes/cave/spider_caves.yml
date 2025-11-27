@@ -1,0 +1,26 @@
+id: SPIDER_CAVES
+type: BIOME
+extends:
+  - CAVE
+  - BASE
+  - MOB_SPIDER
+color: $biomes/colors.yml:SPIDER_CAVES
+
+vanilla: minecraft:dripstone_caves
+
+colors:
+  grass: 0x322d36
+
+palette:
+  - SPIDER_CAVES: $meta.yml:top-y
+  - SPIDER_CAVES_DEEPSLATE: $meta.yml:deepslate-top
+  - << meta.yml:palette-bedrock
+
+features:
+  landforms:
+    - SPIDER_NESTS
+  postprocessors:
+    - WEB_CROSS_STRANDS
+    - HANGING_WEB_STRANDS
+  flora:
+    - GRASS_CAVES
