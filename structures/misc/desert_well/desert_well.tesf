@@ -9,6 +9,9 @@ num yTranslate = 1;
 structure(0, yTranslate + 1, 0, "desert_well_top", "NONE");
 structure(0, yTranslate, 0, "desert_well_bottom", "NONE");
 
-for (num y = yTranslate; y > -depth; y = y - 1) {
-    block(0, y, 0, "minecraft:water", true, true);
+for (num y = 0; y > -depth; y = y - 1) {
+    block(0, yTranslate + y, 0, "minecraft:water", true, true);
 }
+
+block(0, yTranslate - depth, 0, "minecraft:suspicious_sand{LootTable:'archaeology/desert_well'}");
+block(0, yTranslate - depth - 1, 0, "minecraft:suspicious_sand{LootTable:'archaeology/desert_well'}");
