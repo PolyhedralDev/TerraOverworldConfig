@@ -1,0 +1,14 @@
+str blockID = getBlock(0, 0, 0);
+if (blockID != "minecraft:grass_block" &&
+    blockID != "minecraft:gravel" &&
+    blockID != "minecraft:sand" &&
+    blockID != "minecraft:red_sand" &&
+    blockID != "minecraft:packed_mud" &&
+    blockID != "minecraft:moss_block" &&
+    blockID != "minecraft:podzol" &&
+    blockID != "minecraft:coarse_dirt" &&
+    blockID != "minecraft:moss_block" &&
+    blockID != "minecraft:pale_moss_block" &&
+    blockID != "minecraft:rooted_dirt") {
+    fail;
+}

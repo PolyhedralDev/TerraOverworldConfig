@@ -1,0 +1,46 @@
+id: BLEND_SNOW
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 6457
+  threshold: 0.5
+
+locator:
+  type: AND
+  locators:
+    - type: SURFACE
+      range: &range
+        min: ${meta.yml:ocean-level} + 1
+        max: $meta.yml:top-y
+      pattern:
+        type: AND
+        patterns:
+          - type: MATCH_AIR
+            offset: 0
+          - type: MATCH_SOLID
+            offset: -1
+    - type: ADJACENT_PATTERN
+      range: *range
+      pattern:
+        type: OR
+        patterns:
+          - type: MATCH
+            block: minecraft:snow_block
+            offset: -2
+          - type: MATCH
+            block: minecraft:snow_block
+            offset: -1
+          - type: MATCH
+            block: minecraft:snow_block
+            offset: 0
+          - type: MATCH_SET
+            blocks: $features/vegetation/meta.yml:plantable-blocks
+            offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: ground_snow_blob

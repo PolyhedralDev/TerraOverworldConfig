@@ -28,3 +28,4 @@ features:
     - POWDER_SNOW_DEPOSITS
   postprocessors:
     - TREE_SNOW
+    - BLEND_SNOW

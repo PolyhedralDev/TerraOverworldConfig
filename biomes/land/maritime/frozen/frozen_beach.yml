@@ -30,3 +30,4 @@ features:
     - ICE_COASTLINE
   postprocessors:
     - TREE_SNOW
+    - BLEND_SNOW

@@ -1,0 +1,36 @@
+num randPrecision = 100;
+num radius = 3 + randomInt(randPrecision) / randPrecision;
+num warp = 1;
+num warpFreq = 2;
+num squish = 1 + randomInt(randPrecision) / randPrecision;
+num radiusSquared = pow(radius, 2);
+num yTranslate = 0;
+
+for (num x = -radius - warp; x < radius + warp; x = x + 1) {
+    for (num z = -radius - warp; z < radius + warp; z = z + 1) {
+        for (num y = 3; y > -3; y = y - 1) {
+        num warpX = warp * sampler("simplex3",
+                warpFreq * (x + originX()),
+                warpFreq * (y + originY() + 1000),
+                warpFreq * (z + originZ()));
+            num warpY = warp * sampler("simplex3",
+                warpFreq * (x + originX()),
+                warpFreq * (y + originY() + 2000),
+                warpFreq * (z + originZ()));
+            num warpZ = warp * sampler("simplex3",
+                warpFreq * (x + originX()),
+                warpFreq * (y + originY() + 3000),
+                warpFreq * (z + originZ()));
+            if (pow(x + warpX, 2) + pow((y + warpY) * squish, 2) + pow(z + warpZ, 2) < radiusSquared) {
+                if (getBlock(x, y + yTranslate, z) == "minecraft:air" &&
+                    structure(x, y + yTranslate - 1, z, "is_snow_placeable", "NONE")) {
+
+                    num random = randomInt(3);
+                    if (random == 0) block(x, y + yTranslate, z, "minecraft:snow[layers=1]");
+                    if (random == 1) block(x, y + yTranslate, z, "minecraft:snow[layers=2]");
+                    if (random == 2) block(x, y + yTranslate, z, "minecraft:snow[layers=3]");
+                }
+            }
+        }
+    }
+}

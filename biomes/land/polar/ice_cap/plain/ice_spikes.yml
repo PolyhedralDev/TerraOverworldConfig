@@ -34,5 +34,6 @@ features:
   postprocessors:
     - CEILING_ICICLES
     - TREE_SNOW
+    - BLEND_SNOW
   landforms:
     - OVERHANG_STONE_COLUMNS
