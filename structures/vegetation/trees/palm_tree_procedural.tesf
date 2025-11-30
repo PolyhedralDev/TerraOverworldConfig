@@ -2,7 +2,7 @@ num randPrecision = 100;
 num goldenAngle = 2.39996;
 num pi = 3.14159;
 
-num height = 6 + randomInt(20);
+num height = 6 + randomInt(14);
 num x = 0;
 num y = 0;
 num z = 0;
