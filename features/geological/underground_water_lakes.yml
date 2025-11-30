@@ -1,0 +1,38 @@
+id: UNDERGROUND_WATER_LAKES
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 33
+  padding: 87
+  salt: 1146
+
+locator:
+  type: AND
+  locators:
+    - type: RANDOM
+      amount: 1
+      height: &range
+        min: ${meta.yml:deepslate-top} + 5
+        max: ${meta.yml:ocean-level} - 20
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SOLID
+        offset: 0
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SOLID
+        offset: 3
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SOLID
+        offset: -3
+
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: large_underground_water_lake
