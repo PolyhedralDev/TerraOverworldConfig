@@ -1,5 +1,5 @@
 num randPrecision = 100;
-num radius = 8 + randomInt(randPrecision) / randPrecision * 2;
+num radius = 5.5 + randomInt(randPrecision) / randPrecision;
 num warp = 1;
 num warpFreq = 2;
 num squish = 1 + randomInt(randPrecision) / randPrecision;
