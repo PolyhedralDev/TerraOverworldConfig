@@ -3,8 +3,8 @@ type: FEATURE
 
 distributor:
   type: PADDED_GRID
-  width: 125
-  padding: 75
+  width: 85
+  padding: 45
   salt: 6578
 
 locator:
@@ -33,4 +33,4 @@ structures:
     type: WHITE_NOISE
   structures:
     - large_bee_nest: 1
-    - blank: 11
+    - blank: 1
