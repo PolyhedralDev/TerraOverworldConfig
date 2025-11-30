@@ -1,0 +1,9 @@
+num length = 2 + randomInt(4);
+str setBlock = "minecraft:honey_block";
+
+for (num y = 0; y < length; y = y + 1) {
+    
+    if ( (getBlock(0, -y, 0)) != "minecraft:air") fail;
+
+    block(0, -y, 0, setBlock);
+}

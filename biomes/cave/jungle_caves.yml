@@ -1,0 +1,26 @@
+id: JUNGLE_CAVES
+type: BIOME
+extends:
+  - CAVE
+  - BASE
+  - MOB_JUNGLE
+color: $biomes/colors.yml:JUNGLE_CAVES
+
+vanilla: minecraft:dripstone_caves
+
+palette:
+  - JUNGLE_CAVES: $meta.yml:top-y
+  - JUNGLE_CAVES_DEEPSLATE: $meta.yml:deepslate-top
+  - << meta.yml:palette-bedrock
+
+features:
+  flora:
+    - GRASS_CAVES
+    - LARGE_CEILING_VINES_UNDERGROUND
+    - LARGE_JUNGLE_LEAF_VINES_UNDERGROUND
+  trees:
+    - JUNGLE_VINES_UNDERGROUND
+  landforms:
+    - LARGE_UNDERGROUND_BEE_NESTS
+  postprocessors:
+    - HONEY_DRIPS

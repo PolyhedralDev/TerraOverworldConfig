@@ -11,6 +11,7 @@ vanilla: minecraft:sparse_jungle
 
 tags:
   - LAND_CAVES
+  - JUNGLE_CAVES
   - USE_LUKEWARM_RIVER
 
 palette:

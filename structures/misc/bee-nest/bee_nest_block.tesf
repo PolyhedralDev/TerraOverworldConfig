@@ -1,0 +1,15 @@
+str direction = "west";
+num randomDir = randomInt(4);
+num randomHon = randomInt(6);
+
+if (randomDir == 0) {
+    direction = "west";
+} else if (randomDir == 1) {
+    direction = "east";
+} else if (randomDir == 2) {
+    direction = "south";
+} else if (randomDir == 3) {
+    direction = "north";
+} 
+
+block(0, 0, 0,"minecraft:bee_nest[facing="+ direction +",honey_level="+ randomHon +"]", true);

@@ -13,7 +13,7 @@ distributor:
 locator:
   type: PATTERN
   range:
-    min: ${meta.yml:bottom-y} + 10
+    min: ${meta.yml:bottom-y} + 30
     max: $meta.yml:deepslate-top
   pattern:
     type: AND

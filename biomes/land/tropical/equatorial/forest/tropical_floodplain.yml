@@ -11,6 +11,7 @@ vanilla: minecraft:bamboo_jungle
 
 tags:
   - LAND_CAVES
+  - JUNGLE_CAVES
   - USE_RIVER_TEMPERATE_SWAMP
 
 palette:

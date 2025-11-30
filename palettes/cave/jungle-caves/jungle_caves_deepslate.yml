@@ -1,17 +1,17 @@
-id: LUSH_CAVES
+id: JUNGLE_CAVES_DEEPSLATE
 type: PALETTE
 
 layers:
   - materials:
-      - minecraft:stone: 1
+      - minecraft:deepslate: 1
       - minecraft:moss_block: 6
-      - minecraft:clay: 5
+      - minecraft:mud: 5
     layers: 2
   - materials:
-      - minecraft:stone: 1
+      - minecraft:deepslate: 1
       - minecraft:moss_block: 6
+      - minecraft:mud: 5
     layers: 1
-
 
 sampler:
   dimensions: 2

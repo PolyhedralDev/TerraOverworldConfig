@@ -1,0 +1,48 @@
+num radius = 10;
+num warp = 5;
+num warpFreq = 2;
+num squish = 1;
+num radiusSquared = pow(radius,2);
+num yTranslate = 0;
+
+for (num x = -radius-warp; x < radius+warp; x = x + 1) {
+    for (num y = (-radius-warp)/squish; y < (radius+warp)/squish; y = y + 1) {
+        for (num z = -radius-warp; z < radius+warp; z = z + 1) {
+            num warpX = warp * sampler("simplex3",
+                                warpFreq*(x+originX()),
+                                warpFreq*(y+originY()+1000),
+                                warpFreq*(z+originZ()));
+            num warpY = warp * sampler("simplex3",
+                                warpFreq*(x+originX()),
+                                warpFreq*(y+originY()+2000),
+                                warpFreq*(z+originZ()));
+            num warpZ = warp * sampler("simplex3",
+                                warpFreq*(x+originX()),
+                                warpFreq*(y+originY()+3000),
+                                warpFreq*(z+originZ()));
+			num distanceSquared = pow(x+warpX,2)+pow((y+warpY)*squish,2)+pow(z+warpZ,2);
+			if (distanceSquared < radiusSquared && distanceSquared > radiusSquared-(radius*3)) {
+				structure(x, y+yTranslate+radius, z, "bee_nest_block", "NONE");
+			}
+
+            if (distanceSquared < (radiusSquared-(radius*3)) && y < 0) {
+				block(x, y+yTranslate+radius, z, "minecraft:honey_block", true);
+			}
+
+            if (distanceSquared < (radiusSquared-(radius*3)) && y >= 0) {
+                if (getBlock(x, y+yTranslate+radius, z) != "minecraft:bee_nest") {
+                    block(x, y+yTranslate+radius, z, "minecraft:air", true);
+                }
+            }
+        }
+    }
+}
+
+entity(0, yTranslate + 10, 0, "minecraft:bee");
+entity(0, yTranslate + 10, 0, "minecraft:bee");
+entity(0, yTranslate + 10, 0, "minecraft:bee");
+entity(0, yTranslate + 10, 0, "minecraft:bee");
+entity(0, yTranslate + 10, 0, "minecraft:bee");
+
+
+print("Generating at " + originX() + " " + originY() + " " + originZ());

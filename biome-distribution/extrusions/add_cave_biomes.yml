@@ -19,7 +19,7 @@ extrusions:
     sampler:
       type: CELLULAR
       return: CellValue
-      salt: 1252
+      salt: 4567
       frequency: 1 / 200 / ${customization.yml:cave-biome-scale} / ${customization.yml:global-scale}
     to:
       - SELF: 3
@@ -29,11 +29,25 @@ extrusions:
       max: ${meta.yml:ocean-level} - 13
 
   - type: REPLACE
+    from: JUNGLE_CAVES
+    sampler:
+      type: CELLULAR
+      return: CellValue
+      salt: 3456
+      frequency: 1 / 200 / ${customization.yml:cave-biome-scale} / ${customization.yml:global-scale}
+    to:
+      - SELF: 3
+      - JUNGLE_CAVES: 7
+    range:
+      min: $meta.yml:deepslate-bottom
+      max: ${meta.yml:ocean-level} - 13
+
+  - type: REPLACE
     from: SPIDER_CAVES
     sampler:
       type: CELLULAR
       return: CellValue
-      salt: 1252
+      salt: 5673
       frequency: 1 / 200 / ${customization.yml:cave-biome-scale} / ${customization.yml:global-scale}
     to:
       - SELF: 5
