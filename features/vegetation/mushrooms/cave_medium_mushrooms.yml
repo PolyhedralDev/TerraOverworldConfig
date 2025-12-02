@@ -1,0 +1,44 @@
+id: CAVE_MEDIUM_MUSHROOMS
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 4
+  padding: 3
+  salt: 7685
+
+locator:
+  type: AND
+  locators:
+    - type: PATTERN
+      range: &range
+        min: ${meta.yml:bottom-y} + 14
+        max: ${meta.yml:ocean-level} + 3
+      pattern:
+        type: MATCH
+        block: minecraft:mycelium
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_AIR
+        offset: 0
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_AIR
+        offset: 3
+    - type: ADJACENT_PATTERN
+      range: *range
+      pattern:
+        type: MATCH
+        block: minecraft:mycelium
+        offset: -1
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures:
+    - medium_mixed_mushroom_procedural: 1
+    - blank: 1
+  

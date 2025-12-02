@@ -10,23 +10,24 @@ color: $biomes/colors.yml:MUSHROOM_FIELDS
 vanilla: minecraft:mushroom_fields
 
 tags:
+  - MUSHROOM_CAVES
   - USE_MUSHROOM_RIVER
 
 palette:
   - MYCELIUM: $meta.yml:top-y
-  - SAND: ${meta.yml:ocean-level} + 1
+  - << meta.yml:palette-underwater
   - << meta.yml:palette-bottom
 
 slant:
   - threshold: 0.45
     palette:
       - BLOCK:minecraft:light_gray_terracotta: $meta.yml:top-y
-      - SAND: ${meta.yml:ocean-level} + 1
+      - << meta.yml:palette-underwater
       - << meta.yml:palette-bottom
   - threshold: 0.4
     palette:
       - BLOCK:minecraft:stone: $meta.yml:top-y
-      - SAND: ${meta.yml:ocean-level} + 1
+      - << meta.yml:palette-underwater
       - << meta.yml:palette-bottom
 
 features:

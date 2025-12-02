@@ -1,0 +1,30 @@
+id: MUSHROOM_CAVES
+type: BIOME
+extends:
+  - CAVE
+  - BASE
+color: $biomes/colors.yml:MUSHROOM_CAVES
+
+vanilla: minecraft:dripstone_caves
+
+particles:
+  particle: minecraft:mycelium
+  probability: 0.0005
+
+palette:
+  - MUSHROOM_CAVES: $meta.yml:top-y
+  - MUSHROOM_CAVES_DEEPSLATE: $meta.yml:deepslate-top
+  - << meta.yml:palette-bedrock
+
+features:
+  flora:
+    - CAVE_GLOW_LICHEN
+    - CAVE_SMALL_MUSHROOMS
+    - HANGING_ROOTS
+  trees:
+    - CAVE_MUSHROOM_DISK_PATCHES
+    - CAVE_MEDIUM_MUSHROOMS
+  landforms:
+    - GREAT_MUSHROOMS
+  postprocessors:
+    - GLOW_LICHEN_TENDRIL_CAVES

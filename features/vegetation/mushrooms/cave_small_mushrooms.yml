@@ -1,4 +1,4 @@
-id: SMALL_MUSHROOMS
+id: CAVE_SMALL_MUSHROOMS
 type: FEATURE
 
 distributor:
@@ -19,10 +19,21 @@ distributor:
       threshold: 0.7
 
 locator:
-  type: TOP
-  range: &range
-    min: ${meta.yml:ocean-level} + 3
-    max: $meta.yml:top-y
+  type: AND
+  locators:
+    - type: PATTERN
+      range: &range
+        min: ${meta.yml:bottom-y} + 14
+        max: ${meta.yml:ocean-level} + 3
+      pattern:
+        type: MATCH
+        block: minecraft:mycelium
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_AIR
+        offset: 0
 
 structures:
   distribution:

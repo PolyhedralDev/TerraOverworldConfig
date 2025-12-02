@@ -1,0 +1,21 @@
+id: GREAT_MUSHROOMS
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 30
+  padding: 80
+  salt: 4357
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range:
+        min: ${meta.yml:deepslate-top} - 7
+        max: ${meta.yml:ocean-level} - 11
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: place_great_mushroom_underground
