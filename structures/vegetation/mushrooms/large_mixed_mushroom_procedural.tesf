@@ -3,7 +3,7 @@ if (recursions() > 1) fail;
 num randPrecision = 100;
 
 num warp = 10;
-num stemHeight = 6 + randomInt(20);
+num stemHeight = 6 + randomInt(10);
 num stemStartRadius = 1 + stemHeight / 25;
 num stemEndRadius = 1.2;
 num stemCollarThreshold = 1 - randomInt(randPrecision) / randPrecision / 2;
@@ -14,13 +14,14 @@ num diskInterval = 3 + randomInt(3);
 bool addDisks = false;
 if (randomInt(2) == 0) addDisks = true;
 
-num radius = stemHeight / 2.5;
+num radius = stemHeight / 2;
 num innerRadius = radius - 3;
 num midRadius = radius - 2;
 num warpTop = 0.5;
 num warpTopFrequency = 2;
 num squish = 1 - randomInt(randPrecision) / randPrecision * 0.5;
 num radiusHorizontal = round(radius + radius * warpTop);
+num yTranslateCap = 2;
 
 str outerBlock = "minecraft:red_mushroom_block";
 str innerBlock = "minecraft:red_mushroom_block[up=false,down=false,north=false,east=false,south=false,west=false]";
@@ -83,12 +84,12 @@ for (num x = -radiusHorizontal; x < radiusHorizontal; x = x + 1) {
             if (distanceSquared < radiusSquared && distanceSquared > innerRadiusSquared && y + 1 >= abs(warpX + warpZ)) {
                 if (distanceSquared > midRadiusSquared) {
                     if (randomInt(40) == 0) {
-                        block(ox + x, oy + y, oz + z, spotBlock);
+                        block(ox + x, oy + y + yTranslateCap, oz + z, spotBlock);
                     } else {
-                        block(ox + x, oy + y, oz + z, outerBlock);
+                        block(ox + x, oy + y + yTranslateCap, oz + z, outerBlock);
                     }
                 } else {
-                    block(ox + x, oy + y, oz + z, innerBlock);
+                    block(ox + x, oy + y + yTranslateCap, oz + z, innerBlock);
                 }
             }
         }
