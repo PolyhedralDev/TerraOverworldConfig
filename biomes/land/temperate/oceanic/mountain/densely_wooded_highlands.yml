@@ -13,6 +13,7 @@ vanilla: minecraft:windswept_hills
 
 tags:
   - DEEP_DARK
+  - USE_RIVER
 
 palette:
   - GRASS_MOSSY: $meta.yml:top-y
