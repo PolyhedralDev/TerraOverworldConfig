@@ -12,6 +12,7 @@ ocean:
 
 features:
   landforms:
+    - LARGE_ICEBERGS
     - ICEBERGS
   slabs:
     - ICEBERG_SNOW_LAYERS

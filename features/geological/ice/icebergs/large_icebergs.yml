@@ -1,0 +1,23 @@
+id: LARGE_ICEBERGS
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 30
+  padding: 80
+  salt: 6457
+
+locator:
+  type: PATTERN
+  range:
+    min: ${meta.yml:ocean-level} - 1
+    max: ${meta.yml:ocean-level} + 4
+  pattern:
+    type: MATCH
+    block: minecraft:water
+    offset: 0
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: place_large_iceberg
