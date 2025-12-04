@@ -1,6 +1,13 @@
 str direction = "west";
 num randomDir = randomInt(4);
 num randomHon = randomInt(6);
+num randomBees = randomInt(101);
+
+if (randomBees >= 85) {
+    randomBees = 3;
+} else {
+    randomBees = 0;
+}
 
 if (randomDir == 0) {
     direction = "west";
@@ -12,4 +19,19 @@ if (randomDir == 0) {
     direction = "north";
 } 
 
-block(0, 0, 0,"minecraft:bee_nest[facing="+ direction +",honey_level="+ randomHon +"]", true);
+str bee_data = "";
+
+if (randomBees > 0) {
+    num randomBeesMinusOne = randomBees - 1;
+    bee_data = "{bees:[";
+    for (num i = 0; i < randomBees; i = i + 1) {
+        str bee = "{entity_data:{id:\"minecraft:bee\"},min_ticks_in_hive:" + (i * 150) + ",ticks_in_hive:0}";
+        bee_data = bee_data + bee;
+        if (i < randomBeesMinusOne) {
+            bee_data = bee_data + ",";
+        }
+    }
+    bee_data = bee_data + "]}";
+}
+
+block(0, 0, 0, "minecraft:bee_nest[facing="+ direction +",honey_level="+ randomHon +"]" + bee_data, true);

@@ -38,13 +38,6 @@ for (num x = -radius-warp; x < radius+warp; x = x + 1) {
     }
 }
 
-entity(0, yTranslate + 10, 0, "minecraft:bee");
-entity(0, yTranslate + 10, 0, "minecraft:bee");
-entity(0, yTranslate + 10, 0, "minecraft:bee");
-entity(0, yTranslate + 10, 0, "minecraft:bee");
-entity(0, yTranslate + 10, 0, "minecraft:bee");
-
-
 structure(3-randomInt(7), 15, 3-randomInt(7), "honey_comb", "NONE");
 structure(3-randomInt(7), 15, 3-randomInt(7), "honey_comb", "NONE");
 structure(3-randomInt(7), 15, 3-randomInt(7), "honey_comb", "NONE");

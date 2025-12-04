@@ -1,32 +1,33 @@
-num dir = randomInt(4);
+num randomDir = randomInt(4);
 num x = 0;
 num z = 0;
 str face = "west";
-num bees = 2 + randomInt(2);
+num randomBees = 2 + randomInt(2);
 
-if (dir == 0) {
+if (randomDir == 0) {
     face = "west";
     x = -1;
     z = 0;
-} else if (dir == 1) {
+} else if (randomDir == 1) {
     face = "north";
     x = 0;
     z = -1;
-} else if (dir == 2) {
+} else if (randomDir == 2) {
     face = "east";
     x = 1;
     z = 0;
-} else if (dir == 3) {
+} else if (randomDir == 3) {
     face = "south";
     x = 0;
     z = 1;
 }
 
+num randomBeesMinusOne = randomBees - 1;
 str bee_data = "{bees:[";
-for (num i = 0; i < bees; i = i + 1) {
+for (num i = 0; i < randomBees; i = i + 1) {
     str bee = "{entity_data:{id:\"minecraft:bee\"},min_ticks_in_hive:" + (i * 150) + ",ticks_in_hive:0}";
     bee_data = bee_data + bee;
-    if (i < bees - 1) {
+        if (i < randomBeesMinusOne) {
         bee_data = bee_data + ",";
     }
 }
