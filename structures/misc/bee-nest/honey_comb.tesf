@@ -1,0 +1,41 @@
+num randPrecision = 100;
+num radius = 1 + randomInt(randPrecision) / randPrecision / 2;
+num warp = 2;
+num warpFreq = 2;
+num squish = 0.6;
+num radiusSquared = pow(radius, 2);
+num yTranslate = 0;
+
+bool valid = false;
+
+for (num i = 0; i < 10; i = i + 1) {
+    if (getBlock(0, i + 1, 0) == "minecraft:bee_nest") {
+        valid = true;
+        yTranslate = i;
+        break;
+    }
+}
+
+if (!valid) fail;
+
+for (num x = -radius - warp; x < radius + warp; x = x + 1) {
+    for (num y = (-radius - warp) / squish; y < (radius + warp) / squish; y = y + 1) {
+        for (num z = -radius - warp; z < radius + warp; z = z + 1) {
+            num warpX = warp * sampler("simplex3",
+                warpFreq * (x + originX()),
+                warpFreq * (y + originY() + 1000),
+                warpFreq * (z + originZ()));
+            num warpY = warp * sampler("simplex3",
+                warpFreq * (x + originX()),
+                warpFreq * (y + originY() + 2000),
+                warpFreq * (z + originZ()));
+            num warpZ = warp * sampler("simplex3",
+                warpFreq * (x + originX()),
+                warpFreq * (y + originY() + 3000),
+                warpFreq * (z + originZ()));
+            if (pow(x + warpX, 2) + pow((y + warpY) * squish, 2) + pow(z + warpZ, 2) < radiusSquared) {
+                block(x, y + yTranslate, z, "minecraft:honeycomb_block", false);
+            }
+        }
+    }
+}

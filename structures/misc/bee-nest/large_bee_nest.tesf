@@ -45,4 +45,12 @@ entity(0, yTranslate + 10, 0, "minecraft:bee");
 entity(0, yTranslate + 10, 0, "minecraft:bee");
 
 
-print("Generating at " + originX() + " " + originY() + " " + originZ());
+structure(3-randomInt(7), 15, 3-randomInt(7), "honey_comb", "NONE");
+structure(3-randomInt(7), 15, 3-randomInt(7), "honey_comb", "NONE");
+structure(3-randomInt(7), 15, 3-randomInt(7), "honey_comb", "NONE");
+structure(3-randomInt(7), 15, 3-randomInt(7), "honey_comb", "NONE");
+structure(3-randomInt(7), 15, 3-randomInt(7), "honey_comb", "NONE");
+structure(3-randomInt(7), 15, 3-randomInt(7), "honey_comb", "NONE");
+structure(3-randomInt(7), 15, 3-randomInt(7), "honey_comb", "NONE");
+
+//print("Generating at " + originX() + " " + originY() + " " + originZ());
