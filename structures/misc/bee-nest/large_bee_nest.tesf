@@ -3,7 +3,11 @@ num warp = 5;
 num warpFreq = 2;
 num squish = 1;
 num radiusSquared = pow(radius,2);
-num yTranslate = 0;
+num yTranslate = -radius/2;
+
+num entranceRadius = 3;
+num entranceStart = (radius+warp)/2;
+num entranceMax = radius+warp-2;
 
 for (num x = -radius-warp; x < radius+warp; x = x + 1) {
     for (num y = (-radius-warp)/squish; y < (radius+warp)/squish; y = y + 1) {
@@ -25,11 +29,81 @@ for (num x = -radius-warp; x < radius+warp; x = x + 1) {
 				structure(x, y+yTranslate+radius, z, "bee_nest_block", "NONE");
 			}
 
-            if (distanceSquared < (radiusSquared-(radius*3)) && y < 0) {
-				block(x, y+yTranslate+radius, z, "minecraft:honey_block", true);
-			}
+            if (distanceSquared < (radiusSquared-(radius*3)) && y < -radius/3) {
+                block(x, y+yTranslate+radius, z, "minecraft:honey_block", true);
+            }
+        }
+    }
+}
 
-            if (distanceSquared < (radiusSquared-(radius*3)) && y >= 0) {
+// Entrance
+
+num entranceRadiusSquared = pow(entranceRadius,2);
+
+num dirInterval = 0.1;
+bool valid = false;
+num dir = 0;
+
+for (num direction = 0; direction < 7; direction = direction + dirInterval) {
+    for (num i = entranceStart; i < entranceMax; i = i + 1) {
+        if (getBlock((i)*cos(direction),yTranslate,(i)*sin(direction)) == "minecraft:air") {
+            valid = true;
+            dir = direction;
+            break;
+        }
+    }
+
+    if (valid) break;
+}
+
+for (num l = entranceStart; l < entranceMax; l = l + 1) {
+    for (num x = -entranceRadius-warp; x < entranceRadius+warp; x = x + 1) {
+        for (num y = (-entranceRadius-warp)/squish; y < (entranceRadius+warp)/squish; y = y + 1) {
+            for (num z = -entranceRadius-warp; z < entranceRadius+warp; z = z + 1) {
+                num warpX = warp * sampler("simplex3",
+                    warpFreq*(x+originX()),
+                    warpFreq*(y+originY()+1000),
+                    warpFreq*(z+originZ()));
+                num warpY = warp * sampler("simplex3",
+                    warpFreq*(x+originX()),
+                    warpFreq*(y+originY()+2000),
+                    warpFreq*(z+originZ()));
+                num warpZ = warp * sampler("simplex3",
+                    warpFreq*(x+originX()),
+                    warpFreq*(y+originY()+3000),
+                    warpFreq*(z+originZ()));
+                num distanceSquared = pow(x+warpX,2)+pow((y+warpY)*squish,2)+pow(z+warpZ,2);
+                if (distanceSquared < entranceRadiusSquared) {
+                    if (getBlock(x+(cos(dir)*l), y+(entranceRadius*4)+yTranslate, z+(sin(dir)*l)) != "minecraft:honey_block") {
+                        block(x+(cos(dir)*l), y+(entranceRadius*4)+yTranslate, z+(sin(dir)*l), "minecraft:air", true);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// Air Space
+
+for (num x = -radius-warp; x < radius+warp; x = x + 1) {
+    for (num y = (-radius-warp)/squish; y < (radius+warp)/squish; y = y + 1) {
+        for (num z = -radius-warp; z < radius+warp; z = z + 1) {
+            num warpX = warp * sampler("simplex3",
+                warpFreq*(x+originX()),
+                warpFreq*(y+originY()+1000),
+                warpFreq*(z+originZ()));
+            num warpY = warp * sampler("simplex3",
+                warpFreq*(x+originX()),
+                warpFreq*(y+originY()+2000),
+                warpFreq*(z+originZ()));
+            num warpZ = warp * sampler("simplex3",
+                warpFreq*(x+originX()),
+                warpFreq*(y+originY()+3000),
+                warpFreq*(z+originZ()));
+            num distanceSquared = pow(x+warpX,2)+pow((y+warpY)*squish,2)+pow(z+warpZ,2);
+
+            if (distanceSquared < (radiusSquared-(radius*3)) && y >= -radius/3) {
                 if (getBlock(x, y+yTranslate+radius, z) != "minecraft:bee_nest") {
                     block(x, y+yTranslate+radius, z, "minecraft:air", true);
                 }
@@ -38,12 +112,14 @@ for (num x = -radius-warp; x < radius+warp; x = x + 1) {
     }
 }
 
-structure(3-randomInt(7), 15, 3-randomInt(7), "honey_comb", "NONE");
-structure(3-randomInt(7), 15, 3-randomInt(7), "honey_comb", "NONE");
-structure(3-randomInt(7), 15, 3-randomInt(7), "honey_comb", "NONE");
-structure(3-randomInt(7), 15, 3-randomInt(7), "honey_comb", "NONE");
-structure(3-randomInt(7), 15, 3-randomInt(7), "honey_comb", "NONE");
-structure(3-randomInt(7), 15, 3-randomInt(7), "honey_comb", "NONE");
-structure(3-randomInt(7), 15, 3-randomInt(7), "honey_comb", "NONE");
+// Honey Combs
+
+structure(3-randomInt(7), 0, 3-randomInt(7), "honey_comb", "NONE");
+structure(3-randomInt(7), 0, 3-randomInt(7), "honey_comb", "NONE");
+structure(3-randomInt(7), 0, 3-randomInt(7), "honey_comb", "NONE");
+structure(3-randomInt(7), 0, 3-randomInt(7), "honey_comb", "NONE");
+structure(3-randomInt(7), 0, 3-randomInt(7), "honey_comb", "NONE");
+structure(3-randomInt(7), 0, 3-randomInt(7), "honey_comb", "NONE");
+structure(3-randomInt(7), 0, 3-randomInt(7), "honey_comb", "NONE");
 
 //print("Generating at " + originX() + " " + originY() + " " + originZ());
