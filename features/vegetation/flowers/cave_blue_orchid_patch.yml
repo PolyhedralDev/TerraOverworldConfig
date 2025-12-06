@@ -1,0 +1,37 @@
+id: CAVE_BLUE_ORCHID_PATCH
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 4
+  padding: 3
+  salt: 5467
+
+locator:
+  type: AND
+  locators:
+    - type: SURFACE
+      range: &range
+        min: $meta.yml:bottom-y
+        max: ${meta.yml:ocean-level} + 3
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:plantable-blocks
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SET
+        blocks:
+          - minecraft:snow
+          - minecraft:air
+        offset: 0
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures:
+    - BLOCK:minecraft:blue_orchid: 1
+    - blank: 3
