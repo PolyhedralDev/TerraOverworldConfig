@@ -1,0 +1,26 @@
+id: POLAR_MUSHROOM_COAST
+type: BIOME
+extends:
+  - MUSHROOM_COAST
+  - POLAR_MUSHROOM_FIELDS
+  - EQ_FLAT_ERODED
+  - CARVING_OCEAN
+color: $biomes/colors.yml:POLAR_MUSHROOM_COAST
+
+vanilla: minecraft:mushroom_fields
+
+features:
+  flora:
+    - SMALL_MUSHROOMS
+  trees:
+    - MUSHROOM_DISK_PATCHES
+    - LARGE_MUSHROOMS
+  processors:
+    - SNOW_FOREST_LAYERS
+  preprocessors:
+    - POWDER_SNOW_DEPOSITS
+    - ICE_COASTLINE
+  postprocessors:
+    - TREE_SNOW
+    - BLEND_SNOW
+    - CEILING_ICICLES

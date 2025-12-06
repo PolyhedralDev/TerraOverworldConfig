@@ -136,6 +136,12 @@ stages:
       - SELF: 1
       - MUSHROOM_RIVER: 1
     sampler: *riverSampler
+  - type: REPLACE
+    from: USE_POLAR_MUSHROOM_RIVER
+    to:
+      - SELF: 1
+      - POLAR_MUSHROOM_RIVER: 1
+    sampler: *riverSampler
   # Regular rivers with bordering swamps
   - type: REPLACE
     from: USE_RIVER_TEMPERATE_SWAMP

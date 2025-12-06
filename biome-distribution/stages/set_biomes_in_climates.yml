@@ -528,6 +528,11 @@ stages:
       mushroom-coast:
         - MUSHROOM_COAST: 1
 
+      polar-mushroom:
+        - POLAR_MUSHROOM_FIELDS: 1
+      polar-mushroom-coast:
+        - POLAR_MUSHROOM_COAST: 1
+
       polar-vast-forest:
         - POLAR_PALE_GARDEN: 1
       polar-vast-forest-coast:

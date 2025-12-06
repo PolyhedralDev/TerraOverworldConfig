@@ -1,0 +1,46 @@
+id: POLAR_MUSHROOM_FIELDS
+type: BIOME
+extends:
+  - MUSHROOM_FIELDS
+  - ENVIRONMENT_LAND_UNIQUE_POLAR_MUSHROOM
+color: $biomes/colors.yml:POLAR_MUSHROOM_FIELDS
+
+vanilla: minecraft:mushroom_fields
+
+tags:
+  - ICE_MUSHROOM_CAVES
+  - USE_POLAR_MUSHROOM_RIVER
+
+palette:
+  - MYCELIUM: $meta.yml:top-y
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.55
+    palette:
+      - BLOCK:minecraft:packed_ice: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.5
+    palette:
+      - BLOCK:minecraft:blue_ice: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+  - threshold: 0.45
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - SMALL_MUSHROOMS
+  trees:
+    - MUSHROOM_DISK_PATCHES
+    - LARGE_MUSHROOMS
+  processors:
+    - SNOW_FOREST_LAYERS
+  preprocessors:
+    - POWDER_SNOW_DEPOSITS
+  postprocessors:
+    - TREE_SNOW
+    - BLEND_SNOW
+    - CEILING_ICICLES

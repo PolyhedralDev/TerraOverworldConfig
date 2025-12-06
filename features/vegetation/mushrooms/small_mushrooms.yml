@@ -23,11 +23,13 @@ locator:
   locators:
     - type: SURFACE
       range: &range
-        min: ${meta.yml:ocean-level} + 3
-        max: $meta.yml:top-y
+        min: ${meta.yml:ocean-level} + 1
+        max: ${meta.yml:ocean-level} + 9
+    - type: PATTERN
+      range: *range
       pattern:
-        type: MATCH
-        block: minecraft:mycelium
+        type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:mushroom-plantable-blocks
         offset: -1
     - type: PATTERN
       range: *range
@@ -41,4 +43,3 @@ structures:
   structures:
     - BLOCK:minecraft:red_mushroom: 1
     - BLOCK:minecraft:brown_mushroom: 1
-  

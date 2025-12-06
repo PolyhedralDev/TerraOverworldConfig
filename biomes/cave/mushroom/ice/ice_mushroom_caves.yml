@@ -1,0 +1,28 @@
+id: ICE_MUSHROOM_CAVES
+type: BIOME
+extends:
+  - MUSHROOM_CAVES
+color: $biomes/colors.yml:ICE_MUSHROOM_CAVES
+
+vanilla: minecraft:dripstone_caves
+
+palette:
+  - ICE_MUSHROOM_CAVES: $meta.yml:top-y
+  - ICE_MUSHROOM_CAVES_DEEPSLATE: $meta.yml:deepslate-top
+  - << meta.yml:palette-bedrock
+
+features:
+  flora:
+    - CAVE_GLOW_LICHEN
+    - CAVE_SMALL_MUSHROOMS
+    - HANGING_ROOTS
+  trees:
+    - CAVE_MUSHROOM_DISK_PATCHES
+    - CAVE_MEDIUM_MUSHROOMS
+  landforms:
+    - GREAT_MUSHROOMS
+    - ICE_CAVE_STALACTITES
+    - ICE_CAVE_STALAGMITES
+  postprocessors:
+    - GLOW_LICHEN_TENDRIL_CAVES
+    - ICE_CAVE_SNOW

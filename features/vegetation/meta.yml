@@ -7,6 +7,21 @@ plantable-blocks:
   - minecraft:moss_block
   - minecraft:pale_moss_block
   - minecraft:rooted_dirt
+  - minecraft:mycelium
+
+mushroom-plantable-blocks:
+  - minecraft:mud
+  - minecraft:grass_block
+  - minecraft:podzol
+  - minecraft:dirt
+  - minecraft:coarse_dirt
+  - minecraft:moss_block
+  - minecraft:pale_moss_block
+  - minecraft:rooted_dirt
+  - minecraft:mycelium
+  - minecraft:mushroom_stem
+  - minecraft:red_mushroom_block
+  - minecraft:brown_mushroom_block
 
 dry-plantable-blocks:
   - minecraft:grass_block
@@ -153,3 +168,6 @@ tree-blocks:
   - minecraft:cherry_leaves
   - minecraft:pale_oak_leaves
   - minecraft:azalea_leaves
+  - minecraft:mushroom_stem
+  - minecraft:red_mushroom_block
+  - minecraft:brown_mushroom_block

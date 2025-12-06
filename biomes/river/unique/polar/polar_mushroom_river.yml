@@ -1,0 +1,28 @@
+id: POLAR_MUSHROOM_RIVER
+type: BIOME
+extends:
+  - COLOR_FROZEN
+  - RIVER_FROZEN
+  - ENVIRONMENT_MARINE_RIVER_FROZEN
+  - EQ_GLOBAL_RIVER
+  - CARVING_OCEAN
+  - POLAR_MUSHROOM_FIELDS
+color: $biomes/colors.yml:POLAR_MUSHROOM_RIVER
+
+vanilla: minecraft:frozen_river
+
+features:
+  flora:
+    - SMALL_MUSHROOMS
+  trees:
+    - MUSHROOM_DISK_PATCHES
+    - LARGE_MUSHROOMS
+  processors:
+    - SNOW_FOREST_LAYERS
+  preprocessors:
+    - POWDER_SNOW_DEPOSITS
+    - ICE_COASTLINE
+  postprocessors:
+    - TREE_SNOW
+    - BLEND_SNOW
+    - CEILING_ICICLES

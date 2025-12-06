@@ -1,0 +1,17 @@
+id: ENVIRONMENT_LAND_UNIQUE_POLAR_MUSHROOM
+type: BIOME
+abstract: true
+
+colors:
+  fog: 0xdff2ff
+  water: 0x3d6db5
+  water-fog: 0x3d6db5
+  sky: 0xd5f0ff
+  grass: 0xcde0c4
+  foliage: 0xb6d0a8
+
+climate:
+  precipitation: true
+  temperature: -0.5
+  temperature-modifier: FROZEN
+  downfall: 0.1

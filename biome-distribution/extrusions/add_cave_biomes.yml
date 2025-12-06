@@ -99,11 +99,25 @@ extrusions:
       max: ${meta.yml:ocean-level}
 
   - type: REPLACE
-    from: LAVA_TUBES
+    from: ICE_MUSHROOM_CAVES
     sampler:
       type: CELLULAR
       return: CellValue
       salt: 5678
+      frequency: 1 / 200 / ${customization.yml:cave-biome-scale} / ${customization.yml:global-scale}
+    to:
+      - SELF: 1
+      - ICE_MUSHROOM_CAVES: 3
+    range:
+      min: $meta.yml:deepslate-bottom
+      max: ${meta.yml:ocean-level}
+
+  - type: REPLACE
+    from: LAVA_TUBES
+    sampler:
+      type: CELLULAR
+      return: CellValue
+      salt: 5679
       frequency: 1 / 200 / ${customization.yml:cave-biome-scale} / ${customization.yml:global-scale}
     to:
       - LAVA_TUBES: 1

@@ -4,37 +4,37 @@ stages:
       type: CONSTANT
     from: island
     replace: polar-deep-ocean
-    to: island-coast
+    to: polar-island-coast
   - type: BORDER
     sampler:
       type: CONSTANT
     from: island
     replace: polar-ocean
-    to: island-coast
+    to: polar-island-coast
   - type: BORDER
     sampler:
       type: CONSTANT
     from: island
     replace: polar-shallow-ocean
-    to: island-coast
+    to: polar-island-coast
   - type: BORDER
     sampler:
       type: CONSTANT
     from: island
     replace: boreal-deep-ocean
-    to: island-coast
+    to: polar-island-coast
   - type: BORDER
     sampler:
       type: CONSTANT
     from: island
     replace: boreal-ocean
-    to: island-coast
+    to: polar-island-coast
   - type: BORDER
     sampler:
       type: CONSTANT
     from: island
     replace: boreal-shallow-ocean
-    to: island-coast
+    to: polar-island-coast
   - type: BORDER
     sampler:
       type: CONSTANT

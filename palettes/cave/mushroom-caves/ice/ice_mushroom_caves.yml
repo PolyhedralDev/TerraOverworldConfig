@@ -1,0 +1,38 @@
+id: ICE_MUSHROOM_CAVES
+type: PALETTE
+
+layers:
+  - materials:
+      - minecraft:stone: 1
+      - minecraft:packed_ice: 2
+      - minecraft:blue_ice: 2
+      - minecraft:mycelium: 8
+      - minecraft:tuff: 7
+    layers: 1
+  - materials:
+      - minecraft:stone: 1
+      - minecraft:packed_ice: 2
+      - minecraft:blue_ice: 2
+      - minecraft:dirt: 8
+      - minecraft:tuff: 7
+    layers: 2
+  - materials:
+      - minecraft:stone: 1
+      - minecraft:packed_ice: 2
+      - minecraft:blue_ice: 2
+      - minecraft:dirt: 4
+      - minecraft:tuff: 7
+    layers: 1
+
+
+sampler:
+  dimensions: 2
+  type: DOMAIN_WARP
+  amplitude: 4
+  warp:
+    type: OPEN_SIMPLEX_2
+    frequency: 0.1
+  sampler:
+    type: CELLULAR
+    return: CellValue
+    frequency: 0.08

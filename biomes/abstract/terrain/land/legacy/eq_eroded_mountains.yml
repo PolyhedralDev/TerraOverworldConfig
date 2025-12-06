@@ -26,5 +26,5 @@ terrain:
       erosion:
         dimensions: 3
         type: OPEN_SIMPLEX_2
-        frequency: 0.03
+        frequency: 0.01
       noise: $biomes/abstract/terrain/land/legacy/eq_mountains.yml:terrain.sampler
