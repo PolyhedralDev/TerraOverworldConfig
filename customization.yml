@@ -135,7 +135,7 @@ elevation-highlands-threshold: 0.4
 # biome distribution.
 # Default: 0.4
 
-elevation-lowlands-threshold: 0.1
+elevation-lowlands-threshold: 0.15
 # Areas with an elevation value lower than this will be considered lowlands in
 # biome distribution.
 # Default: 0.1
