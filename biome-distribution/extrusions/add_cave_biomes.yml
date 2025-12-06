@@ -40,7 +40,7 @@ extrusions:
       - JUNGLE_CAVES: 7
     range:
       min: $meta.yml:deepslate-bottom
-      max: ${meta.yml:ocean-level} - 13
+      max: ${meta.yml:ocean-level}
 
   - type: REPLACE
     from: SPIDER_CAVES
@@ -78,11 +78,11 @@ extrusions:
       salt: 8756
       frequency: 1 / 200 / ${customization.yml:cave-biome-scale} / ${customization.yml:global-scale}
     to:
-      - SELF: 3
-      - RESIN_ROOTS: 1
+      - SELF: 1
+      - RESIN_ROOTS: 3
     range:
       min: $meta.yml:deepslate-bottom
-      max: ${meta.yml:ocean-level} - 13
+      max: ${meta.yml:ocean-level}
 
   - type: REPLACE
     from: MUSHROOM_CAVES
@@ -92,8 +92,21 @@ extrusions:
       salt: 5678
       frequency: 1 / 200 / ${customization.yml:cave-biome-scale} / ${customization.yml:global-scale}
     to:
-      - SELF: 3
-      - MUSHROOM_CAVES: 1
+      - SELF: 1
+      - MUSHROOM_CAVES: 3
     range:
       min: $meta.yml:deepslate-bottom
-      max: ${meta.yml:ocean-level} - 13
+      max: ${meta.yml:ocean-level}
+
+  - type: REPLACE
+    from: LAVA_TUBES
+    sampler:
+      type: CELLULAR
+      return: CellValue
+      salt: 5678
+      frequency: 1 / 200 / ${customization.yml:cave-biome-scale} / ${customization.yml:global-scale}
+    to:
+      - LAVA_TUBES: 1
+    range:
+      min: $meta.yml:bottom-y
+      max: ${meta.yml:ocean-level}
