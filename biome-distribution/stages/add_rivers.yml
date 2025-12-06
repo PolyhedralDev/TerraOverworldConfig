@@ -123,6 +123,24 @@ stages:
       - SELF: 1
       - PALE_GARDEN_RIVER: 1
     sampler: *riverSampler
+  - type: REPLACE
+    from: USE_ARID_PALE_GARDEN_RIVER
+    to:
+      - SELF: 1
+      - ARID_PALE_GARDEN_RIVER: 1
+    sampler: *riverSampler
+  - type: REPLACE
+    from: USE_ORANGE_ARID_PALE_GARDEN_RIVER
+    to:
+      - SELF: 1
+      - ORANGE_ARID_PALE_GARDEN_RIVER: 1
+    sampler: *riverSampler
+  - type: REPLACE
+    from: USE_RED_ARID_PALE_GARDEN_RIVER
+    to:
+      - SELF: 1
+      - RED_ARID_PALE_GARDEN_RIVER: 1
+    sampler: *riverSampler
   # Pale Garden rivers
   - type: REPLACE
     from: USE_POLAR_PALE_GARDEN_RIVER
