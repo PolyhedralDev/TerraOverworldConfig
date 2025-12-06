@@ -107,6 +107,6 @@ stages:
         - temperate-vast-forest: *temperateCold
         - temperate-vast-forest: *temperateWarm
         - temperate-vast-forest: *temperateHot
-        - tropical-savanna-wet: *tropicalCold
-        - tropical-monsoon: *tropicalWarm
-        - tropical-rainforest: *tropicalHot
+        - tropical-vast-forest: *tropicalCold
+        - tropical-vast-forest: *tropicalWarm
+        - tropical-vast-forest: *tropicalHot

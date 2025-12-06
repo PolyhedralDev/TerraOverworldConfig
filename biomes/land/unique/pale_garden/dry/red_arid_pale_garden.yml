@@ -1,0 +1,36 @@
+id: RED_ARID_PALE_GARDEN
+type: BIOME
+extends:
+  - PALE_GARDEN
+color: $biomes/colors.yml:RED_ARID_PALE_GARDEN
+
+vanilla: minecraft:pale_garden
+
+tags:
+  - RESIN_ROOTS
+  - USE_RED_ARID_PALE_GARDEN_RIVER
+
+colors:
+  water: 0x32A598
+  water-fog: 0x32A598
+
+palette:
+  - RED_SANDY_GRASS: $meta.yml:top-y
+  - RED_SAND: ${meta.yml:ocean-level} - 1
+  - << meta.yml:palette-bottom
+
+features:
+  flora:
+    - GRASS
+    - PALE_MOSS_CARPET
+    - EYEBLOSSOM_PATCH
+    - CAVE_GLOW_LICHEN
+    - CACTUS_SPARSE
+    - DEAD_BUSHES
+    - DRY_GRASS
+  trees:
+    - DEAD_PALE_FOREST_TREES
+    - DENSE_FALLEN_PALE_OAK_TREES
+    - PALE_OAK_BUSHES
+  landforms:
+    - PALE_MOSSY_BOULDERS

@@ -1,0 +1,14 @@
+id: ORANGE_ARID_PALE_GARDEN_RIVER
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_DRY_WARM_SEMI_ARID
+  - EQ_GLOBAL_RIVER
+  - CARVING_OCEAN
+  - ORANGE_ARID_PALE_GARDEN_COAST
+color: $biomes/colors.yml:ORANGE_ARID_PALE_GARDEN_RIVER
+
+vanilla: minecraft:river
+
+colors:
+  water: 0x32A598
+  water-fog: 0x32A598

@@ -1,0 +1,16 @@
+id: ORANGE_ARID_PALE_GARDEN_COAST
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_DRY_WARM_SEMI_ARID
+  - ORANGE_ARID_PALE_GARDEN
+color: $biomes/colors.yml:ORANGE_ARID_PALE_GARDEN_COAST
+
+vanilla: minecraft:pale_garden
+
+tags:
+  - RESIN_ROOTS
+  - USE_ARID_PALE_GARDEN_RIVER
+
+palette:
+  - RED_WHITE_SAND_MIX: $meta.yml:top-y
+  - << meta.yml:palette-bottom

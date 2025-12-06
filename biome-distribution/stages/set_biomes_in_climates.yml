@@ -545,6 +545,10 @@ stages:
         - PALE_GARDEN: 1
       temperate-vast-forest-coast:
         - PALE_GARDEN_COAST: 1
+      tropical-vast-forest:
+        - arid-pale-garden: 1
+      tropical-vast-forest-coast:
+        - arid-pale-garden-coast: 1
 
 
       island-polar-shallow-ocean:

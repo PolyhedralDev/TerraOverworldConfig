@@ -89,3 +89,9 @@ stages:
     from: temperate-vast-forest
     replace: ocean
     to: temperate-vast-forest-coast
+  - type: BORDER
+    sampler:
+      type: CONSTANT
+    from: tropical-vast-forest
+    replace: ocean
+    to: tropical-vast-forest-coast

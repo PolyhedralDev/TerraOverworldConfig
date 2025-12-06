@@ -8,3 +8,25 @@ stages:
       - MAPLE_GROVE: 2
       - RED_MAPLE_GROVE: 1
       - YELLOW_MAPLE_GROVE: 2
+
+  - type: REPLACE
+    from: arid-pale-garden
+    sampler:
+      type: CELLULAR
+      return: CellValue
+      frequency: 1 / 100 / ${customization.yml:variation-scale} / ${customization.yml:global-scale}
+    to:
+      - ARID_PALE_GARDEN: 1
+      - ORANGE_ARID_PALE_GARDEN: 1
+      - RED_ARID_PALE_GARDEN: 1
+
+  - type: REPLACE
+    from: arid-pale-garden-coast
+    sampler:
+      type: CELLULAR
+      return: CellValue
+      frequency: 1 / 100 / ${customization.yml:variation-scale} / ${customization.yml:global-scale}
+    to:
+      - ARID_PALE_GARDEN_COAST: 1
+      - ORANGE_ARID_PALE_GARDEN_COAST: 1
+      - RED_ARID_PALE_GARDEN_COAST: 1

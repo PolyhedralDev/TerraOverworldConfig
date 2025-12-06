@@ -1,4 +1,6 @@
-if (getBlock(0, 1, 0) != "minecraft:pale_oak_leaves") fail;
+if (getBlock(0, 1, 0) != "minecraft:pale_oak_leaves" &&
+    getBlock(0, 1, 0) != "minecraft:pale_oak_log" &&
+    getBlock(0, 1, 0) != "minecraft:pale_oak_wood") fail;
 
 num length = 1 + ((sampler("simplex", originX(), originZ()) + 1) * 2.5);
 num x = 0;
