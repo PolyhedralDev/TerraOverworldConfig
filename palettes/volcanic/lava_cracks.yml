@@ -25,11 +25,6 @@ layers:
     layers: 2
     sampler:
       type: CONSTANT
-  - materials:
-      - minecraft:stone: 1
-    layers: 1
-    sampler:
-      type: CONSTANT
 
 sampler:
   type: EXPRESSION

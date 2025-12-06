@@ -1,0 +1,187 @@
+// First search upwards for an area with enough air space to place the lava vent
+
+// Search variables
+num maxTunnelHeight = 250;
+num airGap = 50; // How much air must be above the tunnel exit
+num undergroundGap = 3; // Determines how much air must be below the tunnel exit
+
+// Search tracking variables
+bool foundSpot = false;
+bool hasUndergroundSpace = true;
+num airHeight = 0; // Keeps track of how much air is below
+num surfaceHeight = 0; // Set to y level of surface if found
+num undergroundHeight = 0; // Set to the y level of tunnel exit
+
+// Run search
+for (num h = 0; h <= maxTunnelHeight; h = h + 1) {
+    str blockID = getBlock(0, h, 0);
+    if (blockID == "minecraft:air") {
+        // Hit air
+        if (airHeight == 0) {
+            airHeight = 1;
+            surfaceHeight = h;
+        }
+        else airHeight = airHeight + 1;
+    } else {
+        // Hit solid block
+        if (undergroundHeight == 0) {
+            // Hit first solid block
+            if (h < undergroundGap) {
+                hasUndergroundSpace = false;
+                break;
+            }
+            undergroundHeight = h;
+        }
+        airHeight = 0;
+    }
+    if (airHeight > airGap) {
+        if (structure(0, surfaceHeight - 1, 0, "is_lava_placeable", "NONE")) {
+            foundSpot = true;
+            break;
+        }
+    }
+}
+if (!foundSpot || !hasUndergroundSpace) fail;
+
+str pitBlockCheck = getBlock(0, surfaceHeight, 0);
+if (pitBlockCheck != "minecraft:air" &&
+    pitBlockCheck != "minecraft:lava" &&
+    pitBlockCheck != "minecraft:magma_block") {
+    fail;
+}
+
+// Lava vent palette
+str shellBlock = "minecraft:basalt";
+str accentBlock = "minecraft:blackstone";
+str lavaBlock = "minecraft:lava";
+str magmaBlock = "minecraft:magma_block";
+
+num bendNoiseFrequency = 0.035;
+num bendNoiseAmplitude = 2.25;
+num radiusNoiseFrequency = 0.06;
+num radiusNoiseStrength = 1.3;
+
+// Tunnel placement
+
+// Tunnel variables
+num randPrecision = 100;
+num shellNoiseHorizontalFrequency = 30;
+num shellNoiseVerticalFrequency = 30;
+num trunkRadius = 5 + randomInt(2);
+num helixFrequency = 10 + randomInt(5);
+num helixAmplitude = 5 + randomInt(3);
+num helixJitter = 1.1;
+num helixLerpMin = 0.35;
+num helixLerpMax = 0.65;
+num ventChance = 8;
+num tunnelTop = surfaceHeight - 1;
+if (tunnelTop <= undergroundHeight) fail;
+
+bool placeInAir = false;
+bool hornitoPlaced = false;
+for (num trunkLevel = undergroundHeight; trunkLevel <= tunnelTop; trunkLevel = trunkLevel + 1) {
+
+    num t = (trunkLevel - undergroundHeight) / (tunnelTop - undergroundHeight);
+    num it = 1 - t;
+    num amp = max(0, min(1, min(t / helixLerpMin, (t - 1) / (-1 + helixLerpMax))));
+    num lateralNoiseX = sampler("simplex3",
+        bendNoiseFrequency * originX(),
+        bendNoiseFrequency * (originY() + trunkLevel),
+        bendNoiseFrequency * originZ()
+    ) * bendNoiseAmplitude;
+    num lateralNoiseZ = sampler("simplex3",
+        bendNoiseFrequency * (originX() + 27),
+        bendNoiseFrequency * (originY() + trunkLevel),
+        bendNoiseFrequency * (originZ() + 27)
+    ) * bendNoiseAmplitude;
+    num xOffset = sin(t * helixFrequency) * amp * helixAmplitude + lateralNoiseX;
+    num zOffset = cos(t * helixFrequency) * amp * helixAmplitude + lateralNoiseZ;
+    num shellNoiseThreshold = it;
+
+    num trunkLevelRadius = trunkRadius + amp * (2 + randomInt(randPrecision) / randPrecision * helixJitter);
+    num trunkLevelRadiusSquared = pow2(trunkLevelRadius);
+
+    // Determines if all of the blocks in the current layer within the radius are solid.
+    bool allSolid = true;
+
+    // Place a layer of the tunnel
+    for (num x = round(-trunkLevelRadius); x < round(trunkLevelRadius); x = x + 1) {
+        for (num z = round(-trunkLevelRadius); z < round(trunkLevelRadius); z = z + 1) {
+            num distanceSquared = pow2(x) + pow2(z);
+            if (distanceSquared < trunkLevelRadiusSquared) {
+                num radiusNoise = sampler("simplex3",
+                    radiusNoiseFrequency * (originX() + x + xOffset),
+                    radiusNoiseFrequency * (originY() + trunkLevel),
+                    radiusNoiseFrequency * (originZ() + z + zOffset)
+                ) * radiusNoiseStrength;
+                num effectiveRadiusSquared = pow2(trunkLevelRadius + radiusNoise);
+                num effectiveInnerRadiusSquared = pow2(max(0.5, (trunkLevelRadius - 1 - amp * 1.5) + radiusNoise * 0.5));
+                if (distanceSquared < effectiveRadiusSquared) {
+                    if (distanceSquared < effectiveInnerRadiusSquared) {
+                        str innerBlock = getBlock(x + xOffset, trunkLevel, z + zOffset);
+                        bool innerBlocked = innerBlock == lavaBlock || innerBlock == magmaBlock;
+                        if (!innerBlocked) block(x + xOffset, trunkLevel, z + zOffset, lavaBlock, true, true);
+                        str floorTarget = getBlock(x + xOffset, trunkLevel - 1, z + zOffset);
+                        bool floorMolten = floorTarget == lavaBlock || floorTarget == magmaBlock;
+                        if (!floorMolten) {
+                            if (randomInt(4) == 0) block(x + xOffset, trunkLevel - 1, z + zOffset, magmaBlock);
+                            else block(x + xOffset, trunkLevel - 1, z + zOffset, lavaBlock, true, true);
+                        }
+                        bool nearShell = distanceSquared > effectiveInnerRadiusSquared - 4;
+                        bool passesVentRoll = randomInt(randPrecision) < randPrecision / ventChance;
+                        bool makeVent = nearShell && passesVentRoll;
+                        bool atVentLevel = trunkLevel % 3 == 0;
+                        if (makeVent && atVentLevel && !innerBlocked) {
+                            block(x + xOffset, trunkLevel, z + zOffset, lavaBlock, true, true);
+                        }
+                    } else {
+                        str outerBlock = getBlock(x + xOffset, trunkLevel, z + zOffset);
+                        if (outerBlock == "minecraft:air") {
+                            if (!placeInAir) continue;
+                            allSolid = false;
+                        }
+                        str trunkBlock = shellBlock;
+                        if ((sampler("simplex3",
+                            shellNoiseHorizontalFrequency * (originX() + x),
+                            shellNoiseVerticalFrequency * (originY() + trunkLevel),
+                            shellNoiseHorizontalFrequency * (originZ() + z)
+                        ) + 1) / 2 < shellNoiseThreshold) trunkBlock = accentBlock;
+                        if (outerBlock != lavaBlock && outerBlock != magmaBlock) {
+                            if (trunkLevel >= tunnelTop - 2) {
+                                bool nearbyMolten = false;
+                                for (num dx = -1; dx <= 1 && !nearbyMolten; dx = dx + 1) {
+                                    for (num dz = -1; dz <= 1 && !nearbyMolten; dz = dz + 1) {
+                                        for (num dy = -1; dy <= 1; dy = dy + 1) {
+                                            str checkBlock = getBlock(x + xOffset + dx, trunkLevel + dy, z + zOffset + dz);
+                                            if (checkBlock == lavaBlock || checkBlock == magmaBlock) {
+                                                nearbyMolten = true;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                                if (nearbyMolten) continue;
+                                bool placed = false;
+                                if (!hornitoPlaced && randomInt(3) == 0) {
+                                    placed = structure(x + xOffset, trunkLevel, z + zOffset, "hornito", "NONE");
+                                    if (placed) hornitoPlaced = true;
+                                }
+                                if (!placed) block(x + xOffset, trunkLevel, z + zOffset, shellBlock);
+                                continue;
+                            }
+                            block(x + xOffset, trunkLevel, z + zOffset, trunkBlock);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if (allSolid) placeInAir = true;
+}
+
+str pitLava = getBlock(0, tunnelTop, 0);
+bool pitMolten = pitLava == lavaBlock || pitLava == magmaBlock;
+if (!pitMolten) {
+    if (randomInt(4) == 0) block(0, tunnelTop, 0, magmaBlock);
+    else block(0, tunnelTop, 0, lavaBlock, true, true);
+}

@@ -1,0 +1,21 @@
+id: LAVA_TUNNEL
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 10
+  padding: 20
+  salt: 4351
+
+locator:
+  type: AND
+  locators:
+    - type: TOP
+      range:
+        min: ${meta.yml:bottom-y} + 5
+        max: ${meta.yml:ocean-level} - 11
+
+structures:
+  distribution:
+    type: CONSTANT
+  structures: place_lava_tunnel_underground

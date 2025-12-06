@@ -1,0 +1,16 @@
+str blockID = getBlock(0, 0, 0);
+if (blockID != "minecraft:basalt" &&
+    blockID != "minecraft:smooth_basalt" &&
+    blockID != "minecraft:blackstone" &&
+    blockID != "minecraft:stone" &&
+    blockID != "minecraft:andesite" &&
+    blockID != "minecraft:diorite" &&
+    blockID != "minecraft:granite" &&
+    blockID != "minecraft:tuff" &&
+    blockID != "minecraft:dirt" &&
+    blockID != "minecraft:coarse_dirt" &&
+    blockID != "minecraft:grass_block" &&
+    blockID != "minecraft:lava" &&
+    blockID != "minecraft:magma_block") {
+    fail;
+}

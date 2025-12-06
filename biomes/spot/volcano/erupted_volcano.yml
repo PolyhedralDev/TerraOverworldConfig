@@ -8,6 +8,9 @@ color: $biomes/colors.yml:ERUPTED_VOLCANO
 
 vanilla: minecraft:badlands
 
+tags:
+  - LAVA_TUBES
+
 particles:
   particle: minecraft:ash
   probability: 0.025
@@ -29,7 +32,6 @@ features:
     - SMOOTH_LAVA
     - VOLCANO_LAVA
   landforms:
-    - HORNITOS
     - MOLTEN_ROCKS
     - TUFF_BOULDERS
   postprocessors:
