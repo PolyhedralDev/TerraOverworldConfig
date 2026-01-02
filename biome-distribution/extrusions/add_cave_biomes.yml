@@ -40,7 +40,7 @@ extrusions:
       - JUNGLE_CAVES: 7
     range:
       min: $meta.yml:deepslate-bottom
-      max: ${meta.yml:ocean-level}
+      max: ${meta.yml:ocean-level} - 13
 
   - type: REPLACE
     from: SPIDER_CAVES
@@ -82,7 +82,7 @@ extrusions:
       - RESIN_ROOTS: 3
     range:
       min: $meta.yml:deepslate-bottom
-      max: ${meta.yml:ocean-level}
+      max: ${meta.yml:ocean-level} - 13
 
   - type: REPLACE
     from: MUSHROOM_CAVES
@@ -96,7 +96,7 @@ extrusions:
       - MUSHROOM_CAVES: 3
     range:
       min: $meta.yml:deepslate-bottom
-      max: ${meta.yml:ocean-level}
+      max: ${meta.yml:ocean-level} - 13
 
   - type: REPLACE
     from: ICE_MUSHROOM_CAVES
@@ -110,7 +110,7 @@ extrusions:
       - ICE_MUSHROOM_CAVES: 3
     range:
       min: $meta.yml:deepslate-bottom
-      max: ${meta.yml:ocean-level}
+      max: ${meta.yml:ocean-level} - 13
 
   - type: REPLACE
     from: LAVA_TUBES
