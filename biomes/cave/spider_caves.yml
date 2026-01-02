@@ -19,6 +19,7 @@ palette:
 features:
   landforms:
     - SPIDER_NESTS
+    - DENSE_PROCEDURAL_COBWEBS
   postprocessors:
     - WEB_CROSS_STRANDS
     - HANGING_WEB_STRANDS

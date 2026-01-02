@@ -1,0 +1,38 @@
+id: DENSE_PROCEDURAL_COBWEBS
+type: FEATURE
+
+distributor:
+  type: PADDED_GRID
+  width: 17
+  padding: 9
+  salt: 7654
+
+locator:
+  type: AND
+  locators:
+    - type: SURFACE
+      range: &range
+        min: ${meta.yml:bottom-y} + 18
+        max: ${meta.yml:ocean-level} - 13
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SOLID
+        offset: -1
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_SOLID
+        offset: -5
+    - type: PATTERN
+      range: *range
+      pattern:
+        type: MATCH_AIR
+        offset: 5
+
+structures:
+  distribution:
+    type: WHITE_NOISE
+  structures:
+    - procedural_cobweb: 1
+    - blank: 1

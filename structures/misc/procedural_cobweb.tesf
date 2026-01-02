@@ -1,0 +1,142 @@
+num randPrecision = 100;
+
+num maxLength = 14;
+num length = maxLength;
+
+num strandOffset = 6;
+num yTranslate = 5;
+
+// Direction vector
+num dx = (randomInt(randPrecision)/randPrecision-0.5)*1.5;
+num dy = 2-randomInt(randPrecision)/randPrecision;
+num dz = (randomInt(randPrecision)/randPrecision-0.5)*1.5;
+
+num mag = sqrt(pow(dx,2)+pow(dz,2))*2;
+dx = dx/mag;
+dx = dx/mag;
+dz = dz/mag;
+
+bool original = false;
+bool valid = false;
+
+num cx0 = 0;
+num cz0 = 0;
+num cy0 = 0;
+
+num cx1 = 0;
+num cz1 = 0;
+num cy1 = 0;
+
+num cx2 = 0;
+num cz2 = 0;
+num cy2 = 0;
+
+for (num dir = 0; dir < 6; dir = dir + 1) {
+
+    for (num c = 0; c < maxLength; c = c + 1) {
+        num x = cos(dir) * c;
+        num z = sin(dir) * c;
+        num y = ((dx*x)+(dz*z))*dy;
+        if (getBlock(x, yTranslate + y,  z) != "minecraft:air" &&
+            getBlock(x, yTranslate + y, z) != "minecraft:cobweb" &&
+            getBlock(x, yTranslate + y, z) != "minecraft:red_concrete") {
+            length = c;
+            valid = true;
+            break;
+        }
+    }
+
+    if (!valid) continue;
+
+    valid = false;
+
+    // Set coord for original strand
+    if (!original) {
+        cx0 = cos(dir) * strandOffset;
+        cz0 = sin(dir) * strandOffset;
+        cy0 = ((dx * cx0) + (dz * cz0)) * dy;
+        original = true;
+    }
+
+    for (num l = 0; l < length; l = l + 1) {
+        num x = cos(dir) * l;
+        num z = sin(dir) * l;
+        num y = ((dx * x) + (dz * z)) * dy;
+
+        if ((yTranslate + y) > 15 ||
+            (yTranslate + y) < -15) break;
+
+        block(x, yTranslate + y, z, "minecraft:cobweb", false);
+
+        if (l == strandOffset) {
+            //block(x, y + 1, z, "minecraft:red_concrete");
+            cx2 = cx1;
+            cy2 = cy1;
+            cz2 = cz1;
+            cx1 = x;
+            cy1 = y;
+            cz1 = z;
+        }
+    }
+
+    if (dir == 0) continue;
+
+    num cDir = atan((cz2 - cz1) / (cx2 - cx1));
+    num cLength = sqrt(pow((cx2-cx1),2)+pow((cz2-cz1),2)+pow((cy2-cy1),2));
+    num zDir = 1;
+    num yDir = 1;
+    num xDir = 1;
+
+    for (num i = 0; i < cLength; i = i + 1) {
+        num cx = cos(cDir) * i;
+        num cz = sin(cDir) * i;
+        num cy = ((dx * cx) + (dz * cz)) * dy;
+
+        if (cz1 < cz2 && cx1 > cx2) {
+            xDir = -1;
+            zDir = -1;
+            yDir = -1;
+        } else if (cz1 > cz2 && cx1 > cx2) {
+            xDir = -1;
+            zDir = -1;
+            yDir = -1;
+        }
+
+        if ((yTranslate + cy1 + cy * yDir) > 15 ||
+            (yTranslate + cy1 + cy * yDir) < -15) break;
+
+        block(cx1 + cx * xDir, yTranslate + cy1 + cy * yDir, cz1 + cz * zDir, "minecraft:cobweb", false);
+    }
+}
+
+cx2 = cx0;
+cy2 = cy0;
+cz2 = cz0;
+
+num cDir = atan((cz2 - cz1) / (cx2 - cx1));
+num cLength = sqrt(pow((cx2-cx1),2)+pow((cz2-cz1),2)+pow((cy2-cy1),2));
+num zDir = 1;
+num yDir = 1;
+num xDir = 1;
+
+for (num i = 0; i < cLength; i = i + 1) {
+    num cx = cos(cDir) * i;
+    num cz = sin(cDir) * i;
+    num cy = ((dx * cx) + (dz * cz)) * dy;
+
+    if (cz1 < cz2 && cx1 > cx2) {
+        xDir = -1;
+        zDir = -1;
+        yDir = -1;
+    } else if (cz1 > cz2 && cx1 > cx2) {
+        xDir = -1;
+        zDir = -1;
+        yDir = -1;
+    }
+
+    if ((yTranslate + cy1 + cy * yDir) > 15 ||
+        (yTranslate + cy1 + cy * yDir) < -15) break;
+
+    block(cx1 + cx * xDir, yTranslate + cy1 + cy * yDir, cz1 + cz * zDir, "minecraft:cobweb", false);
+}
+
