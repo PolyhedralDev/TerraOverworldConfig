@@ -53,6 +53,7 @@ aquatic-plantable-blocks:
 seagrass-plantable-blocks:
   - minecraft:mud
   - minecraft:sand
+  - minecraft:red_sand
   - minecraft:gravel
   - minecraft:deepslate
   - minecraft:basalt
