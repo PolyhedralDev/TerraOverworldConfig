@@ -10,22 +10,14 @@ distributor:
 locator:
   type: AND
   locators:
-    - type: TOP
-      range: &range
-        min: ${meta.yml:ocean-level} + 3
-        max: $meta.yml:top-y
     - type: PATTERN
-      range: *range
+      range: &range
+        min: ${meta.yml:ocean-level} - 2
+        max: $meta.yml:top-y
       pattern:
         type: MATCH_SET
-        blocks: $features/vegetation/meta.yml:plantable-blocks
+        blocks: $features/vegetation/meta.yml:dry-grass-plantable-blocks
         offset: -1
-    - type: PATTERN
-      range: *range
-      pattern:
-        type: MATCH
-        block: minecraft:dirt
-        offset: -2
     - type: PATTERN
       range: *range
       pattern:
@@ -33,6 +25,7 @@ locator:
         blocks:
           - minecraft:snow
           - minecraft:air
+          - minecraft:water
         offset: 0
 
 structures:

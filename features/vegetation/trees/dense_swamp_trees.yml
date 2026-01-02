@@ -10,12 +10,10 @@ distributor:
 locator:
   type: AND
   locators:
-    - type: TOP
-      range: &range
-        min: ${meta.yml:ocean-level} + 3
-        max: ${meta.yml:ocean-level} + 119
     - type: PATTERN
-      range: *range
+      range: &range
+        min: ${meta.yml:ocean-level} - 2
+        max: $meta.yml:top-y
       pattern:
         type: MATCH_SET
         blocks: $features/vegetation/meta.yml:dry-grass-plantable-blocks
