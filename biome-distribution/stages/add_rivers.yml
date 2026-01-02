@@ -98,7 +98,7 @@ stages:
     from: USE_RED_DESERT_RIVER
     to:
       - SELF: 1
-      - GALLERY_FOREST: 1
+      - RED_GALLERY_FOREST: 1
       - RED_DESERT_RIVER: 2
     sampler: *riverSampler
   # Orange desert rivers
@@ -106,7 +106,7 @@ stages:
     from: USE_ORANGE_DESERT_RIVER
     to:
       - SELF: 1
-      - GALLERY_FOREST: 1
+      - ORANGE_GALLERY_FOREST: 1
       - ORANGE_DESERT_RIVER: 2
     sampler: *riverSampler
   # Tar pit rivers

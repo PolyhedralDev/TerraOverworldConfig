@@ -1,0 +1,17 @@
+id: ORANGE_GALLERY_FOREST
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_MARITIME_WET
+  - EQ_WARPED_WETLANDS
+  - CARVING_OCEAN
+  - BASE
+  - GALLERY_FOREST
+color: $biomes/colors.yml:ORANGE_GALLERY_FOREST
+
+vanilla: minecraft:river
+
+palette:
+  - GRASS: $meta.yml:top-y
+  - GRASS_MARSH: ${meta.yml:ocean-level} + 11
+  - RED_WHITE_SAND_MIX: ${meta.yml:ocean-level} - 1
+  - << meta.yml:palette-bottom
