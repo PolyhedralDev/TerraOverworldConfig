@@ -1,0 +1,41 @@
+id: TROPICAL_MUSHROOM_FIELDS
+type: BIOME
+extends:
+  - ENVIRONMENT_LAND_UNIQUE_MUSHROOM
+  - EQ_ERODED_MOUNTAINS
+  - CARVING_LAND
+  - BASE
+color: $biomes/colors.yml:TROPICAL_MUSHROOM_FIELDS
+
+vanilla: minecraft:mushroom_fields
+
+tags:
+  - TROPICAL_MUSHROOM_CAVES
+  - USE_MUSHROOM_RIVER
+
+palette:
+  - MYCELIUM: $meta.yml:top-y
+  - << meta.yml:palette-underwater
+  - << meta.yml:palette-bottom
+
+slant:
+  - threshold: 0.45
+    palette:
+      - BLOCK:minecraft:light_gray_terracotta: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+  - threshold: 0.4
+    palette:
+      - BLOCK:minecraft:stone: $meta.yml:top-y
+      - << meta.yml:palette-underwater
+      - << meta.yml:palette-bottom
+
+features:
+  trees:
+    - MUSHROOM_DISK_PATCHES
+    - LARGE_MUSHROOMS
+    - DENSE_JUNGLE_BUSHES
+  flora:
+    - SMALL_MUSHROOMS
+    - LARGE_LEAF_VINES
+    - LARGE_CEILING_VINES

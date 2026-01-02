@@ -523,15 +523,18 @@ stages:
         - TROPICAL_DEEP_OCEAN: 1
         - TROPICAL_DEEP_DEPTHS: 1
 
-      mushroom:
-        - MUSHROOM_FIELDS: 1
-      mushroom-coast:
-        - MUSHROOM_COAST: 1
-
       polar-mushroom:
         - POLAR_MUSHROOM_FIELDS: 1
       polar-mushroom-coast:
         - POLAR_MUSHROOM_COAST: 1
+      mushroom:
+        - MUSHROOM_FIELDS: 1
+      mushroom-coast:
+        - MUSHROOM_COAST: 1
+      tropical-mushroom:
+        - TROPICAL_MUSHROOM_FIELDS: 1
+      tropical-mushroom-coast:
+        - TROPICAL_MUSHROOM_COAST: 1
 
       polar-vast-forest:
         - POLAR_PALE_GARDEN: 1
