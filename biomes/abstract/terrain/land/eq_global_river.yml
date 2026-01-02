@@ -7,6 +7,7 @@ variables: &variables
   scale: $customization.yml:terrain-height
 
   depth: 0.11
+  depthVariation: 0.05
   ceilingBase: 0.1
   ceilingHeight: 0.17
 
@@ -22,7 +23,7 @@ terrain:
         elevation(x, z),
         scale,
         (y - base) / scale,
-        depth,
+        depth - ((1 + depthVariation(x,z)) * depthVariation),
         ceilingBase,
         ceilingHeight,
         ceilingSpikes(x, z) * -0.1,
@@ -55,6 +56,14 @@ terrain:
           type: CELLULAR
           distance: Euclidean
           frequency: 0.06
+      depthVariation:
+        dimensions: 2
+        type: FBM
+        octaves: 4
+        sampler:
+          type: OPEN_SIMPLEX_2
+          frequency: 0.005
+          salt: 9
     functions:
       erode:
         arguments: [ base, elevation, scale, y, depth, ceilingBase, ceilingHeight, ceilingOffset, ceilingOpenings ]
