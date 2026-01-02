@@ -1,6 +1,14 @@
 riverSampler: &riverSampler
   type: EXPRESSION
-  expression: segment(riverBiomeMap(x, z), riverValue, borderValue, (elevation(x, z) < lowlandsThreshold) && (borderMask(x, z) < borderMaskThreshold))
+  expression: |
+    max(segment(riverBiomeMap(x, z), 
+    riverValue, borderValue, 
+    (elevation(x, z) < lowlandsThreshold) && 
+    (borderMask(x, z) < borderMaskThreshold)),
+    segment(riverBiomeMap2(x, z), 
+    riverValue, borderValue, 
+    (elevation(x, z) < lowlandsThreshold) && 
+    (borderMask(x, z) < borderMaskThreshold)))
   variables:
     riverValue: $math/samplers/rivers.yml:variables.riverValue
     borderValue: $math/samplers/rivers.yml:variables.borderValue
