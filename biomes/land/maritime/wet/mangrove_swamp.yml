@@ -43,6 +43,7 @@ features:
     - LILY_PADS
     - SUGAR_CANE
     - DEAD_BUSHES
+    - SMALL_MUSHROOMS
   trees:
     - MANGROVE_TREES
   structures:
