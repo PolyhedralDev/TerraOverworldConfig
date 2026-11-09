@@ -43,6 +43,7 @@ features:
     - LILY_PADS
     - SUGAR_CANE
     - DRIPLEAF_KELP
+    - SMALL_MUSHROOMS
   trees:
     - OAK_BUSHES
     - DENSE_SWAMP_TREES
