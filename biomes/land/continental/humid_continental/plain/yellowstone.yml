@@ -15,11 +15,11 @@ tags:
 
 vanilla: minecraft:taiga
 
-colors:
-  grass: 0x91bd59
-  foliage: 0x77ab2f
-  water: 0x44aff5
-  water-fog: 0x44aff5
+attributes:
+  terra:biome/grass_color: "#91bd59"
+  terra:biome/foliage_color: "#77ab2f"
+  terra:biome/water_color: "#44aff5"
+  minecraft:visual/water_fog_color: "#44aff5"
 
 palette:
   - YELLOWSTONE_WATER: $meta.yml:top-y

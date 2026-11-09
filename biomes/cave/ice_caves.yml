@@ -7,9 +7,12 @@ color: $biomes/colors.yml:ICE_CAVES
 
 vanilla: minecraft:dripstone_caves
 
-particles:
-  particle: falling_dust{block_state:{Name:snow_block}}
-  probability: 0.0005
+attributes:
+  minecraft:visual/ambient_particles:
+    - particle:
+        type: minecraft:falling_dust
+        block_state: minecraft:snow_block
+      probability: 0.0005
 
 palette:
   - ICE_CAVES: $meta.yml:top-y

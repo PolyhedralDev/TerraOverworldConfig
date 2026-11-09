@@ -11,11 +11,11 @@ tags:
   - USE_RIVER
   - DEEP_DARK
 
-colors:
-  foliage: 0x5AC67B
-  grass: 0xb6db61
-  water: 0x5DB7EF
-  fog: 0xabd2ff
+attributes:
+  terra:biome/foliage_color: "#5ac67b"
+  terra:biome/grass_color: "#b6db61"
+  terra:biome/water_color: "#5db7ef"
+  minecraft:visual/fog_color: "#abd2ff"
 
 slant:
   - threshold: 0.8

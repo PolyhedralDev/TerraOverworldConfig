@@ -10,9 +10,9 @@ color: $biomes/colors.yml:TAR_PITS
 
 vanilla: minecraft:meadow
 
-colors:
-  water: 0x525457
-  water-fog: 0x525457
+attributes:
+  terra:biome/water_color: "#525457"
+  minecraft:visual/water_fog_color: "#525457"
 
 tags:
   - LAND_CAVES

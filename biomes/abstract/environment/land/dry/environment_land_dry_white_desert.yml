@@ -3,6 +3,10 @@ type: BIOME
 extends: ENVIRONMENT_LAND_DRY_DESERT
 abstract: true
 
-particles:
-  particle: minecraft:dust{color:[0.967,0.914,0.639], scale:1}
-  probability: 0.0002
+attributes:
+  minecraft:visual/ambient_particles:
+    - particle:
+        type: minecraft:dust
+        color: [0.967, 0.914, 0.639]
+        scale: 1
+      probability: 0.0002

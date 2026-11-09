@@ -2,10 +2,10 @@ id: COLOR_FROZEN
 type: BIOME
 abstract: true
 
-colors:
-  sky: 0xe4f1ff
-  fog: 0xbacddc
-  grass: 0xe9f2e2
-  foliage: 0x757759
-  water: 0x3181ff
-  water-fog: 0x2756ab
+attributes:
+  minecraft:visual/sky_color: "#e4f1ff"
+  minecraft:visual/fog_color: "#bacddc"
+  terra:biome/grass_color: "#e9f2e2"
+  terra:biome/foliage_color: "#757759"
+  terra:biome/water_color: "#3181ff"
+  minecraft:visual/water_fog_color: "#2756ab"

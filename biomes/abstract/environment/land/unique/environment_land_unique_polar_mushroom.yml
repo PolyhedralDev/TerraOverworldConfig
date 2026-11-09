@@ -2,16 +2,14 @@ id: ENVIRONMENT_LAND_UNIQUE_POLAR_MUSHROOM
 type: BIOME
 abstract: true
 
-colors:
-  fog: 0xdff2ff
-  water: 0x3d6db5
-  water-fog: 0x3d6db5
-  sky: 0xd5f0ff
-  grass: 0xcde0c4
-  foliage: 0xb6d0a8
-
-climate:
-  precipitation: true
-  temperature: -0.5
-  temperature-modifier: FROZEN
-  downfall: 0.1
+attributes:
+  minecraft:visual/fog_color: "#dff2ff"
+  terra:biome/water_color: "#3d6db5"
+  minecraft:visual/water_fog_color: "#3d6db5"
+  minecraft:visual/sky_color: "#d5f0ff"
+  terra:biome/grass_color: "#cde0c4"
+  terra:biome/foliage_color: "#b6d0a8"
+  terra:biome/has_precipitation: true
+  terra:biome/temperature: -0.5
+  terra:biome/temperature_modifier: frozen
+  terra:biome/downfall: 0.1

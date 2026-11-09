@@ -9,11 +9,11 @@ color: $biomes/colors.yml:TROPICAL_RAINFOREST
 
 vanilla: minecraft:jungle
 
-colors:
-  grass: 0x69a842
-  foliage: 0x90db40
-  water: 0x14a2c5
-  water-fog: 0x14a2c5
+attributes:
+  terra:biome/grass_color: "#69a842"
+  terra:biome/foliage_color: "#90db40"
+  terra:biome/water_color: "#14a2c5"
+  minecraft:visual/water_fog_color: "#14a2c5"
 
 tags:
   - LAND_CAVES

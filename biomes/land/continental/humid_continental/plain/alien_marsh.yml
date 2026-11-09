@@ -13,11 +13,11 @@ tags:
 
 vanilla: minecraft:plains
 
-colors:
-  grass: 0x33cccc
-  foliage: 0xccff99
-  water: 0x44aff5
-  water-fog: 0x44aff5
+attributes:
+  terra:biome/grass_color: "#33cccc"
+  terra:biome/foliage_color: "#ccff99"
+  terra:biome/water_color: "#44aff5"
+  minecraft:visual/water_fog_color: "#44aff5"
 
 palette:
   - GRASS: $meta.yml:top-y

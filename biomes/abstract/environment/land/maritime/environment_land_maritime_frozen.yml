@@ -2,15 +2,13 @@ id: ENVIRONMENT_LAND_MARITIME_FROZEN
 type: BIOME
 abstract: true
 
-colors:
-  fog: 0xc0d8ff
-  water: 0x1463A5
-  water-fog: 0x1463A5
-  sky: 0x7fa1ff
-  grass: 0x80B497
-  foliage: 0x64A278
-
-climate:
-  precipitation: true
-  temperature: 0.05
-  downfall: 0.3
+attributes:
+  minecraft:visual/fog_color: "#c0d8ff"
+  terra:biome/water_color: "#1463a5"
+  minecraft:visual/water_fog_color: "#1463a5"
+  minecraft:visual/sky_color: "#7fa1ff"
+  terra:biome/grass_color: "#80b497"
+  terra:biome/foliage_color: "#64a278"
+  terra:biome/has_precipitation: true
+  terra:biome/temperature: 0.05
+  terra:biome/downfall: 0.3

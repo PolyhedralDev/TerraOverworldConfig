@@ -13,11 +13,11 @@ tags:
 
 vanilla: minecraft:windswept_forest
 
-colors:
-  grass: 0x6db869
-  foliage: 0x70c975
-  water: 0x287082
-  water-fog: 0x287082
+attributes:
+  terra:biome/grass_color: "#6db869"
+  terra:biome/foliage_color: "#70c975"
+  terra:biome/water_color: "#287082"
+  minecraft:visual/water_fog_color: "#287082"
 
 palette:
   - GRASS_MOSSY: $meta.yml:top-y

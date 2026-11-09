@@ -2,15 +2,13 @@ id: ENVIRONMENT_LAND_UNIQUE_MUSHROOM
 type: BIOME
 abstract: true
 
-colors:
-  fog: 0xc0d8ff
-  water: 0x8A8997
-  water-fog: 0x8A8997
-  sky: 0x77a8ff
-  grass: 0x55C93F
-  foliage: 0x2BBB0F
-
-climate:
-  precipitation: true
-  temperature: 0.9
-  downfall: 1.0
+attributes:
+  minecraft:visual/fog_color: "#c0d8ff"
+  terra:biome/water_color: "#8a8997"
+  minecraft:visual/water_fog_color: "#8a8997"
+  minecraft:visual/sky_color: "#77a8ff"
+  terra:biome/grass_color: "#55c93f"
+  terra:biome/foliage_color: "#2bbb0f"
+  terra:biome/has_precipitation: true
+  terra:biome/temperature: 0.9
+  terra:biome/downfall: 1.0

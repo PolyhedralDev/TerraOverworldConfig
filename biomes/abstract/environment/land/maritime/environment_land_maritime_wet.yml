@@ -2,15 +2,13 @@ id: ENVIRONMENT_LAND_MARITIME_WET
 type: BIOME
 abstract: true
 
-colors:
-  fog: 0xc0d8ff
-  water: 0x157CAB
-  water-fog: 0x157CAB
-  sky: 0x78a7ff
-  grass: 0x81bd59
-  foliage: 0x65ab2f
-
-climate:
-  precipitation: true
-  temperature: 0.75
-  downfall: 0.5
+attributes:
+  minecraft:visual/fog_color: "#c0d8ff"
+  terra:biome/water_color: "#157cab"
+  minecraft:visual/water_fog_color: "#157cab"
+  minecraft:visual/sky_color: "#78a7ff"
+  terra:biome/grass_color: "#81bd59"
+  terra:biome/foliage_color: "#65ab2f"
+  terra:biome/has_precipitation: true
+  terra:biome/temperature: 0.75
+  terra:biome/downfall: 0.5

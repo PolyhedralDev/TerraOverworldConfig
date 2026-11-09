@@ -9,9 +9,9 @@ color: $biomes/colors.yml:MARSH
 
 vanilla: minecraft:river
 
-colors:
-  grass: 0x61b354
-  foliage: 0x75c458
+attributes:
+  terra:biome/grass_color: "#61b354"
+  terra:biome/foliage_color: "#75c458"
 
 tags:
   - LAND_CAVES

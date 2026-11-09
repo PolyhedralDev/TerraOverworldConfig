@@ -12,11 +12,11 @@ vanilla: minecraft:mangrove_swamp
 tags:
   - USE_RIVER_COASTAL_TROPICAL_SWAMP
 
-colors:
-  grass: 0x4C763C
-  foliage: 0x8DB127
-  water: 0x3A7A6A
-  water-fog: 0x4D7A60
+attributes:
+  terra:biome/grass_color: "#4c763c"
+  terra:biome/foliage_color: "#8db127"
+  terra:biome/water_color: "#3a7a6a"
+  minecraft:visual/water_fog_color: "#4d7a60"
 
 palette:
   - GRASS: $meta.yml:top-y

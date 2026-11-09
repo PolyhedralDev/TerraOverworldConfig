@@ -7,11 +7,11 @@ color: $biomes/colors.yml:ROCKY_SHALLOW_OCEAN
 
 vanilla: minecraft:ocean
 
-colors:
-  grass: 0x8eb971
-  foliage: 0x71a74d
-  water: 0x31adde
-  water-fog: 0x1165b0
+attributes:
+  terra:biome/grass_color: "#8eb971"
+  terra:biome/foliage_color: "#71a74d"
+  terra:biome/water_color: "#31adde"
+  minecraft:visual/water_fog_color: "#1165b0"
 
 features:
   landforms:

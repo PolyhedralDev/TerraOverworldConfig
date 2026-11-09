@@ -9,11 +9,11 @@ color: $biomes/colors.yml:MUDDY_COASTS
 
 vanilla: minecraft:beach
 
-colors:
-  grass: 0x464a26
-  foliage: 0x8DB127
-  water: 0x5b646f
-  water-fog: 0x5b646f
+attributes:
+  terra:biome/grass_color: "#464a26"
+  terra:biome/foliage_color: "#8db127"
+  terra:biome/water_color: "#5b646f"
+  minecraft:visual/water_fog_color: "#5b646f"
 
 tags:
   - LAND_CAVES

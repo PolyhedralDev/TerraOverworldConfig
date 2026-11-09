@@ -17,11 +17,11 @@ tags:
   - USE_TROPICAL_RIVER
   - DEEP_DARK_GROVE
 
-colors:
-  grass: 0x3abf13
-  foliage: 0x00aa17
-  water: 0x1e97f2
-  water-fog: 0x1e97f2
+attributes:
+  terra:biome/grass_color: "#3abf13"
+  terra:biome/foliage_color: "#00aa17"
+  terra:biome/water_color: "#1e97f2"
+  minecraft:visual/water_fog_color: "#1e97f2"
 
 palette:
   - GRASS: $meta.yml:top-y

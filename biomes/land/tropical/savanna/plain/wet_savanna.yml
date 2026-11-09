@@ -5,11 +5,11 @@ color: $biomes/colors.yml:WET_SAVANNA
 
 vanilla: minecraft:savanna
 
-colors:
-  grass: 0xa8c778
-  foliage: 0x87b55b
-  water: 0x2C8b9c
-  water-fog: 0x2C8b9c
+attributes:
+  terra:biome/grass_color: "#a8c778"
+  terra:biome/foliage_color: "#87b55b"
+  terra:biome/water_color: "#2c8b9c"
+  minecraft:visual/water_fog_color: "#2c8b9c"
 
 palette:
   - GRASS: $meta.yml:top-y

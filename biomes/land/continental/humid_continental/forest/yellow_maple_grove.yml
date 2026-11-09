@@ -13,11 +13,11 @@ tags:
 
 vanilla: minecraft:taiga
 
-colors:
-  grass: 0x9BB084
-  foliage: 0xffdd00
-  water: 0x287082
-  water-fog: 0x287082
+attributes:
+  terra:biome/grass_color: "#9bb084"
+  terra:biome/foliage_color: "#ffdd00"
+  terra:biome/water_color: "#287082"
+  minecraft:visual/water_fog_color: "#287082"
 
 palette:
   - STONY_GRASS: $meta.yml:top-y

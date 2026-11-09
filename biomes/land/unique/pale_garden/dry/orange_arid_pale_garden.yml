@@ -10,9 +10,9 @@ tags:
   - RESIN_ROOTS
   - USE_ORANGE_ARID_PALE_GARDEN_RIVER
 
-colors:
-  water: 0x32A598
-  water-fog: 0x32A598
+attributes:
+  terra:biome/water_color: "#32a598"
+  minecraft:visual/water_fog_color: "#32a598"
 
 palette:
   - RED_WHITE_SANDY_GRASS_MIX: $meta.yml:top-y

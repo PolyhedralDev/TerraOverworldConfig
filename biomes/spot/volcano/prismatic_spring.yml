@@ -9,12 +9,12 @@ color: $biomes/colors.yml:PRISMATIC_SPRING
 
 vanilla: minecraft:taiga
 
-particles:
-  particle: minecraft:white_smoke
-  probability: 0.001
-
-colors:
-  water: 0x23b4d3
+attributes:
+  minecraft:visual/ambient_particles:
+    - particle:
+        type: minecraft:white_smoke
+      probability: 0.001
+  terra:biome/water_color: "#23b4d3"
 
 palette:
   - PRISMATIC_MICROBIAL_MAT: $meta.yml:top-y

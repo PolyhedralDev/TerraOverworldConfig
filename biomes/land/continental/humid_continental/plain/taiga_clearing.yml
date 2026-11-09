@@ -13,11 +13,11 @@ tags:
 
 vanilla: minecraft:meadow
 
-colors:
-  grass: 0x85BC7B
-  foliage: 0x77AA62
-  water: 0x287082
-  water-fog: 0x287082
+attributes:
+  terra:biome/grass_color: "#85bc7b"
+  terra:biome/foliage_color: "#77aa62"
+  terra:biome/water_color: "#287082"
+  minecraft:visual/water_fog_color: "#287082"
 
 palette:
   - STONY_GRASS: $meta.yml:top-y

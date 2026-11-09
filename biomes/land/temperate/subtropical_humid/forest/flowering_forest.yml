@@ -7,11 +7,11 @@ color: $biomes/colors.yml:FLOWERING_FOREST
 
 vanilla: minecraft:flower_forest
 
-colors:
-  grass: 0x60bf4b
-  foliage: 0x80c465
-  water: 0x0677ce
-  water-fog: 0x0677ce
+attributes:
+  terra:biome/grass_color: "#60bf4b"
+  terra:biome/foliage_color: "#80c465"
+  terra:biome/water_color: "#0677ce"
+  minecraft:visual/water_fog_color: "#0677ce"
 
 features:
   flora:

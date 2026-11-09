@@ -7,18 +7,16 @@ color: $biomes/colors.yml:LUSH_CAVES
 
 vanilla: minecraft:lush_caves
 
-colors:
-  sky: 0x81ca71
-  fog: 0x477c1f
-  water: 0x14A2C5
-  water-fog: 0x14A2C5
-  grass: 0xa5c742 # Matched to moss block
-  foliage: 0xa5cd55 # Matched to azalea leaves
-
-climate:
-  precipitation: true
-  temperature: 1.0
-  downfall: 1.0
+attributes:
+  minecraft:visual/sky_color: "#81ca71"
+  minecraft:visual/fog_color: "#477c1f"
+  terra:biome/water_color: "#14a2c5"
+  minecraft:visual/water_fog_color: "#14a2c5"
+  terra:biome/grass_color: "#a5c742"
+  terra:biome/foliage_color: "#a5cd55"
+  terra:biome/has_precipitation: true
+  terra:biome/temperature: 1.0
+  terra:biome/downfall: 1.0
 
 palette:
   - LUSH_CAVES: $meta.yml:top-y

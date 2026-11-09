@@ -5,11 +5,13 @@ author: "Astrash, Sancires, Aureus, RogueShade"
 generator: NOISE_3D
 
 addons:
-  biome-provider-pipeline: "2.+"
+  biome-provider-pipeline: "3.+"
   biome-provider-single: "1.+"
-  biome-provider-extrusion: "1.+"
+  biome-provider-extrusion: "2.+"
   chunk-generator-noise-3d: "1.+"
   config-biome: "1.+"
+  config-attributes: "1.+"
+  minecraft-attributes: "1.+"
   config-flora: "1.+"
   config-noise-function: "1.+"
   config-ore: "1.+"

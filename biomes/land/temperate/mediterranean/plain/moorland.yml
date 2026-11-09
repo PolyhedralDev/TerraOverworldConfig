@@ -13,11 +13,11 @@ tags:
 
 vanilla: minecraft:savanna
 
-colors:
-  grass: 0xb9d277
-  foliage: 0xcce66e
-  water: 0x2590a8
-  water-fog: 0x2590a8
+attributes:
+  terra:biome/grass_color: "#b9d277"
+  terra:biome/foliage_color: "#cce66e"
+  terra:biome/water_color: "#2590a8"
+  minecraft:visual/water_fog_color: "#2590a8"
 
 palette:
   - GRASS_VARIATION: $meta.yml:top-y

@@ -2,16 +2,14 @@ id: ENVIRONMENT_MARINE_OCEAN_FROZEN
 type: BIOME
 abstract: true
 
-colors:
-  fog: 0xc0d8ff
-  water: 0x2570B5
-  water-fog: 0x174985
-  sky: 0x7fa1ff
-  grass: 0x80B497
-  foliage: 0x60A17B
-
-climate:
-  precipitation: true
-  temperature: 0.5
-  temperature-modifier: FROZEN
-  downfall: 0.5
+attributes:
+  minecraft:visual/fog_color: "#c0d8ff"
+  terra:biome/water_color: "#2570b5"
+  minecraft:visual/water_fog_color: "#174985"
+  minecraft:visual/sky_color: "#7fa1ff"
+  terra:biome/grass_color: "#80b497"
+  terra:biome/foliage_color: "#60a17b"
+  terra:biome/has_precipitation: true
+  terra:biome/temperature: 0.5
+  terra:biome/temperature_modifier: frozen
+  terra:biome/downfall: 0.5

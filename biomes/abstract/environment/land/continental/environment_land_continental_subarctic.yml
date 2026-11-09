@@ -2,15 +2,13 @@ id: ENVIRONMENT_LAND_CONTINENTAL_SUBARCTIC
 type: BIOME
 abstract: true
 
-colors:
-  fog: 0xc0d8ff
-  water: 0x205E83
-  water-fog: 0x205E83
-  sky: 0x839eff
-  grass: 0x80B497
-  foliage: 0x60A17B
-
-climate:
-  precipitation: true
-  temperature: 0.0
-  downfall: 0.4
+attributes:
+  minecraft:visual/fog_color: "#c0d8ff"
+  terra:biome/water_color: "#205e83"
+  minecraft:visual/water_fog_color: "#205e83"
+  minecraft:visual/sky_color: "#839eff"
+  terra:biome/grass_color: "#80b497"
+  terra:biome/foliage_color: "#60a17b"
+  terra:biome/has_precipitation: true
+  terra:biome/temperature: 0.0
+  terra:biome/downfall: 0.4

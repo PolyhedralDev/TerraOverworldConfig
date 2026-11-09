@@ -7,9 +7,11 @@ color: $biomes/colors.yml:MUSHROOM_CAVES
 
 vanilla: minecraft:dripstone_caves
 
-particles:
-  particle: minecraft:mycelium
-  probability: 0.0005
+attributes:
+  minecraft:visual/ambient_particles:
+    - particle:
+        type: minecraft:mycelium
+      probability: 0.0005
 
 palette:
   - MUSHROOM_CAVES: $meta.yml:top-y

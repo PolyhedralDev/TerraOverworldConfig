@@ -2,15 +2,13 @@ id: ENVIRONMENT_LAND_CONTINENTAL_HUMID
 type: BIOME
 abstract: true
 
-colors:
-  fog: 0xc0d8ff
-  water: 0x287082
-  water-fog: 0x287082
-  sky: 0x78a3ff
-  grass: 0x83BB6D
-  foliage: 0x63A948
-
-climate:
-  precipitation: true
-  temperature: 0.8
-  downfall: 0.4
+attributes:
+  minecraft:visual/fog_color: "#c0d8ff"
+  terra:biome/water_color: "#287082"
+  minecraft:visual/water_fog_color: "#287082"
+  minecraft:visual/sky_color: "#78a3ff"
+  terra:biome/grass_color: "#83bb6d"
+  terra:biome/foliage_color: "#63a948"
+  terra:biome/has_precipitation: true
+  terra:biome/temperature: 0.8
+  terra:biome/downfall: 0.4

@@ -2,15 +2,13 @@ id: ENVIRONMENT_LAND_TROPICAL_EQUATORIAL
 type: BIOME
 abstract: true
 
-colors:
-  fog: 0xc0d8ff
-  water: 0x14A2C5
-  water-fog: 0x14A2C5
-  sky: 0x77a8ff
-  grass: 0x59C93C
-  foliage: 0x30BB0B
-
-climate:
-  precipitation: true
-  temperature: 1.0
-  downfall: 1.0
+attributes:
+  minecraft:visual/fog_color: "#c0d8ff"
+  terra:biome/water_color: "#14a2c5"
+  minecraft:visual/water_fog_color: "#14a2c5"
+  minecraft:visual/sky_color: "#77a8ff"
+  terra:biome/grass_color: "#59c93c"
+  terra:biome/foliage_color: "#30bb0b"
+  terra:biome/has_precipitation: true
+  terra:biome/temperature: 1.0
+  terra:biome/downfall: 1.0

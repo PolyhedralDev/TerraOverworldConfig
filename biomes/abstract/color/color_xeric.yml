@@ -2,10 +2,10 @@ id: COLOR_XERIC
 type: BIOME
 abstract: true
 
-colors:
-  sky: 0xc5ffff
-  fog: 0xfffce1
-  grass: 0xbdd394
-  foliage: 0x8cbb5e
-  water: 0x32A598
-  water-fog: 0x32A598
+attributes:
+  minecraft:visual/sky_color: "#c5ffff"
+  minecraft:visual/fog_color: "#fffce1"
+  terra:biome/grass_color: "#bdd394"
+  terra:biome/foliage_color: "#8cbb5e"
+  terra:biome/water_color: "#32a598"
+  minecraft:visual/water_fog_color: "#32a598"

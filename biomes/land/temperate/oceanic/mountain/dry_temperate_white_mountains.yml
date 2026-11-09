@@ -6,9 +6,9 @@ color: $biomes/colors.yml:DRY_TEMPERATE_WHITE_MOUNTAINS
 tags:
   - DEEP_DARK
 
-colors:
-  grass: 0x8ace98
-  foliage: 0x59ba6c
+attributes:
+  terra:biome/grass_color: "#8ace98"
+  terra:biome/foliage_color: "#59ba6c"
 
 slant:
   - threshold: 0.8

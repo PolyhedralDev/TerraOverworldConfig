@@ -9,11 +9,11 @@ color: $biomes/colors.yml:BAMBOO_JUNGLE
 
 vanilla: minecraft:bamboo_jungle
 
-colors:
-  grass: 0x59c93c
-  foliage: 0x30bb0b
-  water: 0x14a2c5
-  water-fog: 0x14a2c5
+attributes:
+  terra:biome/grass_color: "#59c93c"
+  terra:biome/foliage_color: "#30bb0b"
+  terra:biome/water_color: "#14a2c5"
+  minecraft:visual/water_fog_color: "#14a2c5"
 
 tags:
   - LAND_CAVES

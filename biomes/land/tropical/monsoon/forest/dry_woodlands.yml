@@ -9,11 +9,11 @@ color: $biomes/colors.yml:DRY_WOODLANDS
 
 vanilla: minecraft:plains
 
-colors:
-  grass: 0xafcc47
-  foliage: 0x9ec25f
-  water: 0x2C8b9c
-  water-fog: 0x2C8b9c
+attributes:
+  terra:biome/grass_color: "#afcc47"
+  terra:biome/foliage_color: "#9ec25f"
+  terra:biome/water_color: "#2c8b9c"
+  minecraft:visual/water_fog_color: "#2c8b9c"
 
 tags:
   - LAND_CAVES

@@ -9,6 +9,6 @@ color: $biomes/colors.yml:RED_ARID_PALE_GARDEN_RIVER
 
 vanilla: minecraft:river
 
-colors:
-  water: 0x32A598
-  water-fog: 0x32A598
+attributes:
+  terra:biome/water_color: "#32a598"
+  minecraft:visual/water_fog_color: "#32a598"

@@ -2,15 +2,13 @@ id: ENVIRONMENT_LAND_TROPICAL_SAVANNA
 type: BIOME
 abstract: true
 
-colors:
-  fog: 0xc0d8ff
-  water: 0x2C8B9C
-  water-fog: 0x2C8B9C
-  sky: 0x6eb1ff
-  grass: 0xBFB755
-  foliage: 0xAEA42A
-
-climate:
-  precipitation: true
-  temperature: 1.2
-  downfall: 0.0
+attributes:
+  minecraft:visual/fog_color: "#c0d8ff"
+  terra:biome/water_color: "#2c8b9c"
+  minecraft:visual/water_fog_color: "#2c8b9c"
+  minecraft:visual/sky_color: "#6eb1ff"
+  terra:biome/grass_color: "#bfb755"
+  terra:biome/foliage_color: "#aea42a"
+  terra:biome/has_precipitation: true
+  terra:biome/temperature: 1.2
+  terra:biome/downfall: 0.0

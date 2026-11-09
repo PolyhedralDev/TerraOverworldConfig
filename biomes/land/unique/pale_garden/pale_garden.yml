@@ -14,17 +14,17 @@ tags:
   - RESIN_ROOTS
   - USE_PALE_GARDEN_RIVER
 
-particles:
-  particle: minecraft:infested
-  probability: 0.0005
-
-colors:
-  fog: 0x817770
-  water: 0x76889D
-  water-fog: 0x556980
-  sky: 0xb9b9b9
-  grass: 0x778272
-  foliage: 0x878D76
+attributes:
+  minecraft:visual/ambient_particles:
+    - particle:
+        type: minecraft:infested
+      probability: 0.0005
+  minecraft:visual/fog_color: "#817770"
+  terra:biome/water_color: "#76889d"
+  minecraft:visual/water_fog_color: "#556980"
+  minecraft:visual/sky_color: "#b9b9b9"
+  terra:biome/grass_color: "#778272"
+  terra:biome/foliage_color: "#878d76"
 
 palette:
   - GRASS_MOSSY_PALE: $meta.yml:top-y

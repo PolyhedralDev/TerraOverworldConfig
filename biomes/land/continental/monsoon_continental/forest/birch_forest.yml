@@ -13,11 +13,11 @@ tags:
 
 vanilla: minecraft:birch_forest
 
-colors:
-  grass: 0x88bb67
-  foliage: 0x6ba941
-  water: 0x0677ce
-  water-fog: 0x0677ce
+attributes:
+  terra:biome/grass_color: "#88bb67"
+  terra:biome/foliage_color: "#6ba941"
+  terra:biome/water_color: "#0677ce"
+  minecraft:visual/water_fog_color: "#0677ce"
 
 palette:
   - GRASS: $meta.yml:top-y

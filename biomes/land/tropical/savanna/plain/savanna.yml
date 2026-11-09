@@ -9,11 +9,11 @@ color: $biomes/colors.yml:SAVANNA
 
 vanilla: minecraft:savanna
 
-colors:
-  grass: 0xb5cc47
-  foliage: 0xaea42a
-  water: 0x2C8b9c
-  water-fog: 0x2C8b9c
+attributes:
+  terra:biome/grass_color: "#b5cc47"
+  terra:biome/foliage_color: "#aea42a"
+  terra:biome/water_color: "#2c8b9c"
+  minecraft:visual/water_fog_color: "#2c8b9c"
 
 tags:
   - LAND_CAVES

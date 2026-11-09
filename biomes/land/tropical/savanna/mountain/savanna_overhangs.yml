@@ -16,8 +16,8 @@ tags:
   - ANCIENT_CAVES
   - USE_LUKEWARM_RIVER
 
-colors:
-  grass: 0xa1c342
+attributes:
+  terra:biome/grass_color: "#a1c342"
 
 palette:
   - GRASS_VARIATION: $meta.yml:top-y

@@ -48,8 +48,8 @@ features:
     - SUBTROPICAL_BUSHES
     - SPARSE_SMALL_FIR_TREES
 
-colors:
-  grass: 0xb1d563
-  foliage: 0x4fb06d
-  water: 0x2C8b9c
-  water-fog: 0x2C8b9c
+attributes:
+  terra:biome/grass_color: "#b1d563"
+  terra:biome/foliage_color: "#4fb06d"
+  terra:biome/water_color: "#2c8b9c"
+  minecraft:visual/water_fog_color: "#2c8b9c"

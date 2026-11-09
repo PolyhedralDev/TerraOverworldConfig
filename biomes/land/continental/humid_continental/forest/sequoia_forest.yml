@@ -13,11 +13,11 @@ tags:
 
 vanilla: minecraft:old_growth_spruce_taiga
 
-colors:
-  grass: 0x86B770
-  foliage: 0x86BC70
-  water: 0x287082
-  water-fog: 0x287082
+attributes:
+  terra:biome/grass_color: "#86b770"
+  terra:biome/foliage_color: "#86bc70"
+  terra:biome/water_color: "#287082"
+  minecraft:visual/water_fog_color: "#287082"
 
 palette:
   - GRASS_PODZOL: $meta.yml:top-y

@@ -13,11 +13,11 @@ tags:
   - LAND_CAVES
   - USE_RIVER_COASTAL_TROPICAL_SWAMP
 
-colors:
-  grass: 0x88bd59
-  foliage: 0x73c441
-  water: 0x44aff5
-  water-fog: 0x44aff5
+attributes:
+  terra:biome/grass_color: "#88bd59"
+  terra:biome/foliage_color: "#73c441"
+  terra:biome/water_color: "#44aff5"
+  minecraft:visual/water_fog_color: "#44aff5"
 
 palette:
   - BLOCK:minecraft:stone: $meta.yml:top-y

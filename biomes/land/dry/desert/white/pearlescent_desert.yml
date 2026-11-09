@@ -8,8 +8,8 @@ extends:
   - BASE
 color: $biomes/colors.yml:PEARLESCENT_DESERT
 
-colors:
-  grass: 0xffea93
+attributes:
+  terra:biome/grass_color: "#ffea93"
 
 vanilla: minecraft:desert
 

@@ -26,11 +26,11 @@ slant:
       - BLOCK:minecraft:stone: $meta.yml:top-y
       - << meta.yml:palette-bottom
 
-colors:
-  grass: 0x8eb971
-  foliage: 0x71a74d
-  water: 0x0084ff
-  water-fog: 0x0084ff
+attributes:
+  terra:biome/grass_color: "#8eb971"
+  terra:biome/foliage_color: "#71a74d"
+  terra:biome/water_color: "#0084ff"
+  minecraft:visual/water_fog_color: "#0084ff"
 
 features:
   flora:

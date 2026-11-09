@@ -11,17 +11,17 @@ vanilla: minecraft:badlands
 tags:
   - LAVA_TUBES
 
-particles:
-  particle: minecraft:ash
-  probability: 0.025
-
-colors:
-  sky: 0x84b3af
-  fog: 0x76828b
-  grass: 0x6c8b67
-  foliage: 0x6d7850
-  water: 0x77976e
-  water-fog: 0x848871
+attributes:
+  minecraft:visual/ambient_particles:
+    - particle:
+        type: minecraft:ash
+      probability: 0.025
+  minecraft:visual/sky_color: "#84b3af"
+  minecraft:visual/fog_color: "#76828b"
+  terra:biome/grass_color: "#6c8b67"
+  terra:biome/foliage_color: "#6d7850"
+  terra:biome/water_color: "#77976e"
+  minecraft:visual/water_fog_color: "#848871"
 
 palette:
   - LAVA_CRACKS: $meta.yml:top-y

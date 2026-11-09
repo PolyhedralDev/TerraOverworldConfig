@@ -2,76 +2,43 @@ id: MOB_SPIDER
 type: BIOME
 abstract: true
 
-spawning:
-  costs:
-    - type:
-        id: minecraft:pig
-      mass: 1
-      gravity: 1
-  spawns:
-    - group: AMBIENT
-      entries:
-        - type:
-            id: minecraft:bat
-          group-size:
-            min: 8
-            max: 8
+attributes:
+  minecraft:gameplay/natural_mob_spawns:
+    spawns_by_category:
+      ambient:
+        - type: minecraft:bat
           weight: 10
-    - group: MONSTER
-      entries:
-        - type:
-            id: minecraft:spider
-          group-size:
-            min: 4
-            max: 4
+          count: 8
+      monster:
+        - type: minecraft:spider
           weight: 400
-        - type:
-            id: minecraft:zombie
-          group-size:
-            min: 4
-            max: 4
+          count: 4
+        - type: minecraft:zombie
           weight: 95
-        - type:
-            id: minecraft:zombie_villager
-          group-size:
-            min: 1
-            max: 1
+          count: 4
+        - type: minecraft:zombie_villager
           weight: 5
-        - type:
-            id: minecraft:skeleton
-          group-size:
-            min: 4
-            max: 4
+          count: 1
+        - type: minecraft:skeleton
           weight: 100
-        - type:
-            id: minecraft:creeper
-          group-size:
-            min: 4
-            max: 4
+          count: 4
+        - type: minecraft:creeper
           weight: 100
-        - type:
-            id: minecraft:slime
-          group-size:
-            min: 4
-            max: 4
+          count: 4
+        - type: minecraft:slime
           weight: 100
-        - type:
-            id: minecraft:enderman
-          group-size:
-            min: 1
-            max: 4
+          count: 4
+        - type: minecraft:enderman
           weight: 5
-        - type:
-            id: minecraft:witch
-          group-size:
-            min: 1
-            max: 1
+          count: {type: minecraft:uniform, min_inclusive: 1, max_inclusive: 4}
+        - type: minecraft:witch
           weight: 5
-    - group: UNDERGROUND_WATER_CREATURE
-      entries:
-        - type:
-            id: minecraft:glow_squid
-          group-size:
-            min: 4
-            max: 6
+          count: 1
+      underground_water_creature:
+        - type: minecraft:glow_squid
           weight: 10
+          count: {type: minecraft:uniform, min_inclusive: 4, max_inclusive: 6}
+    spawn_costs:
+      minecraft:pig:
+        energy_budget: 1
+        charge: 1

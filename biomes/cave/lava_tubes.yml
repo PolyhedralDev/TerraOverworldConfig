@@ -7,9 +7,11 @@ color: $biomes/colors.yml:LAVA_TUBES
 
 vanilla: minecraft:dripstone_caves
 
-particles:
-  particle: dripping_lava
-  probability: 0.005
+attributes:
+  minecraft:visual/ambient_particles:
+    - particle:
+        type: minecraft:dripping_lava
+      probability: 0.005
 
 palette:
   - LAVA_CRACKS: $meta.yml:top-y

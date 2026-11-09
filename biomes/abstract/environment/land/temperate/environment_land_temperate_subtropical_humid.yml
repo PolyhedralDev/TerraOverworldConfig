@@ -2,15 +2,13 @@ id: ENVIRONMENT_LAND_TEMPERATE_SUBTROPICAL_HUMID
 type: BIOME
 abstract: true
 
-colors:
-  fog: 0xc0d8ff
-  water: 0x20A3CC
-  water-fog: 0x20A3CC
-  sky: 0x78a7ff
-  grass: 0x71cf48
-  foliage: 0x8bde5b
-
-climate:
-  precipitation: true
-  temperature: 0.75
-  downfall: 0.8
+attributes:
+  minecraft:visual/fog_color: "#c0d8ff"
+  terra:biome/water_color: "#20a3cc"
+  minecraft:visual/water_fog_color: "#20a3cc"
+  minecraft:visual/sky_color: "#78a7ff"
+  terra:biome/grass_color: "#71cf48"
+  terra:biome/foliage_color: "#8bde5b"
+  terra:biome/has_precipitation: true
+  terra:biome/temperature: 0.75
+  terra:biome/downfall: 0.8

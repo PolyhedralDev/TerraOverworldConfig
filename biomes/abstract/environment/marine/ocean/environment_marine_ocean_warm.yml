@@ -2,15 +2,13 @@ id: ENVIRONMENT_MARINE_OCEAN_WARM
 type: BIOME
 abstract: true
 
-colors:
-  fog: 0xc0d8ff
-  water: 0x02B0E5
-  water-fog: 0x0289d5
-  sky: 0x7ba4ff
-  grass: 0x8EB971
-  foliage: 0x71A74D
-
-climate:
-  precipitation: true
-  temperature: 0.5
-  downfall: 0.5
+attributes:
+  minecraft:visual/fog_color: "#c0d8ff"
+  terra:biome/water_color: "#02b0e5"
+  minecraft:visual/water_fog_color: "#0289d5"
+  minecraft:visual/sky_color: "#7ba4ff"
+  terra:biome/grass_color: "#8eb971"
+  terra:biome/foliage_color: "#71a74d"
+  terra:biome/has_precipitation: true
+  terra:biome/temperature: 0.5
+  terra:biome/downfall: 0.5

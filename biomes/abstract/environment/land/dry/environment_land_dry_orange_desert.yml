@@ -3,6 +3,11 @@ type: BIOME
 extends: ENVIRONMENT_LAND_DRY_DESERT
 abstract: true
 
-particles:
-  particle: minecraft:dust_color_transition{from_color:[1,0.914,0.639], to_color:[1,0.492,0.173], scale:1}
-  probability: 0.0002
+attributes:
+  minecraft:visual/ambient_particles:
+    - particle:
+        type: minecraft:dust_color_transition
+        from_color: [1, 0.914, 0.639]
+        to_color: [1, 0.492, 0.173]
+        scale: 1
+      probability: 0.0002

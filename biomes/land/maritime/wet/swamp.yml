@@ -13,11 +13,11 @@ tags:
   - LAND_CAVES
   - USE_SWAMP_RIVER
 
-colors:
-  grass: 0x4C763C
-  foliage: 0x6A7039
-  water: 0x4C6559
-  water-fog: 0x232317
+attributes:
+  terra:biome/grass_color: "#4c763c"
+  terra:biome/foliage_color: "#6a7039"
+  terra:biome/water_color: "#4c6559"
+  minecraft:visual/water_fog_color: "#232317"
 
 palette:
   - GRASS_MUDDY: $meta.yml:top-y

@@ -2,15 +2,13 @@ id: ENVIRONMENT_LAND_DRY_WARM_SEMI_ARID
 type: BIOME
 abstract: true
 
-colors:
-  fog: 0xfffce1
-  water: 0x1A7AA1
-  water-fog: 0x1A7AA1
-  sky: 0xc5ffff
-  grass: 0xbdd394
-  foliage: 0x8cbb5e
-
-climate:
-  precipitation: false
-  temperature: 1.5
-  downfall: 0.1
+attributes:
+  minecraft:visual/fog_color: "#fffce1"
+  terra:biome/water_color: "#1a7aa1"
+  minecraft:visual/water_fog_color: "#1a7aa1"
+  minecraft:visual/sky_color: "#c5ffff"
+  terra:biome/grass_color: "#bdd394"
+  terra:biome/foliage_color: "#8cbb5e"
+  terra:biome/has_precipitation: false
+  terra:biome/temperature: 1.5
+  terra:biome/downfall: 0.1

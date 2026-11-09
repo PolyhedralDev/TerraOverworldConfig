@@ -13,11 +13,11 @@ tags:
 
 vanilla: minecraft:jungle
 
-colors:
-  grass: 0x7ac465
-  foliage: 0x5fa649
-  water: 0x637d72
-  water-fog: 0x637d72
+attributes:
+  terra:biome/grass_color: "#7ac465"
+  terra:biome/foliage_color: "#5fa649"
+  terra:biome/water_color: "#637d72"
+  minecraft:visual/water_fog_color: "#637d72"
 
 palette:
   - GRASS: $meta.yml:top-y

@@ -13,8 +13,8 @@ tags:
 
 vanilla: minecraft:taiga
 
-colors:
-  foliage: 0x68a464
+attributes:
+  terra:biome/foliage_color: "#68a464"
 
 palette:
   - STONY_GRASS: $meta.yml:top-y

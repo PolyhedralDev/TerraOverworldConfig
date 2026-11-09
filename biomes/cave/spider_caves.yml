@@ -8,8 +8,8 @@ color: $biomes/colors.yml:SPIDER_CAVES
 
 vanilla: minecraft:dripstone_caves
 
-colors:
-  grass: 0x322d36
+attributes:
+  terra:biome/grass_color: "#322d36"
 
 palette:
   - SPIDER_CAVES: $meta.yml:top-y
