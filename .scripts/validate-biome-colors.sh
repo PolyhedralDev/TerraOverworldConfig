@@ -6,9 +6,9 @@ fail=false
 color_key='color: \$biomes/colors.yml:'
 for path in $biome_config_paths
 do
-    config_id_line="$(grep 'id: ' $path)"
+    config_id_line="$(grep '^id: ' $path)"
     config_id="${config_id_line#id: }"
-    color_line="$(grep 'color: ' $path)"
+    color_line="$(grep '^color: ' $path)"
     color_id="${color_line#$color_key}"
     if [[ $color_line != *$color_key* ]]; then
         fail=true
